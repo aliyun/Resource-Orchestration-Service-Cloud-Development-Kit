@@ -1,0 +1,44 @@
+{
+  "name": "@ros-cdk/iot",
+  "version": "1.0.0",
+  "description": "iot package used for AliCloud ROS",
+  "author": "ROS Development Team",
+  "homepage": "",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.aliyun.ros.iot",
+        "maven": {
+          "groupId": "com.aliyun.ros",
+          "artifactId": "iot"
+        }
+      }
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "build": "tsc",
+    "pack": "npm pack"
+  },
+  "dependencies": {
+    "@ros-cdk/core": "^1.0.0",
+    "constructs": "^3.0.4"
+  },
+  "peerDependencies": {
+    "@ros-cdk/core": "^1.0.0",
+    "constructs": "^3.0.4"
+  }
+}

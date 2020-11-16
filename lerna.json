@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "packages/*",
+    "packages/@ros-cdk/*",
+    "packages/@ros-cdk/services/*"
+  ],
+  "version": "1.0.0"
+}

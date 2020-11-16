@@ -1,0 +1,49 @@
+{
+  "name": "ros-cdk-cli",
+  "version": "1.0.0",
+  "description": "ROS CDK Toolkit",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"lib/**/*.{js,ts}\"",
+    "pack": "npm pack"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bin": {
+    "ros-cdk": "/bin/ros-cdk"
+  },
+  "files": [
+    "lib/**/*",
+    "bin/"
+  ],
+  "keywords": [],
+  "author": "ROS Development Team",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.1",
+    "@types/minimatch": "^3.0.3",
+    "@types/node": "^14.0.27",
+    "@types/readline-sync": "^1.4.3",
+    "@types/semver": "^7.3.1",
+    "@types/yargs": "^15.0.5",
+    "ncp": "^2.0.0",
+    "prettier": "^2.0.5"
+  },
+  "dependencies": {
+    "@ros-cdk/ros-assembly-schema": "^1.0.0",
+    "@ros-cdk/ros-cxapi": "^1.0.0",
+    "@ros-cdk/ros-template-diff": "^1.0.0",
+    "child_process": "^1.0.2",
+    "fs-extra": "^9.0.1",
+    "httpx": "^2.2.4",
+    "json-bigint": "^1.0.0",
+    "kitx": "^2.1.0",
+    "minimatch": "^3.0.4",
+    "readline-sync": "^1.4.10",
+    "semver": "^7.3.2",
+    "yaml": "^1.10.0",
+    "yargs": "^15.4.1"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "name": "@ros-cdk/ros-cxapi",
+  "version": "1.0.0",
+  "description": "",
+  "author": "ROS Development Team",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.aliyun.ros.cxapi",
+        "maven": {
+          "groupId": "com.aliyun.ros",
+          "artifactId": "ros-cxapi"
+        }
+      }
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "ros",
+    "cdk"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "format": "prettier --write \"lib/**/*.{js,ts}\"",
+    "build": "tsc",
+    "jsii": "jsii",
+    "pack": "npm pack"
+  },
+  "devDependencies": {
+    "@types/node": "^14.10.1",
+    "@types/semver": "^7.3.1",
+    "prettier": "^2.1.1"
+  },
+  "bundledDependencies": [
+    "semver"
+  ],
+  "dependencies": {
+    "@ros-cdk/ros-assembly-schema": "^1.0.0",
+    "semver": "^7.2.2"
+  },
+  "peerDependencies": {
+    "@ros-cdk/ros-assembly-schema": "^1.0.0"
+  }
+}

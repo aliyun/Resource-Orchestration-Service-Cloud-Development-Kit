@@ -1,0 +1,17 @@
+# Welcome to your CDK Java project!
+
+This is a blank project for Java development with CDK.
+
+The `cdk.json` file tells the CDK Toolkit how to execute your app.
+
+It is a [Maven](https://maven.apache.org/) based project, so you can open this project with any Maven compatible Java IDE to build and run tests.
+
+## Useful commands
+
+ * `ros list`        List stacks in an application
+ * `ros deploy`      deploy this stack to your default ros account/region
+ * `ros diff`        compare deployed stack with current state
+ * `ros synth`       emits the synthesized ROS template
+ * `ros destroy`      Deletes a stack from an ALIYUN account
+
+Enjoy!

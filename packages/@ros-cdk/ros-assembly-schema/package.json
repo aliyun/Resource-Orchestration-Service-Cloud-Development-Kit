@@ -1,0 +1,54 @@
+{
+  "name": "@ros-cdk/ros-assembly-schema",
+  "version": "1.0.0",
+  "description": "",
+  "author": "ROS Development Team",
+  "license": "Apache-2.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "jsii": {
+    "outdir": "dist",
+    "targets": {
+      "java": {
+        "package": "com.aliyun.ros.assembly.schema",
+        "maven": {
+          "groupId": "com.aliyun.ros",
+          "artifactId": "ros-assembly-schema"
+        }
+      }
+    }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [
+    "ros",
+    "cdk"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "format": "prettier --write \"lib/**/*.{js,ts}\"",
+    "build": "tsc",
+    "jsii": "jsii",
+    "pack": "npm pack"
+  },
+  "devDependencies": {
+    "@types/node": "^14.10.1",
+    "@types/semver": "^7.3.3",
+    "prettier": "^2.1.1"
+  },
+  "dependencies": {
+    "jsonschema": "^1.2.6",
+    "semver": "^7.3.2"
+  },
+  "bundledDependencies": [
+    "jsonschema",
+    "semver"
+  ]
+}
