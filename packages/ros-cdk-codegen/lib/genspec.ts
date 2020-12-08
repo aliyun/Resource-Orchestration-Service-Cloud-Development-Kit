@@ -2,7 +2,7 @@
 //
 // Does not include the actual code generation itself.
 
-import { schema } from '@ros-cdk/ros-spec';
+import { schema } from '@alicloud/ros-cdk-spec';
 import * as codemaker from 'codemaker';
 import { itemTypeNames, PropertyAttributeName, scalarTypeNames, SpecName } from './spec-utils';
 import * as util from './util';

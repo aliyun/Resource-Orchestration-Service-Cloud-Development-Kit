@@ -1,5 +1,5 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from 'ros-cdk-zero/lib/assert';
-import * as ros from 'ros-cdk-zero/lib/core';
+import { expect as expectCDK, matchTemplate, MatchStyle } from '@alicloud/ros-cdk-assert';
+import * as ros from '@alicloud/ros-cdk-core';
 import * as %name.PascalCased% from '../lib/%name%-stack';
 
 test('Stack with version.', () => {

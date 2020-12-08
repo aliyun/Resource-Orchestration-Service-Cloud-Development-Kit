@@ -1,6 +1,6 @@
 package com.myorg;
 
-import com.aliyun.ros.core.*;
+import com.aliyun.ros.cdk.core.*;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
@@ -11,14 +11,14 @@ import java.io.IOException;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestJavaTest {
+public class %name.PascalCased%Test {
     private final static ObjectMapper JSON =
         new ObjectMapper().configure(SerializationFeature.INDENT_OUTPUT, true);
 
     @Test
     public void testStack() throws IOException {
         App app = new App();
-        TestJavaStack stack = new TestJavaStack(app, "test");
+        %name.PascalCased%Stack stack = new %name.PascalCased%Stack(app, "test");
 
         // synthesize the stack to a ROS template and compare against
         // a checked-in JSON file.

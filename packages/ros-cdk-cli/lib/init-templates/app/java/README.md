@@ -8,10 +8,11 @@ It is a [Maven](https://maven.apache.org/) based project, so you can open this p
 
 ## Useful commands
 
- * `ros list`        List stacks in an application
- * `ros deploy`      deploy this stack to your default ros account/region
- * `ros diff`        compare deployed stack with current state
- * `ros synth`       emits the synthesized ROS template
- * `ros destroy`      Deletes a stack from an ALIYUN account
+ * `mvn compile`          Compile project first if any changed
+ * `ros-cdk list`         List stacks in an application
+ * `ros-cdk deploy`       deploy this stack to your default ros account/region
+ * `ros-cdk diff`         compare deployed stack with current state
+ * `ros-cdk synth`        emits the synthesized ROS template
+ * `ros-cdk destroy`      Deletes a stack from an ALIYUN account
 
 Enjoy!

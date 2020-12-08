@@ -1,5 +1,5 @@
 import * as fs from 'fs-extra';
-import { allTypes } from '@ros-cdk/ros-spec';
+import { allTypes } from '@alicloud/ros-cdk-spec';
 /**
  * Downcase the first character in a string.
  *

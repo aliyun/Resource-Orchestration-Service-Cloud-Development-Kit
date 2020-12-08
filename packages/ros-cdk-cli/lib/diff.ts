@@ -1,7 +1,7 @@
-import * as cxschema from '@ros-cdk/ros-assembly-schema';
-import * as rosDiff from '@ros-cdk/ros-template-diff';
+import * as cxschema from '@alicloud/ros-cdk-assembly-schema';
+import * as rosDiff from '@alicloud/ros-cdk-template-diff';
 
-import * as cxapi from '@ros-cdk/ros-cxapi';
+import * as cxapi from '@alicloud/ros-cdk-cxapi';
 import * as colors from 'colors/safe';
 import { print } from './logging';
 

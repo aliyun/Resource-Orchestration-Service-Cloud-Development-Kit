@@ -1,4 +1,4 @@
-import * as cxapi from '@ros-cdk/ros-cxapi';
+import * as cxapi from '@alicloud/ros-cdk-cxapi';
 import { debug } from '../logging';
 import { Configuration } from '../settings';
 import { CloudAssembly } from './cloud-assembly';

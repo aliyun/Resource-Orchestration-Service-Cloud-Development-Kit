@@ -1,5 +1,5 @@
-import * as cxschema from '@ros-cdk/ros-assembly-schema';
-import * as cxapi from '@ros-cdk/ros-cxapi';
+import * as cxschema from '@alicloud/ros-cdk-assembly-schema';
+import * as cxapi from '@alicloud/ros-cdk-cxapi';
 import * as childProcess from 'child_process';
 import * as fs from 'fs-extra';
 import * as path from 'path';

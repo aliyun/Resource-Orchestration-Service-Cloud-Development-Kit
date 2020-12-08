@@ -8,7 +8,7 @@ Usage:
 $ spec2ts <typescript-output-path> <scope>
 ```
 
-The json spec is built-in another package within @ros-cdk and can be updated by using command "spec2ts --spec".
+The json spec is built-in another package within @alicloud and can be updated by using command "spec2ts --spec".
 
 The command will read the Spec and create .ts files that contains types for all resources and property types(naming scope.generated.ts). Then resource class will also be generated for every resource(naming resource-name.ts).
 

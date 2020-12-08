@@ -4,7 +4,7 @@ import * as path from 'path';
 import * as readlineSync from 'readline-sync';
 import { decipher, cipher } from './util/cipher';
 import { format } from 'util';
-const rosClient = require('./ros-client/client');
+const rosClient = require('@alicloud/ros-2019-09-10');
 
 import { CloudAssembly, DefaultSelection, ExtendedStackSelection, StackCollection } from './api/cloud-assembly';
 import { CloudExecutable } from './api/cloud-executable';
@@ -96,10 +96,12 @@ export class CdkToolkit {
 
   public async config(global: boolean) {
     let configSavePath = (global ? GLOBAL_PATH : LOCAL_PATH) + CONFIG_NAME;
-    let endpoint = readlineSync.question('endpoint:');
-    let accessKeyId = readlineSync.question('accessKeyId:');
-    let accessKeySecret = readlineSync.question('accessKeySecret:');
-    let regionId = readlineSync.question('defaultRegionId:');
+    let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):');
+    let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
+    let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+    let regionId = readlineSync.question('defaultRegionId(optional, default:cn-hangzhou):');
+    endpoint = endpoint ? endpoint : 'https://ros.aliyuncs.com';
+    regionId = regionId ? regionId : 'cn-hangzhou';
     if (endpoint.length === 0 || accessKeyId.length === 0 || accessKeySecret.length === 0) {
       error(
         'WANRNING: If want to deploy or delete stack, the endpoint, accessKeyId and accessKeySecret must be provided.',

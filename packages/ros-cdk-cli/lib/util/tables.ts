@@ -1,4 +1,4 @@
-import * as rosDiff from '@ros-cdk/ros-template-diff';
+import * as rosDiff from '@alicloud/ros-cdk-template-diff';
 
 export function renderTable(cells: string[][], columns?: number) {
   // The rosDiff module has logic for terminal-width aware table

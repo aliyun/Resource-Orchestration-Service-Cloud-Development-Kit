@@ -1,9 +1,9 @@
 import { tryReadPackageJson } from '../lib/util';
-import { allTypes } from '@ros-cdk/ros-spec';
+import { allTypes } from '@alicloud/ros-cdk-spec';
 import * as fs from 'fs-extra';
 
-const ROS_CDK_SCOPE = '@ros-cdk/';
-const ROS_JAVA_PACKAGE = 'com.aliyun.ros.';
+const ROS_CDK_SCOPE = '@alicloud/';
+const ROS_JAVA_PACKAGE = 'com.aliyun.';
 export async function createPackages() {
     
     // mkdir in the pkg root
@@ -12,7 +12,8 @@ export async function createPackages() {
 
     const scopes = await tryReadPackageJson(allTypes());
     for(let index in scopes) {
-        let scope = scopes[index].split('::')[1].toLowerCase();
+        let service = scopes[index].split('::')[1].toLowerCase();
+        let scope = 'ros-cdk-' + service;
         let pkgPath = outdir + '/' + scope;
         let template_dir = __dirname + '/pkg-template';
         fs.mkdirpSync(pkgPath);
@@ -22,13 +23,14 @@ export async function createPackages() {
         pkg['description'] = pkg['description'].replace('replace-content', scope);
 
         // jsii -> java
-        pkg['jsii']['targets']['java']['package'] = ROS_JAVA_PACKAGE + scope;
+        pkg['jsii']['targets']['java']['package'] = ROS_JAVA_PACKAGE + scope.split('-').join('.');
         pkg['jsii']['targets']['java']['maven']['artifactId'] = scope;
         fs.writeFileSync(pkgPath + '/package.json', JSON.stringify(pkg, null, 2), 'utf-8');
         
         // copy README.md and gitignore
         let readme = fs.readFileSync(template_dir + '/README.md');
-        fs.writeFileSync(pkgPath + '/README.md', readme.toString().replace(/scope-name/g, scope));
+        fs.writeFileSync(pkgPath + '/README.md', readme.toString().replace(
+            /service-name/g, service.toUpperCase()).replace(/scope-name/g, scope));
         fs.copySync(template_dir + '/gitignore-template', pkgPath + '/.gitignore');
         fs.copySync(template_dir + '/LICENCE', pkgPath + '/LICENCE');
         fs.copySync(template_dir + '/NOTICE', pkgPath + '/NOTICE');

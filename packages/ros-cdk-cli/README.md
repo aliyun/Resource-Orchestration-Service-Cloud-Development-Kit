@@ -1,11 +1,11 @@
-# `@ros-cdk/ros-cdk-cli`
+# `@alicloud/ros-cdk-cli`
 
 > TODO: description
 
 ## Usage
 
 ```
-const rosCdkCli = require('@ros-cdk/ros-cdk-cli');
+const rosCdkCli = require('@alicloud/ros-cdk-cli');
 
 // TODO: DEMONSTRATE API
 ```

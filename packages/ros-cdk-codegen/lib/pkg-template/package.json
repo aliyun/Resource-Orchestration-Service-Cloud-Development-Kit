@@ -16,7 +16,7 @@
       "java": {
         "package": "replace-content",
         "maven": {
-          "groupId": "com.aliyun.ros",
+          "groupId": "com.aliyun",
           "artifactId": "replace-content"
         }
       }
@@ -34,11 +34,11 @@
     "pack": "npm pack"
   },
   "dependencies": {
-    "@ros-cdk/core": "^1.0.0",
+    "@alicloud/ros-cdk-core": "^1.0.0",
     "constructs": "^3.0.4"
   },
   "peerDependencies": {
-    "@ros-cdk/core": "^1.0.0",
+    "@alicloud/ros-cdk-core": "^1.0.0",
     "constructs": "^3.0.4"
   }
 }

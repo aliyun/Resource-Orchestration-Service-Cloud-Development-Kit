@@ -5,8 +5,8 @@ import * as path from 'path';
 export function specGenerator() {
   // client init
   let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):');
-  let accessKeyId = readlineSync.question('accessKeyId:');
-  let accessKeySecret = readlineSync.question('accessKeySecret:');
+  let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
+  let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
   const client = new rosClient({
     endpoint: endpoint ? endpoint : 'https://ros.aliyuncs.com',
     accessKeyId: accessKeyId,
@@ -122,11 +122,11 @@ export function specGenerator() {
       }
     })
     .then(() => {
-      fs.writeFileSync(path.join(__dirname, '/../spec/types.json'), JSON.stringify(Array.from(allTypes), null, '\t'));
+      fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(Array.from(allTypes), null, '\t'));
       spec['PropertyTypes'] = propertyTypes;
       spec['ResourceTypes'] = resourceTypes;
 
-      fs.writeFileSync(path.join(__dirname, '/../spec/specification.json'), JSON.stringify(spec, null, '\t'));
+      fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification.json'), JSON.stringify(spec, null, '\t'));
     });
 }
 

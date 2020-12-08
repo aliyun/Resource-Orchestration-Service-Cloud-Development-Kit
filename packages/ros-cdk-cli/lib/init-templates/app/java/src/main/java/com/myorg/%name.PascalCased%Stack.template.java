@@ -1,6 +1,6 @@
 package com.myorg;
 
-import com.aliyun.ros.core.*;
+import com.aliyun.ros.cdk.core.*;
 
 public class %name.PascalCased%Stack extends Stack {
     public %name.PascalCased%Stack(final Construct scope, final String id) {

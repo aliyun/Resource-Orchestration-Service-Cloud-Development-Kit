@@ -1,6 +1,6 @@
 package com.myorg;
 
-import com.aliyun.ros.core.*;
+import com.aliyun.ros.cdk.core.*;
 
 import java.util.Arrays;
 

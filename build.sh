@@ -18,11 +18,11 @@ setup_dependency() {
     root=$PWD
     case "$ARG1" in
       --remove-services)
-          rm -rf "$root/packages/@ros-cdk/services"
-          rm -rf "$root/packages/@ros-cdk/test"
+          rm -rf "$root/packages/@alicloud/services"
       ;;
     esac
 
+    rm -rf "$root/packages/@alicloud/test"
     lerna bootstrap
     npm install
 }
@@ -72,14 +72,20 @@ build() {
 spec2ts() {
     root=$PWD
 
-    SERVICES_DIR="$root/packages/@ros-cdk/services"
+    SERVICES_DIR="$root/packages/@alicloud/services"
     if [ ! -d "$SERVICES_DIR" ]; then
         mkdir "$SERVICES_DIR"
     fi
 
     CODE_GEN_DIR="$root/packages/ros-cdk-codegen"
     cd $CODE_GEN_DIR
+    rm -rf generatedPackages
 
+    case "$ARG1" in
+      --generate-spec)
+         npm run genspec
+      ;;
+    esac
     npm run spec2ts
 
     cd $root

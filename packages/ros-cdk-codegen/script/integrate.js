@@ -1,7 +1,7 @@
 let fs = require('fs');
 const { exit } = require('process');
 const ncp = require('ncp').ncp;
-var SRC_PATH = __dirname + '/../../@ros-cdk/services';
+var SRC_PATH = __dirname + '/../../@alicloud/services';
 var GENERATED_PATH = './generatedPackages';
 
 main();

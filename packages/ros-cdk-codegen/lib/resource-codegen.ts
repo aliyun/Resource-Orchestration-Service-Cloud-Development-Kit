@@ -1,4 +1,4 @@
-import { schema } from '@ros-cdk/ros-spec';
+import { schema } from '@alicloud/ros-cdk-spec';
 import { CodeMaker } from 'codemaker';
 import * as genspec from './genspec';
 import { itemTypeNames, scalarTypeNames, SpecName } from './spec-utils';
@@ -18,7 +18,7 @@ export interface ResourceCodeGeneratorOptions {
   /**
    * How to import the core library.
    *
-   * @default 'ros-cdk-zero/lib/core'
+   * @default '@alicloud/ros-cdk-core'
    */
   readonly coreImport?: string;
 }
@@ -44,7 +44,7 @@ export default class ResourceCodeGenerator {
   ) {
     this.outputFile = `${moduleName}`;
     this.code.openFile(this.outputFile);
-    const coreImport = options.coreImport ?? 'ros-cdk-zero/lib/core';
+    const coreImport = options.coreImport ?? '@alicloud/ros-cdk-core';
     this.code.line(`import * as ${CORE} from '${coreImport}';`);
   }
 
@@ -98,7 +98,7 @@ export default class ResourceCodeGenerator {
     rosResourceContext: genspec.CodeName,
     spec: schema.ResourceType,
   ): genspec.CodeName | undefined {
-    if (!spec.Properties || Object.keys(spec.Properties).length === 0) {
+    if (!spec.Properties) {
       return;
     }
     const name = genspec.CodeName.forResourceProperties(resourceContext);
@@ -235,7 +235,7 @@ export default class ResourceCodeGenerator {
     this.code.line(`super(scope, id);`);
 
     // initialize all property class members
-    if (propsType && spec.Properties) {
+    if (propsType) {
       this.code.line();
       this.code.openBlock(`const ${CORE}${resourceName.className} = new ${rosResourceName.className}(this, id, `);
       if (spec.Properties) {
@@ -259,6 +259,9 @@ export default class ResourceCodeGenerator {
       }
       this.code.closeBlockFormatter = (s) => `}${s}`;
       this.code.closeBlock(`, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);`);
+      if (spec.Properties && Object.keys(spec.Properties).length === 0) {
+        this.code.line(`props;`);
+      }
     }
     this.code.line(`this.resource = ${CORE}${resourceName.className};`);
     // initialize all attribute properties

@@ -1,4 +1,4 @@
-import * as cxapi from '@ros-cdk/ros-cxapi';
+import * as cxapi from '@alicloud/ros-cdk-cxapi';
 import * as colors from 'colors/safe';
 import * as minimatch from 'minimatch';
 import { error, print, warning } from '../logging';

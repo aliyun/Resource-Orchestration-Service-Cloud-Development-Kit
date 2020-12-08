@@ -1,4 +1,4 @@
-import { schema } from '@ros-cdk/ros-spec';
+import { schema } from '@alicloud/ros-cdk-spec';
 import { joinIf } from './util';
 
 /**

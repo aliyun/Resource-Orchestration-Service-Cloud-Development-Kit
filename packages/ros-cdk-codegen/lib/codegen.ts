@@ -1,4 +1,4 @@
-import { schema } from '@ros-cdk/ros-spec';
+import { schema } from '@alicloud/ros-cdk-spec';
 import { CodeMaker } from 'codemaker';
 import * as genspec from './genspec';
 import { itemTypeNames, PropertyAttributeName, scalarTypeNames, SpecName } from './spec-utils';
@@ -19,7 +19,7 @@ export interface CodeGeneratorOptions {
   /**
    * How to import the core library.
    *
-   * @default 'ros-cdk-zero/lib/core'
+   * @default '@alicloud/ros-cdk-core'
    */
   readonly coreImport?: string;
 }
@@ -45,7 +45,7 @@ export default class CodeGenerator {
   ) {
     this.outputFile = `${moduleName}`;
     this.code.openFile(this.outputFile);
-    const coreImport = options.coreImport ?? 'ros-cdk-zero/lib/core';
+    const coreImport = options.coreImport ?? '@alicloud/ros-cdk-core';
 
     this.code.line('// Generated from the AliCloud ROS Resource Specification');
     this.code.line();
@@ -102,7 +102,7 @@ export default class CodeGenerator {
   }
 
   private emitPropsType(resourceContext: genspec.CodeName, spec: schema.ResourceType): genspec.CodeName | undefined {
-    if (!spec.Properties || Object.keys(spec.Properties).length === 0) {
+    if (!spec.Properties) {
       return;
     }
     const name = genspec.CodeName.forResourceProperties(resourceContext);

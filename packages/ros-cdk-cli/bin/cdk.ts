@@ -146,7 +146,7 @@ async function initCommandLine() {
     synthesizer: execProgram,
   });
 
-  const cmd = argv._[0];
+  const cmd = String(argv._[0]);
 
   const returnValue = await main(cmd, argv);
   if (typeof returnValue === 'object') {

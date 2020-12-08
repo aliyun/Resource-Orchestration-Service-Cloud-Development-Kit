@@ -38,13 +38,13 @@
     <dependencies>
         <!-- AliCloud ROS Cloud Development Kit (ROS CDK) -->
         <dependency>
-            <groupId>com.aliyun.ros</groupId>
-            <artifactId>core</artifactId>
+            <groupId>com.aliyun</groupId>
+            <artifactId>ros-cdk-core</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
-            <groupId>com.aliyun.ros</groupId>
-            <artifactId>ecs</artifactId>
+            <groupId>com.aliyun</groupId>
+            <artifactId>ros-cdk-ecs</artifactId>
             <version>1.0.0</version>
         </dependency>
 

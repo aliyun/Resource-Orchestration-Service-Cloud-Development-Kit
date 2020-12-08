@@ -26,10 +26,10 @@ async function main() {
       type: 'string',
       desc:
         'The typescript import to use for the CDK core module. Can also be defined in package.json under "cdk-build.spec2ts-core"',
-      default: '@ros-cdk/core',
+      default: '@alicloud/ros-cdk-core',
     })
     .epilog(
-      'if --scope is not defined, epsc2ts will try to obtain the scope from the local package.json under the "cdk-build.category" key.',
+      'if --scope is not defined, spec2ts will try to obtain the scope from the local package.json under the "cdk-build.category" key.',
     ).argv;
 
   if (argv.spec !== 'false') {

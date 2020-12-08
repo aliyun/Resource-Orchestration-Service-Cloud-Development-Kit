@@ -1,8 +1,8 @@
 {
   "packages": [
     "packages/*",
-    "packages/@ros-cdk/*",
-    "packages/@ros-cdk/services/*"
+    "packages/@alicloud/*",
+    "packages/@alicloud/services/*"
   ],
   "version": "1.0.0"
 }

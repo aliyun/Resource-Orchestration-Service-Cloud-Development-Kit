@@ -1,4 +1,4 @@
-import * as rosSpec from '@ros-cdk/ros-spec';
+import * as rosSpec from '@alicloud/ros-cdk-spec';
 import * as fs from 'fs-extra';
 import CodeGenerator, { CodeGeneratorOptions } from './codegen';
 import ResourceCodeGenerator, { ResourceCodeGeneratorOptions } from './resource-codegen';
@@ -30,7 +30,7 @@ export default async function (
     // rosResourceFileName: the xxx.generated.ts
     const rosResourceFileName = `${moduleName}${rosResourceName}`;
     const affix = computeAffix(scope, scopes);
-    const scopePath = `${outPath}/${moduleName}/lib`;
+    const scopePath = `${outPath}/ros-cdk-${moduleName}/lib`;
     // fs.mkdirp(scopePath);
     const generator = new CodeGenerator(rosResourceFileName, spec, affix, options);
     generator.emitCode();

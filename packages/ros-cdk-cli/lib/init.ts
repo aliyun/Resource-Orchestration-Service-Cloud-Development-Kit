@@ -1,4 +1,4 @@
-import * as cxapi from '@ros-cdk/ros-cxapi';
+import * as cxapi from '@alicloud/ros-cdk-cxapi';
 import * as childProcess from 'child_process';
 import * as colors from 'colors/safe';
 import * as fs from 'fs-extra';
@@ -126,7 +126,7 @@ export class InitTemplate {
   private async installFiles(sourceDirectory: string, targetDirectory: string, project: ProjectInfo) {
     for (const file of await fs.readdir(sourceDirectory)) {
       const fromFile = path.join(sourceDirectory, file);
-      const toFile = path.join(targetDirectory, this.expand(file, project));
+      const toFile = path.join(targetDirectory, this.expand(unescape(file), project));
       if ((await fs.stat(fromFile)).isDirectory()) {
         await fs.mkdir(toFile);
         await this.installFiles(fromFile, toFile, project);
@@ -136,6 +136,9 @@ export class InitTemplate {
         continue;
       } else if (file.match(/^.*\.hook\.(d.)?[^.]+$/)) {
         await this.installProcessed(fromFile, path.join(targetDirectory, 'tmp', file), project);
+        continue;
+      } else if (file.endsWith('.template')) {
+        await this.installProcessed(fromFile, toFile.substring(0, toFile.length - 9), project);
         continue;
       } else {
         await fs.copy(fromFile, toFile);
