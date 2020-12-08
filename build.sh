@@ -158,6 +158,11 @@ copy_js() {
       rm -f $f
     done
 
+    for f in $(find packages -name ".jsii"); do
+      rm -f $f
+    done
+
+    lerna clean
     lerna run pack
 
     for f in $(find packages -name "*.tgz" | grep -v dist); do
