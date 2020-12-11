@@ -122,8 +122,8 @@ export class CdkToolkit {
     this.syncStackInfo();
     const stacks = await this.selectStacksForList(selectors);
     for (const stack of stacks.stackArtifacts) {
-      let status = await this.findStackInfo(stack.id);
-      if (status.length === DEPLOY_STACK_ID_LENGTH) status = DEPLOY_STACK;
+      let stackInfo = await this.findStackInfo(stack.id);
+      let status = stackInfo.status
       data(stack.id, status.toString());
     }
   }
@@ -188,26 +188,34 @@ export class CdkToolkit {
         count++;
       }
     }
-    let status = await this.findStackInfo(stackName);
-    if (status.length === DEPLOY_STACK_ID_LENGTH) {
-      content['StackId'] = status;
+    let stackInfo = await this.findStackInfo(stackName);
+    if (stackInfo.stackId) {
+      content['StackId'] = stackInfo.stackId;
       client.updateStack(content).then((res: any) => {
+        this.updateStackInfo(stackName, res.StackId);
         success(
           `\n ✅ The deployment(update stack) has completed!\nRequestedId: %s\nStackId: %s`,
           colors.blue(res.RequestId),
           colors.blue(res.StackId),
         );
-      }, () => {
+      }, (ex: any) => {
         // when reject, means the stack in ros has been deleted from console
         // so use create api to create a new stack
-        client.createStack(content).then((res: any) => {
-          this.updateStackInfo(stackName, res.StackId);
-          success(
-            `\n ✅ The deployment(create stack) has completed!\nRequestedId: %s\nStackId: %s`,
-            colors.blue(res.RequestId),
-            colors.blue(res.StackId),
-          );
-        });
+        if (ex.code == 'NotSupported' && ex.message.startsWith('Update the completely same stack')) {
+          this.updateStackInfo(stackName, stackInfo.stackId);
+          success('The stack is completely the same, there is no need to update.')
+        }
+        else if (ex.code == 'StackNotFound') {
+          client.createStack(content).then((res: any) => {
+            this.updateStackInfo(stackName, res.StackId);
+            success(`\n ✅ The deployment(create stack) has completed!\nRequestedId: %s\nStackId: %s`, colors.blue(res.RequestId), colors.blue(res.StackId));
+          }, (ex2: any) => {
+            error('fail to create stack(%s): %s %s', ex2.requestId, ex2.code, ex2.message)
+          });
+        }
+        else {
+          error('fail to update stack: %s %s', ex.code, ex.message)
+        }
       });
     } else {
       // fixed
@@ -220,6 +228,8 @@ export class CdkToolkit {
           colors.blue(res.RequestId),
           colors.blue(res.StackId),
         );
+      }, (ex: any) => {
+        error('fail to create stack: %s %s', ex.code, ex.message)
       });
     }
   }
@@ -232,19 +242,24 @@ export class CdkToolkit {
     const stream = options.stream || process.stderr;
     const contextLines = options.contextLines || 3;
     for (let stack of stacks.stackArtifacts) {
-      let stackId = await this.findStackInfo(stack.id);
-      if (stackId.length !== DEPLOY_STACK_ID_LENGTH) {
+      let stackInfo = await this.findStackInfo(stack.id);
+      if (!stackInfo.stackId) {
         stream.write(format('Stack %s has not been deployed.\n', colors.bold(stack.displayName)));
         continue;
       }
-      client.getTemplate({RegionId: temp, StackId: stackId})
+      client.getTemplate({RegionId: temp, StackId: stackInfo.stackId})
         .then((res: any) => {
           const template = deserializeStructure(res.TemplateBody);
           stream.write(format('Stack %s\n', colors.bold(stack.displayName)));
           printStackDiff(template, stack, contextLines, stream);
-        }, () => {
-          warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to synth.`);
-          this.updateStackInfo(stack.id, SYNTH_STACK);
+        }, (ex: any) => {
+          if (ex.code == 'StackNotFound') {
+            warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to synth.`);
+            this.updateStackInfo(stack.id, SYNTH_STACK);
+          }
+          else {
+            error('fail to get template: %s %s', ex.code, ex.message);
+          }
         });
     }
   }
@@ -254,31 +269,43 @@ export class CdkToolkit {
     let stacks = await this.selectStacksForDestroy(options.stackNames);
     let stackNames: string[] = [];
     for (let stack of stacks.stackArtifacts) {
-      if ((await this.findStackInfo(stack.id)).length === DEPLOY_STACK_ID_LENGTH) {
+      if ((await this.findStackInfo(stack.id)).stackId) {
         stackNames.push(stack.id);
       }
     }
-    let confirm = readlineSync.question(
-      'The following stack(s) will be destroyed(Only deployed stacks will be displayed).\n\n' +
-        stackNames.toString() +
-        '\n\nPlease confirm.(Y/N)\n',
-    );
-    if (confirm === 'n' || confirm === 'N') {
-      return;
+    if (!options.quiet) {
+      while (true) {
+        let confirm = readlineSync.question(
+            'The following stack(s) will be destroyed(Only deployed stacks will be displayed).\n\n' +
+            stackNames.toString() +
+            '\n\nPlease confirm.(Y/N)\n',
+        );
+        if (confirm === 'n' || confirm === 'N') {
+          return;
+        }
+        if (confirm === 'y' || confirm === 'Y') {
+          break;
+        }
+      }
     }
     const client = await this.getRosClient();
     for (let stackName of stackNames) {
       client
         .deleteStack({
-          StackId: await this.findStackInfo(stackName),
+          StackId: (await this.findStackInfo(stackName)).stackId,
           RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
         })
         .then((res: any) => {
           this.updateStackInfo(stackName, DESTROY_STACK);
           success(`\n ✅ Deleted\nRequestedId: %s`, colors.blue(res.RequestId));
-        }, () => {
-          warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to synth.`);
-          this.updateStackInfo(stackName, SYNTH_STACK);
+        }, (ex: any) => {
+          if (ex.code == 'StackNotFound') {
+            warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+            this.updateStackInfo(stackName, DESTROY_STACK);
+          }
+          else {
+            error('fail to delete stack: %s %s', ex.code, ex.message)
+          }
         });
     }
   }
@@ -300,7 +327,10 @@ export class CdkToolkit {
       if (value) {
         temp[stack.id] = value;
       } else {
-        temp[stack.id] = INIT_STACK;
+        temp[stack.id] = {
+          status: INIT_STACK,
+          stackId: null
+        };
       }
     }
 
@@ -311,7 +341,19 @@ export class CdkToolkit {
     let filePath = path.join(LOCAL_PATH + STACK_INFO);
     let fileContent = fs.readFileSync(filePath).toString();
     let info = JSON.parse(fileContent);
-    info[stackName] = value;
+    let stackInfo = info[stackName];
+    if (!stackInfo) {
+      stackInfo = info[stackName] = {};
+    }
+    if (value.length === DEPLOY_STACK_ID_LENGTH) {
+      stackInfo.status = DEPLOY_STACK;
+      stackInfo.stackId = value
+    } else {
+      stackInfo.status = value;
+      if (value === DESTROY_STACK) {
+        stackInfo.stackId = null;
+      }
+    }
     fs.writeFileSync(filePath, JSON.stringify(info, null, '\t'));
   }
 
@@ -405,6 +447,7 @@ export interface DeployOptions {
 export interface DestroyOptions {
   region?: string;
   stackNames: string[];
+  quiet?: boolean;
 }
 
 export interface Tag {

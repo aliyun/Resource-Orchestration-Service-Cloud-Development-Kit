@@ -103,7 +103,13 @@ async function parseCommandLineArguments() {
           }),
     )
     .command('destroy [STACKS..]', 'Destroy the stack(s) named STACKS', (yargs) =>
-      yargs.option('region', { type: 'string', alias: 'r', desc: 'The region where the stack is established' }),
+      yargs.option('region', { type: 'string', alias: 'r', desc: 'The region where the stack is established' })
+            .option('quiet', {
+              type: 'boolean',
+              alias: 'q',
+              desc: 'destroy without confirm',
+              default: false
+            }),
     )
     .command('config', 'Set your ros account configuration.', (yargs) =>
       yargs.option('global', {
@@ -203,9 +209,10 @@ async function initCommandLine() {
         return;
 
       case 'destroy':
-        await cli.destroy({
+        await cli.destralicloud-ros-cdk-cli-1.0.1.tgzoy({
           region: args.region,
           stackNames: args.STACKS,
+          quiet: args.quiet,
         });
         return;
 

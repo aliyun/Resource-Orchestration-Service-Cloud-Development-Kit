@@ -91,6 +91,7 @@ export interface DeployOptions {
 export interface DestroyOptions {
     region?: string;
     stackNames: string[];
+    quiet?: boolean;
 }
 export interface Tag {
     readonly Key: string;
