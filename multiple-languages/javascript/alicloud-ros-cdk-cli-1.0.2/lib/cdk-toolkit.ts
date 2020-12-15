@@ -78,7 +78,7 @@ export class CdkToolkit {
       let file = fs.readFileSync(filePath).toString();
       return JSON.parse(file)[key];
     }
-    error("Please use 'ros config (-g)' to set your account configuration firstly!");
+    error("Please use 'ros-cdk config (-g)' to set your account configuration firstly!");
     exit();
   }
   constructor(private readonly props: CdkToolkitProps) {}
@@ -119,7 +119,7 @@ export class CdkToolkit {
   }
 
   public async list(selectors: string[]) {
-    this.syncStackInfo();
+    await this.syncStackInfo();
     const stacks = await this.selectStacksForList(selectors);
     for (const stack of stacks.stackArtifacts) {
       let stackInfo = await this.findStackInfo(stack.id);
@@ -138,16 +138,16 @@ export class CdkToolkit {
    * should be supplied, where the templates will be written.
    */
   public async synth(stackNames: string[], exclusively: boolean): Promise<any> {
-    this.syncStackInfo();
+    await this.syncStackInfo();
     const stacks = await this.selectStacksForDiff(stackNames, exclusively);
 
     // if we have a single stack, print it to STDOUT
     if (stacks.stackCount === 1) {
-      this.updateStackInfo(stacks.firstStack.id, SYNTH_STACK);
+      await this.updateStackInfo(stacks.firstStack.id, SYNTH_STACK);
       return stacks.firstStack.template;
     } else {
       for (let stack of stacks.stackArtifacts) {
-        this.updateStackInfo(stack.id, SYNTH_STACK);
+        await this.updateStackInfo(stack.id, SYNTH_STACK);
       }
     }
 
@@ -166,7 +166,7 @@ export class CdkToolkit {
   }
 
   public async deploy(options: DeployOptions) {
-    this.syncStackInfo();
+    await this.syncStackInfo();
     const stacks = await this.selectStacksForDeploy(options.stackNames, options.exclusively);
     const stackName = options.stackNames.length !== 0 ? options.stackNames[0] : stacks.stackArtifacts[0].id;
     let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId');
@@ -265,7 +265,7 @@ export class CdkToolkit {
   }
 
   public async destroy(options: DestroyOptions) {
-    this.syncStackInfo();
+    await this.syncStackInfo();
     let stacks = await this.selectStacksForDestroy(options.stackNames);
     let stackNames: string[] = [];
     for (let stack of stacks.stackArtifacts) {
