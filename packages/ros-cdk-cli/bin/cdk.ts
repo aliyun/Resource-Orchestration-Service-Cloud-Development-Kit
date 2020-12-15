@@ -15,7 +15,7 @@ async function parseCommandLineArguments() {
   const initTemplateLanuages = await availableInitLanguages;
   return yargs
     .env('CDK')
-    .usage('Usage: ros -a <cdk-app> COMMAND')
+    .usage('Usage: ros-cdk COMMAND')
     .option('json', {
       type: 'boolean',
       alias: 'j',
@@ -67,7 +67,7 @@ async function parseCommandLineArguments() {
           desc: "Only synthesize requested stacks, don't include dependencies",
         }),
     )
-    .command('deploy [STACKS..]', 'Deploys the stack(s) named STACKS into your ros account', (yargs) =>
+    .command('deploy [STACKS..]', 'Deploys the stack(s) named STACKS to ROS into your alicloud account', (yargs) =>
       yargs
         .option('parameters', {
           type: 'array',
@@ -111,7 +111,7 @@ async function parseCommandLineArguments() {
               default: false
             }),
     )
-    .command('config', 'Set your ros account configuration.', (yargs) =>
+    .command('config', 'Set your alicloud account configuration.', (yargs) =>
       yargs.option('global', {
         type: 'boolean',
         alias: 'g',
@@ -209,7 +209,7 @@ async function initCommandLine() {
         return;
 
       case 'destroy':
-        await cli.destralicloud-ros-cdk-cli-1.0.1.tgzoy({
+        await cli.destroy({
           region: args.region,
           stackNames: args.STACKS,
           quiet: args.quiet,
