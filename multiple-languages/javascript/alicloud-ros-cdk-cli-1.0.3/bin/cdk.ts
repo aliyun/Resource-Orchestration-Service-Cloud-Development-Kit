@@ -111,11 +111,64 @@ async function parseCommandLineArguments() {
               default: false
             }),
     )
+    .command('event [STACK..]', 'Get resource events within the resource STACK', (yargs) =>
+      yargs.option('region', { type: 'string', alias: 'r', desc: 'The region where the stack is established' })
+      .option('logical-resource-id', {
+        type: 'string',
+        alias: 'l',
+        desc: 'Stack logical resource id'
+      })
+      .option('page-number', {
+        type: 'string',
+        alias: 'n',
+        desc: 'The number of the page to return, Pages start from page 1. Default value:1',
+      })
+      .option('page-size', {
+        type: 'string',
+        alias: 's',
+        desc: 'The number of entries to return on each page, Maximum value: 50. Default value: 10',
+      })
+    )
+    .command('resource [STACKS..]', 'Get resources in the resource STACKS', (yargs) =>
+      yargs.option('region', { type: 'string', alias: 'r', desc: 'The region where the stack is established' })
+    )
+    .command('list-stacks [STACKS..]', 'Get resources in the resource STACKS', (yargs) =>
+      yargs.option('region', { type: 'string', alias: 'r', desc: 'The region where the stack is established' })
+      .option('all', {
+        type: 'boolean',
+        alias: 'a',
+        desc: 'Get all Stacks in account set config Region.',
+        default: false,
+      })
+      .option('page-number', {
+        type: 'string',
+        alias: 'n',
+        desc: 'The number of the page to return, Pages start from page 1. Default value:1',
+      })
+      .option('page-size', {
+        type: 'string',
+        alias: 's',
+        desc: 'The number of entries to return on each page, Maximum value: 100. Default value: 10',
+      })
+    )
+    .command('load-config', 'Load Aliyun CLI config to CDK.', (yargs) =>
+      yargs.option('global', {
+        type: 'boolean',
+        alias: 'g',
+        desc: 'Whether the config should be stroed in global env',
+        default: false,
+      })
+      .option('file-path', {
+        type: 'string',
+        alias: 'f',
+        desc: 'Specify the cli configuration file path to load',
+      })
+    )
     .command('config', 'Set your alicloud account configuration.', (yargs) =>
       yargs.option('global', {
         type: 'boolean',
         alias: 'g',
-        desc: 'whether the config should be stroed in global env',
+        desc: 'Whether the config should be stroed in global env',
         default: false,
       }),
     )
@@ -213,6 +266,40 @@ async function initCommandLine() {
           region: args.region,
           stackNames: args.STACKS,
           quiet: args.quiet,
+        });
+        return;
+
+      case 'event':
+        await cli.event({
+          region: args.region,
+          stackName: args['STACK'],
+          logicalResourceId: args['logical-resource-id'],
+          pageNumber: args['page-number'],
+          pageSize: args['page-size']
+        });
+        return;
+
+      case 'resource':
+        await cli.resource({
+          region: args.region,
+          stackNames: args.STACKS
+        });
+        return;
+
+      case 'list-stacks':
+        await cli.listStacks({
+          region: args.region,
+          stackNames: args.STACKS,
+          all: args.all,
+          pageNumber: args['page-number'],
+          pageSize: args['page-size']
+        });
+        return;
+
+      case 'load-config':
+        await cli.loadCliConfig({
+          global: args.global, 
+          loadFilePath: args['file-path']
         });
         return;
 

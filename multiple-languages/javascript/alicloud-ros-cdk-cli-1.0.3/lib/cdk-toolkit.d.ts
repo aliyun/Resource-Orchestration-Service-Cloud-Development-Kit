@@ -41,6 +41,7 @@ export declare class CdkToolkit {
     constructor(props: CdkToolkitProps);
     getRosClient(): Promise<any>;
     config(global: boolean): Promise<void>;
+    loadCliConfig(options: LoadConfigOptions): Promise<void>;
     list(selectors: string[]): Promise<void>;
     /**
      * Synthesize the given set of stacks (called when the user runs 'cdk synth')
@@ -54,6 +55,9 @@ export declare class CdkToolkit {
     synth(stackNames: string[], exclusively: boolean): Promise<any>;
     deploy(options: DeployOptions): Promise<void>;
     diff(options: DiffOptions): Promise<void>;
+    event(options: EventOptions): Promise<void>;
+    resource(options: ResourceOptions): Promise<void>;
+    listStacks(options: ListStackOptions): Promise<void>;
     destroy(options: DestroyOptions): Promise<void>;
     private syncStackInfo;
     private updateStackInfo;
@@ -67,6 +71,7 @@ export declare class CdkToolkit {
      */
     private validateStacks;
     private assembly;
+    private getCliConfig;
 }
 export interface DiffOptions {
     region?: string;
@@ -92,6 +97,28 @@ export interface DestroyOptions {
     region?: string;
     stackNames: string[];
     quiet?: boolean;
+}
+export interface EventOptions {
+    region?: string;
+    stackName: string[];
+    logicalResourceId: string;
+    pageNumber: string;
+    pageSize: string;
+}
+export interface ResourceOptions {
+    region?: string;
+    stackNames: string[];
+}
+export interface ListStackOptions {
+    region?: string;
+    stackNames: string[];
+    pageNumber: string;
+    pageSize: string;
+    all: string;
+}
+export interface LoadConfigOptions {
+    global?: string;
+    loadFilePath: string;
 }
 export interface Tag {
     readonly Key: string;

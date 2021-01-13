@@ -1,6 +1,6 @@
 {
   "name": "@alicloud/ros-cdk-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "ROS CDK Toolkit",
   "scripts": {
     "build": "tsc",
@@ -50,6 +50,7 @@
     "yaml": "^1.10.0",
     "yargs": "^15.4.1",
     "colors": "^1.4.0",
-    "@alicloud/ros-2019-09-10": "^1.0.0"
+    "@alicloud/ros-2019-09-10": "^1.0.0",
+    "@alicloud/credentials": "^2.1.0"
   }
 }

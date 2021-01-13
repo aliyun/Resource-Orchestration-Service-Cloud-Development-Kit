@@ -5,7 +5,8 @@ import * as readlineSync from 'readline-sync';
 import { decipher, cipher } from './util/cipher';
 import { format } from 'util';
 const rosClient = require('@alicloud/ros-2019-09-10');
-
+const os = require('os');
+import Credentials, { Config } from '@alicloud/credentials';
 import { CloudAssembly, DefaultSelection, ExtendedStackSelection, StackCollection } from './api/cloud-assembly';
 import { CloudExecutable } from './api/cloud-executable';
 import { data, error, print, success, warning } from './logging';
@@ -19,7 +20,7 @@ const LOCAL_PATH = './';
 const GLOBAL_PATH = __dirname + '/../';
 const STACK_INFO = 'stack.info.json';
 const DEPLOY_STACK_ID_LENGTH = 36;
-
+const CLI_CONFIG_FILE = '/.aliyun/config.json';
 const INIT_STACK = 'init';
 const SYNTH_STACK = 'synth';
 const DEPLOY_STACK = 'deploy';
@@ -65,7 +66,7 @@ export interface CdkToolkitProps {
  *
  */
 export class CdkToolkit {
-  private static async getJson(fileName: string, key: string) {
+  private static async getJson(fileName: string, key: string, allowedEmpty: boolean = false) {
     let filePath = LOCAL_PATH + fileName;
     if (fs.existsSync(filePath)) {
       let file = fs.readFileSync(filePath).toString();
@@ -78,44 +79,220 @@ export class CdkToolkit {
       let file = fs.readFileSync(filePath).toString();
       return JSON.parse(file)[key];
     }
-    error("Please use 'ros-cdk config (-g)' to set your account configuration firstly!");
-    exit();
+    if (!allowedEmpty) {
+      error("Please use 'ros-cdk config (-g)' to set your account configuration firstly!");
+      exit();
+    }
+    return null
   }
   constructor(private readonly props: CdkToolkitProps) {}
 
   public async getRosClient() {
     let accessKeyId = await decipher(await CdkToolkit.getJson(CONFIG_NAME, 'accessKeyId'));
     let accessKeySecret = await decipher(await CdkToolkit.getJson(CONFIG_NAME, 'accessKeySecret'));
-    const client = new rosClient({
-      endpoint: await CdkToolkit.getJson(CONFIG_NAME, 'endpoint'),
-      accessKeyId: accessKeyId,
-      accessKeySecret: accessKeySecret,
-    });
+    let securityToken = await CdkToolkit.getJson(CONFIG_NAME, 'securityToken', true);
+    let client; 
+    if (!securityToken) {
+      client = new rosClient({
+        endpoint: await CdkToolkit.getJson(CONFIG_NAME, 'endpoint'),
+        accessKeyId: accessKeyId,
+        accessKeySecret: accessKeySecret
+      });
+    }
+    else {
+      client = new rosClient({
+        endpoint: await CdkToolkit.getJson(CONFIG_NAME, 'endpoint'),
+        accessKeyId: accessKeyId,
+        accessKeySecret: accessKeySecret,
+        securityToken: await decipher(securityToken)
+      });
+    }
     return client;
   }
 
   public async config(global: boolean) {
     let configSavePath = (global ? GLOBAL_PATH : LOCAL_PATH) + CONFIG_NAME;
-    let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):');
-    let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
-    let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
-    let regionId = readlineSync.question('defaultRegionId(optional, default:cn-hangzhou):');
-    endpoint = endpoint ? endpoint : 'https://ros.aliyuncs.com';
-    regionId = regionId ? regionId : 'cn-hangzhou';
-    if (endpoint.length === 0 || accessKeyId.length === 0 || accessKeySecret.length === 0) {
-      error(
-        'WANRNING: If want to deploy or delete stack, the endpoint, accessKeyId and accessKeySecret must be provided.',
-      );
+    let modeType = ['AK', 'StsToken', 'RamRoleArn', 'EcsRamRole']
+    let endpoint = readlineSync.question('endpoint(optional, default:https://ros.aliyuncs.com):',{defaultInput: 'https://ros.aliyuncs.com'});
+    let regionId = readlineSync.question('defaultRegionId(optional, default:cn-hangzhou):', {defaultInput: 'cn-hangzhou'});
+    let modeIndex = readlineSync.keyInSelect(modeType,'Authenticate mode:');
+    let inputConfigInfo;
+    let newAccessKeyId;
+    let newAccessKeySecret;
+    let newSecurityToken;
+    let configInfo: any = {};
+    if (modeType[modeIndex] === 'EcsRamRole'){
+      let roleName = readlineSync.question('roleName:');
+      inputConfigInfo = new Config({
+        type: 'ecs_ram_role',
+        roleName: roleName
+      });
     }
-    let configInfo = {
+    else if (modeType[modeIndex] === 'StsToken'){
+      let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
+      let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+      let securityToken = readlineSync.question('securityToken:', {hideEchoBack: true});
+      inputConfigInfo = new Config({
+        type: 'sts',
+        accessKeyId: accessKeyId,
+        accessKeySecret: accessKeySecret,
+        securityToken: securityToken
+      });
+    }
+    else if (modeType[modeIndex] === 'RamRoleArn'){
+      let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
+      let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+      let roleArn = readlineSync.question('roleArn(eg: acs:ram::******:role/******):');
+      let roleSessionName = readlineSync.question('roleSessionName:');
+      inputConfigInfo = new Config({
+        type: 'ram_role_arn',
+        accessKeyId: accessKeyId,
+        accessKeySecret: accessKeySecret,
+        roleArn: roleArn,
+        roleSessionName: roleSessionName
+      });
+    }
+    else if (modeType[modeIndex] === 'AK') {
+      let accessKeyId = readlineSync.question('accessKeyId:', {hideEchoBack: true});
+      let accessKeySecret = readlineSync.question('accessKeySecret:', {hideEchoBack: true});
+      inputConfigInfo = new Config({
+        type: 'access_key',
+        accessKeyId: accessKeyId,
+        accessKeySecret: accessKeySecret
+      });
+    }
+    else {
+      error(
+        'WANRNING: If want to deploy or delete stack, a certification method must be selected',
+      );
+      exit();
+    }
+    const cred = new Credentials(inputConfigInfo);
+    try {
+      newAccessKeyId = await cred.getAccessKeyId();
+      newAccessKeySecret = await cred.getAccessKeySecret();
+      newSecurityToken = await cred.getSecurityToken();
+    } catch (e) {
+      error(
+        'WANRNING: Please check the accuracy of the certification information entered!' + e.message,
+      );
+      exit();
+    }
+    configInfo = {
       endpoint: endpoint,
       regionId: regionId,
-      accessKeyId: await cipher(accessKeyId),
-      accessKeySecret: await cipher(accessKeySecret),
+      accessKeyId: await cipher(newAccessKeyId),
+      accessKeySecret: await cipher(newAccessKeySecret)
     };
+    if (newSecurityToken) {
+      configInfo.securityToken = await cipher(newSecurityToken)
+    }
     let file = path.join(configSavePath);
     fs.writeFileSync(file, JSON.stringify(configInfo, null, '\t'));
     success(`\n ✅ Your cdk configuration has been saved successfully!`);
+  }
+
+  public async loadCliConfig(options: LoadConfigOptions) {
+    let configSavePath = (options.global ? GLOBAL_PATH : LOCAL_PATH) + CONFIG_NAME;
+    let configureInfos = await this.getCliConfig(options.loadFilePath)
+    let modeType = Object.keys(configureInfos);
+    let modeIndex = readlineSync.keyInSelect(modeType,'Select authenticate mode:');
+    let profileNames: string[] = [];
+    let profileConfig: any = {};
+    if (modeIndex === -1) {
+      error(
+        'WANRNING: If want to deploy or delete stack, a certification method must be selected',
+      );
+      exit();
+    }
+    else if (modeType[modeIndex] === 'AK') {
+      profileNames = configureInfos.AK.map((item: { name: any; }) => item.name)
+    }
+    else if (modeType[modeIndex] === 'StsToken') {
+      profileNames = configureInfos.StsToken.map((item: { name: any; }) => item.name)
+    }
+    else if (modeType[modeIndex] === 'RamRoleArn') {
+      profileNames = configureInfos.RamRoleArn.map((item: { name: any; }) => item.name)
+    }
+    else if (modeType[modeIndex] === 'EcsRamRole') {
+      profileNames = configureInfos.EcsRamRole.map((item: { name: any; }) => item.name)
+    }
+    let profileIndex = readlineSync.keyInSelect(profileNames,'Select Authenticate profile name:');
+    if (profileIndex === -1) {
+      error(
+        'WANRNING: If want to deploy or delete stack, a certification profile must be selected',
+      );
+      exit();
+    }
+    let endpoint = await CdkToolkit.getJson(CONFIG_NAME, 'endpoint', true)
+    let regionId;
+    let configInfo;
+    let newAccessKeyId;
+    let newAccessKeySecret;
+    let newSecurityToken;
+    let newConfig: any = {};
+    endpoint = endpoint ? endpoint : 'https://ros.aliyuncs.com';
+    switch (modeType[modeIndex]){
+      case 'AK':
+        profileConfig = configureInfos.AK.find((profiles: { name: string; }) => profiles.name === profileNames[profileIndex]);
+        configInfo = new Config({
+          type: 'access_key',
+          accessKeyId: profileConfig['accessKeyId'],
+          accessKeySecret: profileConfig['accessKeySecret']
+        });
+        break;
+      case 'StsToken':
+        profileConfig = configureInfos.StsToken.find((profiles: { name: string; }) => profiles.name === profileNames[profileIndex]);
+        configInfo = new Config({
+          type: 'sts',
+          accessKeyId: profileConfig['accessKeyId'],
+          accessKeySecret: profileConfig['accessKeySecret'],
+          securityToken: profileConfig['securityToken']
+        });
+        break;
+      case 'RamRoleArn':
+        profileConfig = configureInfos.RamRoleArn.find((profiles: { name: string; }) => profiles.name === profileNames[profileIndex]);
+        configInfo = new Config({
+          type: 'ram_role_arn',
+          accessKeyId: profileConfig['accessKeyId'],
+          accessKeySecret: profileConfig['accessKeySecret'],
+          roleArn: profileConfig['roleArn'],
+          roleSessionName: profileConfig['roleSessionName']
+        });
+        break;
+      case 'EcsRamRole':
+        profileConfig = configureInfos.EcsRamRole.find((profiles: { name: string; }) => profiles.name === profileNames[profileIndex]);
+        configInfo = new Config({
+          type: 'ecs_ram_role',
+          roleName: profileConfig['roleName']
+        });
+        break;
+    }
+    regionId = profileConfig['region'] ? profileConfig['region'] :'cn-hangzhou';
+    const cred = new Credentials(configInfo);
+    try {
+      newAccessKeyId = await cred.getAccessKeyId();
+      newAccessKeySecret = await cred.getAccessKeySecret();
+      newSecurityToken = await cred.getSecurityToken();
+    } catch (e) {
+      error(
+        'WANRNING: Please check the accuracy of the credential information you import from CLI config!' + e.message,
+      );
+      exit();
+    }
+    
+    newConfig = {
+      accessKeyId: await cipher(newAccessKeyId),
+      accessKeySecret: await cipher(newAccessKeySecret),
+      endpoint: endpoint,
+      regionId: regionId
+    }
+    if (newSecurityToken){
+      newConfig.securityToken = await cipher(newSecurityToken)
+    }
+    let file = path.join(configSavePath);
+    fs.writeFileSync(file, JSON.stringify(newConfig, null, '\t'));
+    success(`\n ✅ Your cdk configuration has been load from Aliyun Cli configuration saved successfully %s %s!`, modeType[modeIndex], profileNames[profileIndex]);
   }
 
   public async list(selectors: string[]) {
@@ -262,6 +439,95 @@ export class CdkToolkit {
           }
         });
     }
+  }
+
+  public async event(options: EventOptions){
+    if(!options.stackName){
+      error('If want to get resource stack events, stack name must be Specified!')
+      exit()
+    }
+    await this.syncStackInfo();
+    let LogicalResourceIds:  string[] = [];
+    const client = await this.getRosClient();
+    if (options.logicalResourceId){
+      LogicalResourceIds.push(options.logicalResourceId)
+    }
+    client
+      .listStackEvents({
+        StackId: (await this.findStackInfo(options.stackName[0])).stackId,
+        RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+        LogicalResourceId: LogicalResourceIds,
+        PageSize: options.pageSize ? Number(options.pageSize): 10,
+        PageNumber: options.pageNumber ?Number(options.pageNumber): 1
+      })
+      .then((res: any) => {
+          success(`\n ✅ The Stack %s \n Events is: \n %s \n`, colors.blue(options.stackName[0]), colors.blue(JSON.stringify(res.Events, null, "\t")));
+      }, (ex: any) => {
+        if (ex.code == 'StackNotFound') {
+          warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+          this.updateStackInfo(options.stackName[0], DESTROY_STACK);
+        }
+        else {
+          error('fail to get stack events: %s %s', ex.code, ex.message)
+        }
+      });
+  }
+
+
+  public async resource(options: ResourceOptions){ 
+    await this.syncStackInfo();
+    let stacks = await this.selectStacksForDestroy(options.stackNames);
+    let stackNames: string[] = [];
+    for (let stack of stacks.stackArtifacts) {
+      if ((await this.findStackInfo(stack.id)).stackId) {
+        stackNames.push(stack.id);
+      }
+    }
+    const client = await this.getRosClient();
+    for (let stackName of stackNames) {
+      client
+        .listStackResources({
+          StackId: (await this.findStackInfo(stackName)).stackId,
+          RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+        })
+        .then((res: any) => {
+           success(`\n ✅ The Stack %s \n Resource is: \n %s \n`, colors.blue(stackName), colors.blue(JSON.stringify(res.Resources, null, "\t")));
+        }, (ex: any) => {
+          if (ex.code == 'StackNotFound') {
+            warning(`\n ❌ The specific stack doesn't exit and it's local status will be set to destroy.`);
+            this.updateStackInfo(stackName, DESTROY_STACK);
+          }
+          else {
+            error('fail to get stack resource: %s %s', ex.code, ex.message)
+          }
+        });
+    }
+  }
+
+  public async listStacks(options: ListStackOptions){
+    await this.syncStackInfo();
+    const client = await this.getRosClient();
+    let stacks = await this.selectStacksForList([]);
+    let params: any={};
+    params = {
+      RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+      PageSize: options.pageSize ? Number(options.pageSize): 10,
+      PageNumber: options.pageNumber ?Number(options.pageNumber): 1
+    };
+    if (!options.all){
+      if (options.stackNames.length === 0) {
+        params.StackName = stacks.stackIds
+      }
+      else{
+        params.StackName = options.stackNames
+      }
+    }
+    client.listStacks(params)
+        .then((res: any) => {
+          success(`\n ✅ The Stacks list is:\n %s \n`, colors.blue(JSON.stringify(res.Stacks, null, "\t")));
+      }, (ex: any) => {
+          error('fail to list stacks: %s %s', ex.code, ex.message)
+      });
   }
 
   public async destroy(options: DestroyOptions) {
@@ -421,6 +687,64 @@ export class CdkToolkit {
   private assembly(): Promise<CloudAssembly> {
     return this.props.cloudExecutable.synthesize();
   }
+
+  private async getCliConfig(loadFilePath: string) {
+    let filePath: string;
+    let configureInfo: any = {};
+    let configureInfos: any = {};
+    let AKProfileList: object[] = [];
+    let StsProfileList: object[] = [];
+    let RamRoleArnProfileList: object[] = [];
+    let EcsRamRoleProfileList: object[] = [];
+    if (loadFilePath) {
+      filePath = loadFilePath
+    }
+    else {
+      let homePath = os.homedir();
+      filePath = homePath + CLI_CONFIG_FILE;
+    }
+    if (fs.existsSync(filePath)) {
+      let file = fs.readFileSync(filePath).toString();
+      let AllProfiles = JSON.parse(file)['profiles'];
+      for (let profile of AllProfiles) {
+        configureInfo = {
+          accessKeyId: profile.access_key_id,
+          accessKeySecret: profile.access_key_secret,
+          region: profile.region_id,
+          securityToken: profile.sts_token,
+          roleArn: profile.ram_role_arn,
+          roleSessionName: profile.ram_session_name,
+          roleName: profile.ram_role_name,
+          name: profile.name
+        }
+        
+        if (profile.mode === 'AK') {
+          AKProfileList.push(configureInfo)
+          configureInfos.AK = AKProfileList
+        }
+        else if (profile.mode === 'StsToken') {
+          StsProfileList.push(configureInfo)
+          configureInfos.StsToken =  StsProfileList
+        }
+        else if (profile.mode === 'RamRoleArn') {
+          RamRoleArnProfileList.push(configureInfo)
+          configureInfos.RamRoleArn = RamRoleArnProfileList
+        }
+        else if (profile.mode === 'EcsRamRole') {
+          EcsRamRoleProfileList.push(configureInfo)
+          configureInfos.EcsRamRole = EcsRamRoleProfileList
+        }
+      }
+      if (!configureInfos || Object.keys(configureInfos).length == 0) {
+        error("WANRNING: Please check the accuracy of the mode and profele configuration entered.");
+        exit();
+      }
+      return configureInfos
+    } else {
+      error("WANRNING: Please check Aliyun Cli tool configure accuracy of the default path or specified path.");
+      exit();
+    }
+  }
 }
 
 export interface DiffOptions {
@@ -448,6 +772,32 @@ export interface DestroyOptions {
   region?: string;
   stackNames: string[];
   quiet?: boolean;
+}
+
+export interface EventOptions {
+  region?: string;
+  stackName: string[];
+  logicalResourceId: string;
+  pageNumber: string;
+  pageSize: string;
+}
+
+export interface ResourceOptions {
+  region?: string;
+  stackNames: string[];
+}
+
+export interface ListStackOptions {
+  region?: string;
+  stackNames: string[];
+  pageNumber: string;
+  pageSize: string;
+  all: string;
+}
+
+export interface LoadConfigOptions {
+  global?: string;
+  loadFilePath: string;
 }
 
 export interface Tag {
