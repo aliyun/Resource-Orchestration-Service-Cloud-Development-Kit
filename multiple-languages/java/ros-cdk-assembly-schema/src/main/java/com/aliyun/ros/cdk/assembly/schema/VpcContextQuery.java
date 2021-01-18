@@ -25,11 +25,6 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
      */
     @org.jetbrains.annotations.NotNull java.lang.String getRegion();
 
-    /**
-     * Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
-     * <p>
-     * Default: false
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getReturnAsymmetricSubnets() {
         return null;
     }
@@ -94,11 +89,6 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
             return this;
         }
 
-        /**
-         * Sets the value of {@link VpcContextQuery#getReturnAsymmetricSubnets}
-         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
-         * @return {@code this}
-         */
         public Builder returnAsymmetricSubnets(java.lang.Boolean returnAsymmetricSubnets) {
             this.returnAsymmetricSubnets = returnAsymmetricSubnets;
             return this;
