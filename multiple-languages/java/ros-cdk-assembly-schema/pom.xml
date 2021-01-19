@@ -152,4 +152,12 @@
       </plugin>
     </plugins>
   </build>
+  <distributionManagement>
+    <repository>
+      <id>snapshots</id>
+      <name>alibaba Repositories Group</name>
+      <url>http://mvnrepo.alibaba-inc.com/mvn/snapshots</url>
+      <layout>default</layout>
+    </repository>
+  </distributionManagement>
 </project>
