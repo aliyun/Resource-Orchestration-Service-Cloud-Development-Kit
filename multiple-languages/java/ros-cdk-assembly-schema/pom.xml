@@ -153,9 +153,11 @@
     </plugins>
   </build>
   <distributionManagement>
-    <snapshotRepository>
-      <id>sonatype-nexus-snapshots</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+    <repository>
+          <id>snapshots</id>
+          <name>alibaba Repositories Group</name>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+          <layout>default</layout>
+      </repository>
   </distributionManagement>
 </project>
