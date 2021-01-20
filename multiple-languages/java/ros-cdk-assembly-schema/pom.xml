@@ -28,7 +28,7 @@
   </scm>
   <groupId>com.aliyun</groupId>
   <artifactId>ros-cdk-assembly-schema</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <version>1.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -171,11 +171,13 @@
     </plugins>
   </build>
   <distributionManagement>
-    <repository>
-      <id>snapshots</id>
-      <name>alibaba Repositories Group</name>
+    <snapshotRepository>
+      <id>sonatype-nexus-snapshots</id>
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <layout>default</layout>
+    </snapshotRepository>
+    <repository>
+      <id>sonatype-nexus-staging</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
     </repository>
   </distributionManagement>
 </project>
