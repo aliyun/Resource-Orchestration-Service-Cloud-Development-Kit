@@ -10,7 +10,7 @@
         </repository>
     </repositories>
   <name>${project.groupId}:${project.artifactId}</name>
-  <description/>
+  <description>ros-cdk-cxapi package used for AliCloud ROS</description>
   <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
   <licenses>
     <license>

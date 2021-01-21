@@ -10,8 +10,8 @@
         </repository>
     </repositories>
   <name>${project.groupId}:${project.artifactId}</name>
-  <description/>
-  <url/>
+  <description>ros-cdk-core package used for AliCloud ROS</description>
+  <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
   <licenses>
     <license>
       <name>Apache License 2.0</name>

@@ -11,7 +11,7 @@
     </repositories>
   <name>${project.groupId}:${project.artifactId}</name>
   <description>ros-cdk-ecs package used for AliCloud ROS</description>
-  <url/>
+   <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
   <licenses>
     <license>
       <name>Apache License 2.0</name>
@@ -29,8 +29,8 @@
     </developer>
   </developers>
   <scm>
-    <connection>scm:git:</connection>
-    <url/>
+    <connection>scm:git:https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</connection>
+    <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
   </scm>
   <groupId>com.aliyun</groupId>
   <artifactId>ros-cdk-ecs</artifactId>
@@ -174,7 +174,7 @@
           <generateBackupPoms>false</generateBackupPoms>
         </configuration>
       </plugin>
-       <plugin>
+      <plugin>
         <artifactId>maven-deploy-plugin</artifactId>
         <version>2.8.1</version>
       </plugin>
