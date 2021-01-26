@@ -1,10 +1,7 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * A construct which represents an entire CDK app.
- * <p>
- * This construct is normally
- * the root of the construct tree.
+ * A construct which represents an entire CDK app. This construct is normally the root of the construct tree.
  * <p>
  * You would normally define an <code>App</code> instance in your program's entrypoint,
  * then define constructs where the app is used as the parent scope.
@@ -13,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * <code>app.synth()</code> which will emit a "ros template" from this app into the
  * directory specified by <code>outdir</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:54:59.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.283Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.App")
 public class App extends com.aliyun.ros.cdk.core.Stage {
 
@@ -76,7 +73,8 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
          * this feature is only available for certain programming languages, and
          * calling <code>synth()</code> is still recommended.
          * <p>
-         * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`otherwise
+         * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`
+         * otherwise
          * <p>
          * @return {@code this}
          * @param autoSynth Automatically call `synth()` before the program exits. This parameter is required.
@@ -106,7 +104,8 @@ public class App extends com.aliyun.ros.cdk.core.Stage {
         /**
          * The output directory into which to emit synthesized artifacts.
          * <p>
-         * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.  If `CDK_OUTDIR` is not defined, uses a temp directory.
+         * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
+         *   If `CDK_OUTDIR` is not defined, uses a temp directory.
          * <p>
          * @return {@code this}
          * @param outdir The output directory into which to emit synthesized artifacts. This parameter is required.

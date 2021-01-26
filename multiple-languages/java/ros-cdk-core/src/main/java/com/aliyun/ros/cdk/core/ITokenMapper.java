@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Interface to apply operation to tokens in a string  Interface so it can be exported via jsii.
+ * Interface to apply operation to tokens in a string.
+ * <p>
+ * Interface so it can be exported via jsii.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.507Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITokenMapper")
 @software.amazon.jsii.Jsii.Proxy(ITokenMapper.Jsii$Proxy.class)
 public interface ITokenMapper extends software.amazon.jsii.JsiiSerializable {

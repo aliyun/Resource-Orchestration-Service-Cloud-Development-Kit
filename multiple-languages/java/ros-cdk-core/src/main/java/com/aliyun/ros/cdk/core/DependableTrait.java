@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * (experimental) Trait for IDependable  Traits are interfaces that are privately implemented by objects.
+ * (experimental) Trait for IDependable.
  * <p>
- * Instead of
+ * Traits are interfaces that are privately implemented by objects. Instead of
  * showing up in the public interface of a class, they need to be queried
  * explicitly. This is used to implement certain framework features that are
  * not intended to be used by Construct consumers, and so should be hidden
@@ -14,10 +14,11 @@ package com.aliyun.ros.cdk.core;
  * <blockquote><pre>{@code
  * // Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
  * // Usage
- * Object roots = DependableTrait.get(construct).getDependencyRoots();// Definition
+ * Object roots = DependableTrait.get(construct).getDependencyRoots();
+ * // Definition
  * DependableTrait.implement(construct, Map.of(get dependencyRoots() { return []; }));}</pre></blockquote>
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.139Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.484Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DependableTrait")
 public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
@@ -46,7 +47,9 @@ public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * (experimental) Register `instance` to have the given DependableTrait  Should be called in the class constructor.
+     * (experimental) Register `instance` to have the given DependableTrait.
+     * <p>
+     * Should be called in the class constructor.
      * <p>
      * @param instance This parameter is required.
      * @param trait This parameter is required.
@@ -57,7 +60,10 @@ public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * (experimental) The set of constructs that form the root of this dependable  All resources under all returned constructs are included in the ordering dependency.
+     * (experimental) The set of constructs that form the root of this dependable.
+     * <p>
+     * All resources under all returned constructs are included in the ordering
+     * dependency.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
     public abstract @org.jetbrains.annotations.NotNull java.util.List<com.aliyun.ros.cdk.core.IConstruct> getDependencyRoots();
@@ -72,7 +78,10 @@ public abstract class DependableTrait extends software.amazon.jsii.JsiiObject {
         }
 
         /**
-         * (experimental) The set of constructs that form the root of this dependable  All resources under all returned constructs are included in the ordering dependency.
+         * (experimental) The set of constructs that form the root of this dependable.
+         * <p>
+         * All resources under all returned constructs are included in the ordering
+         * dependency.
          */
         @Override
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query input for looking up a VPC.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.16.0 (build 99a3413)", date = "2021-01-13T06:16:13.482Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.VpcContextQuery")
 @software.amazon.jsii.Jsii.Proxy(VpcContextQuery.Jsii$Proxy.class)
 public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,11 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
      */
     @org.jetbrains.annotations.NotNull java.lang.String getRegion();
 
+    /**
+     * Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+     * <p>
+     * Default: false
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getReturnAsymmetricSubnets() {
         return null;
     }
@@ -89,6 +94,11 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
             return this;
         }
 
+        /**
+         * Sets the value of {@link VpcContextQuery#getReturnAsymmetricSubnets}
+         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+         * @return {@code this}
+         */
         public Builder returnAsymmetricSubnets(java.lang.Boolean returnAsymmetricSubnets) {
             this.returnAsymmetricSubnets = returnAsymmetricSubnets;
             return this;

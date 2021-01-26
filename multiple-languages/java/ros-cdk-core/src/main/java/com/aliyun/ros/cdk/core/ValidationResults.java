@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A collection of validation results.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:02.128Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ValidationResults")
 public class ValidationResults extends software.amazon.jsii.JsiiObject {
 
@@ -34,7 +34,10 @@ public class ValidationResults extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Wrap up all validation results into a single tree node  If there are failures in the collection, add a message, otherwise return a success.
+     * Wrap up all validation results into a single tree node.
+     * <p>
+     * If there are failures in the collection, add a message, otherwise
+     * return a success.
      * <p>
      * @param message This parameter is required.
      */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * How to resolve tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.507Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ITokenResolver")
 @software.amazon.jsii.Jsii.Proxy(ITokenResolver.Jsii$Proxy.class)
 public interface ITokenResolver extends software.amazon.jsii.JsiiSerializable {
@@ -17,7 +17,9 @@ public interface ITokenResolver extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object resolveList(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> l, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolveContext context);
 
     /**
-     * Resolve a string with at least one stringified token in it  (May use concatenation).
+     * Resolve a string with at least one stringified token in it.
+     * <p>
+     * (May use concatenation)
      * <p>
      * @param s This parameter is required.
      * @param context This parameter is required.
@@ -54,7 +56,9 @@ public interface ITokenResolver extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Resolve a string with at least one stringified token in it  (May use concatenation).
+         * Resolve a string with at least one stringified token in it.
+         * <p>
+         * (May use concatenation)
          * <p>
          * @param s This parameter is required.
          * @param context This parameter is required.
@@ -95,7 +99,9 @@ public interface ITokenResolver extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Resolve a string with at least one stringified token in it  (May use concatenation).
+         * Resolve a string with at least one stringified token in it.
+         * <p>
+         * (May use concatenation)
          * <p>
          * @param s This parameter is required.
          * @param context This parameter is required.

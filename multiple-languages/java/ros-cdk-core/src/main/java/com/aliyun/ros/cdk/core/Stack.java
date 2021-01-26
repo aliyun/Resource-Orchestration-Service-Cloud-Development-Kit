@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A root construct which represents a single ROS stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.005Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.ITaggable {
 
@@ -152,7 +152,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * Allocates a stack-unique logical identity for a specific resource.
+     * Allocates a stack-unique logical identity for a specific resource.
      * <p>
      * This method is called when a <code>RosElement</code> is created and used to render the
      * initial logical identity of resources. Logical ID renames are applied at
@@ -162,7 +162,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
      * logical ID for an element. To modify the naming scheme, extend the <code>Stack</code>
      * class and override this method.
      * <p>
-     * @param element The ROS element for which a logical identity isneeded. This parameter is required.
+     * @param element The ROS element for which a logical identity is needed. This parameter is required.
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getLogicalId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.RosElement element) {
         return software.amazon.jsii.Kernel.call(this, "getLogicalId", software.amazon.jsii.NativeType.forClass(java.lang.String.class), new Object[] { java.util.Objects.requireNonNull(element, "element is required") });
@@ -183,7 +183,10 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * Rename a generated logical identities  To modify the naming scheme strategy, extend the `Stack` class and override the `allocateLogicalId` method.
+     * Rename a generated logical identities.
+     * <p>
+     * To modify the naming scheme strategy, extend the <code>Stack</code> class and
+     * override the <code>allocateLogicalId</code> method.
      * <p>
      * @param oldId This parameter is required.
      * @param newId This parameter is required.
@@ -295,7 +298,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * The name of the ROS template file emitted to the output directory during synthesis.
+     * The name of the ROS template file emitted to the output directory during synthesis.
      * <p>
      * Example:
      * <p>
@@ -322,7 +325,7 @@ public class Stack extends com.aliyun.ros.cdk.core.Construct implements com.aliy
     }
 
     /**
-     * (experimental) If this is a nested stack, this represents its `ALIYUN::ROS::Stack` resource.
+     * (experimental) If this is a nested stack, this represents its `ALIYUN::ROS::Stack` resource.
      * <p>
      * <code>undefined</code> for top-level (non-nested) stacks.
      */

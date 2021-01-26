@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * (experimental) Token subclass that represents values intrinsic to the target document language  This class will disappear in a future release and should not be used.
+ * (experimental) Token subclass that represents values intrinsic to the target document language.
+ * <p>
+ * This class will disappear in a future release and should not be used.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.159Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.508Z")
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Intrinsic")
 public class Intrinsic extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.core.IResolvable {
@@ -47,7 +49,9 @@ public class Intrinsic extends software.amazon.jsii.JsiiObject implements com.al
     }
 
     /**
-     * (experimental) Turn this Token into JSON  Called automatically when JSON.stringify() is called on a Token.
+     * (experimental) Turn this Token into JSON.
+     * <p>
+     * Called automatically when JSON.stringify() is called on a Token.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)
     public @org.jetbrains.annotations.NotNull java.lang.Object toJSON() {
@@ -55,9 +59,10 @@ public class Intrinsic extends software.amazon.jsii.JsiiObject implements com.al
     }
 
     /**
-     * (experimental) Convert an instance of this Token to a string  This method will be called implicitly by language runtimes if the object is embedded into a string.
+     * (experimental) Convert an instance of this Token to a string.
      * <p>
-     * We treat it the same as an explicit
+     * This method will be called implicitly by language runtimes if the object
+     * is embedded into a string. We treat it the same as an explicit
      * stringification.
      */
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Experimental)

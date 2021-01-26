@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Less oft-needed functions to manipulate Tokens.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:02.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.439Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Tokenization")
 public class Tokenization extends software.amazon.jsii.JsiiObject {
 
@@ -16,7 +16,11 @@ public class Tokenization extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Return whether the given object is an IResolvable object  This is different from Token.isUnresolved() which will also check for encoded Tokens, whereas this method will only do a type check on the given object.
+     * Return whether the given object is an IResolvable object.
+     * <p>
+     * This is different from Token.isUnresolved() which will also check for
+     * encoded Tokens, whereas this method will only do a type check on the given
+     * object.
      * <p>
      * @param obj This parameter is required.
      */

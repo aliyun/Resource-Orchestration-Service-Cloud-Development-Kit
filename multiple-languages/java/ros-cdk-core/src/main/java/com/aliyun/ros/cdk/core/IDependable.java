@@ -1,14 +1,17 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Trait marker for classes that can be depended upon  The presence of this interface indicates that an object has an `IDependableTrait` implementation.
+ * Trait marker for classes that can be depended upon.
+ * <p>
+ * The presence of this interface indicates that an object has
+ * an <code>IDependableTrait</code> implementation.
  * <p>
  * This interface can be used to take an (ordering) dependency on a set of
  * constructs. An ordering dependency implies that the resources represented by
  * those constructs are deployed before the resources depending ON them are
  * deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.148Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IDependable")
 @software.amazon.jsii.Jsii.Proxy(IDependable.Jsii$Proxy.class)
 public interface IDependable extends software.amazon.jsii.JsiiSerializable {

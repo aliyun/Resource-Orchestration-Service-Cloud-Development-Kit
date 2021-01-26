@@ -3,13 +3,15 @@ package com.aliyun.ros.cdk.core;
 /**
  * Encodes information how a certain Stack should be deployed.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.155Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.504Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IStackSynthesizer")
 @software.amazon.jsii.Jsii.Proxy(IStackSynthesizer.Jsii$Proxy.class)
 public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Bind to the stack this environment is going to be used on  Must be called before any of the other methods are called.
+     * Bind to the stack this environment is going to be used on.
+     * <p>
+     * Must be called before any of the other methods are called.
      * <p>
      * @param stack This parameter is required.
      */
@@ -33,7 +35,9 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * Bind to the stack this environment is going to be used on  Must be called before any of the other methods are called.
+         * Bind to the stack this environment is going to be used on.
+         * <p>
+         * Must be called before any of the other methods are called.
          * <p>
          * @param stack This parameter is required.
          */
@@ -61,7 +65,9 @@ public interface IStackSynthesizer extends software.amazon.jsii.JsiiSerializable
     interface Jsii$Default extends IStackSynthesizer {
 
         /**
-         * Bind to the stack this environment is going to be used on  Must be called before any of the other methods are called.
+         * Bind to the stack this environment is going to be used on.
+         * <p>
+         * Must be called before any of the other methods are called.
          * <p>
          * @param stack This parameter is required.
          */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A construct which represents a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-20T10:55:01.168Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Resource")
 public abstract class Resource extends com.aliyun.ros.cdk.core.Construct implements com.aliyun.ros.cdk.core.IResource {
 
@@ -54,7 +54,7 @@ public abstract class Resource extends com.aliyun.ros.cdk.core.Construct impleme
     }
 
     /**
-     * (experimental) Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
+     * (experimental) Returns a string-encoded token that resolves to the physical name that should be passed to the ROS resource.
      * <p>
      * This value will resolve to one of the following:
      * <p>
