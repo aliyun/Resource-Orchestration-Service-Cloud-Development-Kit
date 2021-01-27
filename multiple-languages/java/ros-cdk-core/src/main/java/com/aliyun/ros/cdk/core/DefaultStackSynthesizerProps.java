@@ -3,16 +3,13 @@ package com.aliyun.ros.cdk.core;
 /**
  * Configuration properties for DefaultStackSynthesizer.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.298Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:30.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DefaultStackSynthesizerProps")
 @software.amazon.jsii.Jsii.Proxy(DefaultStackSynthesizerProps.Jsii$Proxy.class)
 public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Qualifier to disambiguate multiple environments in the same account.
-     * <p>
-     * You can use this and leave the other naming properties empty if you have deployed
-     * the bootstrap environment with standard names but only differnet qualifiers.
+     * Qualifier to disambiguate multiple environments in the same account  You can use this and leave the other naming properties empty if you have deployed the bootstrap environment with standard names but only differnet qualifiers.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getQualifier() {
         return null;
@@ -32,9 +29,7 @@ public interface DefaultStackSynthesizerProps extends software.amazon.jsii.JsiiS
 
         /**
          * Sets the value of {@link DefaultStackSynthesizerProps#getQualifier}
-         * @param qualifier Qualifier to disambiguate multiple environments in the same account.
-         *                  You can use this and leave the other naming properties empty if you have deployed
-         *                  the bootstrap environment with standard names but only differnet qualifiers.
+         * @param qualifier Qualifier to disambiguate multiple environments in the same account  You can use this and leave the other naming properties empty if you have deployed the bootstrap environment with standard names but only differnet qualifiers.
          * @return {@code this}
          */
         public Builder qualifier(java.lang.String qualifier) {

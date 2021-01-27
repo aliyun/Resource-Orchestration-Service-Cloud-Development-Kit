@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An element of a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.541Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosElement")
 public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
 
@@ -29,10 +29,7 @@ public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
-     * Returns `true` if a construct is a stack element (i.e. part of the synthesized template).
-     * <p>
-     * Uses duck-typing instead of <code>instanceof</code> to allow stack elements from different
-     * versions of this library to be included in the same stack.
+     * Returns `true` if a construct is a stack element (i.e. part of the synthesized template).  Uses duck-typing instead of `instanceof` to allow stack elements from different versions of this library to be included in the same stack.
      * <p>
      * @return The construct as a stack element or undefined if it is not a stack element.
      * @param x This parameter is required.
@@ -51,9 +48,7 @@ public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
     }
 
     /**
-     * @return the stack trace of the point where this Resource was created from, sourced
-     * from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
-     * node +internal+ entries filtered.
+     * @return the stack trace of the point where this Resource was created from, sourcedfrom the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-mostnode +internal+ entries filtered.
      */
     public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getCreationStack() {
         return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "creationStack", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
@@ -67,8 +62,7 @@ public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
      * <p>
      * To override this value, use <code>overrideLogicalId(newLogicalId)</code>.
      * <p>
-     * @return the logical ID as a stringified token. This value will only get
-     * resolved during synthesis.
+     * @return the logical ID as a stringified token. This value will only getresolved during synthesis.
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getLogicalId() {
         return software.amazon.jsii.Kernel.get(this, "logicalId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));

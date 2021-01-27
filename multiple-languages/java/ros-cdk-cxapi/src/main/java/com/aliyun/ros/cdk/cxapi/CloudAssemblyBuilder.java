@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cxapi;
 /**
  * Can be used to build a cloud assembly.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.274Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:30.711Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.CloudAssemblyBuilder")
 public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
 
@@ -53,7 +53,7 @@ public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Finalizes the cloud assembly into the output directory returns a `CloudAssembly` object that can be used to inspect the assembly.
+     * Finalizes the cloud assembly into the output directory returns a `CloudAssembly` object that can be used to inspect the assembly.
      * <p>
      * @param options
      */
@@ -62,7 +62,7 @@ public class CloudAssemblyBuilder extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Finalizes the cloud assembly into the output directory returns a `CloudAssembly` object that can be used to inspect the assembly.
+     * Finalizes the cloud assembly into the output directory returns a `CloudAssembly` object that can be used to inspect the assembly.
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cxapi.CloudAssembly buildAssembly() {
         return software.amazon.jsii.Kernel.call(this, "buildAssembly", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cxapi.CloudAssembly.class));

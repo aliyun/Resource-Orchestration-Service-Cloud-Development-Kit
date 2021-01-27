@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for apps.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.285Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:30.724Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,8 +15,7 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
      * this feature is only available for certain programming languages, and
      * calling <code>synth()</code> is still recommended.
      * <p>
-     * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`
-     * otherwise
+     * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`otherwise
      */
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getAutoSynth() {
         return null;
@@ -38,8 +37,7 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * The output directory into which to emit synthesized artifacts.
      * <p>
-     * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
-     *   If `CDK_OUTDIR` is not defined, uses a temp directory.
+     * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.  If `CDK_OUTDIR` is not defined, uses a temp directory.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getOutdir() {
         return null;

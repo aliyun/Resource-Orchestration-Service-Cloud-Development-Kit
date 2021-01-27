@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * TagManager facilitates a common implementation of tagging for Constructs.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManager")
 public class TagManager extends software.amazon.jsii.JsiiObject {
 
@@ -40,10 +40,7 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Determine if the aspect applies here.
-     * <p>
-     * Looks at the include and exclude resourceTypeName arrays to determine if
-     * the aspect applies here
+     * Determine if the aspect applies here  Looks at the include and exclude resourceTypeName arrays to determine if the aspect applies here.
      * <p>
      * @param include
      * @param exclude
@@ -53,10 +50,7 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Determine if the aspect applies here.
-     * <p>
-     * Looks at the include and exclude resourceTypeName arrays to determine if
-     * the aspect applies here
+     * Determine if the aspect applies here  Looks at the include and exclude resourceTypeName arrays to determine if the aspect applies here.
      * <p>
      * @param include
      */
@@ -65,10 +59,7 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Determine if the aspect applies here.
-     * <p>
-     * Looks at the include and exclude resourceTypeName arrays to determine if
-     * the aspect applies here
+     * Determine if the aspect applies here  Looks at the include and exclude resourceTypeName arrays to determine if the aspect applies here.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean applyTagAspectHere() {
         return software.amazon.jsii.Kernel.call(this, "applyTagAspectHere", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
@@ -132,9 +123,9 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * The property name for tag values.
+     * The property name for tag values  Normally this is `tags` but some resources choose a different name.
      * <p>
-     * Normally this is <code>tags</code> but some resources choose a different name. Cognito
+     * Cognito
      * UserPool uses UserPoolTags
      */
     public @org.jetbrains.annotations.NotNull java.lang.String getTagPropertyName() {
@@ -175,14 +166,12 @@ public class TagManager extends software.amazon.jsii.JsiiObject {
         }
 
         /**
-         * The name of the property in ROS for these tags.
-         * <p>
-         * Normally this is <code>tags</code>, but Cognito UserPool uses UserPoolTags
+         * The name of the property in ROS for these tags  Normally this is `tags`, but Cognito UserPool uses UserPoolTags.
          * <p>
          * Default: "tags"
          * <p>
          * @return {@code this}
-         * @param tagPropertyName The name of the property in ROS for these tags. This parameter is required.
+         * @param tagPropertyName The name of the property in ROS for these tags  Normally this is `tags`, but Cognito UserPool uses UserPoolTags. This parameter is required.
          */
         public Builder tagPropertyName(final java.lang.String tagPropertyName) {
             this.options().tagPropertyName(tagPropertyName);

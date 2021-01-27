@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::NetworkInterfaceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:10.025Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.755Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosNetworkInterfaceAttachmentProps.Jsii$Proxy.class)
 public interface RosNetworkInterfaceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

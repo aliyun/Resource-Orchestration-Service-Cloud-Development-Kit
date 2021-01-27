@@ -1,0 +1,14 @@
+@alicloud/ros-cdk-oss.Bucket=com.aliyun.ros.cdk.oss.Bucket
+@alicloud/ros-cdk-oss.BucketProps=com.aliyun.ros.cdk.oss.BucketProps
+@alicloud/ros-cdk-oss.RosBucket=com.aliyun.ros.cdk.oss.RosBucket
+@alicloud/ros-cdk-oss.RosBucket.AbortMultipartUploadProperty=com.aliyun.ros.cdk.oss.RosBucket$AbortMultipartUploadProperty
+@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$CORSConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucket.CORSRuleProperty=com.aliyun.ros.cdk.oss.RosBucket$CORSRuleProperty
+@alicloud/ros-cdk-oss.RosBucket.ExpirationProperty=com.aliyun.ros.cdk.oss.RosBucket$ExpirationProperty
+@alicloud/ros-cdk-oss.RosBucket.LifecycleConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$LifecycleConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucket.LoggingConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$LoggingConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucket.RefererConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$RefererConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucket.RuleProperty=com.aliyun.ros.cdk.oss.RosBucket$RuleProperty
+@alicloud/ros-cdk-oss.RosBucket.ServerSideEncryptionConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$ServerSideEncryptionConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucket.WebsiteConfigurationProperty=com.aliyun.ros.cdk.oss.RosBucket$WebsiteConfigurationProperty
+@alicloud/ros-cdk-oss.RosBucketProps=com.aliyun.ros.cdk.oss.RosBucketProps

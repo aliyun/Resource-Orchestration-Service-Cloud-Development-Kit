@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a ROS resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.550Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.165Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosResource")
 public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
 
@@ -50,7 +50,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     /**
-     * Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
+     * Indicates that this resource depends on another resource and cannot be provisioned unless the other resource has been successfully provisioned.
      * <p>
      * This can be used for resources across stacks (or nested stack) boundaries
      * and the dependency will automatically be transferred to the relevant scope.
@@ -108,7 +108,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
      * }
      * </pre></blockquote>
      * <p>
-     * @param path - The path of the property, you can use dot notation to override values in complex types. This parameter is required.
+     * @param path - The path of the property, you can use dot notation tooverride values in complex types. This parameter is required.
      * @param value - The value. This parameter is required.
      */
     public void addOverride(final @org.jetbrains.annotations.NotNull java.lang.String path, final @org.jetbrains.annotations.NotNull java.lang.Object value) {
@@ -215,10 +215,7 @@ public class RosResource extends com.aliyun.ros.cdk.core.RosRefElement {
     }
 
     /**
-     * Return properties modified after initiation.
-     * <p>
-     * Resources that expose mutable properties should override this function to
-     * collect and return the properties object for this resource.
+     * Return properties modified after initiation  Resources that expose mutable properties should override this function to collect and return the properties object for this resource.
      */
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getUpdatedProperites() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "updatedProperites", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));

@@ -1,0 +1,15 @@
+@alicloud/ros-cdk-mongodb.Instance=com.aliyun.ros.cdk.mongodb.Instance
+@alicloud/ros-cdk-mongodb.InstanceProps=com.aliyun.ros.cdk.mongodb.InstanceProps
+@alicloud/ros-cdk-mongodb.RosInstance=com.aliyun.ros.cdk.mongodb.RosInstance
+@alicloud/ros-cdk-mongodb.RosInstanceProps=com.aliyun.ros.cdk.mongodb.RosInstanceProps
+@alicloud/ros-cdk-mongodb.RosServerlessInstance=com.aliyun.ros.cdk.mongodb.RosServerlessInstance
+@alicloud/ros-cdk-mongodb.RosServerlessInstanceProps=com.aliyun.ros.cdk.mongodb.RosServerlessInstanceProps
+@alicloud/ros-cdk-mongodb.RosShardingInstance=com.aliyun.ros.cdk.mongodb.RosShardingInstance
+@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty=com.aliyun.ros.cdk.mongodb.RosShardingInstance$ConfigServerProperty
+@alicloud/ros-cdk-mongodb.RosShardingInstance.MongosProperty=com.aliyun.ros.cdk.mongodb.RosShardingInstance$MongosProperty
+@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty=com.aliyun.ros.cdk.mongodb.RosShardingInstance$ReplicaSetProperty
+@alicloud/ros-cdk-mongodb.RosShardingInstanceProps=com.aliyun.ros.cdk.mongodb.RosShardingInstanceProps
+@alicloud/ros-cdk-mongodb.ServerlessInstance=com.aliyun.ros.cdk.mongodb.ServerlessInstance
+@alicloud/ros-cdk-mongodb.ServerlessInstanceProps=com.aliyun.ros.cdk.mongodb.ServerlessInstanceProps
+@alicloud/ros-cdk-mongodb.ShardingInstance=com.aliyun.ros.cdk.mongodb.ShardingInstance
+@alicloud/ros-cdk-mongodb.ShardingInstanceProps=com.aliyun.ros.cdk.mongodb.ShardingInstanceProps

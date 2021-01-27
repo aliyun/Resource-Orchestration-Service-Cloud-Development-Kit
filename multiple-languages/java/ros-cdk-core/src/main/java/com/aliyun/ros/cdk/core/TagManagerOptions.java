@@ -3,15 +3,13 @@ package com.aliyun.ros.cdk.core;
 /**
  * Options to configure TagManager behavior.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.TagManagerOptions")
 @software.amazon.jsii.Jsii.Proxy(TagManagerOptions.Jsii$Proxy.class)
 public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * The name of the property in ROS for these tags.
-     * <p>
-     * Normally this is <code>tags</code>, but Cognito UserPool uses UserPoolTags
+     * The name of the property in ROS for these tags  Normally this is `tags`, but Cognito UserPool uses UserPoolTags.
      * <p>
      * Default: "tags"
      */
@@ -33,8 +31,7 @@ public interface TagManagerOptions extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link TagManagerOptions#getTagPropertyName}
-         * @param tagPropertyName The name of the property in ROS for these tags.
-         *                        Normally this is <code>tags</code>, but Cognito UserPool uses UserPoolTags
+         * @param tagPropertyName The name of the property in ROS for these tags  Normally this is `tags`, but Cognito UserPool uses UserPoolTags.
          * @return {@code this}
          */
         public Builder tagPropertyName(java.lang.String tagPropertyName) {

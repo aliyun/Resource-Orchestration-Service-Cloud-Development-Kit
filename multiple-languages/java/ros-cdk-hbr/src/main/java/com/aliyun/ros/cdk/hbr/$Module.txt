@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-hbr.BackupClients=com.aliyun.ros.cdk.hbr.BackupClients
+@alicloud/ros-cdk-hbr.BackupClientsProps=com.aliyun.ros.cdk.hbr.BackupClientsProps
+@alicloud/ros-cdk-hbr.RestoreJob=com.aliyun.ros.cdk.hbr.RestoreJob
+@alicloud/ros-cdk-hbr.RestoreJobProps=com.aliyun.ros.cdk.hbr.RestoreJobProps
+@alicloud/ros-cdk-hbr.RosBackupClients=com.aliyun.ros.cdk.hbr.RosBackupClients
+@alicloud/ros-cdk-hbr.RosBackupClientsProps=com.aliyun.ros.cdk.hbr.RosBackupClientsProps
+@alicloud/ros-cdk-hbr.RosRestoreJob=com.aliyun.ros.cdk.hbr.RosRestoreJob
+@alicloud/ros-cdk-hbr.RosRestoreJobProps=com.aliyun.ros.cdk.hbr.RosRestoreJobProps

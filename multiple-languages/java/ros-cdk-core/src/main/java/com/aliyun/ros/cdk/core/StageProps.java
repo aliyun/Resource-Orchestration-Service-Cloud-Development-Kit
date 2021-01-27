@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for a stage.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.434Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.StageProps")
 @software.amazon.jsii.Jsii.Proxy(StageProps.Jsii$Proxy.class)
 public interface StageProps extends software.amazon.jsii.JsiiSerializable {
@@ -15,9 +15,7 @@ public interface StageProps extends software.amazon.jsii.JsiiSerializable {
      * specified and this stage is nested within another stage, an error will be
      * thrown.
      * <p>
-     * Default: - for nested stages, outdir will be determined as a relative
-     * directory to the outdir of the app. For apps, if outdir is not specified, a
-     * temporary directory will be created.
+     * Default: - for nested stages, outdir will be determined as a relativedirectory to the outdir of the app. For apps, if outdir is not specified, atemporary directory will be created.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getOutdir() {
         return null;

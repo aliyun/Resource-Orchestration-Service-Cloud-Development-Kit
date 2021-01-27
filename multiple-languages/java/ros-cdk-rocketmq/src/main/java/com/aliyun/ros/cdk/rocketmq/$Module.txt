@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-rocketmq.Group=com.aliyun.ros.cdk.rocketmq.Group
+@alicloud/ros-cdk-rocketmq.GroupProps=com.aliyun.ros.cdk.rocketmq.GroupProps
+@alicloud/ros-cdk-rocketmq.Instance=com.aliyun.ros.cdk.rocketmq.Instance
+@alicloud/ros-cdk-rocketmq.InstanceProps=com.aliyun.ros.cdk.rocketmq.InstanceProps
+@alicloud/ros-cdk-rocketmq.RosGroup=com.aliyun.ros.cdk.rocketmq.RosGroup
+@alicloud/ros-cdk-rocketmq.RosGroupProps=com.aliyun.ros.cdk.rocketmq.RosGroupProps
+@alicloud/ros-cdk-rocketmq.RosInstance=com.aliyun.ros.cdk.rocketmq.RosInstance
+@alicloud/ros-cdk-rocketmq.RosInstanceProps=com.aliyun.ros.cdk.rocketmq.RosInstanceProps
+@alicloud/ros-cdk-rocketmq.RosTopic=com.aliyun.ros.cdk.rocketmq.RosTopic
+@alicloud/ros-cdk-rocketmq.RosTopicProps=com.aliyun.ros.cdk.rocketmq.RosTopicProps
+@alicloud/ros-cdk-rocketmq.Topic=com.aliyun.ros.cdk.rocketmq.Topic
+@alicloud/ros-cdk-rocketmq.TopicProps=com.aliyun.ros.cdk.rocketmq.TopicProps

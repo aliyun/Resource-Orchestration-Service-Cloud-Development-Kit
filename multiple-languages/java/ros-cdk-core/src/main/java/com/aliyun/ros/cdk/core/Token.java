@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * Tokens can be embedded into strings while retaining their original
  * semantics.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.438Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Token")
 public class Token extends software.amazon.jsii.JsiiObject {
 
@@ -60,10 +60,9 @@ public class Token extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Return a reversible string representation of this token.
+     * Return a reversible string representation of this token  If the Token is initialized with a literal, the stringified value of the literal is returned.
      * <p>
-     * If the Token is initialized with a literal, the stringified value of the
-     * literal is returned. Otherwise, a special quoted string representation
+     * Otherwise, a special quoted string representation
      * of the Token is returned that can be embedded into other strings.
      * <p>
      * Strings with quoted Tokens in them can be restored back into
@@ -78,10 +77,9 @@ public class Token extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Return a reversible string representation of this token.
+     * Return a reversible string representation of this token  If the Token is initialized with a literal, the stringified value of the literal is returned.
      * <p>
-     * If the Token is initialized with a literal, the stringified value of the
-     * literal is returned. Otherwise, a special quoted string representation
+     * Otherwise, a special quoted string representation
      * of the Token is returned that can be embedded into other strings.
      * <p>
      * Strings with quoted Tokens in them can be restored back into
@@ -95,18 +93,7 @@ public class Token extends software.amazon.jsii.JsiiObject {
     }
 
     /**
-     * Returns true if obj represents an unresolved value.
-     * <p>
-     * One of these must be true:
-     * <p>
-     * <ul>
-     * <li><code>obj</code> is an IResolvable</li>
-     * <li><code>obj</code> is a string containing at least one encoded <code>IResolvable</code></li>
-     * <li><code>obj</code> is either an encoded number or list</li>
-     * </ul>
-     * <p>
-     * This does NOT recurse into lists or objects to see if they
-     * containing resolvables.
+     * Returns true if obj represents an unresolved value  One of these must be true:  - `obj` is an IResolvable - `obj` is a string containing at least one encoded `IResolvable` - `obj` is either an encoded number or list  This does NOT recurse into lists or objects to see if they containing resolvables.
      * <p>
      * @param obj The object to test. This parameter is required.
      */

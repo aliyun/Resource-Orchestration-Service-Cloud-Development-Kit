@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-kafka.RosTopic=com.aliyun.ros.cdk.kafka.RosTopic
+@alicloud/ros-cdk-kafka.RosTopicProps=com.aliyun.ros.cdk.kafka.RosTopicProps
+@alicloud/ros-cdk-kafka.Topic=com.aliyun.ros.cdk.kafka.Topic
+@alicloud/ros-cdk-kafka.TopicProps=com.aliyun.ros.cdk.kafka.TopicProps

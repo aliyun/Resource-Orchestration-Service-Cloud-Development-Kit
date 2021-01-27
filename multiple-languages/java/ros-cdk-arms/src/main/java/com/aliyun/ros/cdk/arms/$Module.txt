@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-arms.AlertContact=com.aliyun.ros.cdk.arms.AlertContact
+@alicloud/ros-cdk-arms.AlertContactGroup=com.aliyun.ros.cdk.arms.AlertContactGroup
+@alicloud/ros-cdk-arms.AlertContactGroupProps=com.aliyun.ros.cdk.arms.AlertContactGroupProps
+@alicloud/ros-cdk-arms.AlertContactProps=com.aliyun.ros.cdk.arms.AlertContactProps
+@alicloud/ros-cdk-arms.RetcodeApp=com.aliyun.ros.cdk.arms.RetcodeApp
+@alicloud/ros-cdk-arms.RetcodeAppProps=com.aliyun.ros.cdk.arms.RetcodeAppProps
+@alicloud/ros-cdk-arms.RosAlertContact=com.aliyun.ros.cdk.arms.RosAlertContact
+@alicloud/ros-cdk-arms.RosAlertContactGroup=com.aliyun.ros.cdk.arms.RosAlertContactGroup
+@alicloud/ros-cdk-arms.RosAlertContactGroupProps=com.aliyun.ros.cdk.arms.RosAlertContactGroupProps
+@alicloud/ros-cdk-arms.RosAlertContactProps=com.aliyun.ros.cdk.arms.RosAlertContactProps
+@alicloud/ros-cdk-arms.RosRetcodeApp=com.aliyun.ros.cdk.arms.RosRetcodeApp
+@alicloud/ros-cdk-arms.RosRetcodeAppProps=com.aliyun.ros.cdk.arms.RosRetcodeAppProps

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:10.051Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.771Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosSSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {

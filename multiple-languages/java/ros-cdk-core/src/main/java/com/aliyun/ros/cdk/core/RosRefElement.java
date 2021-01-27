@@ -1,16 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Base class for referenceable template constructs which are not Resources.
- * <p>
- * These constructs are things like Conditions and Parameters, can be
- * referenced by taking the <code>.ref</code> attribute.
- * <p>
- * Resource constructs do not inherit from RosRefElement because they have their
- * own, more specific types returned from the .ref attribute. Also, some
- * resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
+ * Base class for referenceable template constructs which are not Resources  These constructs are things like Conditions and Parameters, can be referenced by taking the `.ref` attribute.  Resource constructs do not inherit from RosRefElement because they have their own, more specific types returned from the .ref attribute. Also, some resources aren't referenceable at all (such as BucketPolicies or GatewayAttachments).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.549Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosRefElement")
 public abstract class RosRefElement extends com.aliyun.ros.cdk.core.RosElement {
 

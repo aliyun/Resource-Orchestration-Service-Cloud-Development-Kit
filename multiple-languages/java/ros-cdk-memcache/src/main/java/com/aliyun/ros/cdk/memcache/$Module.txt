@@ -1,0 +1,9 @@
+@alicloud/ros-cdk-memcache.Instance=com.aliyun.ros.cdk.memcache.Instance
+@alicloud/ros-cdk-memcache.InstanceProps=com.aliyun.ros.cdk.memcache.InstanceProps
+@alicloud/ros-cdk-memcache.RosInstance=com.aliyun.ros.cdk.memcache.RosInstance
+@alicloud/ros-cdk-memcache.RosInstance.BackupPolicyProperty=com.aliyun.ros.cdk.memcache.RosInstance$BackupPolicyProperty
+@alicloud/ros-cdk-memcache.RosInstanceProps=com.aliyun.ros.cdk.memcache.RosInstanceProps
+@alicloud/ros-cdk-memcache.RosWhitelist=com.aliyun.ros.cdk.memcache.RosWhitelist
+@alicloud/ros-cdk-memcache.RosWhitelistProps=com.aliyun.ros.cdk.memcache.RosWhitelistProps
+@alicloud/ros-cdk-memcache.Whitelist=com.aliyun.ros.cdk.memcache.Whitelist
+@alicloud/ros-cdk-memcache.WhitelistProps=com.aliyun.ros.cdk.memcache.WhitelistProps

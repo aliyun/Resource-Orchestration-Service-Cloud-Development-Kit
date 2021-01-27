@@ -1,14 +1,14 @@
 package com.aliyun.ros.cdk.cxapi;
 
 /**
- * (deprecated) Backwards compatibility for when `MissingContext` was defined here.
+ * (deprecated) Backwards compatibility for when `MissingContext` was defined here.
  * <p>
  * This is necessary because its used as an input in the stable
  * <p>
  * @see core.Stack.reportMissingContext
  * @deprecated moved to package 'ros-assembly-schema'
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.276Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:30.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cxapi.$Module.class, fqn = "@alicloud/ros-cdk-cxapi.MissingContext")
 @software.amazon.jsii.Jsii.Proxy(MissingContext.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)

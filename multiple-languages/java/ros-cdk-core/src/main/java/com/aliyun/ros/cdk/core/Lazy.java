@@ -1,12 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Lazily produce a value.
- * <p>
- * Can be used to return a string, list or numeric value whose actual value
- * will only be calculated later, during synthesis.
+ * Lazily produce a value  Can be used to return a string, list or numeric value whose actual value will only be calculated later, during synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Lazy")
 public class Lazy extends software.amazon.jsii.JsiiObject {
 

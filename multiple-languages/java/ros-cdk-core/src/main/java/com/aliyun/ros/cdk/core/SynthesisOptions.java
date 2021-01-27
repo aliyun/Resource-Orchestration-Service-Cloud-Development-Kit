@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * @deprecated use `app.synth()` or `stage.synth()` instead
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:09.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:33.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.SynthesisOptions")
 @software.amazon.jsii.Jsii.Proxy(SynthesisOptions.Jsii$Proxy.class)
 @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Deprecated)

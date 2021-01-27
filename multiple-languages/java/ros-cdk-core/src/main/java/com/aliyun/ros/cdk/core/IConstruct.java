@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Represents a construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IConstruct")
 @software.amazon.jsii.Jsii.Proxy(IConstruct.Jsii$Proxy.class)
 public interface IConstruct extends software.amazon.jsii.JsiiSerializable, software.constructs.IConstruct, com.aliyun.ros.cdk.core.IDependable {

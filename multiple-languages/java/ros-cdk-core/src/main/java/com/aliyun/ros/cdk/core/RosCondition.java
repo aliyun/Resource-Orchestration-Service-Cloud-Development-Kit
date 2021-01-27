@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Represents a RosTemplate condition, for resources which must be conditionally created and the determination must be made at deploy time.
+ * Represents a RosTemplate condition, for resources which must be conditionally created and the determination must be made at deploy time.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.154Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosCondition")
 public class RosCondition extends com.aliyun.ros.cdk.core.RosElement implements com.aliyun.ros.cdk.core.IRosConditionExpression, com.aliyun.ros.cdk.core.IResolvable {
 

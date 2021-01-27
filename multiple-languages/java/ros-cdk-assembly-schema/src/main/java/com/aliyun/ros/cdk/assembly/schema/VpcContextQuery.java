@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.assembly.schema;
 /**
  * Query input for looking up a VPC.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:07.256Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:30.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.assembly.schema.$Module.class, fqn = "@alicloud/ros-cdk-assembly-schema.VpcContextQuery")
 @software.amazon.jsii.Jsii.Proxy(VpcContextQuery.Jsii$Proxy.class)
 public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
@@ -14,9 +14,7 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.String getAccount();
 
     /**
-     * Filters to apply to the VPC.
-     * <p>
-     * Filter parameters are the same as passed to DescribeVpcs.
+     * Filters to apply to the VPC  Filter parameters are the same as passed to DescribeVpcs.
      */
     @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.String> getFilter();
 
@@ -26,7 +24,7 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.String getRegion();
 
     /**
-     * Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+     * Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
      * <p>
      * Default: false
      */
@@ -75,8 +73,7 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpcContextQuery#getFilter}
-         * @param filter Filters to apply to the VPC. This parameter is required.
-         *               Filter parameters are the same as passed to DescribeVpcs.
+         * @param filter Filters to apply to the VPC  Filter parameters are the same as passed to DescribeVpcs. This parameter is required.
          * @return {@code this}
          */
         public Builder filter(java.util.Map<java.lang.String, java.lang.String> filter) {
@@ -96,7 +93,7 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpcContextQuery#getReturnAsymmetricSubnets}
-         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
          * @return {@code this}
          */
         public Builder returnAsymmetricSubnets(java.lang.Boolean returnAsymmetricSubnets) {

@@ -1,17 +1,15 @@
 package com.aliyun.ros.cdk.core;
 
 /**
- * Interface for values that can be resolvable later.
- * <p>
- * Tokens are special objects that participate in synthesis.
+ * Interface for values that can be resolvable later  Tokens are special objects that participate in synthesis.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T03:36:08.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-01-26T09:47:32.113Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IResolvable")
 @software.amazon.jsii.Jsii.Proxy(IResolvable.Jsii$Proxy.class)
 public interface IResolvable extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * The creation stack of this resolvable which will be appended to errors thrown during resolution.
+     * The creation stack of this resolvable which will be appended to errors thrown during resolution.
      * <p>
      * If this returns an empty array the stack will not be attached.
      */
@@ -41,7 +39,7 @@ public interface IResolvable extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
+         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
          * <p>
          * If this returns an empty array the stack will not be attached.
          */
@@ -78,7 +76,7 @@ public interface IResolvable extends software.amazon.jsii.JsiiSerializable {
     interface Jsii$Default extends IResolvable {
 
         /**
-         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
+         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
          * <p>
          * If this returns an empty array the stack will not be attached.
          */

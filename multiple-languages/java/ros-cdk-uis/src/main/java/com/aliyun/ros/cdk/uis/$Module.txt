@@ -1,0 +1,14 @@
+@alicloud/ros-cdk-uis.RosUis=com.aliyun.ros.cdk.uis.RosUis
+@alicloud/ros-cdk-uis.RosUisConnection=com.aliyun.ros.cdk.uis.RosUisConnection
+@alicloud/ros-cdk-uis.RosUisConnection.GreConfigProperty=com.aliyun.ros.cdk.uis.RosUisConnection$GreConfigProperty
+@alicloud/ros-cdk-uis.RosUisConnection.SslConfigProperty=com.aliyun.ros.cdk.uis.RosUisConnection$SslConfigProperty
+@alicloud/ros-cdk-uis.RosUisConnectionProps=com.aliyun.ros.cdk.uis.RosUisConnectionProps
+@alicloud/ros-cdk-uis.RosUisNode=com.aliyun.ros.cdk.uis.RosUisNode
+@alicloud/ros-cdk-uis.RosUisNodeProps=com.aliyun.ros.cdk.uis.RosUisNodeProps
+@alicloud/ros-cdk-uis.RosUisProps=com.aliyun.ros.cdk.uis.RosUisProps
+@alicloud/ros-cdk-uis.Uis=com.aliyun.ros.cdk.uis.Uis
+@alicloud/ros-cdk-uis.UisConnection=com.aliyun.ros.cdk.uis.UisConnection
+@alicloud/ros-cdk-uis.UisConnectionProps=com.aliyun.ros.cdk.uis.UisConnectionProps
+@alicloud/ros-cdk-uis.UisNode=com.aliyun.ros.cdk.uis.UisNode
+@alicloud/ros-cdk-uis.UisNodeProps=com.aliyun.ros.cdk.uis.UisNodeProps
+@alicloud/ros-cdk-uis.UisProps=com.aliyun.ros.cdk.uis.UisProps
