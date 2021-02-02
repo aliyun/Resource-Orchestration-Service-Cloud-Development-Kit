@@ -5,7 +5,13 @@
     <!-- @jsii-pacmak:meta@ {"fingerprint":"G5leauSao3a9vVcq5n3pFuf9RDSFknaPd9AD6fXYwMw="} -->
     <modelVersion>4.0.0</modelVersion>
     <name>${project.groupId}:${project.artifactId}</name>
-    <description/>
+    <description>Aliyun SDK for Java
+
+        Copyright (C) Alibaba Cloud Computing
+        All rights reserved.
+
+        http://www.aliyun.com
+    </description>
     <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
     <licenses>
         <license>
@@ -24,8 +30,7 @@
         </developer>
     </developers>
     <scm>
-        <connection>scm:git:https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git
-        </connection>
+        <connection>scm:git:https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</connection>
         <url>https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git</url>
     </scm>
     <groupId>com.aliyun</groupId>
@@ -33,7 +38,10 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
     <properties>
+        <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -58,23 +66,22 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+                <version>3.1.0</version>
+            </plugin>
+            <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.2.0</version>
                 <configuration>
@@ -88,7 +95,6 @@
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>3.2.1</version>
                 <executions>
@@ -101,18 +107,22 @@
                 </executions>
             </plugin>
             <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>sonatype-nexus-staging</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>3.2.0</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
                 <configuration>
+                    <encoding>UTF-8</encoding>
                     <doclint>none</doclint>
                     <failOnError>false</failOnError>
                     <show>protected</show>
@@ -152,6 +162,18 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                    <check/>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.1</version>
             </plugin>
@@ -183,12 +205,9 @@
     </build>
     <repositories>
         <repository>
-            <id>sonatype-nexus-staging</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>publicCentral</id>
+            <name>repo central</name>
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
     </repositories>
     <distributionManagement>

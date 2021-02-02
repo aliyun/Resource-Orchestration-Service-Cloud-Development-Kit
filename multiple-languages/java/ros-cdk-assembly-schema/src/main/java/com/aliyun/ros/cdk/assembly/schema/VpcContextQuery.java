@@ -14,7 +14,9 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.String getAccount();
 
     /**
-     * Filters to apply to the VPC  Filter parameters are the same as passed to DescribeVpcs.
+     * Filters to apply to the VPC
+ 
+ Filter parameters are the same as passed to DescribeVpcs.
      */
     @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.String> getFilter();
 
@@ -24,7 +26,8 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.String getRegion();
 
     /**
-     * Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+     * Whether to populate the subnetGroups field of the VpcContextResponse,
+ which contains potentially asymmetric subnet groups.
      * <p>
      * Default: false
      */
@@ -73,7 +76,9 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpcContextQuery#getFilter}
-         * @param filter Filters to apply to the VPC  Filter parameters are the same as passed to DescribeVpcs. This parameter is required.
+         * @param filter Filters to apply to the VPC
+ 
+ Filter parameters are the same as passed to DescribeVpcs. This parameter is required.
          * @return {@code this}
          */
         public Builder filter(java.util.Map<java.lang.String, java.lang.String> filter) {
@@ -93,7 +98,8 @@ public interface VpcContextQuery extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpcContextQuery#getReturnAsymmetricSubnets}
-         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the {@link VpcContextResponse}, which contains potentially asymmetric subnet groups.
+         * @param returnAsymmetricSubnets Whether to populate the subnetGroups field of the VpcContextResponse,
+ which contains potentially asymmetric subnet groups.
          * @return {@code this}
          */
         public Builder returnAsymmetricSubnets(java.lang.Boolean returnAsymmetricSubnets) {
