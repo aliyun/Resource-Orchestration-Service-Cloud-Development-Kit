@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.renderTable = void 0;
+const rosDiff = require("@alicloud/ros-cdk-template-diff");
+function renderTable(cells, columns) {
+    // The rosDiff module has logic for terminal-width aware table
+    // formatting (and nice colors), let's just reuse that.
+    return rosDiff.formatTable(cells, columns);
+}
+exports.renderTable = renderTable;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGFibGVzLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsidGFibGVzLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLDJEQUEyRDtBQUUzRCxTQUFnQixXQUFXLENBQUMsS0FBaUIsRUFBRSxPQUFnQjtJQUM3RCw4REFBOEQ7SUFDOUQsdURBQXVEO0lBQ3ZELE9BQU8sT0FBTyxDQUFDLFdBQVcsQ0FBQyxLQUFLLEVBQUUsT0FBTyxDQUFDLENBQUM7QUFDN0MsQ0FBQztBQUpELGtDQUlDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgcm9zRGlmZiBmcm9tICdAYWxpY2xvdWQvcm9zLWNkay10ZW1wbGF0ZS1kaWZmJztcclxuXHJcbmV4cG9ydCBmdW5jdGlvbiByZW5kZXJUYWJsZShjZWxsczogc3RyaW5nW11bXSwgY29sdW1ucz86IG51bWJlcikge1xyXG4gIC8vIFRoZSByb3NEaWZmIG1vZHVsZSBoYXMgbG9naWMgZm9yIHRlcm1pbmFsLXdpZHRoIGF3YXJlIHRhYmxlXHJcbiAgLy8gZm9ybWF0dGluZyAoYW5kIG5pY2UgY29sb3JzKSwgbGV0J3MganVzdCByZXVzZSB0aGF0LlxyXG4gIHJldHVybiByb3NEaWZmLmZvcm1hdFRhYmxlKGNlbGxzLCBjb2x1bW5zKTtcclxufVxyXG4iXX0=

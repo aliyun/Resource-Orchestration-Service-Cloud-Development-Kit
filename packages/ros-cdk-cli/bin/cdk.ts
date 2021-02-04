@@ -298,7 +298,7 @@ async function initCommandLine() {
 
       case 'load-config':
         await cli.loadCliConfig({
-          global: args.global,
+          global: args.global, 
           loadFilePath: args['file-path']
         });
         return;

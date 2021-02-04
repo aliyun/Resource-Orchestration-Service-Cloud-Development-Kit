@@ -9,7 +9,7 @@ ACTION=$1
 ARG1=$2
 
 usage() {
-    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|spec2ts|jsii-pack|copy-js}"
+    echo "Usage: $PROG_NAME {setup-dependency|clear-dependency|generate-tsconfig|build|spec2ts|jsii-pack|copy-js|convert-maven-project}"
     exit 1;
 }
 
@@ -89,6 +89,37 @@ spec2ts() {
     npm run spec2ts
 
     cd $root
+}
+
+convert_maven_project() {
+    root=$PWD
+    dist_dir="$PWD/dist"
+    if [ ! -d "$dist_dir" ]; then
+        echo "directory $dist_dir not found"
+        exit 1
+    fi
+
+    java_dir="$dist_dir/java/com/aliyun"
+
+    java_packages="$dist_dir/java/com/aliyun/packages"
+    rm -rf  $java_packages
+    mkdir -p $java_packages
+
+    for jar in $(find $java_dir -name "*-sources.jar"); do
+      long_package_name=${jar#*aliyun/}
+      short_package_name=${long_package_name%%/*}
+      mkdir -p ${java_packages}/${short_package_name}/
+      cp -r $jar ${java_packages}/${short_package_name}/
+      cd ${java_packages}/${short_package_name}/
+      jar xvf ${java_packages}/${short_package_name}/*.jar
+      mkdir -p ${java_packages}/${short_package_name}/src/main/java
+      mv com/ ${java_packages}/${short_package_name}/src/main/java
+      cp META-INF/maven/com.aliyun/${short_package_name}/pom.xml ${java_packages}/${short_package_name}/
+      rm -rf *.jar META-INF/
+      python3 $root/tools/convert_maven_project.py --pom_file_path=${java_packages}/${short_package_name}/pom.xml
+    done
+    rm -rf $root/multiple-languages/java
+    mv ${java_packages}/ $root/multiple-languages/java
 }
 
 
@@ -193,6 +224,9 @@ case "$ACTION" in
     ;;
     copy-js)
         copy_js
+    ;;
+    convert-maven-project)
+          convert_maven_project
     ;;
     *)
         usage

@@ -1,7 +1,7 @@
 {
   "name": "@alicloud/ros-cdk-template-diff",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
   "main": "lib/index.js",

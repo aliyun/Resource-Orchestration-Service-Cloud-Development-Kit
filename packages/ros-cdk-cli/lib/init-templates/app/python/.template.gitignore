@@ -1,0 +1,14 @@
+*.swp
+package-lock.json
+__pycache__
+.pytest_cache
+.env
+*.egg-info
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
+
+# Account config and stack info
+./account.config.json
+./stack.info.json

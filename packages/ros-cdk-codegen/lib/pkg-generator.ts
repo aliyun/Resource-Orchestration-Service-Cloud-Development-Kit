@@ -25,7 +25,13 @@ export async function createPackages() {
         // jsii -> java
         pkg['jsii']['targets']['java']['package'] = ROS_JAVA_PACKAGE + scope.split('-').join('.');
         pkg['jsii']['targets']['java']['maven']['artifactId'] = scope;
+
+        // jsii -> python
+        pkg['jsii']['targets']['python']['module'] = scope.split('-').join('_')
+        pkg['jsii']['targets']['python']['distName'] = scope
+
         fs.writeFileSync(pkgPath + '/package.json', JSON.stringify(pkg, null, 2), 'utf-8');
+
         
         // copy README.md and gitignore
         let readme = fs.readFileSync(template_dir + '/README.md');

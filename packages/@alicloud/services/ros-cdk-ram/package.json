@@ -1,9 +1,9 @@
 {
   "name": "@alicloud/ros-cdk-ram",
   "version": "1.0.0",
-  "description": "ros-cdk-ram package used for AliCloud ROS",
+  "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
-  "homepage": "",
+
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -19,6 +19,13 @@
           "groupId": "com.aliyun",
           "artifactId": "ros-cdk-ram"
         }
+      },
+      "python": {
+        "module": "ros_cdk_ram",
+        "distName": "ros-cdk-ram",
+        "classifiers": [
+          "Programming Language :: Python :: 3"
+        ]
       }
     }
   },
@@ -27,7 +34,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git"
   },
   "scripts": {
     "build": "tsc",
