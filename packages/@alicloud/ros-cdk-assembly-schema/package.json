@@ -1,7 +1,7 @@
 {
   "name": "@alicloud/ros-cdk-assembly-schema",
   "version": "1.0.0",
-  "description": "",
+  "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
   "license": "Apache-2.0",
   "main": "lib/index.js",
@@ -15,6 +15,13 @@
           "groupId": "com.aliyun",
           "artifactId": "ros-cdk-assembly-schema"
         }
+      },
+      "python": {
+        "module": "ros_cdk_assembly_schema",
+        "distName": "ros-cdk-assembly-schema",
+        "classifiers": [
+          "Programming Language :: Python :: 3"
+        ]
       }
     }
   },
