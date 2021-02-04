@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-vs.Group=com.aliyun.ros.cdk.vs.Group
+@alicloud/ros-cdk-vs.GroupProps=com.aliyun.ros.cdk.vs.GroupProps
+@alicloud/ros-cdk-vs.RosGroup=com.aliyun.ros.cdk.vs.RosGroup
+@alicloud/ros-cdk-vs.RosGroupProps=com.aliyun.ros.cdk.vs.RosGroupProps

@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-datahub.Project=com.aliyun.ros.cdk.datahub.Project
+@alicloud/ros-cdk-datahub.ProjectProps=com.aliyun.ros.cdk.datahub.ProjectProps
+@alicloud/ros-cdk-datahub.RosProject=com.aliyun.ros.cdk.datahub.RosProject
+@alicloud/ros-cdk-datahub.RosProjectProps=com.aliyun.ros.cdk.datahub.RosProjectProps
+@alicloud/ros-cdk-datahub.RosTopic=com.aliyun.ros.cdk.datahub.RosTopic
+@alicloud/ros-cdk-datahub.RosTopicProps=com.aliyun.ros.cdk.datahub.RosTopicProps
+@alicloud/ros-cdk-datahub.Topic=com.aliyun.ros.cdk.datahub.Topic
+@alicloud/ros-cdk-datahub.TopicProps=com.aliyun.ros.cdk.datahub.TopicProps

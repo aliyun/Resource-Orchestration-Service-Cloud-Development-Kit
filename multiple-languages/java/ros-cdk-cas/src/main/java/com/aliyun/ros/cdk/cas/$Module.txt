@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-cas.Certificate=com.aliyun.ros.cdk.cas.Certificate
+@alicloud/ros-cdk-cas.CertificateProps=com.aliyun.ros.cdk.cas.CertificateProps
+@alicloud/ros-cdk-cas.RosCertificate=com.aliyun.ros.cdk.cas.RosCertificate
+@alicloud/ros-cdk-cas.RosCertificateProps=com.aliyun.ros.cdk.cas.RosCertificateProps

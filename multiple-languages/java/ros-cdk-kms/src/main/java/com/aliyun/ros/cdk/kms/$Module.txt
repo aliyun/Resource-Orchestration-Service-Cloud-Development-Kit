@@ -1,0 +1,12 @@
+@alicloud/ros-cdk-kms.Alias=com.aliyun.ros.cdk.kms.Alias
+@alicloud/ros-cdk-kms.AliasProps=com.aliyun.ros.cdk.kms.AliasProps
+@alicloud/ros-cdk-kms.Key=com.aliyun.ros.cdk.kms.Key
+@alicloud/ros-cdk-kms.KeyProps=com.aliyun.ros.cdk.kms.KeyProps
+@alicloud/ros-cdk-kms.RosAlias=com.aliyun.ros.cdk.kms.RosAlias
+@alicloud/ros-cdk-kms.RosAliasProps=com.aliyun.ros.cdk.kms.RosAliasProps
+@alicloud/ros-cdk-kms.RosKey=com.aliyun.ros.cdk.kms.RosKey
+@alicloud/ros-cdk-kms.RosKeyProps=com.aliyun.ros.cdk.kms.RosKeyProps
+@alicloud/ros-cdk-kms.RosSecret=com.aliyun.ros.cdk.kms.RosSecret
+@alicloud/ros-cdk-kms.RosSecretProps=com.aliyun.ros.cdk.kms.RosSecretProps
+@alicloud/ros-cdk-kms.Secret=com.aliyun.ros.cdk.kms.Secret
+@alicloud/ros-cdk-kms.SecretProps=com.aliyun.ros.cdk.kms.SecretProps

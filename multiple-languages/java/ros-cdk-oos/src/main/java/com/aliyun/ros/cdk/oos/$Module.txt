@@ -1,0 +1,13 @@
+@alicloud/ros-cdk-oos.Execution=com.aliyun.ros.cdk.oos.Execution
+@alicloud/ros-cdk-oos.ExecutionProps=com.aliyun.ros.cdk.oos.ExecutionProps
+@alicloud/ros-cdk-oos.Parameter=com.aliyun.ros.cdk.oos.Parameter
+@alicloud/ros-cdk-oos.ParameterProps=com.aliyun.ros.cdk.oos.ParameterProps
+@alicloud/ros-cdk-oos.RosExecution=com.aliyun.ros.cdk.oos.RosExecution
+@alicloud/ros-cdk-oos.RosExecution.ResourceOptionsProperty=com.aliyun.ros.cdk.oos.RosExecution$ResourceOptionsProperty
+@alicloud/ros-cdk-oos.RosExecutionProps=com.aliyun.ros.cdk.oos.RosExecutionProps
+@alicloud/ros-cdk-oos.RosParameter=com.aliyun.ros.cdk.oos.RosParameter
+@alicloud/ros-cdk-oos.RosParameterProps=com.aliyun.ros.cdk.oos.RosParameterProps
+@alicloud/ros-cdk-oos.RosTemplate=com.aliyun.ros.cdk.oos.RosTemplate
+@alicloud/ros-cdk-oos.RosTemplateProps=com.aliyun.ros.cdk.oos.RosTemplateProps
+@alicloud/ros-cdk-oos.Template=com.aliyun.ros.cdk.oos.Template
+@alicloud/ros-cdk-oos.TemplateProps=com.aliyun.ros.cdk.oos.TemplateProps

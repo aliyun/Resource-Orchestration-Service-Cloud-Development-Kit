@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-mse.Cluster=com.aliyun.ros.cdk.mse.Cluster
+@alicloud/ros-cdk-mse.ClusterProps=com.aliyun.ros.cdk.mse.ClusterProps
+@alicloud/ros-cdk-mse.RosCluster=com.aliyun.ros.cdk.mse.RosCluster
+@alicloud/ros-cdk-mse.RosClusterProps=com.aliyun.ros.cdk.mse.RosClusterProps

@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-elasticsearch.Instance=com.aliyun.ros.cdk.elasticsearch.Instance
+@alicloud/ros-cdk-elasticsearch.InstanceProps=com.aliyun.ros.cdk.elasticsearch.InstanceProps
+@alicloud/ros-cdk-elasticsearch.RosInstance=com.aliyun.ros.cdk.elasticsearch.RosInstance
+@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$DataNodeProperty
+@alicloud/ros-cdk-elasticsearch.RosInstance.MasterNodeProperty=com.aliyun.ros.cdk.elasticsearch.RosInstance$MasterNodeProperty
+@alicloud/ros-cdk-elasticsearch.RosInstanceProps=com.aliyun.ros.cdk.elasticsearch.RosInstanceProps

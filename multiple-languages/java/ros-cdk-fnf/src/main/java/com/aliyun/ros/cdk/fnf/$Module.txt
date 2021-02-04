@@ -1,0 +1,8 @@
+@alicloud/ros-cdk-fnf.Flow=com.aliyun.ros.cdk.fnf.Flow
+@alicloud/ros-cdk-fnf.FlowProps=com.aliyun.ros.cdk.fnf.FlowProps
+@alicloud/ros-cdk-fnf.RosFlow=com.aliyun.ros.cdk.fnf.RosFlow
+@alicloud/ros-cdk-fnf.RosFlowProps=com.aliyun.ros.cdk.fnf.RosFlowProps
+@alicloud/ros-cdk-fnf.RosSchedule=com.aliyun.ros.cdk.fnf.RosSchedule
+@alicloud/ros-cdk-fnf.RosScheduleProps=com.aliyun.ros.cdk.fnf.RosScheduleProps
+@alicloud/ros-cdk-fnf.Schedule=com.aliyun.ros.cdk.fnf.Schedule
+@alicloud/ros-cdk-fnf.ScheduleProps=com.aliyun.ros.cdk.fnf.ScheduleProps

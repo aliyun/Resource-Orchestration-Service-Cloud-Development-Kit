@@ -1,0 +1,31 @@
+Metadata-Version: 2.1
+Name: ros-cdk-rds
+Version: 1.0.0
+Summary: Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com
+Home-page: https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git
+Author: ROS Development Team
+License: Apache-2.0
+Project-URL: Source, https://github.com/aliyun/Resource-Orchestration-Service-Cloud-Development-Kit.git
+Description: ## Aliyun ROS RDS Construct Library
+        
+        This module is part of the AliCloud ROS Cloud Development Kit (ROS CDK) project.
+        
+        ```python
+        # Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
+        import alicloud.ros_cdk_rds as RDS
+        ```
+        
+Platform: UNKNOWN
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: JavaScript
+Classifier: Programming Language :: Python :: 3 :: Only
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Typing :: Typed
+Classifier: License :: OSI Approved
+Classifier: Programming Language :: Python :: 3
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
