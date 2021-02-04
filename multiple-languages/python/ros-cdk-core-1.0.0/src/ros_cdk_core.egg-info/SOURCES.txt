@@ -1,0 +1,13 @@
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+src/ros_cdk_core/__init__.py
+src/ros_cdk_core/py.typed
+src/ros_cdk_core.egg-info/PKG-INFO
+src/ros_cdk_core.egg-info/SOURCES.txt
+src/ros_cdk_core.egg-info/dependency_links.txt
+src/ros_cdk_core.egg-info/requires.txt
+src/ros_cdk_core.egg-info/top_level.txt
+src/ros_cdk_core/_jsii/__init__.py
+src/ros_cdk_core/_jsii/ros-cdk-core@1.0.0.jsii.tgz

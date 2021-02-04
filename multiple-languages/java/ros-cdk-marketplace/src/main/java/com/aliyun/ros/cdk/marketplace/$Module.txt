@@ -1,0 +1,4 @@
+@alicloud/ros-cdk-marketplace.Order=com.aliyun.ros.cdk.marketplace.Order
+@alicloud/ros-cdk-marketplace.OrderProps=com.aliyun.ros.cdk.marketplace.OrderProps
+@alicloud/ros-cdk-marketplace.RosOrder=com.aliyun.ros.cdk.marketplace.RosOrder
+@alicloud/ros-cdk-marketplace.RosOrderProps=com.aliyun.ros.cdk.marketplace.RosOrderProps
