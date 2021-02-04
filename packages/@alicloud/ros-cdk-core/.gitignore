@@ -1,7 +1,0 @@
-*.js
-*.d.ts
-node_modules
-dist
-.npmignore
-tsconfig.json
-.jsii
