@@ -1,27 +1,7 @@
-const {expect, matchTemplate, MatchStyle} = require('@alicloud/ros-cdk-assert');
-const ros = require('@alicloud/ros-cdk-core');
-const Demo = require('../lib/demo-stack');
-
-test('Stack with version.', () => {
-    const app = new ros.App();
-    // WHEN
-    const stack = new Demo.DemoStack(app, 'MyTestStack');
-    // THEN
-    expect(stack).to(matchTemplate(
-        {
-            "Description": "This is the simple ros cdk app example.",
-            "ROSTemplateFormatVersion": "2015-09-01",
-            "Resources": {
-                "vpc-from-ros-cdk": {
-                    "Type": "ALIYUN::ECS::VPC",
-                    "Properties": {
-                        "CidrBlock": "10.0.0.0/8",
-                        "Description": "This is ros cdk test",
-                        "EnableIpv6": false,
-                        "VpcName": "test-ros-cdk-javascript"
-                    }
-                }
-            }
-        }
-        , MatchStyle.EXACT))
-});
+module.exports = {
+    roots: ['<rootDir>/__test__'],
+    testMatch: ['**/*.test.ts'],
+    transform: {
+        '^.+\\.tsx?$': 'ts-jest'
+    }
+};
