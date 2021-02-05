@@ -1,4 +1,0 @@
-@alicloud/ros-cdk-bss.RosWaitOrder=com.aliyun.ros.cdk.bss.RosWaitOrder
-@alicloud/ros-cdk-bss.RosWaitOrderProps=com.aliyun.ros.cdk.bss.RosWaitOrderProps
-@alicloud/ros-cdk-bss.WaitOrder=com.aliyun.ros.cdk.bss.WaitOrder
-@alicloud/ros-cdk-bss.WaitOrderProps=com.aliyun.ros.cdk.bss.WaitOrderProps

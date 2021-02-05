@@ -1,9 +1,0 @@
-@alicloud/ros-cdk-cloudfw.AddressBook=com.aliyun.ros.cdk.cloudfw.AddressBook
-@alicloud/ros-cdk-cloudfw.AddressBookProps=com.aliyun.ros.cdk.cloudfw.AddressBookProps
-@alicloud/ros-cdk-cloudfw.ControlPolicy=com.aliyun.ros.cdk.cloudfw.ControlPolicy
-@alicloud/ros-cdk-cloudfw.ControlPolicyProps=com.aliyun.ros.cdk.cloudfw.ControlPolicyProps
-@alicloud/ros-cdk-cloudfw.RosAddressBook=com.aliyun.ros.cdk.cloudfw.RosAddressBook
-@alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty=com.aliyun.ros.cdk.cloudfw.RosAddressBook$TagListProperty
-@alicloud/ros-cdk-cloudfw.RosAddressBookProps=com.aliyun.ros.cdk.cloudfw.RosAddressBookProps
-@alicloud/ros-cdk-cloudfw.RosControlPolicy=com.aliyun.ros.cdk.cloudfw.RosControlPolicy
-@alicloud/ros-cdk-cloudfw.RosControlPolicyProps=com.aliyun.ros.cdk.cloudfw.RosControlPolicyProps

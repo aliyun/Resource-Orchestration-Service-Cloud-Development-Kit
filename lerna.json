@@ -1,8 +1,0 @@
-{
-  "packages": [
-    "packages/*",
-    "packages/@alicloud/*",
-    "packages/@alicloud/services/*"
-  ],
-  "version": "1.0.0"
-}

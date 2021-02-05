@@ -1,8 +1,0 @@
-@alicloud/ros-cdk-acm.Configuration=com.aliyun.ros.cdk.acm.Configuration
-@alicloud/ros-cdk-acm.ConfigurationProps=com.aliyun.ros.cdk.acm.ConfigurationProps
-@alicloud/ros-cdk-acm.Namespace=com.aliyun.ros.cdk.acm.Namespace
-@alicloud/ros-cdk-acm.NamespaceProps=com.aliyun.ros.cdk.acm.NamespaceProps
-@alicloud/ros-cdk-acm.RosConfiguration=com.aliyun.ros.cdk.acm.RosConfiguration
-@alicloud/ros-cdk-acm.RosConfigurationProps=com.aliyun.ros.cdk.acm.RosConfigurationProps
-@alicloud/ros-cdk-acm.RosNamespace=com.aliyun.ros.cdk.acm.RosNamespace
-@alicloud/ros-cdk-acm.RosNamespaceProps=com.aliyun.ros.cdk.acm.RosNamespaceProps

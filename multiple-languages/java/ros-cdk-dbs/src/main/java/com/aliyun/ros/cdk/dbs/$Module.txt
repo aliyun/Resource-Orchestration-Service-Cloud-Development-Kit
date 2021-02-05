@@ -1,4 +1,0 @@
-@alicloud/ros-cdk-dbs.RestoreTask=com.aliyun.ros.cdk.dbs.RestoreTask
-@alicloud/ros-cdk-dbs.RestoreTaskProps=com.aliyun.ros.cdk.dbs.RestoreTaskProps
-@alicloud/ros-cdk-dbs.RosRestoreTask=com.aliyun.ros.cdk.dbs.RosRestoreTask
-@alicloud/ros-cdk-dbs.RosRestoreTaskProps=com.aliyun.ros.cdk.dbs.RosRestoreTaskProps

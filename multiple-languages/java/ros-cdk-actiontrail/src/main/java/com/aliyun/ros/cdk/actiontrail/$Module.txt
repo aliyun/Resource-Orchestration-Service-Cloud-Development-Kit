@@ -1,8 +1,0 @@
-@alicloud/ros-cdk-actiontrail.RosTrail=com.aliyun.ros.cdk.actiontrail.RosTrail
-@alicloud/ros-cdk-actiontrail.RosTrailLogging=com.aliyun.ros.cdk.actiontrail.RosTrailLogging
-@alicloud/ros-cdk-actiontrail.RosTrailLoggingProps=com.aliyun.ros.cdk.actiontrail.RosTrailLoggingProps
-@alicloud/ros-cdk-actiontrail.RosTrailProps=com.aliyun.ros.cdk.actiontrail.RosTrailProps
-@alicloud/ros-cdk-actiontrail.Trail=com.aliyun.ros.cdk.actiontrail.Trail
-@alicloud/ros-cdk-actiontrail.TrailLogging=com.aliyun.ros.cdk.actiontrail.TrailLogging
-@alicloud/ros-cdk-actiontrail.TrailLoggingProps=com.aliyun.ros.cdk.actiontrail.TrailLoggingProps
-@alicloud/ros-cdk-actiontrail.TrailProps=com.aliyun.ros.cdk.actiontrail.TrailProps
