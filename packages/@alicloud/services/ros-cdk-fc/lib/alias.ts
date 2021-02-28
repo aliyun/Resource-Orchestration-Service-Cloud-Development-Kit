@@ -9,32 +9,32 @@ export { RosAlias as AliasProperty };
 export interface AliasProps {
 
     /**
-     * @Property aliasName: Alias name
+     * Property aliasName: Alias name
      */
     readonly aliasName: string;
 
     /**
-     * @Property serviceName: Service name
+     * Property serviceName: Service name
      */
     readonly serviceName: string;
 
     /**
-     * @Property additionalVersion: Additional version
+     * Property additionalVersion: Additional version
      */
     readonly additionalVersion?: string;
 
     /**
-     * @Property additionalWeight: Traffic weight of additional version. From 0 to 100.
+     * Property additionalWeight: Traffic weight of additional version. From 0 to 100.
      */
     readonly additionalWeight?: number;
 
     /**
-     * @Property description: Version description
+     * Property description: Version description
      */
     readonly description?: string;
 
     /**
-     * @Property versionId: Version ID
+     * Property versionId: Version ID
      */
     readonly versionId?: string;
 }
@@ -50,26 +50,26 @@ export class Alias extends ros.Resource {
      */
 
     /**
-     * @Attribute AliasName: The alias name
+     * Attribute AliasName: The alias name
      */
     public readonly attrAliasName: any;
 
     /**
-     * @Attribute ServiceName: The service name
+     * Attribute ServiceName: The service name
      */
     public readonly attrServiceName: any;
 
     /**
-     * @Attribute VersionId: The version ID
+     * Attribute VersionId: The version ID
      */
     public readonly attrVersionId: any;
 
     /**
      * Create a new `ALIYUN::FC::Alias`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AliasProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

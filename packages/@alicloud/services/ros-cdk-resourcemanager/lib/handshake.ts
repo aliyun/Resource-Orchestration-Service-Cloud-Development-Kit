@@ -9,17 +9,17 @@ export { RosHandshake as HandshakeProperty };
 export interface HandshakeProps {
 
     /**
-     * @Property targetEntity: Invited account ID or login email
+     * Property targetEntity: Invited account ID or login email
      */
     readonly targetEntity: string;
 
     /**
-     * @Property targetType: Type of account being invited. Valid values: Account, Email
+     * Property targetType: Type of account being invited. Valid values: Account, Email
      */
     readonly targetType: string;
 
     /**
-     * @Property note: Remarks
+     * Property note: Remarks
      */
     readonly note?: string;
 }
@@ -35,46 +35,46 @@ export class Handshake extends ros.Resource {
      */
 
     /**
-     * @Attribute HandshakeId: This ID of Resource Manager handshake
+     * Attribute HandshakeId: This ID of Resource Manager handshake
      */
     public readonly attrHandshakeId: any;
 
     /**
-     * @Attribute MasterAccountId: Resource account master account ID
+     * Attribute MasterAccountId: Resource account master account ID
      */
     public readonly attrMasterAccountId: any;
 
     /**
-     * @Attribute MasterAccountName: The name of the main account of the resource directory
+     * Attribute MasterAccountName: The name of the main account of the resource directory
      */
     public readonly attrMasterAccountName: any;
 
     /**
-     * @Attribute Note: Remarks
+     * Attribute Note: Remarks
      */
     public readonly attrNote: any;
 
     /**
-     * @Attribute ResourceDirectoryId: Resource directory ID
+     * Attribute ResourceDirectoryId: Resource directory ID
      */
     public readonly attrResourceDirectoryId: any;
 
     /**
-     * @Attribute TargetEntity: Invited account ID or login email
+     * Attribute TargetEntity: Invited account ID or login email
      */
     public readonly attrTargetEntity: any;
 
     /**
-     * @Attribute TargetType: Type of account being invited. Valid values: Account, Email
+     * Attribute TargetType: Type of account being invited. Valid values: Account, Email
      */
     public readonly attrTargetType: any;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Handshake`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: HandshakeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

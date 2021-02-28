@@ -9,59 +9,59 @@ export { RosGroup as GroupProperty };
 export interface GroupProps {
 
     /**
-     * @Property inProtocol: Access protocol used by the space.
+     * Property inProtocol: Access protocol used by the space.
      * Value: gb28181, rtmp
      */
     readonly inProtocol: string;
 
     /**
-     * @Property name: Space name.
+     * Property name: Space name.
      */
     readonly name: string;
 
     /**
-     * @Property outProtocol: Play protocol used by the space, multivalued separated by commas.
+     * Property outProtocol: Play protocol used by the space, multivalued separated by commas.
      * Value: flv, hls, rtmp
      */
     readonly outProtocol: string;
 
     /**
-     * @Property playDomain: Use of the domain name space broadcast stream.
+     * Property playDomain: Use of the domain name space broadcast stream.
      */
     readonly playDomain: string;
 
     /**
-     * @Property pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
+     * Property pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
      */
     readonly pushDomain: string;
 
     /**
-     * @Property region: Space belongs to the region, as a service center.
+     * Property region: Space belongs to the region, as a service center.
      */
     readonly region: string;
 
     /**
-     * @Property app: Application name space used, the default live.
+     * Property app: Application name space used, the default live.
      */
     readonly app?: string;
 
     /**
-     * @Property callback: Updating the space callback device / flow state
+     * Property callback: Updating the space callback device / flow state
      */
     readonly callback?: string;
 
     /**
-     * @Property description: Space description.
+     * Property description: Space description.
      */
     readonly description?: string;
 
     /**
-     * @Property enabled: Space is enabled.
+     * Property enabled: Space is enabled.
      */
     readonly enabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property lazyPull: Whether to enable on-demand pull flow, default false
+     * Property lazyPull: Whether to enable on-demand pull flow, default false
      */
     readonly lazyPull?: boolean | ros.IResolvable;
 }
@@ -77,31 +77,31 @@ export class Group extends ros.Resource {
      */
 
     /**
-     * @Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
+     * Attribute GbId: GB ID space provided. (Applies only to access the space marked States)
      */
     public readonly attrGbId: any;
 
     /**
-     * @Attribute GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
+     * Attribute GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
      */
     public readonly attrGbIp: any;
 
     /**
-     * @Attribute GbPort: GB Port space provided. (Applies only to access the space marked States)
+     * Attribute GbPort: GB Port space provided. (Applies only to access the space marked States)
      */
     public readonly attrGbPort: any;
 
     /**
-     * @Attribute Id: Space ID.
+     * Attribute Id: Space ID.
      */
     public readonly attrId: any;
 
     /**
      * Create a new `ALIYUN::VS::Group`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: GroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

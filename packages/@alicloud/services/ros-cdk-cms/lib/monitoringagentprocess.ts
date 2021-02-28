@@ -9,17 +9,17 @@ export { RosMonitoringAgentProcess as MonitoringAgentProcessProperty };
 export interface MonitoringAgentProcessProps {
 
     /**
-     * @Property instanceId: The ID of the instance.
+     * Property instanceId: The ID of the instance.
      */
     readonly instanceId: string;
 
     /**
-     * @Property processName: The name of the process.
+     * Property processName: The name of the process.
      */
     readonly processName?: string;
 
     /**
-     * @Property processUser: The user who launched the process.
+     * Property processUser: The user who launched the process.
      */
     readonly processUser?: string;
 }
@@ -35,16 +35,16 @@ export class MonitoringAgentProcess extends ros.Resource {
      */
 
     /**
-     * @Attribute Id: The process ID.
+     * Attribute Id: The process ID.
      */
     public readonly attrId: any;
 
     /**
      * Create a new `ALIYUN::CMS::MonitoringAgentProcess`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MonitoringAgentProcessProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

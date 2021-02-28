@@ -9,12 +9,12 @@ export { RosTrailLogging as TrailLoggingProperty };
 export interface TrailLoggingProps {
 
     /**
-     * @Property enable: Whether to enable the trail logging.
+     * Property enable: Whether to enable the trail logging.
      */
     readonly enable: boolean | ros.IResolvable;
 
     /**
-     * @Property name: The name of the trail to be enabled.
+     * Property name: The name of the trail to be enabled.
      */
     readonly name: string;
 }
@@ -30,36 +30,36 @@ export class TrailLogging extends ros.Resource {
      */
 
     /**
-     * @Attribute IsLogging: Indicates whether the trail is logging API invocations.
+     * Attribute IsLogging: Indicates whether the trail is logging API invocations.
      */
     public readonly attrIsLogging: any;
 
     /**
-     * @Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
+     * Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
      */
     public readonly attrLatestDeliveryError: any;
 
     /**
-     * @Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
+     * Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
      */
     public readonly attrLatestDeliveryTime: any;
 
     /**
-     * @Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
+     * Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
      */
     public readonly attrStartLoggingTime: any;
 
     /**
-     * @Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
+     * Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
      */
     public readonly attrStopLoggingTime: any;
 
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TrailLoggingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

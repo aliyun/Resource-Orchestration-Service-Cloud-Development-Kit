@@ -9,12 +9,12 @@ export { RosSSHKeyPairAttachment as SSHKeyPairAttachmentProperty };
 export interface SSHKeyPairAttachmentProps {
 
     /**
-     * @Property instanceIds: The comma delimited ECS instance id list. Only support Linux.
+     * Property instanceIds: The comma delimited ECS instance id list. Only support Linux.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property keyPairName: SSH key pair name.
+     * Property keyPairName: SSH key pair name.
      */
     readonly keyPairName: string;
 }
@@ -32,9 +32,9 @@ export class SSHKeyPairAttachment extends ros.Resource {
     /**
      * Create a new `ALIYUN::ECS::SSHKeyPairAttachment`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SSHKeyPairAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

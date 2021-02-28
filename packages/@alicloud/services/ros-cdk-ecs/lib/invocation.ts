@@ -9,22 +9,22 @@ export { RosInvocation as InvocationProperty };
 export interface InvocationProps {
 
     /**
-     * @Property commandId: The id of command.
+     * Property commandId: The id of command.
      */
     readonly commandId: string;
 
     /**
-     * @Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
+     * Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
      */
     readonly instanceIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
+     * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
     readonly frequency?: string;
 
     /**
-     * @Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+     * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
      * Number of custom parameters: 0 to 10.
      * The key cannot be an empty string. It can be up to 64 characters in length.
      * The value can be an empty string.
@@ -35,7 +35,7 @@ export interface InvocationProps {
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property timed: Whether it is timed execution. Default is False.
+     * Property timed: Whether it is timed execution. Default is False.
      */
     readonly timed?: boolean | ros.IResolvable;
 }
@@ -51,16 +51,16 @@ export class Invocation extends ros.Resource {
      */
 
     /**
-     * @Attribute InvokeId: The id of command execution.
+     * Attribute InvokeId: The id of command execution.
      */
     public readonly attrInvokeId: any;
 
     /**
      * Create a new `ALIYUN::ECS::Invocation`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InvocationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

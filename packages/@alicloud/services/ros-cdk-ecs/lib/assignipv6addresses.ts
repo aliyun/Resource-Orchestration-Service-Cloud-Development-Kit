@@ -9,18 +9,18 @@ export { RosAssignIpv6Addresses as AssignIpv6AddressesProperty };
 export interface AssignIpv6AddressesProps {
 
     /**
-     * @Property networkInterfaceId: Elastic network interface ID.
+     * Property networkInterfaceId: Elastic network interface ID.
      */
     readonly networkInterfaceId: string;
 
     /**
-     * @Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+     * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
     readonly ipv6AddressCount?: number;
 
     /**
-     * @Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
+     * Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC. Currently, the maximum list size is 1. Example value: 2001:db8:1234:1a00::*** .
      * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
      */
     readonly ipv6Addresses?: Array<any | ros.IResolvable> | ros.IResolvable;
@@ -37,26 +37,26 @@ export class AssignIpv6Addresses extends ros.Resource {
      */
 
     /**
-     * @Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
+     * Attribute Ipv6AddressIds: Assigned IPv6 address IDs.
      */
     public readonly attrIpv6AddressIds: any;
 
     /**
-     * @Attribute Ipv6Addresses: Assigned IPv6 addresses.
+     * Attribute Ipv6Addresses: Assigned IPv6 addresses.
      */
     public readonly attrIpv6Addresses: any;
 
     /**
-     * @Attribute NetworkInterfaceId: Elastic network interface ID.
+     * Attribute NetworkInterfaceId: Elastic network interface ID.
      */
     public readonly attrNetworkInterfaceId: any;
 
     /**
      * Create a new `ALIYUN::ECS::AssignIpv6Addresses`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AssignIpv6AddressesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

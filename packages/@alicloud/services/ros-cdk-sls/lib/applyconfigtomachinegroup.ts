@@ -9,17 +9,17 @@ export { RosApplyConfigToMachineGroup as ApplyConfigToMachineGroupProperty };
 export interface ApplyConfigToMachineGroupProps {
 
     /**
-     * @Property configName: Apply config to the config name
+     * Property configName: Apply config to the config name
      */
     readonly configName?: string;
 
     /**
-     * @Property groupName: Apply config to the group name
+     * Property groupName: Apply config to the group name
      */
     readonly groupName?: string;
 
     /**
-     * @Property projectName: Apply config to the project name.
+     * Property projectName: Apply config to the project name.
      */
     readonly projectName?: string;
 }
@@ -37,9 +37,9 @@ export class ApplyConfigToMachineGroup extends ros.Resource {
     /**
      * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ApplyConfigToMachineGroupProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

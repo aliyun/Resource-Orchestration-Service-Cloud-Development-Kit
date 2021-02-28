@@ -9,67 +9,67 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * @Property bigScreen:
+     * Property bigScreen:
      */
     readonly bigScreen: string;
 
     /**
-     * @Property exclusiveIpPackage:
+     * Property exclusiveIpPackage:
      */
     readonly exclusiveIpPackage: string;
 
     /**
-     * @Property extBandwidth:
+     * Property extBandwidth:
      */
     readonly extBandwidth: string;
 
     /**
-     * @Property extDomainPackage:
+     * Property extDomainPackage:
      */
     readonly extDomainPackage: string;
 
     /**
-     * @Property logStorage:
+     * Property logStorage:
      */
     readonly logStorage: string;
 
     /**
-     * @Property logTime:
+     * Property logTime:
      */
     readonly logTime: string;
 
     /**
-     * @Property packageCode:
+     * Property packageCode:
      */
     readonly packageCode: string;
 
     /**
-     * @Property prefessionalService:
+     * Property prefessionalService:
      */
     readonly prefessionalService: string;
 
     /**
-     * @Property subscriptionType: Subscription type of the instance
+     * Property subscriptionType: Subscription type of the instance
      */
     readonly subscriptionType: string;
 
     /**
-     * @Property wafLog:
+     * Property wafLog:
      */
     readonly wafLog: string;
 
     /**
-     * @Property period:
+     * Property period:
      */
     readonly period?: string;
 
     /**
-     * @Property renewalStatus:
+     * Property renewalStatus:
      */
     readonly renewalStatus?: string;
 
     /**
-     * @Property renewPeriod:
+     * Property renewPeriod:
      */
     readonly renewPeriod?: string;
 }
@@ -85,41 +85,41 @@ export class Instance extends ros.Resource {
      */
 
     /**
-     * @Attribute EndDate: Due date of the instance
+     * Attribute EndDate: Due date of the instance
      */
     public readonly attrEndDate: any;
 
     /**
-     * @Attribute InDebt: Instance is overdue
+     * Attribute InDebt: Instance is overdue
      */
     public readonly attrInDebt: any;
 
     /**
-     * @Attribute InstanceId: Instance ID
+     * Attribute InstanceId: Instance ID
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute RemainDay: Number of available days for WAF Trial version
+     * Attribute RemainDay: Number of available days for WAF Trial version
      */
     public readonly attrRemainDay: any;
 
     /**
-     * @Attribute SubscriptionType: Subscription type of the instance
+     * Attribute SubscriptionType: Subscription type of the instance
      */
     public readonly attrSubscriptionType: any;
 
     /**
-     * @Attribute Trial: Trial version
+     * Attribute Trial: Trial version
      */
     public readonly attrTrial: any;
 
     /**
      * Create a new `ALIYUN::WAF::Instance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosDomainConfig as DomainConfigProperty };
 export interface DomainConfigProps {
 
     /**
-     * @Property domainNames: Your accelerated domain name, separated by commas in English.
+     * Property domainNames: Your accelerated domain name, separated by commas in English.
      */
     readonly domainNames: string;
 
     /**
-     * @Property functions: function list, please refer to the CDN documentation for details.
+     * Property functions: function list, please refer to the CDN documentation for details.
      */
     readonly functions: string;
 }
@@ -32,9 +32,9 @@ export class DomainConfig extends ros.Resource {
     /**
      * Create a new `ALIYUN::CDN::DomainConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DomainConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -92,7 +92,9 @@ export async function execProgram(config: Configuration): Promise<cxapi.CloudAss
       await readDirForMd5(srcDir);
     }
     else {
-      throw new Error('This CDK CLI init project is not allowed, please check project directory information');
+      // when using c# to synth
+      const srcDir = curPath + '/src';
+      await readDirForMd5(srcDir);
     }
 
 
@@ -102,7 +104,7 @@ export async function execProgram(config: Configuration): Promise<cxapi.CloudAss
     }
 
     // add pkg info to generate md5
-    if (fs.existsSync(pkgInfoPath)) {
+    if (pkgInfoPath && fs.existsSync(pkgInfoPath)) {
       let pkg = fs.readFileSync(pkgInfoPath);
       hasher.update(pkg);
     }
@@ -129,7 +131,7 @@ export async function execProgram(config: Configuration): Promise<cxapi.CloudAss
   }
 
   async function exec() {
-    return new Promise<string>((ok, fail) => {
+    return new Promise<string | void>((ok, fail) => {
       // We use a slightly lower-level interface to:
       //
       // - Pass arguments in an array instead of a string, to get around a

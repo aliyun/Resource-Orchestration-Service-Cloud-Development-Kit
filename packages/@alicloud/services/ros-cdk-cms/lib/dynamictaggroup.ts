@@ -9,17 +9,17 @@ export { RosDynamicTagGroup as DynamicTagGroupProperty };
 export interface DynamicTagGroupProps {
 
     /**
-     * @Property contactGroupList: Alarm contacts.
+     * Property contactGroupList: Alarm contacts.
      */
     readonly contactGroupList: string[];
 
     /**
-     * @Property tagKey: Tag key.
+     * Property tagKey: Tag key.
      */
     readonly tagKey: string;
 
     /**
-     * @Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. Values are:
+     * Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. Values are:
      * true: enable installation
      * Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
      * false: disable installation
@@ -27,19 +27,19 @@ export interface DynamicTagGroupProps {
     readonly enableInstallAgent?: boolean | ros.IResolvable;
 
     /**
-     * @Property enableSubscribeEvent: Whether the event subscription is enabled. Values are
+     * Property enableSubscribeEvent: Whether the event subscription is enabled. Values are
      * :true: enable event subscription
      * false: disable event subscription
      */
     readonly enableSubscribeEvent?: boolean | ros.IResolvable;
 
     /**
-     * @Property matchExpress: Matching list. Only supports one currently.
+     * Property matchExpress: Matching list. Only supports one currently.
      */
     readonly matchExpress?: Array<RosDynamicTagGroup.MatchExpressProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property matchExpressFilterRelation: The relationship between the conditional expressions. Values are:
+     * Property matchExpressFilterRelation: The relationship between the conditional expressions. Values are:
      * and: the relationship between
      * or: the relationship or the
      * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
@@ -47,7 +47,7 @@ export interface DynamicTagGroupProps {
     readonly matchExpressFilterRelation?: string;
 
     /**
-     * @Property templateIdList: Alarm template ID list.
+     * Property templateIdList: Alarm template ID list.
      * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
      */
     readonly templateIdList?: string[];
@@ -64,21 +64,21 @@ export class DynamicTagGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute DynamicTagRuleId: Dynamic tag rule ID.
+     * Attribute DynamicTagRuleId: Dynamic tag rule ID.
      */
     public readonly attrDynamicTagRuleId: any;
 
     /**
-     * @Attribute TagKey: Tag key.
+     * Attribute TagKey: Tag key.
      */
     public readonly attrTagKey: any;
 
     /**
      * Create a new `ALIYUN::CMS::DynamicTagGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DynamicTagGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

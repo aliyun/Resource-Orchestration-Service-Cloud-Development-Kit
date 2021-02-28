@@ -9,23 +9,23 @@ export { RosProvisionConfig as ProvisionConfigProperty };
 export interface ProvisionConfigProps {
 
     /**
-     * @Property functionName: Function name
+     * Property functionName: Function name
      */
     readonly functionName: string;
 
     /**
-     * @Property qualifier: Service's alias.
+     * Property qualifier: Service's alias.
      * Example : "LATEST"
      */
     readonly qualifier: string;
 
     /**
-     * @Property serviceName: Service name
+     * Property serviceName: Service name
      */
     readonly serviceName: string;
 
     /**
-     * @Property target: Number of provision
+     * Property target: Number of provision
      */
     readonly target: number;
 }
@@ -41,36 +41,36 @@ export class ProvisionConfig extends ros.Resource {
      */
 
     /**
-     * @Attribute FunctionName: The function name
+     * Attribute FunctionName: The function name
      */
     public readonly attrFunctionName: any;
 
     /**
-     * @Attribute Qualifier: The service alias
+     * Attribute Qualifier: The service alias
      */
     public readonly attrQualifier: any;
 
     /**
-     * @Attribute Resource: The resource
+     * Attribute Resource: The resource
      */
     public readonly attrResource: any;
 
     /**
-     * @Attribute ServiceName: The service name
+     * Attribute ServiceName: The service name
      */
     public readonly attrServiceName: any;
 
     /**
-     * @Attribute Target: Number of provision
+     * Attribute Target: Number of provision
      */
     public readonly attrTarget: any;
 
     /**
      * Create a new `ALIYUN::FC::ProvisionConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProvisionConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

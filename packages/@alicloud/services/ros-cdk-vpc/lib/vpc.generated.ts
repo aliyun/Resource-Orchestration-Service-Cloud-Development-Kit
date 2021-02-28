@@ -3,6 +3,354 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::VPC::AnycastEIP`
+ */
+export interface RosAnycastEIPProps {
+
+    /**
+     * @Property description: Anycast EIP instance description
+     */
+    readonly description?: string;
+
+    /**
+     * @Property instanceChargeType: Anycast EIP instance charge type
+     */
+    readonly instanceChargeType?: string;
+
+    /**
+     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     */
+    readonly internetChargeType?: string;
+
+    /**
+     * @Property name: Anycast EIP instance name
+     */
+    readonly name?: string;
+
+    /**
+     * @Property serviceLocation: Anycast EIP instance access area
+     */
+    readonly serviceLocation?: string;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnycastEIPProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnycastEIPPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.serviceLocation && (typeof properties.serviceLocation) !== 'object') {
+        errors.collect(ros.propertyValidator('serviceLocation', ros.validateAllowedValues)({
+          data: properties.serviceLocation,
+          allowedValues: ["international"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serviceLocation', ros.validateString)(properties.serviceLocation));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosAnycastEIPProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIP` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIP` resource.
+ */
+// @ts-ignore TS6133
+function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnycastEIPPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      Name: ros.stringToRosTemplate(properties.name),
+      ServiceLocation: ros.stringToRosTemplate(properties.serviceLocation),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::AnycastEIP`
+ */
+export class RosAnycastEIP extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIP";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AnycastId: Anycast EIP instance ID
+     */
+    public readonly attrAnycastId: any;
+
+    /**
+     * @Attribute IpAddress: Anycase IP address
+     */
+    public readonly attrIpAddress: any;
+
+    /**
+     * @Attribute Name: Anycast EIP instance name
+     */
+    public readonly attrName: any;
+
+    /**
+     * @Attribute OrderId: Order ID
+     */
+    public readonly attrOrderId: any;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: Anycast EIP instance description
+     */
+    public description: string | undefined;
+
+    /**
+     * @Property instanceChargeType: Anycast EIP instance charge type
+     */
+    public instanceChargeType: string | undefined;
+
+    /**
+     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     */
+    public internetChargeType: string | undefined;
+
+    /**
+     * @Property name: Anycast EIP instance name
+     */
+    public name: string | undefined;
+
+    /**
+     * @Property serviceLocation: Anycast EIP instance access area
+     */
+    public serviceLocation: string | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::AnycastEIP`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnycastEIPProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnycastEIP.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAnycastId = ros.Token.asString(this.getAtt('AnycastId'));
+        this.attrIpAddress = ros.Token.asString(this.getAtt('IpAddress'));
+        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.instanceChargeType = props.instanceChargeType;
+        this.internetChargeType = props.internetChargeType;
+        this.name = props.name;
+        this.serviceLocation = props.serviceLocation;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            instanceChargeType: this.instanceChargeType,
+            internetChargeType: this.internetChargeType,
+            name: this.name,
+            serviceLocation: this.serviceLocation,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnycastEIPPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::AnycastEIPAssociation`
+ */
+export interface RosAnycastEIPAssociationProps {
+
+    /**
+     * @Property anycastId: Anycast EIP instance ID.
+     */
+    readonly anycastId: string;
+
+    /**
+     * @Property bindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    readonly bindInstanceId: string;
+
+    /**
+     * @Property bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    readonly bindInstanceRegionId: string;
+
+    /**
+     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     */
+    readonly bindInstanceType: string;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnycastEIPAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnycastEIPAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bindInstanceId', ros.requiredValidator)(properties.bindInstanceId));
+    errors.collect(ros.propertyValidator('bindInstanceId', ros.validateString)(properties.bindInstanceId));
+    errors.collect(ros.propertyValidator('bindInstanceRegionId', ros.requiredValidator)(properties.bindInstanceRegionId));
+    errors.collect(ros.propertyValidator('bindInstanceRegionId', ros.validateString)(properties.bindInstanceRegionId));
+    errors.collect(ros.propertyValidator('bindInstanceType', ros.requiredValidator)(properties.bindInstanceType));
+    errors.collect(ros.propertyValidator('bindInstanceType', ros.validateString)(properties.bindInstanceType));
+    errors.collect(ros.propertyValidator('anycastId', ros.requiredValidator)(properties.anycastId));
+    errors.collect(ros.propertyValidator('anycastId', ros.validateString)(properties.anycastId));
+    return errors.wrap('supplied properties not correct for "RosAnycastEIPAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIPAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIPAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosAnycastEIPAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnycastEIPAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AnycastId: ros.stringToRosTemplate(properties.anycastId),
+      BindInstanceId: ros.stringToRosTemplate(properties.bindInstanceId),
+      BindInstanceRegionId: ros.stringToRosTemplate(properties.bindInstanceRegionId),
+      BindInstanceType: ros.stringToRosTemplate(properties.bindInstanceType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::AnycastEIPAssociation`
+ */
+export class RosAnycastEIPAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIPAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AnycastId: Anycast EIP instance ID.
+     */
+    public readonly attrAnycastId: any;
+
+    /**
+     * @Attribute BindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    public readonly attrBindInstanceId: any;
+
+    /**
+     * @Attribute BindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    public readonly attrBindInstanceRegionId: any;
+
+    /**
+     * @Attribute BindInstanceType: The cloud resource instance type to be bound.
+     */
+    public readonly attrBindInstanceType: any;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property anycastId: Anycast EIP instance ID.
+     */
+    public anycastId: string;
+
+    /**
+     * @Property bindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    public bindInstanceId: string;
+
+    /**
+     * @Property bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    public bindInstanceRegionId: string;
+
+    /**
+     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     */
+    public bindInstanceType: string;
+
+    /**
+     * Create a new `ALIYUN::VPC::AnycastEIPAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnycastEIPAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnycastEIPAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAnycastId = ros.Token.asString(this.getAtt('AnycastId'));
+        this.attrBindInstanceId = ros.Token.asString(this.getAtt('BindInstanceId'));
+        this.attrBindInstanceRegionId = ros.Token.asString(this.getAtt('BindInstanceRegionId'));
+        this.attrBindInstanceType = ros.Token.asString(this.getAtt('BindInstanceType'));
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.anycastId = props.anycastId;
+        this.bindInstanceId = props.bindInstanceId;
+        this.bindInstanceRegionId = props.bindInstanceRegionId;
+        this.bindInstanceType = props.bindInstanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            anycastId: this.anycastId,
+            bindInstanceId: this.bindInstanceId,
+            bindInstanceRegionId: this.bindInstanceRegionId,
+            bindInstanceType: this.bindInstanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnycastEIPAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackage`
  */
 export interface RosCommonBandwidthPackageProps {
@@ -51,6 +399,11 @@ export interface RosCommonBandwidthPackageProps {
     readonly resourceGroupId?: string;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
+
+    /**
      * @Property zone: Zone Id.
      */
     readonly zone?: string;
@@ -94,6 +447,14 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
           }));
     }
     errors.collect(ros.propertyValidator('ratio', ros.validateNumber)(properties.ratio));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
@@ -127,6 +488,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
       Name: ros.stringToRosTemplate(properties.name),
       Ratio: ros.numberToRosTemplate(properties.ratio),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       Zone: ros.stringToRosTemplate(properties.zone),
     };
 }
@@ -197,6 +559,11 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     public resourceGroupId: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * @Property zone: Zone Id.
      */
     public zone: string | undefined;
@@ -220,6 +587,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
         this.name = props.name;
         this.ratio = props.ratio;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::CommonBandwidthPackage", props.tags, { tagPropertyName: 'tags' });
         this.zone = props.zone;
     }
 
@@ -233,6 +601,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
             name: this.name,
             ratio: this.ratio,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags.renderTags(),
             zone: this.zone,
         };
     }
@@ -1221,6 +1590,11 @@ export interface RosIpv6GatewayProps {
      * Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
      */
     readonly spec?: string;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -1237,6 +1611,14 @@ function RosIpv6GatewayPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosIpv6GatewayProps"');
 }
@@ -1259,6 +1641,7 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
       Spec: ros.stringToRosTemplate(properties.spec),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -1311,6 +1694,11 @@ export class RosIpv6Gateway extends ros.RosResource {
     public spec: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::VPC::Ipv6Gateway`.
      *
      * @param scope - scope in which this resource is defined
@@ -1326,6 +1714,7 @@ export class RosIpv6Gateway extends ros.RosResource {
         this.description = props.description;
         this.name = props.name;
         this.spec = props.spec;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::Ipv6Gateway", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -1335,6 +1724,7 @@ export class RosIpv6Gateway extends ros.RosResource {
             description: this.description,
             name: this.name,
             spec: this.spec,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1373,6 +1763,11 @@ export interface RosIpv6InternetBandwidthProps {
      * PayByBandwidth (default): Bandwidth billing.
      */
     readonly internetChargeType?: string;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -1398,6 +1793,14 @@ function RosIpv6InternetBandwidthPropsValidator(properties: any): ros.Validation
     errors.collect(ros.propertyValidator('ipv6AddressId', ros.validateString)(properties.ipv6AddressId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.requiredValidator)(properties.ipv6GatewayId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.validateString)(properties.ipv6GatewayId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -1426,6 +1829,7 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
       Ipv6AddressId: ros.stringToRosTemplate(properties.ipv6AddressId),
       Ipv6GatewayId: ros.stringToRosTemplate(properties.ipv6GatewayId),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -1479,6 +1883,11 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
     public internetChargeType: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::VPC::Ipv6InternetBandwidth`.
      *
      * @param scope - scope in which this resource is defined
@@ -1494,6 +1903,7 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
         this.ipv6AddressId = props.ipv6AddressId;
         this.ipv6GatewayId = props.ipv6GatewayId;
         this.internetChargeType = props.internetChargeType;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::Ipv6InternetBandwidth", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -1503,6 +1913,7 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
             ipv6AddressId: this.ipv6AddressId,
             ipv6GatewayId: this.ipv6GatewayId,
             internetChargeType: this.internetChargeType,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1605,7 +2016,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -2517,7 +2928,7 @@ function RosRouterInterfacePropsValidator(properties: any): ros.ValidationResult
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -3890,6 +4301,11 @@ export interface RosVpnGatewayProps {
     readonly sslConnections?: number;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
+
+    /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
     readonly vSwitchId?: string;
@@ -3942,6 +4358,14 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -3977,6 +4401,7 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       Name: ros.stringToRosTemplate(properties.name),
       Period: ros.numberToRosTemplate(properties.period),
       SslConnections: ros.numberToRosTemplate(properties.sslConnections),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
@@ -4085,6 +4510,11 @@ export class RosVpnGateway extends ros.RosResource {
     public sslConnections: number | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
     public vSwitchId: string | undefined;
@@ -4115,6 +4545,7 @@ export class RosVpnGateway extends ros.RosResource {
         this.name = props.name;
         this.period = props.period;
         this.sslConnections = props.sslConnections;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::VpnGateway", props.tags, { tagPropertyName: 'tags' });
         this.vSwitchId = props.vSwitchId;
     }
 
@@ -4131,6 +4562,7 @@ export class RosVpnGateway extends ros.RosResource {
             name: this.name,
             period: this.period,
             sslConnections: this.sslConnections,
+            tags: this.tags.renderTags(),
             vSwitchId: this.vSwitchId,
         };
     }

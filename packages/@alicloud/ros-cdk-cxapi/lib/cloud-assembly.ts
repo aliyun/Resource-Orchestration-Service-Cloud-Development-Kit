@@ -60,8 +60,8 @@ export class CloudAssembly {
 
   /**
    * Attempts to find an artifact with a specific identity.
-   * @returns A `CloudArtifact` object or `undefined` if the artifact does not exist in this assembly.
-   * @param id The artifact ID
+   * Returns A 'CloudArtifact' object or 'undefined' if the artifact does not exist in this assembly.
+   * Param id The artifact ID
    */
   public tryGetArtifact(id: string): CloudArtifact | undefined {
     return this.artifacts.find((a) => a.id === id);
@@ -72,11 +72,11 @@ export class CloudAssembly {
    *
    * Will only search the current assembly.
    *
-   * @param stackName the name of the ROS stack.
-   * @throws if there is no stack artifact by that name
-   * @throws if there is more than one stack with the same stack name. You can
-   * use `getStackArtifact(stack.artifactId)` instead.
-   * @returns a `RosStackArtifact` object.
+   * Param stackName the name of the ROS stack.
+   * Throws if there is no stack artifact by that name
+   * Throws if there is more than one stack with the same stack name. You can
+   * use 'getStackArtifact - stack.artifactId' instead.
+   * Returns a 'RosStackArtifact' object.
    */
   public getStackByName(stackName: string): RosStackArtifact {
     const artifacts = this.artifacts.filter(
@@ -99,7 +99,7 @@ export class CloudAssembly {
 
   /**
    * Returns a ROS stack artifact by name from this assembly.
-   * @deprecated renamed to `getStackByName` (or `getStackArtifact(id)`)
+   * Deprecated renamed to 'getStackByName' (or 'getStackArtifact(id)')
    */
   public getStack(stackName: string) {
     return this.getStackByName(stackName);
@@ -108,9 +108,9 @@ export class CloudAssembly {
   /**
    * Returns a ROS stack artifact from this assembly.
    *
-   * @param artifactId the artifact id of the stack (can be obtained through `stack.artifactId`).
-   * @throws if there is no stack artifact with that id
-   * @returns a `RosStackArtifact` object.
+   * Param artifactId the artifact id of the stack (can be obtained through 'stack.artifactId').
+   * Throws if there is no stack artifact with that id
+   * Returns a 'RosStackArtifact' object.
    */
   public getStackArtifact(artifactId: string): RosStackArtifact {
     const artifact = this.tryGetArtifact(artifactId);
@@ -158,8 +158,8 @@ export class CloudAssembly {
 
   /**
    * Returns the tree metadata artifact from this assembly.
-   * @throws if there is no metadata artifact by that name
-   * @returns a `TreeCloudArtifact` object if there is one defined in the manifest, `undefined` otherwise.
+   * Throws if there is no metadata artifact by that name
+   * Returns a 'TreeCloudArtifact' object if there is one defined in the manifest, 'undefined' otherwise.
    */
   public tree(): TreeCloudArtifact | undefined {
     const trees = this.artifacts.filter(
@@ -273,7 +273,7 @@ export class CloudAssemblyBuilder {
 
   /**
    * Finalizes the cloud assembly into the output directory returns a
-   * `CloudAssembly` object that can be used to inspect the assembly.
+   * 'CloudAssembly' object that can be used to inspect the assembly.
    * @param options
    */
   public buildAssembly(options: AssemblyBuildOptions = {}): CloudAssembly {
@@ -323,7 +323,7 @@ export class CloudAssemblyBuilder {
 }
 
 /**
- * Backwards compatibility for when `RuntimeInfo`
+ * Backwards compatibility for when 'RuntimeInfo'
  * was defined here. This is necessary because its used as an input in the stable
  * @alicloud/ros-cdk-core library.
  *
@@ -333,7 +333,7 @@ export class CloudAssemblyBuilder {
 export interface RuntimeInfo extends cxschema.RuntimeInfo {}
 
 /**
- * Backwards compatibility for when `MetadataEntry`
+ * Backwards compatibility for when 'MetadataEntry'
  * was defined here. This is necessary because its used as an input in the stable
  * @alicloud/ros-cdk-core library.
  *
@@ -343,7 +343,7 @@ export interface RuntimeInfo extends cxschema.RuntimeInfo {}
 export interface MetadataEntry extends cxschema.MetadataEntry {}
 
 /**
- * Backwards compatibility for when `MissingContext`
+ * Backwards compatibility for when 'MissingContext'
  * was defined here. This is necessary because its used as an input in the stable
  * @alicloud/ros-cdk-core library.
  *
@@ -382,7 +382,7 @@ export interface AssemblyBuildOptions {
 }
 
 /**
- * Returns a copy of `obj` without undefined values in maps or arrays.
+ * Returns a copy of 'obj' without undefined values in maps or arrays.
  */
 function filterUndefined(obj: any): any {
   if (Array.isArray(obj)) {

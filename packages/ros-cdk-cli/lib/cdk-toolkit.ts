@@ -795,7 +795,7 @@ export class CdkToolkit {
         }
       }
       if (!configureInfos || Object.keys(configureInfos).length == 0) {
-        error("WANRNING: Please check the accuracy of the mode and profele configuration entered.");
+        error("WANRNING: Please check the accuracy of the mode and profile configuration entered.");
         exit();
       }
       return configureInfos

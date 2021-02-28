@@ -9,7 +9,7 @@ export { RosACL as ACLProperty };
 export interface ACLProps {
 
     /**
-     * @Property name: Access control name.
+     * Property name: Access control name.
      * The length is 2-128 characters. It must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https://.
      */
     readonly name: string;
@@ -26,16 +26,16 @@ export class Acl extends ros.Resource {
      */
 
     /**
-     * @Attribute AclId: Access control set ID.
+     * Attribute AclId: Access control set ID.
      */
     public readonly attrAclId: any;
 
     /**
      * Create a new `ALIYUN::SAG::ACL`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ACLProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

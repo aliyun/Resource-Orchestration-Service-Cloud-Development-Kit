@@ -9,42 +9,42 @@ export { RosUser as UserProperty };
 export interface UserProps {
 
     /**
-     * @Property userName: Specifies the user name, containing up to 64 characters.
+     * Property userName: Specifies the user name, containing up to 64 characters.
      */
     readonly userName: string;
 
     /**
-     * @Property comments: Comments of ram user.
+     * Property comments: Comments of ram user.
      */
     readonly comments?: string;
 
     /**
-     * @Property displayName: Display name, up to 128 characters or Chinese characters.
+     * Property displayName: Display name, up to 128 characters or Chinese characters.
      */
     readonly displayName?: string;
 
     /**
-     * @Property email: Email of ram user.
+     * Property email: Email of ram user.
      */
     readonly email?: string;
 
     /**
-     * @Property groups: A name of a group to which you want to add the user.
+     * Property groups: A name of a group to which you want to add the user.
      */
     readonly groups?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
+     * Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
      */
     readonly loginProfile?: RosUser.LoginProfileProperty | ros.IResolvable;
 
     /**
-     * @Property mobilePhone: Phone number of ram user.
+     * Property mobilePhone: Phone number of ram user.
      */
     readonly mobilePhone?: string;
 
     /**
-     * @Property policies: Describes what actions are allowed on what resources.
+     * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosUser.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -60,31 +60,31 @@ export class User extends ros.Resource {
      */
 
     /**
-     * @Attribute CreateDate: Create date of ram user.
+     * Attribute CreateDate: Create date of ram user.
      */
     public readonly attrCreateDate: any;
 
     /**
-     * @Attribute LastLoginDate: Last login date of ram user.
+     * Attribute LastLoginDate: Last login date of ram user.
      */
     public readonly attrLastLoginDate: any;
 
     /**
-     * @Attribute UserId: Id of ram user.
+     * Attribute UserId: Id of ram user.
      */
     public readonly attrUserId: any;
 
     /**
-     * @Attribute UserName: Name of ram user.
+     * Attribute UserName: Name of ram user.
      */
     public readonly attrUserName: any;
 
     /**
      * Create a new `ALIYUN::RAM::User`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UserProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

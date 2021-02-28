@@ -9,7 +9,7 @@ export { RosAccount as AccountProperty };
 export interface AccountProps {
 
     /**
-     * @Property accountName: Account name, which must be unique and meet the following requirements:
+     * Property accountName: Account name, which must be unique and meet the following requirements:
      * Start with a letter;
      * Consist of lower-case letters, digits, and underscores (_);
      * Contain no more than 16 characters.
@@ -18,17 +18,17 @@ export interface AccountProps {
     readonly accountName: string;
 
     /**
-     * @Property accountPassword: The account password for the database instance. It may consist of letters, digits, or underlines, with a length of 8 to 32 characters.
+     * Property accountPassword: The account password for the database instance. It may consist of letters, digits, or underlines, with a length of 8 to 32 characters.
      */
     readonly accountPassword: string;
 
     /**
-     * @Property dbInstanceId: RDS instance ID.
+     * Property dbInstanceId: RDS instance ID.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property accountDescription: Account remarks.
+     * Property accountDescription: Account remarks.
      * It cannot begin with http:// or https://.
      * It must start with a Chinese character or English letter.
      * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
@@ -37,7 +37,7 @@ export interface AccountProps {
     readonly accountDescription?: string;
 
     /**
-     * @Property accountType: Privilege type of account.
+     * Property accountType: Privilege type of account.
      * Normal: Common privilege.
      * Super: High privilege. And the default value is Normal.
      * This parameter is valid for MySQL 5.5/5.6 only.
@@ -57,16 +57,16 @@ export class Account extends ros.Resource {
      */
 
     /**
-     * @Attribute AccountName: Account name
+     * Attribute AccountName: Account name
      */
     public readonly attrAccountName: any;
 
     /**
      * Create a new `ALIYUN::RDS::Account`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

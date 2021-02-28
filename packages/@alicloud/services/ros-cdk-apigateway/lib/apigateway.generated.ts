@@ -67,6 +67,13 @@ export interface RosApiProps {
     readonly description?: string;
 
     /**
+     * @Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
+     * Set DisableInternet to false, then the call is not restricted. 
+     *
+     */
+    readonly disableInternet?: boolean | ros.IResolvable;
+
+    /**
      * @Property errorCodeSamples: The Error Code samples.
      */
     readonly errorCodeSamples?: Array<RosApi.ErrorCodeSamplesProperty | ros.IResolvable> | ros.IResolvable;
@@ -75,6 +82,15 @@ export interface RosApiProps {
      * @Property failResultSample: The sample of the fail result.
      */
     readonly failResultSample?: string;
+
+    /**
+     * @Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
+     * this is the unique identifier of the request, generally using UUID to identify. 
+     * The API gateway will verify the validity of this parameter after receiving this parameter. 
+     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+     * Set ForceNonceCheck to false, then no check.
+     */
+    readonly forceNonceCheck?: boolean | ros.IResolvable;
 
     /**
      * @Property openIdConnectConfig: The configuration of the open id.
@@ -100,6 +116,11 @@ export interface RosApiProps {
      * @Property systemParameters: The system parameters.
      */
     readonly systemParameters?: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -117,8 +138,10 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resultSample', ros.requiredValidator)(properties.resultSample));
     errors.collect(ros.propertyValidator('resultSample', ros.validateString)(properties.resultSample));
+    errors.collect(ros.propertyValidator('disableInternet', ros.validateBoolean)(properties.disableInternet));
     errors.collect(ros.propertyValidator('apiName', ros.requiredValidator)(properties.apiName));
     errors.collect(ros.propertyValidator('apiName', ros.validateString)(properties.apiName));
+    errors.collect(ros.propertyValidator('forceNonceCheck', ros.validateBoolean)(properties.forceNonceCheck));
     errors.collect(ros.propertyValidator('resultType', ros.requiredValidator)(properties.resultType));
     if(properties.resultType && (typeof properties.resultType) !== 'object') {
         errors.collect(ros.propertyValidator('resultType', ros.validateAllowedValues)({
@@ -161,6 +184,14 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosApiProps"');
 }
 
@@ -189,13 +220,16 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       AuthType: ros.stringToRosTemplate(properties.authType),
       ConstParameters: ros.listMapper(rosApiConstParametersPropertyToRosTemplate)(properties.constParameters),
       Description: ros.stringToRosTemplate(properties.description),
+      DisableInternet: ros.booleanToRosTemplate(properties.disableInternet),
       ErrorCodeSamples: ros.listMapper(rosApiErrorCodeSamplesPropertyToRosTemplate)(properties.errorCodeSamples),
       FailResultSample: ros.stringToRosTemplate(properties.failResultSample),
+      ForceNonceCheck: ros.booleanToRosTemplate(properties.forceNonceCheck),
       OpenIdConnectConfig: rosApiOpenIdConnectConfigPropertyToRosTemplate(properties.openIdConnectConfig),
       RequestParameters: ros.listMapper(rosApiRequestParametersPropertyToRosTemplate)(properties.requestParameters),
       ServiceParameters: ros.listMapper(rosApiServiceParametersPropertyToRosTemplate)(properties.serviceParameters),
       ServiceParametersMap: ros.listMapper(rosApiServiceParametersMapPropertyToRosTemplate)(properties.serviceParametersMap),
       SystemParameters: ros.listMapper(rosApiSystemParametersPropertyToRosTemplate)(properties.systemParameters),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -281,6 +315,13 @@ export class RosApi extends ros.RosResource {
     public description: string | undefined;
 
     /**
+     * @Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
+     * Set DisableInternet to false, then the call is not restricted. 
+     *
+     */
+    public disableInternet: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property errorCodeSamples: The Error Code samples.
      */
     public errorCodeSamples: Array<RosApi.ErrorCodeSamplesProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -289,6 +330,15 @@ export class RosApi extends ros.RosResource {
      * @Property failResultSample: The sample of the fail result.
      */
     public failResultSample: string | undefined;
+
+    /**
+     * @Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
+     * this is the unique identifier of the request, generally using UUID to identify. 
+     * The API gateway will verify the validity of this parameter after receiving this parameter. 
+     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+     * Set ForceNonceCheck to false, then no check.
+     */
+    public forceNonceCheck: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property openIdConnectConfig: The configuration of the open id.
@@ -316,6 +366,11 @@ export class RosApi extends ros.RosResource {
     public systemParameters: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      *
      * @param scope - scope in which this resource is defined
@@ -338,13 +393,16 @@ export class RosApi extends ros.RosResource {
         this.authType = props.authType;
         this.constParameters = props.constParameters;
         this.description = props.description;
+        this.disableInternet = props.disableInternet;
         this.errorCodeSamples = props.errorCodeSamples;
         this.failResultSample = props.failResultSample;
+        this.forceNonceCheck = props.forceNonceCheck;
         this.openIdConnectConfig = props.openIdConnectConfig;
         this.requestParameters = props.requestParameters;
         this.serviceParameters = props.serviceParameters;
         this.serviceParametersMap = props.serviceParametersMap;
         this.systemParameters = props.systemParameters;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ApiGateway::Api", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -361,13 +419,16 @@ export class RosApi extends ros.RosResource {
             authType: this.authType,
             constParameters: this.constParameters,
             description: this.description,
+            disableInternet: this.disableInternet,
             errorCodeSamples: this.errorCodeSamples,
             failResultSample: this.failResultSample,
+            forceNonceCheck: this.forceNonceCheck,
             openIdConnectConfig: this.openIdConnectConfig,
             requestParameters: this.requestParameters,
             serviceParameters: this.serviceParameters,
             serviceParametersMap: this.serviceParametersMap,
             systemParameters: this.systemParameters,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -504,25 +565,54 @@ export namespace RosApi {
      */
     export interface FunctionComputeConfigProperty {
         /**
-         * @Property fcRegionId: The region id of function compute.
+         * @Property path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
          */
-        readonly fcRegionId: string;
+        readonly path?: string;
         /**
          * @Property functionName: The function name of function compute.
          */
-        readonly functionName: string;
+        readonly functionName?: string;
         /**
-         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
+         * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
          */
-        readonly roleArn: string;
+        readonly contentTypeValue?: string;
+        /**
+         * @Property serviceName: The service name of function compute.
+         */
+        readonly serviceName?: string;
+        /**
+         * @Property fcType: Function type. Default: FCEvent.
+     * Valid values: FCEvent, HttpTrigger.
+         */
+        readonly fcType?: string;
         /**
          * @Property qualifier: The service alias name.
          */
         readonly qualifier?: string;
         /**
-         * @Property serviceName: The service name of function compute.
+         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
          */
-        readonly serviceName: string;
+        readonly onlyBusinessPath?: boolean | ros.IResolvable;
+        /**
+         * @Property method: The HTTP method of the function. Default is GET.
+         */
+        readonly method?: string;
+        /**
+         * @Property fcRegionId: The region id of function compute.
+         */
+        readonly fcRegionId?: string;
+        /**
+         * @Property contentTypeCatagory: Specify how to determine ContentType header when using function. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
+         */
+        readonly contentTypeCatagory?: string;
+        /**
+         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
+         */
+        readonly roleArn?: string;
+        /**
+         * @Property fcBaseUrl: Trigger path. Starts with http:// or https://
+         */
+        readonly fcBaseUrl?: string;
     }
 }
 /**
@@ -535,15 +625,36 @@ export namespace RosApi {
 function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('fcRegionId', ros.requiredValidator)(properties.fcRegionId));
-    errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
-    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
-    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
-    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
-    errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
+    errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    if(properties.fcType && (typeof properties.fcType) !== 'object') {
+        errors.collect(ros.propertyValidator('fcType', ros.validateAllowedValues)({
+          data: properties.fcType,
+          allowedValues: ["FCEvent","HttpTrigger"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fcType', ros.validateString)(properties.fcType));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
+    if(properties.method && (typeof properties.method) !== 'object') {
+        errors.collect(ros.propertyValidator('method', ros.validateAllowedValues)({
+          data: properties.method,
+          allowedValues: ["GET","POST","DELETE","PUT","HEAD","PATCH","OPTIONS","ANY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
+    errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
+    if(properties.contentTypeCatagory && (typeof properties.contentTypeCatagory) !== 'object') {
+        errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateAllowedValues)({
+          data: properties.contentTypeCatagory,
+          allowedValues: ["DEFAULT","CUSTOM","CLIENT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateString)(properties.contentTypeCatagory));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    errors.collect(ros.propertyValidator('fcBaseUrl', ros.validateString)(properties.fcBaseUrl));
     return errors.wrap('supplied properties not correct for "FunctionComputeConfigProperty"');
 }
 
@@ -559,11 +670,18 @@ function rosApiFunctionComputeConfigPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosApi_FunctionComputeConfigPropertyValidator(properties).assertSuccess();
     return {
-      fcRegionId: ros.stringToRosTemplate(properties.fcRegionId),
-      functionName: ros.stringToRosTemplate(properties.functionName),
-      roleArn: ros.stringToRosTemplate(properties.roleArn),
-      qualifier: ros.stringToRosTemplate(properties.qualifier),
-      serviceName: ros.stringToRosTemplate(properties.serviceName),
+      Path: ros.stringToRosTemplate(properties.path),
+      FunctionName: ros.stringToRosTemplate(properties.functionName),
+      ContentTypeValue: ros.stringToRosTemplate(properties.contentTypeValue),
+      ServiceName: ros.stringToRosTemplate(properties.serviceName),
+      FcType: ros.stringToRosTemplate(properties.fcType),
+      Qualifier: ros.stringToRosTemplate(properties.qualifier),
+      OnlyBusinessPath: ros.booleanToRosTemplate(properties.onlyBusinessPath),
+      Method: ros.stringToRosTemplate(properties.method),
+      FcRegionId: ros.stringToRosTemplate(properties.fcRegionId),
+      ContentTypeCatagory: ros.stringToRosTemplate(properties.contentTypeCatagory),
+      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      FcBaseUrl: ros.stringToRosTemplate(properties.fcBaseUrl),
     };
 }
 
@@ -1992,6 +2110,11 @@ export interface RosGroupProps {
     readonly instanceId?: string;
 
     /**
+     * @Property internetEnable: Enable or disable internet subdomain. True for enable.
+     */
+    readonly internetEnable?: boolean | ros.IResolvable;
+
+    /**
      * @Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
@@ -2001,6 +2124,11 @@ export interface RosGroupProps {
      * @Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: ros.RosTag[];
+
+    /**
+     * @Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
+     */
+    readonly vpcIntranetEnable?: boolean | ros.IResolvable;
 }
 
 /**
@@ -2015,8 +2143,10 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('vpcIntranetEnable', ros.validateBoolean)(properties.vpcIntranetEnable));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2046,8 +2176,10 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
       GroupName: ros.stringToRosTemplate(properties.groupName),
       Description: ros.stringToRosTemplate(properties.description),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InternetEnable: ros.booleanToRosTemplate(properties.internetEnable),
       PassthroughHeaders: ros.stringToRosTemplate(properties.passthroughHeaders),
       Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      VpcIntranetEnable: ros.booleanToRosTemplate(properties.vpcIntranetEnable),
     };
 }
 
@@ -2099,6 +2231,11 @@ export class RosGroup extends ros.RosResource {
     public instanceId: string | undefined;
 
     /**
+     * @Property internetEnable: Enable or disable internet subdomain. True for enable.
+     */
+    public internetEnable: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
@@ -2108,6 +2245,11 @@ export class RosGroup extends ros.RosResource {
      * @Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
     public readonly tags: ros.TagManager;
+
+    /**
+     * @Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
+     */
+    public vpcIntranetEnable: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Group`.
@@ -2126,8 +2268,10 @@ export class RosGroup extends ros.RosResource {
         this.groupName = props.groupName;
         this.description = props.description;
         this.instanceId = props.instanceId;
+        this.internetEnable = props.internetEnable;
         this.passthroughHeaders = props.passthroughHeaders;
         this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ApiGateway::Group", props.tags, { tagPropertyName: 'tags' });
+        this.vpcIntranetEnable = props.vpcIntranetEnable;
     }
 
 
@@ -2136,12 +2280,274 @@ export class RosGroup extends ros.RosResource {
             groupName: this.groupName,
             description: this.description,
             instanceId: this.instanceId,
+            internetEnable: this.internetEnable,
             passthroughHeaders: this.passthroughHeaders,
             tags: this.tags.renderTags(),
+            vpcIntranetEnable: this.vpcIntranetEnable,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::ApiGateway::Instance`
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property httpsPolicy: HTTPS security policy. Valid values: HTTPS2_TLS1_0, HTTPS2_TLS1_2, HTTPS1_1_TLS1_0
+     */
+    readonly httpsPolicy: string;
+
+    /**
+     * @Property instanceName: Instance name
+     */
+    readonly instanceName: string;
+
+    /**
+     * @Property instanceSpec: Instance specification. For example: api.s1.small
+     */
+    readonly instanceSpec: string;
+
+    /**
+     * @Property zoneId: Zone to which the instance belongs. For example: cn-beijing-MAZ2(f,g).
+     * Pleas call DescribeZones to get supported zone list.
+     */
+    readonly zoneId: string;
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
+     */
+    readonly chargeType?: string;
+
+    /**
+     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     */
+    readonly duration?: number;
+
+    /**
+     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     */
+    readonly pricingCycle?: string;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceSpec', ros.requiredValidator)(properties.instanceSpec));
+    errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
+    errors.collect(ros.propertyValidator('httpsPolicy', ros.requiredValidator)(properties.httpsPolicy));
+    errors.collect(ros.propertyValidator('httpsPolicy', ros.validateString)(properties.httpsPolicy));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PrePaid","PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      HttpsPolicy: ros.stringToRosTemplate(properties.httpsPolicy),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceSpec: ros.stringToRosTemplate(properties.instanceSpec),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      Duration: ros.numberToRosTemplate(properties.duration),
+      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ApiGateway::Instance`
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Instance";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute EgressIpv6Enable: Whether enable egress IPV6.
+     */
+    public readonly attrEgressIpv6Enable: any;
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: any;
+
+    /**
+     * @Attribute InstanceType: Instance type.
+     */
+    public readonly attrInstanceType: any;
+
+    /**
+     * @Attribute InternetEgressAddress: Internet egress dddress.
+     */
+    public readonly attrInternetEgressAddress: any;
+
+    /**
+     * @Attribute SupportIpv6: Whether support IPV6.
+     */
+    public readonly attrSupportIpv6: any;
+
+    /**
+     * @Attribute VpcEgressAddress: VPC network egress address.
+     */
+    public readonly attrVpcEgressAddress: any;
+
+    /**
+     * @Attribute VpcIntranetEnable: Whether enable VPC intranet.
+     */
+    public readonly attrVpcIntranetEnable: any;
+
+    /**
+     * @Attribute VpcSlbIntranetEnable: Whether enable VPC SLB intranet.
+     */
+    public readonly attrVpcSlbIntranetEnable: any;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property httpsPolicy: HTTPS security policy. Valid values: HTTPS2_TLS1_0, HTTPS2_TLS1_2, HTTPS1_1_TLS1_0
+     */
+    public httpsPolicy: string;
+
+    /**
+     * @Property instanceName: Instance name
+     */
+    public instanceName: string;
+
+    /**
+     * @Property instanceSpec: Instance specification. For example: api.s1.small
+     */
+    public instanceSpec: string;
+
+    /**
+     * @Property zoneId: Zone to which the instance belongs. For example: cn-beijing-MAZ2(f,g).
+     * Pleas call DescribeZones to get supported zone list.
+     */
+    public zoneId: string;
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
+     */
+    public chargeType: string | undefined;
+
+    /**
+     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     */
+    public duration: number | undefined;
+
+    /**
+     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     */
+    public pricingCycle: string | undefined;
+
+    /**
+     * Create a new `ALIYUN::ApiGateway::Instance`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEgressIpv6Enable = ros.Token.asString(this.getAtt('EgressIpv6Enable'));
+        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
+        this.attrInstanceType = ros.Token.asString(this.getAtt('InstanceType'));
+        this.attrInternetEgressAddress = ros.Token.asString(this.getAtt('InternetEgressAddress'));
+        this.attrSupportIpv6 = ros.Token.asString(this.getAtt('SupportIpv6'));
+        this.attrVpcEgressAddress = ros.Token.asString(this.getAtt('VpcEgressAddress'));
+        this.attrVpcIntranetEnable = ros.Token.asString(this.getAtt('VpcIntranetEnable'));
+        this.attrVpcSlbIntranetEnable = ros.Token.asString(this.getAtt('VpcSlbIntranetEnable'));
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.httpsPolicy = props.httpsPolicy;
+        this.instanceName = props.instanceName;
+        this.instanceSpec = props.instanceSpec;
+        this.zoneId = props.zoneId;
+        this.autoPay = props.autoPay;
+        this.chargeType = props.chargeType;
+        this.duration = props.duration;
+        this.pricingCycle = props.pricingCycle;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            httpsPolicy: this.httpsPolicy,
+            instanceName: this.instanceName,
+            instanceSpec: this.instanceSpec,
+            zoneId: this.zoneId,
+            autoPay: this.autoPay,
+            chargeType: this.chargeType,
+            duration: this.duration,
+            pricingCycle: this.pricingCycle,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

@@ -9,47 +9,47 @@ export { RosEndpointGroup as EndpointGroupProperty };
 export interface EndpointGroupProps {
 
     /**
-     * @Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
+     * Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
      */
     readonly acceleratorId: string;
 
     /**
-     * @Property endpointConfigurations:
+     * Property endpointConfigurations:
      */
     readonly endpointConfigurations: Array<RosEndpointGroup.EndpointConfigurationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property endpointGroupRegion: The region ID of the endpoint group.
+     * Property endpointGroupRegion: The region ID of the endpoint group.
      */
     readonly endpointGroupRegion: string;
 
     /**
-     * @Property listenerId: The ID of the listener to be associated with the endpoint group.
+     * Property listenerId: The ID of the listener to be associated with the endpoint group.
      */
     readonly listenerId: string;
 
     /**
-     * @Property description: The description of the endpoint group.
+     * Property description: The description of the endpoint group.
      */
     readonly description?: string;
 
     /**
-     * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
+     * Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
     readonly healthCheckIntervalSeconds?: number;
 
     /**
-     * @Property healthCheckPath: The path set as the destination on the targets for health checks.
+     * Property healthCheckPath: The path set as the destination on the targets for health checks.
      */
     readonly healthCheckPath?: string;
 
     /**
-     * @Property healthCheckPort: The port that is used to connect with the targets for health checks.
+     * Property healthCheckPort: The port that is used to connect with the targets for health checks.
      */
     readonly healthCheckPort?: number;
 
     /**
-     * @Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
+     * Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
      * tcp: TCP protocol
      * http: HTTP protocol
      * https: HTTPS protocol
@@ -57,17 +57,17 @@ export interface EndpointGroupProps {
     readonly healthCheckProtocol?: string;
 
     /**
-     * @Property name: The name of the endpoint group.
+     * Property name: The name of the endpoint group.
      */
     readonly name?: string;
 
     /**
-     * @Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
+     * Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
      */
     readonly thresholdCount?: number;
 
     /**
-     * @Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with
+     * Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with
      * multiple endpoint groups.
      */
     readonly trafficPercentage?: number;
@@ -84,16 +84,16 @@ export class EndpointGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute EndpointGroupId: The ID of the endpoint group.
+     * Attribute EndpointGroupId: The ID of the endpoint group.
      */
     public readonly attrEndpointGroupId: any;
 
     /**
      * Create a new `ALIYUN::GA::EndpointGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: EndpointGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

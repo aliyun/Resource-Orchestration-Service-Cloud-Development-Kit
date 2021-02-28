@@ -9,12 +9,12 @@ export { RosResourceGroup as ResourceGroupProperty };
 export interface ResourceGroupProps {
 
     /**
-     * @Property displayName: The display name of the resource group
+     * Property displayName: The display name of the resource group
      */
     readonly displayName: string;
 
     /**
-     * @Property name: The unique identifier of the resource group
+     * Property name: The unique identifier of the resource group
      */
     readonly name: string;
 }
@@ -30,41 +30,36 @@ export class ResourceGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
+     * Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
      */
     public readonly attrAccountId: any;
 
     /**
-     * @Attribute CreateDate: The time when the resource group was created
-     */
-    public readonly attrCreateDate: any;
-
-    /**
-     * @Attribute DisplayName: The display name of the resource group
+     * Attribute DisplayName: The display name of the resource group
      */
     public readonly attrDisplayName: any;
 
     /**
-     * @Attribute Id: The ID of the resource group
+     * Attribute Id: The ID of the resource group
      */
     public readonly attrId: any;
 
     /**
-     * @Attribute Name: The unique identifier of the resource group
+     * Attribute Name: The unique identifier of the resource group
      */
     public readonly attrName: any;
 
     /**
-     * @Attribute RegionStatuses: The status of the resource group in all regions
+     * Attribute RegionStatuses: The status of the resource group in all regions
      */
     public readonly attrRegionStatuses: any;
 
     /**
      * Create a new `ALIYUN::ResourceManager::ResourceGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ResourceGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
@@ -75,7 +70,6 @@ export class ResourceGroup extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosResourceGroup;
         this.attrAccountId = rosResourceGroup.attrAccountId;
-        this.attrCreateDate = rosResourceGroup.attrCreateDate;
         this.attrDisplayName = rosResourceGroup.attrDisplayName;
         this.attrId = rosResourceGroup.attrId;
         this.attrName = rosResourceGroup.attrName;

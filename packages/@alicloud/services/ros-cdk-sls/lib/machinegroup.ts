@@ -9,32 +9,32 @@ export { RosMachineGroup as MachineGroupProperty };
 export interface MachineGroupProps {
 
     /**
-     * @Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
+     * Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
      */
     readonly groupAttribute?: string;
 
     /**
-     * @Property groupName: Display name of the group name, the Project only. [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property groupName: Display name of the group name, the Project only. [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly groupName?: string;
 
     /**
-     * @Property groupType: MachineGroup type, the value is empty or Armory
+     * Property groupType: MachineGroup type, the value is empty or Armory
      */
     readonly groupType?: string;
 
     /**
-     * @Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'
+     * Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'
      */
     readonly machineIdentifyType?: string;
 
     /**
-     * @Property machineList: The machine tag, the value is ip or userdefined-id.
+     * Property machineList: The machine tag, the value is ip or userdefined-id.
      */
     readonly machineList?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property projectName: MachineGroup created in project.
+     * Property projectName: MachineGroup created in project.
      */
     readonly projectName?: string;
 }
@@ -50,21 +50,21 @@ export class MachineGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute GroupName: GroupName of SLS.
+     * Attribute GroupName: GroupName of SLS.
      */
     public readonly attrGroupName: any;
 
     /**
-     * @Attribute ProjectName: ProjectName of SLS.
+     * Attribute ProjectName: ProjectName of SLS.
      */
     public readonly attrProjectName: any;
 
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MachineGroupProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

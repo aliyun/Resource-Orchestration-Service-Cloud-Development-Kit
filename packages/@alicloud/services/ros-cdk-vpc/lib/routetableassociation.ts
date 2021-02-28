@@ -9,12 +9,12 @@ export { RosRouteTableAssociation as RouteTableAssociationProperty };
 export interface RouteTableAssociationProps {
 
     /**
-     * @Property routeTableId: The ID of the route table.
+     * Property routeTableId: The ID of the route table.
      */
     readonly routeTableId: string;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The ID of the VSwitch.
      */
     readonly vSwitchId: string;
 }
@@ -30,21 +30,21 @@ export class RouteTableAssociation extends ros.Resource {
      */
 
     /**
-     * @Attribute RouteTableId: The ID of the route table.
+     * Attribute RouteTableId: The ID of the route table.
      */
     public readonly attrRouteTableId: any;
 
     /**
-     * @Attribute VSwitchId: The VSwitch ID which the route table associated with.
+     * Attribute VSwitchId: The VSwitch ID which the route table associated with.
      */
     public readonly attrVSwitchId: any;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTableAssociation`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RouteTableAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

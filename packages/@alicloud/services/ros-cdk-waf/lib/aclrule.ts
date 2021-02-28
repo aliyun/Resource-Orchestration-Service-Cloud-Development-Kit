@@ -9,30 +9,30 @@ export { RosAclRule as AclRuleProperty };
 export interface AclRuleProps {
 
     /**
-     * @Property domain: Domain name.
+     * Property domain: Domain name.
      */
     readonly domain: string;
 
     /**
-     * @Property instanceId: WAF instance ID.
+     * Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
     readonly instanceId: string;
 
     /**
-     * @Property rules: Detailed information of precise access control rules, expressed in JSON format strings.
+     * Property rules: Detailed information of precise access control rules, expressed in JSON format strings.
      */
     readonly rules: string;
 
     /**
-     * @Property region: Examples of areas where the WAF. Value:
+     * Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
     readonly region?: string;
 
     /**
-     * @Property ruleId: Precise access control rule ID
+     * Property ruleId: Precise access control rule ID
      */
     readonly ruleId?: number;
 }
@@ -50,9 +50,9 @@ export class AclRule extends ros.Resource {
     /**
      * Create a new `ALIYUN::WAF::AclRule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AclRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

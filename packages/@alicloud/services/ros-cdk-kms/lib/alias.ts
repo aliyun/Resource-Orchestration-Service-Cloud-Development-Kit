@@ -9,12 +9,12 @@ export { RosAlias as AliasProperty };
 export interface AliasProps {
 
     /**
-     * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+     * Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
      */
     readonly aliasName: string;
 
     /**
-     * @Property keyId: Globally unique identifier of the CMK.
+     * Property keyId: Globally unique identifier of the CMK.
      */
     readonly keyId: string;
 }
@@ -32,9 +32,9 @@ export class Alias extends ros.Resource {
     /**
      * Create a new `ALIYUN::KMS::Alias`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AliasProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosFolder as FolderProperty };
 export interface FolderProps {
 
     /**
-     * @Property folderName: The name of the folder
+     * Property folderName: The name of the folder
      */
     readonly folderName: string;
 
     /**
-     * @Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
+     * Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
     readonly parentFolderId?: string;
 }
@@ -30,26 +30,26 @@ export class Folder extends ros.Resource {
      */
 
     /**
-     * @Attribute FolderId: The ID of the folder
+     * Attribute FolderId: The ID of the folder
      */
     public readonly attrFolderId: any;
 
     /**
-     * @Attribute FolderName: The name of the folder
+     * Attribute FolderName: The name of the folder
      */
     public readonly attrFolderName: any;
 
     /**
-     * @Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
+     * Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
     public readonly attrParentFolderId: any;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Folder`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: FolderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -1,3 +1,5 @@
+export * from './anycasteip';
+export * from './anycasteipassociation';
 export * from './commonbandwidthpackage';
 export * from './commonbandwidthpackageip';
 export * from './customergateway';

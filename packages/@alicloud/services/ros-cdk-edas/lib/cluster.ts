@@ -9,32 +9,32 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * @Property clusterName: Cluster name
+     * Property clusterName: Cluster name
      */
     readonly clusterName: string;
 
     /**
-     * @Property clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
+     * Property clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
      */
     readonly clusterType: number;
 
     /**
-     * @Property networkMode: Network Type. 1- classic network, 2-VPC
+     * Property networkMode: Network Type. 1- classic network, 2-VPC
      */
     readonly networkMode: number;
 
     /**
-     * @Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
+     * Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
      */
     readonly logicalRegionId?: string;
 
     /**
-     * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
+     * Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
      */
     readonly oversoldFactor?: number;
 
     /**
-     * @Property vpcId: VPC network ID. If network selection VPC, this parameter Required
+     * Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
     readonly vpcId?: string;
 }
@@ -50,31 +50,31 @@ export class Cluster extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: Cluster ID
+     * Attribute ClusterId: Cluster ID
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute ClusterName: Cluster name
+     * Attribute ClusterName: Cluster name
      */
     public readonly attrClusterName: any;
 
     /**
-     * @Attribute ClusterType: Cluster type
+     * Attribute ClusterType: Cluster type
      */
     public readonly attrClusterType: any;
 
     /**
-     * @Attribute IaasProvider: Provider
+     * Attribute IaasProvider: Provider
      */
     public readonly attrIaasProvider: any;
 
     /**
      * Create a new `ALIYUN::EDAS::Cluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

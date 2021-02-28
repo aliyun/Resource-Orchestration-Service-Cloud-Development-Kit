@@ -587,6 +587,11 @@ export interface RosFunctionProps {
     readonly instanceConcurrency?: number;
 
     /**
+     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     */
+    readonly instanceType?: string;
+
+    /**
      * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
     readonly memorySize?: number;
@@ -611,7 +616,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('memorySize', ros.validateRange)({
             data: properties.memorySize,
             min: 128,
-            max: 3072,
+            max: 32768,
           }));
     }
     errors.collect(ros.propertyValidator('memorySize', ros.validateNumber)(properties.memorySize));
@@ -629,9 +634,9 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
     errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
     errors.collect(ros.propertyValidator('asyncConfiguration', RosFunction_AsyncConfigurationPropertyValidator)(properties.asyncConfiguration));
+    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
@@ -654,6 +659,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateNumber)(properties.instanceConcurrency));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["e1","c1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     return errors.wrap('supplied properties not correct for "RosFunctionProps"');
 }
 
@@ -684,6 +696,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       InitializationTimeout: ros.numberToRosTemplate(properties.initializationTimeout),
       Initializer: ros.stringToRosTemplate(properties.initializer),
       InstanceConcurrency: ros.numberToRosTemplate(properties.instanceConcurrency),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MemorySize: ros.numberToRosTemplate(properties.memorySize),
       Timeout: ros.numberToRosTemplate(properties.timeout),
     };
@@ -717,6 +730,11 @@ export class RosFunction extends ros.RosResource {
      * @Attribute FunctionName: The function name
      */
     public readonly attrFunctionName: any;
+
+    /**
+     * @Attribute ServiceId: The service ID
+     */
+    public readonly attrServiceId: any;
 
     /**
      * @Attribute ServiceName: The service name
@@ -792,6 +810,11 @@ export class RosFunction extends ros.RosResource {
     public instanceConcurrency: number | undefined;
 
     /**
+     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     */
+    public instanceType: string | undefined;
+
+    /**
      * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
     public memorySize: number | undefined;
@@ -813,6 +836,7 @@ export class RosFunction extends ros.RosResource {
         this.attrArn = ros.Token.asString(this.getAtt('ARN'));
         this.attrFunctionId = ros.Token.asString(this.getAtt('FunctionId'));
         this.attrFunctionName = ros.Token.asString(this.getAtt('FunctionName'));
+        this.attrServiceId = ros.Token.asString(this.getAtt('ServiceId'));
         this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -829,6 +853,7 @@ export class RosFunction extends ros.RosResource {
         this.initializationTimeout = props.initializationTimeout;
         this.initializer = props.initializer;
         this.instanceConcurrency = props.instanceConcurrency;
+        this.instanceType = props.instanceType;
         this.memorySize = props.memorySize;
         this.timeout = props.timeout;
     }
@@ -849,6 +874,7 @@ export class RosFunction extends ros.RosResource {
             initializationTimeout: this.initializationTimeout,
             initializer: this.initializer,
             instanceConcurrency: this.instanceConcurrency,
+            instanceType: this.instanceType,
             memorySize: this.memorySize,
             timeout: this.timeout,
         };
@@ -1006,6 +1032,12 @@ export namespace RosFunction {
          */
         readonly args?: string;
         /**
+         * @Property accelerationType: Whether to enable image acceleration. Valid Values:
+     * Default: Indicates that image acceleration is enabled.
+     * None: Indicates that image acceleration is disabled.
+         */
+        readonly accelerationType?: string;
+        /**
          * @Property command: Container start command. For example: ["/code/myserver"]
          */
         readonly command?: string;
@@ -1026,6 +1058,7 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
+    errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
@@ -1045,6 +1078,7 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
       Args: ros.stringToRosTemplate(properties.args),
+      AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
       Command: ros.stringToRosTemplate(properties.command),
       Image: ros.stringToRosTemplate(properties.image),
     };
@@ -1539,6 +1573,11 @@ export interface RosServiceProps {
     readonly tags?: ros.RosTag[];
 
     /**
+     * @Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
+
+    /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     readonly vpcConfig?: RosService.VpcConfigProperty | ros.IResolvable;
@@ -1558,6 +1597,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('tracingConfig', RosService_TracingConfigPropertyValidator)(properties.tracingConfig));
     errors.collect(ros.propertyValidator('vpcConfig', RosService_VpcConfigPropertyValidator)(properties.vpcConfig));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
@@ -1603,6 +1643,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
       NasConfig: rosServiceNasConfigPropertyToRosTemplate(properties.nasConfig),
       Role: ros.stringToRosTemplate(properties.role),
       Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      TracingConfig: rosServiceTracingConfigPropertyToRosTemplate(properties.tracingConfig),
       VpcConfig: rosServiceVpcConfigPropertyToRosTemplate(properties.vpcConfig),
     };
 }
@@ -1622,6 +1663,26 @@ export class RosService extends ros.RosResource {
      */
 
     /**
+     * @Attribute InternetAccess: Whether enable Internet access
+     */
+    public readonly attrInternetAccess: any;
+
+    /**
+     * @Attribute LogProject: Log project of service
+     */
+    public readonly attrLogProject: any;
+
+    /**
+     * @Attribute Logstore: Log store of service
+     */
+    public readonly attrLogstore: any;
+
+    /**
+     * @Attribute Role: Role of service
+     */
+    public readonly attrRole: any;
+
+    /**
      * @Attribute ServiceId: The service ID
      */
     public readonly attrServiceId: any;
@@ -1635,6 +1696,11 @@ export class RosService extends ros.RosResource {
      * @Attribute Tags: Tags of service
      */
     public readonly attrTags: any;
+
+    /**
+     * @Attribute VpcId: VPC ID
+     */
+    public readonly attrVpcId: any;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1680,6 +1746,11 @@ export class RosService extends ros.RosResource {
     public readonly tags: ros.TagManager;
 
     /**
+     * @Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    public tracingConfig: RosService.TracingConfigProperty | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     public vpcConfig: RosService.VpcConfigProperty | ros.IResolvable | undefined;
@@ -1693,9 +1764,14 @@ export class RosService extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosServiceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosService.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrInternetAccess = ros.Token.asString(this.getAtt('InternetAccess'));
+        this.attrLogProject = ros.Token.asString(this.getAtt('LogProject'));
+        this.attrLogstore = ros.Token.asString(this.getAtt('Logstore'));
+        this.attrRole = ros.Token.asString(this.getAtt('Role'));
         this.attrServiceId = ros.Token.asString(this.getAtt('ServiceId'));
         this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
         this.attrTags = ros.Token.asString(this.getAtt('Tags'));
+        this.attrVpcId = ros.Token.asString(this.getAtt('VpcId'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.serviceName = props.serviceName;
@@ -1706,6 +1782,7 @@ export class RosService extends ros.RosResource {
         this.nasConfig = props.nasConfig;
         this.role = props.role;
         this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::FC::Service", props.tags, { tagPropertyName: 'tags' });
+        this.tracingConfig = props.tracingConfig;
         this.vpcConfig = props.vpcConfig;
     }
 
@@ -1720,6 +1797,7 @@ export class RosService extends ros.RosResource {
             nasConfig: this.nasConfig,
             role: this.role,
             tags: this.tags.renderTags(),
+            tracingConfig: this.tracingConfig,
             vpcConfig: this.vpcConfig,
         };
     }
@@ -1741,6 +1819,10 @@ export namespace RosService {
          * @Property logstore: The log store name of Logs service
          */
         readonly logstore?: string;
+        /**
+         * @Property enableRequestMetrics: Whether enable request metrics.
+         */
+        readonly enableRequestMetrics?: boolean | ros.IResolvable;
     }
 }
 /**
@@ -1755,6 +1837,7 @@ function RosService_LogConfigPropertyValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
     errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('enableRequestMetrics', ros.validateBoolean)(properties.enableRequestMetrics));
     return errors.wrap('supplied properties not correct for "LogConfigProperty"');
 }
 
@@ -1772,6 +1855,7 @@ function rosServiceLogConfigPropertyToRosTemplate(properties: any): any {
     return {
       Project: ros.stringToRosTemplate(properties.project),
       Logstore: ros.stringToRosTemplate(properties.logstore),
+      EnableRequestMetrics: ros.booleanToRosTemplate(properties.enableRequestMetrics),
     };
 }
 
@@ -1891,6 +1975,53 @@ function rosServiceNasConfigPropertyToRosTemplate(properties: any): any {
       MountPoints: ros.listMapper(rosServiceMountPointsPropertyToRosTemplate)(properties.mountPoints),
       UserId: ros.numberToRosTemplate(properties.userId),
       GroupId: ros.numberToRosTemplate(properties.groupId),
+    };
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
+    export interface TracingConfigProperty {
+        /**
+         * @Property type: The type of the tracing analysis system.
+         */
+        readonly type?: string;
+        /**
+         * @Property params: The tracing analysis parameters.
+         */
+        readonly params?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TracingConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TracingConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_TracingConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('params', ros.hashValidator(ros.validateAny))(properties.params));
+    return errors.wrap('supplied properties not correct for "TracingConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.TracingConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TracingConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.TracingConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceTracingConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_TracingConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Params: ros.hashMapper(ros.objectToRosTemplate)(properties.params),
     };
 }
 

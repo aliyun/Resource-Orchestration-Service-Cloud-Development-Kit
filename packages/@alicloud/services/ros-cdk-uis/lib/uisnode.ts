@@ -9,33 +9,33 @@ export { RosUisNode as UisNodeProperty };
 export interface UisNodeProps {
 
     /**
-     * @Property ipAddrsNum: The number of IPs available at the boarding point. The default is 2, the maximum is 10, if you need more quota, please submit the work order.
+     * Property ipAddrsNum: The number of IPs available at the boarding point. The default is 2, the maximum is 10, if you need more quota, please submit the work order.
      */
     readonly ipAddrsNum: number;
 
     /**
-     * @Property uisId: The instance ID to which the boarding point belongs.
+     * Property uisId: The instance ID to which the boarding point belongs.
      */
     readonly uisId: string;
 
     /**
-     * @Property uisNodeAreaId: Specifies the territory ID of the node. You can query the supported territories through the DescribeRegions interface.
+     * Property uisNodeAreaId: Specifies the territory ID of the node. You can query the supported territories through the DescribeRegions interface.
      */
     readonly uisNodeAreaId: string;
 
     /**
-     * @Property uisNodeBandwidth: Specify the bandwidth bandwidth value for this pick-up point, even if the Internet bandwidth.
+     * Property uisNodeBandwidth: Specify the bandwidth bandwidth value for this pick-up point, even if the Internet bandwidth.
      * If you do not specify a bandwidth, the default value is 20Mbps.
      */
     readonly uisNodeBandwidth: number;
 
     /**
-     * @Property description: Description of the instance of the boarding point.
+     * Property description: Description of the instance of the boarding point.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the instance of the boarding point.
+     * Property name: The name of the instance of the boarding point.
      */
     readonly name?: string;
 }
@@ -51,26 +51,26 @@ export class UisNode extends ros.Resource {
      */
 
     /**
-     * @Attribute UisNodeActiveIps: The node active IP list.
+     * Attribute UisNodeActiveIps: The node active IP list.
      */
     public readonly attrUisNodeActiveIps: any;
 
     /**
-     * @Attribute UisNodeId: The node ID of the instance.
+     * Attribute UisNodeId: The node ID of the instance.
      */
     public readonly attrUisNodeId: any;
 
     /**
-     * @Attribute UisNodeIps: The node IP list.
+     * Attribute UisNodeIps: The node IP list.
      */
     public readonly attrUisNodeIps: any;
 
     /**
      * Create a new `ALIYUN::UIS::UisNode`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UisNodeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

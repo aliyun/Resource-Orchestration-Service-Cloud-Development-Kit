@@ -9,22 +9,22 @@ export { RosWhitelist as WhitelistProperty };
 export interface WhitelistProps {
 
     /**
-     * @Property instanceId: Instance ID (globally unique)
+     * Property instanceId: Instance ID (globally unique)
      */
     readonly instanceId: string;
 
     /**
-     * @Property securityIps: IP address whitelist to be modified
+     * Property securityIps: IP address whitelist to be modified
      */
     readonly securityIps: string;
 
     /**
-     * @Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
+     * Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
     readonly securityIpGroupAttribute?: string;
 
     /**
-     * @Property securityIpGroupName: Whitelist group
+     * Property securityIpGroupName: Whitelist group
      */
     readonly securityIpGroupName?: string;
 }
@@ -40,26 +40,26 @@ export class Whitelist extends ros.Resource {
      */
 
     /**
-     * @Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
+     * Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
     public readonly attrSecurityIpGroupAttribute: any;
 
     /**
-     * @Attribute SecurityIpGroupName: Whitelist group
+     * Attribute SecurityIpGroupName: Whitelist group
      */
     public readonly attrSecurityIpGroupName: any;
 
     /**
-     * @Attribute SecurityIps: IP address whitelist to be modified
+     * Attribute SecurityIps: IP address whitelist to be modified
      */
     public readonly attrSecurityIps: any;
 
     /**
      * Create a new `ALIYUN::REDIS::Whitelist`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: WhitelistProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

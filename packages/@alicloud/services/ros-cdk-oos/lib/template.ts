@@ -9,17 +9,17 @@ export { RosTemplate as TemplateProperty };
 export interface TemplateProps {
 
     /**
-     * @Property content: The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB.
+     * Property content: The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB.
      */
     readonly content: string;
 
     /**
-     * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
+     * Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
      */
     readonly templateName: string;
 
     /**
-     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
     readonly tags?: { [key: string]: any }[];
 }
@@ -35,26 +35,26 @@ export class Template extends ros.Resource {
      */
 
     /**
-     * @Attribute ExecutionPolicy: Execution Policy
+     * Attribute ExecutionPolicy: Execution Policy
      */
     public readonly attrExecutionPolicy: any;
 
     /**
-     * @Attribute TemplateId: Template ID
+     * Attribute TemplateId: Template ID
      */
     public readonly attrTemplateId: any;
 
     /**
-     * @Attribute TemplateName: Template Name
+     * Attribute TemplateName: Template Name
      */
     public readonly attrTemplateName: any;
 
     /**
      * Create a new `ALIYUN::OOS::Template`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

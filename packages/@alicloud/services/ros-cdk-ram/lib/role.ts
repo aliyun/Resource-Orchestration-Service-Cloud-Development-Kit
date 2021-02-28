@@ -9,29 +9,29 @@ export { RosRole as RoleProperty };
 export interface RoleProps {
 
     /**
-     * @Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+     * Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
      */
     readonly assumeRolePolicyDocument: RosRole.AssumeRolePolicyDocumentProperty | ros.IResolvable;
 
     /**
-     * @Property roleName: Specifies the role name, containing up to 64 characters.
+     * Property roleName: Specifies the role name, containing up to 64 characters.
      */
     readonly roleName: string;
 
     /**
-     * @Property description: Remark information, up to 1024 characters or Chinese characters.
+     * Property description: Remark information, up to 1024 characters or Chinese characters.
      */
     readonly description?: string;
 
     /**
-     * @Property maxSessionDuration: The maximum session duration of the RAM role.
+     * Property maxSessionDuration: The maximum session duration of the RAM role.
      * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
      * The default value is used if the parameter is not specified.
      */
     readonly maxSessionDuration?: number;
 
     /**
-     * @Property policies: Describes what actions are allowed on what resources.
+     * Property policies: Describes what actions are allowed on what resources.
      */
     readonly policies?: Array<RosRole.PoliciesProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -47,26 +47,26 @@ export class Role extends ros.Resource {
      */
 
     /**
-     * @Attribute Arn: Name of alicloud resource.
+     * Attribute Arn: Name of alicloud resource.
      */
     public readonly attrArn: any;
 
     /**
-     * @Attribute RoleId: Id of ram role.
+     * Attribute RoleId: Id of ram role.
      */
     public readonly attrRoleId: any;
 
     /**
-     * @Attribute RoleName: Name of ram role.
+     * Attribute RoleName: Name of ram role.
      */
     public readonly attrRoleName: any;
 
     /**
      * Create a new `ALIYUN::RAM::Role`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RoleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

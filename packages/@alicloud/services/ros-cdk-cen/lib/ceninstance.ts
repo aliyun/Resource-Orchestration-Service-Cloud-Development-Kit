@@ -9,16 +9,21 @@ export { RosCenInstance as CenInstanceProperty };
 export interface CenInstanceProps {
 
     /**
-     * @Property description: The description of the instance.
+     * Property description: The description of the instance.
      * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the instance.
+     * Property name: The name of the instance.
      * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
      */
     readonly name?: string;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -32,22 +37,23 @@ export class CenInstance extends ros.Resource {
      */
 
     /**
-     * @Attribute CenId: The ID of the request.
+     * Attribute CenId: The ID of the request.
      */
     public readonly attrCenId: any;
 
     /**
      * Create a new `ALIYUN::CEN::CenInstance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CenInstanceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
 
         const rosCenInstance = new RosCenInstance(this, id,  {
             description: props.description,
+            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenInstance;

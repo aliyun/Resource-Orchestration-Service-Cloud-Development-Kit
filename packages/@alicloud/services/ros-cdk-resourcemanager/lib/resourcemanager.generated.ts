@@ -614,11 +614,6 @@ export class RosResourceGroup extends ros.RosResource {
     public readonly attrAccountId: any;
 
     /**
-     * @Attribute CreateDate: The time when the resource group was created
-     */
-    public readonly attrCreateDate: any;
-
-    /**
      * @Attribute DisplayName: The display name of the resource group
      */
     public readonly attrDisplayName: any;
@@ -661,7 +656,6 @@ export class RosResourceGroup extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosResourceGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosResourceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrAccountId = ros.Token.asString(this.getAtt('AccountId'));
-        this.attrCreateDate = ros.Token.asString(this.getAtt('CreateDate'));
         this.attrDisplayName = ros.Token.asString(this.getAtt('DisplayName'));
         this.attrId = ros.Token.asString(this.getAtt('Id'));
         this.attrName = ros.Token.asString(this.getAtt('Name'));

@@ -9,17 +9,17 @@ export { RosApp as AppProperty };
 export interface AppProps {
 
     /**
-     * @Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly appName: string;
 
     /**
-     * @Property description: Description of the App, less than 180 characters.
+     * Property description: Description of the App, less than 180 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property tags: Tags to attach to app. Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to app. Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
 }
@@ -35,31 +35,31 @@ export class App extends ros.Resource {
      */
 
     /**
-     * @Attribute AppId: The id of the created APP
+     * Attribute AppId: The id of the created APP
      */
     public readonly attrAppId: any;
 
     /**
-     * @Attribute AppKey: The key of the APP
+     * Attribute AppKey: The key of the APP
      */
     public readonly attrAppKey: any;
 
     /**
-     * @Attribute AppSecret: The secret of the APP
+     * Attribute AppSecret: The secret of the APP
      */
     public readonly attrAppSecret: any;
 
     /**
-     * @Attribute Tags: Tags of app
+     * Attribute Tags: Tags of app
      */
     public readonly attrTags: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::App`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AppProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

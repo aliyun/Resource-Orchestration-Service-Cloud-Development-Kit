@@ -9,23 +9,23 @@ export { RosDomainExtension as DomainExtensionProperty };
 export interface DomainExtensionProps {
 
     /**
-     * @Property domain: The domain name.
+     * Property domain: The domain name.
      */
     readonly domain: string;
 
     /**
-     * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
+     * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
     readonly listenerPort: number;
 
     /**
-     * @Property loadBalancerId: The ID of Server Load Balancer instance.
+     * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
     readonly loadBalancerId: string;
 
     /**
-     * @Property serverCertificateId: The ID of the certificate corresponding to the domain name.
+     * Property serverCertificateId: The ID of the certificate corresponding to the domain name.
      */
     readonly serverCertificateId: string;
 }
@@ -41,12 +41,12 @@ export class DomainExtension extends ros.Resource {
      */
 
     /**
-     * @Attribute DomainExtensionId: The ID of the created domain name extension.
+     * Attribute DomainExtensionId: The ID of the created domain name extension.
      */
     public readonly attrDomainExtensionId: any;
 
     /**
-     * @Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
+     * Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
 1-65535
      */
     public readonly attrListenerPort: any;
@@ -54,9 +54,9 @@ export class DomainExtension extends ros.Resource {
     /**
      * Create a new `ALIYUN::SLB::DomainExtension`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DomainExtensionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

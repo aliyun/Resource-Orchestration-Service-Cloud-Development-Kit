@@ -9,17 +9,17 @@ export { RosAccount as AccountProperty };
 export interface AccountProps {
 
     /**
-     * @Property displayName: Member name
+     * Property displayName: Member name
      */
     readonly displayName: string;
 
     /**
-     * @Property folderId: The ID of the parent folder
+     * Property folderId: The ID of the parent folder
      */
     readonly folderId?: string;
 
     /**
-     * @Property payerAccountId:
+     * Property payerAccountId:
      */
     readonly payerAccountId?: string;
 }
@@ -35,41 +35,41 @@ export class Account extends ros.Resource {
      */
 
     /**
-     * @Attribute AccountId: This ID of Resource Manager Account
+     * Attribute AccountId: This ID of Resource Manager Account
      */
     public readonly attrAccountId: any;
 
     /**
-     * @Attribute DisplayName: Member name
+     * Attribute DisplayName: Member name
      */
     public readonly attrDisplayName: any;
 
     /**
-     * @Attribute FolderId: The ID of the parent folder
+     * Attribute FolderId: The ID of the parent folder
      */
     public readonly attrFolderId: any;
 
     /**
-     * @Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
+     * Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
      */
     public readonly attrJoinMethod: any;
 
     /**
-     * @Attribute ResourceDirectoryId: Resource directory ID
+     * Attribute ResourceDirectoryId: Resource directory ID
      */
     public readonly attrResourceDirectoryId: any;
 
     /**
-     * @Attribute Type: Member type. The value of ResourceAccount indicates the resource account
+     * Attribute Type: Member type. The value of ResourceAccount indicates the resource account
      */
     public readonly attrType: any;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Account`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

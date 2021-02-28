@@ -488,6 +488,11 @@ export interface RosCloudConnectNetworkProps {
      * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
      */
     readonly name?: string;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -502,6 +507,14 @@ function RosCloudConnectNetworkPropsValidator(properties: any): ros.ValidationRe
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('isDefault', ros.validateBoolean)(properties.isDefault));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosCloudConnectNetworkProps"');
 }
@@ -523,6 +536,7 @@ function rosCloudConnectNetworkPropsToRosTemplate(properties: any, enableResourc
       Description: ros.stringToRosTemplate(properties.description),
       IsDefault: ros.booleanToRosTemplate(properties.isDefault),
       Name: ros.stringToRosTemplate(properties.name),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -566,6 +580,11 @@ export class RosCloudConnectNetwork extends ros.RosResource {
     public name: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::SAG::CloudConnectNetwork`.
      *
      * @param scope - scope in which this resource is defined
@@ -580,6 +599,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
         this.description = props.description;
         this.isDefault = props.isDefault;
         this.name = props.name;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SAG::CloudConnectNetwork", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -588,6 +608,7 @@ export class RosCloudConnectNetwork extends ros.RosResource {
             description: this.description,
             isDefault: this.isDefault,
             name: this.name,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -9,32 +9,32 @@ export { RosRoute as RouteProperty };
 export interface RouteProps {
 
     /**
-     * @Property destinationCidrBlock: The RouteEntry's target network segment.
+     * Property destinationCidrBlock: The RouteEntry's target network segment.
      */
     readonly destinationCidrBlock: string;
 
     /**
-     * @Property routeId: RouteId of created route entry.
+     * Property routeId: RouteId of created route entry.
      */
     readonly routeId: string;
 
     /**
-     * @Property routeTableId: RouteTableId of created route entry.
+     * Property routeTableId: RouteTableId of created route entry.
      */
     readonly routeTableId: string;
 
     /**
-     * @Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
+     * Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
      */
     readonly nextHopId?: string;
 
     /**
-     * @Property nextHopList: The route entry's next hop list. If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
+     * Property nextHopList: The route entry's next hop list. If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
      */
     readonly nextHopList?: Array<RosRoute.NextHopListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+     * Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
     readonly nextHopType?: string;
 }
@@ -52,9 +52,9 @@ export class Route extends ros.Resource {
     /**
      * Create a new `ALIYUN::ECS::Route`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RouteProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,22 +9,22 @@ export { RosVpcAccessConfig as VpcAccessConfigProperty };
 export interface VpcAccessConfigProps {
 
     /**
-     * @Property instanceId: The id of the instance (ECS/SLB).
+     * Property instanceId: The id of the instance (ECS/SLB).
      */
     readonly instanceId: string;
 
     /**
-     * @Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
+     * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
      */
     readonly name: string;
 
     /**
-     * @Property port: The port of the VPC.
+     * Property port: The port of the VPC.
      */
     readonly port: number;
 
     /**
-     * @Property vpcId: The id of the VPC.
+     * Property vpcId: The id of the VPC.
      */
     readonly vpcId: string;
 }
@@ -42,9 +42,9 @@ export class VpcAccessConfig extends ros.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::VpcAccessConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: VpcAccessConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

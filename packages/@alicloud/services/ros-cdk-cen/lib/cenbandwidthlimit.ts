@@ -9,22 +9,22 @@ export { RosCenBandwidthLimit as CenBandwidthLimitProperty };
 export interface CenBandwidthLimitProps {
 
     /**
-     * @Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+     * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
      */
     readonly bandwidthLimit: number;
 
     /**
-     * @Property cenId: The ID of the CEN instance.
+     * Property cenId: The ID of the CEN instance.
      */
     readonly cenId: string;
 
     /**
-     * @Property localRegionId: The ID of the local region.
+     * Property localRegionId: The ID of the local region.
      */
     readonly localRegionId: string;
 
     /**
-     * @Property oppositeRegionId: The ID of the other interconnected region.
+     * Property oppositeRegionId: The ID of the other interconnected region.
      */
     readonly oppositeRegionId: string;
 }
@@ -42,9 +42,9 @@ export class CenBandwidthLimit extends ros.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenBandwidthLimit`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CenBandwidthLimitProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

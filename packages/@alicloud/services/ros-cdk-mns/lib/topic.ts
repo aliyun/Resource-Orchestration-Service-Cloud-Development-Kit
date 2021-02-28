@@ -9,18 +9,18 @@ export { RosTopic as TopicProperty };
 export interface TopicProps {
 
     /**
-     * @Property topicName: Topic name
+     * Property topicName: Topic name
      */
     readonly topicName: string;
 
     /**
-     * @Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
+     * Property loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
      * The default value is false
      */
     readonly loggingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
+     * Property maximumMessageSize: Maximum body length of a message sent to the topic, in the unit of bytes.
      * An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
      */
     readonly maximumMessageSize?: number;
@@ -37,26 +37,26 @@ export class Topic extends ros.Resource {
      */
 
     /**
-     * @Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
+     * Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName
      */
     public readonly attrArnWithSlash: any;
 
     /**
-     * @Attribute TopicName: Topic name
+     * Attribute TopicName: Topic name
      */
     public readonly attrTopicName: any;
 
     /**
-     * @Attribute TopicUrl: URL of created topic
+     * Attribute TopicUrl: URL of created topic
      */
     public readonly attrTopicUrl: any;
 
     /**
      * Create a new `ALIYUN::MNS::Topic`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

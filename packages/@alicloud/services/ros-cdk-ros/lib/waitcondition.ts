@@ -9,17 +9,17 @@ export { RosWaitCondition as WaitConditionProperty };
 export interface WaitConditionProps {
 
     /**
-     * @Property handle: A reference to the wait condition handle used to signal this wait condition.
+     * Property handle: A reference to the wait condition handle used to signal this wait condition.
      */
     readonly handle: string;
 
     /**
-     * @Property timeout: The number of seconds to wait for the correct number of signals to arrive.
+     * Property timeout: The number of seconds to wait for the correct number of signals to arrive.
      */
     readonly timeout: number;
 
     /**
-     * @Property count: The number of success signals that must be received before the stack creation process continues.
+     * Property count: The number of success signals that must be received before the stack creation process continues.
      */
     readonly count?: number;
 }
@@ -35,26 +35,26 @@ export class WaitCondition extends ros.Resource {
      */
 
     /**
-     * @Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
+     * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
      */
     public readonly attrData: any;
 
     /**
-     * @Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
+     * Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
      */
     public readonly attrErrorData: any;
 
     /**
-     * @Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
+     * Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
      */
     public readonly attrJoinedErrorData: any;
 
     /**
      * Create a new `ALIYUN::ROS::WaitCondition`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: WaitConditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

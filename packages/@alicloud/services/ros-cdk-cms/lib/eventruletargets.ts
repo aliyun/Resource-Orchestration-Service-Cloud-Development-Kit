@@ -9,32 +9,32 @@ export { RosEventRuleTargets as EventRuleTargetsProperty };
 export interface EventRuleTargetsProps {
 
     /**
-     * @Property ruleName: The name of the alert rule.
+     * Property ruleName: The name of the alert rule.
      */
     readonly ruleName: string;
 
     /**
-     * @Property contactParameters: CONTACT configuration.A maximum of 5 parameters
+     * Property contactParameters: CONTACT configuration.A maximum of 5 parameters
      */
     readonly contactParameters?: Array<RosEventRuleTargets.ContactParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property fcParameters: FC configuration.A maximum of 5 parameters.
+     * Property fcParameters: FC configuration.A maximum of 5 parameters.
      */
     readonly fcParameters?: Array<RosEventRuleTargets.FcParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property mnsParameters: MNS configuration.A maximum of 5 parameters
+     * Property mnsParameters: MNS configuration.A maximum of 5 parameters
      */
     readonly mnsParameters?: Array<RosEventRuleTargets.MnsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property slsParameters: SLS configuration.A maximum of 5 parameters.
+     * Property slsParameters: SLS configuration.A maximum of 5 parameters.
      */
     readonly slsParameters?: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+     * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
      */
     readonly webhookParameters?: Array<RosEventRuleTargets.WebhookParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -52,9 +52,9 @@ export class EventRuleTargets extends ros.Resource {
     /**
      * Create a new `ALIYUN::CMS::EventRuleTargets`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: EventRuleTargetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

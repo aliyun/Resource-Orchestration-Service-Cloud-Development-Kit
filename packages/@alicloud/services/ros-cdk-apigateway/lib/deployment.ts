@@ -9,27 +9,27 @@ export { RosDeployment as DeploymentProperty };
 export interface DeploymentProps {
 
     /**
-     * @Property apiId: The id of the API.
+     * Property apiId: The id of the API.
      */
     readonly apiId: string;
 
     /**
-     * @Property groupId: The id of the Group.
+     * Property groupId: The id of the Group.
      */
     readonly groupId: string;
 
     /**
-     * @Property stageName: Bind traffic in this stage.
+     * Property stageName: Bind traffic in this stage.
      */
     readonly stageName: string;
 
     /**
-     * @Property description: Description of the deployment, less than 180 characters.
+     * Property description: Description of the deployment, less than 180 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property historyVersion: The history version.
+     * Property historyVersion: The history version.
      */
     readonly historyVersion?: string;
 }
@@ -47,9 +47,9 @@ export class Deployment extends ros.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Deployment`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DeploymentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

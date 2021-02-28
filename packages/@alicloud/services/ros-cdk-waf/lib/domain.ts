@@ -9,82 +9,82 @@ export { RosDomain as DomainProperty };
 export interface DomainProps {
 
     /**
-     * @Property domainName: Domain name
+     * Property domainName: Domain name
      */
     readonly domainName: string;
 
     /**
-     * @Property instanceId: Instance id
+     * Property instanceId: Instance id
      */
     readonly instanceId: string;
 
     /**
-     * @Property isAccessProduct: Is there a seven-layer agency before WAF
+     * Property isAccessProduct: Is there a seven-layer agency before WAF
      */
     readonly isAccessProduct: string;
 
     /**
-     * @Property sourceIps: Back to source IP configuration
+     * Property sourceIps: Back to source IP configuration
      */
     readonly sourceIps: string[];
 
     /**
-     * @Property clusterType: Cluster type
+     * Property clusterType: Cluster type
      */
     readonly clusterType?: string;
 
     /**
-     * @Property connectionTime: Connection timeout
+     * Property connectionTime: Connection timeout
      */
     readonly connectionTime?: number;
 
     /**
-     * @Property http2Port: Http2 port configuration
+     * Property http2Port: Http2 port configuration
      */
     readonly http2Port?: string[];
 
     /**
-     * @Property httpPort: Http port configuration
+     * Property httpPort: Http port configuration
      */
     readonly httpPort?: string[];
 
     /**
-     * @Property httpsPort: Https port configuration
+     * Property httpsPort: Https port configuration
      */
     readonly httpsPort?: string[];
 
     /**
-     * @Property httpsRedirect: Https forced redirect configuration
+     * Property httpsRedirect: Https forced redirect configuration
      */
     readonly httpsRedirect?: string;
 
     /**
-     * @Property httpToUserIp: Http back to source
+     * Property httpToUserIp: Http back to source
      */
     readonly httpToUserIp?: string;
 
     /**
-     * @Property loadBalancing: Load balancing configuration
+     * Property loadBalancing: Load balancing configuration
      */
     readonly loadBalancing?: string;
 
     /**
-     * @Property logHeaders: Domain traffic tagging
+     * Property logHeaders: Domain traffic tagging
      */
     readonly logHeaders?: Array<RosDomain.LogHeadersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property readTime: Read connection timeout period
+     * Property readTime: Read connection timeout period
      */
     readonly readTime?: number;
 
     /**
-     * @Property resourceGroupId: Resource group Id
+     * Property resourceGroupId: Resource group Id
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property writeTime: Write connection timeout period
+     * Property writeTime: Write connection timeout period
      */
     readonly writeTime?: number;
 }
@@ -100,86 +100,86 @@ export class Domain extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterType: Cluster type
+     * Attribute ClusterType: Cluster type
      */
     public readonly attrClusterType: any;
 
     /**
-     * @Attribute Cname: CNAME assigned by WAF instance
+     * Attribute Cname: CNAME assigned by WAF instance
      */
     public readonly attrCname: any;
 
     /**
-     * @Attribute DomainName: Domain name
+     * Attribute DomainName: Domain name
      */
     public readonly attrDomainName: any;
 
     /**
-     * @Attribute Http2Port: Http2 port configuration
+     * Attribute Http2Port: Http2 port configuration
      */
     public readonly attrHttp2Port: any;
 
     /**
-     * @Attribute HttpPort: Http port configuration
+     * Attribute HttpPort: Http port configuration
      */
     public readonly attrHttpPort: any;
 
     /**
-     * @Attribute HttpToUserIp: Http back to source
+     * Attribute HttpToUserIp: Http back to source
      */
     public readonly attrHttpToUserIp: any;
 
     /**
-     * @Attribute HttpsPort: Https port configuration
+     * Attribute HttpsPort: Https port configuration
      */
     public readonly attrHttpsPort: any;
 
     /**
-     * @Attribute HttpsRedirect: Https forced redirect configuration
+     * Attribute HttpsRedirect: Https forced redirect configuration
      */
     public readonly attrHttpsRedirect: any;
 
     /**
-     * @Attribute InstanceId: Instance id
+     * Attribute InstanceId: Instance id
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute IsAccessProduct: Is there a seven-layer agency before WAF
+     * Attribute IsAccessProduct: Is there a seven-layer agency before WAF
      */
     public readonly attrIsAccessProduct: any;
 
     /**
-     * @Attribute LoadBalancing: Load balancing configuration
+     * Attribute LoadBalancing: Load balancing configuration
      */
     public readonly attrLoadBalancing: any;
 
     /**
-     * @Attribute LogHeaders: Domain traffic tagging
+     * Attribute LogHeaders: Domain traffic tagging
      */
     public readonly attrLogHeaders: any;
 
     /**
-     * @Attribute ResourceGroupId: Resource group Id
+     * Attribute ResourceGroupId: Resource group Id
      */
     public readonly attrResourceGroupId: any;
 
     /**
-     * @Attribute SourceIps: Back to source IP configuration
+     * Attribute SourceIps: Back to source IP configuration
      */
     public readonly attrSourceIps: any;
 
     /**
-     * @Attribute Version: Optimistic lock version
+     * Attribute Version: Optimistic lock version
      */
     public readonly attrVersion: any;
 
     /**
      * Create a new `ALIYUN::WAF::Domain`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

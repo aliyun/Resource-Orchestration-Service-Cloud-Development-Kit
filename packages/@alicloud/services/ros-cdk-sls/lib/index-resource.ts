@@ -9,13 +9,13 @@ export { RosIndex as IndexProperty };
 export interface IndexProps {
 
     /**
-     * @Property fullTextIndex: Full-text indexing configuration.
+     * Property fullTextIndex: Full-text indexing configuration.
      * Full-text indexing and key indexing must have at least one enabled.
      */
     readonly fullTextIndex: RosIndex.FullTextIndexProperty | ros.IResolvable;
 
     /**
-     * @Property logstoreName: Logstore name:
+     * Property logstoreName: Logstore name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -23,7 +23,7 @@ export interface IndexProps {
     readonly logstoreName: string;
 
     /**
-     * @Property projectName: Project name:
+     * Property projectName: Project name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -31,13 +31,13 @@ export interface IndexProps {
     readonly projectName: string;
 
     /**
-     * @Property keyIndices: Key index configurations.
+     * Property keyIndices: Key index configurations.
      * Full-text indexing and key indexing must have at least one enabled.
      */
     readonly keyIndices?: Array<RosIndex.KeyIndicesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property logReduce: Whether to enable log reduce. Default to false.
+     * Property logReduce: Whether to enable log reduce. Default to false.
      */
     readonly logReduce?: boolean | ros.IResolvable;
 }
@@ -55,9 +55,9 @@ export class Index extends ros.Resource {
     /**
      * Create a new `ALIYUN::SLS::Index`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: IndexProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

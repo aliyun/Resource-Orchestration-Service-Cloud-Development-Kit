@@ -9,32 +9,32 @@ export { RosSearchIndex as SearchIndexProperty };
 export interface SearchIndexProps {
 
     /**
-     * @Property fieldSchemas: list of field_schema.
+     * Property fieldSchemas: list of field_schema.
      */
     readonly fieldSchemas: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property indexName: The index name.
+     * Property indexName: The index name.
      */
     readonly indexName: string;
 
     /**
-     * @Property instanceName: The name of the OTS instance in which table will locate.
+     * Property instanceName: The name of the OTS instance in which table will locate.
      */
     readonly instanceName: string;
 
     /**
-     * @Property tableName: The table name of the OTS instance.
+     * Property tableName: The table name of the OTS instance.
      */
     readonly tableName: string;
 
     /**
-     * @Property indexSetting: Index settings
+     * Property indexSetting: Index settings
      */
     readonly indexSetting?: RosSearchIndex.IndexSettingProperty | ros.IResolvable;
 
     /**
-     * @Property indexSort: This parameter specifies how data is sorted. 
+     * Property indexSort: This parameter specifies how data is sorted. 
      * By default, the data is sorted in the same way as the primary key of the table. 
      * If the search index contains NESTED fields, data is not sorted by default.
      */
@@ -52,16 +52,16 @@ export class SearchIndex extends ros.Resource {
      */
 
     /**
-     * @Attribute IndexName: Index name.
+     * Attribute IndexName: Index name.
      */
     public readonly attrIndexName: any;
 
     /**
      * Create a new `ALIYUN::OTS::SearchIndex`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SearchIndexProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

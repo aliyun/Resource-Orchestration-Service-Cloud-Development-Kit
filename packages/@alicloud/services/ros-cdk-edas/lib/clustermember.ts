@@ -9,17 +9,17 @@ export { RosClusterMember as ClusterMemberProperty };
 export interface ClusterMemberProps {
 
     /**
-     * @Property clusterId: Cluster ID to import ECS instance
+     * Property clusterId: Cluster ID to import ECS instance
      */
     readonly clusterId: string;
 
     /**
-     * @Property instanceIds: ECS instance ID list to import.
+     * Property instanceIds: ECS instance ID list to import.
      */
     readonly instanceIds: string[];
 
     /**
-     * @Property password: Password ECS hosts need to import (ECS settings can continue to use purchased)
+     * Property password: Password ECS hosts need to import (ECS settings can continue to use purchased)
      */
     readonly password: string;
 }
@@ -35,26 +35,26 @@ export class ClusterMember extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: Cluster ID.
+     * Attribute ClusterId: Cluster ID.
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
+     * Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
      */
     public readonly attrClusterMemberIds: any;
 
     /**
-     * @Attribute InstanceIds: ECS instance IDs.
+     * Attribute InstanceIds: ECS instance IDs.
      */
     public readonly attrInstanceIds: any;
 
     /**
      * Create a new `ALIYUN::EDAS::ClusterMember`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ClusterMemberProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

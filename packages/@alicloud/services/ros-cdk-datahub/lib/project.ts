@@ -9,12 +9,12 @@ export { RosProject as ProjectProperty };
 export interface ProjectProps {
 
     /**
-     * @Property comment: The comment of project.
+     * Property comment: The comment of project.
      */
     readonly comment: string;
 
     /**
-     * @Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
+     * Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
      */
     readonly projectName: string;
 }
@@ -30,16 +30,16 @@ export class Project extends ros.Resource {
      */
 
     /**
-     * @Attribute ProjectName: Project name
+     * Attribute ProjectName: Project name
      */
     public readonly attrProjectName: any;
 
     /**
      * Create a new `ALIYUN::DATAHUB::Project`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

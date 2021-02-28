@@ -9,17 +9,17 @@ export { RosNetworkInterfaceAttachment as NetworkInterfaceAttachmentProperty };
 export interface NetworkInterfaceAttachmentProps {
 
     /**
-     * @Property instanceId: ECS instance id
+     * Property instanceId: ECS instance id
      */
     readonly instanceId: string;
 
     /**
-     * @Property networkInterfaceId: Network interface id
+     * Property networkInterfaceId: Network interface id
      */
     readonly networkInterfaceId: string;
 
     /**
-     * @Property trunkNetworkInstanceId: undefined
+     * Property trunkNetworkInstanceId: undefined
      */
     readonly trunkNetworkInstanceId?: string;
 }
@@ -35,21 +35,21 @@ export class NetworkInterfaceAttachment extends ros.Resource {
      */
 
     /**
-     * @Attribute NetworkInterfaceId: ID of your Network Interface.
+     * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
     public readonly attrNetworkInterfaceId: any;
 
     /**
-     * @Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
+     * Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
      */
     public readonly attrTrunkNetworkInstanceId: any;
 
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfaceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,7 +9,7 @@ export { RosLogtailConfig as LogtailConfigProperty };
 export interface LogtailConfigProps {
 
     /**
-     * @Property logstoreName: Logstore name:
+     * Property logstoreName: Logstore name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -17,7 +17,7 @@ export interface LogtailConfigProps {
     readonly logstoreName: string;
 
     /**
-     * @Property logtailConfigName: Logtail config name:
+     * Property logtailConfigName: Logtail config name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -25,7 +25,7 @@ export interface LogtailConfigProps {
     readonly logtailConfigName: string;
 
     /**
-     * @Property projectName: Project name:
+     * Property projectName: Project name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -33,13 +33,13 @@ export interface LogtailConfigProps {
     readonly projectName: string;
 
     /**
-     * @Property cloneFrom: Clone logtail config data from existing logtail config.
+     * Property cloneFrom: Clone logtail config data from existing logtail config.
      * Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
      */
     readonly cloneFrom?: RosLogtailConfig.CloneFromProperty | ros.IResolvable;
 
     /**
-     * @Property rawConfigData: The format is the same as the response of SLS API GetConfig.
+     * Property rawConfigData: The format is the same as the response of SLS API GetConfig.
      * Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
      * configName, outputType, outputDetail in data will be ignored.For example:
      * {
@@ -121,21 +121,21 @@ export class LogtailConfig extends ros.Resource {
      */
 
     /**
-     * @Attribute AppliedMachineGroups: Applied machine groups.
+     * Attribute AppliedMachineGroups: Applied machine groups.
      */
     public readonly attrAppliedMachineGroups: any;
 
     /**
-     * @Attribute Endpoint: Endpoint address.
+     * Attribute Endpoint: Endpoint address.
      */
     public readonly attrEndpoint: any;
 
     /**
      * Create a new `ALIYUN::SLS::LogtailConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: LogtailConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

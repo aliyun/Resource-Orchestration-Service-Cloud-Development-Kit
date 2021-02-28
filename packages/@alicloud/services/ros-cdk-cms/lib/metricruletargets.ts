@@ -9,12 +9,12 @@ export { RosMetricRuleTargets as MetricRuleTargetsProperty };
 export interface MetricRuleTargetsProps {
 
     /**
-     * @Property ruleId: The ID of the alert rule.
+     * Property ruleId: The ID of the alert rule.
      */
     readonly ruleId: string;
 
     /**
-     * @Property targets: undefined
+     * Property targets: undefined
      */
     readonly targets: Array<RosMetricRuleTargets.TargetsProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -30,21 +30,21 @@ export class MetricRuleTargets extends ros.Resource {
      */
 
     /**
-     * @Attribute Arns: The ARN list of targets
+     * Attribute Arns: The ARN list of targets
      */
     public readonly attrArns: any;
 
     /**
-     * @Attribute Ids: The ID list of targets
+     * Attribute Ids: The ID list of targets
      */
     public readonly attrIds: any;
 
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTargets`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MetricRuleTargetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

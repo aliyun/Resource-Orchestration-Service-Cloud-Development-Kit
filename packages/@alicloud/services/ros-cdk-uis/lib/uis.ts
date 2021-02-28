@@ -9,13 +9,13 @@ export { RosUis as UisProperty };
 export interface UisProps {
 
     /**
-     * @Property description: Description of the instance.
+     * Property description: Description of the instance.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the instance.
+     * Property name: The name of the instance.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
     readonly name?: string;
@@ -32,36 +32,36 @@ export class Uis extends ros.Resource {
      */
 
     /**
-     * @Attribute ClientInfoDB: The client info DB.
+     * Attribute ClientInfoDB: The client info DB.
      */
     public readonly attrClientInfoDb: any;
 
     /**
-     * @Attribute ClientInfoDBAccount: The client info DB account.
+     * Attribute ClientInfoDBAccount: The client info DB account.
      */
     public readonly attrClientInfoDbAccount: any;
 
     /**
-     * @Attribute ClientInfoDBPassword: The client info DB password.
+     * Attribute ClientInfoDBPassword: The client info DB password.
      */
     public readonly attrClientInfoDbPassword: any;
 
     /**
-     * @Attribute SslClientCertUrl: The ssl client cert url.
+     * Attribute SslClientCertUrl: The ssl client cert url.
      */
     public readonly attrSslClientCertUrl: any;
 
     /**
-     * @Attribute UisId: The ID of the instance.
+     * Attribute UisId: The ID of the instance.
      */
     public readonly attrUisId: any;
 
     /**
      * Create a new `ALIYUN::UIS::Uis`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UisProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,27 +9,27 @@ export { RosAuthorization as AuthorizationProperty };
 export interface AuthorizationProps {
 
     /**
-     * @Property apiIds: APIs to authorize.
+     * Property apiIds: APIs to authorize.
      */
     readonly apiIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property appIds: APPs are authorized to APIs.
+     * Property appIds: APPs are authorized to APIs.
      */
     readonly appIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property groupId: The id of the group.
+     * Property groupId: The id of the group.
      */
     readonly groupId: string;
 
     /**
-     * @Property stageName: Authorize in this stage.
+     * Property stageName: Authorize in this stage.
      */
     readonly stageName: string;
 
     /**
-     * @Property description: Description of the authorization, less than 180 characters.
+     * Property description: Description of the authorization, less than 180 characters.
      */
     readonly description?: string;
 }
@@ -47,9 +47,9 @@ export class Authorization extends ros.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Authorization`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AuthorizationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

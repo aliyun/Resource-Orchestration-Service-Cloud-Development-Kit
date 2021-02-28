@@ -9,12 +9,12 @@ export { RosCommonBandwidthPackageIp as CommonBandwidthPackageIpProperty };
 export interface CommonBandwidthPackageIpProps {
 
     /**
-     * @Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
+     * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
     readonly bandwidthPackageId: string;
 
     /**
-     * @Property eips: List of eip associated with the Internet Shared Bandwidth instance.
+     * Property eips: List of eip associated with the Internet Shared Bandwidth instance.
      */
     readonly eips: Array<RosCommonBandwidthPackageIp.EipsProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -30,21 +30,21 @@ export class CommonBandwidthPackageIp extends ros.Resource {
      */
 
     /**
-     * @Attribute AllocationIds: All eip allocation ids of common bandwidth package.
+     * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
      */
     public readonly attrAllocationIds: any;
 
     /**
-     * @Attribute IpAddresses: All eip addresses of common bandwidth package.
+     * Attribute IpAddresses: All eip addresses of common bandwidth package.
      */
     public readonly attrIpAddresses: any;
 
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackageIp`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CommonBandwidthPackageIpProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

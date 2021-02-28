@@ -9,27 +9,27 @@ export { RosCustomDomain as CustomDomainProperty };
 export interface CustomDomainProps {
 
     /**
-     * @Property domainName: domain name
+     * Property domainName: domain name
      */
     readonly domainName: string;
 
     /**
-     * @Property protocol: HTTP or HTTP,HTTPS
+     * Property protocol: HTTP or HTTP,HTTPS
      */
     readonly protocol: string;
 
     /**
-     * @Property apiVersion: api version
+     * Property apiVersion: api version
      */
     readonly apiVersion?: string;
 
     /**
-     * @Property certConfig: certificate info
+     * Property certConfig: certificate info
      */
     readonly certConfig?: RosCustomDomain.CertConfigProperty | ros.IResolvable;
 
     /**
-     * @Property routeConfig: Routing table: path to function mappingwhen a function is called with a custom domain name
+     * Property routeConfig: Routing table: path to function mappingwhen a function is called with a custom domain name
      */
     readonly routeConfig?: RosCustomDomain.RouteConfigProperty | ros.IResolvable;
 }
@@ -45,21 +45,21 @@ export class CustomDomain extends ros.Resource {
      */
 
     /**
-     * @Attribute Domain: The domain with protocol.
+     * Attribute Domain: The domain with protocol.
      */
     public readonly attrDomain: any;
 
     /**
-     * @Attribute DomainName: The domain name
+     * Attribute DomainName: The domain name
      */
     public readonly attrDomainName: any;
 
     /**
      * Create a new `ALIYUN::FC::CustomDomain`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CustomDomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

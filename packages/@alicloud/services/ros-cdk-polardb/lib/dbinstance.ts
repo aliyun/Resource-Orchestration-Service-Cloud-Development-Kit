@@ -9,17 +9,17 @@ export { RosDBInstance as DBInstanceProperty };
 export interface DBInstanceProps {
 
     /**
-     * @Property characterSetName: The character set of the database. For more information, see Character sets.
+     * Property characterSetName: The character set of the database. For more information, see Character sets.
      */
     readonly characterSetName: string;
 
     /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
      */
     readonly dbClusterId: string;
 
     /**
-     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
+     * Property dbName: The name of the database to be created. The name must comply with the following rules:
      * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
      * (-), and underscores (_).
      * It must end with a letter or a digit. It can be up to 64 characters in length.
@@ -27,12 +27,12 @@ export interface DBInstanceProps {
     readonly dbName: string;
 
     /**
-     * @Property accountName: The name of the database account to be used.
+     * Property accountName: The name of the database account to be used.
      */
     readonly accountName?: string;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
+     * Property accountPrivilege: The permissions of the database account on the database. Valid values:
      * ReadWrite: has read and write permissions on the database.
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
@@ -42,7 +42,7 @@ export interface DBInstanceProps {
     readonly accountPrivilege?: string;
 
     /**
-     * @Property dbDescription: The description of the database. Valid values:
+     * Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
@@ -62,9 +62,9 @@ export class DBInstance extends ros.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBInstance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

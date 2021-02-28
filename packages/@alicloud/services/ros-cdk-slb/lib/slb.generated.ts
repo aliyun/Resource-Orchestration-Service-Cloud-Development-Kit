@@ -21,6 +21,11 @@ export interface RosAccessControlProps {
      * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
      */
     readonly addressIpVersion?: string;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -50,6 +55,14 @@ function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('aclName', ros.requiredValidator)(properties.aclName));
     errors.collect(ros.propertyValidator('aclName', ros.validateString)(properties.aclName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosAccessControlProps"');
 }
 
@@ -70,6 +83,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
       AclName: ros.stringToRosTemplate(properties.aclName),
       AclEntrys: ros.listMapper(rosAccessControlAclEntrysPropertyToRosTemplate)(properties.aclEntrys),
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -111,6 +125,11 @@ export class RosAccessControl extends ros.RosResource {
     public addressIpVersion: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::SLB::AccessControl`.
      *
      * @param scope - scope in which this resource is defined
@@ -125,6 +144,7 @@ export class RosAccessControl extends ros.RosResource {
         this.aclName = props.aclName;
         this.aclEntrys = props.aclEntrys;
         this.addressIpVersion = props.addressIpVersion;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SLB::AccessControl", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -133,6 +153,7 @@ export class RosAccessControl extends ros.RosResource {
             aclName: this.aclName,
             aclEntrys: this.aclEntrys,
             addressIpVersion: this.addressIpVersion,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -620,6 +641,11 @@ export interface RosCertificateProps {
      * @Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -643,6 +669,14 @@ function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('certificateName', ros.validateString)(properties.certificateName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('certificate', ros.requiredValidator)(properties.certificate));
     errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
     errors.collect(ros.propertyValidator('aliCloudCertificateId', ros.validateString)(properties.aliCloudCertificateId));
@@ -670,6 +704,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
       CertificateType: ros.stringToRosTemplate(properties.certificateType),
       PrivateKey: ros.stringToRosTemplate(properties.privateKey),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -736,6 +771,11 @@ export class RosCertificate extends ros.RosResource {
     public resourceGroupId: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * Create a new `ALIYUN::SLB::Certificate`.
      *
      * @param scope - scope in which this resource is defined
@@ -755,6 +795,7 @@ export class RosCertificate extends ros.RosResource {
         this.certificateType = props.certificateType;
         this.privateKey = props.privateKey;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SLB::Certificate", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -767,6 +808,7 @@ export class RosCertificate extends ros.RosResource {
             certificateType: this.certificateType,
             privateKey: this.privateKey,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -1805,7 +1847,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayOnDemand","PrePay"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1820,7 +1862,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
-          allowedValues: ["paybybandwidth","paybytraffic"],
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));

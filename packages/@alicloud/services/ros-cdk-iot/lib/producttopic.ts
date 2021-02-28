@@ -9,7 +9,7 @@ export { RosProductTopic as ProductTopicProperty };
 export interface ProductTopicProps {
 
     /**
-     * @Property operation: Operation permissions of devices on the topic category. Value options:
+     * Property operation: Operation permissions of devices on the topic category. Value options:
      * SUB: Subscribe. Devices can subscribe to the topics of this category.
      * PUB: Publish. Devices can publish messages using the topics of this category.
      * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
@@ -17,23 +17,23 @@ export interface ProductTopicProps {
     readonly operation: string;
 
     /**
-     * @Property productKey: The unique identifier of the product for which you want to create a topic category.
+     * Property productKey: The unique identifier of the product for which you want to create a topic category.
      */
     readonly productKey: string;
 
     /**
-     * @Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+     * Property topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
      * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
      */
     readonly topicShortName: string;
 
     /**
-     * @Property desc: The description of the topic category. You can enter a description with up to 100 characters.
+     * Property desc: The description of the topic category. You can enter a description with up to 100 characters.
      */
     readonly desc?: string;
 
     /**
-     * @Property iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
+     * Property iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
      */
     readonly iotInstanceId?: string;
 }
@@ -49,16 +49,16 @@ export class ProductTopic extends ros.Resource {
      */
 
     /**
-     * @Attribute TopicId: Topic ID
+     * Attribute TopicId: Topic ID
      */
     public readonly attrTopicId: any;
 
     /**
      * Create a new `ALIYUN::IOT::ProductTopic`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProductTopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

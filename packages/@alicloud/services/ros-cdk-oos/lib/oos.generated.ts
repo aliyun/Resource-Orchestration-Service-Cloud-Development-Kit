@@ -40,6 +40,11 @@ export interface RosExecutionProps {
     readonly safetyCheck?: string;
 
     /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    readonly tags?: ros.RosTag[];
+
+    /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
     readonly templateVersion?: string;
@@ -82,6 +87,14 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
     errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosExecutionProps"');
 }
 
@@ -105,6 +118,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
       ParentExecutionId: ros.stringToRosTemplate(properties.parentExecutionId),
       ResourceOptions: rosExecutionResourceOptionsPropertyToRosTemplate(properties.resourceOptions),
       SafetyCheck: ros.stringToRosTemplate(properties.safetyCheck),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
     };
 }
@@ -206,6 +220,11 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     public safetyCheck: string | undefined;
 
     /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
     public templateVersion: string | undefined;
@@ -235,6 +254,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         this.parentExecutionId = props.parentExecutionId;
         this.resourceOptions = props.resourceOptions;
         this.safetyCheck = props.safetyCheck;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::OOS::Execution", props.tags, { tagPropertyName: 'tags' });
         this.templateVersion = props.templateVersion;
     }
 
@@ -247,6 +267,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             parentExecutionId: this.parentExecutionId,
             resourceOptions: this.resourceOptions,
             safetyCheck: this.safetyCheck,
+            tags: this.tags.renderTags(),
             templateVersion: this.templateVersion,
         };
     }

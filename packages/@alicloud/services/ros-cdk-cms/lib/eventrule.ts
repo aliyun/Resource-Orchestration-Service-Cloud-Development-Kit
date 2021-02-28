@@ -9,34 +9,34 @@ export { RosEventRule as EventRuleProperty };
 export interface EventRuleProps {
 
     /**
-     * @Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+     * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
      */
     readonly eventPattern: Array<RosEventRule.EventPatternProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property ruleName: The name of the alarm rule.
+     * Property ruleName: The name of the alarm rule.
      */
     readonly ruleName: string;
 
     /**
-     * @Property description: The description of the alert rule.
+     * Property description: The description of the alert rule.
      */
     readonly description?: string;
 
     /**
-     * @Property eventType: The type of the event alert. Valid values:
+     * Property eventType: The type of the event alert. Valid values:
      * SYSTEM
      * CUSTOM
      */
     readonly eventType?: string;
 
     /**
-     * @Property groupId: The ID of the application group.
+     * Property groupId: The ID of the application group.
      */
     readonly groupId?: string;
 
     /**
-     * @Property state: The status of the alert rule. Valid values:
+     * Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
      */
@@ -54,16 +54,16 @@ export class EventRule extends ros.Resource {
      */
 
     /**
-     * @Attribute Data: Number of rows affected.
+     * Attribute Data: Number of rows affected.
      */
     public readonly attrData: any;
 
     /**
      * Create a new `ALIYUN::CMS::EventRule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: EventRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

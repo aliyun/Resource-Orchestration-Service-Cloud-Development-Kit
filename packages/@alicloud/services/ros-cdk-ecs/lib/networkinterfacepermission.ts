@@ -9,17 +9,17 @@ export { RosNetworkInterfacePermission as NetworkInterfacePermissionProperty };
 export interface NetworkInterfacePermissionProps {
 
     /**
-     * @Property accountId: the account id
+     * Property accountId: the account id
      */
     readonly accountId: string;
 
     /**
-     * @Property networkInterfaceId: Network interface id
+     * Property networkInterfaceId: Network interface id
      */
     readonly networkInterfaceId: string;
 
     /**
-     * @Property permission: the permission
+     * Property permission: the permission
      */
     readonly permission: string;
 }
@@ -35,16 +35,16 @@ export class NetworkInterfacePermission extends ros.Resource {
      */
 
     /**
-     * @Attribute NetworkInterfacePermissionId: the network interface permission id
+     * Attribute NetworkInterfacePermissionId: the network interface permission id
      */
     public readonly attrNetworkInterfacePermissionId: any;
 
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfacePermission`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfacePermissionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

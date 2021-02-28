@@ -9,37 +9,37 @@ export { RosDomainRecord as DomainRecordProperty };
 export interface DomainRecordProps {
 
     /**
-     * @Property domainName: Domain name
+     * Property domainName: Domain name
      */
     readonly domainName: string;
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
     readonly rr: string;
 
     /**
-     * @Property type: Parse record type, see parsing record type format
+     * Property type: Parse record type, see parsing record type format
      */
     readonly type: string;
 
     /**
-     * @Property value: Record value
+     * Property value: Record value
      */
     readonly value: string;
 
     /**
-     * @Property line: Parse the line, the default is default. See parsing line enumeration
+     * Property line: Parse the line, the default is default. See parsing line enumeration
      */
     readonly line?: string;
 
     /**
-     * @Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
+     * Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
      */
     readonly priority?: number;
 
     /**
-     * @Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
+     * Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
      */
     readonly ttl?: number;
 }
@@ -55,16 +55,16 @@ export class DomainRecord extends ros.Resource {
      */
 
     /**
-     * @Attribute RecordId: Parse the ID of the record
+     * Attribute RecordId: Parse the ID of the record
      */
     public readonly attrRecordId: any;
 
     /**
      * Create a new `ALIYUN::DNS::DomainRecord`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DomainRecordProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

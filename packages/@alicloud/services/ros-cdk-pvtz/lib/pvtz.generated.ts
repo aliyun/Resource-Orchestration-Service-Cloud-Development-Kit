@@ -100,6 +100,11 @@ export class RosZone extends ros.RosResource {
      */
     public readonly attrZoneId: any;
 
+    /**
+     * @Attribute ZoneName: Zone name
+     */
+    public readonly attrZoneName: any;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -130,6 +135,7 @@ export class RosZone extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosZoneProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZone.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrZoneId = ros.Token.asString(this.getAtt('ZoneId'));
+        this.attrZoneName = ros.Token.asString(this.getAtt('ZoneName'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneName = props.zoneName;
@@ -166,7 +172,7 @@ export interface RosZoneRecordProps {
     readonly status: string;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
      */
     readonly type: string;
 
@@ -181,7 +187,7 @@ export interface RosZoneRecordProps {
     readonly zoneId: string;
 
     /**
-     * @Property priority: MX record priority, value range [1,10]. Default to 10.
+     * @Property priority: MX record priority, value range [1,99]. Default to 10.
      */
     readonly priority?: number;
 
@@ -215,7 +221,7 @@ function RosZoneRecordPropsValidator(properties: any): ros.ValidationResult {
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
-          allowedValues: ["A","CNAME","MX","PTR","TXT"],
+          allowedValues: ["A","AAA","CNAME","TXT","MX","PTR","SRV"],
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
@@ -225,7 +231,7 @@ function RosZoneRecordPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
             min: 1,
-            max: 10,
+            max: 99,
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
@@ -274,9 +280,19 @@ export class RosZoneRecord extends ros.RosResource {
      */
 
     /**
+     * @Attribute Record: Record data.
+     */
+    public readonly attrRecord: any;
+
+    /**
      * @Attribute RecordId: Parsing record Id
      */
     public readonly attrRecordId: any;
+
+    /**
+     * @Attribute ZoneId: Zone ID.
+     */
+    public readonly attrZoneId: any;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -292,7 +308,7 @@ export class RosZoneRecord extends ros.RosResource {
     public status: string;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
      */
     public type: string;
 
@@ -307,7 +323,7 @@ export class RosZoneRecord extends ros.RosResource {
     public zoneId: string;
 
     /**
-     * @Property priority: MX record priority, value range [1,10]. Default to 10.
+     * @Property priority: MX record priority, value range [1,99]. Default to 10.
      */
     public priority: number | undefined;
 
@@ -325,7 +341,9 @@ export class RosZoneRecord extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneRecordProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZoneRecord.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRecord = ros.Token.asString(this.getAtt('Record'));
         this.attrRecordId = ros.Token.asString(this.getAtt('RecordId'));
+        this.attrZoneId = ros.Token.asString(this.getAtt('ZoneId'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.rr = props.rr;
@@ -427,6 +445,16 @@ export class RosZoneVpcBinder extends ros.RosResource {
      * containing the properties of this ROS resource.
      */
 
+    /**
+     * @Attribute Vpcs: Vpc list
+     */
+    public readonly attrVpcs: any;
+
+    /**
+     * @Attribute ZoneId: Zone Id
+     */
+    public readonly attrZoneId: any;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -449,6 +477,8 @@ export class RosZoneVpcBinder extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneVpcBinderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZoneVpcBinder.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVpcs = ros.Token.asString(this.getAtt('Vpcs'));
+        this.attrZoneId = ros.Token.asString(this.getAtt('ZoneId'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcs = props.vpcs;

@@ -9,62 +9,62 @@ export { RosBandwidthPackage as BandwidthPackageProperty };
 export interface BandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The bandwidth provided by the bandwidth plan.
+     * Property bandwidth: The bandwidth provided by the bandwidth plan.
      */
     readonly bandwidth: number;
 
     /**
-     * @Property type: The type of the bandwidth plan
+     * Property type: The type of the bandwidth plan
      */
     readonly type: string;
 
     /**
-     * @Property autoPay: The AutoPay of the bandwidth
+     * Property autoPay: The AutoPay of the bandwidth
      */
     readonly autoPay?: string;
 
     /**
-     * @Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
+     * Property autoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
     readonly autoUseCoupon?: string;
 
     /**
-     * @Property bandwidthType: the bandwidth BandwidthType of the bandwidth
+     * Property bandwidthType: the bandwidth BandwidthType of the bandwidth
      */
     readonly bandwidthType?: string;
 
     /**
-     * @Property billingType: The BillingType of the bandwidth
+     * Property billingType: The BillingType of the bandwidth
      */
     readonly billingType?: string;
 
     /**
-     * @Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
+     * Property cbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
     readonly cbnGeographicRegionIdA?: string;
 
     /**
-     * @Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
+     * Property cbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
     readonly cbnGeographicRegionIdB?: string;
 
     /**
-     * @Property chargeType: The ChargeType of the bandwidth
+     * Property chargeType: The ChargeType of the bandwidth
      */
     readonly chargeType?: string;
 
     /**
-     * @Property duration:
+     * Property duration:
      */
     readonly duration?: string;
 
     /**
-     * @Property pricingCycle:
+     * Property pricingCycle:
      */
     readonly pricingCycle?: string;
 
     /**
-     * @Property ratio: The Ratio of the bandwidth
+     * Property ratio: The Ratio of the bandwidth
      */
     readonly ratio?: string;
 }
@@ -80,76 +80,76 @@ export class BandwidthPackage extends ros.Resource {
      */
 
     /**
-     * @Attribute AutoPay: The AutoPay of the bandwidth
+     * Attribute AutoPay: The AutoPay of the bandwidth
      */
     public readonly attrAutoPay: any;
 
     /**
-     * @Attribute AutoUseCoupon: The AutoUseCoupon  of the bandwidth
+     * Attribute AutoUseCoupon: The AutoUseCoupon  of the bandwidth
      */
     public readonly attrAutoUseCoupon: any;
 
     /**
-     * @Attribute Bandwidth: The bandwidth provided by the bandwidth plan.
+     * Attribute Bandwidth: The bandwidth provided by the bandwidth plan.
      */
     public readonly attrBandwidth: any;
 
     /**
-     * @Attribute BandwidthPackageId: The Resource ID of the bandwidth
+     * Attribute BandwidthPackageId: The Resource ID of the bandwidth
      */
     public readonly attrBandwidthPackageId: any;
 
     /**
-     * @Attribute BandwidthPackageName: The Resource name of the bandwidth
+     * Attribute BandwidthPackageName: The Resource name of the bandwidth
      */
     public readonly attrBandwidthPackageName: any;
 
     /**
-     * @Attribute BandwidthType: the bandwidth BandwidthType of the bandwidth
+     * Attribute BandwidthType: the bandwidth BandwidthType of the bandwidth
      */
     public readonly attrBandwidthType: any;
 
     /**
-     * @Attribute BillingType: The BillingType of the bandwidth
+     * Attribute BillingType: The BillingType of the bandwidth
      */
     public readonly attrBillingType: any;
 
     /**
-     * @Attribute CbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
+     * Attribute CbnGeographicRegionIdA: The CbnGeographicRegionIdA  of the bandwidth
      */
     public readonly attrCbnGeographicRegionIdA: any;
 
     /**
-     * @Attribute CbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
+     * Attribute CbnGeographicRegionIdB: The CbnGeographicRegionIdB of the bandwidth
      */
     public readonly attrCbnGeographicRegionIdB: any;
 
     /**
-     * @Attribute ChargeType: The ChargeType of the bandwidth
+     * Attribute ChargeType: The ChargeType of the bandwidth
      */
     public readonly attrChargeType: any;
 
     /**
-     * @Attribute PaymentType: The Payment Type of the bandwidth
+     * Attribute PaymentType: The Payment Type of the bandwidth
      */
     public readonly attrPaymentType: any;
 
     /**
-     * @Attribute Ratio: The Ratio of the bandwidth
+     * Attribute Ratio: The Ratio of the bandwidth
      */
     public readonly attrRatio: any;
 
     /**
-     * @Attribute Type: The type of the bandwidth plan
+     * Attribute Type: The type of the bandwidth plan
      */
     public readonly attrType: any;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: BandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,37 +9,37 @@ export { RosImageCache as ImageCacheProperty };
 export interface ImageCacheProps {
 
     /**
-     * @Property image: The image list to be cached.
+     * Property image: The image list to be cached.
      */
     readonly image: string[];
 
     /**
-     * @Property imageCacheName: Image cache name.
+     * Property imageCacheName: Image cache name.
      */
     readonly imageCacheName: string;
 
     /**
-     * @Property securityGroupId: Security group ID.
+     * Property securityGroupId: Security group ID.
      */
     readonly securityGroupId: string;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * Property vSwitchId: VSwitch ID.
      */
     readonly vSwitchId: string;
 
     /**
-     * @Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
+     * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
     readonly eipInstanceId?: string;
 
     /**
-     * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
+     * Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
      */
     readonly imageRegistryCredential?: string[];
 
     /**
-     * @Property resourceGroupId: Resource group.
+     * Property resourceGroupId: Resource group.
      */
     readonly resourceGroupId?: string;
 }
@@ -55,16 +55,16 @@ export class ImageCache extends ros.Resource {
      */
 
     /**
-     * @Attribute ImageCacheId: The ID of the image cache.
+     * Attribute ImageCacheId: The ID of the image cache.
      */
     public readonly attrImageCacheId: any;
 
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ImageCacheProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

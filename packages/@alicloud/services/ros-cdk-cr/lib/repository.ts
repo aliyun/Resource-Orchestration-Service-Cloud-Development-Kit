@@ -9,27 +9,27 @@ export { RosRepository as RepositoryProperty };
 export interface RepositoryProps {
 
     /**
-     * @Property repoName: the name of the repo
+     * Property repoName: the name of the repo
      */
     readonly repoName: string;
 
     /**
-     * @Property repoNamespace: the namespace the repo belongs to
+     * Property repoNamespace: the namespace the repo belongs to
      */
     readonly repoNamespace: string;
 
     /**
-     * @Property repoType: repository visibility, public or private
+     * Property repoType: repository visibility, public or private
      */
     readonly repoType: string;
 
     /**
-     * @Property summary: description or something alike
+     * Property summary: description or something alike
      */
     readonly summary: string;
 
     /**
-     * @Property detail: detailed configuration in markdown format
+     * Property detail: detailed configuration in markdown format
      */
     readonly detail?: string;
 }
@@ -45,16 +45,16 @@ export class Repository extends ros.Resource {
      */
 
     /**
-     * @Attribute RepoId: The repo id
+     * Attribute RepoId: The repo id
      */
     public readonly attrRepoId: any;
 
     /**
      * Create a new `ALIYUN::CR::Repository`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RepositoryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

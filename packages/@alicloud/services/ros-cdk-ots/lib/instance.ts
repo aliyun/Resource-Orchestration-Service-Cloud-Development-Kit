@@ -9,27 +9,27 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * @Property instanceName: The name of the instance.
+     * Property instanceName: The name of the instance.
      */
     readonly instanceName: string;
 
     /**
-     * @Property clusterType: Cluster type, the default is SSD.
+     * Property clusterType: Cluster type, the default is SSD.
      */
     readonly clusterType?: string;
 
     /**
-     * @Property description: Instance description.
+     * Property description: Instance description.
      */
     readonly description?: string;
 
     /**
-     * @Property network: Instance network type, default is NORMAL.
+     * Property network: Instance network type, default is NORMAL.
      */
     readonly network?: string;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
 }
@@ -45,31 +45,31 @@ export class Instance extends ros.Resource {
      */
 
     /**
-     * @Attribute InstanceName: Instance name
+     * Attribute InstanceName: Instance name
      */
     public readonly attrInstanceName: any;
 
     /**
-     * @Attribute PrivateEndpoint: Private endpoint
+     * Attribute PrivateEndpoint: Private endpoint
      */
     public readonly attrPrivateEndpoint: any;
 
     /**
-     * @Attribute PublicEndpoint: Public endpoint
+     * Attribute PublicEndpoint: Public endpoint
      */
     public readonly attrPublicEndpoint: any;
 
     /**
-     * @Attribute VpcEndpoint: Vpc endpoint
+     * Attribute VpcEndpoint: Vpc endpoint
      */
     public readonly attrVpcEndpoint: any;
 
     /**
      * Create a new `ALIYUN::OTS::Instance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

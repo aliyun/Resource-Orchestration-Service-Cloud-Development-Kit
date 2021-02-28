@@ -370,6 +370,11 @@ export interface RosDrdsInstanceProps {
     readonly pricingCycle?: string;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: ros.RosTag[];
+
+    /**
      * @Property vpcId: Virtual private network ID, must be specified when creating a DRDS for VPC network type
      */
     readonly vpcId?: string;
@@ -442,6 +447,14 @@ function RosDrdsInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('mySqlVersion', ros.validateString)(properties.mySqlVersion));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('isAutoRenew', ros.validateBoolean)(properties.isAutoRenew));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosDrdsInstanceProps"');
 }
 
@@ -470,6 +483,7 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
       IsAutoRenew: ros.booleanToRosTemplate(properties.isAutoRenew),
       MySQLVersion: ros.stringToRosTemplate(properties.mySqlVersion),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VswitchId: ros.stringToRosTemplate(properties.vswitchId),
     };
@@ -568,6 +582,11 @@ export class RosDrdsInstance extends ros.RosResource {
     public pricingCycle: string | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public readonly tags: ros.TagManager;
+
+    /**
      * @Property vpcId: Virtual private network ID, must be specified when creating a DRDS for VPC network type
      */
     public vpcId: string | undefined;
@@ -603,6 +622,7 @@ export class RosDrdsInstance extends ros.RosResource {
         this.isAutoRenew = props.isAutoRenew;
         this.mySqlVersion = props.mySqlVersion;
         this.pricingCycle = props.pricingCycle;
+        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::DRDS::DrdsInstance", props.tags, { tagPropertyName: 'tags' });
         this.vpcId = props.vpcId;
         this.vswitchId = props.vswitchId;
     }
@@ -621,6 +641,7 @@ export class RosDrdsInstance extends ros.RosResource {
             isAutoRenew: this.isAutoRenew,
             mySqlVersion: this.mySqlVersion,
             pricingCycle: this.pricingCycle,
+            tags: this.tags.renderTags(),
             vpcId: this.vpcId,
             vswitchId: this.vswitchId,
         };

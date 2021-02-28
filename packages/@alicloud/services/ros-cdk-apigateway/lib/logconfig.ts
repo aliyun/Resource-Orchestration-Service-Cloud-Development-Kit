@@ -9,12 +9,12 @@ export { RosLogConfig as LogConfigProperty };
 export interface LogConfigProps {
 
     /**
-     * @Property slsLogStore: Logstore name of SLS
+     * Property slsLogStore: Logstore name of SLS
      */
     readonly slsLogStore: string;
 
     /**
-     * @Property slsProject: Project name of SLS
+     * Property slsProject: Project name of SLS
      */
     readonly slsProject: string;
 }
@@ -30,21 +30,21 @@ export class LogConfig extends ros.Resource {
      */
 
     /**
-     * @Attribute SlsLogStore: Logstore name of SLS
+     * Attribute SlsLogStore: Logstore name of SLS
      */
     public readonly attrSlsLogStore: any;
 
     /**
-     * @Attribute SlsProject: Project name of SLS
+     * Attribute SlsProject: Project name of SLS
      */
     public readonly attrSlsProject: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::LogConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: LogConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

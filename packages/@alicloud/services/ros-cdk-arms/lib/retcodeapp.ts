@@ -9,17 +9,17 @@ export { RosRetcodeApp as RetcodeAppProperty };
 export interface RetcodeAppProps {
 
     /**
-     * @Property regionId: Region ID. Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
+     * Property regionId: Region ID. Allowed values: cn-hangzhou, ap-southeast-1. Default to cn-hangzhou.
      */
     readonly regionId: string;
 
     /**
-     * @Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
+     * Property retcodeAppName: The name of the application for which you want to create the browser monitoring job.
      */
     readonly retcodeAppName: string;
 
     /**
-     * @Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
+     * Property retcodeAppType: The type of the application for which you want to create the browser monitoring job. Allowed values: web, weex, mini_dd, mini_alipay, mini_wx, mini_common.
      */
     readonly retcodeAppType: string;
 }
@@ -35,21 +35,21 @@ export class RetcodeApp extends ros.Resource {
      */
 
     /**
-     * @Attribute AppId: The ID of the application for which you created the browser monitoring job.
+     * Attribute AppId: The ID of the application for which you created the browser monitoring job.
      */
     public readonly attrAppId: any;
 
     /**
-     * @Attribute Pid: The PID.
+     * Attribute Pid: The PID.
      */
     public readonly attrPid: any;
 
     /**
      * Create a new `ALIYUN::ARMS::RetcodeApp`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RetcodeAppProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

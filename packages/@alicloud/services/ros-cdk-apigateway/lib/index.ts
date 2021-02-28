@@ -4,6 +4,7 @@ export * from './authorization';
 export * from './customdomain';
 export * from './deployment';
 export * from './group';
+export * from './instance';
 export * from './logconfig';
 export * from './signature';
 export * from './signaturebinding';

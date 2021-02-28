@@ -9,38 +9,38 @@ export { RosCommand as CommandProperty };
 export interface CommandProps {
 
     /**
-     * @Property type: The type of command.
+     * Property type: The type of command.
      */
     readonly type: string;
 
     /**
-     * @Property commandContent: The content of command. Content requires base64 encoding. Maximum size support 16KB.
+     * Property commandContent: The content of command. Content requires base64 encoding. Maximum size support 16KB.
      */
     readonly commandContent?: string;
 
     /**
-     * @Property description: The description of command.
+     * Property description: The description of command.
      */
     readonly description?: string;
 
     /**
-     * @Property enableParameter: Specifies whether the script contains custom parameters.
+     * Property enableParameter: Specifies whether the script contains custom parameters.
      * Default value: false
      */
     readonly enableParameter?: boolean | ros.IResolvable;
 
     /**
-     * @Property name: The name of command.
+     * Property name: The name of command.
      */
     readonly name?: string;
 
     /**
-     * @Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
+     * Property timeout: Total timeout when the command is executed in the instance. Input the time unit as second. Default is 60s.
      */
     readonly timeout?: number;
 
     /**
-     * @Property workingDir: The path where command will be executed in the instance.
+     * Property workingDir: The path where command will be executed in the instance.
      */
     readonly workingDir?: string;
 }
@@ -56,16 +56,16 @@ export class Command extends ros.Resource {
      */
 
     /**
-     * @Attribute CommandId: The id of command created.
+     * Attribute CommandId: The id of command created.
      */
     public readonly attrCommandId: any;
 
     /**
      * Create a new `ALIYUN::ECS::Command`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CommandProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

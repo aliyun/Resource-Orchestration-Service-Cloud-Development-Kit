@@ -9,22 +9,22 @@ export { RosAccountPrivilege as AccountPrivilegeProperty };
 export interface AccountPrivilegeProps {
 
     /**
-     * @Property accountName: RDS account name.
+     * Property accountName: RDS account name.
      */
     readonly accountName: string;
 
     /**
-     * @Property accountPrivilege: RDS account privilege
+     * Property accountPrivilege: RDS account privilege
      */
     readonly accountPrivilege: string;
 
     /**
-     * @Property dbInstanceId: RDS instance ID.
+     * Property dbInstanceId: RDS instance ID.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property dbName: RDS database name
+     * Property dbName: RDS database name
      */
     readonly dbName: string;
 }
@@ -42,9 +42,9 @@ export class AccountPrivilege extends ros.Resource {
     /**
      * Create a new `ALIYUN::RDS::AccountPrivilege`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountPrivilegeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

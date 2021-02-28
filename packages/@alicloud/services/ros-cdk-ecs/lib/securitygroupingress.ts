@@ -9,63 +9,63 @@ export { RosSecurityGroupIngress as SecurityGroupIngressProperty };
 export interface SecurityGroupIngressProps {
 
     /**
-     * @Property ipProtocol: Ip protocol for in rule.
+     * Property ipProtocol: Ip protocol for in rule.
      */
     readonly ipProtocol: string;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
      */
     readonly portRange: string;
 
     /**
-     * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+     * Property description: Description of the security group rule, [1, 512] characters. The default is empty.
      */
     readonly description?: string;
 
     /**
-     * @Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
+     * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
     readonly ipv6SourceCidrIp?: string;
 
     /**
-     * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
+     * Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
      */
     readonly nicType?: string;
 
     /**
-     * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+     * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
      */
     readonly policy?: string;
 
     /**
-     * @Property priority: Authorization policies priority range[1, 100]
+     * Property priority: Authorization policies priority range[1, 100]
      */
     readonly priority?: number;
 
     /**
-     * @Property securityGroupId: Id of the security group.
+     * Property securityGroupId: Id of the security group.
      */
     readonly securityGroupId?: string;
 
     /**
-     * @Property sourceCidrIp: Source CIDR Ip Address range. Only IPV4 supported.
+     * Property sourceCidrIp: Source CIDR Ip Address range. Only IPV4 supported.
      */
     readonly sourceCidrIp?: string;
 
     /**
-     * @Property sourceGroupId: Source Group Id
+     * Property sourceGroupId: Source Group Id
      */
     readonly sourceGroupId?: string;
 
     /**
-     * @Property sourceGroupOwnerId: Source Group Owner Account ID
+     * Property sourceGroupOwnerId: Source Group Owner Account ID
      */
     readonly sourceGroupOwnerId?: string;
 
     /**
-     * @Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+     * Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
      */
     readonly sourcePortRange?: string;
 }
@@ -83,9 +83,9 @@ export class SecurityGroupIngress extends ros.Resource {
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupIngressProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

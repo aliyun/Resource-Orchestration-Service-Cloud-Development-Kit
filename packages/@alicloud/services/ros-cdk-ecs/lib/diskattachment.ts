@@ -9,27 +9,27 @@ export { RosDiskAttachment as DiskAttachmentProperty };
 export interface DiskAttachmentProps {
 
     /**
-     * @Property diskId: The disk id to attached.
+     * Property diskId: The disk id to attached.
      */
     readonly diskId: string;
 
     /**
-     * @Property instanceId: The instanceId to attach the disk.
+     * Property instanceId: The instanceId to attach the disk.
      */
     readonly instanceId: string;
 
     /**
-     * @Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
+     * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to true.
      */
     readonly deleteAutoSnapshot?: boolean | ros.IResolvable;
 
     /**
-     * @Property deleteWithInstance: If property is true, the disk will be deleted while instance is deleted, if property is false, the disk will be retain after instance is deleted.
+     * Property deleteWithInstance: If property is true, the disk will be deleted while instance is deleted, if property is false, the disk will be retain after instance is deleted.
      */
     readonly deleteWithInstance?: boolean | ros.IResolvable;
 
     /**
-     * @Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
+     * Property device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
      */
     readonly device?: string;
 }
@@ -45,26 +45,26 @@ export class DiskAttachment extends ros.Resource {
      */
 
     /**
-     * @Attribute Device: The device where the volume is exposed on ecs instance.
+     * Attribute Device: The device where the volume is exposed on ecs instance.
      */
     public readonly attrDevice: any;
 
     /**
-     * @Attribute DiskId: The disk id of created disk
+     * Attribute DiskId: The disk id of created disk
      */
     public readonly attrDiskId: any;
 
     /**
-     * @Attribute Status: The disk status now.
+     * Attribute Status: The disk status now.
      */
     public readonly attrStatus: any;
 
     /**
      * Create a new `ALIYUN::ECS::DiskAttachment`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DiskAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

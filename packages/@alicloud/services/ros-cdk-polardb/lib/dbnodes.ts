@@ -9,12 +9,12 @@ export { RosDBNodes as DBNodesProperty };
 export interface DBNodesProps {
 
     /**
-     * @Property amount: Number of nodes to be added to cluster.
+     * Property amount: Number of nodes to be added to cluster.
      */
     readonly amount: number;
 
     /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
     readonly dbClusterId: string;
 }
@@ -30,21 +30,21 @@ export class DBNodes extends ros.Resource {
      */
 
     /**
-     * @Attribute DBNodeIds: The ID list of added cluster nodes.
+     * Attribute DBNodeIds: The ID list of added cluster nodes.
      */
     public readonly attrDbNodeIds: any;
 
     /**
-     * @Attribute OrderIds: The order ID list of added cluster nodes.
+     * Attribute OrderIds: The order ID list of added cluster nodes.
      */
     public readonly attrOrderIds: any;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DBNodesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,14 +9,19 @@ export { RosDomain as DomainProperty };
 export interface DomainProps {
 
     /**
-     * @Property domainName: Domain name
+     * Property domainName: Domain name
      */
     readonly domainName: string;
 
     /**
-     * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
+     * Property groupId: Domain name grouping, the default is the "default grouping" GroupId
      */
     readonly groupId?: string;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -30,47 +35,48 @@ export class Domain extends ros.Resource {
      */
 
     /**
-     * @Attribute DnsServers: The DNS list for the domain name under resolution
+     * Attribute DnsServers: The DNS list for the domain name under resolution
      */
     public readonly attrDnsServers: any;
 
     /**
-     * @Attribute DomainId: Domain ID
+     * Attribute DomainId: Domain ID
      */
     public readonly attrDomainId: any;
 
     /**
-     * @Attribute DomainName: Domain name
+     * Attribute DomainName: Domain name
      */
     public readonly attrDomainName: any;
 
     /**
-     * @Attribute GroupId: Domain name group ID
+     * Attribute GroupId: Domain name group ID
      */
     public readonly attrGroupId: any;
 
     /**
-     * @Attribute GroupName: The name of the domain name group
+     * Attribute GroupName: The name of the domain name group
      */
     public readonly attrGroupName: any;
 
     /**
-     * @Attribute PunyCode: punycode returned only for a Chinese domain name
+     * Attribute PunyCode: punycode returned only for a Chinese domain name
      */
     public readonly attrPunyCode: any;
 
     /**
      * Create a new `ALIYUN::DNS::Domain`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
 
         const rosDomain = new RosDomain(this, id,  {
             domainName: props.domainName,
+            tags: ros.tagFactory(props.tags),
             groupId: props.groupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;

@@ -207,7 +207,7 @@ export default class ResourceCodeGenerator {
 
         this.code.line();
 
-        this.docLink(undefined, `@Attribute ${attributeName}: ${(attributeSpec as schema.Description).Description}`);
+        this.docLink(undefined, `Attribute ${attributeName}: ${(attributeSpec as schema.Description).Description}`);
         const attr = genspec.attributeDefinition(attributeName);
 
         this.code.line(`public readonly ${attr.propertyName}: any;`);
@@ -223,9 +223,9 @@ export default class ResourceCodeGenerator {
     this.code.line('/**');
     this.code.line(` * Create a new ${quoteCode(resourceName.specName!.fqn)}.`);
     this.code.line(' *');
-    this.code.line(' * @param scope - scope in which this resource is defined');
-    this.code.line(' * @param id    - scoped id of the resource');
-    this.code.line(' * @param props - resource properties');
+    this.code.line(' * Param scope - scope in which this resource is defined');
+    this.code.line(' * Param id    - scoped id of the resource');
+    this.code.line(' * Param props - resource properties');
     this.code.line(' */');
     const optionalProps = spec.Properties && !Object.values(spec.Properties).some((p) => p.Required || false);
     const propsArgument = propsType ? `, props: ${propsType.className}${optionalProps ? ' = {}' : ''}` : '';
@@ -279,7 +279,7 @@ export default class ResourceCodeGenerator {
 
     this.docLink(
       undefined,
-      `@Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
+      `Property ${javascriptPropertyName}: ${props.spec.Description?.replace(new RegExp('\n', 'gm'), '\n     * ')}`,
     );
     const line =
       props.propName === 'Tags' && (props.spec as schema.ComplexListProperty).ItemType === 'Tag'
@@ -411,7 +411,7 @@ export default class ResourceCodeGenerator {
     this.code.line('/**');
     before.forEach((line) => this.code.line(` * ${line}`.trimRight()));
     if (link) {
-      this.code.line(` * @see ${link}`);
+      this.code.line(` * See ${link}`);
     }
     this.code.line(' */');
     return;

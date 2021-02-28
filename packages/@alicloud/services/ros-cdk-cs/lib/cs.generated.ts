@@ -169,7 +169,7 @@ export interface RosKubernetesClusterProps {
     readonly containerCidr?: string;
 
     /**
-     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
+     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     readonly cpuPolicy?: string;
 
@@ -194,7 +194,7 @@ export interface RosKubernetesClusterProps {
     readonly keyPair?: string;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string;
 
@@ -500,7 +500,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.masterInstanceChargeType && (typeof properties.masterInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateAllowedValues)({
           data: properties.masterInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateString)(properties.masterInstanceChargeType));
@@ -509,7 +509,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
@@ -719,7 +719,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     public containerCidr: string | undefined;
 
     /**
-     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
+     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
     public cpuPolicy: string | undefined;
 
@@ -744,7 +744,7 @@ export class RosKubernetesCluster extends ros.RosResource {
     public keyPair: string | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     public kubernetesVersion: string | undefined;
 
@@ -1070,13 +1070,13 @@ export namespace RosKubernetesCluster {
      */
     export interface AddonsProperty {
         /**
-         * @Property version: When the value is empty, the latest version is selected by default.
-         */
-        readonly version?: string;
-        /**
          * @Property config: When the value is empty, no configuration is required.
          */
         readonly config?: string;
+        /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
         /**
          * @Property name: Addon plugin name
          */
@@ -1093,8 +1093,8 @@ export namespace RosKubernetesCluster {
 function RosKubernetesCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "AddonsProperty"');
@@ -1112,8 +1112,8 @@ function rosKubernetesClusterAddonsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
       Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }
@@ -1252,6 +1252,11 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly numOfNodes: number;
 
     /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -1388,6 +1393,8 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -1396,7 +1403,6 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1410,6 +1416,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerDataDiskSize', ros.validateNumber)(properties.workerDataDiskSize));
+    errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('numOfNodes', ros.requiredValidator)(properties.numOfNodes));
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
@@ -1419,13 +1426,12 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
-    errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('workerDataDiskCategory', ros.validateString)(properties.workerDataDiskCategory));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     return errors.wrap('supplied properties not correct for "RosManagedEdgeKubernetesClusterProps"');
 }
@@ -1446,6 +1452,7 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
     return {
       Name: ros.stringToRosTemplate(properties.name),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      Addons: ros.listMapper(rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
@@ -1509,6 +1516,11 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      * @Property numOfNodes: Number of worker nodes. The range is [0,300]
      */
     public numOfNodes: number;
+
+    /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    public addons: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -1640,6 +1652,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.numOfNodes = props.numOfNodes;
+        this.addons = props.addons;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
         this.containerCidr = props.containerCidr;
         this.disableRollback = props.disableRollback;
@@ -1666,6 +1679,7 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         return {
             name: this.name,
             numOfNodes: this.numOfNodes,
+            addons: this.addons,
             cloudMonitorFlags: this.cloudMonitorFlags,
             containerCidr: this.containerCidr,
             disableRollback: this.disableRollback,
@@ -1690,6 +1704,60 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosManagedEdgeKubernetesClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface AddonsProperty {
+        /**
+         * @Property config: When the value is empty, no configuration is required.
+         */
+        readonly config?: string;
+        /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+        /**
+         * @Property name: The name of the add-on.
+         */
+        readonly name: string;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AddonsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AddonsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Addons` resource
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Addons` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
+    return {
+      Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
 }
 
 /**
@@ -1759,7 +1827,7 @@ export interface RosManagedKubernetesClusterProps {
     readonly keyPair?: string;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.16.9-aliyun.1, 1.14.8-aliyun.1 and so on.
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string;
 
@@ -1942,7 +2010,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
@@ -2120,7 +2188,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public keyPair: string | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.16.9-aliyun.1, 1.14.8-aliyun.1 and so on.
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     public kubernetesVersion: string | undefined;
 
@@ -2462,7 +2530,7 @@ export interface RosServerlessKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     readonly kubernetesVersion?: string;
 
@@ -2628,7 +2696,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
     public kubernetesVersion: string | undefined;
 
@@ -2743,7 +2811,7 @@ export namespace RosServerlessKubernetesCluster {
         /**
          * @Property disabled: Specifies whether to disable default installation.
          */
-        readonly disabled?: string;
+        readonly disabled?: boolean | ros.IResolvable;
         /**
          * @Property name: The name of the add-on.
          */
@@ -2761,7 +2829,7 @@ function RosServerlessKubernetesCluster_AddonsPropertyValidator(properties: any)
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
-    errors.collect(ros.propertyValidator('disabled', ros.validateString)(properties.disabled));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "AddonsProperty"');
@@ -2780,7 +2848,7 @@ function rosServerlessKubernetesClusterAddonsPropertyToRosTemplate(properties: a
     RosServerlessKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
     return {
       Config: ros.stringToRosTemplate(properties.config),
-      Disabled: ros.stringToRosTemplate(properties.disabled),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }

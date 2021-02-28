@@ -9,32 +9,32 @@ export { RosUser as UserProperty };
 export interface UserProps {
 
     /**
-     * @Property uid: UserAliYunUid
+     * Property uid: UserAliYunUid
      */
     readonly uid: string;
 
     /**
-     * @Property mobile: UserMobile
+     * Property mobile: UserMobile
      */
     readonly mobile?: string;
 
     /**
-     * @Property roleNames: UserRole
+     * Property roleNames: UserRole
      */
     readonly roleNames?: string[];
 
     /**
-     * @Property status: UserStatus
+     * Property status: UserStatus
      */
     readonly status?: string;
 
     /**
-     * @Property tid:
+     * Property tid:
      */
     readonly tid?: string;
 
     /**
-     * @Property userName: UserNickName
+     * Property userName: UserNickName
      */
     readonly userName?: string;
 }
@@ -50,46 +50,46 @@ export class User extends ros.Resource {
      */
 
     /**
-     * @Attribute Mobile: UserMobile
+     * Attribute Mobile: UserMobile
      */
     public readonly attrMobile: any;
 
     /**
-     * @Attribute ParentUid: ParentAliYunUid
+     * Attribute ParentUid: ParentAliYunUid
      */
     public readonly attrParentUid: any;
 
     /**
-     * @Attribute RoleIds: UserRoleId
+     * Attribute RoleIds: UserRoleId
      */
     public readonly attrRoleIds: any;
 
     /**
-     * @Attribute RoleNames: UserRole
+     * Attribute RoleNames: UserRole
      */
     public readonly attrRoleNames: any;
 
     /**
-     * @Attribute Uid: UserAliYunUid
+     * Attribute Uid: UserAliYunUid
      */
     public readonly attrUid: any;
 
     /**
-     * @Attribute UserId: UserId
+     * Attribute UserId: UserId
      */
     public readonly attrUserId: any;
 
     /**
-     * @Attribute UserName: UserNickName
+     * Attribute UserName: UserNickName
      */
     public readonly attrUserName: any;
 
     /**
      * Create a new `ALIYUN::DMS::User`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UserProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

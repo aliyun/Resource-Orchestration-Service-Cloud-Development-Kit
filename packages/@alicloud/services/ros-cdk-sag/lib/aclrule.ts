@@ -9,53 +9,53 @@ export { RosACLRule as ACLRuleProperty };
 export interface ACLRuleProps {
 
     /**
-     * @Property aclId: Access control ID.
+     * Property aclId: Access control ID.
      */
     readonly aclId: string;
 
     /**
-     * @Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.
+     * Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.
      */
     readonly destCidr: string;
 
     /**
-     * @Property destPortRange: Destination port range, 80/80.
+     * Property destPortRange: Destination port range, 80/80.
      */
     readonly destPortRange: string;
 
     /**
-     * @Property direction: Regular direction.
+     * Property direction: Regular direction.
      * Value: in|out
      */
     readonly direction: string;
 
     /**
-     * @Property ipProtocol: Protocol, not case sensitive.
+     * Property ipProtocol: Protocol, not case sensitive.
      */
     readonly ipProtocol: string;
 
     /**
-     * @Property policy: Access: accept|drop
+     * Property policy: Access: accept|drop
      */
     readonly policy: string;
 
     /**
-     * @Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
+     * Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
      */
     readonly sourceCidr: string;
 
     /**
-     * @Property sourcePortRange: Source port range, 80/80.
+     * Property sourcePortRange: Source port range, 80/80.
      */
     readonly sourcePortRange: string;
 
     /**
-     * @Property description: Rule description information, ranging from 1 to 512 characters.
+     * Property description: Rule description information, ranging from 1 to 512 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property priority: Priority, ranging from 1 to 100.
+     * Property priority: Priority, ranging from 1 to 100.
      * Default: 1
      */
     readonly priority?: number;
@@ -72,16 +72,16 @@ export class ACLRule extends ros.Resource {
      */
 
     /**
-     * @Attribute AcrId: Access control rule ID.
+     * Attribute AcrId: Access control rule ID.
      */
     public readonly attrAcrId: any;
 
     /**
      * Create a new `ALIYUN::SAG::ACLRule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ACLRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -148,7 +148,7 @@ export interface RosRestoreJobProps {
     readonly targetClientId: string;
 
     /**
-     * @Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * @Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
      */
     readonly targetInstanceId: string;
 
@@ -305,7 +305,7 @@ export class RosRestoreJob extends ros.RosResource {
     public targetClientId: string;
 
     /**
-     * @Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * @Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
      */
     public targetInstanceId: string;
 

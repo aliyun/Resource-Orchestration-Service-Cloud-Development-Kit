@@ -9,12 +9,12 @@ export { RosZoneVpcBinder as ZoneVpcBinderProperty };
 export interface ZoneVpcBinderProps {
 
     /**
-     * @Property vpcs:
+     * Property vpcs:
      */
     readonly vpcs: Array<RosZoneVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property zoneId: Zone Id
+     * Property zoneId: Zone Id
      */
     readonly zoneId: string;
 }
@@ -30,11 +30,21 @@ export class ZoneVpcBinder extends ros.Resource {
      */
 
     /**
+     * Attribute Vpcs: Vpc list
+     */
+    public readonly attrVpcs: any;
+
+    /**
+     * Attribute ZoneId: Zone Id
+     */
+    public readonly attrZoneId: any;
+
+    /**
      * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ZoneVpcBinderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
@@ -44,5 +54,7 @@ export class ZoneVpcBinder extends ros.Resource {
             zoneId: props.zoneId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneVpcBinder;
+        this.attrVpcs = rosZoneVpcBinder.attrVpcs;
+        this.attrZoneId = rosZoneVpcBinder.attrZoneId;
     }
 }

@@ -9,17 +9,17 @@ export { RosEIPAssociation as EIPAssociationProperty };
 export interface EIPAssociationProps {
 
     /**
-     * @Property allocationId: EIP instance id to bind.
+     * Property allocationId: EIP instance id to bind.
      */
     readonly allocationId: string;
 
     /**
-     * @Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
+     * Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
      */
     readonly instanceId: string;
 
     /**
-     * @Property mode: The mode of association. Valid values:
+     * Property mode: The mode of association. Valid values:
      * NAT(Default): NAT mode.
      * BINDED: Cut-through mode.
      * MULTI_BINDED: Multi-EIP to ENI mode.
@@ -28,7 +28,7 @@ export interface EIPAssociationProps {
     readonly mode?: string;
 
     /**
-     * @Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
+     * Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
      * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
      */
     readonly privateIpAddress?: string;
@@ -45,21 +45,21 @@ export class EIPAssociation extends ros.Resource {
      */
 
     /**
-     * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
+     * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
     public readonly attrAllocationId: any;
 
     /**
-     * @Attribute EipAddress: IP address of created EIP.
+     * Attribute EipAddress: IP address of created EIP.
      */
     public readonly attrEipAddress: any;
 
     /**
      * Create a new `ALIYUN::VPC::EIPAssociation`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: EIPAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

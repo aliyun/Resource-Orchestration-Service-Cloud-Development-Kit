@@ -9,14 +9,14 @@ export { RosCustomImage as CustomImageProperty };
 export interface CustomImageProps {
 
     /**
-     * @Property architecture: After specifying the data disk snapshot as the mirrored system disk, you need to determine the system architecture of the system disk through Architecture. Ranges:
+     * Property architecture: After specifying the data disk snapshot as the mirrored system disk, you need to determine the system architecture of the system disk through Architecture. Ranges:
      * I386
      * X86_64 (default)
      */
     readonly architecture?: string;
 
     /**
-     * @Property description: The description of the image.
+     * Property description: The description of the image.
      * It can be [0, 256] letters in length.
      * It cannot begin with http:// or https://.
      * Default value: null.
@@ -24,39 +24,39 @@ export interface CustomImageProps {
     readonly description?: string;
 
     /**
-     * @Property diskDeviceMapping:
+     * Property diskDeviceMapping:
      */
     readonly diskDeviceMapping?: Array<RosCustomImage.DiskDeviceMappingProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property imageName: Image name.
+     * Property imageName: Image name.
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
      * Cannot begin with http:// or https://.
      */
     readonly imageName?: string;
 
     /**
-     * @Property instanceId: Instance ID.
+     * Property instanceId: Instance ID.
      */
     readonly instanceId?: string;
 
     /**
-     * @Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
+     * Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
      */
     readonly platform?: string;
 
     /**
-     * @Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+     * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property snapshotId: The snapshot ID. A custom image is created from the specified snapshot.
+     * Property snapshotId: The snapshot ID. A custom image is created from the specified snapshot.
      */
     readonly snapshotId?: string;
 
     /**
-     * @Property tag:
+     * Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
 }
@@ -72,16 +72,16 @@ export class CustomImage extends ros.Resource {
      */
 
     /**
-     * @Attribute ImageId: Image ID
+     * Attribute ImageId: Image ID
      */
     public readonly attrImageId: any;
 
     /**
      * Create a new `ALIYUN::ECS::CustomImage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CustomImageProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

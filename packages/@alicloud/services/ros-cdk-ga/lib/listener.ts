@@ -9,24 +9,24 @@ export { RosListener as ListenerProperty };
 export interface ListenerProps {
 
     /**
-     * @Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
+     * Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
      */
     readonly acceleratorId: string;
 
     /**
-     * @Property portRanges:
+     * Property portRanges:
      */
     readonly portRanges: Array<RosListener.PortRangesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property protocol: The network transmission protocol of the listener. Valid values:
+     * Property protocol: The network transmission protocol of the listener. Valid values:
      * tcp: TCP protocol
      * udp: UDP protocol
      */
     readonly protocol: string;
 
     /**
-     * @Property clientAffinity: Specifies whether to enable client affinity for the listener.
+     * Property clientAffinity: Specifies whether to enable client affinity for the listener.
      * If you do not specify the default value in the parameter, client affinity is disabled.
      * When client affinity is disabled, the connections from a specific source (client)
      * IP address are not always routed to the same endpoint.
@@ -36,12 +36,12 @@ export interface ListenerProps {
     readonly clientAffinity?: string;
 
     /**
-     * @Property description: The description of the listener.
+     * Property description: The description of the listener.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the listener.
+     * Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
      */
@@ -59,16 +59,16 @@ export class Listener extends ros.Resource {
      */
 
     /**
-     * @Attribute ListenerId: The ID of the listener.
+     * Attribute ListenerId: The ID of the listener.
      */
     public readonly attrListenerId: any;
 
     /**
      * Create a new `ALIYUN::GA::Listener`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ListenerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
