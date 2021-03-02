@@ -170,9 +170,9 @@ jsii_pack() {
 
     if [ "${ARG1}" == "--source-code" ];
     then
-        $PACMAK -c true \
-            --verbose \
-            $(cat $TMPDIR/jsii.txt)
+        for pack_dir in $(cat $TMPDIR/jsii.txt); do
+           $PACMAK -c true --verbose $pack_dir
+        done
     else
         $PACMAK \
           --verbose \
