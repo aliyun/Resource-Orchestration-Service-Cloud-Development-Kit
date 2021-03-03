@@ -135,7 +135,7 @@ convert_csharp_project(){
         echo "${csharp_dir}${dir}"
         packaege_name=${dir#*dotnet/}
         packaege_csproj_path="${csharp_dir}${dir}/${packaege_name}.csproj"
-        python3 $root/tools/convert_csharp_project.py --pom_file_path=${packaege_csproj_path}
+        python3 $root/tools/convert_csharp_project.py --csproj_file_path=${packaege_csproj_path}
     done
 }
 

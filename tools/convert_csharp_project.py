@@ -47,18 +47,10 @@ def write_xml():
     output_type_node.appendChild(output_type_node_text_value)
     property_group_node.appendChild(output_type_node)
 
-    item_group_nodes = root_node.getElementsByTagName("ItemGroup")
-    for item_group_node in item_group_nodes:
-        for node in item_group_node.childNodes:
-            if node.nodeType == node.ELEMENT_NODE and node.nodeName == "ProjectReference":
-                if node.hasAttribute("Include"):
-                    long_name = node.getAttribute("Include")
-                    short_name = long_name.rsplit("/")[2]
-                    item_group_node.removeChild(node)
-                    package_reference_node = dom_tree.createElement("PackageReference")
-                    package_reference_node.setAttribute("Include", short_name)
-                    package_reference_node.setAttribute("Version", "[0.0.1,2.0.0)")
-                    item_group_node.appendChild(package_reference_node)
+    property_group_nodes = root_node.getElementsByTagName("PropertyGroup")
+    property_group_node = property_group_nodes[0]
+    generate_package_on_build_node = property_group_node.getElementsByTagName("GeneratePackageOnBuild")[0].childNodes[0]
+    generate_package_on_build_node.data = 'false'
 
     with open(csproj_file_path, 'w') as f:
         dom_tree.writexml(f, addindent='\t', newl='\n', encoding='utf-8')
