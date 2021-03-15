@@ -1,4 +1,4 @@
-using Aliyun.Ros.CDK.Core;
+using AlibabaCloud.SDK.ROS.CDK.Core;
 
 namespace %name.PascalCased%
 {
