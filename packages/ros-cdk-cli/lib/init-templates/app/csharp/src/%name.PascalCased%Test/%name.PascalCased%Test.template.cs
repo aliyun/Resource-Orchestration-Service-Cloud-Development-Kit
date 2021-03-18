@@ -2,8 +2,7 @@ using AlibabaCloud.SDK.ROS.CDK.Core;
 using NUnit.Framework;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Demo;
-
+using %name.PascalCased%;
 
 namespace Stack.UnitTests.Services
 {
@@ -14,13 +13,13 @@ namespace Stack.UnitTests.Services
         public void DemoStack_IsStackShould()
         {
             var app = new App();
-            var demoStack = new DemoStack(app, "TestStack");
-            var result = app.Synth().GetStackArtifact(demoStack.ArtifactId).Template;
-            var expectedJson = JsonConvert.SerializeObject(result);
+            var testStack = new %name.PascalCased%Stack(app, "TestStack");
+            var result = app.Synth().GetStackArtifact(testStack.ArtifactId).Template;
+            var actualJson = JsonConvert.SerializeObject(result);
             JObject obj = new JObject();
             obj.Add("ROSTemplateFormatVersion", "2015-09-01");
-            var actual = JsonConvert.SerializeObject(obj);
-            Assert.AreEqual(expectedJson, actual);
+            var expected = JsonConvert.SerializeObject(obj);
+            Assert.AreEqual(actualJson, expected);
         }
     }
 }
