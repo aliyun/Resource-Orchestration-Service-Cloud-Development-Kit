@@ -26,9 +26,6 @@
       "dotnet": {
         "namespace": "AlibabaCloud.SDK.ROS.CDK.Assembly.Schema",
         "packageId": "AlibabaCloud.SDK.ROS.CDK.Assembly.Schema"
-      },
-      "go": {
-        "moduleName": "github.com/aliyun/alibaba-cloud-sdk-go/services/ros/cdk/assembly-schema"
       }
     }
   },

@@ -163,6 +163,8 @@ export class InitTemplate {
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         const invoke: InvokeHook = require(path.join(sourceDirectory, file)).invoke;
         await invoke(targetDirectory);
+        const invokeUnitTest: InvokeHook = require(path.join(sourceDirectory, file)).invokeUnitTest;
+        await invokeUnitTest(targetDirectory);
       }
     }
   }
