@@ -180,7 +180,7 @@ jsii_pack() {
     fi
     for dir in $(find packages -name dist | grep -v node_modules | grep -v run-wrappers); do
       echo "Merging ${dir}" >&2
-      cp -r $dir/ ${root}/
+      cp -r $dir ${root}/
     done
 
     mv "$js_dir" "$jsii_dir"
