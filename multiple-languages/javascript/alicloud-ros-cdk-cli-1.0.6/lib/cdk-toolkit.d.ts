@@ -124,3 +124,5 @@ export interface Tag {
     readonly Key: string;
     readonly Value: string;
 }
+export declare function writeAndUpdateLanguageInfo(language: string): void;
+export declare function readLanguageInfo(): any;

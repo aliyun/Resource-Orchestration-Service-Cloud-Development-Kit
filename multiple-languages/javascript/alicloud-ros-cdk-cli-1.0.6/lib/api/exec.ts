@@ -91,10 +91,14 @@ export async function execProgram(config: Configuration): Promise<cxapi.CloudAss
       const srcDir = curPath + '/src';
       await readDirForMd5(srcDir);
     }
-    else {
+    else if(fs.existsSync('./global.sln')) {
       // when using c# to synth
+      pkgInfoPath = './global.sln';
       const srcDir = curPath + '/src';
       await readDirForMd5(srcDir);
+    }
+    else {
+      throw new Error('This CDK CLI init project is not allowed, please check project directory information');
     }
 
 

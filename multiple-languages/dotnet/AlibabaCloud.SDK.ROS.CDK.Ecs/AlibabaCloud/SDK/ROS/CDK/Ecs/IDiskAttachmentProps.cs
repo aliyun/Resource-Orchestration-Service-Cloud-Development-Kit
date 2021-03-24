@@ -1,0 +1,117 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Ecs
+{
+    /// <summary>Properties for defining a `ALIYUN::ECS::DiskAttachment`.</summary>
+    [JsiiInterface(nativeType: typeof(IDiskAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DiskAttachmentProps")]
+    public interface IDiskAttachmentProps
+    {
+        /// <summary>Property diskId: The disk id to attached.</summary>
+        [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}")]
+        string DiskId
+        {
+            get;
+        }
+
+        /// <summary>Property instanceId: The instanceId to attach the disk.</summary>
+        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
+        string InstanceId
+        {
+            get;
+        }
+
+        /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
+        /// <remarks>
+        /// Default to true.
+        /// </remarks>
+        [JsiiProperty(name: "deleteAutoSnapshot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeleteAutoSnapshot
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property deleteWithInstance: If property is true, the disk will be deleted while instance is deleted, if property is false, the disk will be retain after instance is deleted.</summary>
+        [JsiiProperty(name: "deleteWithInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeleteWithInstance
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property device: The device where the volume is exposed on the instance.</summary>
+        /// <remarks>
+        /// could be /dev/xvd[b-z]. If not specification, will use default value.
+        /// </remarks>
+        [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? Device
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `ALIYUN::ECS::DiskAttachment`.</summary>
+        [JsiiTypeProxy(nativeType: typeof(IDiskAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.DiskAttachmentProps")]
+        internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IDiskAttachmentProps
+        {
+            private _Proxy(ByRefValue reference): base(reference)
+            {
+            }
+
+            /// <summary>Property diskId: The disk id to attached.</summary>
+            [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}")]
+            public string DiskId
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <summary>Property instanceId: The instanceId to attach the disk.</summary>
+            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
+            public string InstanceId
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
+            /// <remarks>
+            /// Default to true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteAutoSnapshot", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeleteAutoSnapshot
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property deleteWithInstance: If property is true, the disk will be deleted while instance is deleted, if property is false, the disk will be retain after instance is deleted.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deleteWithInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeleteWithInstance
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property device: The device where the volume is exposed on the instance.</summary>
+            /// <remarks>
+            /// could be /dev/xvd[b-z]. If not specification, will use default value.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? Device
+            {
+                get => GetInstanceProperty<string?>();
+            }
+        }
+    }
+}

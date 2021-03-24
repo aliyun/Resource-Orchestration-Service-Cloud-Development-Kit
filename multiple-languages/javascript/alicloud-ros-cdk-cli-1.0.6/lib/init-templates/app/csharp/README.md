@@ -9,6 +9,8 @@ It uses the [.NET Core CLI](https://docs.microsoft.com/dotnet/articles/core/) to
 ## Useful commands
 
 * `dotnet build src`      compile this app
+* `dotnet restore`        Install project package
+* `dotnet test`           perform the csharp unit tests
 * `ros-cdk list`          List stacks in an application
 * `ros-cdk list-stacks`   List all stacks
 * `ros-cdk deploy`        deploy this stack to your default ros account/region

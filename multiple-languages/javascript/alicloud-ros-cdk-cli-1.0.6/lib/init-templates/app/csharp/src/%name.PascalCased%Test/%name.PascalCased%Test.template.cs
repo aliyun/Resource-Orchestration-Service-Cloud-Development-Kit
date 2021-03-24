@@ -23,4 +23,3 @@ namespace Stack.UnitTests.Services
         }
     }
 }
-
