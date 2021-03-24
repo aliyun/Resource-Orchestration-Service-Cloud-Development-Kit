@@ -24,11 +24,6 @@ export interface SnapshotProps {
     readonly snapshotName?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property timeout: The number of minutes to wait for create snapshot.
      */
     readonly timeout?: number;
@@ -63,7 +58,6 @@ export class Snapshot extends ros.Resource {
             description: props.description,
             timeout: props.timeout ? props.timeout : 200,
             snapshotName: props.snapshotName,
-            tags: ros.tagFactory(props.tags),
             diskId: props.diskId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSnapshot;

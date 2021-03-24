@@ -35,6 +35,11 @@ export class ResourceGroup extends ros.Resource {
     public readonly attrAccountId: any;
 
     /**
+     * Attribute CreateDate: The time when the resource group was created
+     */
+    public readonly attrCreateDate: any;
+
+    /**
      * Attribute DisplayName: The display name of the resource group
      */
     public readonly attrDisplayName: any;
@@ -70,6 +75,7 @@ export class ResourceGroup extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosResourceGroup;
         this.attrAccountId = rosResourceGroup.attrAccountId;
+        this.attrCreateDate = rosResourceGroup.attrCreateDate;
         this.attrDisplayName = rosResourceGroup.attrDisplayName;
         this.attrId = rosResourceGroup.attrId;
         this.attrName = rosResourceGroup.attrName;

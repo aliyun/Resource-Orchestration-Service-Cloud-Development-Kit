@@ -61,7 +61,7 @@ export interface KubernetesClusterProps {
     readonly containerCidr?: string;
 
     /**
-     * Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
+     * Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
      */
     readonly cpuPolicy?: string;
 
@@ -86,7 +86,7 @@ export interface KubernetesClusterProps {
     readonly keyPair?: string;
 
     /**
-     * Property kubernetesVersion: The version of the Kubernetes cluster.
+     * Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
      */
     readonly kubernetesVersion?: string;
 
@@ -353,10 +353,10 @@ export class KubernetesCluster extends ros.Resource {
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             masterPeriod: props.masterPeriod ? props.masterPeriod : 1,
-            kubernetesVersion: props.kubernetesVersion,
+            kubernetesVersion: props.kubernetesVersion ? props.kubernetesVersion : '1.14.8-aliyun.1',
             masterInstanceChargeType: props.masterInstanceChargeType ? props.masterInstanceChargeType : 'PostPaid',
             containerCidr: props.containerCidr ? props.containerCidr : '172.16.0.0/16',
-            cpuPolicy: props.cpuPolicy,
+            cpuPolicy: props.cpuPolicy ? props.cpuPolicy : 'none',
             workerInstanceChargeType: props.workerInstanceChargeType ? props.workerInstanceChargeType : 'PostPaid',
             keyPair: props.keyPair,
             masterInstanceTypes: props.masterInstanceTypes,

@@ -22,11 +22,6 @@ export interface SSHKeyPairProps {
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -68,7 +63,6 @@ export class SSHKeyPair extends ros.Resource {
             keyPairName: props.keyPairName,
             resourceGroupId: props.resourceGroupId,
             publicKeyBody: props.publicKeyBody,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSSHKeyPair;
         this.attrKeyPairFingerPrint = rosSSHKeyPair.attrKeyPairFingerPrint;

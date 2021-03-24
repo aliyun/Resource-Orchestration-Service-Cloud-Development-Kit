@@ -152,11 +152,6 @@ export interface ApplicationProps {
     readonly slsConfigs?: string;
 
     /**
-     * Property tags: Tags to attach to application. Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property timezone: Application time zone. Default Asia/Shanghai.
      */
     readonly timezone?: string;
@@ -231,7 +226,6 @@ export class Application extends ros.Resource {
             preStop: props.preStop,
             readiness: props.readiness,
             packageType: props.packageType,
-            tags: ros.tagFactory(props.tags),
             commandArgs: props.commandArgs,
             securityGroupId: props.securityGroupId,
             envs: props.envs,

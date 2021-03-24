@@ -84,11 +84,6 @@ export interface ShardingInstanceProps {
     readonly storageEngine?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string;
@@ -158,7 +153,6 @@ export class ShardingInstance extends ros.Resource {
             srcDbInstanceId: props.srcDbInstanceId,
             replicaSet: props.replicaSet,
             dbInstanceDescription: props.dbInstanceDescription,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosShardingInstance;
         this.attrDbInstanceId = rosShardingInstance.attrDbInstanceId;

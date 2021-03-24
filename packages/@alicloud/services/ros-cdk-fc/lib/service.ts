@@ -49,11 +49,6 @@ export interface ServiceProps {
     readonly tags?: { [key: string]: any }[];
 
     /**
-     * Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
-     */
-    readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
-
-    /**
      * Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
      */
     readonly vpcConfig?: RosService.VpcConfigProperty | ros.IResolvable;
@@ -68,26 +63,6 @@ export class Service extends ros.Resource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource, which will be assigned to ROS resource.
      */
-
-    /**
-     * Attribute InternetAccess: Whether enable Internet access
-     */
-    public readonly attrInternetAccess: any;
-
-    /**
-     * Attribute LogProject: Log project of service
-     */
-    public readonly attrLogProject: any;
-
-    /**
-     * Attribute Logstore: Log store of service
-     */
-    public readonly attrLogstore: any;
-
-    /**
-     * Attribute Role: Role of service
-     */
-    public readonly attrRole: any;
 
     /**
      * Attribute ServiceId: The service ID
@@ -105,11 +80,6 @@ export class Service extends ros.Resource {
     public readonly attrTags: any;
 
     /**
-     * Attribute VpcId: VPC ID
-     */
-    public readonly attrVpcId: any;
-
-    /**
      * Create a new `ALIYUN::FC::Service`.
      *
      * Param scope - scope in which this resource is defined
@@ -124,7 +94,6 @@ export class Service extends ros.Resource {
             internetAccess: props.internetAccess,
             description: props.description,
             deletionForce: props.deletionForce ? props.deletionForce : false,
-            tracingConfig: props.tracingConfig,
             vpcConfig: props.vpcConfig,
             serviceName: props.serviceName,
             tags: ros.tagFactory(props.tags),
@@ -132,13 +101,8 @@ export class Service extends ros.Resource {
             logConfig: props.logConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosService;
-        this.attrInternetAccess = rosService.attrInternetAccess;
-        this.attrLogProject = rosService.attrLogProject;
-        this.attrLogstore = rosService.attrLogstore;
-        this.attrRole = rosService.attrRole;
         this.attrServiceId = rosService.attrServiceId;
         this.attrServiceName = rosService.attrServiceName;
         this.attrTags = rosService.attrTags;
-        this.attrVpcId = rosService.attrVpcId;
     }
 }

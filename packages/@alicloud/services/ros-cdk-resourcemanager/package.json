@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Resourcemanager",
-        "packageId": "Aliyun.Ros.CDK.Resourcemanager"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Resourcemanager",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Resourcemanager"
       }
     }
   },

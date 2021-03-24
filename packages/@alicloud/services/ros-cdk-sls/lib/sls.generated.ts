@@ -1935,11 +1935,6 @@ export interface RosProjectProps {
      * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     readonly description?: string;
-
-    /**
-     * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -1960,14 +1955,6 @@ function RosProjectPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
@@ -2002,7 +1989,6 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
     return {
       Name: ros.stringToRosTemplate(properties.name),
       Description: ros.stringToRosTemplate(properties.description),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -2042,11 +2028,6 @@ export class RosProject extends ros.RosResource {
     public description: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * Create a new `ALIYUN::SLS::Project`.
      *
      * @param scope - scope in which this resource is defined
@@ -2060,7 +2041,6 @@ export class RosProject extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.description = props.description;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SLS::Project", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -2068,7 +2048,6 @@ export class RosProject extends ros.RosResource {
         return {
             name: this.name,
             description: this.description,
-            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Datahub",
-        "packageId": "Aliyun.Ros.CDK.Datahub"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Datahub",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Datahub"
       }
     }
   },

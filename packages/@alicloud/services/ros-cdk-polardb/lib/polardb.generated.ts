@@ -562,13 +562,6 @@ export interface RosDBClusterProps {
     readonly resourceGroupId?: string;
 
     /**
-     * @Property securityGroupIds: The ID of the security group. 
-     * You can add up to three security groups to a cluster.
-     *
-     */
-    readonly securityGroupIds?: string[];
-
-    /**
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     readonly securityIpList?: string;
@@ -580,11 +573,6 @@ export interface RosDBClusterProps {
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
     readonly sourceResourceId?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 
     /**
      * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -620,52 +608,6 @@ export interface RosDBClusterProps {
 function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('defaultTimeZone', ros.validateString)(properties.defaultTimeZone));
-    errors.collect(ros.propertyValidator('cloneDataPoint', ros.validateString)(properties.cloneDataPoint));
-    errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    if(properties.backupRetentionPolicyOnClusterDeletion && (typeof properties.backupRetentionPolicyOnClusterDeletion) !== 'object') {
-        errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateAllowedValues)({
-          data: properties.backupRetentionPolicyOnClusterDeletion,
-          allowedValues: ["ALL","LATEST","NONE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateString)(properties.backupRetentionPolicyOnClusterDeletion));
-    errors.collect(ros.propertyValidator('sourceResourceId', ros.validateString)(properties.sourceResourceId));
-    errors.collect(ros.propertyValidator('dbType', ros.requiredValidator)(properties.dbType));
-    if(properties.dbType && (typeof properties.dbType) !== 'object') {
-        errors.collect(ros.propertyValidator('dbType', ros.validateAllowedValues)({
-          data: properties.dbType,
-          allowedValues: ["MySQL","Oracle","PostgreSQL"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
-    errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
-    errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
-    if(properties.clusterNetworkType && (typeof properties.clusterNetworkType) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateAllowedValues)({
-          data: properties.clusterNetworkType,
-          allowedValues: ["VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateString)(properties.clusterNetworkType));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
-    if(properties.lowerCaseTableNames && (typeof properties.lowerCaseTableNames) !== 'object') {
-        errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateAllowedValues)({
-          data: properties.lowerCaseTableNames,
-          allowedValues: [0,1],
-        }));
-    }
-    errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateNumber)(properties.lowerCaseTableNames));
     if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
           data: properties.autoRenewPeriod,
@@ -673,9 +615,20 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('defaultTimeZone', ros.validateString)(properties.defaultTimeZone));
     errors.collect(ros.propertyValidator('tdeStatus', ros.validateBoolean)(properties.tdeStatus));
+    errors.collect(ros.propertyValidator('cloneDataPoint', ros.validateString)(properties.cloneDataPoint));
+    errors.collect(ros.propertyValidator('gdnId', ros.validateString)(properties.gdnId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.backupRetentionPolicyOnClusterDeletion && (typeof properties.backupRetentionPolicyOnClusterDeletion) !== 'object') {
+        errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateAllowedValues)({
+          data: properties.backupRetentionPolicyOnClusterDeletion,
+          allowedValues: ["ALL","LATEST","NONE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('backupRetentionPolicyOnClusterDeletion', ros.validateString)(properties.backupRetentionPolicyOnClusterDeletion));
     if(properties.renewalStatus && (typeof properties.renewalStatus) !== 'object') {
         errors.collect(ros.propertyValidator('renewalStatus', ros.validateAllowedValues)({
           data: properties.renewalStatus,
@@ -698,6 +651,15 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('sourceResourceId', ros.validateString)(properties.sourceResourceId));
+    errors.collect(ros.propertyValidator('dbType', ros.requiredValidator)(properties.dbType));
+    if(properties.dbType && (typeof properties.dbType) !== 'object') {
+        errors.collect(ros.propertyValidator('dbType', ros.validateAllowedValues)({
+          data: properties.dbType,
+          allowedValues: ["MySQL","Oracle","PostgreSQL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dbType', ros.validateString)(properties.dbType));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -707,7 +669,6 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('creationCategory', ros.validateString)(properties.creationCategory));
-    errors.collect(ros.propertyValidator('securityGroupIds', ros.listValidator(ros.validateString))(properties.securityGroupIds));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.requiredValidator)(properties.dbNodeClass));
     errors.collect(ros.propertyValidator('dbNodeClass', ros.validateString)(properties.dbNodeClass));
     if(properties.creationOption && (typeof properties.creationOption) !== 'object') {
@@ -717,7 +678,25 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('creationOption', ros.validateString)(properties.creationOption));
+    errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    if(properties.clusterNetworkType && (typeof properties.clusterNetworkType) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateAllowedValues)({
+          data: properties.clusterNetworkType,
+          allowedValues: ["VPC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterNetworkType', ros.validateString)(properties.clusterNetworkType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
+    if(properties.lowerCaseTableNames && (typeof properties.lowerCaseTableNames) !== 'object') {
+        errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateAllowedValues)({
+          data: properties.lowerCaseTableNames,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('lowerCaseTableNames', ros.validateNumber)(properties.lowerCaseTableNames));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -753,10 +732,8 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       Period: ros.numberToRosTemplate(properties.period),
       RenewalStatus: ros.stringToRosTemplate(properties.renewalStatus),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      SecurityGroupIds: ros.listMapper(ros.stringToRosTemplate)(properties.securityGroupIds),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
       SourceResourceId: ros.stringToRosTemplate(properties.sourceResourceId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       TDEStatus: ros.booleanToRosTemplate(properties.tdeStatus),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -968,13 +945,6 @@ export class RosDBCluster extends ros.RosResource {
     public resourceGroupId: string | undefined;
 
     /**
-     * @Property securityGroupIds: The ID of the security group. 
-     * You can add up to three security groups to a cluster.
-     *
-     */
-    public securityGroupIds: string[] | undefined;
-
-    /**
      * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     public securityIpList: string | undefined;
@@ -986,11 +956,6 @@ export class RosDBCluster extends ros.RosResource {
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
     public sourceResourceId: string | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
 
     /**
      * @Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -1053,10 +1018,8 @@ export class RosDBCluster extends ros.RosResource {
         this.period = props.period;
         this.renewalStatus = props.renewalStatus;
         this.resourceGroupId = props.resourceGroupId;
-        this.securityGroupIds = props.securityGroupIds;
         this.securityIpList = props.securityIpList;
         this.sourceResourceId = props.sourceResourceId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::POLARDB::DBCluster", props.tags, { tagPropertyName: 'tags' });
         this.tdeStatus = props.tdeStatus;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -1084,10 +1047,8 @@ export class RosDBCluster extends ros.RosResource {
             period: this.period,
             renewalStatus: this.renewalStatus,
             resourceGroupId: this.resourceGroupId,
-            securityGroupIds: this.securityGroupIds,
             securityIpList: this.securityIpList,
             sourceResourceId: this.sourceResourceId,
-            tags: this.tags.renderTags(),
             tdeStatus: this.tdeStatus,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,

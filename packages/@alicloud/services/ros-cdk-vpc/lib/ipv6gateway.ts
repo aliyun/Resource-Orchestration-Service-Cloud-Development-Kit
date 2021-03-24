@@ -33,11 +33,6 @@ export interface Ipv6GatewayProps {
      * Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
      */
     readonly spec?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -69,7 +64,6 @@ export class Ipv6Gateway extends ros.Resource {
             description: props.description,
             vpcId: props.vpcId,
             spec: props.spec,
-            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpv6Gateway;

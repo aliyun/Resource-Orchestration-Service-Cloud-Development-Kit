@@ -68,13 +68,6 @@ export interface ApiProps {
     readonly description?: string;
 
     /**
-     * Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
-     * Set DisableInternet to false, then the call is not restricted. 
-     *
-     */
-    readonly disableInternet?: boolean | ros.IResolvable;
-
-    /**
      * Property errorCodeSamples: The Error Code samples.
      */
     readonly errorCodeSamples?: Array<RosApi.ErrorCodeSamplesProperty | ros.IResolvable> | ros.IResolvable;
@@ -83,15 +76,6 @@ export interface ApiProps {
      * Property failResultSample: The sample of the fail result.
      */
     readonly failResultSample?: string;
-
-    /**
-     * Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
-     * this is the unique identifier of the request, generally using UUID to identify. 
-     * The API gateway will verify the validity of this parameter after receiving this parameter. 
-     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
-     * Set ForceNonceCheck to false, then no check.
-     */
-    readonly forceNonceCheck?: boolean | ros.IResolvable;
 
     /**
      * Property openIdConnectConfig: The configuration of the open id.
@@ -117,11 +101,6 @@ export interface ApiProps {
      * Property systemParameters: The system parameters.
      */
     readonly systemParameters?: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -153,9 +132,7 @@ export class Api extends ros.Resource {
             requestConfig: props.requestConfig,
             description: props.description,
             resultSample: props.resultSample,
-            disableInternet: props.disableInternet,
             apiName: props.apiName,
-            forceNonceCheck: props.forceNonceCheck,
             resultType: props.resultType ? props.resultType : 'JSON',
             failResultSample: props.failResultSample,
             errorCodeSamples: props.errorCodeSamples,
@@ -170,7 +147,6 @@ export class Api extends ros.Resource {
             visibility: props.visibility,
             serviceParameters: props.serviceParameters,
             authType: props.authType,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApi;
         this.attrApiId = rosApi.attrApiId;

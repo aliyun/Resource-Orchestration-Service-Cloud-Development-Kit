@@ -191,11 +191,6 @@ export interface RosInstanceProps {
      * @Property remark: The remark of instance.
      */
     readonly remark?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -217,14 +212,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
@@ -245,7 +232,6 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       Remark: ros.stringToRosTemplate(properties.remark),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -284,11 +270,6 @@ export class RosInstance extends ros.RosResource {
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute InstanceName: Instance name
-     */
-    public readonly attrInstanceName: any;
-
-    /**
      * @Attribute InstanceType: Instance Type
      */
     public readonly attrInstanceType: any;
@@ -312,11 +293,6 @@ export class RosInstance extends ros.RosResource {
     public remark: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * Create a new `ALIYUN::ROCKETMQ::Instance`.
      *
      * @param scope - scope in which this resource is defined
@@ -329,14 +305,12 @@ export class RosInstance extends ros.RosResource {
         this.attrHttpInternetEndpoint = ros.Token.asString(this.getAtt('HttpInternetEndpoint'));
         this.attrHttpInternetSecureEndpoint = ros.Token.asString(this.getAtt('HttpInternetSecureEndpoint'));
         this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrInstanceName = ros.Token.asString(this.getAtt('InstanceName'));
         this.attrInstanceType = ros.Token.asString(this.getAtt('InstanceType'));
         this.attrTcpEndpoint = ros.Token.asString(this.getAtt('TcpEndpoint'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
         this.remark = props.remark;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ROCKETMQ::Instance", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -344,7 +318,6 @@ export class RosInstance extends ros.RosResource {
         return {
             instanceName: this.instanceName,
             remark: this.remark,
-            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

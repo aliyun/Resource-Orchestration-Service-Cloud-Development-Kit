@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Redis",
-        "packageId": "Aliyun.Ros.CDK.Redis"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Redis",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Redis"
       }
     }
   },

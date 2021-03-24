@@ -14,6 +14,11 @@ export interface DBInstanceCloneProps {
     readonly dbInstanceId: string;
 
     /**
+     * Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     */
+    readonly dbInstanceStorage: number;
+
+    /**
      * Property payType: The charge type of created instance.
      */
     readonly payType: string;
@@ -72,11 +77,6 @@ export interface DBInstanceCloneProps {
      * Property dbInstanceDescription: Description of created database instance.
      */
     readonly dbInstanceDescription?: string;
-
-    /**
-     * Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
-     */
-    readonly dbInstanceStorage?: number;
 
     /**
      * Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -191,11 +191,6 @@ export interface DBInstanceCloneProps {
      * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
      */
     readonly securityIpList?: string;
-
-    /**
-     * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
-     */
-    readonly slaveZoneIds?: string[];
 
     /**
      * Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
@@ -321,7 +316,6 @@ export class DBInstanceClone extends ros.Resource {
             restoreTime: props.restoreTime,
             dbNames: props.dbNames,
             preferredBackupPeriod: props.preferredBackupPeriod,
-            slaveZoneIds: props.slaveZoneIds,
             dbInstanceId: props.dbInstanceId,
             securityIpList: props.securityIpList,
             dbInstanceStorage: props.dbInstanceStorage,

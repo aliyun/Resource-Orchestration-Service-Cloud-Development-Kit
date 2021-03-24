@@ -74,11 +74,6 @@ export interface FunctionProps {
     readonly instanceConcurrency?: number;
 
     /**
-     * Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
-     */
-    readonly instanceType?: string;
-
-    /**
      * Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
     readonly memorySize?: number;
@@ -115,11 +110,6 @@ export class Function extends ros.Resource {
     public readonly attrFunctionName: any;
 
     /**
-     * Attribute ServiceId: The service ID
-     */
-    public readonly attrServiceId: any;
-
-    /**
      * Attribute ServiceName: The service name
      */
     public readonly attrServiceName: any;
@@ -142,21 +132,19 @@ export class Function extends ros.Resource {
             customContainerConfig: props.customContainerConfig,
             code: props.code,
             asyncConfiguration: props.asyncConfiguration,
-            caPort: props.caPort ? props.caPort : 9000,
             functionName: props.functionName,
+            caPort: props.caPort ? props.caPort : 9000,
             runtime: props.runtime,
             environmentVariables: props.environmentVariables,
             initializer: props.initializer,
             serviceName: props.serviceName,
             initializationTimeout: props.initializationTimeout,
             instanceConcurrency: props.instanceConcurrency,
-            instanceType: props.instanceType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFunction;
         this.attrArn = rosFunction.attrArn;
         this.attrFunctionId = rosFunction.attrFunctionId;
         this.attrFunctionName = rosFunction.attrFunctionName;
-        this.attrServiceId = rosFunction.attrServiceId;
         this.attrServiceName = rosFunction.attrServiceName;
     }
 }

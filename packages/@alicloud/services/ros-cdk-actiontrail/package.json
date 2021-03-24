@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Actiontrail",
-        "packageId": "Aliyun.Ros.CDK.Actiontrail"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Actiontrail",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Actiontrail"
       }
     }
   },

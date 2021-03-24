@@ -872,7 +872,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["Prepaid","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1493,6 +1493,11 @@ export interface RosDBInstanceCloneProps {
     readonly dbInstanceId: string;
 
     /**
+     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     */
+    readonly dbInstanceStorage: number;
+
+    /**
      * @Property payType: The charge type of created instance.
      */
     readonly payType: string;
@@ -1551,11 +1556,6 @@ export interface RosDBInstanceCloneProps {
      * @Property dbInstanceDescription: Description of created database instance.
      */
     readonly dbInstanceDescription?: string;
-
-    /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
-     */
-    readonly dbInstanceStorage?: number;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -1672,11 +1672,6 @@ export interface RosDBInstanceCloneProps {
     readonly securityIpList?: string;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
-     */
-    readonly slaveZoneIds?: string[];
-
-    /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
@@ -1773,17 +1768,10 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
     errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateAny))(properties.preferredBackupPeriod));
-    if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
-        errors.collect(ros.propertyValidator('slaveZoneIds', ros.validateLength)({
-            data: properties.slaveZoneIds.length,
-            min: undefined,
-            max: 2,
-          }));
-    }
-    errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     if(properties.backupType && (typeof properties.backupType) !== 'object') {
         errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
@@ -1821,7 +1809,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["Prepaid","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1892,6 +1880,7 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
     }
     return {
       DBInstanceId: ros.stringToRosTemplate(properties.dbInstanceId),
+      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
       PayType: ros.stringToRosTemplate(properties.payType),
       AllocatePublicConnection: ros.booleanToRosTemplate(properties.allocatePublicConnection),
       BackupId: ros.stringToRosTemplate(properties.backupId),
@@ -1902,7 +1891,6 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
       ConnectionStringType: ros.stringToRosTemplate(properties.connectionStringType),
       DBInstanceClass: ros.stringToRosTemplate(properties.dbInstanceClass),
       DBInstanceDescription: ros.stringToRosTemplate(properties.dbInstanceDescription),
-      DBInstanceStorage: ros.numberToRosTemplate(properties.dbInstanceStorage),
       DBInstanceStorageType: ros.stringToRosTemplate(properties.dbInstanceStorageType),
       DBMappings: ros.listMapper(rosDBInstanceCloneDBMappingsPropertyToRosTemplate)(properties.dbMappings),
       DbNames: ros.stringToRosTemplate(properties.dbNames),
@@ -1922,7 +1910,6 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
       RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityIPList: ros.stringToRosTemplate(properties.securityIpList),
-      SlaveZoneIds: ros.listMapper(ros.stringToRosTemplate)(properties.slaveZoneIds),
       SQLCollectorStatus: ros.stringToRosTemplate(properties.sqlCollectorStatus),
       SSLSetting: ros.stringToRosTemplate(properties.sslSetting),
       TableMeta: ros.listMapper(rosDBInstanceCloneTableMetaPropertyToRosTemplate)(properties.tableMeta),
@@ -1992,6 +1979,11 @@ export class RosDBInstanceClone extends ros.RosResource {
     public dbInstanceId: string;
 
     /**
+     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+     */
+    public dbInstanceStorage: number;
+
+    /**
      * @Property payType: The charge type of created instance.
      */
     public payType: string;
@@ -2050,11 +2042,6 @@ export class RosDBInstanceClone extends ros.RosResource {
      * @Property dbInstanceDescription: Description of created database instance.
      */
     public dbInstanceDescription: string | undefined;
-
-    /**
-     * @Property dbInstanceStorage: Database instance storage size. mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
-     */
-    public dbInstanceStorage: number | undefined;
 
     /**
      * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -2171,11 +2158,6 @@ export class RosDBInstanceClone extends ros.RosResource {
     public securityIpList: string | undefined;
 
     /**
-     * @Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
-     */
-    public slaveZoneIds: string[] | undefined;
-
-    /**
      * @Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. 
      * Valid values:Enable | Disabled.
      */
@@ -2251,6 +2233,7 @@ export class RosDBInstanceClone extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dbInstanceId = props.dbInstanceId;
+        this.dbInstanceStorage = props.dbInstanceStorage;
         this.payType = props.payType;
         this.allocatePublicConnection = props.allocatePublicConnection;
         this.backupId = props.backupId;
@@ -2261,7 +2244,6 @@ export class RosDBInstanceClone extends ros.RosResource {
         this.connectionStringType = props.connectionStringType;
         this.dbInstanceClass = props.dbInstanceClass;
         this.dbInstanceDescription = props.dbInstanceDescription;
-        this.dbInstanceStorage = props.dbInstanceStorage;
         this.dbInstanceStorageType = props.dbInstanceStorageType;
         this.dbMappings = props.dbMappings;
         this.dbNames = props.dbNames;
@@ -2281,7 +2263,6 @@ export class RosDBInstanceClone extends ros.RosResource {
         this.restoreTime = props.restoreTime;
         this.securityGroupId = props.securityGroupId;
         this.securityIpList = props.securityIpList;
-        this.slaveZoneIds = props.slaveZoneIds;
         this.sqlCollectorStatus = props.sqlCollectorStatus;
         this.sslSetting = props.sslSetting;
         this.tableMeta = props.tableMeta;
@@ -2296,6 +2277,7 @@ export class RosDBInstanceClone extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             dbInstanceId: this.dbInstanceId,
+            dbInstanceStorage: this.dbInstanceStorage,
             payType: this.payType,
             allocatePublicConnection: this.allocatePublicConnection,
             backupId: this.backupId,
@@ -2306,7 +2288,6 @@ export class RosDBInstanceClone extends ros.RosResource {
             connectionStringType: this.connectionStringType,
             dbInstanceClass: this.dbInstanceClass,
             dbInstanceDescription: this.dbInstanceDescription,
-            dbInstanceStorage: this.dbInstanceStorage,
             dbInstanceStorageType: this.dbInstanceStorageType,
             dbMappings: this.dbMappings,
             dbNames: this.dbNames,
@@ -2326,7 +2307,6 @@ export class RosDBInstanceClone extends ros.RosResource {
             restoreTime: this.restoreTime,
             securityGroupId: this.securityGroupId,
             securityIpList: this.securityIpList,
-            slaveZoneIds: this.slaveZoneIds,
             sqlCollectorStatus: this.sqlCollectorStatus,
             sslSetting: this.sslSetting,
             tableMeta: this.tableMeta,

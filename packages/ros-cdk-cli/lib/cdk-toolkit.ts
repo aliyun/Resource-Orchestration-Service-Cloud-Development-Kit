@@ -12,7 +12,7 @@ import Credentials, {Config} from '@alicloud/credentials';
 import {CloudAssembly, DefaultSelection, ExtendedStackSelection, StackCollection} from './api/cloud-assembly';
 import {CloudExecutable} from './api/cloud-executable';
 import {data, error, print, success, warning} from './logging';
-import {Configuration} from './settings';
+import {Configuration, PROJECT_CONFIG} from './settings';
 import {exit} from 'process';
 import {printStackDiff} from './diff';
 import {deserializeStructure} from './serialize';
@@ -28,12 +28,13 @@ const INIT_STACK = 'init';
 const SYNTH_STACK = 'synth';
 const DEPLOY_STACK = 'deploy';
 const DESTROY_STACK = 'destroy';
+const PACKAGE_JSON = __dirname + '/../package.json';
 
 const exec = promisify(_exec);
 
 const requestOptions: { [name: string]: any } = {
     headers: {
-        'User-Agent': 'ros-cdk-cli-1.0.6'
+        'User-Agent': "ROS-CLI-" + JSON.parse(fs.readFileSync(PACKAGE_JSON).toString())['version'] + "::" + readLanguageInfo()
     }
 };
 
@@ -101,9 +102,9 @@ export class CdkToolkit {
     }
 
     public async getRosClient() {
-        let modeType = await CdkToolkit.getJson(CONFIG_NAME, 'type')
-        let endpoint = await CdkToolkit.getJson(CONFIG_NAME, 'endpoint')
-        let configInfo: any = {};
+        let modeType = await CdkToolkit.getJson(CONFIG_NAME, 'type', true)
+        let endpoint = await CdkToolkit.getJson(CONFIG_NAME, 'endpoint',true)
+        let configInfo: any;
         let client;
         switch (modeType) {
             case 'ecs_ram_role':
@@ -137,27 +138,42 @@ export class CdkToolkit {
                 });
                 break;
         }
-        let newAccessKeyId;
-        let newAccessKeySecret;
-        let newSecurityToken;
-        const cred = new Credentials(configInfo);
-        try {
-            newAccessKeyId = await cred.getAccessKeyId();
-            newAccessKeySecret = await cred.getAccessKeySecret();
-            newSecurityToken = await cred.getSecurityToken();
-        } catch (e) {
-            error(
-                'WANRNING: Please check the accuracy of the credential information you import from CLI config!' + e.message,
-            );
+        endpoint = endpoint ? endpoint : 'https://ros.aliyuncs.com';
+        let newAccessKeyId: string;
+        let newAccessKeySecret: string;
+        let newSecurityToken: string;
+        // @ts-ignore
+        newAccessKeyId = newAccessKeyId ? newAccessKeyId: process.env.ACCESS_KEY_ID
+        // @ts-ignore
+        newAccessKeySecret = newAccessKeySecret ? newAccessKeySecret: process.env.ACCESS_KEY_SECRET
+        // @ts-ignore
+        newSecurityToken = newSecurityToken ? newSecurityToken: process.env.SECURITY_TOKEN
+        if (configInfo) {
+            try {
+                const cred = new Credentials(configInfo);
+                newAccessKeyId = await cred.getAccessKeyId();
+                newAccessKeySecret = await cred.getAccessKeySecret();
+                newSecurityToken = await cred.getSecurityToken();
+            } catch (e) {
+                error(
+                    'WANRNING: Please check the accuracy of the credential information you import from CLI config!' + e.message,
+                );
+                exit();
+            }
+        }
+
+        if (!newAccessKeyId || !newAccessKeySecret) {
+            error("Please use 'ros-cdk config (-g)' or set environment to set your account configuration firstly!");
             exit();
         }
-        if (!newSecurityToken) {
+        else if (!newSecurityToken) {
             client = new rosClient({
                 endpoint: endpoint,
                 accessKeyId: newAccessKeyId,
                 accessKeySecret: newAccessKeySecret
             });
-        } else {
+        }
+        else {
             client = new rosClient({
                 endpoint: endpoint,
                 accessKeyId: newAccessKeyId,
@@ -399,7 +415,8 @@ export class CdkToolkit {
         await this.syncStackInfo();
         const stacks = await this.selectStacksForDeploy(options.stackNames, options.exclusively);
         const stackName = options.stackNames.length !== 0 ? options.stackNames[0] : stacks.stackArtifacts[0].id;
-        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId');
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        region = region ? region: process.env.REGION_ID;
         const client = await this.getRosClient();
         let templateBody = fs.readFileSync(`./cdk.out/${stackName}.template.json`);
         let content: { [name: string]: any } = {
@@ -465,7 +482,8 @@ export class CdkToolkit {
     public async diff(options: DiffOptions) {
         let stacks = await this.selectStacksForDestroy(options.stackNames);
         const client = await this.getRosClient();
-        let regionInLocal = await CdkToolkit.getJson(CONFIG_NAME, 'regionId');
+        let regionInLocal = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        regionInLocal = regionInLocal ? regionInLocal: process.env.REGION_ID;
         let temp = options.region ? options.region : regionInLocal;
         const stream = options.stream || process.stderr;
         const contextLines = options.contextLines || 3;
@@ -507,10 +525,12 @@ export class CdkToolkit {
         if (options.logicalResourceId) {
             LogicalResourceIds.push(options.logicalResourceId)
         }
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        region = region ? region: process.env.REGION_ID;
         client
             .listStackEvents({
                 StackId: (await this.findStackInfo(options.stackName[0])).stackId,
-                RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+                RegionId: region,
                 LogicalResourceId: LogicalResourceIds,
                 PageSize: options.pageSize ? Number(options.pageSize) : 10,
                 PageNumber: options.pageNumber ? Number(options.pageNumber) : 1
@@ -537,12 +557,14 @@ export class CdkToolkit {
                 stackNames.push(stack.id);
             }
         }
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        region = region ? region: process.env.REGION_ID;
         const client = await this.getRosClient();
         for (let stackName of stackNames) {
             client
                 .listStackResources({
                     StackId: (await this.findStackInfo(stackName)).stackId,
-                    RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+                    RegionId: region,
                 }, requestOptions)
                 .then((res: any) => {
                     success(`\n ✅ The Stack %s \n Resource is: \n %s \n`, colors.blue(stackName), colors.blue(JSON.stringify(res.Resources, null, "\t")));
@@ -562,8 +584,10 @@ export class CdkToolkit {
         const client = await this.getRosClient();
         let stacks = await this.selectStacksForList([]);
         let params: any = {};
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        region = region ? region: process.env.REGION_ID;
         params = {
-            RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+            RegionId: region,
             PageSize: options.pageSize ? Number(options.pageSize) : 10,
             PageNumber: options.pageNumber ? Number(options.pageNumber) : 1
         };
@@ -606,12 +630,14 @@ export class CdkToolkit {
                 }
             }
         }
+        let region = await CdkToolkit.getJson(CONFIG_NAME, 'regionId',true);
+        region = region ? region: process.env.REGION_ID;
         const client = await this.getRosClient();
         for (let stackName of stackNames) {
             client
                 .deleteStack({
                     StackId: (await this.findStackInfo(stackName)).stackId,
-                    RegionId: options.region ? options.region : await CdkToolkit.getJson(CONFIG_NAME, 'regionId'),
+                    RegionId: region,
                 }, requestOptions)
                 .then((res: any) => {
                     this.updateStackInfo(stackName, DESTROY_STACK);
@@ -850,4 +876,27 @@ export interface LoadConfigOptions {
 export interface Tag {
     readonly Key: string;
     readonly Value: string;
+}
+
+
+export function writeAndUpdateLanguageInfo(language: string){
+    let filePath = path.join(LOCAL_PATH + PROJECT_CONFIG);
+    let fileContent: any;
+    if (fs.existsSync(filePath)) {
+        fileContent = fs.readFileSync(filePath).toString();
+        let info = JSON.parse(fileContent);
+        info['languageInfo'] = language;
+        fs.writeFileSync(filePath, JSON.stringify(info, null, '\t'));
+    }
+}
+
+export function readLanguageInfo(){
+    let filePath = path.join(LOCAL_PATH + PROJECT_CONFIG);
+    if (fs.existsSync(filePath)) {
+        let fileContent = fs.readFileSync(filePath).toString();
+        return JSON.parse(fileContent)['languageInfo'].toString();
+    }
+    else{
+        return ''
+    }
 }

@@ -17,11 +17,6 @@ export interface InstanceProps {
      * Property remark: The remark of instance.
      */
     readonly remark?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -55,11 +50,6 @@ export class Instance extends ros.Resource {
     public readonly attrInstanceId: any;
 
     /**
-     * Attribute InstanceName: Instance name
-     */
-    public readonly attrInstanceName: any;
-
-    /**
      * Attribute InstanceType: Instance Type
      */
     public readonly attrInstanceType: any;
@@ -81,7 +71,6 @@ export class Instance extends ros.Resource {
 
         const rosInstance = new RosInstance(this, id,  {
             instanceName: props.instanceName,
-            tags: ros.tagFactory(props.tags),
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
@@ -89,7 +78,6 @@ export class Instance extends ros.Resource {
         this.attrHttpInternetEndpoint = rosInstance.attrHttpInternetEndpoint;
         this.attrHttpInternetSecureEndpoint = rosInstance.attrHttpInternetSecureEndpoint;
         this.attrInstanceId = rosInstance.attrInstanceId;
-        this.attrInstanceName = rosInstance.attrInstanceName;
         this.attrInstanceType = rosInstance.attrInstanceType;
         this.attrTcpEndpoint = rosInstance.attrTcpEndpoint;
     }

@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Waf",
-        "packageId": "Aliyun.Ros.CDK.Waf"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Waf",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Waf"
       }
     }
   },

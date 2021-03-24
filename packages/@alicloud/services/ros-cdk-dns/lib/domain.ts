@@ -17,11 +17,6 @@ export interface DomainProps {
      * Property groupId: Domain name grouping, the default is the "default grouping" GroupId
      */
     readonly groupId?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -76,7 +71,6 @@ export class Domain extends ros.Resource {
 
         const rosDomain = new RosDomain(this, id,  {
             domainName: props.domainName,
-            tags: ros.tagFactory(props.tags),
             groupId: props.groupId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;

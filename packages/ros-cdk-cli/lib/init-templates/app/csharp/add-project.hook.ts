@@ -3,7 +3,7 @@ import * as path from 'path';
 import {InvokeHook} from '../../../init';
 
 export const invoke: InvokeHook = async (targetDirectory: string) => {
-    const slnPath = path.join(targetDirectory, 'src', '%name.PascalCased%.sln');
+    const slnPath = path.join(targetDirectory, 'global.sln');
     const csprojPath = path.join(targetDirectory, 'src', '%name.PascalCased%', '%name.PascalCased%.csproj');
 
     const child = child_process.spawn('dotnet', ['sln', slnPath, 'add', csprojPath], {
@@ -26,7 +26,7 @@ export const invoke: InvokeHook = async (targetDirectory: string) => {
             if (code === 0) {
                 resolve(Buffer.concat(stdout).toString('utf-8'));
             } else {
-                reject(new Error(`Could not add project %name.PascalCased%.csproj to solution %name.PascalCased%.sln. Error code: ${code}`));
+                reject(new Error(`Could not add project %name.PascalCased%.csproj to solution global.sln. Error code: ${code}`));
             }
         });
     });
@@ -34,7 +34,7 @@ export const invoke: InvokeHook = async (targetDirectory: string) => {
 
 
 export const invokeUnitTest: InvokeHook = async (targetDirectory: string) => {
-    const slnPath = path.join(targetDirectory, 'src', '%name.PascalCased%.sln');
+    const slnPath = path.join(targetDirectory, 'global.sln');
     const csprojTestPath = path.join(targetDirectory, 'src', '%name.PascalCased%Test', '%name.PascalCased%Test.csproj');
 
     const childUnitTest = child_process.spawn('dotnet', ['sln', slnPath, 'add', csprojTestPath], {
@@ -57,7 +57,7 @@ export const invokeUnitTest: InvokeHook = async (targetDirectory: string) => {
             if (code === 0) {
                 resolve(Buffer.concat(stdout).toString('utf-8'));
             } else {
-                reject(new Error(`Could not add project %name.PascalCased%.csproj to solution %name.PascalCased%.sln. Error code: ${code}`));
+                reject(new Error(`Could not add project %name.PascalCased%.csproj to solution global.sln. Error code: ${code}`));
             }
         });
     });

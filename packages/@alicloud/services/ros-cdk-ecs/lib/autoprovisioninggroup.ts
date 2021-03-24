@@ -9,6 +9,15 @@ export { RosAutoProvisioningGroup as AutoProvisioningGroupProperty };
 export interface AutoProvisioningGroupProps {
 
     /**
+     * Property launchTemplateId: The ID of the instance launch template associated with the auto provisioning group.
+     * You can call the DescribeLaunchTemplates operation to query available instance launch templates.
+     * An auto provisioning group can be associated with only one instance launch template.
+     * But you can configure multiple extended configurations for the launch template through
+     * the LaunchTemplateConfig parameter.
+     */
+    readonly launchTemplateId: string;
+
+    /**
      * Property totalTargetCapacity: The total target capacity of the auto provisioning group. The target capacity consists
      * of the following three parts:
      * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
@@ -63,23 +72,9 @@ export interface AutoProvisioningGroupProps {
     readonly excessCapacityTerminationPolicy?: string;
 
     /**
-     * Property launchConfiguration:
-     */
-    readonly launchConfiguration?: RosAutoProvisioningGroup.LaunchConfigurationProperty | ros.IResolvable;
-
-    /**
      * Property launchTemplateConfig:
      */
     readonly launchTemplateConfig?: Array<RosAutoProvisioningGroup.LaunchTemplateConfigProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property launchTemplateId: The ID of the instance launch template associated with the auto provisioning group.
-     * You can call the DescribeLaunchTemplates operation to query available instance launch templates.
-     * An auto provisioning group can be associated with only one instance launch template.
-     * But you can configure multiple extended configurations for the launch template through
-     * the LaunchTemplateConfig parameter.
-     */
-    readonly launchTemplateId?: string;
 
     /**
      * Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
@@ -186,11 +181,6 @@ export class AutoProvisioningGroup extends ros.Resource {
     public readonly attrAutoProvisioningGroupId: any;
 
     /**
-     * Attribute AutoProvisioningGroupName: The name of the auto provisioning group.
-     */
-    public readonly attrAutoProvisioningGroupName: any;
-
-    /**
      * Create a new `ALIYUN::ECS::AutoProvisioningGroup`.
      *
      * Param scope - scope in which this resource is defined
@@ -213,7 +203,6 @@ export class AutoProvisioningGroup extends ros.Resource {
             validUntil: props.validUntil,
             terminateInstancesWithExpiration: props.terminateInstancesWithExpiration,
             defaultTargetCapacityType: props.defaultTargetCapacityType,
-            launchConfiguration: props.launchConfiguration,
             spotInstancePoolsToUseCount: props.spotInstancePoolsToUseCount,
             spotTargetCapacity: props.spotTargetCapacity,
             launchTemplateVersion: props.launchTemplateVersion,
@@ -225,6 +214,5 @@ export class AutoProvisioningGroup extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoProvisioningGroup;
         this.attrAutoProvisioningGroupId = rosAutoProvisioningGroup.attrAutoProvisioningGroupId;
-        this.attrAutoProvisioningGroupName = rosAutoProvisioningGroup.attrAutoProvisioningGroupName;
     }
 }

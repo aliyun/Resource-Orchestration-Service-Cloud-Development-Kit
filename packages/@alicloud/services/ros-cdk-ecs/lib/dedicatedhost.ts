@@ -84,7 +84,7 @@ export interface DedicatedHostProps {
     readonly resourceGroupId?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to DedicatedHost. Max support 20 tags to add during create DedicatedHost. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
 

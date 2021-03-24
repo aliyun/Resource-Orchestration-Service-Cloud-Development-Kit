@@ -13,27 +13,20 @@ export interface RosAutoEnableServiceProps {
      * ARMS: Realtime Monitoring Service
      * ApiGateway: API Gateway
      * BatchCompute: Batch Compute
-     * BrainIndustrial: Brain Industrial
      * CMS: Cloud Monitor Service
-     * CS: Container Service
      * DataHub: Data Hub
-     * DCDN: Dynamic Route for CDN
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
-     * FNF: Serverless Workflow
      * NAS: Network Attached Storage
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
-     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
      * OTS: Table Store
      * PrivateLink: Private Link
-     * PrivateZone: Private Zone
      * RocketMQ: RocketMQ
      * SLS: Log Service
-     * Xtrace: Tracing Anlaysis
      *
      */
     readonly serviceName: string;
@@ -53,7 +46,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["EMAS","Xtrace","FNF","FC","KMS","CMS","HBR","ApiGateway","NLP","OSS","IOT","ARMS","BatchCompute","BrainIndustrial","PrivateLink","IMM","SLS","CS","DataHub","RocketMQ","NAS","PrivateZone","DCDN","AHAS","OTS"],
+          allowedValues: ["ApiGateway","NLP","EMAS","OSS","BatchCompute","IMM","ARMS","SLS","NAS","FC","KMS","RocketMQ","AHAS","DataHub","OTS","CMS","PrivateLink","HBR"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -101,27 +94,20 @@ export class RosAutoEnableService extends ros.RosResource {
      * ARMS: Realtime Monitoring Service
      * ApiGateway: API Gateway
      * BatchCompute: Batch Compute
-     * BrainIndustrial: Brain Industrial
      * CMS: Cloud Monitor Service
-     * CS: Container Service
      * DataHub: Data Hub
-     * DCDN: Dynamic Route for CDN
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
-     * FNF: Serverless Workflow
      * NAS: Network Attached Storage
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
-     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
      * OTS: Table Store
      * PrivateLink: Private Link
-     * PrivateZone: Private Zone
      * RocketMQ: RocketMQ
      * SLS: Log Service
-     * Xtrace: Tracing Anlaysis
      *
      */
     public serviceName: string;

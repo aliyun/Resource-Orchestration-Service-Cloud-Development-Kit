@@ -39,11 +39,6 @@ export interface DomainProps {
     readonly sources?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property topLevelDomain: The top-level domain, which can only be configured by users on the whitelist.
      */
     readonly topLevelDomain?: string;
@@ -87,7 +82,6 @@ export class Domain extends ros.Resource {
             cdnType: props.cdnType,
             topLevelDomain: props.topLevelDomain,
             sources: props.sources,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;
         this.attrCname = rosDomain.attrCname;

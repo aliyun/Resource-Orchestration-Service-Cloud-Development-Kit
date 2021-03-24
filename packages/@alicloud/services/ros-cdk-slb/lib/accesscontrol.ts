@@ -22,11 +22,6 @@ export interface AccessControlProps {
      * Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
      */
     readonly addressIpVersion?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -58,7 +53,6 @@ export class AccessControl extends ros.Resource {
             aclEntrys: props.aclEntrys,
             addressIpVersion: props.addressIpVersion,
             aclName: props.aclName,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessControl;
         this.attrAclId = rosAccessControl.attrAclId;

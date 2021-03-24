@@ -69,11 +69,6 @@ export interface FileSystemProps {
     readonly snapshotId?: string;
 
     /**
-     * Property tags: Tags to attach to filesystem. Max support 20 tags to add during create filesystem. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vpcId: Vpc ID.
      */
     readonly vpcId?: string;
@@ -129,7 +124,6 @@ export class FileSystem extends ros.Resource {
             chargeType: props.chargeType,
             fileSystemType: props.fileSystemType,
             bandwidth: props.bandwidth,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosFileSystem;
         this.attrFileSystemId = rosFileSystem.attrFileSystemId;

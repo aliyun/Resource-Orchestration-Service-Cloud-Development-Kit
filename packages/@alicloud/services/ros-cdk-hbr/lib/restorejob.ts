@@ -39,7 +39,7 @@ export interface RestoreJobProps {
     readonly targetClientId: string;
 
     /**
-     * Property targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
+     * Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
      */
     readonly targetInstanceId: string;
 

@@ -19,11 +19,6 @@ export interface CenInstanceProps {
      * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
      */
     readonly name?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -53,7 +48,6 @@ export class CenInstance extends ros.Resource {
 
         const rosCenInstance = new RosCenInstance(this, id,  {
             description: props.description,
-            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCenInstance;

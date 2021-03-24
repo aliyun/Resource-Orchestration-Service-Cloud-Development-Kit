@@ -150,13 +150,6 @@ export interface DBClusterProps {
     readonly resourceGroupId?: string;
 
     /**
-     * Property securityGroupIds: The ID of the security group. 
-     * You can add up to three security groups to a cluster.
-     *
-     */
-    readonly securityGroupIds?: string[];
-
-    /**
      * Property securityIpList: The whitelist of the Apsara PolarDB cluster.
      */
     readonly securityIpList?: string;
@@ -168,11 +161,6 @@ export interface DBClusterProps {
      * This parameter is required if the CreationOption parameter is not set to Normal.
      */
     readonly sourceResourceId?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 
     /**
      * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
@@ -264,32 +252,30 @@ export class DBCluster extends ros.Resource {
         super(scope, id);
 
         const rosDBCluster = new RosDBCluster(this, id,  {
+            autoRenewPeriod: props.autoRenewPeriod ? props.autoRenewPeriod : 1,
             defaultTimeZone: props.defaultTimeZone,
+            tdeStatus: props.tdeStatus,
             cloneDataPoint: props.cloneDataPoint ? props.cloneDataPoint : 'LATEST',
             gdnId: props.gdnId,
             resourceGroupId: props.resourceGroupId,
-            backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
-            sourceResourceId: props.sourceResourceId,
-            dbType: props.dbType,
-            dbVersion: props.dbVersion,
-            clusterNetworkType: props.clusterNetworkType ? props.clusterNetworkType : 'VPC',
-            securityIpList: props.securityIpList,
-            maintainTime: props.maintainTime,
-            tags: ros.tagFactory(props.tags),
-            lowerCaseTableNames: props.lowerCaseTableNames,
-            autoRenewPeriod: props.autoRenewPeriod ? props.autoRenewPeriod : 1,
-            tdeStatus: props.tdeStatus,
             zoneId: props.zoneId,
             vSwitchId: props.vSwitchId,
+            backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
             renewalStatus: props.renewalStatus ? props.renewalStatus : 'Normal',
             dbClusterDescription: props.dbClusterDescription,
             period: props.period,
+            sourceResourceId: props.sourceResourceId,
+            dbType: props.dbType,
             payType: props.payType,
             creationCategory: props.creationCategory,
-            securityGroupIds: props.securityGroupIds,
             dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption ? props.creationOption : 'Normal',
+            dbVersion: props.dbVersion,
+            clusterNetworkType: props.clusterNetworkType ? props.clusterNetworkType : 'VPC',
             vpcId: props.vpcId,
+            securityIpList: props.securityIpList,
+            maintainTime: props.maintainTime,
+            lowerCaseTableNames: props.lowerCaseTableNames,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBCluster;
         this.attrClusterConnectionString = rosDBCluster.attrClusterConnectionString;

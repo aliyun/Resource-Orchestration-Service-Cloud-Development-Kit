@@ -47,11 +47,6 @@ export interface NetworkInterfaceProps {
      * Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
      */
     readonly securityGroupIds?: string[];
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -103,7 +98,6 @@ export class NetworkInterface extends ros.Resource {
             networkInterfaceName: props.networkInterfaceName,
             primaryIpAddress: props.primaryIpAddress,
             securityGroupIds: props.securityGroupIds,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNetworkInterface;
         this.attrMacAddress = rosNetworkInterface.attrMacAddress;

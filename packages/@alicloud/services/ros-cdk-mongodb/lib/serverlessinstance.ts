@@ -69,11 +69,6 @@ export interface ServerlessInstanceProps {
     readonly storageEngine?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string;
@@ -131,10 +126,10 @@ export class ServerlessInstance extends ros.Resource {
 
         const rosServerlessInstance = new RosServerlessInstance(this, id,  {
             engineVersion: props.engineVersion ? props.engineVersion : '4.2',
-            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
-            vSwitchId: props.vSwitchId,
+            zoneId: props.zoneId,
             autoRenew: props.autoRenew,
+            vSwitchId: props.vSwitchId,
             period: props.period ? props.period : 1,
             securityIpArray: props.securityIpArray,
             storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
@@ -145,7 +140,6 @@ export class ServerlessInstance extends ros.Resource {
             dbInstanceStorage: props.dbInstanceStorage,
             periodPriceType: props.periodPriceType,
             dbInstanceDescription: props.dbInstanceDescription,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerlessInstance;
         this.attrConnectionUri = rosServerlessInstance.attrConnectionUri;

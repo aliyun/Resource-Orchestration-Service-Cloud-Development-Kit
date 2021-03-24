@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Fnf",
-        "packageId": "Aliyun.Ros.CDK.Fnf"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Fnf",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Fnf"
       }
     }
   },

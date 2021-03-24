@@ -24,11 +24,6 @@ export interface GroupProps {
     readonly instanceId?: string;
 
     /**
-     * Property internetEnable: Enable or disable internet subdomain. True for enable.
-     */
-    readonly internetEnable?: boolean | ros.IResolvable;
-
-    /**
      * Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
@@ -38,11 +33,6 @@ export interface GroupProps {
      * Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
-
-    /**
-     * Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
-     */
-    readonly vpcIntranetEnable?: boolean | ros.IResolvable;
 }
 
 /**
@@ -82,10 +72,8 @@ export class Group extends ros.Resource {
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,
-            internetEnable: props.internetEnable,
             description: props.description,
             instanceId: props.instanceId,
-            vpcIntranetEnable: props.vpcIntranetEnable,
             tags: ros.tagFactory(props.tags),
             passthroughHeaders: props.passthroughHeaders,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

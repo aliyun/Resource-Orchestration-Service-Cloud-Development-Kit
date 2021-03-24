@@ -41,11 +41,6 @@ export interface ExecutionProps {
     readonly safetyCheck?: string;
 
     /**
-     * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property templateVersion: Version number of template. Default to the latest version.
      */
     readonly templateVersion?: string;
@@ -126,7 +121,6 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             mode: props.mode ? props.mode : 'Automatic',
             templateName: props.templateName,
             templateVersion: props.templateVersion,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosExecution;
         this.attrCounters = rosExecution.attrCounters;

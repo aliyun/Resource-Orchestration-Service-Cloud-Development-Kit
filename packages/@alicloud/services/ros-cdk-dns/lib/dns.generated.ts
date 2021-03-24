@@ -16,11 +16,6 @@ export interface RosDomainProps {
      * @Property groupId: Domain name grouping, the default is the "default grouping" GroupId
      */
     readonly groupId?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -35,14 +30,6 @@ function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosDomainProps"');
 }
@@ -63,7 +50,6 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
     return {
       DomainName: ros.stringToRosTemplate(properties.domainName),
       GroupId: ros.stringToRosTemplate(properties.groupId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -125,11 +111,6 @@ export class RosDomain extends ros.RosResource {
     public groupId: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * Create a new `ALIYUN::DNS::Domain`.
      *
      * @param scope - scope in which this resource is defined
@@ -148,7 +129,6 @@ export class RosDomain extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
         this.groupId = props.groupId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::DNS::Domain", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -156,7 +136,6 @@ export class RosDomain extends ros.RosResource {
         return {
             domainName: this.domainName,
             groupId: this.groupId,
-            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

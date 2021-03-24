@@ -26,7 +26,7 @@ export interface ServerlessKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
-     * Property kubernetesVersion: The version of the Kubernetes cluster.
+     * Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
      */
     readonly kubernetesVersion?: string;
 
@@ -114,7 +114,7 @@ export class ServerlessKubernetesCluster extends ros.Resource {
         super(scope, id);
 
         const rosServerlessKubernetesCluster = new RosServerlessKubernetesCluster(this, id,  {
-            kubernetesVersion: props.kubernetesVersion,
+            kubernetesVersion: props.kubernetesVersion ? props.kubernetesVersion : '1.14.8-aliyun.1',
             endpointPublicAccess: props.endpointPublicAccess,
             zoneId: props.zoneId,
             vSwitchIds: props.vSwitchIds,

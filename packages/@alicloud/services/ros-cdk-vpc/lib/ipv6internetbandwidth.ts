@@ -34,11 +34,6 @@ export interface Ipv6InternetBandwidthProps {
      * PayByBandwidth (default): Bandwidth billing.
      */
     readonly internetChargeType?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -70,7 +65,6 @@ export class Ipv6InternetBandwidth extends ros.Resource {
             bandwidth: props.bandwidth,
             ipv6AddressId: props.ipv6AddressId,
             ipv6GatewayId: props.ipv6GatewayId,
-            tags: ros.tagFactory(props.tags),
             internetChargeType: props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpv6InternetBandwidth;

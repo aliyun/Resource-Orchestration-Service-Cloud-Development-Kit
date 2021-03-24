@@ -24,11 +24,6 @@ export interface CloudConnectNetworkProps {
      * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
      */
     readonly name?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -59,7 +54,6 @@ export class CloudConnectNetwork extends ros.Resource {
         const rosCloudConnectNetwork = new RosCloudConnectNetwork(this, id,  {
             isDefault: props.isDefault ? props.isDefault : false,
             description: props.description,
-            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCloudConnectNetwork;

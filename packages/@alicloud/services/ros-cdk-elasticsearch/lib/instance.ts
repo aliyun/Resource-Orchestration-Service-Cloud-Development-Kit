@@ -34,11 +34,6 @@ export interface InstanceProps {
     readonly description?: string;
 
     /**
-     * Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
-     */
-    readonly enablePublic?: boolean | ros.IResolvable;
-
-    /**
      * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     readonly instanceChargeType?: string;
@@ -64,19 +59,9 @@ export interface InstanceProps {
     readonly privateWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property publicWhitelist: Set the instance's IP whitelist in Internet. The AllocatePublicAddress should be true.
+     * Property publicWhitelist: Set the instance's IP whitelist in Internet.
      */
     readonly publicWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * Property resourceGroupId: The ID of the resource group.
-     */
-    readonly resourceGroupId?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -93,11 +78,6 @@ export class Instance extends ros.Resource {
      * Attribute Domain: Instance connection domain (only VPC network access supported).
      */
     public readonly attrDomain: any;
-
-    /**
-     * Attribute InstanceChargeType: Instance charge type.
-     */
-    public readonly attrInstanceChargeType: any;
 
     /**
      * Attribute InstanceId: The ID of the Elasticsearch instance.
@@ -120,24 +100,9 @@ export class Instance extends ros.Resource {
     public readonly attrPort: any;
 
     /**
-     * Attribute PublicDomain: Instance public connection domain.
-     */
-    public readonly attrPublicDomain: any;
-
-    /**
      * Attribute Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
      */
     public readonly attrStatus: any;
-
-    /**
-     * Attribute VSwitchId: The ID of VSwitch.
-     */
-    public readonly attrVSwitchId: any;
-
-    /**
-     * Attribute Version: Elasticsearch version.
-     */
-    public readonly attrVersion: any;
 
     /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
@@ -152,29 +117,22 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             masterNode: props.masterNode,
             description: props.description,
-            resourceGroupId: props.resourceGroupId,
-            publicWhitelist: props.publicWhitelist,
-            instanceChargeType: props.instanceChargeType ? props.instanceChargeType : 'PostPaid',
-            vSwitchId: props.vSwitchId,
-            period: props.period ? props.period : 1,
-            enablePublic: props.enablePublic,
             privateWhitelist: props.privateWhitelist,
+            publicWhitelist: props.publicWhitelist,
             version: props.version,
             dataNode: props.dataNode,
+            instanceChargeType: props.instanceChargeType ? props.instanceChargeType : 'PostPaid',
+            vSwitchId: props.vSwitchId,
             kibanaWhitelist: props.kibanaWhitelist,
-            tags: ros.tagFactory(props.tags),
+            period: props.period ? props.period : 1,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrDomain = rosInstance.attrDomain;
-        this.attrInstanceChargeType = rosInstance.attrInstanceChargeType;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrKibanaDomain = rosInstance.attrKibanaDomain;
         this.attrKibanaPort = rosInstance.attrKibanaPort;
         this.attrPort = rosInstance.attrPort;
-        this.attrPublicDomain = rosInstance.attrPublicDomain;
         this.attrStatus = rosInstance.attrStatus;
-        this.attrVSwitchId = rosInstance.attrVSwitchId;
-        this.attrVersion = rosInstance.attrVersion;
     }
 }

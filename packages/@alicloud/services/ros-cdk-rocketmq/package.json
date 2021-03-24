@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Rocketmq",
-        "packageId": "Aliyun.Ros.CDK.Rocketmq"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Rocketmq",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Rocketmq"
       }
     }
   },

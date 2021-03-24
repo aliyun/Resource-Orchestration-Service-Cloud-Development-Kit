@@ -64,11 +64,6 @@ export interface DrdsInstanceProps {
     readonly pricingCycle?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vpcId: Virtual private network ID, must be specified when creating a DRDS for VPC network type
      */
     readonly vpcId?: string;
@@ -133,7 +128,6 @@ export class DrdsInstance extends ros.Resource {
             mySqlVersion: props.mySqlVersion ? props.mySqlVersion : '5',
             vpcId: props.vpcId,
             isAutoRenew: props.isAutoRenew,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDrdsInstance;
         this.attrDrdsInstanceId = rosDrdsInstance.attrDrdsInstanceId;

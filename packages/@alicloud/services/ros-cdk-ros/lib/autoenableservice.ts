@@ -14,27 +14,20 @@ export interface AutoEnableServiceProps {
      * ARMS: Realtime Monitoring Service
      * ApiGateway: API Gateway
      * BatchCompute: Batch Compute
-     * BrainIndustrial: Brain Industrial
      * CMS: Cloud Monitor Service
-     * CS: Container Service
      * DataHub: Data Hub
-     * DCDN: Dynamic Route for CDN
      * EMAS: Enterprise Mobile Application Studio
      * FC: Function Compute
-     * FNF: Serverless Workflow
      * NAS: Network Attached Storage
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
-     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
      * OTS: Table Store
      * PrivateLink: Private Link
-     * PrivateZone: Private Zone
      * RocketMQ: RocketMQ
      * SLS: Log Service
-     * Xtrace: Tracing Anlaysis
      *
      */
     readonly serviceName: string;

@@ -379,11 +379,6 @@ export interface RosFileSystemProps {
     readonly snapshotId?: string;
 
     /**
-     * @Property tags: Tags to attach to filesystem. Max support 20 tags to add during create filesystem. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property vpcId: Vpc ID.
      */
     readonly vpcId?: string;
@@ -437,14 +432,6 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('fileSystemType', ros.validateString)(properties.fileSystemType));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosFileSystemProps"');
 }
 
@@ -473,7 +460,6 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
       EncryptType: ros.numberToRosTemplate(properties.encryptType),
       FileSystemType: ros.stringToRosTemplate(properties.fileSystemType),
       SnapshotId: ros.stringToRosTemplate(properties.snapshotId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -563,11 +549,6 @@ export class RosFileSystem extends ros.RosResource {
     public snapshotId: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to filesystem. Max support 20 tags to add during create filesystem. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property vpcId: Vpc ID.
      */
     public vpcId: string | undefined;
@@ -605,7 +586,6 @@ export class RosFileSystem extends ros.RosResource {
         this.encryptType = props.encryptType;
         this.fileSystemType = props.fileSystemType;
         this.snapshotId = props.snapshotId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::NAS::FileSystem", props.tags, { tagPropertyName: 'tags' });
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -625,7 +605,6 @@ export class RosFileSystem extends ros.RosResource {
             encryptType: this.encryptType,
             fileSystemType: this.fileSystemType,
             snapshotId: this.snapshotId,
-            tags: this.tags.renderTags(),
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,

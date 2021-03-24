@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Memcache",
-        "packageId": "Aliyun.Ros.CDK.Memcache"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Memcache",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Memcache"
       }
     }
   },

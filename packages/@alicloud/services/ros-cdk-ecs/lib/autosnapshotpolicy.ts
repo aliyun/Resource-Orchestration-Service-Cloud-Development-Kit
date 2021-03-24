@@ -43,11 +43,6 @@ export interface AutoSnapshotPolicyProps {
      * Property diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
     readonly diskIds?: string[];
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -76,12 +71,11 @@ export class AutoSnapshotPolicy extends ros.Resource {
         super(scope, id);
 
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
-            timePoints: props.timePoints,
             diskIds: props.diskIds,
+            timePoints: props.timePoints,
             retentionDays: props.retentionDays,
             repeatWeekdays: props.repeatWeekdays,
             autoSnapshotPolicyName: props.autoSnapshotPolicyName,
-            tags: ros.tagFactory(props.tags),
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoSnapshotPolicy;
         this.attrAutoSnapshotPolicyId = rosAutoSnapshotPolicy.attrAutoSnapshotPolicyId;

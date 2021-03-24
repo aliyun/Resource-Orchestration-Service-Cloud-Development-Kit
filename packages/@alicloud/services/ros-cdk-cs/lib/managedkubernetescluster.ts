@@ -70,7 +70,7 @@ export interface ManagedKubernetesClusterProps {
     readonly keyPair?: string;
 
     /**
-     * Property kubernetesVersion: The version of the Kubernetes cluster.
+     * Property kubernetesVersion: Kubernetes version. Default to 1.16.9-aliyun.1, 1.14.8-aliyun.1 and so on.
      */
     readonly kubernetesVersion?: string;
 
@@ -245,7 +245,7 @@ export class ManagedKubernetesCluster extends ros.Resource {
             disableRollback: props.disableRollback ? props.disableRollback : true,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
-            kubernetesVersion: props.kubernetesVersion,
+            kubernetesVersion: props.kubernetesVersion ? props.kubernetesVersion : '1.14.8-aliyun.1',
             containerCidr: props.containerCidr ? props.containerCidr : '172.16.0.0/16',
             keyPair: props.keyPair,
             workerInstanceChargeType: props.workerInstanceChargeType ? props.workerInstanceChargeType : 'PostPaid',

@@ -94,13 +94,6 @@ export interface InstanceProps {
     readonly restoreTime?: string;
 
     /**
-     * Property securityGroupId: The ID of the ECS security group.
-     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
-     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
-     */
-    readonly securityGroupId?: string;
-
-    /**
      * Property securityIpArray: Security ips to add or remove.
      */
     readonly securityIpArray?: string;
@@ -114,11 +107,6 @@ export interface InstanceProps {
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
     readonly storageEngine?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 
     /**
      * Property vpcId: The VPC id to create mongodb instance.
@@ -189,32 +177,30 @@ export class Instance extends ros.Resource {
         super(scope, id);
 
         const rosInstance = new RosInstance(this, id,  {
-            businessInfo: props.businessInfo,
-            resourceGroupId: props.resourceGroupId,
-            autoRenew: props.autoRenew,
-            securityIpArray: props.securityIpArray,
-            backupId: props.backupId,
-            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
-            restoreTime: props.restoreTime,
-            networkType: props.networkType,
-            dbInstanceStorage: props.dbInstanceStorage,
-            tags: ros.tagFactory(props.tags),
-            dbInstanceDescription: props.dbInstanceDescription,
             couponNo: props.couponNo,
+            businessInfo: props.businessInfo,
             engineVersion: props.engineVersion ? props.engineVersion : '3.4',
             readonlyReplicas: props.readonlyReplicas,
+            resourceGroupId: props.resourceGroupId,
             replicationFactor: props.replicationFactor,
             zoneId: props.zoneId,
             dbInstanceClass: props.dbInstanceClass,
-            securityGroupId: props.securityGroupId,
+            autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
             period: props.period ? props.period : 1,
+            securityIpArray: props.securityIpArray,
+            backupId: props.backupId,
             vpcPasswordFree: props.vpcPasswordFree,
+            storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
             accountPassword: props.accountPassword,
+            restoreTime: props.restoreTime,
             vpcId: props.vpcId,
             chargeType: props.chargeType ? props.chargeType : 'PostPaid',
+            networkType: props.networkType,
+            dbInstanceStorage: props.dbInstanceStorage,
             databaseNames: props.databaseNames,
             srcDbInstanceId: props.srcDbInstanceId,
+            dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrConnectionUri = rosInstance.attrConnectionUri;

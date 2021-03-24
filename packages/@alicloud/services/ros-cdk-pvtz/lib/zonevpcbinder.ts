@@ -30,16 +30,6 @@ export class ZoneVpcBinder extends ros.Resource {
      */
 
     /**
-     * Attribute Vpcs: Vpc list
-     */
-    public readonly attrVpcs: any;
-
-    /**
-     * Attribute ZoneId: Zone Id
-     */
-    public readonly attrZoneId: any;
-
-    /**
      * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
      *
      * Param scope - scope in which this resource is defined
@@ -54,7 +44,5 @@ export class ZoneVpcBinder extends ros.Resource {
             zoneId: props.zoneId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneVpcBinder;
-        this.attrVpcs = rosZoneVpcBinder.attrVpcs;
-        this.attrZoneId = rosZoneVpcBinder.attrZoneId;
     }
 }

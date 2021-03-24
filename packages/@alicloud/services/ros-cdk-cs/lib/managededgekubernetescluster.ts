@@ -19,11 +19,6 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly numOfNodes: number;
 
     /**
-     * Property addons: The add-ons to be installed for the cluster.
-     */
-    readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
-
-    /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
      * true: indicates installation
      * false: Do not install
@@ -179,22 +174,21 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
             keyPair: props.keyPair,
             vSwitchIds: props.vSwitchIds,
             timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
-            addons: props.addons,
-            workerSystemDiskCategory: props.workerSystemDiskCategory ? props.workerSystemDiskCategory : 'cloud_efficiency',
             workerSystemDiskSize: props.workerSystemDiskSize ? props.workerSystemDiskSize : 120,
+            workerSystemDiskCategory: props.workerSystemDiskCategory ? props.workerSystemDiskCategory : 'cloud_efficiency',
             profile: props.profile ? props.profile : 'Edge',
             name: props.name,
             workerDataDisk: props.workerDataDisk ? props.workerDataDisk : false,
             vpcId: props.vpcId,
             workerDataDiskSize: props.workerDataDiskSize,
-            cloudMonitorFlags: props.cloudMonitorFlags ? props.cloudMonitorFlags : false,
             numOfNodes: props.numOfNodes,
+            cloudMonitorFlags: props.cloudMonitorFlags ? props.cloudMonitorFlags : false,
             serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
             workerDataDiskCategory: props.workerDataDiskCategory,
             snatEntry: props.snatEntry ? props.snatEntry : true,
+            tags: ros.tagFactory(props.tags),
             proxyMode: props.proxyMode ? props.proxyMode : 'iptables',
             disableRollback: props.disableRollback ? props.disableRollback : true,
-            tags: ros.tagFactory(props.tags),
             loginPassword: props.loginPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;

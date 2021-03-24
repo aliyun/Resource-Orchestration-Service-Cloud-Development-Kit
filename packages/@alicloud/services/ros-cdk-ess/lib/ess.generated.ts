@@ -966,7 +966,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
-          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
@@ -1573,11 +1573,6 @@ export interface RosScalingGroupProps {
     readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
     readonly vSwitchId?: string;
@@ -1696,14 +1691,6 @@ function RosScalingGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('dbInstanceIds', ros.listValidator(ros.validateAny))(properties.dbInstanceIds));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
           data: properties.healthCheckType,
@@ -1745,7 +1732,6 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
       RemovalPolicys: ros.listMapper(ros.objectToRosTemplate)(properties.removalPolicys),
       ScalingGroupName: ros.stringToRosTemplate(properties.scalingGroupName),
       StandbyInstances: ros.listMapper(ros.objectToRosTemplate)(properties.standbyInstances),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
     };
@@ -1872,11 +1858,6 @@ export class RosScalingGroup extends ros.RosResource {
     public standbyInstances: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
     public vSwitchId: string | undefined;
@@ -1918,7 +1899,6 @@ export class RosScalingGroup extends ros.RosResource {
         this.removalPolicys = props.removalPolicys;
         this.scalingGroupName = props.scalingGroupName;
         this.standbyInstances = props.standbyInstances;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ESS::ScalingGroup", props.tags, { tagPropertyName: 'tags' });
         this.vSwitchId = props.vSwitchId;
         this.vSwitchIds = props.vSwitchIds;
     }
@@ -1943,7 +1923,6 @@ export class RosScalingGroup extends ros.RosResource {
             removalPolicys: this.removalPolicys,
             scalingGroupName: this.scalingGroupName,
             standbyInstances: this.standbyInstances,
-            tags: this.tags.renderTags(),
             vSwitchId: this.vSwitchId,
             vSwitchIds: this.vSwitchIds,
         };

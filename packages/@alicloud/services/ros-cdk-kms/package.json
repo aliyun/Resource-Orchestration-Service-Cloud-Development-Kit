@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Kms",
-        "packageId": "Aliyun.Ros.CDK.Kms"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Kms",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Kms"
       }
     }
   },

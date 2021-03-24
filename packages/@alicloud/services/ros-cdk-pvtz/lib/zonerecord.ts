@@ -19,7 +19,7 @@ export interface ZoneRecordProps {
     readonly status: string;
 
     /**
-     * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
+     * Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
      */
     readonly type: string;
 
@@ -34,7 +34,7 @@ export interface ZoneRecordProps {
     readonly zoneId: string;
 
     /**
-     * Property priority: MX record priority, value range [1,99]. Default to 10.
+     * Property priority: MX record priority, value range [1,10]. Default to 10.
      */
     readonly priority?: number;
 
@@ -55,19 +55,9 @@ export class ZoneRecord extends ros.Resource {
      */
 
     /**
-     * Attribute Record: Record data.
-     */
-    public readonly attrRecord: any;
-
-    /**
      * Attribute RecordId: Parsing record Id
      */
     public readonly attrRecordId: any;
-
-    /**
-     * Attribute ZoneId: Zone ID.
-     */
-    public readonly attrZoneId: any;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneRecord`.
@@ -89,8 +79,6 @@ export class ZoneRecord extends ros.Resource {
             ttl: props.ttl ? props.ttl : 60,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneRecord;
-        this.attrRecord = rosZoneRecord.attrRecord;
         this.attrRecordId = rosZoneRecord.attrRecordId;
-        this.attrZoneId = rosZoneRecord.attrZoneId;
     }
 }

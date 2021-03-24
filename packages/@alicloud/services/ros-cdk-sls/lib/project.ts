@@ -20,11 +20,6 @@ export interface ProjectProps {
      * Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     readonly description?: string;
-
-    /**
-     * Property tags: Tags to attach to project. Max support 20 tags to add during create project. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -54,7 +49,6 @@ export class Project extends ros.Resource {
 
         const rosProject = new RosProject(this, id,  {
             description: props.description,
-            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosProject;

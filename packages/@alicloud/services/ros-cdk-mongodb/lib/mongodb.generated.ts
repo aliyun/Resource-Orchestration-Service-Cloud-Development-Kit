@@ -93,13 +93,6 @@ export interface RosInstanceProps {
     readonly restoreTime?: string;
 
     /**
-     * @Property securityGroupId: The ID of the ECS security group.
-     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
-     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
-     */
-    readonly securityGroupId?: string;
-
-    /**
      * @Property securityIpArray: Security ips to add or remove.
      */
     readonly securityIpArray?: string;
@@ -113,11 +106,6 @@ export interface RosInstanceProps {
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
     readonly storageEngine?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
@@ -152,38 +140,8 @@ export interface RosInstanceProps {
 function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('businessInfo', ros.validateString)(properties.businessInfo));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
-    errors.collect(ros.propertyValidator('securityIpArray', ros.validateString)(properties.securityIpArray));
-    errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
-    if(properties.storageEngine && (typeof properties.storageEngine) !== 'object') {
-        errors.collect(ros.propertyValidator('storageEngine', ros.validateAllowedValues)({
-          data: properties.storageEngine,
-          allowedValues: ["WiredTiger","RocksDB","TerarkDB"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('storageEngine', ros.validateString)(properties.storageEngine));
-    errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
-    if(properties.networkType && (typeof properties.networkType) !== 'object') {
-        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
-          data: properties.networkType,
-          allowedValues: ["CLASSIC","VPC"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
-    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
-    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
+    errors.collect(ros.propertyValidator('businessInfo', ros.validateString)(properties.businessInfo));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     if(properties.readonlyReplicas && (typeof properties.readonlyReplicas) !== 'object') {
         errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateAllowedValues)({
@@ -192,6 +150,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('readonlyReplicas', ros.validateNumber)(properties.readonlyReplicas));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.replicationFactor && (typeof properties.replicationFactor) !== 'object') {
         errors.collect(ros.propertyValidator('replicationFactor', ros.validateAllowedValues)({
           data: properties.replicationFactor,
@@ -202,7 +161,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
@@ -211,18 +170,38 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('securityIpArray', ros.validateString)(properties.securityIpArray));
+    errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
+    if(properties.storageEngine && (typeof properties.storageEngine) !== 'object') {
+        errors.collect(ros.propertyValidator('storageEngine', ros.validateAllowedValues)({
+          data: properties.storageEngine,
+          allowedValues: ["WiredTiger","RocksDB","TerarkDB"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('storageEngine', ros.validateString)(properties.storageEngine));
     errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PostPaid","PrePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.networkType && (typeof properties.networkType) !== 'object') {
+        errors.collect(ros.propertyValidator('networkType', ros.validateAllowedValues)({
+          data: properties.networkType,
+          allowedValues: ["CLASSIC","VPC"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
+    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
+    errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('databaseNames', ros.validateString)(properties.databaseNames));
     errors.collect(ros.propertyValidator('srcDbInstanceId', ros.validateString)(properties.srcDbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -257,11 +236,9 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ReplicationFactor: ros.numberToRosTemplate(properties.replicationFactor),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       RestoreTime: ros.stringToRosTemplate(properties.restoreTime),
-      SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -397,13 +374,6 @@ export class RosInstance extends ros.RosResource {
     public restoreTime: string | undefined;
 
     /**
-     * @Property securityGroupId: The ID of the ECS security group.
-     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group. 
-     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
-     */
-    public securityGroupId: string | undefined;
-
-    /**
      * @Property securityIpArray: Security ips to add or remove.
      */
     public securityIpArray: string | undefined;
@@ -417,11 +387,6 @@ export class RosInstance extends ros.RosResource {
      * @Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
     public storageEngine: string | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
 
     /**
      * @Property vpcId: The VPC id to create mongodb instance.
@@ -478,11 +443,9 @@ export class RosInstance extends ros.RosResource {
         this.replicationFactor = props.replicationFactor;
         this.resourceGroupId = props.resourceGroupId;
         this.restoreTime = props.restoreTime;
-        this.securityGroupId = props.securityGroupId;
         this.securityIpArray = props.securityIpArray;
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::MONGODB::Instance", props.tags, { tagPropertyName: 'tags' });
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -509,11 +472,9 @@ export class RosInstance extends ros.RosResource {
             replicationFactor: this.replicationFactor,
             resourceGroupId: this.resourceGroupId,
             restoreTime: this.restoreTime,
-            securityGroupId: this.securityGroupId,
             securityIpArray: this.securityIpArray,
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
-            tags: this.tags.renderTags(),
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -591,11 +552,6 @@ export interface RosServerlessInstanceProps {
     readonly storageEngine?: string;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string;
@@ -622,10 +578,10 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -646,7 +602,7 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PostPaid","PrePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -667,14 +623,6 @@ function RosServerlessInstancePropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('periodPriceType', ros.validateString)(properties.periodPriceType));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosServerlessInstanceProps"');
 }
 
@@ -704,7 +652,6 @@ function rosServerlessInstancePropsToRosTemplate(properties: any, enableResource
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -809,11 +756,6 @@ export class RosServerlessInstance extends ros.RosResource {
     public storageEngine: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     public vpcId: string | undefined;
@@ -855,7 +797,6 @@ export class RosServerlessInstance extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.securityIpArray = props.securityIpArray;
         this.storageEngine = props.storageEngine;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::MONGODB::ServerlessInstance", props.tags, { tagPropertyName: 'tags' });
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -876,7 +817,6 @@ export class RosServerlessInstance extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             securityIpArray: this.securityIpArray,
             storageEngine: this.storageEngine,
-            tags: this.tags.renderTags(),
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
@@ -968,11 +908,6 @@ export interface RosShardingInstanceProps {
     readonly storageEngine?: string;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     readonly vpcId?: string;
@@ -1039,7 +974,7 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PostPaid","PrePaid"],
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
@@ -1070,14 +1005,6 @@ function RosShardingInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('replicaSet', ros.listValidator(RosShardingInstance_ReplicaSetPropertyValidator))(properties.replicaSet));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosShardingInstanceProps"');
 }
 
@@ -1110,7 +1037,6 @@ function rosShardingInstancePropsToRosTemplate(properties: any, enableResourcePr
       SecurityIPArray: ros.stringToRosTemplate(properties.securityIpArray),
       SrcDBInstanceId: ros.stringToRosTemplate(properties.srcDbInstanceId),
       StorageEngine: ros.stringToRosTemplate(properties.storageEngine),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       ZoneId: ros.stringToRosTemplate(properties.zoneId),
@@ -1225,11 +1151,6 @@ export class RosShardingInstance extends ros.RosResource {
     public storageEngine: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property vpcId: The VPC id to create mongodb instance.
      */
     public vpcId: string | undefined;
@@ -1273,7 +1194,6 @@ export class RosShardingInstance extends ros.RosResource {
         this.securityIpArray = props.securityIpArray;
         this.srcDbInstanceId = props.srcDbInstanceId;
         this.storageEngine = props.storageEngine;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::MONGODB::ShardingInstance", props.tags, { tagPropertyName: 'tags' });
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
@@ -1297,7 +1217,6 @@ export class RosShardingInstance extends ros.RosResource {
             securityIpArray: this.securityIpArray,
             srcDbInstanceId: this.srcDbInstanceId,
             storageEngine: this.storageEngine,
-            tags: this.tags.renderTags(),
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,

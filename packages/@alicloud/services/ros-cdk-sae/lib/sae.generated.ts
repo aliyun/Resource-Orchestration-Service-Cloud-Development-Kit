@@ -151,11 +151,6 @@ export interface RosApplicationProps {
     readonly slsConfigs?: string;
 
     /**
-     * @Property tags: Tags to attach to application. Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property timezone: Application time zone. Default Asia/Shanghai.
      */
     readonly timezone?: string;
@@ -234,14 +229,6 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('readiness', ros.validateString)(properties.readiness));
     errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
@@ -304,7 +291,6 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       Readiness: ros.stringToRosTemplate(properties.readiness),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SlsConfigs: ros.stringToRosTemplate(properties.slsConfigs),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       Timezone: ros.stringToRosTemplate(properties.timezone),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -484,11 +470,6 @@ export class RosApplication extends ros.RosResource {
     public slsConfigs: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to application. Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property timezone: Application time zone. Default Asia/Shanghai.
      */
     public timezone: string | undefined;
@@ -554,7 +535,6 @@ export class RosApplication extends ros.RosResource {
         this.readiness = props.readiness;
         this.securityGroupId = props.securityGroupId;
         this.slsConfigs = props.slsConfigs;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SAE::Application", props.tags, { tagPropertyName: 'tags' });
         this.timezone = props.timezone;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -593,7 +573,6 @@ export class RosApplication extends ros.RosResource {
             readiness: this.readiness,
             securityGroupId: this.securityGroupId,
             slsConfigs: this.slsConfigs,
-            tags: this.tags.renderTags(),
             timezone: this.timezone,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,

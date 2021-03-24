@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Kafka",
-        "packageId": "Aliyun.Ros.CDK.Kafka"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Kafka",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Kafka"
       }
     }
   },

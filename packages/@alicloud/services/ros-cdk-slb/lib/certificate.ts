@@ -42,11 +42,6 @@ export interface CertificateProps {
      * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
-
-    /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
 }
 
 /**
@@ -85,7 +80,6 @@ export class Certificate extends ros.Resource {
             privateKey: props.privateKey,
             resourceGroupId: props.resourceGroupId,
             certificateName: props.certificateName,
-            tags: ros.tagFactory(props.tags),
             certificate: props.certificate,
             aliCloudCertificateId: props.aliCloudCertificateId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

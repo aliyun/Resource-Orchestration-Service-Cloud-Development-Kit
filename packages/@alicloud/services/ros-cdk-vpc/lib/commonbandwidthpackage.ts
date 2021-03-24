@@ -52,11 +52,6 @@ export interface CommonBandwidthPackageProps {
     readonly resourceGroupId?: string;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property zone: Zone Id.
      */
     readonly zone?: string;
@@ -94,7 +89,6 @@ export class CommonBandwidthPackage extends ros.Resource {
             isp: props.isp ? props.isp : 'BGP',
             bandwidth: props.bandwidth,
             ratio: props.ratio ? props.ratio : 100,
-            tags: ros.tagFactory(props.tags),
             internetChargeType: props.internetChargeType,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

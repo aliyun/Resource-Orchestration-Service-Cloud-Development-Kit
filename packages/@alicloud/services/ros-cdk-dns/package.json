@@ -27,8 +27,8 @@
         ]
       },
       "dotnet": {
-        "namespace": "Aliyun.Ros.CDK.Dns",
-        "packageId": "Aliyun.Ros.CDK.Dns"
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Dns",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Dns"
       }
     }
   },

@@ -107,11 +107,6 @@ export interface ScalingGroupProps {
     readonly standbyInstances?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
      */
     readonly vSwitchId?: string;
@@ -169,7 +164,6 @@ export class ScalingGroup extends ros.Resource {
             protectedInstances: props.protectedInstances,
             removalPolicys: props.removalPolicys,
             dbInstanceIds: props.dbInstanceIds,
-            tags: ros.tagFactory(props.tags),
             healthCheckType: props.healthCheckType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScalingGroup;

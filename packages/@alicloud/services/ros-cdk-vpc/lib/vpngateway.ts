@@ -70,11 +70,6 @@ export interface VpnGatewayProps {
     readonly sslConnections?: number;
 
     /**
-     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: { [key: string]: any }[];
-
-    /**
      * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
     readonly vSwitchId?: string;
@@ -136,7 +131,6 @@ export class VpnGateway extends ros.Resource {
             vSwitchId: props.vSwitchId,
             period: props.period,
             autoPay: props.autoPay ? props.autoPay : false,
-            tags: ros.tagFactory(props.tags),
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpnGateway;

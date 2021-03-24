@@ -555,11 +555,6 @@ export interface RosCenInstanceProps {
      * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
      */
     readonly name?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -573,14 +568,6 @@ function RosCenInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosCenInstanceProps"');
 }
@@ -601,7 +588,6 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
     return {
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -640,11 +626,6 @@ export class RosCenInstance extends ros.RosResource {
     public name: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * Create a new `ALIYUN::CEN::CenInstance`.
      *
      * @param scope - scope in which this resource is defined
@@ -658,7 +639,6 @@ export class RosCenInstance extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
         this.name = props.name;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CEN::CenInstance", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -666,7 +646,6 @@ export class RosCenInstance extends ros.RosResource {
         return {
             description: this.description,
             name: this.name,
-            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

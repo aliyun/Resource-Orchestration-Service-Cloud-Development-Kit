@@ -42,11 +42,6 @@ export class Zone extends ros.Resource {
     public readonly attrZoneId: any;
 
     /**
-     * Attribute ZoneName: Zone name
-     */
-    public readonly attrZoneName: any;
-
-    /**
      * Create a new `ALIYUN::PVTZ::Zone`.
      *
      * Param scope - scope in which this resource is defined
@@ -63,6 +58,5 @@ export class Zone extends ros.Resource {
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;
         this.attrZoneId = rosZone.attrZoneId;
-        this.attrZoneName = rosZone.attrZoneName;
     }
 }

@@ -38,11 +38,6 @@ export interface RosDomainProps {
     readonly sources?: string;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
-
-    /**
      * @Property topLevelDomain: The top-level domain, which can only be configured by users on the whitelist.
      */
     readonly topLevelDomain?: string;
@@ -73,14 +68,6 @@ function RosDomainPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('cdnType', ros.validateString)(properties.cdnType));
     errors.collect(ros.propertyValidator('topLevelDomain', ros.validateString)(properties.topLevelDomain));
     errors.collect(ros.propertyValidator('sources', ros.validateString)(properties.sources));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosDomainProps"');
 }
 
@@ -104,7 +91,6 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       Scope: ros.stringToRosTemplate(properties.scope),
       Sources: ros.stringToRosTemplate(properties.sources),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
       TopLevelDomain: ros.stringToRosTemplate(properties.topLevelDomain),
     };
 }
@@ -167,11 +153,6 @@ export class RosDomain extends ros.RosResource {
     public sources: string | undefined;
 
     /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
-
-    /**
      * @Property topLevelDomain: The top-level domain, which can only be configured by users on the whitelist.
      */
     public topLevelDomain: string | undefined;
@@ -195,7 +176,6 @@ export class RosDomain extends ros.RosResource {
         this.resourceGroupId = props.resourceGroupId;
         this.scope = props.scope;
         this.sources = props.sources;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CDN::Domain", props.tags, { tagPropertyName: 'tags' });
         this.topLevelDomain = props.topLevelDomain;
     }
 
@@ -208,7 +188,6 @@ export class RosDomain extends ros.RosResource {
             resourceGroupId: this.resourceGroupId,
             scope: this.scope,
             sources: this.sources,
-            tags: this.tags.renderTags(),
             topLevelDomain: this.topLevelDomain,
         };
     }

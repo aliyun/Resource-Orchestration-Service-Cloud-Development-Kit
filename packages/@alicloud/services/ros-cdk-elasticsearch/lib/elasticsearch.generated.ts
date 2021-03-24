@@ -33,11 +33,6 @@ export interface RosInstanceProps {
     readonly description?: string;
 
     /**
-     * @Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
-     */
-    readonly enablePublic?: boolean | ros.IResolvable;
-
-    /**
      * @Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     readonly instanceChargeType?: string;
@@ -63,19 +58,9 @@ export interface RosInstanceProps {
     readonly privateWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property publicWhitelist: Set the instance's IP whitelist in Internet. The AllocatePublicAddress should be true.
+     * @Property publicWhitelist: Set the instance's IP whitelist in Internet.
      */
     readonly publicWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property resourceGroupId: The ID of the resource group.
-     */
-    readonly resourceGroupId?: string;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    readonly tags?: ros.RosTag[];
 }
 
 /**
@@ -97,17 +82,22 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('privateWhitelist', ros.listValidator(ros.validateAny))(properties.privateWhitelist));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
+    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('dataNode', ros.requiredValidator)(properties.dataNode));
+    errors.collect(ros.propertyValidator('dataNode', RosInstance_DataNodePropertyValidator)(properties.dataNode));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
+          allowedValues: ["PrePaid","PostPaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('kibanaWhitelist', ros.listValidator(ros.validateAny))(properties.kibanaWhitelist));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -115,21 +105,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('enablePublic', ros.validateBoolean)(properties.enablePublic));
-    errors.collect(ros.propertyValidator('privateWhitelist', ros.listValidator(ros.validateAny))(properties.privateWhitelist));
-    errors.collect(ros.propertyValidator('version', ros.requiredValidator)(properties.version));
-    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
-    errors.collect(ros.propertyValidator('dataNode', ros.requiredValidator)(properties.dataNode));
-    errors.collect(ros.propertyValidator('dataNode', RosInstance_DataNodePropertyValidator)(properties.dataNode));
-    errors.collect(ros.propertyValidator('kibanaWhitelist', ros.listValidator(ros.validateAny))(properties.kibanaWhitelist));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
@@ -154,15 +129,12 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Version: ros.stringToRosTemplate(properties.version),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       Description: ros.stringToRosTemplate(properties.description),
-      EnablePublic: ros.booleanToRosTemplate(properties.enablePublic),
       InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
       KibanaWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.kibanaWhitelist),
       MasterNode: rosInstanceMasterNodePropertyToRosTemplate(properties.masterNode),
       Period: ros.numberToRosTemplate(properties.period),
       PrivateWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.privateWhitelist),
       PublicWhitelist: ros.listMapper(ros.objectToRosTemplate)(properties.publicWhitelist),
-      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
     };
 }
 
@@ -186,11 +158,6 @@ export class RosInstance extends ros.RosResource {
     public readonly attrDomain: any;
 
     /**
-     * @Attribute InstanceChargeType: Instance charge type.
-     */
-    public readonly attrInstanceChargeType: any;
-
-    /**
      * @Attribute InstanceId: The ID of the Elasticsearch instance.
      */
     public readonly attrInstanceId: any;
@@ -211,24 +178,9 @@ export class RosInstance extends ros.RosResource {
     public readonly attrPort: any;
 
     /**
-     * @Attribute PublicDomain: Instance public connection domain.
-     */
-    public readonly attrPublicDomain: any;
-
-    /**
      * @Attribute Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
      */
     public readonly attrStatus: any;
-
-    /**
-     * @Attribute VSwitchId: The ID of VSwitch.
-     */
-    public readonly attrVSwitchId: any;
-
-    /**
-     * @Attribute Version: Elasticsearch version.
-     */
-    public readonly attrVersion: any;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -259,11 +211,6 @@ export class RosInstance extends ros.RosResource {
     public description: string | undefined;
 
     /**
-     * @Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
-     */
-    public enablePublic: boolean | ros.IResolvable | undefined;
-
-    /**
      * @Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
     public instanceChargeType: string | undefined;
@@ -289,19 +236,9 @@ export class RosInstance extends ros.RosResource {
     public privateWhitelist: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property publicWhitelist: Set the instance's IP whitelist in Internet. The AllocatePublicAddress should be true.
+     * @Property publicWhitelist: Set the instance's IP whitelist in Internet.
      */
     public publicWhitelist: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
-
-    /**
-     * @Property resourceGroupId: The ID of the resource group.
-     */
-    public resourceGroupId: string | undefined;
-
-    /**
-     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-     */
-    public readonly tags: ros.TagManager;
 
     /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
@@ -313,15 +250,11 @@ export class RosInstance extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrDomain = ros.Token.asString(this.getAtt('Domain'));
-        this.attrInstanceChargeType = ros.Token.asString(this.getAtt('InstanceChargeType'));
         this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
         this.attrKibanaDomain = ros.Token.asString(this.getAtt('KibanaDomain'));
         this.attrKibanaPort = ros.Token.asString(this.getAtt('KibanaPort'));
         this.attrPort = ros.Token.asString(this.getAtt('Port'));
-        this.attrPublicDomain = ros.Token.asString(this.getAtt('PublicDomain'));
         this.attrStatus = ros.Token.asString(this.getAtt('Status'));
-        this.attrVSwitchId = ros.Token.asString(this.getAtt('VSwitchId'));
-        this.attrVersion = ros.Token.asString(this.getAtt('Version'));
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.dataNode = props.dataNode;
@@ -329,15 +262,12 @@ export class RosInstance extends ros.RosResource {
         this.version = props.version;
         this.vSwitchId = props.vSwitchId;
         this.description = props.description;
-        this.enablePublic = props.enablePublic;
         this.instanceChargeType = props.instanceChargeType;
         this.kibanaWhitelist = props.kibanaWhitelist;
         this.masterNode = props.masterNode;
         this.period = props.period;
         this.privateWhitelist = props.privateWhitelist;
         this.publicWhitelist = props.publicWhitelist;
-        this.resourceGroupId = props.resourceGroupId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ElasticSearch::Instance", props.tags, { tagPropertyName: 'tags' });
     }
 
 
@@ -348,15 +278,12 @@ export class RosInstance extends ros.RosResource {
             version: this.version,
             vSwitchId: this.vSwitchId,
             description: this.description,
-            enablePublic: this.enablePublic,
             instanceChargeType: this.instanceChargeType,
             kibanaWhitelist: this.kibanaWhitelist,
             masterNode: this.masterNode,
             period: this.period,
             privateWhitelist: this.privateWhitelist,
             publicWhitelist: this.publicWhitelist,
-            resourceGroupId: this.resourceGroupId,
-            tags: this.tags.renderTags(),
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
