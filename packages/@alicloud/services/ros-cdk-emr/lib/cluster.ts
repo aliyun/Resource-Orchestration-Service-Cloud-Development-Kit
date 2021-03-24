@@ -9,126 +9,126 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * @Property chargeType: The billing method. Valid values: PostPaid and PrePaid. PostPaid: pay-as-you-go. PrePaid:
+     * Property chargeType: The billing method. Valid values: PostPaid and PrePaid. PostPaid: pay-as-you-go. PrePaid:
      * subscription.
      */
     readonly chargeType: string;
 
     /**
-     * @Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY.
+     * Property clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY.
      */
     readonly clusterType: string;
 
     /**
-     * @Property emrVer: The version of EMR.
+     * Property emrVer: The version of EMR.
      */
     readonly emrVer: string;
 
     /**
-     * @Property hostGroup:
+     * Property hostGroup:
      */
     readonly hostGroup: Array<RosCluster.HostGroupProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property name: The name of the cluster. The name can be 1 to 64 characters in length and only contain
+     * Property name: The name of the cluster. The name can be 1 to 64 characters in length and only contain
      * Chinese characters, letters, numbers, hyphens (-), and underscores (_).
      */
     readonly name: string;
 
     /**
-     * @Property netType: The type of the network.
+     * Property netType: The type of the network.
      */
     readonly netType: string;
 
     /**
-     * @Property useLocalMetaDb: Indicates whether the local Hive metadatabase is used.
+     * Property useLocalMetaDb: Indicates whether the local Hive metadatabase is used.
      */
     readonly useLocalMetaDb: boolean | ros.IResolvable;
 
     /**
-     * @Property zoneId: The zone ID.
+     * Property zoneId: The zone ID.
      */
     readonly zoneId: string;
 
     /**
-     * @Property authorizeContent: Not required.
+     * Property authorizeContent: Not required.
      */
     readonly authorizeContent?: string;
 
     /**
-     * @Property autoRenew: Indicates whether the subscription cluster is auto-renewed.
+     * Property autoRenew: Indicates whether the subscription cluster is auto-renewed.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property bootstrapAction:
+     * Property bootstrapAction:
      */
     readonly bootstrapAction?: Array<RosCluster.BootstrapActionProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property config:
+     * Property config:
      */
     readonly config?: Array<RosCluster.ConfigProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property configurations: Not required.
+     * Property configurations: Not required.
      */
     readonly configurations?: string;
 
     /**
-     * @Property depositType: The hosting type.
+     * Property depositType: The hosting type.
      */
     readonly depositType?: string;
 
     /**
-     * @Property easEnable: Indicates whether the cluster is a high-security cluster.
+     * Property easEnable: Indicates whether the cluster is a high-security cluster.
      */
     readonly easEnable?: boolean | ros.IResolvable;
 
     /**
-     * @Property highAvailabilityEnable: Indicates whether the cluster is a high-availability cluster. A value of true indicates
+     * Property highAvailabilityEnable: Indicates whether the cluster is a high-availability cluster. A value of true indicates
      * that two master nodes are required.
      */
     readonly highAvailabilityEnable?: boolean | ros.IResolvable;
 
     /**
-     * @Property initCustomHiveMetaDb: A reserved parameter. Not required.
+     * Property initCustomHiveMetaDb: A reserved parameter. Not required.
      */
     readonly initCustomHiveMetaDb?: boolean | ros.IResolvable;
 
     /**
-     * @Property instanceGeneration: The generation of the ECS instances.
+     * Property instanceGeneration: The generation of the ECS instances.
      */
     readonly instanceGeneration?: string;
 
     /**
-     * @Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
+     * Property ioOptimized: Indicates wether I/O optimization is enabled. Default value: true.
      */
     readonly ioOptimized?: boolean | ros.IResolvable;
 
     /**
-     * @Property isOpenPublicIp: Indicates whether a public IP address is assigned. A value of true indicates that
+     * Property isOpenPublicIp: Indicates whether a public IP address is assigned. A value of true indicates that
      * a bandwidth of 8 MB is set by default.
      */
     readonly isOpenPublicIp?: boolean | ros.IResolvable;
 
     /**
-     * @Property keyPairName: The name of the key pair.
+     * Property keyPairName: The name of the key pair.
      */
     readonly keyPairName?: string;
 
     /**
-     * @Property logPath: The log path in OSS.
+     * Property logPath: The log path in OSS.
      */
     readonly logPath?: string;
 
     /**
-     * @Property machineType: The type of the machine.
+     * Property machineType: The type of the machine.
      */
     readonly machineType?: string;
 
     /**
-     * @Property masterPwd: The SSH password for the master node. The password must meet the following requirements.
+     * Property masterPwd: The SSH password for the master node. The password must meet the following requirements.
      * Length constraints: Minimum length of 8 characters. Maximum length of 30 characters.
      * It must contain three types of characters (uppercase letters, lowercase letters, numbers,
      * and special symbols).
@@ -136,12 +136,12 @@ export interface ClusterProps {
     readonly masterPwd?: string;
 
     /**
-     * @Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
+     * Property metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
      */
     readonly metaStoreConf?: string;
 
     /**
-     * @Property metaStoreType: Meta store type. Allow types:
+     * Property metaStoreType: Meta store type. Allow types:
      * local: Local cluster
      * unified: Unified meta data
      * user_rds: User's RDS
@@ -149,23 +149,23 @@ export interface ClusterProps {
     readonly metaStoreType?: string;
 
     /**
-     * @Property optionSoftWareList: The list of optional services.
+     * Property optionSoftWareList: The list of optional services.
      */
     readonly optionSoftWareList?: string[];
 
     /**
-     * @Property period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
+     * Property period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
      * 9, 12, 24, and 36. A value is required when ChargeType=PrePaid.
      */
     readonly period?: number;
 
     /**
-     * @Property relatedClusterId: The ID of the primary cluster (when the cluster that you create is a Gateway cluster).
+     * Property relatedClusterId: The ID of the primary cluster (when the cluster that you create is a Gateway cluster).
      */
     readonly relatedClusterId?: string;
 
     /**
-     * @Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
+     * Property securityGroupId: The ID of the security group. You can create a security group in the ECS console and
      * use it. Note: If you use an existing security group, the default security group policy
      * is applied to this security group: Only port 22 is open at the inbound and all ports
      * are open at the outbound. You need to specify either SecurityGroupId or SecurityGroupName.
@@ -173,7 +173,7 @@ export interface ClusterProps {
     readonly securityGroupId?: string;
 
     /**
-     * @Property securityGroupName: The name of the security group to create. If the ID of the security group is not specified,
+     * Property securityGroupName: The name of the security group to create. If the ID of the security group is not specified,
      * this name is used to create a new security group. After the cluster is created, you
      * can view the ID of the security group on the Cluster Management page. The default
      * security group policy is applied to this security group: Only port 22 is open at the
@@ -183,37 +183,37 @@ export interface ClusterProps {
     readonly securityGroupName?: string;
 
     /**
-     * @Property sshEnable: Indicates whether SSH is enabled.
+     * Property sshEnable: Indicates whether SSH is enabled.
      */
     readonly sshEnable?: boolean | ros.IResolvable;
 
     /**
-     * @Property useCustomHiveMetaDb: A reserved parameter. Not required.
+     * Property useCustomHiveMetaDb: A reserved parameter. Not required.
      */
     readonly useCustomHiveMetaDb?: boolean | ros.IResolvable;
 
     /**
-     * @Property userDefinedEmrEcsRole: The role that is assigned to EMR for calling ECS resources.
+     * Property userDefinedEmrEcsRole: The role that is assigned to EMR for calling ECS resources.
      */
     readonly userDefinedEmrEcsRole?: string;
 
     /**
-     * @Property userInfo:
+     * Property userInfo:
      */
     readonly userInfo?: Array<RosCluster.UserInfoProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property vpcId: The ID of the VPC. A value is required when NetType=vpc.
+     * Property vpcId: The ID of the VPC. A value is required when NetType=vpc.
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vSwitchId: The ID of the Vswitch. A value is required when NetType=vpc.
+     * Property vSwitchId: The ID of the Vswitch. A value is required when NetType=vpc.
      */
     readonly vSwitchId?: string;
 
     /**
-     * @Property whiteListType: Not required.
+     * Property whiteListType: Not required.
      */
     readonly whiteListType?: string;
 }
@@ -229,31 +229,31 @@ export class Cluster extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: The ID of the cluster.
+     * Attribute ClusterId: The ID of the cluster.
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute HostGroups: The host group list of the cluster.
+     * Attribute HostGroups: The host group list of the cluster.
      */
     public readonly attrHostGroups: any;
 
     /**
-     * @Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.
+     * Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.
      */
     public readonly attrMasterNodeInnerIps: any;
 
     /**
-     * @Attribute MasterNodePubIps: The public ip list of the cluster master nodes.
+     * Attribute MasterNodePubIps: The public ip list of the cluster master nodes.
      */
     public readonly attrMasterNodePubIps: any;
 
     /**
      * Create a new `ALIYUN::EMR::Cluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

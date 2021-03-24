@@ -9,34 +9,34 @@ export { RosProject as ProjectProperty };
 export interface ProjectProps {
 
     /**
-     * @Property deployType: Cluster type:
+     * Property deployType: Cluster type:
      * Exclusive cluster: cell
      * Shared cluster: public
      */
     readonly deployType: string;
 
     /**
-     * @Property managerIds: Comma delimited account Id list of managers.
+     * Property managerIds: Comma delimited account Id list of managers.
      */
     readonly managerIds: string;
 
     /**
-     * @Property name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
+     * Property name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
     readonly name: string;
 
     /**
-     * @Property clusterId: Cluster ID.
+     * Property clusterId: Cluster ID.
      */
     readonly clusterId?: string;
 
     /**
-     * @Property description: Project description.
+     * Property description: Project description.
      */
     readonly description?: string;
 
     /**
-     * @Property orderId: Order Id of Shared cluster.
+     * Property orderId: Order Id of Shared cluster.
      */
     readonly orderId?: string;
 }
@@ -52,16 +52,16 @@ export class Project extends ros.Resource {
      */
 
     /**
-     * @Attribute State: Project state.
+     * Attribute State: Project state.
      */
     public readonly attrState: any;
 
     /**
      * Create a new `ALIYUN::FOAS::Project`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

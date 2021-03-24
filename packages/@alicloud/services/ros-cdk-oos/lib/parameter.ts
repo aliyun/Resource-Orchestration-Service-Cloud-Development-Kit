@@ -9,26 +9,26 @@ export { RosParameter as ParameterProperty };
 export interface ParameterProps {
 
     /**
-     * @Property name: The name of the parameter. 
+     * Property name: The name of the parameter. 
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
      * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
      */
     readonly name: string;
 
     /**
-     * @Property type: The data type of the common parameter. 
+     * Property type: The data type of the common parameter. 
      * Valid values: String and StringList.
      */
     readonly type: string;
 
     /**
-     * @Property value: The value of the parameter. 
+     * Property value: The value of the parameter. 
      * The value must be 1 to 4096 characters in length.
      */
     readonly value: string;
 
     /**
-     * @Property constraints: The constraints of the parameter. 
+     * Property constraints: The constraints of the parameter. 
      * By default, this parameter is null. Valid values:
      * AllowedValues: The value that is allowed for the parameter. It must be an array string.
      * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
@@ -38,7 +38,7 @@ export interface ParameterProps {
     readonly constraints?: string;
 
     /**
-     * @Property description: The description of the parameter. 
+     * Property description: The description of the parameter. 
      * The description must be 1 to 200 characters in length.
      */
     readonly description?: string;
@@ -55,21 +55,21 @@ export class Parameter extends ros.Resource {
      */
 
     /**
-     * @Attribute Name: The Name of the parameter.
+     * Attribute Name: The Name of the parameter.
      */
     public readonly attrName: any;
 
     /**
-     * @Attribute Value: The Value of the parameter.
+     * Attribute Value: The Value of the parameter.
      */
     public readonly attrValue: any;
 
     /**
      * Create a new `ALIYUN::OOS::Parameter`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ParameterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

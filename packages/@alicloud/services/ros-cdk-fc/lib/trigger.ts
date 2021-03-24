@@ -9,46 +9,46 @@ export { RosTrigger as TriggerProperty };
 export interface TriggerProps {
 
     /**
-     * @Property functionName: Function name.
+     * Property functionName: Function name.
      */
     readonly functionName: string;
 
     /**
-     * @Property serviceName: Service name.
+     * Property serviceName: Service name.
      */
     readonly serviceName: string;
 
     /**
-     * @Property triggerConfig: Event source specific trigger configuration. The value is different according to trigger type.
+     * Property triggerConfig: Event source specific trigger configuration. The value is different according to trigger type.
      */
     readonly triggerConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property triggerName: Trigger name.
+     * Property triggerName: Trigger name.
      * Example : "image_resize"
      */
     readonly triggerName: string;
 
     /**
-     * @Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted.
+     * Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted.
      * Example : "oss"
      */
     readonly triggerType: string;
 
     /**
-     * @Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
+     * Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
      * Example : "acs:ram::1234567890:role/fc-test"
      */
     readonly invocationRole?: string;
 
     /**
-     * @Property qualifier: service version or alias.
+     * Property qualifier: service version or alias.
      * Example : "LATEST"
      */
     readonly qualifier?: string;
 
     /**
-     * @Property sourceArn: The Aliyun Resource Name (ARN) of event source. This is optional for some triggers.
+     * Property sourceArn: The Aliyun Resource Name (ARN) of event source. This is optional for some triggers.
      * Example : "acs:oss:cn-shanghai:12345:mybucket"
      */
     readonly sourceArn?: string;
@@ -65,31 +65,31 @@ export class Trigger extends ros.Resource {
      */
 
     /**
-     * @Attribute FunctionName: Function name.
+     * Attribute FunctionName: Function name.
      */
     public readonly attrFunctionName: any;
 
     /**
-     * @Attribute ServiceName: Service name.
+     * Attribute ServiceName: Service name.
      */
     public readonly attrServiceName: any;
 
     /**
-     * @Attribute TriggerId: The trigger ID.
+     * Attribute TriggerId: The trigger ID.
      */
     public readonly attrTriggerId: any;
 
     /**
-     * @Attribute TriggerName: Trigger name.
+     * Attribute TriggerName: Trigger name.
      */
     public readonly attrTriggerName: any;
 
     /**
      * Create a new `ALIYUN::FC::Trigger`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TriggerProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,61 +9,61 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * @Property clusterId: Cluster id
+     * Property clusterId: Cluster id
      */
     readonly clusterId: string;
 
     /**
-     * @Property imageId: Mirror id
+     * Property imageId: Mirror id
      */
     readonly imageId: string;
 
     /**
-     * @Property instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
+     * Property instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
      */
     readonly instanceType: string;
 
     /**
-     * @Property systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
+     * Property systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
      */
     readonly systemDiskCategory: string;
 
     /**
-     * @Property systemDiskSize: System disk size
+     * Property systemDiskSize: System disk size
      */
     readonly systemDiskSize: number;
 
     /**
-     * @Property workMode: Work mode:
+     * Property workMode: Work mode:
      * Desktop
      * Application
      */
     readonly workMode: string;
 
     /**
-     * @Property allocatePublicAddress: Whether to allocate a public network address
+     * Property allocatePublicAddress: Whether to allocate a public network address
      */
     readonly allocatePublicAddress?: boolean | ros.IResolvable;
 
     /**
-     * @Property appList: App list. This value is only valid when WorkMode is Application.
+     * Property appList: App list. This value is only valid when WorkMode is Application.
      */
     readonly appList?: Array<RosInstance.AppListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Whether auto renew
+     * Property autoRenew: Whether auto renew
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: Instance charge type:
+     * Property instanceChargeType: Instance charge type:
      * PostPaid (default): Pay-As-You-Go
      * PrePaid: Subscription
      */
     readonly instanceChargeType?: string;
 
     /**
-     * @Property internetChargeType: Network charge type:
+     * Property internetChargeType: Network charge type:
      * PayByTraffic (default): Flow-per-use billing
      * PayByBandwidth: fixed-bandwidth billing
      * This value is only valid when AllocatePublicAddress is true.
@@ -71,7 +71,7 @@ export interface InstanceProps {
     readonly internetChargeType?: string;
 
     /**
-     * @Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
+     * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
      * Value range: 1-200
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
@@ -79,7 +79,7 @@ export interface InstanceProps {
     readonly internetMaxBandwidthIn?: number;
 
     /**
-     * @Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
+     * Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
      * Value range: 1-200
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
@@ -87,12 +87,12 @@ export interface InstanceProps {
     readonly internetMaxBandwidthOut?: number;
 
     /**
-     * @Property name: Instance name
+     * Property name: Instance name
      */
     readonly name?: string;
 
     /**
-     * @Property period: Period of subscription.
+     * Property period: Period of subscription.
      * When PeriodUnit is Week, the value range is 1-4
      * When PeriodUnit is Month, the value range is 1-9, 12, 24, 36, 48, 60
      * This value is only valid when InstanceChargeType is PrePaid.
@@ -100,13 +100,13 @@ export interface InstanceProps {
     readonly period?: number;
 
     /**
-     * @Property periodUnit: Unit of period. Week or Month.
+     * Property periodUnit: Unit of period. Week or Month.
      * This value is only valid when InstanceChargeType is PrePaid.
      */
     readonly periodUnit?: string;
 
     /**
-     * @Property vSwitchId: VSwitch id
+     * Property vSwitchId: VSwitch id
      */
     readonly vSwitchId?: string;
 }
@@ -122,41 +122,41 @@ export class Instance extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: Cluster id
+     * Attribute ClusterId: Cluster id
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute InstanceChargeType: Instance charge type
+     * Attribute InstanceChargeType: Instance charge type
      */
     public readonly attrInstanceChargeType: any;
 
     /**
-     * @Attribute InstanceId: Instance id
+     * Attribute InstanceId: Instance id
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute MaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps)
+     * Attribute MaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps)
      */
     public readonly attrMaxBandwidthIn: any;
 
     /**
-     * @Attribute MaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps)
+     * Attribute MaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps)
      */
     public readonly attrMaxBandwidthOut: any;
 
     /**
-     * @Attribute Name: Instance name
+     * Attribute Name: Instance name
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::GWS::Instance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

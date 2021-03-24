@@ -9,13 +9,13 @@ const APP_SYMBOL = Symbol.for("ros-cdk-core.App");
  */
 export interface AppProps {
   /**
-   * Automatically call `synth()` before the program exits.
+   * Automatically call 'synth()' before the program exits.
    *
-   * If you set this, you don't have to call `synth()` explicitly. Note that
+   * If you set this, you don't have to call 'synth()' explicitly. Note that
    * this feature is only available for certain programming languages, and
-   * calling `synth()` is still recommended.
+   * calling 'synth()' is still recommended.
    *
-   * @default true if running via CDK CLI (`CDK_OUTDIR` is set), `false`
+   * Default true if running via CDK CLI ('CDK_OUTDIR' is set), 'false'
    * otherwise
    */
   readonly autoSynth?: boolean;
@@ -23,8 +23,8 @@ export interface AppProps {
   /**
    * The output directory into which to emit synthesized artifacts.
    *
-   * @default - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.
-   *            If `CDK_OUTDIR` is not defined, uses a temp directory.
+   * Default - If this value is _not_ set, considers the environment variable 'CDK_OUTDIR'.
+   *            If 'CDK_OUTDIR' is not defined, uses a temp directory.
    */
   readonly outdir?: string;
 
@@ -43,9 +43,9 @@ export interface AppProps {
   /**
    * Additional context values for the application.
    *
-   * Context set by the CLI or the `context` key in `cdk.json` has precedence.
+   * Context set by the CLI or the 'context' key in 'cdk.json' has precedence.
    *
-   * Context can be read from any construct using `node.getContext(key)`.
+   * Context can be read from any construct using 'node.getContext(key)'.
    *
    * @default - no additional context
    */
@@ -63,18 +63,18 @@ export interface AppProps {
  * A construct which represents an entire CDK app. This construct is normally
  * the root of the construct tree.
  *
- * You would normally define an `App` instance in your program's entrypoint,
+ * You would normally define an 'App' instance in your program's entrypoint,
  * then define constructs where the app is used as the parent scope.
  *
  * After all the child constructs are defined within the app, you should call
- * `app.synth()` which will emit a "ros template" from this app into the
- * directory specified by `outdir`.
+ * 'app.synth()' which will emit a "ros template" from this app into the
+ * directory specified by 'outdir'.
  */
 export class App extends Stage {
   /**
-   * Checks if an object is an instance of the `App` class.
-   * @returns `true` if `obj` is an `App`.
-   * @param obj The object to evaluate
+   * Checks if an object is an instance of the 'App' class.
+   * Returns 'true' if 'obj' is an 'App'.
+   * Param obj The object to evaluate
    */
   public static isApp(obj: any): obj is App {
     return APP_SYMBOL in obj;

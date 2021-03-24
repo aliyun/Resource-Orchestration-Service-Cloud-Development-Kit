@@ -9,31 +9,31 @@ export { RosCommonBandwidthPackage as CommonBandwidthPackageProperty };
 export interface CommonBandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
+     * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
      */
     readonly bandwidth: number;
 
     /**
-     * @Property description: The description of the Internet Shared Bandwidth instance.
+     * Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
      * and cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
+     * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
      * PayByBandwidth (default): Billed by bandwidth.
      * PayBy95: Charged at Enhanced 95.
      */
     readonly internetChargeType?: string;
 
     /**
-     * @Property isp: Line type of EIP, value: BGP (multi-line).
+     * Property isp: Line type of EIP, value: BGP (multi-line).
      */
     readonly isp?: string;
 
     /**
-     * @Property name: The name of the Internet Shared Bandwidth instance.
+     * Property name: The name of the Internet Shared Bandwidth instance.
      * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
      * start with http:// or https://.
@@ -41,18 +41,18 @@ export interface CommonBandwidthPackageProps {
     readonly name?: string;
 
     /**
-     * @Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
+     * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
      * Note This parameter is only supported on the China site.
      */
     readonly ratio?: number;
 
     /**
-     * @Property resourceGroupId: The ID of the resource group.
+     * Property resourceGroupId: The ID of the resource group.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property zone: Zone Id.
+     * Property zone: Zone Id.
      */
     readonly zone?: string;
 }
@@ -68,16 +68,16 @@ export class CommonBandwidthPackage extends ros.Resource {
      */
 
     /**
-     * @Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
+     * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
     public readonly attrBandwidthPackageId: any;
 
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CommonBandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

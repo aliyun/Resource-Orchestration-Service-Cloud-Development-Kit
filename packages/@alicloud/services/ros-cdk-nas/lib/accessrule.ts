@@ -9,27 +9,27 @@ export { RosAccessRule as AccessRuleProperty };
 export interface AccessRuleProps {
 
     /**
-     * @Property accessGroupName: Permission group name
+     * Property accessGroupName: Permission group name
      */
     readonly accessGroupName: string;
 
     /**
-     * @Property sourceCidrIp: Address or address segment
+     * Property sourceCidrIp: Address or address segment
      */
     readonly sourceCidrIp: string;
 
     /**
-     * @Property priority: Priority level. Range: 1-100. Default value: 1
+     * Property priority: Priority level. Range: 1-100. Default value: 1
      */
     readonly priority?: number;
 
     /**
-     * @Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
+     * Property rwAccessType: Read-write permission type: RDWR (default), RDONLY
      */
     readonly rwAccessType?: string;
 
     /**
-     * @Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
+     * Property userAccessType: User permission type: no_squash (default), root_squash, all_squash
      */
     readonly userAccessType?: string;
 }
@@ -45,16 +45,16 @@ export class AccessRule extends ros.Resource {
      */
 
     /**
-     * @Attribute AccessRuleId: Rule serial number
+     * Attribute AccessRuleId: Rule serial number
      */
     public readonly attrAccessRuleId: any;
 
     /**
      * Create a new `ALIYUN::NAS::AccessRule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccessRuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

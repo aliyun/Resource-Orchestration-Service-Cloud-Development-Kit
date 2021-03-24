@@ -9,14 +9,14 @@ export { RosAccount as AccountProperty };
 export interface AccountProps {
 
     /**
-     * @Property accountName: The name of the database account. The name must comply with the following rules:
+     * Property accountName: The name of the database account. The name must comply with the following rules:
      * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
      * - It can be up to 16 characters in length.
      */
     readonly accountName: string;
 
     /**
-     * @Property accountPassword: The password of the database account. The password must comply with the following rules:
+     * Property accountPassword: The password of the database account. The password must comply with the following rules:
      * - It must consist of uppercase letters, lowercase letters, digits, and special characters.
      * - Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).
      * - It must be 8 to 32 characters in length.
@@ -24,19 +24,19 @@ export interface AccountProps {
     readonly accountPassword: string;
 
     /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
      */
     readonly dbClusterId: string;
 
     /**
-     * @Property accountDescription: The description of the database account. The description must comply with the following rules:
+     * Property accountDescription: The description of the database account. The description must comply with the following rules:
      * - It cannot start with http:// or https://.
      * - It must be 2 to 256 characters in length.
      */
     readonly accountDescription?: string;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
+     * Property accountPrivilege: The permissions of the database account on the database. Valid values:
      * ReadWrite: has read and write permissions on the database.
      * ReadOnly: has the read-only permission on the database.
      * DMLOnly: runs only data manipulation language (DML) statements.
@@ -47,7 +47,7 @@ export interface AccountProps {
     readonly accountPrivilege?: string;
 
     /**
-     * @Property accountType: The type of the database account. Valid values:
+     * Property accountType: The type of the database account. Valid values:
      * - Normal: standard account
      * - Super: privileged account
      * Default value: Super.
@@ -57,7 +57,7 @@ export interface AccountProps {
     readonly accountType?: string;
 
     /**
-     * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
+     * Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
     readonly dbName?: string;
 }
@@ -75,9 +75,9 @@ export class Account extends ros.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::Account`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -4,6 +4,7 @@ import * as fs from 'fs-extra';
 
 const ROS_CDK_SCOPE = '@alicloud/';
 const ROS_JAVA_PACKAGE = 'com.aliyun.';
+const ROS_DOTNAT_PACKAGE = 'AlibabaCloud.SDK.ROS.CDK.';
 export async function createPackages() {
     
     // mkdir in the pkg root
@@ -30,6 +31,11 @@ export async function createPackages() {
         pkg['jsii']['targets']['python']['module'] = scope.split('-').join('_')
         pkg['jsii']['targets']['python']['distName'] = scope
 
+        // jsii -> dotnet
+
+        pkg['jsii']['targets']['dotnet']['namespace'] = ROS_DOTNAT_PACKAGE + service.toLowerCase().replace(/( |^)[a-z]/g, (L: string) => L.toUpperCase());
+        pkg['jsii']['targets']['dotnet']['packageId'] = ROS_DOTNAT_PACKAGE + service.toLowerCase().replace(/( |^)[a-z]/g, (L: string) => L.toUpperCase());
+
         fs.writeFileSync(pkgPath + '/package.json', JSON.stringify(pkg, null, 2), 'utf-8');
 
         
@@ -43,6 +49,6 @@ export async function createPackages() {
     }
 
 
-  
+
 }
 createPackages();

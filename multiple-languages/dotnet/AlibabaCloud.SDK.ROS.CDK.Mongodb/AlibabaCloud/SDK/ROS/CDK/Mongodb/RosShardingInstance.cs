@@ -1,0 +1,485 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
+{
+    /// <summary>A ROS template type:  `ALIYUN::MONGODB::ShardingInstance`.</summary>
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstanceProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
+    public class RosShardingInstance : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
+    {
+        /// <summary>Create a new `ALIYUN::MONGODB::ShardingInstance`.</summary>
+        /// <param name="scope">- scope in which this resource is defined.</param>
+        /// <param name="id">- scoped id of the resource.</param>
+        /// <param name="props">- resource properties.</param>
+        public RosShardingInstance(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Mongodb.IRosShardingInstanceProps props, bool enableResourcePropertyConstraint): base(new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint}))
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
+        /// <param name="reference">The Javascript-owned object reference</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected RosShardingInstance(ByRefValue reference): base(reference)
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from DeputyProps</summary>
+        /// <param name="props">The deputy props</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected RosShardingInstance(DeputyProps props): base(props)
+        {
+        }
+
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
+        {
+            return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
+        }
+
+        /// <summary>The resource type name for this resource class.</summary>
+        [JsiiProperty(name: "ROS_RESOURCE_TYPE_NAME", typeJson: "{\"primitive\":\"string\"}")]
+        public static string ROS_RESOURCE_TYPE_NAME
+        {
+            get;
+        }
+        = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance))!;
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: DBInstanceId: The instance id of created mongodb instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrDbInstanceId", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrDbInstanceId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: DBInstanceStatus: Status of mongodb instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrDbInstanceStatus", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrDbInstanceStatus
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: OrderId: Order Id of created instance.
+        /// </remarks>
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrOrderId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
+        protected override System.Collections.Generic.IDictionary<string, object> RosProperties
+        {
+            get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: configServer:
+        /// </remarks>
+        [JsiiProperty(name: "configServer", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object ConfigServer
+        {
+            get => GetInstanceProperty<object>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        public virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: mongos:
+        /// </remarks>
+        [JsiiProperty(name: "mongos", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.MongosProperty\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object Mongos
+        {
+            get => GetInstanceProperty<object>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: replicaSet:
+        /// </remarks>
+        [JsiiProperty(name: "replicaSet", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object ReplicaSet
+        {
+            get => GetInstanceProperty<object>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? AccountPassword
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoRenew
+        {
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? ChargeType
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: dbInstanceDescription: Description of created database instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? DbInstanceDescription
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: engineVersion: Database instance version.Support 3.4, 4.0, 4.2
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? EngineVersion
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? NetworkType
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        public virtual double? Period
+        {
+            get => GetInstanceProperty<double?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: protocolType: Protocol type. Valid value: mongodb or dynamodb.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "protocolType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? ProtocolType
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "restoreTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? RestoreTime
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: securityIpArray: Security ips to add or remove.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "securityIpArray", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? SecurityIpArray
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: srcDbInstanceId: Create an instance of the backup set based on an instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? SrcDbInstanceId
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "storageEngine", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? StorageEngine
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: vpcId: The VPC id to create mongodb instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? VpcId
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: vSwitchId: The vSwitch Id to create mongodb instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? VSwitchId
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? ZoneId
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+        [JsiiInterface(nativeType: typeof(IConfigServerProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty")]
+        public interface IConfigServerProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of config server.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+            string Class
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of config server. Valid value: 20. Unit: GB.
+            /// </remarks>
+            [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}")]
+            double Storage
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IConfigServerProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IConfigServerProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: class: The specification of config server.
+                /// </remarks>
+                [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+                public string Class
+                {
+                    get => GetInstanceProperty<string>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storage: The storage space of config server. Valid value: 20. Unit: GB.
+                /// </remarks>
+                [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}")]
+                public double Storage
+                {
+                    get => GetInstanceProperty<double>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty")]
+        public class ConfigServerProperty : AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IConfigServerProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of config server.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+            public string Class
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of config server. Valid value: 20. Unit: GB.
+            /// </remarks>
+            [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
+            public double Storage
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IMongosProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.MongosProperty")]
+        public interface IMongosProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of mongo.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+            string Class
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IMongosProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.MongosProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IMongosProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: class: The specification of mongo.
+                /// </remarks>
+                [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+                public string Class
+                {
+                    get => GetInstanceProperty<string>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosShardingInstance.MongosProperty")]
+        public class MongosProperty : AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IMongosProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of mongo.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+            public string Class
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(IReplicaSetProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty")]
+        public interface IReplicaSetProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of shard.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+            string Class
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of shard.
+            /// Valid values: 10 to 2000. Unit: GB.
+            /// You can only specify this value in 10 GB increments.
+            /// </remarks>
+            [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}")]
+            double Storage
+            {
+                get;
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(IReplicaSetProperty), fullyQualifiedName: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IReplicaSetProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: class: The specification of shard.
+                /// </remarks>
+                [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}")]
+                public string Class
+                {
+                    get => GetInstanceProperty<string>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: storage: The storage space of shard.
+                /// Valid values: 10 to 2000. Unit: GB.
+                /// You can only specify this value in 10 GB increments.
+                /// </remarks>
+                [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}")]
+                public double Storage
+                {
+                    get => GetInstanceProperty<double>()!;
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-mongodb.RosShardingInstance.ReplicaSetProperty")]
+        public class ReplicaSetProperty : AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.IReplicaSetProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: class: The specification of shard.
+            /// </remarks>
+            [JsiiProperty(name: "class", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+            public string Class
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: storage: The storage space of shard.
+            /// Valid values: 10 to 2000. Unit: GB.
+            /// You can only specify this value in 10 GB increments.
+            /// </remarks>
+            [JsiiProperty(name: "storage", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
+            public double Storage
+            {
+                get;
+                set;
+            }
+        }
+    }
+}

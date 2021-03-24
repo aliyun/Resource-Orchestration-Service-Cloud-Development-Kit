@@ -9,42 +9,42 @@ export { RosApi as ApiProperty };
 export interface ApiProps {
 
     /**
-     * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly apiName: string;
 
     /**
-     * @Property groupId: The id of the Group.
+     * Property groupId: The id of the Group.
      */
     readonly groupId: string;
 
     /**
-     * @Property requestConfig: The configuration of the request
+     * Property requestConfig: The configuration of the request
      */
     readonly requestConfig: RosApi.RequestConfigProperty | ros.IResolvable;
 
     /**
-     * @Property resultSample: The sample of the result.
+     * Property resultSample: The sample of the result.
      */
     readonly resultSample: string;
 
     /**
-     * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
+     * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
      */
     readonly resultType: string;
 
     /**
-     * @Property serviceConfig: The configuration of the service.
+     * Property serviceConfig: The configuration of the service.
      */
     readonly serviceConfig: RosApi.ServiceConfigProperty | ros.IResolvable;
 
     /**
-     * @Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
+     * Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
      */
     readonly visibility: string;
 
     /**
-     * @Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
+     * Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
      * DEFAULT: Default (set by group).
      * DISABLE: Not allowed
      * HEADER: Allow AppCode header authentication
@@ -53,52 +53,52 @@ export interface ApiProps {
     readonly appCodeAuthType?: string;
 
     /**
-     * @Property authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
+     * Property authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
      */
     readonly authType?: string;
 
     /**
-     * @Property constParameters: The const parameters.
+     * Property constParameters: The const parameters.
      */
     readonly constParameters?: Array<RosApi.ConstParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property description: Description of the API, less than 180 characters.
+     * Property description: Description of the API, less than 180 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property errorCodeSamples: The Error Code samples.
+     * Property errorCodeSamples: The Error Code samples.
      */
     readonly errorCodeSamples?: Array<RosApi.ErrorCodeSamplesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property failResultSample: The sample of the fail result.
+     * Property failResultSample: The sample of the fail result.
      */
     readonly failResultSample?: string;
 
     /**
-     * @Property openIdConnectConfig: The configuration of the open id.
+     * Property openIdConnectConfig: The configuration of the open id.
      */
     readonly openIdConnectConfig?: RosApi.OpenIdConnectConfigProperty | ros.IResolvable;
 
     /**
-     * @Property requestParameters: The request parameters.
+     * Property requestParameters: The request parameters.
      */
     readonly requestParameters?: Array<RosApi.RequestParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property serviceParameters: The service parameters.
+     * Property serviceParameters: The service parameters.
      */
     readonly serviceParameters?: Array<RosApi.ServiceParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters.
+     * Property serviceParametersMap: The mapping relation between (request parameters\const parameters\system parameters) and service parameters.
      */
     readonly serviceParametersMap?: Array<RosApi.ServiceParametersMapProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property systemParameters: The system parameters.
+     * Property systemParameters: The system parameters.
      */
     readonly systemParameters?: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -114,16 +114,16 @@ export class Api extends ros.Resource {
      */
 
     /**
-     * @Attribute ApiId: The id of the API.
+     * Attribute ApiId: The id of the API.
      */
     public readonly attrApiId: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ApiProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

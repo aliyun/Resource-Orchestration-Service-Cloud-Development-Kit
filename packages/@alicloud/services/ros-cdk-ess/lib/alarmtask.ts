@@ -9,67 +9,67 @@ export { RosAlarmTask as AlarmTaskProperty };
 export interface AlarmTaskProps {
 
     /**
-     * @Property alarmAction: Alarm Actions
+     * Property alarmAction: Alarm Actions
      */
     readonly alarmAction: string[];
 
     /**
-     * @Property metricName: Metric Name
+     * Property metricName: Metric Name
      */
     readonly metricName: string;
 
     /**
-     * @Property scalingGroupId: The ID of the scaling group.
+     * Property scalingGroupId: The ID of the scaling group.
      */
     readonly scalingGroupId: string;
 
     /**
-     * @Property threshold: Threshold
+     * Property threshold: Threshold
      */
     readonly threshold: number;
 
     /**
-     * @Property comparisonOperator: Comparison Operator
+     * Property comparisonOperator: Comparison Operator
      */
     readonly comparisonOperator?: string;
 
     /**
-     * @Property description: Description
+     * Property description: Description
      */
     readonly description?: string;
 
     /**
-     * @Property dimensions: Dimensions
+     * Property dimensions: Dimensions
      */
     readonly dimensions?: Array<RosAlarmTask.DimensionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property evaluationCount: Evaluation Count
+     * Property evaluationCount: Evaluation Count
      */
     readonly evaluationCount?: number;
 
     /**
-     * @Property groupId: Group Id
+     * Property groupId: Group Id
      */
     readonly groupId?: number;
 
     /**
-     * @Property metricType: Metric Type
+     * Property metricType: Metric Type
      */
     readonly metricType?: string;
 
     /**
-     * @Property name: Name
+     * Property name: Name
      */
     readonly name?: string;
 
     /**
-     * @Property period: Period
+     * Property period: Period
      */
     readonly period?: number;
 
     /**
-     * @Property statistics: Statistics
+     * Property statistics: Statistics
      */
     readonly statistics?: string;
 }
@@ -85,16 +85,16 @@ export class AlarmTask extends ros.Resource {
      */
 
     /**
-     * @Attribute AlarmTaskId: The alarm task ID
+     * Attribute AlarmTaskId: The alarm task ID
      */
     public readonly attrAlarmTaskId: any;
 
     /**
      * Create a new `ALIYUN::ESS::AlarmTask`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AlarmTaskProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

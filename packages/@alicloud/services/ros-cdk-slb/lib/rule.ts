@@ -9,18 +9,18 @@ export { RosRule as RuleProperty };
 export interface RuleProps {
 
     /**
-     * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
+     * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
     readonly listenerPort: number;
 
     /**
-     * @Property loadBalancerId: The ID of Server Load Balancer instance.
+     * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
     readonly loadBalancerId: string;
 
     /**
-     * @Property ruleList: The forwarding rules to add.
+     * Property ruleList: The forwarding rules to add.
      */
     readonly ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -36,16 +36,16 @@ export class Rule extends ros.Resource {
      */
 
     /**
-     * @Attribute Rules: A list of forwarding rules. Each element of rules contains "RuleId".
+     * Attribute Rules: A list of forwarding rules. Each element of rules contains "RuleId".
      */
     public readonly attrRules: any;
 
     /**
      * Create a new `ALIYUN::SLB::Rule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RuleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

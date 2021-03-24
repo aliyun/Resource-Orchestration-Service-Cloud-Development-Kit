@@ -9,37 +9,37 @@ export { RosTrail as TrailProperty };
 export interface TrailProps {
 
     /**
-     * @Property name: The name of the trail to be created, which must be unique for an account.
+     * Property name: The name of the trail to be created, which must be unique for an account.
      */
     readonly name: string;
 
     /**
-     * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
+     * Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
      */
     readonly ossBucketName: string;
 
     /**
-     * @Property roleName: The RAM role in ActionTrail permitted by the user.
+     * Property roleName: The RAM role in ActionTrail permitted by the user.
      */
     readonly roleName: string;
 
     /**
-     * @Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
+     * Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
      */
     readonly eventRw?: string;
 
     /**
-     * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
+     * Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
      */
     readonly ossKeyPrefix?: string;
 
     /**
-     * @Property slsProjectArn: The unique ARN of the Log Service project.
+     * Property slsProjectArn: The unique ARN of the Log Service project.
      */
     readonly slsProjectArn?: string;
 
     /**
-     * @Property slsWriteRoleArn: The unique ARN of the Log Service role.
+     * Property slsWriteRoleArn: The unique ARN of the Log Service role.
      */
     readonly slsWriteRoleArn?: string;
 }
@@ -55,16 +55,16 @@ export class Trail extends ros.Resource {
      */
 
     /**
-     * @Attribute Name: The name of the trail to be created, which must be unique for an account.
+     * Attribute Name: The name of the trail to be created, which must be unique for an account.
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::Trail`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TrailProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

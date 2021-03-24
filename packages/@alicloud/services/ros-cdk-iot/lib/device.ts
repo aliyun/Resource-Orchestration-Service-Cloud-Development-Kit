@@ -9,18 +9,18 @@ export { RosDevice as DeviceProperty };
 export interface DeviceProps {
 
     /**
-     * @Property productKey: The identifier of the product to which the device to be registered belongs.
+     * Property productKey: The identifier of the product to which the device to be registered belongs.
      */
     readonly productKey: string;
 
     /**
-     * @Property devEui: DevEUI LoRaWAN equipment.
+     * Property devEui: DevEUI LoRaWAN equipment.
      * When you create a LoRaWAN devices, this will pass.
      */
     readonly devEui?: string;
 
     /**
-     * @Property deviceName: The name of the device that you want to register. The device name must consist of
+     * Property deviceName: The name of the device that you want to register. The device name must consist of
      * 4 to 32 characters, including English letters, digits, and special characters, for
      * example, hyphens (-), underscores (_), at signs (@), periods (.) , and colons (:).
      * DeviceName is used with ProductKey to identify a specified device.
@@ -29,19 +29,19 @@ export interface DeviceProps {
     readonly deviceName?: string;
 
     /**
-     * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
+     * Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
     readonly iotInstanceId?: string;
 
     /**
-     * @Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
+     * Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
      * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
      * character counts as two characters.
      */
     readonly nickname?: string;
 
     /**
-     * @Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+     * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
      * When you create a LoRaWAN devices, this will pass.
      */
     readonly pinCode?: string;
@@ -58,57 +58,57 @@ export class Device extends ros.Resource {
      */
 
     /**
-     * @Attribute DeviceName: Device name.
+     * Attribute DeviceName: Device name.
      */
     public readonly attrDeviceName: any;
 
     /**
-     * @Attribute DeviceSecret: Device key.
+     * Attribute DeviceSecret: Device key.
      */
     public readonly attrDeviceSecret: any;
 
     /**
-     * @Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
+     * Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
 Description Keep, do not leak.
      */
     public readonly attrIotId: any;
 
     /**
-     * @Attribute IotInstanceId: IOT instance ID.
+     * Attribute IotInstanceId: IOT instance ID.
      */
     public readonly attrIotInstanceId: any;
 
     /**
-     * @Attribute IpAddress: IP address.
+     * Attribute IpAddress: IP address.
      */
     public readonly attrIpAddress: any;
 
     /**
-     * @Attribute NickName: Nick name.
+     * Attribute NickName: Nick name.
      */
     public readonly attrNickName: any;
 
     /**
-     * @Attribute NodeType: Node type.
+     * Attribute NodeType: Node type.
      */
     public readonly attrNodeType: any;
 
     /**
-     * @Attribute ProductKey: Product key.
+     * Attribute ProductKey: Product key.
      */
     public readonly attrProductKey: any;
 
     /**
-     * @Attribute ProductName: Product name.
+     * Attribute ProductName: Product name.
      */
     public readonly attrProductName: any;
 
     /**
      * Create a new `ALIYUN::IOT::Device`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DeviceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

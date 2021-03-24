@@ -9,14 +9,14 @@ export { RosAccount as AccountProperty };
 export interface AccountProps {
 
     /**
-     * @Property accountName: The name of the account. The name must start with a lowercase letter and can contain
+     * Property accountName: The name of the account. The name must start with a lowercase letter and can contain
      * lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
      * in length.
      */
     readonly accountName: string;
 
     /**
-     * @Property accountPassword: The password of the account. The password can be 8 to 32 characters in length and
+     * Property accountPassword: The password of the account. The password can be 8 to 32 characters in length and
      * must contain at least three types of the following characters: uppercase letters,
      * lowercase letters, digits, and special characters. Special characters include ! at signs (@), number signs (#), dollar signs ($), percent signs (%), carets (^),
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
@@ -25,12 +25,12 @@ export interface AccountProps {
     readonly accountPassword: string;
 
     /**
-     * @Property instanceId: The ID of the instance for which you want to create the account.
+     * Property instanceId: The ID of the instance for which you want to create the account.
      */
     readonly instanceId: string;
 
     /**
-     * @Property accountDescription: The description of the account.
+     * Property accountDescription: The description of the account.
      * The description must start with a letter, and cannot start with http:// or https://.
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
@@ -38,7 +38,7 @@ export interface AccountProps {
     readonly accountDescription?: string;
 
     /**
-     * @Property accountPrivilege: The permission of the account. Valid values:
+     * Property accountPrivilege: The permission of the account. Valid values:
      * RoleReadOnly
      * RoleReadWrite (default value)
      * RoleRepl
@@ -50,7 +50,7 @@ export interface AccountProps {
     readonly accountPrivilege?: string;
 
     /**
-     * @Property accountType: The type of the account. Set this parameter to Normal.
+     * Property accountType: The type of the account. Set this parameter to Normal.
      */
     readonly accountType?: string;
 }
@@ -66,21 +66,21 @@ export class Account extends ros.Resource {
      */
 
     /**
-     * @Attribute AccountName: The name of the account.
+     * Attribute AccountName: The name of the account.
      */
     public readonly attrAccountName: any;
 
     /**
-     * @Attribute InstanceId: The name of the instance.
+     * Attribute InstanceId: The name of the instance.
      */
     public readonly attrInstanceId: any;
 
     /**
      * Create a new `ALIYUN::REDIS::Account`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosDeployGroup as DeployGroupProperty };
 export interface DeployGroupProps {
 
     /**
-     * @Property appId: Application ID
+     * Property appId: Application ID
      */
     readonly appId: string;
 
     /**
-     * @Property groupName: Group name, maximum length of 64.
+     * Property groupName: Group name, maximum length of 64.
      */
     readonly groupName: string;
 }
@@ -30,26 +30,26 @@ export class DeployGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute AppId: Application ID
+     * Attribute AppId: Application ID
      */
     public readonly attrAppId: any;
 
     /**
-     * @Attribute GroupName: Deploy group name
+     * Attribute GroupName: Deploy group name
      */
     public readonly attrGroupName: any;
 
     /**
-     * @Attribute Id: Deploy group ID
+     * Attribute Id: Deploy group ID
      */
     public readonly attrId: any;
 
     /**
      * Create a new `ALIYUN::EDAS::DeployGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DeployGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

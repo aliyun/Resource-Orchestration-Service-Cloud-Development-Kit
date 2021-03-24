@@ -9,7 +9,7 @@ export { RosAnyCluster as AnyClusterProperty };
 export interface AnyClusterProps {
 
     /**
-     * @Property clusterConfig: Cluster config.
+     * Property clusterConfig: Cluster config.
      */
     readonly clusterConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 }
@@ -25,26 +25,26 @@ export class AnyCluster extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: Cluster instance ID.
+     * Attribute ClusterId: Cluster instance ID.
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
+     * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
     public readonly attrTaskId: any;
 
     /**
-     * @Attribute WorkerRamRoleName: Worker ram role name.
+     * Attribute WorkerRamRoleName: Worker ram role name.
      */
     public readonly attrWorkerRamRoleName: any;
 
     /**
      * Create a new `ALIYUN::CS::AnyCluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AnyClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

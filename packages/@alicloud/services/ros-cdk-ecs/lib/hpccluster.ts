@@ -9,14 +9,14 @@ export { RosHpcCluster as HpcClusterProperty };
 export interface HpcClusterProps {
 
     /**
-     * @Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
+     * Property name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
      * start with a letter but cannot start with http:// or https://. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly name: string;
 
     /**
-     * @Property description: The description of the HPC cluster. The description must be 2 to 256 characters in
+     * Property description: The description of the HPC cluster. The description must be 2 to 256 characters in
      * length. It cannot start with http:// or https://. Default value: empty string.
      */
     readonly description?: string;
@@ -33,21 +33,21 @@ export class HpcCluster extends ros.Resource {
      */
 
     /**
-     * @Attribute HpcClusterId: The ID of the HPC cluster.
+     * Attribute HpcClusterId: The ID of the HPC cluster.
      */
     public readonly attrHpcClusterId: any;
 
     /**
-     * @Attribute Name: The name of the HPC cluster.
+     * Attribute Name: The name of the HPC cluster.
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::ECS::HpcCluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: HpcClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

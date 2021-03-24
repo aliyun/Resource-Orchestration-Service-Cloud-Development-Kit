@@ -9,37 +9,37 @@ export { RosTrafficControl as TrafficControlProperty };
 export interface TrafficControlProps {
 
     /**
-     * @Property apiDefault: Default API traffic value.
+     * Property apiDefault: Default API traffic value.
      */
     readonly apiDefault: number;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly trafficControlName: string;
 
     /**
-     * @Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+     * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
      */
     readonly trafficControlUnit: string;
 
     /**
-     * @Property appDefault: Default APP traffic value.
+     * Property appDefault: Default APP traffic value.
      */
     readonly appDefault?: string;
 
     /**
-     * @Property description: Description of the traffic control, less than 180 characters.
+     * Property description: Description of the traffic control, less than 180 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property special: Special traffic controls.
+     * Property special: Special traffic controls.
      */
     readonly special?: Array<RosTrafficControl.SpecialProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property userDefault: Default user traffic value.
+     * Property userDefault: Default user traffic value.
      */
     readonly userDefault?: string;
 }
@@ -55,16 +55,16 @@ export class TrafficControl extends ros.Resource {
      */
 
     /**
-     * @Attribute TrafficControlId: The id of the traffic control
+     * Attribute TrafficControlId: The id of the traffic control
      */
     public readonly attrTrafficControlId: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::TrafficControl`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TrafficControlProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

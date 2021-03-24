@@ -9,11 +9,11 @@ export interface StageProps {
   /**
    * The output directory into which to emit synthesized artifacts.
    *
-   * Can only be specified if this stage is the root stage (the app). If this is
+   * Can only be specified if this stage is the root stage the app. If this is
    * specified and this stage is nested within another stage, an error will be
    * thrown.
    *
-   * @default - for nested stages, outdir will be determined as a relative
+   * Default - for nested stages, outdir will be determined as a relative
    * directory to the outdir of the app. For apps, if outdir is not specified, a
    * temporary directory will be created.
    */
@@ -24,7 +24,7 @@ export interface StageProps {
  * An abstract application modeling unit consisting of Stacks that should be
  * deployed together.
  *
- * Derive a subclass of `Stage` and use it to model a single instance of your
+ * Derive a subclass of 'Stage' and use it to model a single instance of your
  * application.
  *
  * You can then instantiate your subclass multiple times to model multiple
@@ -82,7 +82,7 @@ export class Stage extends Construct {
   public readonly stageName: string;
 
   /**
-   * The parent stage or `undefined` if this is the app.
+   * The parent stage or 'undefined' if this is the app.
    * *
    * @experimental
    */
@@ -114,7 +114,7 @@ export class Stage extends Construct {
   }
 
   /**
-   * Artifact ID of the assembly if it is a nested stage. The root stage (app)
+   * Artifact ID of the assembly if it is a nested stage. The root stage app
    * will return an empty string.
    *
    * Derived from the construct path.

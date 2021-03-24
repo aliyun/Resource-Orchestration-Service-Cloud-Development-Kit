@@ -9,27 +9,27 @@ export { RosCustomDomain as CustomDomainProperty };
 export interface CustomDomainProps {
 
     /**
-     * @Property domainName: Custom domain name.
+     * Property domainName: Custom domain name.
      */
     readonly domainName: string;
 
     /**
-     * @Property groupId: The id of the Group.
+     * Property groupId: The id of the Group.
      */
     readonly groupId: string;
 
     /**
-     * @Property certificateBody: SSL certificate body.
+     * Property certificateBody: SSL certificate body.
      */
     readonly certificateBody?: string;
 
     /**
-     * @Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly certificateName?: string;
 
     /**
-     * @Property certificatePrivateKey: SSL certificate key.
+     * Property certificatePrivateKey: SSL certificate key.
      */
     readonly certificatePrivateKey?: string;
 }
@@ -45,16 +45,16 @@ export class CustomDomain extends ros.Resource {
      */
 
     /**
-     * @Attribute CertificateId: The id of the certificate.
+     * Attribute CertificateId: The id of the certificate.
      */
     public readonly attrCertificateId: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::CustomDomain`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CustomDomainProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

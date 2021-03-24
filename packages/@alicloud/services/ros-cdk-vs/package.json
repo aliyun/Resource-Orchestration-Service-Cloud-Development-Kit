@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Aliyun SDK Copyright (C) Alibaba Cloud Computing All rights reserved. http://www.aliyun.com",
   "author": "ROS Development Team",
-
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -26,6 +25,10 @@
         "classifiers": [
           "Programming Language :: Python :: 3"
         ]
+      },
+      "dotnet": {
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Vs",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Vs"
       }
     }
   },

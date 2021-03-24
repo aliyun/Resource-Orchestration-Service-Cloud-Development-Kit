@@ -9,12 +9,12 @@ export { RosPeeringRouterInterfaceConnection as PeeringRouterInterfaceConnection
 export interface PeeringRouterInterfaceConnectionProps {
 
     /**
-     * @Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
+     * Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
      */
     readonly oppositeInterfaceId: string;
 
     /**
-     * @Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
+     * Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
      */
     readonly routerInterfaceId: string;
 }
@@ -30,21 +30,21 @@ export class PeeringRouterInterfaceConnection extends ros.Resource {
      */
 
     /**
-     * @Attribute OppositeInterfaceId: The receiver RouterInterface ID.
+     * Attribute OppositeInterfaceId: The receiver RouterInterface ID.
      */
     public readonly attrOppositeInterfaceId: any;
 
     /**
-     * @Attribute RouterInterfaceId: The initiator RouterInterface ID.
+     * Attribute RouterInterfaceId: The initiator RouterInterface ID.
      */
     public readonly attrRouterInterfaceId: any;
 
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: PeeringRouterInterfaceConnectionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

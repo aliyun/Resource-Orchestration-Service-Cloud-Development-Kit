@@ -9,37 +9,37 @@ export { RosBandwidthPackage as BandwidthPackageProperty };
 export interface BandwidthPackageProps {
 
     /**
-     * @Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
+     * Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
      */
     readonly bandwidth: number;
 
     /**
-     * @Property ipCount: Total internet IPs of this Bandwidth package, [1-5]
+     * Property ipCount: Total internet IPs of this Bandwidth package, [1-5]
      */
     readonly ipCount: number;
 
     /**
-     * @Property natGatewayId: Create bandwidth package for specified NAT gateway
+     * Property natGatewayId: Create bandwidth package for specified NAT gateway
      */
     readonly natGatewayId: string;
 
     /**
-     * @Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly bandwidthPackageName?: string;
 
     /**
-     * @Property description: Description of the bandwidth package, [2, 256] characters. Do not fill or empty, the default is empty.
+     * Property description: Description of the bandwidth package, [2, 256] characters. Do not fill or empty, the default is empty.
      */
     readonly description?: string;
 
     /**
-     * @Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
+     * Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
      */
     readonly internetChargeType?: string;
 
     /**
-     * @Property zoneId: The availability zone where the bandwidth package will be created.
+     * Property zoneId: The availability zone where the bandwidth package will be created.
      */
     readonly zoneId?: string;
 }
@@ -55,21 +55,21 @@ export class BandwidthPackage extends ros.Resource {
      */
 
     /**
-     * @Attribute BandwidthPackageId: The bandwidth package id of created Bandwidth package.
+     * Attribute BandwidthPackageId: The bandwidth package id of created Bandwidth package.
      */
     public readonly attrBandwidthPackageId: any;
 
     /**
-     * @Attribute BandwidthPackageIps: The allocated public IPs.
+     * Attribute BandwidthPackageIps: The allocated public IPs.
      */
     public readonly attrBandwidthPackageIps: any;
 
     /**
      * Create a new `ALIYUN::ECS::BandwidthPackage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: BandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

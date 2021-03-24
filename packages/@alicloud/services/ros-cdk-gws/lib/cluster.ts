@@ -9,28 +9,28 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * @Property clusterType: Cluster Type:
+     * Property clusterType: Cluster Type:
      * gws.s1.standard
      */
     readonly clusterType: string;
 
     /**
-     * @Property vpcId: VPC id
+     * Property vpcId: VPC id
      */
     readonly vpcId: string;
 
     /**
-     * @Property name: Cluster name
+     * Property name: Cluster name
      */
     readonly name?: string;
 
     /**
-     * @Property policy: Cluster policy
+     * Property policy: Cluster policy
      */
     readonly policy?: RosCluster.PolicyProperty | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: VSwitch id
+     * Property vSwitchId: VSwitch id
      */
     readonly vSwitchId?: string;
 }
@@ -46,21 +46,21 @@ export class Cluster extends ros.Resource {
      */
 
     /**
-     * @Attribute ClusterId: Cluster id
+     * Attribute ClusterId: Cluster id
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute Name: Cluster name
+     * Attribute Name: Cluster name
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::GWS::Cluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

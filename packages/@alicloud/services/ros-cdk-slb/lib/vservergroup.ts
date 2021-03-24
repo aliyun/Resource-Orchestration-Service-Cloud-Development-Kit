@@ -9,17 +9,17 @@ export { RosVServerGroup as VServerGroupProperty };
 export interface VServerGroupProps {
 
     /**
-     * @Property loadBalancerId: The id of load balancer.
+     * Property loadBalancerId: The id of load balancer.
      */
     readonly loadBalancerId: string;
 
     /**
-     * @Property vServerGroupName: Display name of the VServerGroup.
+     * Property vServerGroupName: Display name of the VServerGroup.
      */
     readonly vServerGroupName: string;
 
     /**
-     * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+     * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
      */
     readonly backendServers?: Array<RosVServerGroup.BackendServersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -35,21 +35,21 @@ export class VServerGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute BackendServers: Backend server list in this VServerGroup.
+     * Attribute BackendServers: Backend server list in this VServerGroup.
      */
     public readonly attrBackendServers: any;
 
     /**
-     * @Attribute VServerGroupId: The id of VServerGroup created.
+     * Attribute VServerGroupId: The id of VServerGroup created.
      */
     public readonly attrVServerGroupId: any;
 
     /**
      * Create a new `ALIYUN::SLB::VServerGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: VServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

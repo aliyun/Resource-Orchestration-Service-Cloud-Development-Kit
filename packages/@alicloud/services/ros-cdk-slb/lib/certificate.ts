@@ -9,37 +9,37 @@ export { RosCertificate as CertificateProperty };
 export interface CertificateProps {
 
     /**
-     * @Property certificate: The content of the certificate public key.
+     * Property certificate: The content of the certificate public key.
      */
     readonly certificate: string;
 
     /**
-     * @Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
+     * Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateId?: string;
 
     /**
-     * @Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
+     * Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
     readonly aliCloudCertificateName?: string;
 
     /**
-     * @Property certificateName: The name of the certificate.
+     * Property certificateName: The name of the certificate.
      */
     readonly certificateName?: string;
 
     /**
-     * @Property certificateType: The type of the certificate.
+     * Property certificateType: The type of the certificate.
      */
     readonly certificateType?: string;
 
     /**
-     * @Property privateKey: The private key.
+     * Property privateKey: The private key.
      */
     readonly privateKey?: string;
 
     /**
-     * @Property resourceGroupId: Resource group id.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
 }
@@ -55,21 +55,21 @@ export class Certificate extends ros.Resource {
      */
 
     /**
-     * @Attribute CertificateId: The ID of the certificate.
+     * Attribute CertificateId: The ID of the certificate.
      */
     public readonly attrCertificateId: any;
 
     /**
-     * @Attribute Fingerprint: The fingerprint of the certificate.
+     * Attribute Fingerprint: The fingerprint of the certificate.
      */
     public readonly attrFingerprint: any;
 
     /**
      * Create a new `ALIYUN::SLB::Certificate`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CertificateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

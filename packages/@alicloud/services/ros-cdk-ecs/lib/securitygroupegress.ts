@@ -9,58 +9,58 @@ export { RosSecurityGroupEgress as SecurityGroupEgressProperty };
 export interface SecurityGroupEgressProps {
 
     /**
-     * @Property ipProtocol: Ip protocol for in rule.
+     * Property ipProtocol: Ip protocol for in rule.
      */
     readonly ipProtocol: string;
 
     /**
-     * @Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+     * Property portRange: Ip protocol relative port range. For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
      */
     readonly portRange: string;
 
     /**
-     * @Property description: Description of the security group rule, [1, 512] characters. The default is empty.
+     * Property description: Description of the security group rule, [1, 512] characters. The default is empty.
      */
     readonly description?: string;
 
     /**
-     * @Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
+     * Property destCidrIp: Dest CIDR Ip Address range. Only IPV4 supported.
      */
     readonly destCidrIp?: string;
 
     /**
-     * @Property destGroupId: Dest Group Id
+     * Property destGroupId: Dest Group Id
      */
     readonly destGroupId?: string;
 
     /**
-     * @Property destGroupOwnerId: Dest Group Owner Account ID
+     * Property destGroupOwnerId: Dest Group Owner Account ID
      */
     readonly destGroupOwnerId?: string;
 
     /**
-     * @Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
+     * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment. Supports IP address ranges in CIDR format and IPv6 format.
      * Note Only VPC type IP addresses are supported.
      */
     readonly ipv6DestCidrIp?: string;
 
     /**
-     * @Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
+     * Property nicType: Network type, could be 'internet' or 'intranet'. Default value is internet.
      */
     readonly nicType?: string;
 
     /**
-     * @Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
+     * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). Default value is accept.
      */
     readonly policy?: string;
 
     /**
-     * @Property priority: Authorization policies priority range[1, 100]
+     * Property priority: Authorization policies priority range[1, 100]
      */
     readonly priority?: number;
 
     /**
-     * @Property securityGroupId: Id of the security group.
+     * Property securityGroupId: Id of the security group.
      */
     readonly securityGroupId?: string;
 }
@@ -78,9 +78,9 @@ export class SecurityGroupEgress extends ros.Resource {
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupEgress`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupEgressProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

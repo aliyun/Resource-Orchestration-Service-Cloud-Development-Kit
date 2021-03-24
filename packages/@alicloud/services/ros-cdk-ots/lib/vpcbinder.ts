@@ -9,12 +9,12 @@ export { RosVpcBinder as VpcBinderProperty };
 export interface VpcBinderProps {
 
     /**
-     * @Property instanceName: Instance name
+     * Property instanceName: Instance name
      */
     readonly instanceName: string;
 
     /**
-     * @Property vpcs: Vpc binding configuration.
+     * Property vpcs: Vpc binding configuration.
      */
     readonly vpcs: Array<RosVpcBinder.VpcsProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -30,21 +30,21 @@ export class VpcBinder extends ros.Resource {
      */
 
     /**
-     * @Attribute Domains: The domain names used to access the OTS instance in the VPC.
+     * Attribute Domains: The domain names used to access the OTS instance in the VPC.
      */
     public readonly attrDomains: any;
 
     /**
-     * @Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.
+     * Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.
      */
     public readonly attrEndpoints: any;
 
     /**
      * Create a new `ALIYUN::OTS::VpcBinder`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: VpcBinderProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

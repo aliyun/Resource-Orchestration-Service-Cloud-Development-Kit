@@ -9,17 +9,17 @@ export { RosDBInstanceParameterGroup as DBInstanceParameterGroupProperty };
 export interface DBInstanceParameterGroupProps {
 
     /**
-     * @Property dbInstanceId: Database InstanceId to update properties.
+     * Property dbInstanceId: Database InstanceId to update properties.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property parameters: Parameters to update for selected database instance.
+     * Property parameters: Parameters to update for selected database instance.
      */
     readonly parameters: Array<RosDBInstanceParameterGroup.ParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property forcerestart: whether restart database instance.
+     * Property forcerestart: whether restart database instance.
      */
     readonly forcerestart?: string;
 }
@@ -37,9 +37,9 @@ export class DBInstanceParameterGroup extends ros.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceParameterGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

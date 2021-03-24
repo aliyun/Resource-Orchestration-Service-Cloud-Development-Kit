@@ -9,63 +9,63 @@ export { RosCenBandwidthPackage as CenBandwidthPackageProperty };
 export interface CenBandwidthPackageProps {
 
     /**
-     * @Property bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
+     * Property bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
      */
     readonly bandwidth: number;
 
     /**
-     * @Property geographicRegionAId: The other area A to connect.
+     * Property geographicRegionAId: The other area A to connect.
      * Valid value: China | North-America | Asia-Pacific | Europe | Australia
      */
     readonly geographicRegionAId: string;
 
     /**
-     * @Property geographicRegionBId: The other area B to connect.
+     * Property geographicRegionBId: The other area B to connect.
      * Valid value: China | North-America | Asia-Pacific | Europe | Australia
      */
     readonly geographicRegionBId: string;
 
     /**
-     * @Property autoPay: Whether to automatically pay the bill. Valid value:
+     * Property autoPay: Whether to automatically pay the bill. Valid value:
      * true
      * false (Default)
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoRenew: Indicates whether automatic renewal is enabled. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Property autoRenew: Indicates whether automatic renewal is enabled. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoRenewDuration: Duration of each automatic renewals. It takes effect when AutoRenew is true.
+     * Property autoRenewDuration: Duration of each automatic renewals. It takes effect when AutoRenew is true.
      */
     readonly autoRenewDuration?: number;
 
     /**
-     * @Property bandwidthPackageChargeType: The billing method. Valid value: PREPAY, POSTPAY (Default)
+     * Property bandwidthPackageChargeType: The billing method. Valid value: PREPAY, POSTPAY (Default)
      */
     readonly bandwidthPackageChargeType?: string;
 
     /**
-     * @Property description: The description of the bandwidth package.
+     * Property description: The description of the bandwidth package.
      * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the bandwidth package.
+     * Property name: The name of the bandwidth package.
      * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
      */
     readonly name?: string;
 
     /**
-     * @Property period: The purchase period. The default value is 1.
+     * Property period: The purchase period. The default value is 1.
      */
     readonly period?: number;
 
     /**
-     * @Property pricingCycle: The pricing cycle.
+     * Property pricingCycle: The pricing cycle.
      */
     readonly pricingCycle?: string;
 }
@@ -81,16 +81,16 @@ export class CenBandwidthPackage extends ros.Resource {
      */
 
     /**
-     * @Attribute CenBandwidthPackageId: The ID of the bandwidth package.
+     * Attribute CenBandwidthPackageId: The ID of the bandwidth package.
      */
     public readonly attrCenBandwidthPackageId: any;
 
     /**
      * Create a new `ALIYUN::CEN::CenBandwidthPackage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CenBandwidthPackageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

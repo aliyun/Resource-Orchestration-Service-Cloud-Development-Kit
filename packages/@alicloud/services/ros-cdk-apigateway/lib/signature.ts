@@ -9,17 +9,17 @@ export { RosSignature as SignatureProperty };
 export interface SignatureProps {
 
     /**
-     * @Property signatureKey: The key of the signature.
+     * Property signatureKey: The key of the signature.
      */
     readonly signatureKey: string;
 
     /**
-     * @Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+     * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
     readonly signatureName: string;
 
     /**
-     * @Property signatureSecret: The secret of the signature.
+     * Property signatureSecret: The secret of the signature.
      */
     readonly signatureSecret: string;
 }
@@ -35,16 +35,16 @@ export class Signature extends ros.Resource {
      */
 
     /**
-     * @Attribute SignatureId: The id of the created signature
+     * Attribute SignatureId: The id of the created signature
      */
     public readonly attrSignatureId: any;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Signature`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SignatureProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

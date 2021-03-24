@@ -9,32 +9,32 @@ export { RosSchedule as ScheduleProperty };
 export interface ScheduleProps {
 
     /**
-     * @Property cronExpression: Cron expression.
+     * Property cronExpression: Cron expression.
      */
     readonly cronExpression: string;
 
     /**
-     * @Property flowName: Flow name.
+     * Property flowName: Flow name.
      */
     readonly flowName: string;
 
     /**
-     * @Property scheduleName: Schedule name.
+     * Property scheduleName: Schedule name.
      */
     readonly scheduleName: string;
 
     /**
-     * @Property description: Description of the schedule.
+     * Property description: Description of the schedule.
      */
     readonly description?: string;
 
     /**
-     * @Property enable: Whether enable schedule.
+     * Property enable: Whether enable schedule.
      */
     readonly enable?: boolean | ros.IResolvable;
 
     /**
-     * @Property payload: Payload.
+     * Property payload: Payload.
      */
     readonly payload?: string;
 }
@@ -50,26 +50,26 @@ export class Schedule extends ros.Resource {
      */
 
     /**
-     * @Attribute FlowName: Flow name.
+     * Attribute FlowName: Flow name.
      */
     public readonly attrFlowName: any;
 
     /**
-     * @Attribute ScheduleId: Schedule Id
+     * Attribute ScheduleId: Schedule Id
      */
     public readonly attrScheduleId: any;
 
     /**
-     * @Attribute ScheduleName: Schedule name.
+     * Attribute ScheduleName: Schedule name.
      */
     public readonly attrScheduleName: any;
 
     /**
      * Create a new `ALIYUN::FNF::Schedule`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ScheduleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

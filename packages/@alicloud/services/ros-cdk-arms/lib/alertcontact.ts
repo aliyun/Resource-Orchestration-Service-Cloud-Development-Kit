@@ -9,37 +9,37 @@ export { RosAlertContact as AlertContactProperty };
 export interface AlertContactProps {
 
     /**
-     * @Property contactName: The name of the alert contact that you want to create.
+     * Property contactName: The name of the alert contact that you want to create.
      */
     readonly contactName: string;
 
     /**
-     * @Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
+     * Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
      */
     readonly dingRobotWebhookUrl?: string;
 
     /**
-     * @Property email: The email address of the contact.
+     * Property email: The email address of the contact.
      */
     readonly email?: string;
 
     /**
-     * @Property phoneNum: The phone number of the contact.
+     * Property phoneNum: The phone number of the contact.
      */
     readonly phoneNum?: string;
 
     /**
-     * @Property proxyUserId: Internal parameters
+     * Property proxyUserId: Internal parameters
      */
     readonly proxyUserId?: string;
 
     /**
-     * @Property regionId: Region ID. Default to region of stack.
+     * Property regionId: Region ID. Default to region of stack.
      */
     readonly regionId?: string;
 
     /**
-     * @Property systemNoc: Specifies whether to receive system alerts.
+     * Property systemNoc: Specifies whether to receive system alerts.
      */
     readonly systemNoc?: boolean | ros.IResolvable;
 }
@@ -55,16 +55,16 @@ export class AlertContact extends ros.Resource {
      */
 
     /**
-     * @Attribute ContactId: The ID of the alert contact that you created.
+     * Attribute ContactId: The ID of the alert contact that you created.
      */
     public readonly attrContactId: any;
 
     /**
      * Create a new `ALIYUN::ARMS::AlertContact`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AlertContactProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

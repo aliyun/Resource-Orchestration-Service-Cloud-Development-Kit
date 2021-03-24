@@ -9,7 +9,7 @@ export { RosCustomResource as CustomResourceProperty };
 export interface CustomResourceProps {
 
     /**
-     * @Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
+     * Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
      * Allowed values:
      * - Function Compute: acs:fc:<region_id>:<account_id>:services/<service_name>/functions/<function_name>
      * - MNS Queue: acs:mns:<region_id>:<account_id>:queues/<queue_name> or acs:mns:<region_id>:<account_id>:/queues/<queue_name>
@@ -31,14 +31,14 @@ export interface CustomResourceProps {
     readonly serviceToken: string;
 
     /**
-     * @Property timeout: Timeout seconds before service provider responses.
+     * Property timeout: Timeout seconds before service provider responses.
      * It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&HTTPS request.
      * Timeout seconds are always 10 for sync HTTP&HTTPS request.
      */
     readonly timeout: number;
 
     /**
-     * @Property parameters: Parameters to be passed to service provider.
+     * Property parameters: Parameters to be passed to service provider.
      */
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 }
@@ -54,16 +54,16 @@ export class CustomResource extends ros.Resource {
      */
 
     /**
-     * @Attribute Outputs: Output data received from service provider.
+     * Attribute Outputs: Output data received from service provider.
      */
     public readonly attrOutputs: any;
 
     /**
      * Create a new `ALIYUN::ROS::CustomResource`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CustomResourceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

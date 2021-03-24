@@ -9,24 +9,24 @@ export { RosIpv6Gateway as Ipv6GatewayProperty };
 export interface Ipv6GatewayProps {
 
     /**
-     * @Property vpcId: To open VPC ID IPv6 gateway.
+     * Property vpcId: To open VPC ID IPv6 gateway.
      */
     readonly vpcId: string;
 
     /**
-     * @Property description: Description of IPv6 gateway.
+     * Property description: Description of IPv6 gateway.
      * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
      */
     readonly description?: string;
 
     /**
-     * @Property name: Name of the IPv6 gateway.
+     * Property name: Name of the IPv6 gateway.
      * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
      */
     readonly name?: string;
 
     /**
-     * @Property spec: Specifications IPv6 gateway, the value:
+     * Property spec: Specifications IPv6 gateway, the value:
      * Small (default): Free.
      * Medium: Enterprise Edition.
      * Large: Enterprise Enhanced Edition.
@@ -46,16 +46,16 @@ export class Ipv6Gateway extends ros.Resource {
      */
 
     /**
-     * @Attribute Ipv6GatewayId: ID IPv6 gateway.
+     * Attribute Ipv6GatewayId: ID IPv6 gateway.
      */
     public readonly attrIpv6GatewayId: any;
 
     /**
      * Create a new `ALIYUN::VPC::Ipv6Gateway`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: Ipv6GatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

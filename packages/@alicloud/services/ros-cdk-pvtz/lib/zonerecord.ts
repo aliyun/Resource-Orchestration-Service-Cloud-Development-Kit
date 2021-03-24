@@ -9,37 +9,37 @@ export { RosZoneRecord as ZoneRecordProperty };
 export interface ZoneRecordProps {
 
     /**
-     * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
     readonly rr: string;
 
     /**
-     * @Property status: Allowed values: [ENABLE, DISABLE]
+     * Property status: Allowed values: [ENABLE, DISABLE]
      */
     readonly status: string;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
      */
     readonly type: string;
 
     /**
-     * @Property value: Record value
+     * Property value: Record value
      */
     readonly value: string;
 
     /**
-     * @Property zoneId: Zone Id
+     * Property zoneId: Zone Id
      */
     readonly zoneId: string;
 
     /**
-     * @Property priority: MX record priority, value range [1,10]. Default to 10.
+     * Property priority: MX record priority, value range [1,10]. Default to 10.
      */
     readonly priority?: number;
 
     /**
-     * @Property ttl: Survival time, default is 60
+     * Property ttl: Survival time, default is 60
      */
     readonly ttl?: number;
 }
@@ -55,16 +55,16 @@ export class ZoneRecord extends ros.Resource {
      */
 
     /**
-     * @Attribute RecordId: Parsing record Id
+     * Attribute RecordId: Parsing record Id
      */
     public readonly attrRecordId: any;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneRecord`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ZoneRecordProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,17 +9,17 @@ export { RosAttachPolicyToRole as AttachPolicyToRoleProperty };
 export interface AttachPolicyToRoleProps {
 
     /**
-     * @Property policyName: Authorization policy name.
+     * Property policyName: Authorization policy name.
      */
     readonly policyName: string;
 
     /**
-     * @Property policyType: Authorization policy type. Value: "System" or "Custom".
+     * Property policyType: Authorization policy type. Value: "System" or "Custom".
      */
     readonly policyType: string;
 
     /**
-     * @Property roleName: Role name.Example: dev.
+     * Property roleName: Role name.Example: dev.
      */
     readonly roleName: string;
 }
@@ -37,9 +37,9 @@ export class AttachPolicyToRole extends ros.Resource {
     /**
      * Create a new `ALIYUN::RAM::AttachPolicyToRole`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AttachPolicyToRoleProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

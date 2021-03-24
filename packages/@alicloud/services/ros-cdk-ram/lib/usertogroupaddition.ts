@@ -9,12 +9,12 @@ export { RosUserToGroupAddition as UserToGroupAdditionProperty };
 export interface UserToGroupAdditionProps {
 
     /**
-     * @Property groupName: Specifies the group name, containing up to 64 characters.
+     * Property groupName: Specifies the group name, containing up to 64 characters.
      */
     readonly groupName: string;
 
     /**
-     * @Property users: list name of a users to which you want to add the group.
+     * Property users: list name of a users to which you want to add the group.
      */
     readonly users: Array<any | ros.IResolvable> | ros.IResolvable;
 }
@@ -32,9 +32,9 @@ export class UserToGroupAddition extends ros.Resource {
     /**
      * Create a new `ALIYUN::RAM::UserToGroupAddition`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UserToGroupAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

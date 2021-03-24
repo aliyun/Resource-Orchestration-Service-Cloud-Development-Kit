@@ -1,0 +1,125 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Iot
+{
+    /// <summary>A ROS template type:  `ALIYUN::IOT::ProductTopic`.</summary>
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Iot.RosProductTopic), fullyQualifiedName: "@alicloud/ros-cdk-iot.RosProductTopic", parametersJson: "[{\"docs\":{\"summary\":\"- scope in which this resource is defined.\"},\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"docs\":{\"summary\":\"- scoped id of the resource.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"docs\":{\"summary\":\"- resource properties.\"},\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-iot.RosProductTopicProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"type\":{\"primitive\":\"boolean\"}}]")]
+    public class RosProductTopic : AlibabaCloud.SDK.ROS.CDK.Core.RosResource
+    {
+        /// <summary>Create a new `ALIYUN::IOT::ProductTopic`.</summary>
+        /// <param name="scope">- scope in which this resource is defined.</param>
+        /// <param name="id">- scoped id of the resource.</param>
+        /// <param name="props">- resource properties.</param>
+        public RosProductTopic(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Iot.IRosProductTopicProps props, bool enableResourcePropertyConstraint): base(new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint}))
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
+        /// <param name="reference">The Javascript-owned object reference</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected RosProductTopic(ByRefValue reference): base(reference)
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from DeputyProps</summary>
+        /// <param name="props">The deputy props</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected RosProductTopic(DeputyProps props): base(props)
+        {
+        }
+
+        [JsiiMethod(name: "renderProperties", returnsJson: "{\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}", parametersJson: "[{\"name\":\"props\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}}]", isOverride: true)]
+        protected override System.Collections.Generic.IDictionary<string, object> RenderProperties(System.Collections.Generic.IDictionary<string, object> props)
+        {
+            return InvokeInstanceMethod<System.Collections.Generic.IDictionary<string, object>>(new System.Type[]{typeof(System.Collections.Generic.IDictionary<string, object>)}, new object[]{props})!;
+        }
+
+        /// <summary>The resource type name for this resource class.</summary>
+        [JsiiProperty(name: "ROS_RESOURCE_TYPE_NAME", typeJson: "{\"primitive\":\"string\"}")]
+        public static string ROS_RESOURCE_TYPE_NAME
+        {
+            get;
+        }
+        = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Iot.RosProductTopic))!;
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: TopicId: Topic ID
+        /// </remarks>
+        [JsiiProperty(name: "attrTopicId", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrTopicId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
+        protected override System.Collections.Generic.IDictionary<string, object> RosProperties
+        {
+            get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
+        }
+
+        [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
+        public virtual bool EnableResourcePropertyConstraint
+        {
+            get => GetInstanceProperty<bool>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: operation: Operation permissions of devices on the topic category. Value options:
+        /// SUB: Subscribe. Devices can subscribe to the topics of this category.
+        /// PUB: Publish. Devices can publish messages using the topics of this category.
+        /// ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
+        /// </remarks>
+        [JsiiProperty(name: "operation", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string Operation
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: productKey: The unique identifier of the product for which you want to create a topic category.
+        /// </remarks>
+        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string ProductKey
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+        /// Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
+        /// </remarks>
+        [JsiiProperty(name: "topicShortName", typeJson: "{\"primitive\":\"string\"}")]
+        public virtual string TopicShortName
+        {
+            get => GetInstanceProperty<string>()!;
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: desc: The description of the topic category. You can enter a description with up to 100 characters.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "desc", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? Desc
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        public virtual string? IotInstanceId
+        {
+            get => GetInstanceProperty<string?>();
+            set => SetInstanceProperty(value);
+        }
+    }
+}

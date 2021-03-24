@@ -9,12 +9,12 @@ export { RosTopic as TopicProperty };
 export interface TopicProps {
 
     /**
-     * @Property instanceId: The ID of the instance.
+     * Property instanceId: The ID of the instance.
      */
     readonly instanceId: string;
 
     /**
-     * @Property messageType: The type of the message. Valid values:
+     * Property messageType: The type of the message. Valid values:
      * 0: normal message
      * 1: partitionally ordered message
      * 2: globally ordered message
@@ -24,7 +24,7 @@ export interface TopicProps {
     readonly messageType: number;
 
     /**
-     * @Property topic: The name of the topic you want to create.
+     * Property topic: The name of the topic you want to create.
      * Note:
      * "CID" and "GID" are the reserved fields of a group ID, and they cannot be the start of a topic name.
      * If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
@@ -33,7 +33,7 @@ export interface TopicProps {
     readonly topic: string;
 
     /**
-     * @Property perm: Set the read-write mode for the topic Valid values.:
+     * Property perm: Set the read-write mode for the topic Valid values.:
      * 6: Both read and write operations are supported.
      * 4: Write operation is prohibited.
      * 2: Read operation is prohibited.
@@ -41,7 +41,7 @@ export interface TopicProps {
     readonly perm?: number;
 
     /**
-     * @Property remark: The remarks on the request. This parameter can be left blank.
+     * Property remark: The remarks on the request. This parameter can be left blank.
      */
     readonly remark?: string;
 }
@@ -57,26 +57,26 @@ export class Topic extends ros.Resource {
      */
 
     /**
-     * @Attribute InstanceId: The ID of the instance.
+     * Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute MessageType: The type of the message.
+     * Attribute MessageType: The type of the message.
      */
     public readonly attrMessageType: any;
 
     /**
-     * @Attribute Topic: The name of the topic.
+     * Attribute Topic: The name of the topic.
      */
     public readonly attrTopic: any;
 
     /**
      * Create a new `ALIYUN::ROCKETMQ::Topic`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

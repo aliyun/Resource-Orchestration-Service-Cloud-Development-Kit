@@ -9,22 +9,22 @@ export { RosReadOnlyDBInstance as ReadOnlyDBInstanceProperty };
 export interface ReadOnlyDBInstanceProps {
 
     /**
-     * @Property dbInstanceClass: The type of the instance. For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
+     * Property dbInstanceClass: The type of the instance. For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
      */
     readonly dbInstanceClass: string;
 
     /**
-     * @Property dbInstanceId: The ID of the master instance.
+     * Property dbInstanceId: The ID of the master instance.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property dbInstanceStorage: The storage space of the instance. Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
+     * Property dbInstanceStorage: The storage space of the instance. Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
      */
     readonly dbInstanceStorage: number;
 
     /**
-     * @Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
+     * Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
      * - 5.6
      * - 5.7
      * - 8.0
@@ -33,12 +33,12 @@ export interface ReadOnlyDBInstanceProps {
     readonly engineVersion: string;
 
     /**
-     * @Property zoneId: The ID of the zone. You can call the DescribeRegions API operation to view the latest zones.
+     * Property zoneId: The ID of the zone. You can call the DescribeRegions API operation to view the latest zones.
      */
     readonly zoneId: string;
 
     /**
-     * @Property category: The edition of the instance. Valid values:
+     * Property category: The edition of the instance. Valid values:
      * - Basic
      * - HighAvailability
      * - AlwaysOn
@@ -46,12 +46,12 @@ export interface ReadOnlyDBInstanceProps {
     readonly category?: string;
 
     /**
-     * @Property dbInstanceDescription: Description of created database instance.
+     * Property dbInstanceDescription: Description of created database instance.
      */
     readonly dbInstanceDescription?: string;
 
     /**
-     * @Property dbInstanceStorageType: The storage type of the instance. Valid values:
+     * Property dbInstanceStorageType: The storage type of the instance. Valid values:
      * - local_ssd/ephemeral_ssd: local SSDs.
      * - cloud_ssd: SSDs.
      * - cloud_essd: ESSDs.
@@ -59,22 +59,22 @@ export interface ReadOnlyDBInstanceProps {
     readonly dbInstanceStorageType?: string;
 
     /**
-     * @Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
+     * Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
      */
     readonly payType?: string;
 
     /**
-     * @Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
+     * Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
      */
     readonly privateIpAddress?: string;
 
     /**
-     * @Property resourceGroupId: Resource group id.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property tags: The tags of an instance.
+     * Property tags: The tags of an instance.
      * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
      * At most 5 tags can be specified.
      * Key
@@ -91,12 +91,12 @@ export interface ReadOnlyDBInstanceProps {
     readonly tags?: { [key: string]: any }[];
 
     /**
-     * @Property vpcId: The ID of the VPC.
+     * Property vpcId: The ID of the VPC.
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The ID of the VSwitch.
      */
     readonly vSwitchId?: string;
 }
@@ -112,26 +112,26 @@ export class ReadOnlyDBInstance extends ros.Resource {
      */
 
     /**
-     * @Attribute ConnectionString: DB instance connection url by Intranet.
+     * Attribute ConnectionString: DB instance connection url by Intranet.
      */
     public readonly attrConnectionString: any;
 
     /**
-     * @Attribute DBInstanceId: The instance id of created database instance.
+     * Attribute DBInstanceId: The instance id of created database instance.
      */
     public readonly attrDbInstanceId: any;
 
     /**
-     * @Attribute Port: Intranet port of created DB instance.
+     * Attribute Port: Intranet port of created DB instance.
      */
     public readonly attrPort: any;
 
     /**
      * Create a new `ALIYUN::RDS::ReadOnlyDBInstance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ReadOnlyDBInstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

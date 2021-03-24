@@ -9,12 +9,12 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * @Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English.
+     * Property instanceName: The name of the instance, which contains 3 to 64 characters in Chinese or English.
      */
     readonly instanceName: string;
 
     /**
-     * @Property remark: The remark of instance.
+     * Property remark: The remark of instance.
      */
     readonly remark?: string;
 }
@@ -30,41 +30,41 @@ export class Instance extends ros.Resource {
      */
 
     /**
-     * @Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
+     * Attribute HttpInternalEndpoint: The internal HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
     public readonly attrHttpInternalEndpoint: any;
 
     /**
-     * @Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
+     * Attribute HttpInternetEndpoint: The Internet HTTP endpoint for the Message Queue for Apache RocketMQ instance.
      */
     public readonly attrHttpInternetEndpoint: any;
 
     /**
-     * @Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.
+     * Attribute HttpInternetSecureEndpoint: The Internet HTTPS endpoint for the Message Queue for Apache RocketMQ instance.
      */
     public readonly attrHttpInternetSecureEndpoint: any;
 
     /**
-     * @Attribute InstanceId: Instance ID created
+     * Attribute InstanceId: Instance ID created
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute InstanceType: Instance Type
+     * Attribute InstanceType: Instance Type
      */
     public readonly attrInstanceType: any;
 
     /**
-     * @Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.
+     * Attribute TcpEndpoint: The TCP endpoint for the Message Queue for Apache RocketMQ instance.
      */
     public readonly attrTcpEndpoint: any;
 
     /**
      * Create a new `ALIYUN::ROCKETMQ::Instance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

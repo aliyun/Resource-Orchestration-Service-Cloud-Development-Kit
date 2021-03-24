@@ -9,12 +9,12 @@ export { RosSmartAccessGatewayBinding as SmartAccessGatewayBindingProperty };
 export interface SmartAccessGatewayBindingProps {
 
     /**
-     * @Property ccnId: The ID of the CCN instance to bind.
+     * Property ccnId: The ID of the CCN instance to bind.
      */
     readonly ccnId: string;
 
     /**
-     * @Property smartAgId: The ID of the Smart Access Gateway instance.
+     * Property smartAgId: The ID of the Smart Access Gateway instance.
      */
     readonly smartAgId: string;
 }
@@ -30,16 +30,16 @@ export class SmartAccessGatewayBinding extends ros.Resource {
      */
 
     /**
-     * @Attribute SmartAGId: The ID of the Smart Access Gateway instance.
+     * Attribute SmartAGId: The ID of the Smart Access Gateway instance.
      */
     public readonly attrSmartAgId: any;
 
     /**
      * Create a new `ALIYUN::SAG::SmartAccessGatewayBinding`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SmartAccessGatewayBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

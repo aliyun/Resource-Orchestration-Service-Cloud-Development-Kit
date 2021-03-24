@@ -9,12 +9,12 @@ export { RosAssignPrivateIpAddresses as AssignPrivateIpAddressesProperty };
 export interface AssignPrivateIpAddressesProps {
 
     /**
-     * @Property networkInterfaceId: The ID of the ENI.
+     * Property networkInterfaceId: The ID of the ENI.
      */
     readonly networkInterfaceId: string;
 
     /**
-     * @Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
+     * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. 
      * Valid values of number of private ip addresses:
      * When the ENI is in the Available state: 1 to 10.
      * When the ENI is in the InUse state: limited by the instance type. 
@@ -24,7 +24,7 @@ export interface AssignPrivateIpAddressesProps {
     readonly privateIpAddresses?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+     * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
      */
     readonly secondaryPrivateIpAddressCount?: number;
 }
@@ -40,21 +40,21 @@ export class AssignPrivateIpAddresses extends ros.Resource {
      */
 
     /**
-     * @Attribute NetworkInterfaceId: The ID of the ENI.
+     * Attribute NetworkInterfaceId: The ID of the ENI.
      */
     public readonly attrNetworkInterfaceId: any;
 
     /**
-     * @Attribute PrivateIpAddresses: Assigned private ip addresses.
+     * Attribute PrivateIpAddresses: Assigned private ip addresses.
      */
     public readonly attrPrivateIpAddresses: any;
 
     /**
      * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AssignPrivateIpAddressesProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

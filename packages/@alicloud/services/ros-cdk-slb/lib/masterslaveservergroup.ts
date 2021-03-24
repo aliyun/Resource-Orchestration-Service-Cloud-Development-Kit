@@ -9,18 +9,18 @@ export { RosMasterSlaveServerGroup as MasterSlaveServerGroupProperty };
 export interface MasterSlaveServerGroupProps {
 
     /**
-     * @Property loadBalancerId: The ID of the Server Load Balancer instance.
+     * Property loadBalancerId: The ID of the Server Load Balancer instance.
      */
     readonly loadBalancerId: string;
 
     /**
-     * @Property masterSlaveBackendServers: A list of active/standby server group.
+     * Property masterSlaveBackendServers: A list of active/standby server group.
      * An active/standby server group can only contain two backend servers.
      */
     readonly masterSlaveBackendServers: Array<RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property masterSlaveServerGroupName: The name of the active/standby server group.
+     * Property masterSlaveServerGroupName: The name of the active/standby server group.
      */
     readonly masterSlaveServerGroupName?: string;
 }
@@ -36,16 +36,16 @@ export class MasterSlaveServerGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute MasterSlaveServerGroupId: Active/standby server group ID.
+     * Attribute MasterSlaveServerGroupId: Active/standby server group ID.
      */
     public readonly attrMasterSlaveServerGroupId: any;
 
     /**
      * Create a new `ALIYUN::SLB::MasterSlaveServerGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MasterSlaveServerGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosVersion as VersionProperty };
 export interface VersionProps {
 
     /**
-     * @Property serviceName: Service name
+     * Property serviceName: Service name
      */
     readonly serviceName: string;
 
     /**
-     * @Property description: Version description
+     * Property description: Version description
      */
     readonly description?: string;
 }
@@ -30,21 +30,21 @@ export class Version extends ros.Resource {
      */
 
     /**
-     * @Attribute ServiceName: The service name
+     * Attribute ServiceName: The service name
      */
     public readonly attrServiceName: any;
 
     /**
-     * @Attribute VersionId: The version ID
+     * Attribute VersionId: The version ID
      */
     public readonly attrVersionId: any;
 
     /**
      * Create a new `ALIYUN::FC::Version`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: VersionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

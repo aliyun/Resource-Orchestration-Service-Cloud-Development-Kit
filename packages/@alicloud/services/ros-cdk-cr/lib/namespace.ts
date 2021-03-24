@@ -9,17 +9,17 @@ export { RosNamespace as NamespaceProperty };
 export interface NamespaceProps {
 
     /**
-     * @Property namespace: domain name
+     * Property namespace: domain name
      */
     readonly namespace: string;
 
     /**
-     * @Property autoCreate: whether auto create repository
+     * Property autoCreate: whether auto create repository
      */
     readonly autoCreate?: boolean | ros.IResolvable;
 
     /**
-     * @Property defaultVisibility: repository default visibility, public or private
+     * Property defaultVisibility: repository default visibility, public or private
      */
     readonly defaultVisibility?: string;
 }
@@ -35,16 +35,16 @@ export class Namespace extends ros.Resource {
      */
 
     /**
-     * @Attribute NamespaceId: The namespace id
+     * Attribute NamespaceId: The namespace id
      */
     public readonly attrNamespaceId: any;
 
     /**
      * Create a new `ALIYUN::CR::Namespace`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: NamespaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

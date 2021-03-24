@@ -9,12 +9,12 @@ export { RosACLAssociation as ACLAssociationProperty };
 export interface ACLAssociationProps {
 
     /**
-     * @Property aclId: Access control ID.
+     * Property aclId: Access control ID.
      */
     readonly aclId: string;
 
     /**
-     * @Property smartAgId: An intelligent gateway instance that needs to bind access control.
+     * Property smartAgId: An intelligent gateway instance that needs to bind access control.
      */
     readonly smartAgId: string;
 }
@@ -32,9 +32,9 @@ export class ACLAssociation extends ros.Resource {
     /**
      * Create a new `ALIYUN::SAG::ACLAssociation`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ACLAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

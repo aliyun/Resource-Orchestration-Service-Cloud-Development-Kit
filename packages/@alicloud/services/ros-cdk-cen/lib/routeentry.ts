@@ -9,32 +9,32 @@ export { RosRouteEntry as RouteEntryProperty };
 export interface RouteEntryProps {
 
     /**
-     * @Property cenId: The ID of the CEN instance where the route entry is published.
+     * Property cenId: The ID of the CEN instance where the route entry is published.
      */
     readonly cenId: string;
 
     /**
-     * @Property childInstanceId: The ID of the attached network (VPC or VBR).
+     * Property childInstanceId: The ID of the attached network (VPC or VBR).
      */
     readonly childInstanceId: string;
 
     /**
-     * @Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
+     * Property childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
      */
     readonly childInstanceRegionId: string;
 
     /**
-     * @Property childInstanceRouteTableId: The route table of the attached VBR or VPC.
+     * Property childInstanceRouteTableId: The route table of the attached VBR or VPC.
      */
     readonly childInstanceRouteTableId: string;
 
     /**
-     * @Property childInstanceType: The type of the network, value: VPC VBR
+     * Property childInstanceType: The type of the network, value: VPC VBR
      */
     readonly childInstanceType: string;
 
     /**
-     * @Property destinationCidrBlock: The destination CIDR block of the route entry to publish.
+     * Property destinationCidrBlock: The destination CIDR block of the route entry to publish.
      */
     readonly destinationCidrBlock: string;
 }
@@ -52,9 +52,9 @@ export class RouteEntry extends ros.Resource {
     /**
      * Create a new `ALIYUN::CEN::RouteEntry`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RouteEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosSslVpnClientCert as SslVpnClientCertProperty };
 export interface SslVpnClientCertProps {
 
     /**
-     * @Property sslVpnServerId: ID of the SSL-VPN server.
+     * Property sslVpnServerId: ID of the SSL-VPN server.
      */
     readonly sslVpnServerId: string;
 
     /**
-     * @Property name: The name of the client certificate.
+     * Property name: The name of the client certificate.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
     readonly name?: string;
@@ -31,16 +31,16 @@ export class SslVpnClientCert extends ros.Resource {
      */
 
     /**
-     * @Attribute SslVpnClientCertId: The ID of the client certificate.
+     * Attribute SslVpnClientCertId: The ID of the client certificate.
      */
     public readonly attrSslVpnClientCertId: any;
 
     /**
      * Create a new `ALIYUN::VPC::SslVpnClientCert`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SslVpnClientCertProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

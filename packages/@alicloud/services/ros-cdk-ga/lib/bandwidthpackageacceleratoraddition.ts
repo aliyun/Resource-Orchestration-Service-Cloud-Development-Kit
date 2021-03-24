@@ -9,13 +9,13 @@ export { RosBandwidthPackageAcceleratorAddition as BandwidthPackageAcceleratorAd
 export interface BandwidthPackageAcceleratorAdditionProps {
 
     /**
-     * @Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
+     * Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth
      * plan.
      */
     readonly acceleratorId: string;
 
     /**
-     * @Property bandwidthPackageId: The ID of the bandwidth package to associate.
+     * Property bandwidthPackageId: The ID of the bandwidth package to associate.
      */
     readonly bandwidthPackageId: string;
 }
@@ -31,21 +31,21 @@ export class BandwidthPackageAcceleratorAddition extends ros.Resource {
      */
 
     /**
-     * @Attribute AcceleratorId: The ID of the Global Accelerator instance
+     * Attribute AcceleratorId: The ID of the Global Accelerator instance
      */
     public readonly attrAcceleratorId: any;
 
     /**
-     * @Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
+     * Attribute BandwidthPackageId: The ID of the bandwidth package which is associated
      */
     public readonly attrBandwidthPackageId: any;
 
     /**
      * Create a new `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: BandwidthPackageAcceleratorAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

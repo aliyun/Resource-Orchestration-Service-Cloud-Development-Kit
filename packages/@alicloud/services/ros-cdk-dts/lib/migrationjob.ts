@@ -9,34 +9,34 @@ export { RosMigrationJob as MigrationJobProperty };
 export interface MigrationJobProps {
 
     /**
-     * @Property migrationJobClass: Migrating instance specifications, which can be:
+     * Property migrationJobClass: Migrating instance specifications, which can be:
      * small, medium, large and so on.
      * Various specifications of the reference data migration test performance specifications
      */
     readonly migrationJobClass: string;
 
     /**
-     * @Property destinationEndpoint: Migration target configuration
+     * Property destinationEndpoint: Migration target configuration
      */
     readonly destinationEndpoint?: RosMigrationJob.DestinationEndpointProperty | ros.IResolvable;
 
     /**
-     * @Property migrationJobName: Migrating job name
+     * Property migrationJobName: Migrating job name
      */
     readonly migrationJobName?: string;
 
     /**
-     * @Property migrationMode: Migration mode
+     * Property migrationMode: Migration mode
      */
     readonly migrationMode?: RosMigrationJob.MigrationModeProperty | ros.IResolvable;
 
     /**
-     * @Property migrationObject: Objects that need to be migrated
+     * Property migrationObject: Objects that need to be migrated
      */
     readonly migrationObject?: Array<RosMigrationJob.MigrationObjectProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property sourceEndpoint: Migration source configuration
+     * Property sourceEndpoint: Migration source configuration
      */
     readonly sourceEndpoint?: RosMigrationJob.SourceEndpointProperty | ros.IResolvable;
 }
@@ -52,16 +52,16 @@ export class MigrationJob extends ros.Resource {
      */
 
     /**
-     * @Attribute MigrationJobId: Migration tasks task ID
+     * Attribute MigrationJobId: Migration tasks task ID
      */
     public readonly attrMigrationJobId: any;
 
     /**
      * Create a new `ALIYUN::DTS::MigrationJob`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MigrationJobProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

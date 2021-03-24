@@ -9,7 +9,7 @@ export { RosAutoEnableService as AutoEnableServiceProperty };
 export interface AutoEnableServiceProps {
 
     /**
-     * @Property serviceName: Which service to enable. Valid values:
+     * Property serviceName: Which service to enable. Valid values:
      * AHAS: Application High Availability Service
      * ARMS: Realtime Monitoring Service
      * ApiGateway: API Gateway
@@ -46,9 +46,9 @@ export class AutoEnableService extends ros.Resource {
     /**
      * Create a new `ALIYUN::ROS::AutoEnableService`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AutoEnableServiceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

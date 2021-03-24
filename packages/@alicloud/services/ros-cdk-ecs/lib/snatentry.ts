@@ -9,27 +9,27 @@ export { RosSNatEntry as SNatEntryProperty };
 export interface SNatEntryProps {
 
     /**
-     * @Property sNatIp: Source IP, must belongs to bandwidth package internet IP
+     * Property sNatIp: Source IP, must belongs to bandwidth package internet IP
      */
     readonly sNatIp: string;
 
     /**
-     * @Property sNatTableId: Create SNAT entry in specified SNAT table.
+     * Property sNatTableId: Create SNAT entry in specified SNAT table.
      */
     readonly sNatTableId: string;
 
     /**
-     * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+     * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
     readonly snatEntryName?: string;
 
     /**
-     * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+     * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
     readonly sourceCidr?: string;
 
     /**
-     * @Property sourceVSwitchId: Allow which switch can access internet.
+     * Property sourceVSwitchId: Allow which switch can access internet.
      */
     readonly sourceVSwitchId?: string;
 }
@@ -45,16 +45,16 @@ export class SNatEntry extends ros.Resource {
      */
 
     /**
-     * @Attribute SNatEntryId: The id of created SNAT entry.
+     * Attribute SNatEntryId: The id of created SNAT entry.
      */
     public readonly attrSNatEntryId: any;
 
     /**
      * Create a new `ALIYUN::ECS::SNatEntry`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SNatEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

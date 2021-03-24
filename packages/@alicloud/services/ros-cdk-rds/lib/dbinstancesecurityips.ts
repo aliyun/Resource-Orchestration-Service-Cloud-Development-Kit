@@ -9,17 +9,17 @@ export { RosDBInstanceSecurityIps as DBInstanceSecurityIpsProperty };
 export interface DBInstanceSecurityIpsProps {
 
     /**
-     * @Property dbInstanceId: Database instance id to update security ips.
+     * Property dbInstanceId: Database instance id to update security ips.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property dbInstanceIpArrayAttribute: Security ips to add or remove.
+     * Property dbInstanceIpArrayAttribute: Security ips to add or remove.
      */
     readonly dbInstanceIpArrayAttribute: string;
 
     /**
-     * @Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
+     * Property dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
      */
     readonly dbInstanceIpArrayName?: string;
 }
@@ -35,16 +35,16 @@ export class DBInstanceSecurityIps extends ros.Resource {
      */
 
     /**
-     * @Attribute SecurityIps: The security ips of selected database instance.
+     * Attribute SecurityIps: The security ips of selected database instance.
      */
     public readonly attrSecurityIps: any;
 
     /**
      * Create a new `ALIYUN::RDS::DBInstanceSecurityIps`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DBInstanceSecurityIpsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

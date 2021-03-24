@@ -1,0 +1,56 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Ga
+{
+    /// <summary>A ROS resource type:  `ALIYUN::GA::IpSets`.</summary>
+    [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Ga.IpSets), fullyQualifiedName: "@alicloud/ros-cdk-ga.IpSets", parametersJson: "[{\"name\":\"scope\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.Construct\"}},{\"name\":\"id\",\"type\":{\"primitive\":\"string\"}},{\"name\":\"props\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-ga.IpSetsProps\"}},{\"name\":\"enableResourcePropertyConstraint\",\"optional\":true,\"type\":{\"primitive\":\"boolean\"}}]")]
+    public class IpSets : AlibabaCloud.SDK.ROS.CDK.Core.Resource_
+    {
+        /// <summary>Create a new `ALIYUN::GA::IpSets`.</summary>
+        /// <remarks>
+        /// Param scope - scope in which this resource is defined
+        /// Param id    - scoped id of the resource
+        /// Param props - resource properties
+        /// </remarks>
+        public IpSets(AlibabaCloud.SDK.ROS.CDK.Core.Construct scope, string id, AlibabaCloud.SDK.ROS.CDK.Ga.IIpSetsProps props, bool? enableResourcePropertyConstraint = null): base(new DeputyProps(new object?[]{scope, id, props, enableResourcePropertyConstraint}))
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from a Javascript-owned object reference</summary>
+        /// <param name="reference">The Javascript-owned object reference</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected IpSets(ByRefValue reference): base(reference)
+        {
+        }
+
+        /// <summary>Used by jsii to construct an instance of this class from DeputyProps</summary>
+        /// <param name="props">The deputy props</param>
+        [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
+        protected IpSets(DeputyProps props): base(props)
+        {
+        }
+
+        /// <summary>Attribute AccelerateRegionIds: The ID list of the accelerate region.</summary>
+        [JsiiProperty(name: "attrAccelerateRegionIds", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrAccelerateRegionIds
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute IpSetIds: The ID list of the ip set.</summary>
+        [JsiiProperty(name: "attrIpSetIds", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrIpSetIds
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute IpVersions: The IP version list of the accelerate region.</summary>
+        [JsiiProperty(name: "attrIpVersions", typeJson: "{\"primitive\":\"any\"}")]
+        public virtual object AttrIpVersions
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+    }
+}

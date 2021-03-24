@@ -9,22 +9,22 @@ export { RosAlertContactGroup as AlertContactGroupProperty };
 export interface AlertContactGroupProps {
 
     /**
-     * @Property contactGroupName: The name of the alert contact group that you want to create.
+     * Property contactGroupName: The name of the alert contact group that you want to create.
      */
     readonly contactGroupName: string;
 
     /**
-     * @Property contactIds: The list of alert contact ID.
+     * Property contactIds: The list of alert contact ID.
      */
     readonly contactIds: number[] | ros.IResolvable;
 
     /**
-     * @Property proxyUserId: Internal parameters
+     * Property proxyUserId: Internal parameters
      */
     readonly proxyUserId?: string;
 
     /**
-     * @Property regionId: Region ID. Default to region of stack.
+     * Property regionId: Region ID. Default to region of stack.
      */
     readonly regionId?: string;
 }
@@ -40,16 +40,16 @@ export class AlertContactGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute ContactGroupId: The ID of the alert contact group that you created.
+     * Attribute ContactGroupId: The ID of the alert contact group that you created.
      */
     public readonly attrContactGroupId: any;
 
     /**
      * Create a new `ALIYUN::ARMS::AlertContactGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AlertContactGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

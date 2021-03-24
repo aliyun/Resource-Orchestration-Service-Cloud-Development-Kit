@@ -9,12 +9,12 @@ export { RosMonitorGroup as MonitorGroupProperty };
 export interface MonitorGroupProps {
 
     /**
-     * @Property groupName: The name of the application group.
+     * Property groupName: The name of the application group.
      */
     readonly groupName: string;
 
     /**
-     * @Property contactGroups: The alert contact group. Alert notifications for the application group are sent to
+     * Property contactGroups: The alert contact group. Alert notifications for the application group are sent to
      * the specified alert contact group.
      */
     readonly contactGroups?: string;
@@ -31,16 +31,16 @@ export class MonitorGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute GroupId: Application group ID generated after the group is created.
+     * Attribute GroupId: Application group ID generated after the group is created.
      */
     public readonly attrGroupId: any;
 
     /**
      * Create a new `ALIYUN::CMS::MonitorGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MonitorGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,37 +9,37 @@ export { RosCopyImage as CopyImageProperty };
 export interface CopyImageProps {
 
     /**
-     * @Property destinationRegionId: ID of the region to where the destination custom image belongs.
+     * Property destinationRegionId: ID of the region to where the destination custom image belongs.
      */
     readonly destinationRegionId: string;
 
     /**
-     * @Property imageId: ID of the source custom image.
+     * Property imageId: ID of the source custom image.
      */
     readonly imageId: string;
 
     /**
-     * @Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+     * Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
      */
     readonly destinationDescription?: string;
 
     /**
-     * @Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
+     * Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
      */
     readonly destinationImageName?: string;
 
     /**
-     * @Property encrypted: Whether to encrypt the image.
+     * Property encrypted: Whether to encrypt the image.
      */
     readonly encrypted?: boolean | ros.IResolvable;
 
     /**
-     * @Property kmsKeyId: The ID of the key used to encrypt the image.
+     * Property kmsKeyId: The ID of the key used to encrypt the image.
      */
     readonly kmsKeyId?: string;
 
     /**
-     * @Property tag:
+     * Property tag:
      */
     readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
 }
@@ -55,16 +55,16 @@ export class CopyImage extends ros.Resource {
      */
 
     /**
-     * @Attribute ImageId: ID of the source custom image.
+     * Attribute ImageId: ID of the source custom image.
      */
     public readonly attrImageId: any;
 
     /**
      * Create a new `ALIYUN::ECS::CopyImage`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CopyImageProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

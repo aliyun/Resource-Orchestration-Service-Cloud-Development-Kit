@@ -9,32 +9,32 @@ export { RosAccelerator as AcceleratorProperty };
 export interface AcceleratorProps {
 
     /**
-     * @Property duration: The Duration of the GA instance
+     * Property duration: The Duration of the GA instance
      */
     readonly duration: string;
 
     /**
-     * @Property pricingCycle: The PricingCycle of the GA instance.
+     * Property pricingCycle: The PricingCycle of the GA instance.
      */
     readonly pricingCycle: string;
 
     /**
-     * @Property spec: The instance type of the GA instance
+     * Property spec: The instance type of the GA instance
      */
     readonly spec: string;
 
     /**
-     * @Property acceleratorName: The Name of the GA instance
+     * Property acceleratorName: The Name of the GA instance
      */
     readonly acceleratorName?: string;
 
     /**
-     * @Property autoPay: The AutoPay of the GA instance.
+     * Property autoPay: The AutoPay of the GA instance.
      */
     readonly autoPay?: string;
 
     /**
-     * @Property autoUseCoupon: The AutoUseCoupon of the GA instance.
+     * Property autoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     readonly autoUseCoupon?: string;
 }
@@ -50,56 +50,56 @@ export class Accelerator extends ros.Resource {
      */
 
     /**
-     * @Attribute AcceleratorId: The ID of the GA instance to query.
+     * Attribute AcceleratorId: The ID of the GA instance to query.
      */
     public readonly attrAcceleratorId: any;
 
     /**
-     * @Attribute AcceleratorName: The Name of the GA instance
+     * Attribute AcceleratorName: The Name of the GA instance
      */
     public readonly attrAcceleratorName: any;
 
     /**
-     * @Attribute AutoPay: The AutoPay of the GA instance.
+     * Attribute AutoPay: The AutoPay of the GA instance.
      */
     public readonly attrAutoPay: any;
 
     /**
-     * @Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
+     * Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.
      */
     public readonly attrAutoUseCoupon: any;
 
     /**
-     * @Attribute Duration: The Duration of the GA instance
+     * Attribute Duration: The Duration of the GA instance
      */
     public readonly attrDuration: any;
 
     /**
-     * @Attribute OrderId: The OrderId of the GA instance
+     * Attribute OrderId: The OrderId of the GA instance
      */
     public readonly attrOrderId: any;
 
     /**
-     * @Attribute PaymentType: The Payment Typethe GA instance
+     * Attribute PaymentType: The Payment Typethe GA instance
      */
     public readonly attrPaymentType: any;
 
     /**
-     * @Attribute PricingCycle: The PricingCycle of the GA instance.
+     * Attribute PricingCycle: The PricingCycle of the GA instance.
      */
     public readonly attrPricingCycle: any;
 
     /**
-     * @Attribute Spec: The instance type of the GA instance
+     * Attribute Spec: The instance type of the GA instance
      */
     public readonly attrSpec: any;
 
     /**
      * Create a new `ALIYUN::GA::Accelerator`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AcceleratorProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

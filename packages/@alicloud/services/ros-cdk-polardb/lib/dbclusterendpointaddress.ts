@@ -9,24 +9,24 @@ export { RosDBClusterEndpointAddress as DBClusterEndpointAddressProperty };
 export interface DBClusterEndpointAddressProps {
 
     /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
      */
     readonly dbClusterId: string;
 
     /**
-     * @Property dbEndpointId: The ID of the cluster connection point.
+     * Property dbEndpointId: The ID of the cluster connection point.
      */
     readonly dbEndpointId: string;
 
     /**
-     * @Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules:
+     * Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules:
      * It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
      * The length is 6~30 characters.
      */
     readonly connectionStringPrefix?: string;
 
     /**
-     * @Property netType: The network type of the connection string. 
+     * Property netType: The network type of the connection string. 
      * If set to Public, ROS will create, modify and delete Public address for you.
      * If set to Private, ROS will only modify Private address for you.
      * Default to Public.
@@ -45,21 +45,21 @@ export class DBClusterEndpointAddress extends ros.Resource {
      */
 
     /**
-     * @Attribute Address: The details of the endpoint address.
+     * Attribute Address: The details of the endpoint address.
      */
     public readonly attrAddress: any;
 
     /**
-     * @Attribute ConnectionString: The connection string of the endpoint address.
+     * Attribute ConnectionString: The connection string of the endpoint address.
      */
     public readonly attrConnectionString: any;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpointAddress`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DBClusterEndpointAddressProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

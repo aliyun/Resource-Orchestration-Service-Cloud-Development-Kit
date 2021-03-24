@@ -9,22 +9,22 @@ export { RosGrantInstanceToCen as GrantInstanceToCenProperty };
 export interface GrantInstanceToCenProps {
 
     /**
-     * @Property cenId: The ID of the CEN instance to be authorized.
+     * Property cenId: The ID of the CEN instance to be authorized.
      */
     readonly cenId: string;
 
     /**
-     * @Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
+     * Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
      */
     readonly cenOwnerId: number;
 
     /**
-     * @Property instanceId: The ID of the network instance.
+     * Property instanceId: The ID of the network instance.
      */
     readonly instanceId: string;
 
     /**
-     * @Property instanceType: The type of the network instance. Valid values:
+     * Property instanceType: The type of the network instance. Valid values:
      * VPC: Virtual Private Cloud (VPC).
      * VBR: Virtual Border Router (VBR).
      * CCN: Cloud Connect Network (CCN).
@@ -43,21 +43,21 @@ export class GrantInstanceToCen extends ros.Resource {
      */
 
     /**
-     * @Attribute CenId: The ID of the CEN instance to be authorized.
+     * Attribute CenId: The ID of the CEN instance to be authorized.
      */
     public readonly attrCenId: any;
 
     /**
-     * @Attribute InstanceId: The ID of the network instance.
+     * Attribute InstanceId: The ID of the network instance.
      */
     public readonly attrInstanceId: any;
 
     /**
      * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: GrantInstanceToCenProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

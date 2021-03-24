@@ -9,53 +9,53 @@ export { RosDrdsDB as DrdsDBProperty };
 export interface DrdsDBProps {
 
     /**
-     * @Property drdsInstanceId: DRDS instance ID
+     * Property drdsInstanceId: DRDS instance ID
      */
     readonly drdsInstanceId: string;
 
     /**
-     * @Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
+     * Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.
      */
     readonly accountName?: string;
 
     /**
-     * @Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+     * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
      */
     readonly dbInstanceIsCreating?: boolean | ros.IResolvable;
 
     /**
-     * @Property dbInstType: The type of the attached storage. Valid values:
+     * Property dbInstType: The type of the attached storage. Valid values:
      * RDS or POLARDB
      */
     readonly dbInstType?: string;
 
     /**
-     * @Property dbName: Database Name
+     * Property dbName: Database Name
      */
     readonly dbName?: string;
 
     /**
-     * @Property encode: Encoding used by the database
+     * Property encode: Encoding used by the database
      */
     readonly encode?: string;
 
     /**
-     * @Property instDbName:
+     * Property instDbName:
      */
     readonly instDbName?: Array<RosDrdsDB.InstDbNameProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property password: The logon password of the database instance.
+     * Property password: The logon password of the database instance.
      */
     readonly password?: string;
 
     /**
-     * @Property rdsInstance: This property is required only for vertical partitioning.
+     * Property rdsInstance: This property is required only for vertical partitioning.
      */
     readonly rdsInstance?: string[];
 
     /**
-     * @Property type: Database Sharding method. For more information, see scalability principle. Valid values:
+     * Property type: Database Sharding method. For more information, see scalability principle. Valid values:
      * HORIZONTAL: indicates HORIZONTAL partitioning, which is commonly known as database
      * and table sharding.
      * VERTICAL: indicates VERTICAL partitioning.
@@ -76,9 +76,9 @@ export class DrdsDB extends ros.Resource {
     /**
      * Create a new `ALIYUN::DRDS::DrdsDB`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DrdsDBProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

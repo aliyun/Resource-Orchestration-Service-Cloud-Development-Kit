@@ -9,24 +9,24 @@ export { RosRouteTable as RouteTableProperty };
 export interface RouteTableProps {
 
     /**
-     * @Property vpcId: The ID of the VPC to which the custom route table belongs.
+     * Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
     readonly vpcId: string;
 
     /**
-     * @Property description: The description of the route table.
+     * Property description: The description of the route table.
      * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property routeTableName: The name of the route table.
+     * Property routeTableName: The name of the route table.
      * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
      */
     readonly routeTableName?: string;
 
     /**
-     * @Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
 }
@@ -42,36 +42,36 @@ export class RouteTable extends ros.Resource {
      */
 
     /**
-     * @Attribute RouteTableId: The ID of the route table.
+     * Attribute RouteTableId: The ID of the route table.
      */
     public readonly attrRouteTableId: any;
 
     /**
-     * @Attribute RouteTableName: The name of the route table.
+     * Attribute RouteTableName: The name of the route table.
      */
     public readonly attrRouteTableName: any;
 
     /**
-     * @Attribute RouteTableType: The type of the route table.
+     * Attribute RouteTableType: The type of the route table.
      */
     public readonly attrRouteTableType: any;
 
     /**
-     * @Attribute VSwitchIds: A list of VSwitches under the VPC.
+     * Attribute VSwitchIds: A list of VSwitches under the VPC.
      */
     public readonly attrVSwitchIds: any;
 
     /**
-     * @Attribute VpcId: The ID of the VRouter to which the route table belongs.
+     * Attribute VpcId: The ID of the VRouter to which the route table belongs.
      */
     public readonly attrVpcId: any;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTable`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RouteTableProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

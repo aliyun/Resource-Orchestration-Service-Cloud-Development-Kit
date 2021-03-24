@@ -9,7 +9,7 @@ export { RosNamespace as NamespaceProperty };
 export interface NamespaceProps {
 
     /**
-     * @Property name: Namespace name
+     * Property name: Namespace name
      */
     readonly name: string;
 }
@@ -25,21 +25,21 @@ export class Namespace extends ros.Resource {
      */
 
     /**
-     * @Attribute Endpoint: Endpoint
+     * Attribute Endpoint: Endpoint
      */
     public readonly attrEndpoint: any;
 
     /**
-     * @Attribute NamespaceId: ID namespace
+     * Attribute NamespaceId: ID namespace
      */
     public readonly attrNamespaceId: any;
 
     /**
      * Create a new `ALIYUN::ACM::Namespace`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: NamespaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

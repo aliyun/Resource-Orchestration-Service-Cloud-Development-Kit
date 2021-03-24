@@ -5,6 +5,7 @@ import * as fs from 'fs-extra';
 import * as path from 'path';
 import { error, print, warning } from './logging';
 import { cdkHomeDir } from './util/directories';
+import { writeAndUpdateLanguageInfo } from './cdk-toolkit'
 
 export type InvokeHook = (targetDirectory: string) => Promise<void>;
 
@@ -53,6 +54,7 @@ export async function cliInit(
   }
 
   await initializeProject(template, language, canUseNetwork, generateOnly, workDir);
+  writeAndUpdateLanguageInfo(language);
 }
 
 /**
@@ -163,6 +165,8 @@ export class InitTemplate {
         // eslint-disable-next-line @typescript-eslint/no-require-imports
         const invoke: InvokeHook = require(path.join(sourceDirectory, file)).invoke;
         await invoke(targetDirectory);
+        const invokeUnitTest: InvokeHook = require(path.join(sourceDirectory, file)).invokeUnitTest;
+        await invokeUnitTest(targetDirectory);
       }
     }
   }

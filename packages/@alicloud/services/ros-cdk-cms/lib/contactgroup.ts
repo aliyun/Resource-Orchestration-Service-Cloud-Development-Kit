@@ -9,17 +9,17 @@ export { RosContactGroup as ContactGroupProperty };
 export interface ContactGroupProps {
 
     /**
-     * @Property contactGroupName: The name of the alert contact group.
+     * Property contactGroupName: The name of the alert contact group.
      */
     readonly contactGroupName: string;
 
     /**
-     * @Property contactNames: The name of the alert contact.
+     * Property contactNames: The name of the alert contact.
      */
     readonly contactNames: string[];
 
     /**
-     * @Property describe: The description of the alert contact group.
+     * Property describe: The description of the alert contact group.
      */
     readonly describe: string;
 }
@@ -35,16 +35,16 @@ export class ContactGroup extends ros.Resource {
      */
 
     /**
-     * @Attribute ContactGroupName: The name of the alert contact group.
+     * Attribute ContactGroupName: The name of the alert contact group.
      */
     public readonly attrContactGroupName: any;
 
     /**
      * Create a new `ALIYUN::CMS::ContactGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ContactGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

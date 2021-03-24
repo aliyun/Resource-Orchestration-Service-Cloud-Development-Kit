@@ -9,62 +9,62 @@ export { RosPrepayInstance as PrepayInstanceProperty };
 export interface PrepayInstanceProps {
 
     /**
-     * @Property backupPolicy: Backup policy
+     * Property backupPolicy: Backup policy
      */
     readonly backupPolicy?: RosPrepayInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
+     * Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
     readonly capacity?: number;
 
     /**
-     * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
+     * Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
      */
     readonly engineVersion?: string;
 
     /**
-     * @Property evictionPolicy: The eviction policy of cache data storage.
+     * Property evictionPolicy: The eviction policy of cache data storage.
      */
     readonly evictionPolicy?: string;
 
     /**
-     * @Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
+     * Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
      */
     readonly instanceClass?: string;
 
     /**
-     * @Property instanceConnection: Instance connection message.
+     * Property instanceConnection: Instance connection message.
      */
     readonly instanceConnection?: RosPrepayInstance.InstanceConnectionProperty | ros.IResolvable;
 
     /**
-     * @Property instanceMaintainTime: Instance maintain time.
+     * Property instanceMaintainTime: Instance maintain time.
      */
     readonly instanceMaintainTime?: RosPrepayInstance.InstanceMaintainTimeProperty | ros.IResolvable;
 
     /**
-     * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly instanceName?: string;
 
     /**
-     * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
+     * Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
     readonly password?: string;
 
     /**
-     * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
+     * Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
      */
     readonly period?: number;
 
     /**
-     * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
+     * Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
     readonly securityGroupId?: string;
 
     /**
-     * @Property sslEnabled: Modifies the SSL status. Valid values:
+     * Property sslEnabled: Modifies the SSL status. Valid values:
      * Disable: disables SSL encryption.
      * Enable: enables SSL encryption.
      * Update: updates the SSL certificate.
@@ -72,29 +72,29 @@ export interface PrepayInstanceProps {
     readonly sslEnabled?: string;
 
     /**
-     * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
+     * Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
     readonly tags?: { [key: string]: any }[];
 
     /**
-     * @Property vpcId: The VPC id to create ecs instance.
+     * Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
+     * Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
      * - true: enables password free.
      * - false: disables password free.
      */
     readonly vpcPasswordFree?: boolean | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The vSwitch Id to create ecs instance.
+     * Property vSwitchId: The vSwitch Id to create ecs instance.
      */
     readonly vSwitchId?: string;
 
     /**
-     * @Property zoneId: The zone id of input region.
+     * Property zoneId: The zone id of input region.
      */
     readonly zoneId?: string;
 }
@@ -110,31 +110,31 @@ export class PrepayInstance extends ros.Resource {
      */
 
     /**
-     * @Attribute ConnectionDomain: Connection domain of created instance.
+     * Attribute ConnectionDomain: Connection domain of created instance.
      */
     public readonly attrConnectionDomain: any;
 
     /**
-     * @Attribute InstanceId: Instance id for created redis instance.
+     * Attribute InstanceId: Instance id for created redis instance.
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute OrderId: Order Id of created instance.
+     * Attribute OrderId: Order Id of created instance.
      */
     public readonly attrOrderId: any;
 
     /**
-     * @Attribute Port: Port of created instance.
+     * Attribute Port: Port of created instance.
      */
     public readonly attrPort: any;
 
     /**
      * Create a new `ALIYUN::REDIS::PrepayInstance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: PrepayInstanceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

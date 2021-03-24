@@ -9,32 +9,32 @@ export { RosMountTarget as MountTargetProperty };
 export interface MountTargetProps {
 
     /**
-     * @Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
+     * Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
      */
     readonly accessGroupName: string;
 
     /**
-     * @Property fileSystemId: File system ID
+     * Property fileSystemId: File system ID
      */
     readonly fileSystemId: string;
 
     /**
-     * @Property networkType: Network type, including Vpc and Classic networks.
+     * Property networkType: Network type, including Vpc and Classic networks.
      */
     readonly networkType: string;
 
     /**
-     * @Property status: Status, including Active and Inactive
+     * Property status: Status, including Active and Inactive
      */
     readonly status?: string;
 
     /**
-     * @Property vpcId: VPC network ID
+     * Property vpcId: VPC network ID
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * Property vSwitchId: VSwitch ID.
      */
     readonly vSwitchId?: string;
 }
@@ -50,16 +50,16 @@ export class MountTarget extends ros.Resource {
      */
 
     /**
-     * @Attribute MountTargetDomain: Mount point domain name
+     * Attribute MountTargetDomain: Mount point domain name
      */
     public readonly attrMountTargetDomain: any;
 
     /**
      * Create a new `ALIYUN::NAS::MountTarget`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MountTargetProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,17 +9,17 @@ export { RosContact as ContactProperty };
 export interface ContactProps {
 
     /**
-     * @Property channels: undefined
+     * Property channels: undefined
      */
     readonly channels: RosContact.ChannelsProperty | ros.IResolvable;
 
     /**
-     * @Property contactName: The name of the alarm contact.
+     * Property contactName: The name of the alarm contact.
      */
     readonly contactName: string;
 
     /**
-     * @Property describe: The description of the alert contact.
+     * Property describe: The description of the alert contact.
      */
     readonly describe: string;
 }
@@ -35,16 +35,16 @@ export class Contact extends ros.Resource {
      */
 
     /**
-     * @Attribute ContactName: The name of the alarm contact.
+     * Attribute ContactName: The name of the alarm contact.
      */
     public readonly attrContactName: any;
 
     /**
      * Create a new `ALIYUN::CMS::Contact`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ContactProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

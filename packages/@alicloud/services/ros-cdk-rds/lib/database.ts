@@ -9,7 +9,7 @@ export { RosDatabase as DatabaseProperty };
 export interface DatabaseProps {
 
     /**
-     * @Property characterSetName: The character set you want to use for the database. Valid values:
+     * Property characterSetName: The character set you want to use for the database. Valid values:
      * MySQL and MariaDB: utf8 | gbk | latin1 | utf8mb4.
      * SQL Server: Chinese_PRC_CI_AS | Chinese_PRC_CS_AS | SQL_Latin1_General_CP1_CI_AS | SQL_Latin1_General_CP1_CS_AS
      * | Chinese_PRC_BIN.
@@ -22,12 +22,12 @@ export interface DatabaseProps {
     readonly characterSetName: string;
 
     /**
-     * @Property dbInstanceId: The ID of the instance.
+     * Property dbInstanceId: The ID of the instance.
      */
     readonly dbInstanceId: string;
 
     /**
-     * @Property dbName: The name of the database you want to create.
+     * Property dbName: The name of the database you want to create.
      * Note
      * The name must be 2 to 64 characters in length.
      * The name must start with a lowercase letter and end with a lowercase letter or digit.
@@ -38,7 +38,7 @@ export interface DatabaseProps {
     readonly dbName: string;
 
     /**
-     * @Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
+     * Property dbDescription: The description of the database. The description must be 2 to 256 characters in length.
      * The description must start with a letter and can contain letters, digits, underscores
      * (_), and hyphens (-).
      * Note The description cannot start with http:// or https://.
@@ -57,21 +57,21 @@ export class Database extends ros.Resource {
      */
 
     /**
-     * @Attribute DBInstanceId: The ID of the instance.
+     * Attribute DBInstanceId: The ID of the instance.
      */
     public readonly attrDbInstanceId: any;
 
     /**
-     * @Attribute DBName: The name of the database.
+     * Attribute DBName: The name of the database.
      */
     public readonly attrDbName: any;
 
     /**
      * Create a new `ALIYUN::RDS::Database`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: DatabaseProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,12 +9,12 @@ export { RosAccountPrivilege as AccountPrivilegeProperty };
 export interface AccountPrivilegeProps {
 
     /**
-     * @Property accountName: The name of the database account to be granted access permissions.
+     * Property accountName: The name of the database account to be granted access permissions.
      */
     readonly accountName: string;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
+     * Property accountPrivilege: The permissions of the database account on the database. Valid values:
      * - ReadWrite: has read and write permissions on the database.
      * - ReadOnly: has the read-only permission on the database.
      * - DMLOnly: runs only data manipulation language (DML) statements.
@@ -25,12 +25,12 @@ export interface AccountPrivilegeProps {
     readonly accountPrivilege: string;
 
     /**
-     * @Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
      */
     readonly dbClusterId: string;
 
     /**
-     * @Property dbName: The name of the database whose access permissions are to be granted to the database account.
+     * Property dbName: The name of the database whose access permissions are to be granted to the database account.
      * You can grant access permissions on one or more databases to the database account.
      * Separate multiple databases with a comma (,).
      */
@@ -50,9 +50,9 @@ export class AccountPrivilege extends ros.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::AccountPrivilege`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccountPrivilegeProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

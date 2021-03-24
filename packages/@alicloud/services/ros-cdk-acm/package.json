@@ -25,6 +25,10 @@
         "classifiers": [
           "Programming Language :: Python :: 3"
         ]
+      },
+      "dotnet": {
+        "namespace": "AlibabaCloud.SDK.ROS.CDK.Acm",
+        "packageId": "AlibabaCloud.SDK.ROS.CDK.Acm"
       }
     }
   },

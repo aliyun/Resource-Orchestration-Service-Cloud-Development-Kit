@@ -1,0 +1,314 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
+{
+    /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+    [JsiiInterface(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.InstanceProps")]
+    public interface IInstanceProps
+    {
+        /// <summary>Property dataNode: The Elasticsearch cluster's data node setting.</summary>
+        [JsiiProperty(name: "dataNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DataNode
+        {
+            get;
+        }
+
+        /// <summary>Property password: The password of the instance.</summary>
+        /// <remarks>
+        /// The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%&amp;*()_+-=).
+        /// </remarks>
+        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
+        string Password
+        {
+            get;
+        }
+
+        /// <summary>Property version: Elasticsearch version.</summary>
+        /// <remarks>
+        /// Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
+        /// </remarks>
+        [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
+        string Version
+        {
+            get;
+        }
+
+        /// <summary>Property vSwitchId: The ID of VSwitch.</summary>
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
+        string VSwitchId
+        {
+            get;
+        }
+
+        /// <summary>Property description: The description of instance.</summary>
+        /// <remarks>
+        /// It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+        /// </remarks>
+        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? Description
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property enablePublic: Whether enable public access.</summary>
+        /// <remarks>
+        /// If properties is true, will allocate public address.Default: false.
+        /// </remarks>
+        [JsiiProperty(name: "enablePublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? EnablePublic
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? InstanceChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.</summary>
+        [JsiiProperty(name: "kibanaWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? KibanaWhitelist
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property masterNode: The dedicated master node setting.</summary>
+        /// <remarks>
+        /// If specified, dedicated master node will be created.
+        /// </remarks>
+        [JsiiProperty(name: "masterNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.MasterNodeProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MasterNode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property period: The duration that you will buy Elasticsearch instance (in month).</summary>
+        /// <remarks>
+        /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+        /// </remarks>
+        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        double? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property privateWhitelist: Set the instance's IP whitelist in VPC network.</summary>
+        [JsiiProperty(name: "privateWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PrivateWhitelist
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property publicWhitelist: Set the instance's IP whitelist in Internet.</summary>
+        /// <remarks>
+        /// The AllocatePublicAddress should be true.
+        /// </remarks>
+        [JsiiProperty(name: "publicWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PublicWhitelist
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property tags: Tags to attach to instance.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `ALIYUN::ElasticSearch::Instance`.</summary>
+        [JsiiTypeProxy(nativeType: typeof(IInstanceProps), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.InstanceProps")]
+        internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.IInstanceProps
+        {
+            private _Proxy(ByRefValue reference): base(reference)
+            {
+            }
+
+            /// <summary>Property dataNode: The Elasticsearch cluster's data node setting.</summary>
+            [JsiiProperty(name: "dataNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DataNode
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property password: The password of the instance.</summary>
+            /// <remarks>
+            /// The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%&amp;*()_+-=).
+            /// </remarks>
+            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
+            public string Password
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <summary>Property version: Elasticsearch version.</summary>
+            /// <remarks>
+            /// Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
+            /// </remarks>
+            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
+            public string Version
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <summary>Property vSwitchId: The ID of VSwitch.</summary>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
+            public string VSwitchId
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <summary>Property description: The description of instance.</summary>
+            /// <remarks>
+            /// It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? Description
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>Property enablePublic: Whether enable public access.</summary>
+            /// <remarks>
+            /// If properties is true, will allocate public address.Default: false.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "enablePublic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EnablePublic
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? InstanceChargeType
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "kibanaWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KibanaWhitelist
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property masterNode: The dedicated master node setting.</summary>
+            /// <remarks>
+            /// If specified, dedicated master node will be created.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "masterNode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.MasterNodeProperty\"}]}}", isOptional: true)]
+            public object? MasterNode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property period: The duration that you will buy Elasticsearch instance (in month).</summary>
+            /// <remarks>
+            /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            public double? Period
+            {
+                get => GetInstanceProperty<double?>();
+            }
+
+            /// <summary>Property privateWhitelist: Set the instance's IP whitelist in VPC network.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "privateWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateWhitelist
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property publicWhitelist: Set the instance's IP whitelist in Internet.</summary>
+            /// <remarks>
+            /// The AllocatePublicAddress should be true.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "publicWhitelist", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PublicWhitelist
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? ResourceGroupId
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to instance.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            {
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+            }
+        }
+    }
+}

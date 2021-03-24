@@ -9,18 +9,18 @@ export { RosCustomerGateway as CustomerGatewayProperty };
 export interface CustomerGatewayProps {
 
     /**
-     * @Property ipAddress: The IP address of the user gateway.
+     * Property ipAddress: The IP address of the user gateway.
      */
     readonly ipAddress: string;
 
     /**
-     * @Property description: Description of the user gateway.
+     * Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
     readonly description?: string;
 
     /**
-     * @Property name: The name of the user gateway.
+     * Property name: The name of the user gateway.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
     readonly name?: string;
@@ -37,16 +37,16 @@ export class CustomerGateway extends ros.Resource {
      */
 
     /**
-     * @Attribute CustomerGatewayId: The ID of the user gateway.
+     * Attribute CustomerGatewayId: The ID of the user gateway.
      */
     public readonly attrCustomerGatewayId: any;
 
     /**
      * Create a new `ALIYUN::VPC::CustomerGateway`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CustomerGatewayProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

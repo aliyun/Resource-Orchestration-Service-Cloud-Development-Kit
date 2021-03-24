@@ -9,22 +9,22 @@ export { RosUserDefineRegion as UserDefineRegionProperty };
 export interface UserDefineRegionProps {
 
     /**
-     * @Property regionName: Logical region (or namespace) name
+     * Property regionName: Logical region (or namespace) name
      */
     readonly regionName: string;
 
     /**
-     * @Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier")
+     * Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier")
      */
     readonly regionTag: string;
 
     /**
-     * @Property debugEnable: Whether debug is enable
+     * Property debugEnable: Whether debug is enable
      */
     readonly debugEnable?: boolean | ros.IResolvable;
 
     /**
-     * @Property description: Logic region (or namespace) description
+     * Property description: Logic region (or namespace) description
      */
     readonly description?: string;
 }
@@ -40,36 +40,36 @@ export class UserDefineRegion extends ros.Resource {
      */
 
     /**
-     * @Attribute BelongRegion: Under the physical region ID
+     * Attribute BelongRegion: Under the physical region ID
      */
     public readonly attrBelongRegion: any;
 
     /**
-     * @Attribute DebugEnable: Whether debug is enable
+     * Attribute DebugEnable: Whether debug is enable
      */
     public readonly attrDebugEnable: any;
 
     /**
-     * @Attribute Id: Resource ID
+     * Attribute Id: Resource ID
      */
     public readonly attrId: any;
 
     /**
-     * @Attribute RegionName: Region name
+     * Attribute RegionName: Region name
      */
     public readonly attrRegionName: any;
 
     /**
-     * @Attribute UserId: User account ID
+     * Attribute UserId: User account ID
      */
     public readonly attrUserId: any;
 
     /**
      * Create a new `ALIYUN::EDAS::UserDefineRegion`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: UserDefineRegionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

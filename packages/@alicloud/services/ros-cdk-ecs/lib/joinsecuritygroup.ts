@@ -9,22 +9,22 @@ export { RosJoinSecurityGroup as JoinSecurityGroupProperty };
 export interface JoinSecurityGroupProps {
 
     /**
-     * @Property securityGroupId: Security group id to join.
+     * Property securityGroupId: Security group id to join.
      */
     readonly securityGroupId: string;
 
     /**
-     * @Property instanceId: Instance Id to the join the security group.
+     * Property instanceId: Instance Id to the join the security group.
      */
     readonly instanceId?: string;
 
     /**
-     * @Property instanceIdList: The comma delimited instance id list.If the property "InstanceId" is setting, this property will be ignored.
+     * Property instanceIdList: The comma delimited instance id list.If the property "InstanceId" is setting, this property will be ignored.
      */
     readonly instanceIdList?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property networkInterfaceList: Network interface list.
+     * Property networkInterfaceList: Network interface list.
      */
     readonly networkInterfaceList?: Array<any | ros.IResolvable> | ros.IResolvable;
 }
@@ -42,9 +42,9 @@ export class JoinSecurityGroup extends ros.Resource {
     /**
      * Create a new `ALIYUN::ECS::JoinSecurityGroup`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: JoinSecurityGroupProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,7 +9,7 @@ export { RosInstance as InstanceProperty };
 export interface InstanceProps {
 
     /**
-     * @Property autoRenew: Specifies whether to enable auto renewal. Valid values:
+     * Property autoRenew: Specifies whether to enable auto renewal. Valid values:
      * true
      * false
      * Note Default value: false.
@@ -17,7 +17,7 @@ export interface InstanceProps {
     readonly autoRenew?: string;
 
     /**
-     * @Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
+     * Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
      * 1
      * 2
      * 3
@@ -28,7 +28,7 @@ export interface InstanceProps {
     readonly autoRenewPeriod?: string;
 
     /**
-     * @Property autoUseCoupon: Specifies whether to use a coupon. Valid values:
+     * Property autoUseCoupon: Specifies whether to use a coupon. Valid values:
      * true
      * false
      * Note Default value: false.
@@ -36,19 +36,19 @@ export interface InstanceProps {
     readonly autoUseCoupon?: string;
 
     /**
-     * @Property backupPolicy: Backup policy
+     * Property backupPolicy: Backup policy
      */
     readonly backupPolicy?: RosInstance.BackupPolicyProperty | ros.IResolvable;
 
     /**
-     * @Property capacity: The storage capacity of the instance. Unit: MB.
+     * Property capacity: The storage capacity of the instance. Unit: MB.
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
     readonly capacity?: number;
 
     /**
-     * @Property chargeType: The billing method of the instance. Valid values:
+     * Property chargeType: The billing method of the instance. Valid values:
      * PrePaid: subscription.
      * PostPaid: pay-as-you-go.
      * Note Default value: PostPaid.
@@ -56,32 +56,32 @@ export interface InstanceProps {
     readonly chargeType?: string;
 
     /**
-     * @Property config: The parameter configuration of the instance, in a JSON string. For more information,
+     * Property config: The parameter configuration of the instance, in a JSON string. For more information,
      * see Set parameters.
      */
     readonly config?: string;
 
     /**
-     * @Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
+     * Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
      */
     readonly couponNo?: string;
 
     /**
-     * @Property instanceClass: The instance type. For more information, see Instance types.
+     * Property instanceClass: The instance type. For more information, see Instance types.
      * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
      * the CreateInstance operation.
      */
     readonly instanceClass?: string;
 
     /**
-     * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
+     * Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
      * with a letter. The following characters are not supported: at signs (@), forward slashes (/), colons (:), equal signs (=), double quotation marks
      * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
      */
     readonly instanceName?: string;
 
     /**
-     * @Property networkType: The network type of the instance. Valid values:
+     * Property networkType: The network type of the instance. Valid values:
      * CLASSIC
      * VPC
      * Note Default value: CLASSIC.
@@ -89,7 +89,7 @@ export interface InstanceProps {
     readonly networkType?: string;
 
     /**
-     * @Property password: The password of the instance. The password can be 8 to 32 characters in length and
+     * Property password: The password of the instance. The password can be 8 to 32 characters in length and
      * must contain at least three types of the following characters: uppercase letters,
      * lowercase letters, digits, and special characters. Special characters include ! at signs (@), number signs (#), dollar signs ($), percent signs (%), carets (^),
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
@@ -98,7 +98,7 @@ export interface InstanceProps {
     readonly password?: string;
 
     /**
-     * @Property period: The subscription period. You must specify this parameter if the value of the ChargeType
+     * Property period: The subscription period. You must specify this parameter if the value of the ChargeType
      * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
      * and 36.
      * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
@@ -106,36 +106,36 @@ export interface InstanceProps {
     readonly period?: string;
 
     /**
-     * @Property privateIpAddress: The internal IP address of the instance.
+     * Property privateIpAddress: The internal IP address of the instance.
      * Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
      * block of the VSwitch to which the instance belongs.
      */
     readonly privateIpAddress?: string;
 
     /**
-     * @Property resourceGroupId: Resource group ID.
+     * Property resourceGroupId: Resource group ID.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property vpcId: The ID of the VPC.
+     * Property vpcId: The ID of the VPC.
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
+     * Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
      * - true: enables password free.
      * - false: disables password free.
      */
     readonly vpcPasswordFree?: boolean | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The ID of the VSwitch.
      */
     readonly vSwitchId?: string;
 
     /**
-     * @Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
+     * Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
      */
     readonly zoneId?: string;
 }
@@ -151,36 +151,36 @@ export class Instance extends ros.Resource {
      */
 
     /**
-     * @Attribute ConnectionDomain: The internal endpoint of the instance.
+     * Attribute ConnectionDomain: The internal endpoint of the instance.
      */
     public readonly attrConnectionDomain: any;
 
     /**
-     * @Attribute InstanceId: The globally unique identifier (GUID) of the instance.
+     * Attribute InstanceId: The globally unique identifier (GUID) of the instance.
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute InstanceName: The name of the instance.
+     * Attribute InstanceName: The name of the instance.
      */
     public readonly attrInstanceName: any;
 
     /**
-     * @Attribute Port: Port of created instance.
+     * Attribute Port: Port of created instance.
      */
     public readonly attrPort: any;
 
     /**
-     * @Attribute QPS: QPS.
+     * Attribute QPS: QPS.
      */
     public readonly attrQps: any;
 
     /**
      * Create a new `ALIYUN::Memcache::Instance`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

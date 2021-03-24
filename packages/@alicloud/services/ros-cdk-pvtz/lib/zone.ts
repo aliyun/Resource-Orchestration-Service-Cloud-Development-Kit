@@ -9,19 +9,19 @@ export { RosZone as ZoneProperty };
 export interface ZoneProps {
 
     /**
-     * @Property zoneName: Zone name
+     * Property zoneName: Zone name
      */
     readonly zoneName: string;
 
     /**
-     * @Property proxyPattern: ZONE: completely hijack the entire zone.
+     * Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
      */
     readonly proxyPattern?: string;
 
     /**
-     * @Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
+     * Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
     readonly remark?: string;
 }
@@ -37,16 +37,16 @@ export class Zone extends ros.Resource {
      */
 
     /**
-     * @Attribute ZoneId: Zone ID
+     * Attribute ZoneId: Zone ID
      */
     public readonly attrZoneId: any;
 
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ZoneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

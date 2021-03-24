@@ -9,7 +9,7 @@ export { RosProduct as ProductProperty };
 export interface ProductProps {
 
     /**
-     * @Property nodeType: The node type of the product. Values:
+     * Property nodeType: The node type of the product. Values:
      * 0: Device. A device cannot be mounted with sub-devices. It can connect to IoT Platform
      * either directly or as a sub-device of a gateway.
      * 1: Gateway. A gateway can be mounted with sub-devices. It can manage sub-devices, maintain
@@ -19,14 +19,14 @@ export interface ProductProps {
     readonly nodeType: number;
 
     /**
-     * @Property productName: The name of the product. A product name can be 4 to 30 characters in length and can
+     * Property productName: The name of the product. A product name can be 4 to 30 characters in length and can
      * contain Chinese characters, English letters, digits, and underscores (_).
      * Note A product name must be unique in an account.
      */
     readonly productName: string;
 
     /**
-     * @Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
+     * Property aliyunCommodityCode: The edition of the product that you want to create. There are two options:
      * iothub_senior: Pro Edition.
      * iothub: Basic Edition.
      * If you do not input this parameter, the default value is used, which is iothub (Basic
@@ -35,7 +35,7 @@ export interface ProductProps {
     readonly aliyunCommodityCode?: string;
 
     /**
-     * @Property authType: Authentication device to access the Internet of Things platform under the product. Optional:
+     * Property authType: Authentication device to access the Internet of Things platform under the product. Optional:
      * secret: using a device key for device authentication.
      * Details can be found MQTT-TCP connection communication.
      * id2: Use things device authentication ID.
@@ -46,13 +46,13 @@ export interface ProductProps {
     readonly authType?: string;
 
     /**
-     * @Property categoryKey: Identifier Product category. If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
+     * Property categoryKey: Identifier Product category. If you pass this parameter, the product will be created using the object model specified category; not passed, the standard model is not used in any category.
      * Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
      */
     readonly categoryKey?: string;
 
     /**
-     * @Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
+     * Property dataFormat: You must specify this parameter if the value of AliyunCommodityCode is iothub_senior.
      * This parameter is only available and required when you create a Pro Edition product.
      * Options:
      * 0: Do not parse/Custom.
@@ -61,13 +61,13 @@ export interface ProductProps {
     readonly dataFormat?: number;
 
     /**
-     * @Property description: A description of the product. The description can be a maximum of 100 characters in
+     * Property description: A description of the product. The description can be a maximum of 100 characters in
      * length.
      */
     readonly description?: string;
 
     /**
-     * @Property id2: Whether ID2 certification.
+     * Property id2: Whether ID2 certification.
      * Optional values:
      * true: the opening of ID2 certification.
      * false: do not open ID2 certification.
@@ -79,19 +79,19 @@ export interface ProductProps {
     readonly id2?: boolean | ros.IResolvable;
 
     /**
-     * @Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
+     * Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
     readonly iotInstanceId?: string;
 
     /**
-     * @Property joinPermissionId: LoRaWAN network credential ID. When networking mode NetType chosen LORA, the necessary parameters.
+     * Property joinPermissionId: LoRaWAN network credential ID. When networking mode NetType chosen LORA, the necessary parameters.
      * Please call QueryLoRaJoinPermissions query JoinPermissionId network credentials LoRaWAN under your account.
      * If you do not LoRaWAN network credentials, visit the network management platform to create things together.
      */
     readonly joinPermissionId?: string;
 
     /**
-     * @Property netType: Networking mode.
+     * Property netType: Networking mode.
      * Set this parameter only if you are creating a product whose devices directly connect
      * to IoT Platform.
      * Options:
@@ -104,7 +104,7 @@ export interface ProductProps {
     readonly netType?: string;
 
     /**
-     * @Property protocolType: The protocol that devices of this product use to connect to gateways.
+     * Property protocolType: The protocol that devices of this product use to connect to gateways.
      * Set this parameter only if you are creating a product whose devices will be connected
      * to gateways.
      * Options:
@@ -117,7 +117,7 @@ export interface ProductProps {
     readonly protocolType?: string;
 
     /**
-     * @Property publishAuto: Whether to automatically model publication after the product is created.
+     * Property publishAuto: Whether to automatically model publication after the product is created.
      * true: publishing.
      * false: not released.
      * This parameter is not passed, the default value true.
@@ -125,7 +125,7 @@ export interface ProductProps {
     readonly publishAuto?: boolean | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
+     * Property resourceGroupId: Resource group ID (group ID to view the resource in the resource management console), specify the product is classified as a resource group.
      * If this parameter is passed, the product will be classified as a default resource group.
      */
     readonly resourceGroupId?: string;
@@ -142,21 +142,21 @@ export class Product extends ros.Resource {
      */
 
     /**
-     * @Attribute IotInstanceId: IOT instance ID.
+     * Attribute IotInstanceId: IOT instance ID.
      */
     public readonly attrIotInstanceId: any;
 
     /**
-     * @Attribute ProductKey: The globally unique identifier of the product issued by IoT Platform.
+     * Attribute ProductKey: The globally unique identifier of the product issued by IoT Platform.
      */
     public readonly attrProductKey: any;
 
     /**
      * Create a new `ALIYUN::IOT::Product`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProductProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,37 +9,37 @@ export { RosTopic as TopicProperty };
 export interface TopicProps {
 
     /**
-     * @Property comment: The comment of topic.
+     * Property comment: The comment of topic.
      */
     readonly comment: string;
 
     /**
-     * @Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
+     * Property projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
      */
     readonly projectName: string;
 
     /**
-     * @Property recordType: Record type. TUPLE: structured data, BLOB: unstructured data.
+     * Property recordType: Record type. TUPLE: structured data, BLOB: unstructured data.
      */
     readonly recordType: string;
 
     /**
-     * @Property topicName: The name of the topic. Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
+     * Property topicName: The name of the topic. Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
      */
     readonly topicName: string;
 
     /**
-     * @Property lifecycle: Data storage life cycle.
+     * Property lifecycle: Data storage life cycle.
      */
     readonly lifecycle?: number;
 
     /**
-     * @Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
+     * Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
      */
     readonly recordSchema?: string;
 
     /**
-     * @Property shardCount: Initial shard number.
+     * Property shardCount: Initial shard number.
      */
     readonly shardCount?: number;
 }
@@ -55,21 +55,21 @@ export class Topic extends ros.Resource {
      */
 
     /**
-     * @Attribute ProjectName: Project name
+     * Attribute ProjectName: Project name
      */
     public readonly attrProjectName: any;
 
     /**
-     * @Attribute TopicName: Topic name
+     * Attribute TopicName: Topic name
      */
     public readonly attrTopicName: any;
 
     /**
      * Create a new `ALIYUN::DATAHUB::Topic`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: TopicProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,44 +9,44 @@ export { RosSecurityGroupClone as SecurityGroupCloneProperty };
 export interface SecurityGroupCloneProps {
 
     /**
-     * @Property sourceSecurityGroupId: Source security group ID is used to copy properties to clone new security group. If the NetworkType and VpcId is not specified, the same security group will be cloned. If NetworkType or VpcId is specified, only proper security group rules will be cloned.
+     * Property sourceSecurityGroupId: Source security group ID is used to copy properties to clone new security group. If the NetworkType and VpcId is not specified, the same security group will be cloned. If NetworkType or VpcId is specified, only proper security group rules will be cloned.
      */
     readonly sourceSecurityGroupId: string;
 
     /**
-     * @Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+     * Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
      */
     readonly description?: string;
 
     /**
-     * @Property destinationRegionId: Clone security group to the specified region. Default to current region.
+     * Property destinationRegionId: Clone security group to the specified region. Default to current region.
      */
     readonly destinationRegionId?: string;
 
     /**
-     * @Property networkType: Clone new security group as classic network type. If the VpcId is specified, the value will be ignored.
+     * Property networkType: Clone new security group as classic network type. If the VpcId is specified, the value will be ignored.
      */
     readonly networkType?: string;
 
     /**
-     * @Property resourceGroupId: Resource group id.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+     * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly securityGroupName?: string;
 
     /**
-     * @Property securityGroupType: The type of the security group. Valid values:
+     * Property securityGroupType: The type of the security group. Valid values:
      * normal: basic security group
      * enterprise: advanced security group
      */
     readonly securityGroupType?: string;
 
     /**
-     * @Property vpcId: Physical ID of the VPC.
+     * Property vpcId: Physical ID of the VPC.
      */
     readonly vpcId?: string;
 }
@@ -62,16 +62,16 @@ export class SecurityGroupClone extends ros.Resource {
      */
 
     /**
-     * @Attribute SecurityGroupId: Generated security group id of new security group.
+     * Attribute SecurityGroupId: Generated security group id of new security group.
      */
     public readonly attrSecurityGroupId: any;
 
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupClone`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SecurityGroupCloneProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

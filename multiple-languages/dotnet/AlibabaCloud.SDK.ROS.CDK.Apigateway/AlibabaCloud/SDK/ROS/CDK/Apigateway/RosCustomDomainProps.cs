@@ -1,0 +1,66 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
+{
+    #pragma warning disable CS8618
+
+    /// <summary>Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.</summary>
+    [JsiiByValue(fqn: "@alicloud/ros-cdk-apigateway.RosCustomDomainProps")]
+    public class RosCustomDomainProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IRosCustomDomainProps
+    {
+        /// <remarks>
+        /// <strong>Property</strong>: domainName: Custom domain name.
+        /// </remarks>
+        [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        public string DomainName
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: groupId: The id of the Group.
+        /// </remarks>
+        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
+        public string GroupId
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: certificateBody: SSL certificate body.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "certificateBody", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        public string? CertificateBody
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "certificateName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        public string? CertificateName
+        {
+            get;
+            set;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: certificatePrivateKey: SSL certificate key.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "certificatePrivateKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
+        public string? CertificatePrivateKey
+        {
+            get;
+            set;
+        }
+    }
+}

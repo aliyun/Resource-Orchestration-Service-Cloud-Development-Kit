@@ -25,9 +25,11 @@
     "target": "ES2018"
   },
   "include": [
-    "**\\*.ts"
+    "**\\*.ts",
+    "lib/init-templates/app/csharp/add-project.hook.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "lib/init-templates/**/typescript/**/*.ts"
   ]
 }

@@ -9,42 +9,42 @@ export { RosNetworkInterface as NetworkInterfaceProperty };
 export interface NetworkInterfaceProps {
 
     /**
-     * @Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+     * Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
      */
     readonly vSwitchId: string;
 
     /**
-     * @Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
+     * Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
      */
     readonly description?: string;
 
     /**
-     * @Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
+     * Property networkInterfaceName: Name of your ENI. It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
      */
     readonly networkInterfaceName?: string;
 
     /**
-     * @Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
+     * Property primaryIpAddress: The primary private IP address of the ENI.  The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
      */
     readonly primaryIpAddress?: string;
 
     /**
-     * @Property privateIpAddresses: Specifies secondary private IP addresses of the ENI. This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
+     * Property privateIpAddresses: Specifies secondary private IP addresses of the ENI. This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
      */
     readonly privateIpAddresses?: string[];
 
     /**
-     * @Property resourceGroupId: Resource group id.
+     * Property resourceGroupId: Resource group id.
      */
     readonly resourceGroupId?: string;
 
     /**
-     * @Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
+     * Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
      */
     readonly securityGroupId?: string;
 
     /**
-     * @Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
+     * Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
      */
     readonly securityGroupIds?: string[];
 }
@@ -60,31 +60,31 @@ export class NetworkInterface extends ros.Resource {
      */
 
     /**
-     * @Attribute MacAddress: The MAC address of your Network Interface.
+     * Attribute MacAddress: The MAC address of your Network Interface.
      */
     public readonly attrMacAddress: any;
 
     /**
-     * @Attribute NetworkInterfaceId: ID of your Network Interface.
+     * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
     public readonly attrNetworkInterfaceId: any;
 
     /**
-     * @Attribute PrivateIpAddress: The primary private ip address of your Network Interface.
+     * Attribute PrivateIpAddress: The primary private ip address of your Network Interface.
      */
     public readonly attrPrivateIpAddress: any;
 
     /**
-     * @Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.
+     * Attribute SecondaryPrivateIpAddresses: The secondary private IP addresses of your Network Interface.
      */
     public readonly attrSecondaryPrivateIpAddresses: any;
 
     /**
      * Create a new `ALIYUN::ECS::NetworkInterface`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: NetworkInterfaceProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,47 +9,47 @@ export { RosRestoreJob as RestoreJobProperty };
 export interface RestoreJobProps {
 
     /**
-     * @Property restoreType: Restore type
+     * Property restoreType: Restore type
      */
     readonly restoreType: string;
 
     /**
-     * @Property snapshotId: Snapshot ID
+     * Property snapshotId: Snapshot ID
      */
     readonly snapshotId: string;
 
     /**
-     * @Property sourceClientId: Source client ID. It should be provided when SourceType=FILE.
+     * Property sourceClientId: Source client ID. It should be provided when SourceType=FILE.
      */
     readonly sourceClientId: string;
 
     /**
-     * @Property sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
+     * Property sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
      */
     readonly sourceInstanceId: string;
 
     /**
-     * @Property sourceType: Source type
+     * Property sourceType: Source type
      */
     readonly sourceType: string;
 
     /**
-     * @Property targetClientId: Target client ID. It should be provided when RestoreType=FILE.
+     * Property targetClientId: Target client ID. It should be provided when RestoreType=FILE.
      */
     readonly targetClientId: string;
 
     /**
-     * @Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
+     * Property targetInstanceId: Source client ID. It should be provided when RestoreType=ECS_FILE.
      */
     readonly targetInstanceId: string;
 
     /**
-     * @Property targetPath: Target path. For instance, "/".
+     * Property targetPath: Target path. For instance, "/".
      */
     readonly targetPath: string;
 
     /**
-     * @Property vaultId: Vault ID
+     * Property vaultId: Vault ID
      */
     readonly vaultId: string;
 }
@@ -65,36 +65,36 @@ export class RestoreJob extends ros.Resource {
      */
 
     /**
-     * @Attribute ErrorMessage: Error message of restore job
+     * Attribute ErrorMessage: Error message of restore job
      */
     public readonly attrErrorMessage: any;
 
     /**
-     * @Attribute RestoreId: Restore job ID
+     * Attribute RestoreId: Restore job ID
      */
     public readonly attrRestoreId: any;
 
     /**
-     * @Attribute RestoreType: Restore type
+     * Attribute RestoreType: Restore type
      */
     public readonly attrRestoreType: any;
 
     /**
-     * @Attribute SourceType: Source type
+     * Attribute SourceType: Source type
      */
     public readonly attrSourceType: any;
 
     /**
-     * @Attribute Status: Restore job status
+     * Attribute Status: Restore job status
      */
     public readonly attrStatus: any;
 
     /**
      * Create a new `ALIYUN::HBR::RestoreJob`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: RestoreJobProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

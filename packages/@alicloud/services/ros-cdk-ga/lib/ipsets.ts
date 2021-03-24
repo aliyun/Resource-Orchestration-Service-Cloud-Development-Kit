@@ -9,12 +9,12 @@ export { RosIpSets as IpSetsProperty };
 export interface IpSetsProps {
 
     /**
-     * @Property accelerateRegion:
+     * Property accelerateRegion:
      */
     readonly accelerateRegion: Array<RosIpSets.AccelerateRegionProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property acceleratorId: The ID of the GA instance.
+     * Property acceleratorId: The ID of the GA instance.
      */
     readonly acceleratorId: string;
 }
@@ -30,26 +30,26 @@ export class IpSets extends ros.Resource {
      */
 
     /**
-     * @Attribute AccelerateRegionIds: The ID list of the accelerate region.
+     * Attribute AccelerateRegionIds: The ID list of the accelerate region.
      */
     public readonly attrAccelerateRegionIds: any;
 
     /**
-     * @Attribute IpSetIds: The ID list of the ip set.
+     * Attribute IpSetIds: The ID list of the ip set.
      */
     public readonly attrIpSetIds: any;
 
     /**
-     * @Attribute IpVersions: The IP version list of the accelerate region.
+     * Attribute IpVersions: The IP version list of the accelerate region.
      */
     public readonly attrIpVersions: any;
 
     /**
      * Create a new `ALIYUN::GA::IpSets`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: IpSetsProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

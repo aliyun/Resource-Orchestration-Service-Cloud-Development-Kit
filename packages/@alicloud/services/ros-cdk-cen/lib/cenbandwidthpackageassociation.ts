@@ -9,12 +9,12 @@ export { RosCenBandwidthPackageAssociation as CenBandwidthPackageAssociationProp
 export interface CenBandwidthPackageAssociationProps {
 
     /**
-     * @Property cenBandwidthPackageId: The ID of the bandwidth package.
+     * Property cenBandwidthPackageId: The ID of the bandwidth package.
      */
     readonly cenBandwidthPackageId: string;
 
     /**
-     * @Property cenId: The ID of the CEN instance.
+     * Property cenId: The ID of the CEN instance.
      */
     readonly cenId: string;
 }
@@ -32,9 +32,9 @@ export class CenBandwidthPackageAssociation extends ros.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenBandwidthPackageAssociation`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CenBandwidthPackageAssociationProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

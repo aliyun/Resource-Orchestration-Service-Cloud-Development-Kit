@@ -9,27 +9,27 @@ export { RosCertificate as CertificateProperty };
 export interface CertificateProps {
 
     /**
-     * @Property cert: Specify the content of the certificate. To use the PEM encoding format.
+     * Property cert: Specify the content of the certificate. To use the PEM encoding format.
      */
     readonly cert: string;
 
     /**
-     * @Property key: Specify the certificate private key content. To use the PEM encoding format.
+     * Property key: Specify the certificate private key content. To use the PEM encoding format.
      */
     readonly key: string;
 
     /**
-     * @Property name: Custom certificate name. The certificate name under a user cannot be duplicated.
+     * Property name: Custom certificate name. The certificate name under a user cannot be duplicated.
      */
     readonly name: string;
 
     /**
-     * @Property lang: Specifies the language type for requesting and receiving messages.
+     * Property lang: Specifies the language type for requesting and receiving messages.
      */
     readonly lang?: string;
 
     /**
-     * @Property sourceIp: Specifies the source IP address of the request.
+     * Property sourceIp: Specifies the source IP address of the request.
      */
     readonly sourceIp?: string;
 }
@@ -45,16 +45,16 @@ export class Certificate extends ros.Resource {
      */
 
     /**
-     * @Attribute CertId: Certificate ID.
+     * Attribute CertId: Certificate ID.
      */
     public readonly attrCertId: any;
 
     /**
      * Create a new `ALIYUN::CAS::Certificate`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CertificateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

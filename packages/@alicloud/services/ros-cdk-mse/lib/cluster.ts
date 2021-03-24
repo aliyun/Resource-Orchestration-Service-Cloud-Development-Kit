@@ -9,57 +9,57 @@ export { RosCluster as ClusterProperty };
 export interface ClusterProps {
 
     /**
-     * @Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
+     * Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
      */
     readonly clusterSpecification: string;
 
     /**
-     * @Property clusterType: cluster type
+     * Property clusterType: cluster type
      */
     readonly clusterType: string;
 
     /**
-     * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
      */
     readonly clusterVersion: string;
 
     /**
-     * @Property instanceCount: instance count
+     * Property instanceCount: instance count
      */
     readonly instanceCount: number;
 
     /**
-     * @Property netType: network type, Enum: privatenet,pubnet
+     * Property netType: network type, Enum: privatenet,pubnet
      */
     readonly netType: string;
 
     /**
-     * @Property diskType: disk type
+     * Property diskType: disk type
      */
     readonly diskType?: string;
 
     /**
-     * @Property privateSlbSpecification:
+     * Property privateSlbSpecification:
      */
     readonly privateSlbSpecification?: string;
 
     /**
-     * @Property pubNetworkFlow: pub network flow
+     * Property pubNetworkFlow: pub network flow
      */
     readonly pubNetworkFlow?: string;
 
     /**
-     * @Property pubSlbSpecification:
+     * Property pubSlbSpecification:
      */
     readonly pubSlbSpecification?: string;
 
     /**
-     * @Property vpcId: vpc id
+     * Property vpcId: vpc id
      */
     readonly vpcId?: string;
 
     /**
-     * @Property vSwitchId: switcher Id
+     * Property vSwitchId: switcher Id
      */
     readonly vSwitchId?: string;
 }
@@ -75,161 +75,161 @@ export class Cluster extends ros.Resource {
      */
 
     /**
-     * @Attribute AclEntryList: acl entry list
+     * Attribute AclEntryList: acl entry list
      */
     public readonly attrAclEntryList: any;
 
     /**
-     * @Attribute AclId: acl id
+     * Attribute AclId: acl id
      */
     public readonly attrAclId: any;
 
     /**
-     * @Attribute AppVersion: app version
+     * Attribute AppVersion: app version
      */
     public readonly attrAppVersion: any;
 
     /**
-     * @Attribute ClusterAliasName: cluster alias name
+     * Attribute ClusterAliasName: cluster alias name
      */
     public readonly attrClusterAliasName: any;
 
     /**
-     * @Attribute ClusterId: cluster id
+     * Attribute ClusterId: cluster id
      */
     public readonly attrClusterId: any;
 
     /**
-     * @Attribute ClusterName: cluster name
+     * Attribute ClusterName: cluster name
      */
     public readonly attrClusterName: any;
 
     /**
-     * @Attribute ClusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
+     * Attribute ClusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
      */
     public readonly attrClusterSpecification: any;
 
     /**
-     * @Attribute ClusterType: cluster type
+     * Attribute ClusterType: cluster type
      */
     public readonly attrClusterType: any;
 
     /**
-     * @Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
+     * Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
      */
     public readonly attrClusterVersion: any;
 
     /**
-     * @Attribute Cpu: cpu core size
+     * Attribute Cpu: cpu core size
      */
     public readonly attrCpu: any;
 
     /**
-     * @Attribute DiskCapacity: disk capacity, unit: G
+     * Attribute DiskCapacity: disk capacity, unit: G
      */
     public readonly attrDiskCapacity: any;
 
     /**
-     * @Attribute DiskType: disk type
+     * Attribute DiskType: disk type
      */
     public readonly attrDiskType: any;
 
     /**
-     * @Attribute HealthStatus: health status
+     * Attribute HealthStatus: health status
      */
     public readonly attrHealthStatus: any;
 
     /**
-     * @Attribute InitStatus: init status, Enum: INIT_ING, INIT_FAILED, INIT_SUCCESS, INIT_TIME_OUT,DESTROY_ING, DESTROY_FAILED, DESTROY_SUCCESS, RESTART_ING, RESTART_SUCCESS, RESTART_FAILED, SCALE_ING, SCALE_SUCCESS, SCALE_FAILED
+     * Attribute InitStatus: init status, Enum: INIT_ING, INIT_FAILED, INIT_SUCCESS, INIT_TIME_OUT,DESTROY_ING, DESTROY_FAILED, DESTROY_SUCCESS, RESTART_ING, RESTART_SUCCESS, RESTART_FAILED, SCALE_ING, SCALE_SUCCESS, SCALE_FAILED
      */
     public readonly attrInitStatus: any;
 
     /**
-     * @Attribute InstanceCount: instance count
+     * Attribute InstanceCount: instance count
      */
     public readonly attrInstanceCount: any;
 
     /**
-     * @Attribute InstanceId: instance id
+     * Attribute InstanceId: instance id
      */
     public readonly attrInstanceId: any;
 
     /**
-     * @Attribute InternetAddress: internet address
+     * Attribute InternetAddress: internet address
      */
     public readonly attrInternetAddress: any;
 
     /**
-     * @Attribute InternetDomain: internet domain
+     * Attribute InternetDomain: internet domain
      */
     public readonly attrInternetDomain: any;
 
     /**
-     * @Attribute InternetPort: internet port
+     * Attribute InternetPort: internet port
      */
     public readonly attrInternetPort: any;
 
     /**
-     * @Attribute IntranetAddress: intranet address
+     * Attribute IntranetAddress: intranet address
      */
     public readonly attrIntranetAddress: any;
 
     /**
-     * @Attribute IntranetDomain: intranet domain
+     * Attribute IntranetDomain: intranet domain
      */
     public readonly attrIntranetDomain: any;
 
     /**
-     * @Attribute IntranetPort: intranet port
+     * Attribute IntranetPort: intranet port
      */
     public readonly attrIntranetPort: any;
 
     /**
-     * @Attribute MemoryCapacity: memory capacity
+     * Attribute MemoryCapacity: memory capacity
      */
     public readonly attrMemoryCapacity: any;
 
     /**
-     * @Attribute NetType: network type, Enum: privatenet,pubnet
+     * Attribute NetType: network type, Enum: privatenet,pubnet
      */
     public readonly attrNetType: any;
 
     /**
-     * @Attribute OrderId: order id
+     * Attribute OrderId: order id
      */
     public readonly attrOrderId: any;
 
     /**
-     * @Attribute PayInfo: pay info
+     * Attribute PayInfo: pay info
      */
     public readonly attrPayInfo: any;
 
     /**
-     * @Attribute PubNetworkFlow: pub network flow
+     * Attribute PubNetworkFlow: pub network flow
      */
     public readonly attrPubNetworkFlow: any;
 
     /**
-     * @Attribute RegionId: region id
+     * Attribute RegionId: region id
      */
     public readonly attrRegionId: any;
 
     /**
-     * @Attribute VSwitchId: switcher Id
+     * Attribute VSwitchId: switcher Id
      */
     public readonly attrVSwitchId: any;
 
     /**
-     * @Attribute VpcId: vpc id
+     * Attribute VpcId: vpc id
      */
     public readonly attrVpcId: any;
 
     /**
      * Create a new `ALIYUN::MSE::Cluster`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ClusterProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,22 +9,22 @@ export { RosSignatureBinding as SignatureBindingProperty };
 export interface SignatureBindingProps {
 
     /**
-     * @Property apiIds: APIs to bind with the signature.
+     * Property apiIds: APIs to bind with the signature.
      */
     readonly apiIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property groupId: The id of group.
+     * Property groupId: The id of group.
      */
     readonly groupId: string;
 
     /**
-     * @Property signatureId: The id of the Signature.
+     * Property signatureId: The id of the Signature.
      */
     readonly signatureId: string;
 
     /**
-     * @Property stageName: Bind signature in this stage.
+     * Property stageName: Bind signature in this stage.
      */
     readonly stageName: string;
 }
@@ -42,9 +42,9 @@ export class SignatureBinding extends ros.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::SignatureBinding`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SignatureBindingProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

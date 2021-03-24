@@ -9,12 +9,12 @@ export { RosAlert as AlertProperty };
 export interface AlertProps {
 
     /**
-     * @Property detail:
+     * Property detail:
      */
     readonly detail: RosAlert.DetailProperty | ros.IResolvable;
 
     /**
-     * @Property project: Project name:
+     * Property project: Project name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -33,16 +33,16 @@ export class Alert extends ros.Resource {
      */
 
     /**
-     * @Attribute Name: Alert name.
+     * Attribute Name: Alert name.
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::SLS::Alert`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AlertProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

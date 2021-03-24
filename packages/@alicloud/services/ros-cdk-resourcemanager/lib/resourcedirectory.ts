@@ -20,31 +20,31 @@ export class ResourceDirectory extends ros.Resource {
      */
 
     /**
-     * @Attribute MasterAccountId: The ID of the master account
+     * Attribute MasterAccountId: The ID of the master account
      */
     public readonly attrMasterAccountId: any;
 
     /**
-     * @Attribute MasterAccountName: The name of the master account
+     * Attribute MasterAccountName: The name of the master account
      */
     public readonly attrMasterAccountName: any;
 
     /**
-     * @Attribute ResourceDirectoryId: The ID of the resource directory
+     * Attribute ResourceDirectoryId: The ID of the resource directory
      */
     public readonly attrResourceDirectoryId: any;
 
     /**
-     * @Attribute RootFolderId: The ID of the root folder
+     * Attribute RootFolderId: The ID of the root folder
      */
     public readonly attrRootFolderId: any;
 
     /**
      * Create a new `ALIYUN::ResourceManager::ResourceDirectory`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ResourceDirectoryProps = {}, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

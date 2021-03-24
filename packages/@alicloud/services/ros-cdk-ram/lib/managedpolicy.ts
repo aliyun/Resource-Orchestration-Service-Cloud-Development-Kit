@@ -9,37 +9,37 @@ export { RosManagedPolicy as ManagedPolicyProperty };
 export interface ManagedPolicyProps {
 
     /**
-     * @Property policyName: Specifies the authorization policy name, containing up to 128 characters.
+     * Property policyName: Specifies the authorization policy name, containing up to 128 characters.
      */
     readonly policyName: string;
 
     /**
-     * @Property description: Specifies the authorization policy description, containing up to 1024 characters.
+     * Property description: Specifies the authorization policy description, containing up to 1024 characters.
      */
     readonly description?: string;
 
     /**
-     * @Property groups: The names of groups to attach to this policy.
+     * Property groups: The names of groups to attach to this policy.
      */
     readonly groups?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property policyDocument: A policy document that describes what actions are allowed on which resources.
+     * Property policyDocument: A policy document that describes what actions are allowed on which resources.
      */
     readonly policyDocument?: RosManagedPolicy.PolicyDocumentProperty | ros.IResolvable;
 
     /**
-     * @Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources. If it is specified, PolicyDocument will be ignored.
+     * Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources. If it is specified, PolicyDocument will be ignored.
      */
     readonly policyDocumentUnchecked?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property roles: The names of roles to attach to this policy.
+     * Property roles: The names of roles to attach to this policy.
      */
     readonly roles?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property users: The names of users to attach to this policy.
+     * Property users: The names of users to attach to this policy.
      */
     readonly users?: Array<any | ros.IResolvable> | ros.IResolvable;
 }
@@ -55,16 +55,16 @@ export class ManagedPolicy extends ros.Resource {
      */
 
     /**
-     * @Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
+     * Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.
      */
     public readonly attrPolicyName: any;
 
     /**
      * Create a new `ALIYUN::RAM::ManagedPolicy`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ManagedPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

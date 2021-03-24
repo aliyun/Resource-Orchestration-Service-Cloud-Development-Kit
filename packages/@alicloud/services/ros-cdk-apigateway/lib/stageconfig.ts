@@ -9,17 +9,17 @@ export { RosStageConfig as StageConfigProperty };
 export interface StageConfigProps {
 
     /**
-     * @Property groupId: The id of the Group.
+     * Property groupId: The id of the Group.
      */
     readonly groupId: string;
 
     /**
-     * @Property stageName: The name of the Stage.
+     * Property stageName: The name of the Stage.
      */
     readonly stageName: string;
 
     /**
-     * @Property variables: Variables in the stage, key-value pairs.
+     * Property variables: Variables in the stage, key-value pairs.
      */
     readonly variables: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 }
@@ -37,9 +37,9 @@ export class StageConfig extends ros.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::StageConfig`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: StageConfigProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

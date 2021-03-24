@@ -9,29 +9,29 @@ export { RosMetricRuleTemplate as MetricRuleTemplateProperty };
 export interface MetricRuleTemplateProps {
 
     /**
-     * @Property name: The name of the alert template.
+     * Property name: The name of the alert template.
      */
     readonly name: string;
 
     /**
-     * @Property alertTemplates: Valid values of N: 0 to 200.
+     * Property alertTemplates: Valid values of N: 0 to 200.
      */
     readonly alertTemplates?: Array<RosMetricRuleTemplate.AlertTemplatesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property description: The description of the alert template.
+     * Property description: The description of the alert template.
      */
     readonly description?: string;
 
     /**
-     * @Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute
+     * Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute
      * to obtain information about the alert templates. The combination of version and ID
      * uniquely identifies an alert template.
      */
     readonly restVersion?: number;
 
     /**
-     * @Property templateId: The ID of the alert template.
+     * Property templateId: The ID of the alert template.
      */
     readonly templateId?: number;
 }
@@ -47,16 +47,16 @@ export class MetricRuleTemplate extends ros.Resource {
      */
 
     /**
-     * @Attribute Id: Alarm template ID.
+     * Attribute Id: Alarm template ID.
      */
     public readonly attrId: any;
 
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTemplate`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: MetricRuleTemplateProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

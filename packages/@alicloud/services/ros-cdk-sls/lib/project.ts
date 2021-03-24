@@ -9,7 +9,7 @@ export { RosProject as ProjectProperty };
 export interface ProjectProps {
 
     /**
-     * @Property name: Project name:
+     * Property name: Project name:
      * 1. Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
@@ -17,7 +17,7 @@ export interface ProjectProps {
     readonly name: string;
 
     /**
-     * @Property description: Project description: <>'"\ is not supported, up to 64 characters.
+     * Property description: Project description: <>'"\ is not supported, up to 64 characters.
      */
     readonly description?: string;
 }
@@ -33,16 +33,16 @@ export class Project extends ros.Resource {
      */
 
     /**
-     * @Attribute Name: Project name.
+     * Attribute Name: Project name.
      */
     public readonly attrName: any;
 
     /**
      * Create a new `ALIYUN::SLS::Project`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ProjectProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

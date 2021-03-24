@@ -1,0 +1,171 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Ecs
+{
+    /// <summary>Properties for defining a `ALIYUN::ECS::CopyImage`.</summary>
+    [JsiiInterface(nativeType: typeof(IRosCopyImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCopyImageProps")]
+    public interface IRosCopyImageProps
+    {
+        /// <remarks>
+        /// <strong>Property</strong>: destinationRegionId: ID of the region to where the destination custom image belongs.
+        /// </remarks>
+        [JsiiProperty(name: "destinationRegionId", typeJson: "{\"primitive\":\"string\"}")]
+        string DestinationRegionId
+        {
+            get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: imageId: ID of the source custom image.
+        /// </remarks>
+        [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}")]
+        string ImageId
+        {
+            get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+        /// </remarks>
+        [JsiiProperty(name: "destinationDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? DestinationDescription
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
+        /// </remarks>
+        [JsiiProperty(name: "destinationImageName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? DestinationImageName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: encrypted: Whether to encrypt the image.
+        /// </remarks>
+        [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Encrypted
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: kmsKeyId: The ID of the key used to encrypt the image.
+        /// </remarks>
+        [JsiiProperty(name: "kmsKeyId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        string? KmsKeyId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tag:
+        /// </remarks>
+        [JsiiProperty(name: "tag", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Tag
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Properties for defining a `ALIYUN::ECS::CopyImage`.</summary>
+        [JsiiTypeProxy(nativeType: typeof(IRosCopyImageProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosCopyImageProps")]
+        internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Ecs.IRosCopyImageProps
+        {
+            private _Proxy(ByRefValue reference): base(reference)
+            {
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destinationRegionId: ID of the region to where the destination custom image belongs.
+            /// </remarks>
+            [JsiiProperty(name: "destinationRegionId", typeJson: "{\"primitive\":\"string\"}")]
+            public string DestinationRegionId
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: imageId: ID of the source custom image.
+            /// </remarks>
+            [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}")]
+            public string ImageId
+            {
+                get => GetInstanceProperty<string>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "destinationDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? DestinationDescription
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "destinationImageName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? DestinationImageName
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: encrypted: Whether to encrypt the image.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Encrypted
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: kmsKeyId: The ID of the key used to encrypt the image.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "kmsKeyId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            public string? KmsKeyId
+            {
+                get => GetInstanceProperty<string?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: tag:
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tag", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Tag
+            {
+                get => GetInstanceProperty<object?>();
+            }
+        }
+    }
+}

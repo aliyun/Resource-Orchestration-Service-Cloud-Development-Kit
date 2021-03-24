@@ -9,12 +9,12 @@ export { RosBackendServerToVServerGroupAddition as BackendServerToVServerGroupAd
 export interface BackendServerToVServerGroupAdditionProps {
 
     /**
-     * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+     * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
      */
     readonly backendServers: Array<RosBackendServerToVServerGroupAddition.BackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property vServerGroupId: The ID of virtual server group.
+     * Property vServerGroupId: The ID of virtual server group.
      */
     readonly vServerGroupId: string;
 }
@@ -30,16 +30,16 @@ export class BackendServerToVServerGroupAddition extends ros.Resource {
      */
 
     /**
-     * @Attribute VServerGroupId: The ID of virtual server group.
+     * Attribute VServerGroupId: The ID of virtual server group.
      */
     public readonly attrVServerGroupId: any;
 
     /**
      * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: BackendServerToVServerGroupAdditionProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

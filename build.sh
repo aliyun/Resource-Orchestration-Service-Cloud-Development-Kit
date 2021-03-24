@@ -123,6 +123,22 @@ convert_maven_project() {
 }
 
 
+convert_csharp_project(){
+    root=$PWD
+    dist_dir="$PWD/dist"
+    if [ ! -d "$dist_dir" ]; then
+        echo "directory $dist_dir not found"
+        exit 1
+    fi
+    csharp_dir="$dist_dir/dotnet/"
+    for dir in $(ls $csharp_dir); do
+        echo "${csharp_dir}${dir}"
+        packaege_name=${dir#*dotnet/}
+        packaege_csproj_path="${csharp_dir}${dir}/${packaege_name}.csproj"
+        python3 $root/tools/convert_csharp_project.py --csproj_file_path=${packaege_csproj_path}
+    done
+}
+
 jsii_pack() {
     export PATH=$PWD/node_modules/.bin:$PATH
     export NODE_OPTIONS="--max-old-space-size=4096 ${NODE_OPTIONS:-}"
@@ -151,13 +167,20 @@ jsii_pack() {
 
     # Jsii packaging (all at once using jsii-pacmak)
     echo "Packaging jsii modules" >&2
-    $PACMAK \
-      --verbose \
-      $(cat $TMPDIR/jsii.txt)
 
+    if [ "${ARG1}" == "--source-code" ];
+    then
+        for pack_dir in $(cat $TMPDIR/jsii.txt); do
+           $PACMAK -c true --verbose $pack_dir
+        done
+    else
+        $PACMAK \
+          --verbose \
+          $(cat $TMPDIR/jsii.txt)
+    fi
     for dir in $(find packages -name dist | grep -v node_modules | grep -v run-wrappers); do
       echo "Merging ${dir}" >&2
-      cp -r $dir/ ${root}/
+      cp -r $dir ${root}/
     done
 
     mv "$js_dir" "$jsii_dir"
@@ -227,6 +250,9 @@ case "$ACTION" in
     ;;
     convert-maven-project)
           convert_maven_project
+    ;;
+    convert-csharp-project)
+          convert_csharp_project
     ;;
     *)
         usage

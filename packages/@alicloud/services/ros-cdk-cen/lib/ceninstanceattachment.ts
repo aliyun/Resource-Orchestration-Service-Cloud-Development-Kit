@@ -9,27 +9,27 @@ export { RosCenInstanceAttachment as CenInstanceAttachmentProperty };
 export interface CenInstanceAttachmentProps {
 
     /**
-     * @Property cenId: The ID of the CEN instance.
+     * Property cenId: The ID of the CEN instance.
      */
     readonly cenId: string;
 
     /**
-     * @Property childInstanceId: The ID of the network to attach.
+     * Property childInstanceId: The ID of the network to attach.
      */
     readonly childInstanceId: string;
 
     /**
-     * @Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
+     * Property childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
      */
     readonly childInstanceRegionId: string;
 
     /**
-     * @Property childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
+     * Property childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
      */
     readonly childInstanceType: string;
 
     /**
-     * @Property childInstanceOwnerId: The account ID to which the network belongs.
+     * Property childInstanceOwnerId: The account ID to which the network belongs.
      */
     readonly childInstanceOwnerId?: number;
 }
@@ -47,9 +47,9 @@ export class CenInstanceAttachment extends ros.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstanceAttachment`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: CenInstanceAttachmentProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

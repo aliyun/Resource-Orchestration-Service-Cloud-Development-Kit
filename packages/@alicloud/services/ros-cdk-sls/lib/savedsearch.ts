@@ -9,12 +9,12 @@ export { RosSavedsearch as SavedsearchProperty };
 export interface SavedsearchProps {
 
     /**
-     * @Property detail:
+     * Property detail:
      */
     readonly detail: RosSavedsearch.DetailProperty | ros.IResolvable;
 
     /**
-     * @Property project: Project name
+     * Property project: Project name
      */
     readonly project: string;
 }
@@ -30,16 +30,16 @@ export class Savedsearch extends ros.Resource {
      */
 
     /**
-     * @Attribute SavedsearchName: Savedsearch name.
+     * Attribute SavedsearchName: Savedsearch name.
      */
     public readonly attrSavedsearchName: any;
 
     /**
      * Create a new `ALIYUN::SLS::Savedsearch`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: SavedsearchProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

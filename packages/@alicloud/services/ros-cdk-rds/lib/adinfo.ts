@@ -9,27 +9,27 @@ export { RosADInfo as ADInfoProperty };
 export interface ADInfoProps {
 
     /**
-     * @Property adAccountName: Domain account name.
+     * Property adAccountName: Domain account name.
      */
     readonly adAccountName: string;
 
     /**
-     * @Property addns: Active directory domain name.
+     * Property addns: Active directory domain name.
      */
     readonly addns: string;
 
     /**
-     * @Property adPassword: Domain password.
+     * Property adPassword: Domain password.
      */
     readonly adPassword: string;
 
     /**
-     * @Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
+     * Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
      */
     readonly adServerIpAddress: string;
 
     /**
-     * @Property dbInstanceId: The ID of the instance.
+     * Property dbInstanceId: The ID of the instance.
      */
     readonly dbInstanceId: string;
 }
@@ -45,21 +45,21 @@ export class ADInfo extends ros.Resource {
      */
 
     /**
-     * @Attribute ADDNS: Active directory domain name.
+     * Attribute ADDNS: Active directory domain name.
      */
     public readonly attrAddns: any;
 
     /**
-     * @Attribute DBInstanceId: The ID of the instance.
+     * Attribute DBInstanceId: The ID of the instance.
      */
     public readonly attrDbInstanceId: any;
 
     /**
      * Create a new `ALIYUN::RDS::ADInfo`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ADInfoProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

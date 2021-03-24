@@ -9,7 +9,7 @@ export { RosAccessKey as AccessKeyProperty };
 export interface AccessKeyProps {
 
     /**
-     * @Property userName: Specifies the user name, containing up to 64 characters.
+     * Property userName: Specifies the user name, containing up to 64 characters.
      */
     readonly userName: string;
 }
@@ -25,26 +25,26 @@ export class AccessKey extends ros.Resource {
      */
 
     /**
-     * @Attribute AccessKeyId: Id of access key.
+     * Attribute AccessKeyId: Id of access key.
      */
     public readonly attrAccessKeyId: any;
 
     /**
-     * @Attribute AccessKeySecret: Secret of access key.
+     * Attribute AccessKeySecret: Secret of access key.
      */
     public readonly attrAccessKeySecret: any;
 
     /**
-     * @Attribute Status: Status of access key.
+     * Attribute Status: Status of access key.
      */
     public readonly attrStatus: any;
 
     /**
      * Create a new `ALIYUN::RAM::AccessKey`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: AccessKeyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

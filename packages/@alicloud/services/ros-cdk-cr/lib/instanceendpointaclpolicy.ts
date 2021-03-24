@@ -9,33 +9,33 @@ export { RosInstanceEndpointAclPolicy as InstanceEndpointAclPolicyProperty };
 export interface InstanceEndpointAclPolicyProps {
 
     /**
-     * @Property entry: The IP address range that is allowed to access the instance.
+     * Property entry: The IP address range that is allowed to access the instance.
      */
     readonly entry: string;
 
     /**
-     * @Property instanceId: The ID of the instance.
+     * Property instanceId: The ID of the instance.
      */
     readonly instanceId: string;
 
     /**
-     * @Property comment: The description of the entry.
+     * Property comment: The description of the entry.
      */
     readonly comment?: string;
 
     /**
-     * @Property endpointType: The type of the endpoint.
+     * Property endpointType: The type of the endpoint.
      */
     readonly endpointType?: string;
 
     /**
-     * @Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid
+     * Property moduleName: The name of the module in the instance for which a whitelist is configured. Valid
      * values: Registry and Chart.
      */
     readonly moduleName?: string;
 
     /**
-     * @Property regionId: Region ID of instance. Default is current region.
+     * Property regionId: Region ID of instance. Default is current region.
      */
     readonly regionId?: string;
 }
@@ -51,21 +51,21 @@ export class InstanceEndpointAclPolicy extends ros.Resource {
      */
 
     /**
-     * @Attribute Entry: The IP address range that is allowed to access the instance.
+     * Attribute Entry: The IP address range that is allowed to access the instance.
      */
     public readonly attrEntry: any;
 
     /**
-     * @Attribute InstanceId: The ID of the instance.
+     * Attribute InstanceId: The ID of the instance.
      */
     public readonly attrInstanceId: any;
 
     /**
      * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: InstanceEndpointAclPolicyProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);

@@ -9,32 +9,32 @@ export { RosForwardEntry as ForwardEntryProperty };
 export interface ForwardEntryProps {
 
     /**
-     * @Property externalIp: Source IP, must belongs to bandwidth package internet IP
+     * Property externalIp: Source IP, must belongs to bandwidth package internet IP
      */
     readonly externalIp: string;
 
     /**
-     * @Property externalPort: Source port, now support [1-65535]|Any
+     * Property externalPort: Source port, now support [1-65535]|Any
      */
     readonly externalPort: string;
 
     /**
-     * @Property forwardTableId: Create forward entry in specified forward table.
+     * Property forwardTableId: Create forward entry in specified forward table.
      */
     readonly forwardTableId: string;
 
     /**
-     * @Property internalIp: Destination IP, must belong to VPC private IP
+     * Property internalIp: Destination IP, must belong to VPC private IP
      */
     readonly internalIp: string;
 
     /**
-     * @Property internalPort: Destination port, now support [1-65535]|Any
+     * Property internalPort: Destination port, now support [1-65535]|Any
      */
     readonly internalPort: string;
 
     /**
-     * @Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
+     * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
      */
     readonly ipProtocol: string;
 }
@@ -50,16 +50,16 @@ export class ForwardEntry extends ros.Resource {
      */
 
     /**
-     * @Attribute ForwardEntryId: The id of created forward entry.
+     * Attribute ForwardEntryId: The id of created forward entry.
      */
     public readonly attrForwardEntryId: any;
 
     /**
      * Create a new `ALIYUN::ECS::ForwardEntry`.
      *
-     * @param scope - scope in which this resource is defined
-     * @param id    - scoped id of the resource
-     * @param props - resource properties
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
      */
     constructor(scope: ros.Construct, id: string, props: ForwardEntryProps, enableResourcePropertyConstraint:boolean = true) {
         super(scope, id);
