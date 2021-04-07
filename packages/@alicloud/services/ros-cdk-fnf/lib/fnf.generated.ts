@@ -10,27 +10,27 @@ export interface RosFlowProps {
     /**
      * @Property definition: The definition of the created flow following the FDL syntax standard.
      */
-    readonly definition: string;
+    readonly definition: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the flow created. This name is unique under the account.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property description: Create a description of the flow.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
-    readonly requestId?: string;
+    readonly requestId?: string | ros.IResolvable;
 
     /**
      * @Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
      */
-    readonly roleArn?: string;
+    readonly roleArn?: string | ros.IResolvable;
 }
 
 /**
@@ -92,22 +92,22 @@ export class RosFlow extends ros.RosResource {
     /**
      * @Attribute CreatedTime: Flow creation time.
      */
-    public readonly attrCreatedTime: any;
+    public readonly attrCreatedTime: ros.IResolvable;
 
     /**
      * @Attribute Id: The unique ID of the flow.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * @Attribute LastModifiedTime: The most recently modified time of the flow.
      */
-    public readonly attrLastModifiedTime: any;
+    public readonly attrLastModifiedTime: ros.IResolvable;
 
     /**
      * @Attribute Name: The name of the flow created.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -115,27 +115,27 @@ export class RosFlow extends ros.RosResource {
     /**
      * @Property definition: The definition of the created flow following the FDL syntax standard.
      */
-    public definition: string;
+    public definition: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the flow created. This name is unique under the account.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property description: Create a description of the flow.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
      */
-    public requestId: string | undefined;
+    public requestId: string | ros.IResolvable | undefined;
 
     /**
      * @Property roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
      */
-    public roleArn: string | undefined;
+    public roleArn: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FNF::Flow`.
@@ -146,10 +146,10 @@ export class RosFlow extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosFlowProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFlow.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCreatedTime = ros.Token.asString(this.getAtt('CreatedTime'));
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
-        this.attrLastModifiedTime = ros.Token.asString(this.getAtt('LastModifiedTime'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrCreatedTime = this.getAtt('CreatedTime');
+        this.attrId = this.getAtt('Id');
+        this.attrLastModifiedTime = this.getAtt('LastModifiedTime');
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.definition = props.definition;
@@ -182,22 +182,22 @@ export interface RosScheduleProps {
     /**
      * @Property cronExpression: Cron expression.
      */
-    readonly cronExpression: string;
+    readonly cronExpression: string | ros.IResolvable;
 
     /**
      * @Property flowName: Flow name.
      */
-    readonly flowName: string;
+    readonly flowName: string | ros.IResolvable;
 
     /**
      * @Property scheduleName: Schedule name.
      */
-    readonly scheduleName: string;
+    readonly scheduleName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the schedule.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property enable: Whether enable schedule.
@@ -207,7 +207,7 @@ export interface RosScheduleProps {
     /**
      * @Property payload: Payload.
      */
-    readonly payload?: string;
+    readonly payload?: string | ros.IResolvable;
 }
 
 /**
@@ -272,17 +272,17 @@ export class RosSchedule extends ros.RosResource {
     /**
      * @Attribute FlowName: Flow name.
      */
-    public readonly attrFlowName: any;
+    public readonly attrFlowName: ros.IResolvable;
 
     /**
      * @Attribute ScheduleId: Schedule Id
      */
-    public readonly attrScheduleId: any;
+    public readonly attrScheduleId: ros.IResolvable;
 
     /**
      * @Attribute ScheduleName: Schedule name.
      */
-    public readonly attrScheduleName: any;
+    public readonly attrScheduleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -290,22 +290,22 @@ export class RosSchedule extends ros.RosResource {
     /**
      * @Property cronExpression: Cron expression.
      */
-    public cronExpression: string;
+    public cronExpression: string | ros.IResolvable;
 
     /**
      * @Property flowName: Flow name.
      */
-    public flowName: string;
+    public flowName: string | ros.IResolvable;
 
     /**
      * @Property scheduleName: Schedule name.
      */
-    public scheduleName: string;
+    public scheduleName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the schedule.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property enable: Whether enable schedule.
@@ -315,7 +315,7 @@ export class RosSchedule extends ros.RosResource {
     /**
      * @Property payload: Payload.
      */
-    public payload: string | undefined;
+    public payload: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FNF::Schedule`.
@@ -326,9 +326,9 @@ export class RosSchedule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosScheduleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSchedule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrFlowName = ros.Token.asString(this.getAtt('FlowName'));
-        this.attrScheduleId = ros.Token.asString(this.getAtt('ScheduleId'));
-        this.attrScheduleName = ros.Token.asString(this.getAtt('ScheduleName'));
+        this.attrFlowName = this.getAtt('FlowName');
+        this.attrScheduleId = this.getAtt('ScheduleId');
+        this.attrScheduleName = this.getAtt('ScheduleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cronExpression = props.cronExpression;

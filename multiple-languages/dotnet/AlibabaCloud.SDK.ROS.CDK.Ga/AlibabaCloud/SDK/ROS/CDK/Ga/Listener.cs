@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Attribute ListenerId: The ID of the listener.</summary>
-        [JsiiProperty(name: "attrListenerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerId
+        [JsiiProperty(name: "attrListenerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

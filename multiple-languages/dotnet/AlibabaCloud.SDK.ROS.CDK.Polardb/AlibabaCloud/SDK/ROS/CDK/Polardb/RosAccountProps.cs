@@ -15,8 +15,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
         /// - It can be up to 16 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccountName
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// - Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).
         /// - It must be 8 to 32 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccountPassword
+        [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccountPassword
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbClusterId
         {
             get;
             set;
@@ -51,8 +51,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// - It must be 2 to 256 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccountDescription
+        [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccountDescription
         {
             get;
             set;
@@ -68,8 +68,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Separate multiple permissions with a comma (,).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccountPrivilege
         {
             get;
             set;
@@ -84,8 +84,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// You can create only one privileged account for an ApsaraDB for POLARDB cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accountType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccountType
+        [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccountType
         {
             get;
             set;
@@ -95,8 +95,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <strong>Property</strong>: dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbName
         {
             get;
             set;

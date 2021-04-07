@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * A ROS template type:  `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.132Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameter")
 public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrValue() {
-        return software.amazon.jsii.Kernel.get(this, "attrValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrValue() {
+        return software.amazon.jsii.Kernel.get(this, "attrValue", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getType() {
-        return software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getType() {
+        return software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getValue() {
-        return software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "type", java.util.Objects.requireNonNull(value, "type is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getValue() {
+        return software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getConstraints() {
-        return software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setValue(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "value", java.util.Objects.requireNonNull(value, "value is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConstraints() {
+        return software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +135,25 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setConstraints(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "constraints", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -161,12 +191,28 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param type This parameter is required.
          */
         public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
             this.props.type(type);
             return this;
         }
@@ -179,6 +225,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
             this.props.value(value);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param value This parameter is required.
+         */
+        public Builder value(final com.aliyun.ros.cdk.core.IResolvable value) {
+            this.props.value(value);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -188,12 +242,28 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosResource {
             this.props.constraints(constraints);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param constraints This parameter is required.
+         */
+        public Builder constraints(final com.aliyun.ros.cdk.core.IResolvable constraints) {
+            this.props.constraints(constraints);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }

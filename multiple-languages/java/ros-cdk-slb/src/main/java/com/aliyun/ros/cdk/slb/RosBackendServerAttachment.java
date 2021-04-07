@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::BackendServerAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosBackendServerAttachment")
 public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrBackendServers() {
-        return software.amazon.jsii.Kernel.get(this, "attrBackendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrBackendServers() {
+        return software.amazon.jsii.Kernel.get(this, "attrBackendServers", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,13 +81,25 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getBackendServerList() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "backendServerList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
     }
 
     /**
      */
-    public void setBackendServerList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackendServerList() {
+        return software.amazon.jsii.Kernel.get(this, "backendServerList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBackendServerList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backendServerList", value);
+    }
+
+    /**
+     */
+    public void setBackendServerList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "backendServerList", value);
     }
 
@@ -136,31 +148,31 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getServerId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getWeight();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getServerIp() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerIp() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
             return null;
         }
 
@@ -176,11 +188,11 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BackendServersProperty> {
-            private java.lang.String serverId;
-            private java.lang.Number weight;
-            private java.lang.String description;
-            private java.lang.String serverIp;
-            private java.lang.String type;
+            private java.lang.Object serverId;
+            private java.lang.Object weight;
+            private java.lang.Object description;
+            private java.lang.Object serverIp;
+            private java.lang.Object type;
 
             /**
              * Sets the value of {@link BackendServersProperty#getServerId}
@@ -189,6 +201,17 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serverId(java.lang.String serverId) {
+                this.serverId = serverId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getServerId}
+             * @param serverId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverId(com.aliyun.ros.cdk.core.IResolvable serverId) {
                 this.serverId = serverId;
                 return this;
             }
@@ -205,12 +228,34 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             }
 
             /**
+             * Sets the value of {@link BackendServersProperty#getWeight}
+             * @param weight the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BackendServersProperty#getDescription}
              * @param description the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
                 return this;
             }
@@ -227,12 +272,34 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             }
 
             /**
+             * Sets the value of {@link BackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(com.aliyun.ros.cdk.core.IResolvable serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BackendServersProperty#getType}
              * @param type the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
                 this.type = type;
                 return this;
             }
@@ -255,11 +322,11 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BackendServersProperty {
-            private final java.lang.String serverId;
-            private final java.lang.Number weight;
-            private final java.lang.String description;
-            private final java.lang.String serverIp;
-            private final java.lang.String type;
+            private final java.lang.Object serverId;
+            private final java.lang.Object weight;
+            private final java.lang.Object description;
+            private final java.lang.Object serverIp;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -267,17 +334,17 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String serverId, final java.lang.Number weight, final java.lang.String description, final java.lang.String serverIp, final java.lang.String type) {
+            protected Jsii$Proxy(final java.lang.Object serverId, final java.lang.Object weight, final java.lang.Object description, final java.lang.Object serverIp, final java.lang.Object type) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.serverId = java.util.Objects.requireNonNull(serverId, "serverId is required");
                 this.weight = java.util.Objects.requireNonNull(weight, "weight is required");
@@ -287,27 +354,27 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             }
 
             @Override
-            public final java.lang.String getServerId() {
+            public final java.lang.Object getServerId() {
                 return this.serverId;
             }
 
             @Override
-            public final java.lang.Number getWeight() {
+            public final java.lang.Object getWeight() {
                 return this.weight;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
             @Override
-            public final java.lang.String getServerIp() {
+            public final java.lang.Object getServerIp() {
                 return this.serverIp;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
@@ -399,12 +466,28 @@ public class RosBackendServerAttachment extends com.aliyun.ros.cdk.core.RosResou
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param loadBalancerId This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param backendServerList This parameter is required.
          */
-        public Builder backendServerList(final java.util.List<java.lang.String> backendServerList) {
+        public Builder backendServerList(final com.aliyun.ros.cdk.core.IResolvable backendServerList) {
+            this.props.backendServerList(backendServerList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backendServerList This parameter is required.
+         */
+        public Builder backendServerList(final java.util.List<? extends java.lang.Object> backendServerList) {
             this.props.backendServerList(backendServerList);
             return this;
         }

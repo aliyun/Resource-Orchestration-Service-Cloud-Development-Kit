@@ -11,7 +11,7 @@ export interface AlarmTaskEnableProps {
     /**
      * Property alarmTaskId: The id of alarm task.
      */
-    readonly alarmTaskId: string;
+    readonly alarmTaskId: string | ros.IResolvable;
 
     /**
      * Property enable: Enable alarm task or not

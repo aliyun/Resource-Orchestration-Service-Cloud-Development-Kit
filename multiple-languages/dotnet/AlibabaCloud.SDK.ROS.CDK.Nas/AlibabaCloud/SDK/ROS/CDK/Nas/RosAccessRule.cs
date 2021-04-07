@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Attribute</strong>: AccessRuleId: Rule serial number
         /// </remarks>
-        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccessRuleId
+        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccessRuleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Property</strong>: accessGroupName: Permission group name
         /// </remarks>
-        [JsiiProperty(name: "accessGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AccessGroupName
+        [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AccessGroupName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// <strong>Property</strong>: sourceCidrIp: Address or address segment
         /// </remarks>
-        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SourceCidrIp
+        [JsiiProperty(name: "sourceCidrIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SourceCidrIp
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -90,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: priority: Priority level. Range: 1-100. Default value: 1
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Priority
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Priority
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -101,10 +101,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: rwAccessType: Read-write permission type: RDWR (default), RDONLY
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "rwAccessType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RwAccessType
+        [JsiiProperty(name: "rwAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RwAccessType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -112,10 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <strong>Property</strong>: userAccessType: User permission type: no_squash (default), root_squash, all_squash
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "userAccessType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? UserAccessType
+        [JsiiProperty(name: "userAccessType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UserAccessType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

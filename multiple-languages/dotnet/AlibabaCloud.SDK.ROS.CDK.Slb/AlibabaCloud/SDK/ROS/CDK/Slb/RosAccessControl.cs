@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Attribute</strong>: AclId: The ID of the access control list.
         /// </remarks>
-        [JsiiProperty(name: "attrAclId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAclId
+        [JsiiProperty(name: "attrAclId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAclId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -60,21 +60,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-        /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: aclName: The name of the access control list.
         /// </remarks>
-        [JsiiProperty(name: "aclName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AclName
+        [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AclName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +91,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: addressIpVersion: IP version. Could be "ipv4" or "ipv6".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "addressIpVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AddressIpVersion
+        [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AddressIpVersion
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosAccessControl.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IAclEntrysProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.AclEntrysProperty")]
@@ -112,8 +114,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
             /// </remarks>
-            [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}")]
-            string Entry
+            [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Entry
             {
                 get;
             }
@@ -121,9 +123,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: comment: Description of the entry.
             /// </remarks>
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Comment
+            object? Comment
             {
                 get
                 {
@@ -141,20 +143,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// <remarks>
                 /// <strong>Property</strong>: entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
                 /// </remarks>
-                [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}")]
-                public string Entry
+                [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Entry
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: comment: Description of the entry.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Comment
+                [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Comment
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -166,8 +168,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
             /// </remarks>
-            [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Entry
+            [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Entry
             {
                 get;
                 set;
@@ -177,8 +179,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: comment: Description of the entry.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Comment
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Comment
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosAccessControl.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-slb.RosAccessControl.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Slb.RosAccessControl.ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Value
             {
                 get;
                 set;

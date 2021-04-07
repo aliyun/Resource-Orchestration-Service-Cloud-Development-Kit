@@ -3,30 +3,35 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Authorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.650Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.AuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(AuthorizationProps.Jsii$Proxy.class)
 public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property apiIds: APIs to authorize.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getApiIds();
 
     /**
+     * Property appIds: APPs are authorized to APIs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAppIds();
 
     /**
+     * Property groupId: The id of the group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property stageName: Authorize in this stage.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
+     * Property description: Description of the authorization, less than 180 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -42,13 +47,13 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
     public static final class Builder implements software.amazon.jsii.Builder<AuthorizationProps> {
         private java.lang.Object apiIds;
         private java.lang.Object appIds;
-        private java.lang.String groupId;
-        private java.lang.String stageName;
-        private java.lang.String description;
+        private java.lang.Object groupId;
+        private java.lang.Object stageName;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link AuthorizationProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to authorize. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(java.util.List<? extends java.lang.Object> apiIds) {
@@ -58,7 +63,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AuthorizationProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to authorize. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(com.aliyun.ros.cdk.core.IResolvable apiIds) {
@@ -68,7 +73,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AuthorizationProps#getAppIds}
-         * @param appIds the value to be set. This parameter is required.
+         * @param appIds Property appIds: APPs are authorized to APIs. This parameter is required.
          * @return {@code this}
          */
         public Builder appIds(java.util.List<? extends java.lang.Object> appIds) {
@@ -78,7 +83,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AuthorizationProps#getAppIds}
-         * @param appIds the value to be set. This parameter is required.
+         * @param appIds Property appIds: APPs are authorized to APIs. This parameter is required.
          * @return {@code this}
          */
         public Builder appIds(com.aliyun.ros.cdk.core.IResolvable appIds) {
@@ -88,7 +93,7 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AuthorizationProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The id of the group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -97,8 +102,18 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link AuthorizationProps#getGroupId}
+         * @param groupId Property groupId: The id of the group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AuthorizationProps#getStageName}
-         * @param stageName the value to be set. This parameter is required.
+         * @param stageName Property stageName: Authorize in this stage. This parameter is required.
          * @return {@code this}
          */
         public Builder stageName(java.lang.String stageName) {
@@ -107,11 +122,31 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link AuthorizationProps#getStageName}
+         * @param stageName Property stageName: Authorize in this stage. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AuthorizationProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the authorization, less than 180 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AuthorizationProps#getDescription}
+         * @param description Property description: Description of the authorization, less than 180 characters.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -134,9 +169,9 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AuthorizationProps {
         private final java.lang.Object apiIds;
         private final java.lang.Object appIds;
-        private final java.lang.String groupId;
-        private final java.lang.String stageName;
-        private final java.lang.String description;
+        private final java.lang.Object groupId;
+        private final java.lang.Object stageName;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -146,15 +181,15 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
             super(objRef);
             this.apiIds = software.amazon.jsii.Kernel.get(this, "apiIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.appIds = software.amazon.jsii.Kernel.get(this, "appIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object appIds, final java.lang.String groupId, final java.lang.String stageName, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object appIds, final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiIds = java.util.Objects.requireNonNull(apiIds, "apiIds is required");
             this.appIds = java.util.Objects.requireNonNull(appIds, "appIds is required");
@@ -174,17 +209,17 @@ public interface AuthorizationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

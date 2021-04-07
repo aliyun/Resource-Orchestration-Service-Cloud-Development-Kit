@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute Id: Alarm template ID.</summary>
-        [JsiiProperty(name: "attrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrId
+        [JsiiProperty(name: "attrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

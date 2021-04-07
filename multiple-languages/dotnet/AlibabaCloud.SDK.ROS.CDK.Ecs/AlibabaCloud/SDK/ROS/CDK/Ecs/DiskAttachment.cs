@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute Device: The device where the volume is exposed on ecs instance.</summary>
-        [JsiiProperty(name: "attrDevice", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDevice
+        [JsiiProperty(name: "attrDevice", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDevice
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DiskId: The disk id of created disk.</summary>
-        [JsiiProperty(name: "attrDiskId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDiskId
+        [JsiiProperty(name: "attrDiskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDiskId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Status: The disk status now.</summary>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

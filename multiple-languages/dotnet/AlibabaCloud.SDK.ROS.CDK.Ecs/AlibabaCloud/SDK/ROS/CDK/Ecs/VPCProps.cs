@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// 192.168.0.0/16
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "cidrBlock", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CidrBlock
+        [JsiiProperty(name: "cidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CidrBlock
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Do not fill or empty, the default is empty.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property ipv6CidrBlock: IPv6 network cidr of the VPC.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "ipv6CidrBlock", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Ipv6CidrBlock
+        [JsiiProperty(name: "ipv6CidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Ipv6CidrBlock
         {
             get;
             set;
@@ -55,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -67,8 +67,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Max support 20 tags to add during create vpc. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosVPC.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ecs.RosVPC.ITagsProperty[]? Tags
         {
             get;
             set;
@@ -76,8 +76,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property vpcName: Display name of the vpc instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VpcName
+        [JsiiProperty(name: "vpcName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VpcName
         {
             get;
             set;

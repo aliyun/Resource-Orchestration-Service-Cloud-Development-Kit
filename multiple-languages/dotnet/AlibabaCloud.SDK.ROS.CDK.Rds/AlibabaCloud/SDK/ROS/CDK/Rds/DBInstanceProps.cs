@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceClass", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbInstanceClass
+        [JsiiProperty(name: "dbInstanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbInstanceClass
         {
             get;
             set;
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceStorage", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double DbInstanceStorage
+        [JsiiProperty(name: "dbInstanceStorage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbInstanceStorage
         {
             get;
             set;
@@ -36,24 +36,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// Support MySQL/SQLServer/PostgreSQL/PPAS/MariaDB now.
         /// </remarks>
-        [JsiiProperty(name: "engine", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Engine
+        [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Engine
         {
             get;
             set;
         }
 
         /// <summary>Property engineVersion: Database instance version of the relative engine type.Support MySQL: 5.5/5.6/5.7/8.0; SQLServer: 2008r2/2012/2012_ent_ha/2012_std_ha/2012_web/2016_ent_ha/2016_std_ha/2016_web/2017_std_ha/2017_ent; PostgreSQL: 9.4/10.0/11.0/12.0; PPAS: 9.3/10.0; MariaDB: 10.3.</summary>
-        [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string EngineVersion
+        [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object EngineVersion
         {
             get;
             set;
         }
 
         /// <summary>Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.</summary>
-        [JsiiProperty(name: "securityIpList", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SecurityIpList
+        [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SecurityIpList
         {
             get;
             set;
@@ -68,13 +68,98 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             set;
         }
 
+        /// <summary>Property archiveBackupKeepCount: The number of archived backups that can be retained.</summary>
+        /// <remarks>
+        /// Default value: 1. Valid values:
+        /// The value of this parameter ranges from 1 to 31 when the ArchiveBackupKeepPolicy
+        /// parameter is set to ByMonth.
+        /// The value of this parameter ranges from 1 to 7 when the ArchiveBackupKeepPolicy
+        /// parameter is set to ByWeek.
+        /// Note You do not need to specify this parameter when the ArchiveBackupKeepPolicy
+        /// parameter is set to KeepAll.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "archiveBackupKeepCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ArchiveBackupKeepCount
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property archiveBackupKeepPolicy: The period for which to retain archived backups.</summary>
+        /// <remarks>
+        /// The number of archived backups that can
+        /// be retained within the specified period is determined by the ArchiveBackupKeepCount parameter.
+        /// Default value: 0. Valid values:
+        /// ByMonth
+        /// ByWeek
+        /// KeepAll
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "archiveBackupKeepPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ArchiveBackupKeepPolicy
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property archiveBackupRetentionPeriod: The number of days for which to retain archived backups.</summary>
+        /// <remarks>
+        /// The default value 0 specifies not to enable the backup archiving function. Valid values: 30 to 1095.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "archiveBackupRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ArchiveBackupRetentionPeriod
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property autoRenew: Specifies whether to enable auto-renewal.</summary>
+        /// <remarks>
+        /// Valid values: true and false. Note
+        /// :Monthly subscription: The auto-renewal cycle is one month.
+        /// Annual subscription: The auto-renewal cycle is one year.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoRenew
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property backUpCategory: Specifies whether to enable the second-level backup function.</summary>
+        /// <remarks>
+        /// This function allows a backup
+        /// to be completed within seconds. Valid values:
+        /// Flash: specifies to enable the second-level backup function.
+        /// Standard: specifies to disable the second-level backup function.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "backUpCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? BackUpCategory
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property backupPolicyMode: Backup type,  DataBackupPolicy: data backup  LogBackupPolicy: log backup.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "backupPolicyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? BackupPolicyMode
+        {
+            get;
+            set;
+        }
+
         /// <summary>Property backupRetentionPeriod: The retention period of the data backup.</summary>
         /// <remarks>
         /// Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "backupRetentionPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? BackupRetentionPeriod
+        [JsiiProperty(name: "backupRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? BackupRetentionPeriod
         {
             get;
             set;
@@ -89,8 +174,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Finance: specifies to use the Enterprise Edition.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "category", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Category
+        [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Category
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property compressType: The format used to compress backups.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// 1: The zlib tool is used to compress backups into .tar.gz files.
+        /// 4: The QuickLZ tool is used to compress backups into .xb.gz files.
+        /// This compression format is supported only when the instance runs MySQL 5.6 or 5.7.
+        /// It can be used to restore individual databases and tables.
+        /// 8: The QuickLZ tool is used to compress backups into .xb.gz files.
+        /// This compression format is supported only when the instance runs MySQL 8.0.
+        /// It cannot be used to restore individual databases or tables.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "compressType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CompressType
         {
             get;
             set;
@@ -101,8 +205,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Default is RDS system assigns.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "connectionMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ConnectionMode
+        [JsiiProperty(name: "connectionMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ConnectionMode
         {
             get;
             set;
@@ -114,8 +218,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ConnectionStringPrefix
+        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ConnectionStringPrefix
         {
             get;
             set;
@@ -123,8 +227,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "connectionStringType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ConnectionStringType
+        [JsiiProperty(name: "connectionStringType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ConnectionStringType
         {
             get;
             set;
@@ -132,8 +236,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property dbInstanceDescription: Description of created database instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbInstanceDescription
+        [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbInstanceDescription
         {
             get;
             set;
@@ -141,8 +245,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property dbInstanceNetType: Database instance net type, default is Intranet.Internet for public access, Intranet for private access.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceNetType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbInstanceNetType
+        [JsiiProperty(name: "dbInstanceNetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbInstanceNetType
         {
             get;
             set;
@@ -156,8 +260,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// cloud_essd: specifies to use enhanced SSDs.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceStorageType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbInstanceStorageType
+        [JsiiProperty(name: "dbInstanceStorageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbInstanceStorageType
         {
             get;
             set;
@@ -170,8 +274,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// 0: Table names are case-sensitive.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbIsIgnoreCase", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DbIsIgnoreCase
+        [JsiiProperty(name: "dbIsIgnoreCase", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbIsIgnoreCase
         {
             get;
             set;
@@ -188,8 +292,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property dbParamGroupId: The ID of the parameter template used by the instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dbParamGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbParamGroupId
+        [JsiiProperty(name: "dbParamGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbParamGroupId
         {
             get;
             set;
@@ -200,8 +304,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Valid values: -12:00 to +12:00. The time zone must be an integer value such as +08:00. Values such as +08:30 are not allowed.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbTimeZone", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbTimeZone
+        [JsiiProperty(name: "dbTimeZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbTimeZone
         {
             get;
             set;
@@ -209,8 +313,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DedicatedHostGroupId
+        [JsiiProperty(name: "dedicatedHostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DedicatedHostGroupId
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property enableBackupLog: Specifies whether to enable the log backup function.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// True: specifies to enable the log backup function.
+        /// False: specifies to disable the log backup function.
+        /// Note You must specify this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableBackupLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EnableBackupLog
         {
             get;
             set;
@@ -221,8 +340,93 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// You can view the encryption key ID in the Key Management Service (KMS) console. You can also create an encryption key.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "encryptionKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EncryptionKey
+        [JsiiProperty(name: "encryptionKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EncryptionKey
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property highSpaceUsageProtection: Specifies whether to forcibly delete log backup files when the space usage of the    instance exceeds 80% or the remaining space is less than 5 GB.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// Enable and Disable. You can retain the default value. Note You must specify
+        /// this parameter when the BackupPolicyMode parameter is set to LogBackupPolicy.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "highSpaceUsageProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HighSpaceUsageProtection
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property localLogRetentionHours: The number of hours for which to retain log backup files on the instance.</summary>
+        /// <remarks>
+        /// Valid values: 0 to 168. The value 0 specifies not to retain log backup files on the instance.
+        /// You can retain the default value. Note You must specify this parameter when the BackupPolicyMode
+        /// parameter is set to LogBackupPolicy.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "localLogRetentionHours", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LocalLogRetentionHours
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property localLogRetentionSpace: The maximum percentage of space that is allowed to store log backup files on the instance.</summary>
+        /// <remarks>
+        /// If the space usage for log backup files exceeds this percentage, the system deletes earlier
+        /// log backup files until the space usage falls below this percentage. Valid values:0 to 50.
+        /// You can retain the default value. Note You must specify this parameter when the
+        /// BackupPolicyMode parameter is set to LogBackupPolicy.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "localLogRetentionSpace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LocalLogRetentionSpace
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property logBackupFrequency: The frequency at which to back up logs.</summary>
+        /// <remarks>
+        /// Valid values:
+        /// The value LogInterval specifies to back up logs every 30 minutes.
+        /// The default value of this parameter is the same as the data backup frequency.
+        /// Note The value LogInterval is supported only when the instance runs SQL Server.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logBackupFrequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LogBackupFrequency
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.</summary>
+        /// <remarks>
+        /// Default value: 60. Valid values: 6 to 100.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logBackupLocalRetentionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LogBackupLocalRetentionNumber
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property logBackupRetentionPeriod: The number of days for which to retain log backup files.</summary>
+        /// <remarks>
+        /// Valid values: 7 to 730. The log backup
+        /// retention period cannot be longer than the data backup retention period.Note If you enable the log
+        /// backup function, you can specify the log backup retention period. This applies only when the
+        /// instance runs MySQL, PostgreSQL, or PPAS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "logBackupRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LogBackupRetentionPeriod
         {
             get;
             set;
@@ -233,8 +437,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// The format is HH:mmZ-HH:mmZ.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maintainTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MaintainTime
+        [JsiiProperty(name: "maintainTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MaintainTime
         {
             get;
             set;
@@ -242,8 +446,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property masterUsername: The master user name for the database instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "masterUsername", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MasterUsername
+        [JsiiProperty(name: "masterUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MasterUsername
         {
             get;
             set;
@@ -251,8 +455,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property masterUserPassword: The master password for the database instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "masterUserPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MasterUserPassword
+        [JsiiProperty(name: "masterUserPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MasterUserPassword
         {
             get;
             set;
@@ -266,8 +470,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// The default value is Normal.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "masterUserType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MasterUserType
+        [JsiiProperty(name: "masterUserType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MasterUserType
         {
             get;
             set;
@@ -284,8 +488,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property payType: The charge type of created instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "payType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PayType
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PayType
         {
             get;
             set;
@@ -296,8 +500,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -305,8 +509,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property periodType: Charge period for created instances.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "periodType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PeriodType
+        [JsiiProperty(name: "periodType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PeriodType
         {
             get;
             set;
@@ -314,8 +518,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property port: The port of the database service.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Port
+        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Port
         {
             get;
             set;
@@ -338,8 +542,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PreferredBackupTime
+        [JsiiProperty(name: "preferredBackupTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PreferredBackupTime
         {
             get;
             set;
@@ -347,8 +551,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property privateIpAddress: The private ip for created instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PrivateIpAddress
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PrivateIpAddress
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property releasedKeepPolicy: The policy used to retain archived backups if the instance is released.</summary>
+        /// <remarks>
+        /// Default value: None.
+        /// Valid values:
+        /// Lastest: Only the last archived backup is retained.
+        /// All: All of the archived backups are retained.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "releasedKeepPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ReleasedKeepPolicy
         {
             get;
             set;
@@ -356,8 +575,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property resourceGroupId: Resource group id.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -368,8 +587,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// You can copy the ARN from the RAM console.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "roleArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RoleArn
+        [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RoleArn
         {
             get;
             set;
@@ -382,8 +601,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// To delete an ECS Security group, leave this parameter empty.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecurityGroupId
         {
             get;
             set;
@@ -394,8 +613,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "slaveZoneIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? SlaveZoneIds
+        [JsiiProperty(name: "slaveZoneIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? SlaveZoneIds
         {
             get;
             set;
@@ -406,8 +625,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Valid values:Enable | Disabled.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sqlCollectorStatus", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SqlCollectorStatus
+        [JsiiProperty(name: "sqlCollectorStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SqlCollectorStatus
         {
             get;
             set;
@@ -422,8 +641,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Default value is Disabled.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sslSetting", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SslSetting
+        [JsiiProperty(name: "sslSetting", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SslSetting
         {
             get;
             set;
@@ -445,8 +664,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// Can be a null string.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        public System.Collections.Generic.IDictionary<string, object>? Tags
         {
             get;
             set;
@@ -454,8 +673,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property targetDedicatedHostIdForLog: The ID of the host to which the instance belongs if you create a log instance in a host group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "targetDedicatedHostIdForLog", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TargetDedicatedHostIdForLog
+        [JsiiProperty(name: "targetDedicatedHostIdForLog", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TargetDedicatedHostIdForLog
         {
             get;
             set;
@@ -463,8 +682,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property targetDedicatedHostIdForMaster: The ID of the host to which the instance belongs if you create a primary instance in a host group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "targetDedicatedHostIdForMaster", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TargetDedicatedHostIdForMaster
+        [JsiiProperty(name: "targetDedicatedHostIdForMaster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TargetDedicatedHostIdForMaster
         {
             get;
             set;
@@ -472,8 +691,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
 
         /// <summary>Property targetDedicatedHostIdForSlave: The ID of the host to which the instance belongs if you create a secondary instance in a host group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "targetDedicatedHostIdForSlave", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TargetDedicatedHostIdForSlave
+        [JsiiProperty(name: "targetDedicatedHostIdForSlave", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TargetDedicatedHostIdForSlave
         {
             get;
             set;
@@ -484,8 +703,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// For VPC network, the property is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VpcId
         {
             get;
             set;
@@ -496,8 +715,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// For VPC network, the property is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VSwitchId
         {
             get;
             set;
@@ -508,8 +727,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneId
         {
             get;
             set;

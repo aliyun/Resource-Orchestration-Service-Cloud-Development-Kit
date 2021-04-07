@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// <strong>Attribute</strong>: Name: Alert name.
         /// </remarks>
-        [JsiiProperty(name: "attrName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrName
+        [JsiiProperty(name: "attrName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -82,22 +82,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Project
+        [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Project
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IConfigurationProperty), fullyQualifiedName: "@alicloud/ros-cdk-sls.RosAlert.ConfigurationProperty")]
         public interface IConfigurationProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert. 
-            /// Log Service triggers an alert if the trigger condition is met. 
+            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
+            /// Log Service triggers an alert if the trigger condition is met.
             /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
             /// </remarks>
-            [JsiiProperty(name: "condition", typeJson: "{\"primitive\":\"string\"}")]
-            string Condition
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Condition
             {
                 get;
             }
@@ -105,8 +105,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: dashboard: Alarm associated dashboard.
             /// </remarks>
-            [JsiiProperty(name: "dashboard", typeJson: "{\"primitive\":\"string\"}")]
-            string Dashboard
+            [JsiiProperty(name: "dashboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Dashboard
             {
                 get;
             }
@@ -123,8 +123,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
             /// </remarks>
-            [JsiiProperty(name: "throttling", typeJson: "{\"primitive\":\"string\"}")]
-            string Throttling
+            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Throttling
             {
                 get;
             }
@@ -143,12 +143,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: notifyThreshold: The notification threshold, 
+            /// <strong>Property</strong>: notifyThreshold: The notification threshold,
             /// which will not be notified until the number of triggers is reached.
             /// </remarks>
-            [JsiiProperty(name: "notifyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "notifyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? NotifyThreshold
+            object? NotifyThreshold
             {
                 get
                 {
@@ -164,23 +164,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: condition: he condition that is required to trigger an alert. 
-                /// Log Service triggers an alert if the trigger condition is met. 
+                /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
+                /// Log Service triggers an alert if the trigger condition is met.
                 /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
                 /// </remarks>
-                [JsiiProperty(name: "condition", typeJson: "{\"primitive\":\"string\"}")]
-                public string Condition
+                [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Condition
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: dashboard: Alarm associated dashboard.
                 /// </remarks>
-                [JsiiProperty(name: "dashboard", typeJson: "{\"primitive\":\"string\"}")]
-                public string Dashboard
+                [JsiiProperty(name: "dashboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Dashboard
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -195,10 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
                 /// </remarks>
-                [JsiiProperty(name: "throttling", typeJson: "{\"primitive\":\"string\"}")]
-                public string Throttling
+                [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Throttling
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -212,14 +212,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: notifyThreshold: The notification threshold, 
+                /// <strong>Property</strong>: notifyThreshold: The notification threshold,
                 /// which will not be notified until the number of triggers is reached.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "notifyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? NotifyThreshold
+                [JsiiProperty(name: "notifyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NotifyThreshold
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -229,12 +229,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         public class ConfigurationProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.IConfigurationProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert. 
-            /// Log Service triggers an alert if the trigger condition is met. 
+            /// <strong>Property</strong>: condition: he condition that is required to trigger an alert.
+            /// Log Service triggers an alert if the trigger condition is met.
             /// For example, you can set the trigger condition to pv%100 > 0 && uv > 0.
             /// </remarks>
-            [JsiiProperty(name: "condition", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Condition
+            [JsiiProperty(name: "condition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Condition
             {
                 get;
                 set;
@@ -243,8 +243,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: dashboard: Alarm associated dashboard.
             /// </remarks>
-            [JsiiProperty(name: "dashboard", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Dashboard
+            [JsiiProperty(name: "dashboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Dashboard
             {
                 get;
                 set;
@@ -263,8 +263,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: throttling: Notification interval, default is no interval.
             /// </remarks>
-            [JsiiProperty(name: "throttling", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Throttling
+            [JsiiProperty(name: "throttling", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Throttling
             {
                 get;
                 set;
@@ -282,12 +282,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: notifyThreshold: The notification threshold, 
+            /// <strong>Property</strong>: notifyThreshold: The notification threshold,
             /// which will not be notified until the number of triggers is reached.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "notifyThreshold", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? NotifyThreshold
+            [JsiiProperty(name: "notifyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NotifyThreshold
             {
                 get;
                 set;
@@ -308,8 +308,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: displayName: Alert name display in console. The name length is 1-64 characters.
             /// </remarks>
-            [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}")]
-            string DisplayName
+            [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DisplayName
             {
                 get;
             }
@@ -317,15 +317,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Alert name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Name
             {
                 get;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule. 
-            /// Note During an alert rule evaluation, if a query returns more than 100 log entries, 
+            /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule.
+            /// Note During an alert rule evaluation, if a query returns more than 100 log entries,
             /// Log Service checks only the first 100 log entries.
             /// </remarks>
             [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.ScheduleProperty\"}]}}")]
@@ -337,9 +337,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: description: Description of the alert.
             /// </remarks>
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Description
+            object? Description
             {
                 get
                 {
@@ -350,9 +350,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: state:
             /// </remarks>
-            [JsiiProperty(name: "state", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? State
+            object? State
             {
                 get
                 {
@@ -363,9 +363,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type:
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Type
+            object? Type
             {
                 get
                 {
@@ -392,24 +392,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: displayName: Alert name display in console. The name length is 1-64 characters.
                 /// </remarks>
-                [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}")]
-                public string DisplayName
+                [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DisplayName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: name: Alert name.
                 /// </remarks>
-                [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-                public string Name
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Name
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule. 
-                /// Note During an alert rule evaluation, if a query returns more than 100 log entries, 
+                /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule.
+                /// Note During an alert rule evaluation, if a query returns more than 100 log entries,
                 /// Log Service checks only the first 100 log entries.
                 /// </remarks>
                 [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.ScheduleProperty\"}]}}")]
@@ -422,30 +422,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <strong>Property</strong>: description: Description of the alert.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Description
+                [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Description
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: state:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "state", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? State
+                [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? State
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: type:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Type
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Type
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -467,8 +467,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: displayName: Alert name display in console. The name length is 1-64 characters.
             /// </remarks>
-            [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string DisplayName
+            [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DisplayName
             {
                 get;
                 set;
@@ -477,16 +477,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: name: Alert name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Name
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule. 
-            /// Note During an alert rule evaluation, if a query returns more than 100 log entries, 
+            /// <strong>Property</strong>: schedule: The interval at which Log Service evaluates the alert rule.
+            /// Note During an alert rule evaluation, if a query returns more than 100 log entries,
             /// Log Service checks only the first 100 log entries.
             /// </remarks>
             [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-sls.RosAlert.ScheduleProperty\"}]}}", isOverride: true)]
@@ -500,8 +500,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: description: Description of the alert.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Description
             {
                 get;
                 set;
@@ -511,8 +511,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: state:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "state", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? State
+            [JsiiProperty(name: "state", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? State
             {
                 get;
                 set;
@@ -522,8 +522,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: type:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Type
             {
                 get;
                 set;
@@ -533,13 +533,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         public interface INotificationListProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: type: This topic describes how to configure a notification method. 
-            /// Log Service can send alert notifications by using one or more methods. 
-            /// Available notification methods include emails, DingTalk chatbot webhooks, 
+            /// <strong>Property</strong>: type: This topic describes how to configure a notification method.
+            /// Log Service can send alert notifications by using one or more methods.
+            /// Available notification methods include emails, DingTalk chatbot webhooks,
             /// custom webhooks, and Alibaba Cloud Message Center.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
             {
                 get;
             }
@@ -547,9 +547,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: content: The content of an alert notification
             /// </remarks>
-            [JsiiProperty(name: "content", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Content
+            object? Content
             {
                 get
                 {
@@ -586,9 +586,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: serviceUri: The webhook URL of the DingTalk chatbot.
             /// </remarks>
-            [JsiiProperty(name: "serviceUri", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "serviceUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ServiceUri
+            object? ServiceUri
             {
                 get
                 {
@@ -604,25 +604,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: type: This topic describes how to configure a notification method. 
-                /// Log Service can send alert notifications by using one or more methods. 
-                /// Available notification methods include emails, DingTalk chatbot webhooks, 
+                /// <strong>Property</strong>: type: This topic describes how to configure a notification method.
+                /// Log Service can send alert notifications by using one or more methods.
+                /// Available notification methods include emails, DingTalk chatbot webhooks,
                 /// custom webhooks, and Alibaba Cloud Message Center.
                 /// </remarks>
-                [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-                public string Type
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: content: The content of an alert notification
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "content", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Content
+                [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Content
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -649,10 +649,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <strong>Property</strong>: serviceUri: The webhook URL of the DingTalk chatbot.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "serviceUri", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ServiceUri
+                [JsiiProperty(name: "serviceUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ServiceUri
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -662,13 +662,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         public class NotificationListProperty : AlibabaCloud.SDK.ROS.CDK.Sls.RosAlert.INotificationListProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: type: This topic describes how to configure a notification method. 
-            /// Log Service can send alert notifications by using one or more methods. 
-            /// Available notification methods include emails, DingTalk chatbot webhooks, 
+            /// <strong>Property</strong>: type: This topic describes how to configure a notification method.
+            /// Log Service can send alert notifications by using one or more methods.
+            /// Available notification methods include emails, DingTalk chatbot webhooks,
             /// custom webhooks, and Alibaba Cloud Message Center.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Type
             {
                 get;
                 set;
@@ -678,8 +678,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: content: The content of an alert notification
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "content", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Content
+            [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Content
             {
                 get;
                 set;
@@ -711,8 +711,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: serviceUri: The webhook URL of the DingTalk chatbot.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceUri", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ServiceUri
+            [JsiiProperty(name: "serviceUri", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ServiceUri
             {
                 get;
                 set;
@@ -724,8 +724,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: chartTitle:
             /// </remarks>
-            [JsiiProperty(name: "chartTitle", typeJson: "{\"primitive\":\"string\"}")]
-            string ChartTitle
+            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ChartTitle
             {
                 get;
             }
@@ -733,8 +733,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: end:
             /// </remarks>
-            [JsiiProperty(name: "end", typeJson: "{\"primitive\":\"string\"}")]
-            string End
+            [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object End
             {
                 get;
             }
@@ -742,8 +742,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logStore:
             /// </remarks>
-            [JsiiProperty(name: "logStore", typeJson: "{\"primitive\":\"string\"}")]
-            string LogStore
+            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LogStore
             {
                 get;
             }
@@ -751,8 +751,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: query:
             /// </remarks>
-            [JsiiProperty(name: "query", typeJson: "{\"primitive\":\"string\"}")]
-            string Query
+            [JsiiProperty(name: "query", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Query
             {
                 get;
             }
@@ -760,8 +760,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: start:
             /// </remarks>
-            [JsiiProperty(name: "start", typeJson: "{\"primitive\":\"string\"}")]
-            string Start
+            [JsiiProperty(name: "start", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Start
             {
                 get;
             }
@@ -769,8 +769,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: timeSpanType:
             /// </remarks>
-            [JsiiProperty(name: "timeSpanType", typeJson: "{\"primitive\":\"string\"}")]
-            string TimeSpanType
+            [JsiiProperty(name: "timeSpanType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object TimeSpanType
             {
                 get;
             }
@@ -785,55 +785,55 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: chartTitle:
                 /// </remarks>
-                [JsiiProperty(name: "chartTitle", typeJson: "{\"primitive\":\"string\"}")]
-                public string ChartTitle
+                [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ChartTitle
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: end:
                 /// </remarks>
-                [JsiiProperty(name: "end", typeJson: "{\"primitive\":\"string\"}")]
-                public string End
+                [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object End
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: logStore:
                 /// </remarks>
-                [JsiiProperty(name: "logStore", typeJson: "{\"primitive\":\"string\"}")]
-                public string LogStore
+                [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LogStore
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: query:
                 /// </remarks>
-                [JsiiProperty(name: "query", typeJson: "{\"primitive\":\"string\"}")]
-                public string Query
+                [JsiiProperty(name: "query", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Query
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: start:
                 /// </remarks>
-                [JsiiProperty(name: "start", typeJson: "{\"primitive\":\"string\"}")]
-                public string Start
+                [JsiiProperty(name: "start", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Start
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: timeSpanType:
                 /// </remarks>
-                [JsiiProperty(name: "timeSpanType", typeJson: "{\"primitive\":\"string\"}")]
-                public string TimeSpanType
+                [JsiiProperty(name: "timeSpanType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object TimeSpanType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -845,8 +845,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: chartTitle:
             /// </remarks>
-            [JsiiProperty(name: "chartTitle", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string ChartTitle
+            [JsiiProperty(name: "chartTitle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ChartTitle
             {
                 get;
                 set;
@@ -855,8 +855,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: end:
             /// </remarks>
-            [JsiiProperty(name: "end", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string End
+            [JsiiProperty(name: "end", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object End
             {
                 get;
                 set;
@@ -865,8 +865,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: logStore:
             /// </remarks>
-            [JsiiProperty(name: "logStore", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string LogStore
+            [JsiiProperty(name: "logStore", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object LogStore
             {
                 get;
                 set;
@@ -875,8 +875,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: query:
             /// </remarks>
-            [JsiiProperty(name: "query", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Query
+            [JsiiProperty(name: "query", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Query
             {
                 get;
                 set;
@@ -885,8 +885,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: start:
             /// </remarks>
-            [JsiiProperty(name: "start", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Start
+            [JsiiProperty(name: "start", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Start
             {
                 get;
                 set;
@@ -895,8 +895,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: timeSpanType:
             /// </remarks>
-            [JsiiProperty(name: "timeSpanType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string TimeSpanType
+            [JsiiProperty(name: "timeSpanType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object TimeSpanType
             {
                 get;
                 set;
@@ -908,8 +908,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type:
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Type
             {
                 get;
             }
@@ -917,9 +917,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: cronExpression:
             /// </remarks>
-            [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? CronExpression
+            object? CronExpression
             {
                 get
                 {
@@ -930,9 +930,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: dayOfWeek:
             /// </remarks>
-            [JsiiProperty(name: "dayOfWeek", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "dayOfWeek", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? DayOfWeek
+            object? DayOfWeek
             {
                 get
                 {
@@ -943,9 +943,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: delay:
             /// </remarks>
-            [JsiiProperty(name: "delay", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "delay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Delay
+            object? Delay
             {
                 get
                 {
@@ -956,9 +956,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: hour:
             /// </remarks>
-            [JsiiProperty(name: "hour", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "hour", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Hour
+            object? Hour
             {
                 get
                 {
@@ -969,9 +969,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: interval: Execution interval
             /// </remarks>
-            [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Interval
+            object? Interval
             {
                 get
                 {
@@ -1002,60 +1002,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// <remarks>
                 /// <strong>Property</strong>: type:
                 /// </remarks>
-                [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-                public string Type
+                [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Type
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: cronExpression:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? CronExpression
+                [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CronExpression
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: dayOfWeek:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "dayOfWeek", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? DayOfWeek
+                [JsiiProperty(name: "dayOfWeek", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DayOfWeek
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: delay:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "delay", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Delay
+                [JsiiProperty(name: "delay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Delay
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hour:
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "hour", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Hour
+                [JsiiProperty(name: "hour", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Hour
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: interval: Execution interval
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Interval
+                [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Interval
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -1077,8 +1077,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <remarks>
             /// <strong>Property</strong>: type:
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Type
             {
                 get;
                 set;
@@ -1088,8 +1088,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: cronExpression:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cronExpression", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? CronExpression
+            [JsiiProperty(name: "cronExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CronExpression
             {
                 get;
                 set;
@@ -1099,8 +1099,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: dayOfWeek:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dayOfWeek", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? DayOfWeek
+            [JsiiProperty(name: "dayOfWeek", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DayOfWeek
             {
                 get;
                 set;
@@ -1110,8 +1110,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: delay:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "delay", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Delay
+            [JsiiProperty(name: "delay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Delay
             {
                 get;
                 set;
@@ -1121,8 +1121,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: hour:
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "hour", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Hour
+            [JsiiProperty(name: "hour", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Hour
             {
                 get;
                 set;
@@ -1132,8 +1132,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// <strong>Property</strong>: interval: Execution interval
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Interval
+            [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Interval
             {
                 get;
                 set;

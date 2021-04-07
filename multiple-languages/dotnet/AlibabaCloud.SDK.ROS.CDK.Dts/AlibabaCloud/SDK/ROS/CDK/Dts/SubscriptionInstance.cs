@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Attribute PrivateHost: Private host.</summary>
-        [JsiiProperty(name: "attrPrivateHost", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrivateHost
+        [JsiiProperty(name: "attrPrivateHost", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateHost
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PublicHost: Public host.</summary>
-        [JsiiProperty(name: "attrPublicHost", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPublicHost
+        [JsiiProperty(name: "attrPublicHost", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicHost
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SubscriptionInstanceId: The ID of Data subscription instance.</summary>
-        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionInstanceId
+        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VPCHost: VPC host.</summary>
-        [JsiiProperty(name: "attrVpcHost", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcHost
+        [JsiiProperty(name: "attrVpcHost", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcHost
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

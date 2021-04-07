@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute SnapshotId: The snapshot ID.</summary>
-        [JsiiProperty(name: "attrSnapshotId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSnapshotId
+        [JsiiProperty(name: "attrSnapshotId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSnapshotId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

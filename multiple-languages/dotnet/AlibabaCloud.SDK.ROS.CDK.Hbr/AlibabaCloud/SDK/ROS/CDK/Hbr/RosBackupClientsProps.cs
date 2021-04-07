@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: ID list of instances to install backup client
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object InstanceIds
         {
             get;
             set;

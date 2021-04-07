@@ -11,22 +11,22 @@ export interface PeeringRouterInterfaceBindingProps {
     /**
      * Property oppositeInterfaceId: The connection peer RouterInterface ID.
      */
-    readonly oppositeInterfaceId: string;
+    readonly oppositeInterfaceId: string | ros.IResolvable;
 
     /**
      * Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
      */
-    readonly routerInterfaceId: string;
+    readonly routerInterfaceId: string | ros.IResolvable;
 
     /**
      * Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
      */
-    readonly oppositeInterfaceOwnerId?: string;
+    readonly oppositeInterfaceOwnerId?: string | ros.IResolvable;
 
     /**
      * Property oppositeRouterId: Router ID of the connection peer RouterInterface.
      */
-    readonly oppositeRouterId?: string;
+    readonly oppositeRouterId?: string | ros.IResolvable;
 }
 
 /**
@@ -42,7 +42,7 @@ export class PeeringRouterInterfaceBinding extends ros.Resource {
     /**
      * Attribute RouterInterfaceId: The RouterInterface ID.
      */
-    public readonly attrRouterInterfaceId: any;
+    public readonly attrRouterInterfaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceBinding`.

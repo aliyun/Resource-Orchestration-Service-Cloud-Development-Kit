@@ -16,7 +16,7 @@ export interface TrailLoggingProps {
     /**
      * Property name: The name of the trail to be enabled.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -32,27 +32,27 @@ export class TrailLogging extends ros.Resource {
     /**
      * Attribute IsLogging: Indicates whether the trail is logging API invocations.
      */
-    public readonly attrIsLogging: any;
+    public readonly attrIsLogging: ros.IResolvable;
 
     /**
      * Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
      */
-    public readonly attrLatestDeliveryError: any;
+    public readonly attrLatestDeliveryError: ros.IResolvable;
 
     /**
      * Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
      */
-    public readonly attrLatestDeliveryTime: any;
+    public readonly attrLatestDeliveryTime: ros.IResolvable;
 
     /**
      * Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
      */
-    public readonly attrStartLoggingTime: any;
+    public readonly attrStartLoggingTime: ros.IResolvable;
 
     /**
      * Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
      */
-    public readonly attrStopLoggingTime: any;
+    public readonly attrStopLoggingTime: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.

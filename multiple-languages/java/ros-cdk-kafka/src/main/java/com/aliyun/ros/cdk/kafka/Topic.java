@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * A ROS resource type:  `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::KAFKA::Topic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Topic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.kafka.TopicProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::KAFKA::Topic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Topic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.kafka.TopicProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,19 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute InstanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
+     * <p>
+     * You can call the GetInstanceList operation to query instances.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Topic: Topic name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTopic() {
-        return software.amazon.jsii.Kernel.get(this, "attrTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopic() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopic", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +70,8 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.kafka.Topic> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +79,8 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,37 +99,121 @@ public class Topic extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
+         * <p>
+         * You can call the GetInstanceList operation to query instances.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
+         * <p>
+         * You can call the GetInstanceList operation to query instances.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property remark: The description of the topic.
+         * <p>
+         * The value of this parameter must meet the following
+         * requirements:
+         * The value can only contain letters, digits, hyphens (-), and underscores (_).
+         * The value must be 3 to 64 characters in length.
+         * <p>
          * @return {@code this}
-         * @param remark This parameter is required.
+         * @param remark Property remark: The description of the topic. This parameter is required.
          */
         public Builder remark(final java.lang.String remark) {
             this.props.remark(remark);
             return this;
         }
+        /**
+         * Property remark: The description of the topic.
+         * <p>
+         * The value of this parameter must meet the following
+         * requirements:
+         * The value can only contain letters, digits, hyphens (-), and underscores (_).
+         * The value must be 3 to 64 characters in length.
+         * <p>
+         * @return {@code this}
+         * @param remark Property remark: The description of the topic. This parameter is required.
+         */
+        public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
+            this.props.remark(remark);
+            return this;
+        }
 
         /**
+         * Property topic: The name of the topic.
+         * <p>
+         * The value of this parameter must meet the following requirements:
+         * The name can only contain letters, digits, hyphens (-), and underscores (_).
+         * The name must be 3 to 64 characters in length, and will be automatically truncated
+         * if it contains more characters.
+         * The name cannot be modified after being created.
+         * <p>
          * @return {@code this}
-         * @param topic This parameter is required.
+         * @param topic Property topic: The name of the topic. This parameter is required.
          */
         public Builder topic(final java.lang.String topic) {
             this.props.topic(topic);
             return this;
         }
+        /**
+         * Property topic: The name of the topic.
+         * <p>
+         * The value of this parameter must meet the following requirements:
+         * The name can only contain letters, digits, hyphens (-), and underscores (_).
+         * The name must be 3 to 64 characters in length, and will be automatically truncated
+         * if it contains more characters.
+         * The name cannot be modified after being created.
+         * <p>
+         * @return {@code this}
+         * @param topic Property topic: The name of the topic. This parameter is required.
+         */
+        public Builder topic(final com.aliyun.ros.cdk.core.IResolvable topic) {
+            this.props.topic(topic);
+            return this;
+        }
 
         /**
+         * Property partitionNum: The number of partitions in the topic.
+         * <p>
+         * Valid values:
+         * 1 to 48
+         * We recommend that you set the number of partitions to a multiple of 6 to reduce the
+         * risk of data skew.Note:For special requirements,submit a ticket.
+         * <p>
          * @return {@code this}
-         * @param partitionNum This parameter is required.
+         * @param partitionNum Property partitionNum: The number of partitions in the topic. This parameter is required.
          */
         public Builder partitionNum(final java.lang.Number partitionNum) {
+            this.props.partitionNum(partitionNum);
+            return this;
+        }
+        /**
+         * Property partitionNum: The number of partitions in the topic.
+         * <p>
+         * Valid values:
+         * 1 to 48
+         * We recommend that you set the number of partitions to a multiple of 6 to reduce the
+         * risk of data skew.Note:For special requirements,submit a ticket.
+         * <p>
+         * @return {@code this}
+         * @param partitionNum Property partitionNum: The number of partitions in the topic. This parameter is required.
+         */
+        public Builder partitionNum(final com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.props.partitionNum(partitionNum);
             return this;
         }

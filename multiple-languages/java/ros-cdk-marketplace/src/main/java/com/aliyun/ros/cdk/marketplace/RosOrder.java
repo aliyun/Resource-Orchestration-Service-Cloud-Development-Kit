@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * A ROS template type:  `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.057Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.678Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.RosOrder")
 public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProductCode() {
-        return software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProductCode() {
+        return software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSkuCode() {
-        return software.amazon.jsii.Kernel.get(this, "skuCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProductCode(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "productCode", java.util.Objects.requireNonNull(value, "productCode is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSkuCode() {
+        return software.amazon.jsii.Kernel.get(this, "skuCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSkuCode(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "skuCode", java.util.Objects.requireNonNull(value, "skuCode is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
-        return software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "chargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
+        return software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDuration(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "duration", value);
+    }
+
+    /**
+     */
+    public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "duration", value);
     }
 
@@ -129,8 +153,8 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
-        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
+        return software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,13 +165,25 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getQuantity() {
-        return software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPricingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "pricingCycle", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getQuantity() {
+        return software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setQuantity(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "quantity", value);
+    }
+
+    /**
+     */
+    public void setQuantity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "quantity", value);
     }
 
@@ -185,12 +221,28 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
             this.props.productCode(productCode);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param productCode This parameter is required.
+         */
+        public Builder productCode(final com.aliyun.ros.cdk.core.IResolvable productCode) {
+            this.props.productCode(productCode);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param skuCode This parameter is required.
          */
         public Builder skuCode(final java.lang.String skuCode) {
+            this.props.skuCode(skuCode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param skuCode This parameter is required.
+         */
+        public Builder skuCode(final com.aliyun.ros.cdk.core.IResolvable skuCode) {
             this.props.skuCode(skuCode);
             return this;
         }
@@ -203,12 +255,28 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
             this.props.chargeType(chargeType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param chargeType This parameter is required.
+         */
+        public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.props.chargeType(chargeType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param duration This parameter is required.
          */
         public Builder duration(final java.lang.Number duration) {
+            this.props.duration(duration);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param duration This parameter is required.
+         */
+        public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
             return this;
         }
@@ -238,12 +306,28 @@ public class RosOrder extends com.aliyun.ros.cdk.core.RosResource {
             this.props.pricingCycle(pricingCycle);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param pricingCycle This parameter is required.
+         */
+        public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.props.pricingCycle(pricingCycle);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param quantity This parameter is required.
          */
         public Builder quantity(final java.lang.Number quantity) {
+            this.props.quantity(quantity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param quantity This parameter is required.
+         */
+        public Builder quantity(final com.aliyun.ros.cdk.core.IResolvable quantity) {
             this.props.quantity(quantity);
             return this;
         }

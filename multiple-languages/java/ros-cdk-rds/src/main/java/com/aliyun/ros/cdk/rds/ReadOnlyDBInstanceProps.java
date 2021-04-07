@@ -3,82 +3,144 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::ReadOnlyDBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.249Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.ReadOnlyDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ReadOnlyDBInstanceProps.Jsii$Proxy.class)
 public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property dbInstanceClass: The type of the instance.
+     * <p>
+     * For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceClass();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceClass();
 
     /**
+     * Property dbInstanceId: The ID of the master instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
+     * Property dbInstanceStorage: The storage space of the instance.
+     * <p>
+     * Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getDbInstanceStorage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceStorage();
 
     /**
+     * Property engineVersion: The version of the database.
+     * <p>
+     * The database and the master instance must have the same database version. Valid values:
+     * <p>
+     * <ul>
+     * <li>5.6</li>
+     * <li>5.7</li>
+     * <li>8.0</li>
+     * <li>2017_ent</li>
+     * </ul>
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEngineVersion();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
     /**
+     * Property zoneId: The ID of the zone.
+     * <p>
+     * You can call the DescribeRegions API operation to view the latest zones.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
+     * Property category: The edition of the instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Basic</li>
+     * <li>HighAvailability</li>
+     * <li>AlwaysOn</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return null;
     }
 
     /**
+     * Property dbInstanceDescription: Description of created database instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return null;
     }
 
     /**
+     * Property dbInstanceStorageType: The storage type of the instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>local_ssd/ephemeral_ssd: local SSDs.</li>
+     * <li>cloud_ssd: SSDs.</li>
+     * <li>cloud_essd: ESSDs.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceStorageType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorageType() {
         return null;
     }
 
     /**
+     * Property payType: The billing method.
+     * <p>
+     * The system only supports Pay-As-You-Go. Valid value: Postpaid.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
     }
 
     /**
+     * Property privateIpAddress: The private IP address of the read-only instance.
+     * <p>
+     * It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property tags: The tags of an instance.
+     * <p>
+     * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+     * At most 5 tags can be specified.
+     * Key
+     * It can be up to 64 characters in length.
+     * Cannot begin with aliyun.
+     * Cannot begin with http:// or https://.
+     * Cannot be a null string.
+     * Value
+     * It can be up to 128 characters in length.
+     * Cannot begin with aliyun.
+     * Cannot begin with http:// or https://.
+     * Can be a null string.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return null;
     }
 
     /**
+     * Property vpcId: The ID of the VPC.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The ID of the VSwitch.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -92,24 +154,25 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link ReadOnlyDBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ReadOnlyDBInstanceProps> {
-        private java.lang.String dbInstanceClass;
-        private java.lang.String dbInstanceId;
-        private java.lang.Number dbInstanceStorage;
-        private java.lang.String engineVersion;
-        private java.lang.String zoneId;
-        private java.lang.String category;
-        private java.lang.String dbInstanceDescription;
-        private java.lang.String dbInstanceStorageType;
-        private java.lang.String payType;
-        private java.lang.String privateIpAddress;
-        private java.lang.String resourceGroupId;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object dbInstanceClass;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object dbInstanceStorage;
+        private java.lang.Object engineVersion;
+        private java.lang.Object zoneId;
+        private java.lang.Object category;
+        private java.lang.Object dbInstanceDescription;
+        private java.lang.Object dbInstanceStorageType;
+        private java.lang.Object payType;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object resourceGroupId;
+        private java.util.Map<java.lang.String, java.lang.Object> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceClass}
-         * @param dbInstanceClass the value to be set. This parameter is required.
+         * @param dbInstanceClass Property dbInstanceClass: The type of the instance. This parameter is required.
+         *                        For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
          * @return {@code this}
          */
         public Builder dbInstanceClass(java.lang.String dbInstanceClass) {
@@ -118,8 +181,19 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceClass}
+         * @param dbInstanceClass Property dbInstanceClass: The type of the instance. This parameter is required.
+         *                        For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
+         * @return {@code this}
+         */
+        public Builder dbInstanceClass(com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.dbInstanceClass = dbInstanceClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceId}
-         * @param dbInstanceId the value to be set. This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: The ID of the master instance. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
@@ -128,8 +202,19 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceId}
+         * @param dbInstanceId Property dbInstanceId: The ID of the master instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorage}
-         * @param dbInstanceStorage the value to be set. This parameter is required.
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage space of the instance. This parameter is required.
+         *                          Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
          * @return {@code this}
          */
         public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
@@ -138,8 +223,27 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorage}
+         * @param dbInstanceStorage Property dbInstanceStorage: The storage space of the instance. This parameter is required.
+         *                          Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorage(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
+            this.dbInstanceStorage = dbInstanceStorage;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getEngineVersion}
-         * @param engineVersion the value to be set. This parameter is required.
+         * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
+         *                      The database and the master instance must have the same database version. Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>5.6</li>
+         *                      <li>5.7</li>
+         *                      <li>8.0</li>
+         *                      <li>2017_ent</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -148,8 +252,27 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getEngineVersion}
+         * @param engineVersion Property engineVersion: The version of the database. This parameter is required.
+         *                      The database and the master instance must have the same database version. Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>5.6</li>
+         *                      <li>5.7</li>
+         *                      <li>8.0</li>
+         *                      <li>2017_ent</li>
+         *                      </ul>
+         * @return {@code this}
+         */
+        public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
+            this.engineVersion = engineVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getZoneId}
-         * @param zoneId the value to be set. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the zone. This parameter is required.
+         *               You can call the DescribeRegions API operation to view the latest zones.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -158,8 +281,26 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getZoneId}
+         * @param zoneId Property zoneId: The ID of the zone. This parameter is required.
+         *               You can call the DescribeRegions API operation to view the latest zones.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getCategory}
-         * @param category the value to be set.
+         * @param category Property category: The edition of the instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Basic</li>
+         *                 <li>HighAvailability</li>
+         *                 <li>AlwaysOn</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
@@ -168,8 +309,25 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getCategory}
+         * @param category Property category: The edition of the instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>Basic</li>
+         *                 <li>HighAvailability</li>
+         *                 <li>AlwaysOn</li>
+         *                 </ul>
+         * @return {@code this}
+         */
+        public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription the value to be set.
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
          * @return {@code this}
          */
         public Builder dbInstanceDescription(java.lang.String dbInstanceDescription) {
@@ -178,8 +336,25 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceDescription}
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @return {@code this}
+         */
+        public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
+            this.dbInstanceDescription = dbInstanceDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorageType}
-         * @param dbInstanceStorageType the value to be set.
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance.
+         *                              Valid values:
+         *                              <p>
+         *                              <ul>
+         *                              <li>local_ssd/ephemeral_ssd: local SSDs.</li>
+         *                              <li>cloud_ssd: SSDs.</li>
+         *                              <li>cloud_essd: ESSDs.</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(java.lang.String dbInstanceStorageType) {
@@ -188,8 +363,26 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getDbInstanceStorageType}
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance.
+         *                              Valid values:
+         *                              <p>
+         *                              <ul>
+         *                              <li>local_ssd/ephemeral_ssd: local SSDs.</li>
+         *                              <li>cloud_ssd: SSDs.</li>
+         *                              <li>cloud_essd: ESSDs.</li>
+         *                              </ul>
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorageType(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
+            this.dbInstanceStorageType = dbInstanceStorageType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
-         * @param payType the value to be set.
+         * @param payType Property payType: The billing method.
+         *                The system only supports Pay-As-You-Go. Valid value: Postpaid.
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -198,8 +391,20 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPayType}
+         * @param payType Property payType: The billing method.
+         *                The system only supports Pay-As-You-Go. Valid value: Postpaid.
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress the value to be set.
+         * @param privateIpAddress Property privateIpAddress: The private IP address of the read-only instance.
+         *                         It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
@@ -208,8 +413,19 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getPrivateIpAddress}
+         * @param privateIpAddress Property privateIpAddress: The private IP address of the read-only instance.
+         *                         It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -218,19 +434,41 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: The tags of an instance.
+         *             You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+         *             At most 5 tags can be specified.
+         *             Key
+         *             It can be up to 64 characters in length.
+         *             Cannot begin with aliyun.
+         *             Cannot begin with http:// or https://.
+         *             Cannot be a null string.
+         *             Value
+         *             It can be up to 128 characters in length.
+         *             Cannot begin with aliyun.
+         *             Cannot begin with http:// or https://.
+         *             Can be a null string.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: The ID of the VPC.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -239,11 +477,31 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ReadOnlyDBInstanceProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ReadOnlyDBInstanceProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -264,20 +522,20 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ReadOnlyDBInstanceProps {
-        private final java.lang.String dbInstanceClass;
-        private final java.lang.String dbInstanceId;
-        private final java.lang.Number dbInstanceStorage;
-        private final java.lang.String engineVersion;
-        private final java.lang.String zoneId;
-        private final java.lang.String category;
-        private final java.lang.String dbInstanceDescription;
-        private final java.lang.String dbInstanceStorageType;
-        private final java.lang.String payType;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object dbInstanceClass;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object dbInstanceStorage;
+        private final java.lang.Object engineVersion;
+        private final java.lang.Object zoneId;
+        private final java.lang.Object category;
+        private final java.lang.Object dbInstanceDescription;
+        private final java.lang.Object dbInstanceStorageType;
+        private final java.lang.Object payType;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -285,27 +543,27 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String dbInstanceClass, final java.lang.String dbInstanceId, final java.lang.Number dbInstanceStorage, final java.lang.String engineVersion, final java.lang.String zoneId, final java.lang.String category, final java.lang.String dbInstanceDescription, final java.lang.String dbInstanceStorageType, final java.lang.String payType, final java.lang.String privateIpAddress, final java.lang.String resourceGroupId, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String vpcId, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceId, final java.lang.Object dbInstanceStorage, final java.lang.Object engineVersion, final java.lang.Object zoneId, final java.lang.Object category, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceStorageType, final java.lang.Object payType, final java.lang.Object privateIpAddress, final java.lang.Object resourceGroupId, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceClass = java.util.Objects.requireNonNull(dbInstanceClass, "dbInstanceClass is required");
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
@@ -318,78 +576,78 @@ public interface ReadOnlyDBInstanceProps extends software.amazon.jsii.JsiiSerial
             this.payType = payType;
             this.privateIpAddress = privateIpAddress;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
         }
 
         @Override
-        public final java.lang.String getDbInstanceClass() {
+        public final java.lang.Object getDbInstanceClass() {
             return this.dbInstanceClass;
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.Number getDbInstanceStorage() {
+        public final java.lang.Object getDbInstanceStorage() {
             return this.dbInstanceStorage;
         }
 
         @Override
-        public final java.lang.String getEngineVersion() {
+        public final java.lang.Object getEngineVersion() {
             return this.engineVersion;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
         @Override
-        public final java.lang.String getCategory() {
+        public final java.lang.Object getCategory() {
             return this.category;
         }
 
         @Override
-        public final java.lang.String getDbInstanceDescription() {
+        public final java.lang.Object getDbInstanceDescription() {
             return this.dbInstanceDescription;
         }
 
         @Override
-        public final java.lang.String getDbInstanceStorageType() {
+        public final java.lang.Object getDbInstanceStorageType() {
             return this.dbInstanceStorageType;
         }
 
         @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

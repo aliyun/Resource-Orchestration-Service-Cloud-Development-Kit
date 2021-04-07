@@ -11,37 +11,37 @@ export interface BandwidthPackageProps {
     /**
      * Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * Property ipCount: Total internet IPs of this Bandwidth package, [1-5]
      */
-    readonly ipCount: number;
+    readonly ipCount: number | ros.IResolvable;
 
     /**
      * Property natGatewayId: Create bandwidth package for specified NAT gateway
      */
-    readonly natGatewayId: string;
+    readonly natGatewayId: string | ros.IResolvable;
 
     /**
      * Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly bandwidthPackageName?: string;
+    readonly bandwidthPackageName?: string | ros.IResolvable;
 
     /**
      * Property description: Description of the bandwidth package, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property zoneId: The availability zone where the bandwidth package will be created.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -57,12 +57,12 @@ export class BandwidthPackage extends ros.Resource {
     /**
      * Attribute BandwidthPackageId: The bandwidth package id of created Bandwidth package.
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
      * Attribute BandwidthPackageIps: The allocated public IPs.
      */
-    public readonly attrBandwidthPackageIps: any;
+    public readonly attrBandwidthPackageIps: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::BandwidthPackage`.

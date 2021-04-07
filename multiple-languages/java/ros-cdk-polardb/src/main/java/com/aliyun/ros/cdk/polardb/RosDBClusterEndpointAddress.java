@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::DBClusterEndpointAddress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.188Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpointAddress")
 public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,13 +73,25 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbEndpointId() {
-        return software.amazon.jsii.Kernel.get(this, "dbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDbClusterId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbEndpointId() {
+        return software.amazon.jsii.Kernel.get(this, "dbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbEndpointId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbEndpointId", java.util.Objects.requireNonNull(value, "dbEndpointId is required"));
+    }
+
+    /**
+     */
+    public void setDbEndpointId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbEndpointId", java.util.Objects.requireNonNull(value, "dbEndpointId is required"));
     }
 
@@ -93,8 +105,8 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringPrefix() {
-        return software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringPrefix() {
+        return software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +117,25 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNetType() {
-        return software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setConnectionStringPrefix(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "connectionStringPrefix", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNetType() {
+        return software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNetType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "netType", value);
+    }
+
+    /**
+     */
+    public void setNetType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "netType", value);
     }
 
@@ -149,12 +173,28 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbClusterId This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbEndpointId This parameter is required.
          */
         public Builder dbEndpointId(final java.lang.String dbEndpointId) {
+            this.props.dbEndpointId(dbEndpointId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbEndpointId This parameter is required.
+         */
+        public Builder dbEndpointId(final com.aliyun.ros.cdk.core.IResolvable dbEndpointId) {
             this.props.dbEndpointId(dbEndpointId);
             return this;
         }
@@ -167,12 +207,28 @@ public class RosDBClusterEndpointAddress extends com.aliyun.ros.cdk.core.RosReso
             this.props.connectionStringPrefix(connectionStringPrefix);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param connectionStringPrefix This parameter is required.
+         */
+        public Builder connectionStringPrefix(final com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
+            this.props.connectionStringPrefix(connectionStringPrefix);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param netType This parameter is required.
          */
         public Builder netType(final java.lang.String netType) {
+            this.props.netType(netType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param netType This parameter is required.
+         */
+        public Builder netType(final com.aliyun.ros.cdk.core.IResolvable netType) {
             this.props.netType(netType);
             return this;
         }

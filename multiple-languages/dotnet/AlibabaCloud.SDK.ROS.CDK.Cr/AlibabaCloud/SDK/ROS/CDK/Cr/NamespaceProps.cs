@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     public class NamespaceProps : AlibabaCloud.SDK.ROS.CDK.Cr.INamespaceProps
     {
         /// <summary>Property namespace: domain name.</summary>
-        [JsiiProperty(name: "namespace", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Namespace
+        [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Namespace
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
 
         /// <summary>Property defaultVisibility: repository default visibility, public or private.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DefaultVisibility
+        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DefaultVisibility
         {
             get;
             set;

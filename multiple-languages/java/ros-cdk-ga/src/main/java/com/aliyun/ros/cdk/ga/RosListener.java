@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.595Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId() {
-        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId() {
+        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAcceleratorId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "acceleratorId", java.util.Objects.requireNonNull(value, "acceleratorId is required"));
+    }
+
+    /**
+     */
+    public void setAcceleratorId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "acceleratorId", java.util.Objects.requireNonNull(value, "acceleratorId is required"));
     }
 
@@ -93,8 +99,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getClientAffinity() {
-        return software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProtocol(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "protocol", java.util.Objects.requireNonNull(value, "protocol is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClientAffinity() {
+        return software.amazon.jsii.Kernel.get(this, "clientAffinity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setClientAffinity(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clientAffinity", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,13 +147,25 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
     }
     /**
@@ -148,12 +178,12 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getFromPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getFromPort();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getToPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getToPort();
 
         /**
          * @return a {@link Builder} of {@link PortRangesProperty}
@@ -167,8 +197,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PortRangesProperty> {
-            private java.lang.Number fromPort;
-            private java.lang.Number toPort;
+            private java.lang.Object fromPort;
+            private java.lang.Object toPort;
 
             /**
              * Sets the value of {@link PortRangesProperty#getFromPort}
@@ -182,12 +212,34 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PortRangesProperty#getFromPort}
+             * @param fromPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder fromPort(com.aliyun.ros.cdk.core.IResolvable fromPort) {
+                this.fromPort = fromPort;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PortRangesProperty#getToPort}
              * @param toPort the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder toPort(java.lang.Number toPort) {
+                this.toPort = toPort;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PortRangesProperty#getToPort}
+             * @param toPort the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder toPort(com.aliyun.ros.cdk.core.IResolvable toPort) {
                 this.toPort = toPort;
                 return this;
             }
@@ -210,8 +262,8 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PortRangesProperty {
-            private final java.lang.Number fromPort;
-            private final java.lang.Number toPort;
+            private final java.lang.Object fromPort;
+            private final java.lang.Object toPort;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -219,26 +271,26 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.fromPort = software.amazon.jsii.Kernel.get(this, "fromPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.toPort = software.amazon.jsii.Kernel.get(this, "toPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.fromPort = software.amazon.jsii.Kernel.get(this, "fromPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.toPort = software.amazon.jsii.Kernel.get(this, "toPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Number fromPort, final java.lang.Number toPort) {
+            protected Jsii$Proxy(final java.lang.Object fromPort, final java.lang.Object toPort) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.fromPort = java.util.Objects.requireNonNull(fromPort, "fromPort is required");
                 this.toPort = java.util.Objects.requireNonNull(toPort, "toPort is required");
             }
 
             @Override
-            public final java.lang.Number getFromPort() {
+            public final java.lang.Object getFromPort() {
                 return this.fromPort;
             }
 
             @Override
-            public final java.lang.Number getToPort() {
+            public final java.lang.Object getToPort() {
                 return this.toPort;
             }
 
@@ -315,6 +367,14 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             this.props.acceleratorId(acceleratorId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param acceleratorId This parameter is required.
+         */
+        public Builder acceleratorId(final com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.props.acceleratorId(acceleratorId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -341,12 +401,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             this.props.protocol(protocol);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param protocol This parameter is required.
+         */
+        public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.props.protocol(protocol);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param clientAffinity This parameter is required.
          */
         public Builder clientAffinity(final java.lang.String clientAffinity) {
+            this.props.clientAffinity(clientAffinity);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param clientAffinity This parameter is required.
+         */
+        public Builder clientAffinity(final com.aliyun.ros.cdk.core.IResolvable clientAffinity) {
             this.props.clientAffinity(clientAffinity);
             return this;
         }
@@ -359,12 +435,28 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

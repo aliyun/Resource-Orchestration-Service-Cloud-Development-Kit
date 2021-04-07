@@ -11,37 +11,37 @@ export interface ImageCacheProps {
     /**
      * Property image: The image list to be cached.
      */
-    readonly image: string[];
+    readonly image: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property imageCacheName: Image cache name.
      */
-    readonly imageCacheName: string;
+    readonly imageCacheName: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: Security group ID.
      */
-    readonly securityGroupId: string;
+    readonly securityGroupId: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
-    readonly eipInstanceId?: string;
+    readonly eipInstanceId?: string | ros.IResolvable;
 
     /**
      * Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
      */
-    readonly imageRegistryCredential?: string[];
+    readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -57,7 +57,7 @@ export class ImageCache extends ros.Resource {
     /**
      * Attribute ImageCacheId: The ID of the image cache.
      */
-    public readonly attrImageCacheId: any;
+    public readonly attrImageCacheId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.

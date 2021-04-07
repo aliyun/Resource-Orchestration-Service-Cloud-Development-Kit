@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::TrafficControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.116Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.714Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosTrafficControl")
 public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTrafficControlId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTrafficControlId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTrafficControlId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTrafficControlId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getApiDefault() {
-        return software.amazon.jsii.Kernel.get(this, "apiDefault", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getApiDefault() {
+        return software.amazon.jsii.Kernel.get(this, "apiDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setApiDefault(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "apiDefault", java.util.Objects.requireNonNull(value, "apiDefault is required"));
+    }
+
+    /**
+     */
+    public void setApiDefault(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "apiDefault", java.util.Objects.requireNonNull(value, "apiDefault is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTrafficControlName() {
-        return software.amazon.jsii.Kernel.get(this, "trafficControlName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlName() {
+        return software.amazon.jsii.Kernel.get(this, "trafficControlName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTrafficControlUnit() {
-        return software.amazon.jsii.Kernel.get(this, "trafficControlUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTrafficControlName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "trafficControlName", java.util.Objects.requireNonNull(value, "trafficControlName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlUnit() {
+        return software.amazon.jsii.Kernel.get(this, "trafficControlUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAppDefault() {
-        return software.amazon.jsii.Kernel.get(this, "appDefault", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTrafficControlUnit(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "trafficControlUnit", java.util.Objects.requireNonNull(value, "trafficControlUnit is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAppDefault() {
+        return software.amazon.jsii.Kernel.get(this, "appDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,13 +129,25 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAppDefault(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "appDefault", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -141,13 +171,19 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getUserDefault() {
-        return software.amazon.jsii.Kernel.get(this, "userDefault", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUserDefault() {
+        return software.amazon.jsii.Kernel.get(this, "userDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setUserDefault(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "userDefault", value);
+    }
+
+    /**
+     */
+    public void setUserDefault(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "userDefault", value);
     }
     /**
@@ -160,17 +196,17 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSpecialKey();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSpecialKey();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSpecialType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSpecialType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getTrafficValue();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTrafficValue();
 
         /**
          * @return a {@link Builder} of {@link SpecialProperty}
@@ -184,9 +220,9 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SpecialProperty> {
-            private java.lang.String specialKey;
-            private java.lang.String specialType;
-            private java.lang.Number trafficValue;
+            private java.lang.Object specialKey;
+            private java.lang.Object specialType;
+            private java.lang.Object trafficValue;
 
             /**
              * Sets the value of {@link SpecialProperty#getSpecialKey}
@@ -195,6 +231,17 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder specialKey(java.lang.String specialKey) {
+                this.specialKey = specialKey;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SpecialProperty#getSpecialKey}
+             * @param specialKey the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder specialKey(com.aliyun.ros.cdk.core.IResolvable specialKey) {
                 this.specialKey = specialKey;
                 return this;
             }
@@ -211,12 +258,34 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SpecialProperty#getSpecialType}
+             * @param specialType the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder specialType(com.aliyun.ros.cdk.core.IResolvable specialType) {
+                this.specialType = specialType;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SpecialProperty#getTrafficValue}
              * @param trafficValue the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder trafficValue(java.lang.Number trafficValue) {
+                this.trafficValue = trafficValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SpecialProperty#getTrafficValue}
+             * @param trafficValue the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder trafficValue(com.aliyun.ros.cdk.core.IResolvable trafficValue) {
                 this.trafficValue = trafficValue;
                 return this;
             }
@@ -239,9 +308,9 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SpecialProperty {
-            private final java.lang.String specialKey;
-            private final java.lang.String specialType;
-            private final java.lang.Number trafficValue;
+            private final java.lang.Object specialKey;
+            private final java.lang.Object specialType;
+            private final java.lang.Object trafficValue;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -249,15 +318,15 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.specialKey = software.amazon.jsii.Kernel.get(this, "specialKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.specialType = software.amazon.jsii.Kernel.get(this, "specialType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.trafficValue = software.amazon.jsii.Kernel.get(this, "trafficValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.specialKey = software.amazon.jsii.Kernel.get(this, "specialKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.specialType = software.amazon.jsii.Kernel.get(this, "specialType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.trafficValue = software.amazon.jsii.Kernel.get(this, "trafficValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String specialKey, final java.lang.String specialType, final java.lang.Number trafficValue) {
+            protected Jsii$Proxy(final java.lang.Object specialKey, final java.lang.Object specialType, final java.lang.Object trafficValue) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.specialKey = java.util.Objects.requireNonNull(specialKey, "specialKey is required");
                 this.specialType = java.util.Objects.requireNonNull(specialType, "specialType is required");
@@ -265,17 +334,17 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getSpecialKey() {
+            public final java.lang.Object getSpecialKey() {
                 return this.specialKey;
             }
 
             @Override
-            public final java.lang.String getSpecialType() {
+            public final java.lang.Object getSpecialType() {
                 return this.specialType;
             }
 
             @Override
-            public final java.lang.Number getTrafficValue() {
+            public final java.lang.Object getTrafficValue() {
                 return this.trafficValue;
             }
 
@@ -355,12 +424,28 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             this.props.apiDefault(apiDefault);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param apiDefault This parameter is required.
+         */
+        public Builder apiDefault(final com.aliyun.ros.cdk.core.IResolvable apiDefault) {
+            this.props.apiDefault(apiDefault);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param trafficControlName This parameter is required.
          */
         public Builder trafficControlName(final java.lang.String trafficControlName) {
+            this.props.trafficControlName(trafficControlName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param trafficControlName This parameter is required.
+         */
+        public Builder trafficControlName(final com.aliyun.ros.cdk.core.IResolvable trafficControlName) {
             this.props.trafficControlName(trafficControlName);
             return this;
         }
@@ -373,6 +458,14 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             this.props.trafficControlUnit(trafficControlUnit);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param trafficControlUnit This parameter is required.
+         */
+        public Builder trafficControlUnit(final com.aliyun.ros.cdk.core.IResolvable trafficControlUnit) {
+            this.props.trafficControlUnit(trafficControlUnit);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -382,12 +475,28 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
             this.props.appDefault(appDefault);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param appDefault This parameter is required.
+         */
+        public Builder appDefault(final com.aliyun.ros.cdk.core.IResolvable appDefault) {
+            this.props.appDefault(appDefault);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -414,6 +523,14 @@ public class RosTrafficControl extends com.aliyun.ros.cdk.core.RosResource {
          * @param userDefault This parameter is required.
          */
         public Builder userDefault(final java.lang.String userDefault) {
+            this.props.userDefault(userDefault);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param userDefault This parameter is required.
+         */
+        public Builder userDefault(final com.aliyun.ros.cdk.core.IResolvable userDefault) {
             this.props.userDefault(userDefault);
             return this;
         }

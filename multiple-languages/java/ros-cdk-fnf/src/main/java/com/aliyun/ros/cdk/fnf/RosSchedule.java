@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * A ROS template type:  `ALIYUN::FNF::Schedule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosSchedule")
 public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,20 +44,20 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFlowName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFlowName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFlowName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFlowName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScheduleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScheduleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScheduleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScheduleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScheduleName() {
-        return software.amazon.jsii.Kernel.get(this, "attrScheduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScheduleName() {
+        return software.amazon.jsii.Kernel.get(this, "attrScheduleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -67,13 +67,19 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCronExpression() {
-        return software.amazon.jsii.Kernel.get(this, "cronExpression", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCronExpression() {
+        return software.amazon.jsii.Kernel.get(this, "cronExpression", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCronExpression(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cronExpression", java.util.Objects.requireNonNull(value, "cronExpression is required"));
+    }
+
+    /**
+     */
+    public void setCronExpression(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cronExpression", java.util.Objects.requireNonNull(value, "cronExpression is required"));
     }
 
@@ -87,8 +93,8 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getFlowName() {
-        return software.amazon.jsii.Kernel.get(this, "flowName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getFlowName() {
+        return software.amazon.jsii.Kernel.get(this, "flowName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +105,14 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getScheduleName() {
-        return software.amazon.jsii.Kernel.get(this, "scheduleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFlowName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "flowName", java.util.Objects.requireNonNull(value, "flowName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getScheduleName() {
+        return software.amazon.jsii.Kernel.get(this, "scheduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,13 +123,25 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setScheduleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scheduleName", java.util.Objects.requireNonNull(value, "scheduleName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -141,13 +165,19 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPayload() {
-        return software.amazon.jsii.Kernel.get(this, "payload", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPayload() {
+        return software.amazon.jsii.Kernel.get(this, "payload", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setPayload(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "payload", value);
+    }
+
+    /**
+     */
+    public void setPayload(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "payload", value);
     }
 
@@ -185,12 +215,28 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.cronExpression(cronExpression);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param cronExpression This parameter is required.
+         */
+        public Builder cronExpression(final com.aliyun.ros.cdk.core.IResolvable cronExpression) {
+            this.props.cronExpression(cronExpression);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param flowName This parameter is required.
          */
         public Builder flowName(final java.lang.String flowName) {
+            this.props.flowName(flowName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param flowName This parameter is required.
+         */
+        public Builder flowName(final com.aliyun.ros.cdk.core.IResolvable flowName) {
             this.props.flowName(flowName);
             return this;
         }
@@ -203,12 +249,28 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.scheduleName(scheduleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param scheduleName This parameter is required.
+         */
+        public Builder scheduleName(final com.aliyun.ros.cdk.core.IResolvable scheduleName) {
+            this.props.scheduleName(scheduleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -235,6 +297,14 @@ public class RosSchedule extends com.aliyun.ros.cdk.core.RosResource {
          * @param payload This parameter is required.
          */
         public Builder payload(final java.lang.String payload) {
+            this.props.payload(payload);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param payload This parameter is required.
+         */
+        public Builder payload(final com.aliyun.ros.cdk.core.IResolvable payload) {
             this.props.payload(payload);
             return this;
         }

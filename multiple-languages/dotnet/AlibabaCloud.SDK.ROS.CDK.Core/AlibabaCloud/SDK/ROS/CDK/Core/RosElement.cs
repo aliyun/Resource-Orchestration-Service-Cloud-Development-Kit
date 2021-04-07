@@ -31,8 +31,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         {
         }
 
-        /// <summary>Returns `true` if a construct is a stack element (i.e. part of the&#xD; synthesized template).&#xD; &#xD; Uses duck-typing instead of `instanceof` to allow stack elements from different&#xD; versions of this library to be included in the same stack.</summary>
+        /// <summary>Returns `true` if a construct is a stack element (i.e. part of the synthesized template).</summary>
         /// <returns>The construct as a stack element or undefined if it is not a stack element.</returns>
+        /// <remarks>
+        /// Uses duck-typing instead of <c>instanceof</c> to allow stack elements from different
+        /// versions of this library to be included in the same stack.
+        /// </remarks>
         [JsiiMethod(name: "isRosElement", returnsJson: "{\"type\":{\"primitive\":\"boolean\"}}", parametersJson: "[{\"name\":\"x\",\"type\":{\"primitive\":\"any\"}}]")]
         public static bool IsRosElement(object x)
         {
@@ -47,7 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string)}, new object[]{newLogicalId});
         }
 
-        /// <returns>the stack trace of the point where this Resource was created from, sourced&#xD;from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most&#xD;node +internal+ entries filtered.</returns>
+        /// <returns>the stack trace of the point where this Resource was created from, sourced
+        /// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
+        /// node +internal+ entries filtered.</returns>
         [JsiiProperty(name: "creationStack", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
         public virtual string[] CreationStack
         {
@@ -55,11 +61,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>The logical ID for this stack element.</summary>
-        /// <returns>the logical ID as a stringified token. This value will only get&#xD;resolved during synthesis.</returns>
+        /// <returns>the logical ID as a stringified token. This value will only get
+        /// resolved during synthesis.</returns>
         /// <remarks>
         /// The logical ID of the element
         /// is calculated from the path of the resource node in the construct tree.
-        /// 
+        ///
         /// To override this value, use <c>overrideLogicalId(newLogicalId)</c>.
         /// </remarks>
         [JsiiProperty(name: "logicalId", typeJson: "{\"primitive\":\"string\"}")]

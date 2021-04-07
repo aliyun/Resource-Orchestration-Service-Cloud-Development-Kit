@@ -11,27 +11,27 @@ export interface SNatEntryProps {
     /**
      * Property sNatIp: Source IP, must belongs to bandwidth package internet IP
      */
-    readonly sNatIp: string;
+    readonly sNatIp: string | ros.IResolvable;
 
     /**
      * Property sNatTableId: Create SNAT entry in specified SNAT table.
      */
-    readonly sNatTableId: string;
+    readonly sNatTableId: string | ros.IResolvable;
 
     /**
      * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
-    readonly snatEntryName?: string;
+    readonly snatEntryName?: string | ros.IResolvable;
 
     /**
      * Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
-    readonly sourceCidr?: string;
+    readonly sourceCidr?: string | ros.IResolvable;
 
     /**
      * Property sourceVSwitchId: Allow which switch can access internet.
      */
-    readonly sourceVSwitchId?: string;
+    readonly sourceVSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -47,7 +47,7 @@ export class SNatEntry extends ros.Resource {
     /**
      * Attribute SNatEntryId: The id of created SNAT entry.
      */
-    public readonly attrSNatEntryId: any;
+    public readonly attrSNatEntryId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::SNatEntry`.

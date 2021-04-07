@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::LogtailConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.423Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosLogtailConfig")
 public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,20 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppliedMachineGroups() {
-        return software.amazon.jsii.Kernel.get(this, "attrAppliedMachineGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppliedMachineGroups() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppliedMachineGroups", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEndpoint() {
-        return software.amazon.jsii.Kernel.get(this, "attrEndpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "attrEndpoint", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLogtailConfigName() {
+        return software.amazon.jsii.Kernel.get(this, "attrLogtailConfigName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +75,8 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName() {
-        return software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName() {
+        return software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +87,14 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLogtailConfigName() {
-        return software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLogstoreName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logstoreName", java.util.Objects.requireNonNull(value, "logstoreName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLogtailConfigName() {
+        return software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +105,25 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLogtailConfigName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logtailConfigName", java.util.Objects.requireNonNull(value, "logtailConfigName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setProjectName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "projectName", java.util.Objects.requireNonNull(value, "projectName is required"));
+    }
+
+    /**
+     */
+    public void setProjectName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "projectName", java.util.Objects.requireNonNull(value, "projectName is required"));
     }
 
@@ -148,12 +172,12 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getLogtailConfigName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getLogtailConfigName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
         /**
          * @return a {@link Builder} of {@link CloneFromProperty}
@@ -167,8 +191,8 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CloneFromProperty> {
-            private java.lang.String logtailConfigName;
-            private java.lang.String projectName;
+            private java.lang.Object logtailConfigName;
+            private java.lang.Object projectName;
 
             /**
              * Sets the value of {@link CloneFromProperty#getLogtailConfigName}
@@ -182,12 +206,34 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CloneFromProperty#getLogtailConfigName}
+             * @param logtailConfigName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logtailConfigName(com.aliyun.ros.cdk.core.IResolvable logtailConfigName) {
+                this.logtailConfigName = logtailConfigName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CloneFromProperty#getProjectName}
              * @param projectName the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder projectName(java.lang.String projectName) {
+                this.projectName = projectName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CloneFromProperty#getProjectName}
+             * @param projectName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
                 this.projectName = projectName;
                 return this;
             }
@@ -210,8 +256,8 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CloneFromProperty {
-            private final java.lang.String logtailConfigName;
-            private final java.lang.String projectName;
+            private final java.lang.Object logtailConfigName;
+            private final java.lang.Object projectName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -219,26 +265,26 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String logtailConfigName, final java.lang.String projectName) {
+            protected Jsii$Proxy(final java.lang.Object logtailConfigName, final java.lang.Object projectName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.logtailConfigName = java.util.Objects.requireNonNull(logtailConfigName, "logtailConfigName is required");
                 this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
             }
 
             @Override
-            public final java.lang.String getLogtailConfigName() {
+            public final java.lang.Object getLogtailConfigName() {
                 return this.logtailConfigName;
             }
 
             @Override
-            public final java.lang.String getProjectName() {
+            public final java.lang.Object getProjectName() {
                 return this.projectName;
             }
 
@@ -315,6 +361,14 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
             this.props.logstoreName(logstoreName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param logstoreName This parameter is required.
+         */
+        public Builder logstoreName(final com.aliyun.ros.cdk.core.IResolvable logstoreName) {
+            this.props.logstoreName(logstoreName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -324,12 +378,28 @@ public class RosLogtailConfig extends com.aliyun.ros.cdk.core.RosResource {
             this.props.logtailConfigName(logtailConfigName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param logtailConfigName This parameter is required.
+         */
+        public Builder logtailConfigName(final com.aliyun.ros.cdk.core.IResolvable logtailConfigName) {
+            this.props.logtailConfigName(logtailConfigName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param projectName This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
+            this.props.projectName(projectName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param projectName This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props.projectName(projectName);
             return this;
         }

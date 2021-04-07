@@ -3,32 +3,50 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.571Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.233Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InvocationProps")
 @software.amazon.jsii.Jsii.Proxy(InvocationProps.Jsii$Proxy.class)
 public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property commandId: The id of command.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCommandId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCommandId();
 
     /**
+     * Property instanceIds: The instance id list.
+     * <p>
+     * Select up to 50 instances at a time.Instances status must be running.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
+     * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
+     * <p>
+     * It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFrequency() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
         return null;
     }
 
     /**
+     * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+     * <p>
+     * Number of custom parameters: 0 to 10.
+     * The key cannot be an empty string. It can be up to 64 characters in length.
+     * The value can be an empty string.
+     * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+     * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+     * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
     }
 
     /**
+     * Property timed: Whether it is timed execution.
+     * <p>
+     * Default is False.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
         return null;
@@ -44,15 +62,15 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InvocationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InvocationProps> {
-        private java.lang.String commandId;
+        private java.lang.Object commandId;
         private java.lang.Object instanceIds;
-        private java.lang.String frequency;
+        private java.lang.Object frequency;
         private java.lang.Object parameters;
         private java.lang.Object timed;
 
         /**
          * Sets the value of {@link InvocationProps#getCommandId}
-         * @param commandId the value to be set. This parameter is required.
+         * @param commandId Property commandId: The id of command. This parameter is required.
          * @return {@code this}
          */
         public Builder commandId(java.lang.String commandId) {
@@ -61,8 +79,19 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InvocationProps#getCommandId}
+         * @param commandId Property commandId: The id of command. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder commandId(com.aliyun.ros.cdk.core.IResolvable commandId) {
+            this.commandId = commandId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InvocationProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
+         *                    Select up to 50 instances at a time.Instances status must be running.
          * @return {@code this}
          */
         public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
@@ -72,7 +101,8 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InvocationProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
+         *                    Select up to 50 instances at a time.Instances status must be running.
          * @return {@code this}
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
@@ -82,7 +112,8 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InvocationProps#getFrequency}
-         * @param frequency the value to be set.
+         * @param frequency Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
+         *                  It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
          * @return {@code this}
          */
         public Builder frequency(java.lang.String frequency) {
@@ -91,8 +122,25 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InvocationProps#getFrequency}
+         * @param frequency Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
+         *                  It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
+         * @return {@code this}
+         */
+        public Builder frequency(com.aliyun.ros.cdk.core.IResolvable frequency) {
+            this.frequency = frequency;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InvocationProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         *                   Number of custom parameters: 0 to 10.
+         *                   The key cannot be an empty string. It can be up to 64 characters in length.
+         *                   The value can be an empty string.
+         *                   After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         *                   The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         *                   Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -102,7 +150,13 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InvocationProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         *                   Number of custom parameters: 0 to 10.
+         *                   The key cannot be an empty string. It can be up to 64 characters in length.
+         *                   The value can be an empty string.
+         *                   After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         *                   The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         *                   Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
          * @return {@code this}
          */
         public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
@@ -112,7 +166,8 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InvocationProps#getTimed}
-         * @param timed the value to be set.
+         * @param timed Property timed: Whether it is timed execution.
+         *              Default is False.
          * @return {@code this}
          */
         public Builder timed(java.lang.Boolean timed) {
@@ -122,7 +177,8 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InvocationProps#getTimed}
-         * @param timed the value to be set.
+         * @param timed Property timed: Whether it is timed execution.
+         *              Default is False.
          * @return {@code this}
          */
         public Builder timed(com.aliyun.ros.cdk.core.IResolvable timed) {
@@ -146,9 +202,9 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InvocationProps {
-        private final java.lang.String commandId;
+        private final java.lang.Object commandId;
         private final java.lang.Object instanceIds;
-        private final java.lang.String frequency;
+        private final java.lang.Object frequency;
         private final java.lang.Object parameters;
         private final java.lang.Object timed;
 
@@ -158,9 +214,9 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.commandId = software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -168,7 +224,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String commandId, final java.lang.Object instanceIds, final java.lang.String frequency, final java.lang.Object parameters, final java.lang.Object timed) {
+        protected Jsii$Proxy(final java.lang.Object commandId, final java.lang.Object instanceIds, final java.lang.Object frequency, final java.lang.Object parameters, final java.lang.Object timed) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commandId = java.util.Objects.requireNonNull(commandId, "commandId is required");
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
@@ -178,7 +234,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getCommandId() {
+        public final java.lang.Object getCommandId() {
             return this.commandId;
         }
 
@@ -188,7 +244,7 @@ public interface InvocationProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getFrequency() {
+        public final java.lang.Object getFrequency() {
             return this.frequency;
         }
 

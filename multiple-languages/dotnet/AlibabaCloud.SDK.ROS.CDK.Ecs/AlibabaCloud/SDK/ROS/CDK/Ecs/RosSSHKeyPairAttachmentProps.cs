@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: keyPairName: SSH key pair name.
         /// </remarks>
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string KeyPairName
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object KeyPairName
         {
             get;
             set;

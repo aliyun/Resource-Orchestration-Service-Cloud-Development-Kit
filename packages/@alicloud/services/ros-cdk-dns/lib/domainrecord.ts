@@ -11,37 +11,37 @@ export interface DomainRecordProps {
     /**
      * Property domainName: Domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    readonly rr: string;
+    readonly rr: string | ros.IResolvable;
 
     /**
      * Property type: Parse record type, see parsing record type format
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property value: Record value
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * Property line: Parse the line, the default is default. See parsing line enumeration
      */
-    readonly line?: string;
+    readonly line?: string | ros.IResolvable;
 
     /**
      * Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -57,7 +57,7 @@ export class DomainRecord extends ros.Resource {
     /**
      * Attribute RecordId: Parse the ID of the record
      */
-    public readonly attrRecordId: any;
+    public readonly attrRecordId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DNS::DomainRecord`.

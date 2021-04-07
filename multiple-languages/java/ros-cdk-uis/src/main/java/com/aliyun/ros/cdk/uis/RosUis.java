@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.uis;
 /**
  * A ROS template type:  `ALIYUN::UIS::Uis`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.427Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.131Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.RosUis")
 public class RosUis extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,32 +44,32 @@ public class RosUis extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientInfoDb() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClientInfoDb() {
+        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDb", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientInfoDbAccount() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDbAccount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClientInfoDbAccount() {
+        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDbAccount", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientInfoDbPassword() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDbPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClientInfoDbPassword() {
+        return software.amazon.jsii.Kernel.get(this, "attrClientInfoDbPassword", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSslClientCertUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrSslClientCertUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSslClientCertUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrSslClientCertUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUisId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUisId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUisId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUisId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -87,8 +87,8 @@ public class RosUis extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +99,25 @@ public class RosUis extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
     }
 
@@ -143,12 +155,28 @@ public class RosUis extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.935Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTargets")
 public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArns() {
-        return software.amazon.jsii.Kernel.get(this, "attrArns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArns() {
+        return software.amazon.jsii.Kernel.get(this, "attrArns", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,13 +69,19 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "ruleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRuleId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ruleId", java.util.Objects.requireNonNull(value, "ruleId is required"));
+    }
+
+    /**
+     */
+    public void setRuleId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ruleId", java.util.Objects.requireNonNull(value, "ruleId is required"));
     }
 
@@ -106,17 +112,17 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getArn();
+        @org.jetbrains.annotations.NotNull java.lang.Object getArn();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getLevel() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLevel() {
             return null;
         }
 
@@ -132,9 +138,9 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TargetsProperty> {
-            private java.lang.String arn;
-            private java.lang.String id;
-            private java.lang.String level;
+            private java.lang.Object arn;
+            private java.lang.Object id;
+            private java.lang.Object level;
 
             /**
              * Sets the value of {@link TargetsProperty#getArn}
@@ -143,6 +149,17 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder arn(java.lang.String arn) {
+                this.arn = arn;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getArn}
+             * @param arn the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder arn(com.aliyun.ros.cdk.core.IResolvable arn) {
                 this.arn = arn;
                 return this;
             }
@@ -159,12 +176,34 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link TargetsProperty#getId}
+             * @param id the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TargetsProperty#getLevel}
              * @param level the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder level(java.lang.String level) {
+                this.level = level;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TargetsProperty#getLevel}
+             * @param level the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder level(com.aliyun.ros.cdk.core.IResolvable level) {
                 this.level = level;
                 return this;
             }
@@ -187,9 +226,9 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TargetsProperty {
-            private final java.lang.String arn;
-            private final java.lang.String id;
-            private final java.lang.String level;
+            private final java.lang.Object arn;
+            private final java.lang.Object id;
+            private final java.lang.Object level;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -197,15 +236,15 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.level = software.amazon.jsii.Kernel.get(this, "level", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.arn = software.amazon.jsii.Kernel.get(this, "arn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.level = software.amazon.jsii.Kernel.get(this, "level", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String arn, final java.lang.String id, final java.lang.String level) {
+            protected Jsii$Proxy(final java.lang.Object arn, final java.lang.Object id, final java.lang.Object level) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.arn = java.util.Objects.requireNonNull(arn, "arn is required");
                 this.id = java.util.Objects.requireNonNull(id, "id is required");
@@ -213,17 +252,17 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getArn() {
+            public final java.lang.Object getArn() {
                 return this.arn;
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getLevel() {
+            public final java.lang.Object getLevel() {
                 return this.level;
             }
 
@@ -302,6 +341,14 @@ public class RosMetricRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          * @param ruleId This parameter is required.
          */
         public Builder ruleId(final java.lang.String ruleId) {
+            this.props.ruleId(ruleId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ruleId This parameter is required.
+         */
+        public Builder ruleId(final com.aliyun.ros.cdk.core.IResolvable ruleId) {
             this.props.ruleId(ruleId);
             return this;
         }

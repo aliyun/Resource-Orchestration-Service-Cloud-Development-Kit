@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS resource type:  `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.Table")
 public class Table extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::Table`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Table(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.TableProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OTS::Table`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Table(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ots.TableProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute TableName: Table name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTableName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTableName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTableName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ots.Table> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,25 +90,45 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceName: The name of the OTS instance in which table will locate.
+         * <p>
          * @return {@code this}
-         * @param instanceName This parameter is required.
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * Property instanceName: The name of the OTS instance in which table will locate.
+         * <p>
+         * @return {@code this}
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
+         * Property primaryKey: It describes the attribute value of primary key.
+         * <p>
+         * The number of primary_key should not be less than one and not be more than four.
+         * <p>
          * @return {@code this}
-         * @param primaryKey This parameter is required.
+         * @param primaryKey Property primaryKey: It describes the attribute value of primary key. This parameter is required.
          */
         public Builder primaryKey(final com.aliyun.ros.cdk.core.IResolvable primaryKey) {
             this.props.primaryKey(primaryKey);
             return this;
         }
         /**
+         * Property primaryKey: It describes the attribute value of primary key.
+         * <p>
+         * The number of primary_key should not be less than one and not be more than four.
+         * <p>
          * @return {@code this}
-         * @param primaryKey This parameter is required.
+         * @param primaryKey Property primaryKey: It describes the attribute value of primary key. This parameter is required.
          */
         public Builder primaryKey(final java.util.List<? extends java.lang.Object> primaryKey) {
             this.props.primaryKey(primaryKey);
@@ -107,25 +136,41 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property tableName: The table name of the OTS instance.
+         * <p>
          * @return {@code this}
-         * @param tableName This parameter is required.
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
          */
         public Builder tableName(final java.lang.String tableName) {
             this.props.tableName(tableName);
             return this;
         }
+        /**
+         * Property tableName: The table name of the OTS instance.
+         * <p>
+         * @return {@code this}
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
+         */
+        public Builder tableName(final com.aliyun.ros.cdk.core.IResolvable tableName) {
+            this.props.tableName(tableName);
+            return this;
+        }
 
         /**
+         * Property columns: Attribute column for table store.
+         * <p>
          * @return {@code this}
-         * @param columns This parameter is required.
+         * @param columns Property columns: Attribute column for table store. This parameter is required.
          */
         public Builder columns(final com.aliyun.ros.cdk.core.IResolvable columns) {
             this.props.columns(columns);
             return this;
         }
         /**
+         * Property columns: Attribute column for table store.
+         * <p>
          * @return {@code this}
-         * @param columns This parameter is required.
+         * @param columns Property columns: Attribute column for table store. This parameter is required.
          */
         public Builder columns(final java.util.List<? extends java.lang.Object> columns) {
             this.props.columns(columns);
@@ -133,34 +178,70 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deviationCellVersionInSec: Maximum version deviation.
+         * <p>
+         * The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
+         * <p>
          * @return {@code this}
-         * @param deviationCellVersionInSec This parameter is required.
+         * @param deviationCellVersionInSec Property deviationCellVersionInSec: Maximum version deviation. This parameter is required.
          */
         public Builder deviationCellVersionInSec(final java.lang.Number deviationCellVersionInSec) {
             this.props.deviationCellVersionInSec(deviationCellVersionInSec);
             return this;
         }
+        /**
+         * Property deviationCellVersionInSec: Maximum version deviation.
+         * <p>
+         * The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
+         * <p>
+         * @return {@code this}
+         * @param deviationCellVersionInSec Property deviationCellVersionInSec: Maximum version deviation. This parameter is required.
+         */
+        public Builder deviationCellVersionInSec(final com.aliyun.ros.cdk.core.IResolvable deviationCellVersionInSec) {
+            this.props.deviationCellVersionInSec(deviationCellVersionInSec);
+            return this;
+        }
 
         /**
+         * Property maxVersions: The maximum number of versions stored in this table.
+         * <p>
+         * The valid value is 1-2147483647. Default to 1.
+         * <p>
          * @return {@code this}
-         * @param maxVersions This parameter is required.
+         * @param maxVersions Property maxVersions: The maximum number of versions stored in this table. This parameter is required.
          */
         public Builder maxVersions(final java.lang.Number maxVersions) {
             this.props.maxVersions(maxVersions);
             return this;
         }
+        /**
+         * Property maxVersions: The maximum number of versions stored in this table.
+         * <p>
+         * The valid value is 1-2147483647. Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param maxVersions Property maxVersions: The maximum number of versions stored in this table. This parameter is required.
+         */
+        public Builder maxVersions(final com.aliyun.ros.cdk.core.IResolvable maxVersions) {
+            this.props.maxVersions(maxVersions);
+            return this;
+        }
 
         /**
+         * Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
+         * <p>
          * @return {@code this}
-         * @param reservedThroughput This parameter is required.
+         * @param reservedThroughput Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000. This parameter is required.
          */
         public Builder reservedThroughput(final com.aliyun.ros.cdk.core.IResolvable reservedThroughput) {
             this.props.reservedThroughput(reservedThroughput);
             return this;
         }
         /**
+         * Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
+         * <p>
          * @return {@code this}
-         * @param reservedThroughput This parameter is required.
+         * @param reservedThroughput Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000. This parameter is required.
          */
         public Builder reservedThroughput(final com.aliyun.ros.cdk.ots.RosTable.ReservedThroughputProperty reservedThroughput) {
             this.props.reservedThroughput(reservedThroughput);
@@ -168,16 +249,20 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property secondaryIndices: The secondary indices of the table.
+         * <p>
          * @return {@code this}
-         * @param secondaryIndices This parameter is required.
+         * @param secondaryIndices Property secondaryIndices: The secondary indices of the table. This parameter is required.
          */
         public Builder secondaryIndices(final com.aliyun.ros.cdk.core.IResolvable secondaryIndices) {
             this.props.secondaryIndices(secondaryIndices);
             return this;
         }
         /**
+         * Property secondaryIndices: The secondary indices of the table.
+         * <p>
          * @return {@code this}
-         * @param secondaryIndices This parameter is required.
+         * @param secondaryIndices Property secondaryIndices: The secondary indices of the table. This parameter is required.
          */
         public Builder secondaryIndices(final java.util.List<? extends java.lang.Object> secondaryIndices) {
             this.props.secondaryIndices(secondaryIndices);
@@ -185,10 +270,26 @@ public class Table extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property timeToLive: The retention time of data stored in this table (unit: second).
+         * <p>
+         * The value maximum is 2147483647 and -1 means never expired. Default to -1.
+         * <p>
          * @return {@code this}
-         * @param timeToLive This parameter is required.
+         * @param timeToLive Property timeToLive: The retention time of data stored in this table (unit: second). This parameter is required.
          */
         public Builder timeToLive(final java.lang.Number timeToLive) {
+            this.props.timeToLive(timeToLive);
+            return this;
+        }
+        /**
+         * Property timeToLive: The retention time of data stored in this table (unit: second).
+         * <p>
+         * The value maximum is 2147483647 and -1 means never expired. Default to -1.
+         * <p>
+         * @return {@code this}
+         * @param timeToLive Property timeToLive: The retention time of data stored in this table (unit: second). This parameter is required.
+         */
+        public Builder timeToLive(final com.aliyun.ros.cdk.core.IResolvable timeToLive) {
             this.props.timeToLive(timeToLive);
             return this;
         }

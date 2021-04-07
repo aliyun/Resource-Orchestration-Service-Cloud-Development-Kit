@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         /// <remarks>
         /// <strong>Property</strong>: domainNames: Your accelerated domain name, separated by commas in English.
         /// </remarks>
-        [JsiiProperty(name: "domainNames", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DomainNames
+        [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DomainNames
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         /// <remarks>
         /// <strong>Property</strong>: functions: function list, please refer to the CDN documentation for details.
         /// </remarks>
-        [JsiiProperty(name: "functions", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Functions
+        [JsiiProperty(name: "functions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Functions
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

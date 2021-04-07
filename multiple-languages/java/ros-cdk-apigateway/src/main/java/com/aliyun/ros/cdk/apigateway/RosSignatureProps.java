@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.713Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosSignatureProps")
 @software.amazon.jsii.Jsii.Proxy(RosSignatureProps.Jsii$Proxy.class)
 public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSignatureKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSignatureKey();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSignatureName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSignatureName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSignatureSecret();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSignatureSecret();
 
     /**
      * @return a {@link Builder} of {@link RosSignatureProps}
@@ -30,9 +30,9 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosSignatureProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSignatureProps> {
-        private java.lang.String signatureKey;
-        private java.lang.String signatureName;
-        private java.lang.String signatureSecret;
+        private java.lang.Object signatureKey;
+        private java.lang.Object signatureName;
+        private java.lang.Object signatureSecret;
 
         /**
          * Sets the value of {@link RosSignatureProps#getSignatureKey}
@@ -40,6 +40,16 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder signatureKey(java.lang.String signatureKey) {
+            this.signatureKey = signatureKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSignatureProps#getSignatureKey}
+         * @param signatureKey the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder signatureKey(com.aliyun.ros.cdk.core.IResolvable signatureKey) {
             this.signatureKey = signatureKey;
             return this;
         }
@@ -55,11 +65,31 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosSignatureProps#getSignatureName}
+         * @param signatureName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder signatureName(com.aliyun.ros.cdk.core.IResolvable signatureName) {
+            this.signatureName = signatureName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSignatureProps#getSignatureSecret}
          * @param signatureSecret the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureSecret(java.lang.String signatureSecret) {
+            this.signatureSecret = signatureSecret;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSignatureProps#getSignatureSecret}
+         * @param signatureSecret the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder signatureSecret(com.aliyun.ros.cdk.core.IResolvable signatureSecret) {
             this.signatureSecret = signatureSecret;
             return this;
         }
@@ -80,9 +110,9 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSignatureProps {
-        private final java.lang.String signatureKey;
-        private final java.lang.String signatureName;
-        private final java.lang.String signatureSecret;
+        private final java.lang.Object signatureKey;
+        private final java.lang.Object signatureName;
+        private final java.lang.Object signatureSecret;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +120,15 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.signatureKey = software.amazon.jsii.Kernel.get(this, "signatureKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.signatureName = software.amazon.jsii.Kernel.get(this, "signatureName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.signatureSecret = software.amazon.jsii.Kernel.get(this, "signatureSecret", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.signatureKey = software.amazon.jsii.Kernel.get(this, "signatureKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.signatureName = software.amazon.jsii.Kernel.get(this, "signatureName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.signatureSecret = software.amazon.jsii.Kernel.get(this, "signatureSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String signatureKey, final java.lang.String signatureName, final java.lang.String signatureSecret) {
+        protected Jsii$Proxy(final java.lang.Object signatureKey, final java.lang.Object signatureName, final java.lang.Object signatureSecret) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.signatureKey = java.util.Objects.requireNonNull(signatureKey, "signatureKey is required");
             this.signatureName = java.util.Objects.requireNonNull(signatureName, "signatureName is required");
@@ -106,17 +136,17 @@ public interface RosSignatureProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getSignatureKey() {
+        public final java.lang.Object getSignatureKey() {
             return this.signatureKey;
         }
 
         @Override
-        public final java.lang.String getSignatureName() {
+        public final java.lang.Object getSignatureName() {
             return this.signatureName;
         }
 
         @Override
-        public final java.lang.String getSignatureSecret() {
+        public final java.lang.Object getSignatureSecret() {
             return this.signatureSecret;
         }
 

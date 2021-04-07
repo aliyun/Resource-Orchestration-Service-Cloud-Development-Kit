@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * A ROS template type:  `ALIYUN::CDN::DomainConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.205Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.788Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.RosDomainConfig")
 public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDomainNames() {
-        return software.amazon.jsii.Kernel.get(this, "domainNames", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDomainNames() {
+        return software.amazon.jsii.Kernel.get(this, "domainNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -60,14 +60,20 @@ public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setDomainNames(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "domainNames", java.util.Objects.requireNonNull(value, "domainNames is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -75,13 +81,19 @@ public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getFunctions() {
-        return software.amazon.jsii.Kernel.get(this, "functions", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getFunctions() {
+        return software.amazon.jsii.Kernel.get(this, "functions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setFunctions(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "functions", java.util.Objects.requireNonNull(value, "functions is required"));
+    }
+
+    /**
+     */
+    public void setFunctions(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "functions", java.util.Objects.requireNonNull(value, "functions is required"));
     }
 
@@ -119,12 +131,28 @@ public class RosDomainConfig extends com.aliyun.ros.cdk.core.RosResource {
             this.props.domainNames(domainNames);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param domainNames This parameter is required.
+         */
+        public Builder domainNames(final com.aliyun.ros.cdk.core.IResolvable domainNames) {
+            this.props.domainNames(domainNames);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param functions This parameter is required.
          */
         public Builder functions(final java.lang.String functions) {
+            this.props.functions(functions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param functions This parameter is required.
+         */
+        public Builder functions(final com.aliyun.ros.cdk.core.IResolvable functions) {
             this.props.functions(functions);
             return this;
         }

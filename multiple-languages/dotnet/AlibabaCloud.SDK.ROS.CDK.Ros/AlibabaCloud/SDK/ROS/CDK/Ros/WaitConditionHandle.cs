@@ -36,44 +36,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <remarks>
         /// You can signal success by adding --data-binary '{"status": "SUCCESS"}' , or signal failure by adding --data-binary '{"status": "FAILURE"}'
         /// </remarks>
-        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCurlCli
+        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Headers: HTTP POST Headers used for signalling handle completion or failure.</summary>
-        [JsiiProperty(name: "attrHeaders", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHeaders
+        [JsiiProperty(name: "attrHeaders", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHeaders
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used for signalling handle completion or failure.</summary>
         /// <remarks>
         /// As this cmdlet was introduced in PowerShell 3.0, ensure the version of PowerShell satisfies the constraint. (Show the version via $PSVersionTable.PSVersion.) You can signal success by adding -Body '{"status": "SUCCESS"}' , or signal failure by adding -Body '{"status": "FAILURE"}'
         /// </remarks>
-        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPowerShellCurlCli
+        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPowerShellCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute URL: HTTP POST URL used for signalling handle completion or failure.</summary>
-        [JsiiProperty(name: "attrUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUrl
+        [JsiiProperty(name: "attrUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used for signalling handle completion or failure.</summary>
         /// <remarks>
         /// As Windows does not support curl command, you need to install curl.exe and add it to PATH first. You can signal success by adding --data-binary "{"status": "SUCCESS"}" , or signal failure by adding --data-binary "{"status": "FAILURE"}"
         /// </remarks>
-        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrWindowsCurlCli
+        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWindowsCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

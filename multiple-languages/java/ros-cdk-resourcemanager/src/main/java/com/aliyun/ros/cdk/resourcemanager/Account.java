@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS resource type:  `ALIYUN::ResourceManager::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.992Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ResourceManager::Account`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Account(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.AccountProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ResourceManager::Account`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Account(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.AccountProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,39 +49,49 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AccountId: This ID of Resource Manager Account.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAccountId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAccountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAccountId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAccountId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute DisplayName: Member name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDisplayName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDisplayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDisplayName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDisplayName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute FolderId: The ID of the parent folder.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute JoinMethod: Ways for members to join the resource directory.
+     * <p>
+     * Valid values: invited, created
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrJoinMethod() {
-        return software.amazon.jsii.Kernel.get(this, "attrJoinMethod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrJoinMethod() {
+        return software.amazon.jsii.Kernel.get(this, "attrJoinMethod", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ResourceDirectoryId: Resource directory ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceDirectoryId() {
-        return software.amazon.jsii.Kernel.get(this, "attrResourceDirectoryId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrResourceDirectoryId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceDirectoryId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Type: Member type.
+     * <p>
+     * The value of ResourceAccount indicates the resource account
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrType() {
-        return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrType() {
+        return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -82,8 +100,8 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.resourcemanager.Account> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -91,8 +109,8 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -111,28 +129,64 @@ public class Account extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property displayName: Member name.
+         * <p>
          * @return {@code this}
-         * @param displayName This parameter is required.
+         * @param displayName Property displayName: Member name. This parameter is required.
          */
         public Builder displayName(final java.lang.String displayName) {
             this.props.displayName(displayName);
             return this;
         }
+        /**
+         * Property displayName: Member name.
+         * <p>
+         * @return {@code this}
+         * @param displayName Property displayName: Member name. This parameter is required.
+         */
+        public Builder displayName(final com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.props.displayName(displayName);
+            return this;
+        }
 
         /**
+         * Property folderId: The ID of the parent folder.
+         * <p>
          * @return {@code this}
-         * @param folderId This parameter is required.
+         * @param folderId Property folderId: The ID of the parent folder. This parameter is required.
          */
         public Builder folderId(final java.lang.String folderId) {
             this.props.folderId(folderId);
             return this;
         }
+        /**
+         * Property folderId: The ID of the parent folder.
+         * <p>
+         * @return {@code this}
+         * @param folderId Property folderId: The ID of the parent folder. This parameter is required.
+         */
+        public Builder folderId(final com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.props.folderId(folderId);
+            return this;
+        }
 
         /**
+         * Property payerAccountId:.
+         * <p>
          * @return {@code this}
-         * @param payerAccountId This parameter is required.
+         * @param payerAccountId Property payerAccountId:. This parameter is required.
          */
         public Builder payerAccountId(final java.lang.String payerAccountId) {
+            this.props.payerAccountId(payerAccountId);
+            return this;
+        }
+        /**
+         * Property payerAccountId:.
+         * <p>
+         * @return {@code this}
+         * @param payerAccountId Property payerAccountId:. This parameter is required.
+         */
+        public Builder payerAccountId(final com.aliyun.ros.cdk.core.IResolvable payerAccountId) {
             this.props.payerAccountId(payerAccountId);
             return this;
         }

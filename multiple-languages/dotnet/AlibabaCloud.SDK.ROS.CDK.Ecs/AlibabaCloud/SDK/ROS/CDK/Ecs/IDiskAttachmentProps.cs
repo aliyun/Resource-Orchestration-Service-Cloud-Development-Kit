@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IDiskAttachmentProps
     {
         /// <summary>Property diskId: The disk id to attached.</summary>
-        [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}")]
-        string DiskId
+        [JsiiProperty(name: "diskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DiskId
         {
             get;
         }
 
         /// <summary>Property instanceId: The instanceId to attach the disk.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -51,9 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// could be /dev/xvd[b-z]. If not specification, will use default value.
         /// </remarks>
-        [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Device
+        object? Device
         {
             get
             {
@@ -70,17 +70,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property diskId: The disk id to attached.</summary>
-            [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DiskId
+            [JsiiProperty(name: "diskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DiskId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: The instanceId to attach the disk.</summary>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk.</summary>
@@ -107,10 +107,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// could be /dev/xvd[b-z]. If not specification, will use default value.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Device
+            [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Device
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

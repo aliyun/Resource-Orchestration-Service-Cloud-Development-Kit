@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <summary>Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.</summary>
-        [JsiiProperty(name: "attrCounters", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCounters
+        [JsiiProperty(name: "attrCounters", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCounters
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.</summary>
@@ -45,24 +45,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
         /// You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCurlCli
+        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ExecutionId: Execution ID.</summary>
-        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrExecutionId
+        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExecutionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Outputs: Execution output.</summary>
-        [JsiiProperty(name: "attrOutputs", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOutputs
+        [JsiiProperty(name: "attrOutputs", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOutputs
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.</summary>
@@ -70,24 +70,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}'
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPowerShellCurlCli
+        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPowerShellCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Status: Execution status.</summary>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute StatusMessage: Execution status information.</summary>
-        [JsiiProperty(name: "attrStatusMessage", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatusMessage
+        [JsiiProperty(name: "attrStatusMessage", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatusMessage
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.</summary>
@@ -95,10 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// You can notify approve to oos execution by adding --data-binary "{"data": {"NotifyType": "Approve"}}"
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrWindowsCurlCli
+        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWindowsCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

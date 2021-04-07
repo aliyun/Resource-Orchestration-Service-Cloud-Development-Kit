@@ -3,30 +3,40 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouteTable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.502Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.207Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTableProps")
 @software.amazon.jsii.Jsii.Proxy(RouteTableProps.Jsii$Proxy.class)
 public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
+     * Property description: The description of the route table.
+     * <p>
+     * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property routeTableName: The name of the route table.
+     * <p>
+     * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRouteTableName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableName() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to routetable.
+     * <p>
+     * Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> getTags() {
         return null;
     }
 
@@ -40,14 +50,14 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RouteTableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteTableProps> {
-        private java.lang.String vpcId;
-        private java.lang.String description;
-        private java.lang.String routeTableName;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object description;
+        private java.lang.Object routeTableName;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RouteTableProps#getVpcId}
-         * @param vpcId the value to be set. This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC to which the custom route table belongs. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -56,8 +66,19 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteTableProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the VPC to which the custom route table belongs. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteTableProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the route table.
+         *                    The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -66,8 +87,20 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteTableProps#getDescription}
+         * @param description Property description: The description of the route table.
+         *                    The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteTableProps#getRouteTableName}
-         * @param routeTableName the value to be set.
+         * @param routeTableName Property routeTableName: The name of the route table.
+         *                       The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder routeTableName(java.lang.String routeTableName) {
@@ -76,13 +109,25 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteTableProps#getRouteTableName}
+         * @param routeTableName Property routeTableName: The name of the route table.
+         *                       The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder routeTableName(com.aliyun.ros.cdk.core.IResolvable routeTableName) {
+            this.routeTableName = routeTableName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteTableProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to routetable.
+         *             Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty>)tags;
             return this;
         }
 
@@ -102,10 +147,10 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouteTableProps {
-        private final java.lang.String vpcId;
-        private final java.lang.String description;
-        private final java.lang.String routeTableName;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object description;
+        private final java.lang.Object routeTableName;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -113,41 +158,41 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routeTableName = software.amazon.jsii.Kernel.get(this, "routeTableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTableName = software.amazon.jsii.Kernel.get(this, "routeTableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String vpcId, final java.lang.String description, final java.lang.String routeTableName, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        protected Jsii$Proxy(final java.lang.Object vpcId, final java.lang.Object description, final java.lang.Object routeTableName, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
             this.description = description;
             this.routeTableName = routeTableName;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getRouteTableName() {
+        public final java.lang.Object getRouteTableName() {
             return this.routeTableName;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> getTags() {
             return this.tags;
         }
 

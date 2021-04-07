@@ -3,40 +3,51 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::InstanceEndpointAclPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.951Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceEndpointAclPolicyProps.Jsii$Proxy.class)
 public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property entry: The IP address range that is allowed to access the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEntry();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEntry();
 
     /**
+     * Property instanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
+     * Property comment: The description of the entry.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComment() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComment() {
         return null;
     }
 
     /**
+     * Property endpointType: The type of the endpoint.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEndpointType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
         return null;
     }
 
     /**
+     * Property moduleName: The name of the module in the instance for which a whitelist is configured.
+     * <p>
+     * Valid
+     * values: Registry and Chart.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getModuleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getModuleName() {
         return null;
     }
 
     /**
+     * Property regionId: Region ID of instance.
+     * <p>
+     * Default is current region.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
@@ -50,16 +61,16 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
      * A builder for {@link InstanceEndpointAclPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceEndpointAclPolicyProps> {
-        private java.lang.String entry;
-        private java.lang.String instanceId;
-        private java.lang.String comment;
-        private java.lang.String endpointType;
-        private java.lang.String moduleName;
-        private java.lang.String regionId;
+        private java.lang.Object entry;
+        private java.lang.Object instanceId;
+        private java.lang.Object comment;
+        private java.lang.Object endpointType;
+        private java.lang.Object moduleName;
+        private java.lang.Object regionId;
 
         /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getEntry}
-         * @param entry the value to be set. This parameter is required.
+         * @param entry Property entry: The IP address range that is allowed to access the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder entry(java.lang.String entry) {
@@ -68,8 +79,18 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getEntry}
+         * @param entry Property entry: The IP address range that is allowed to access the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder entry(com.aliyun.ros.cdk.core.IResolvable entry) {
+            this.entry = entry;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getInstanceId}
-         * @param instanceId the value to be set. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -78,8 +99,18 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getComment}
-         * @param comment the value to be set.
+         * @param comment Property comment: The description of the entry.
          * @return {@code this}
          */
         public Builder comment(java.lang.String comment) {
@@ -88,8 +119,18 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getComment}
+         * @param comment Property comment: The description of the entry.
+         * @return {@code this}
+         */
+        public Builder comment(com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.comment = comment;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getEndpointType}
-         * @param endpointType the value to be set.
+         * @param endpointType Property endpointType: The type of the endpoint.
          * @return {@code this}
          */
         public Builder endpointType(java.lang.String endpointType) {
@@ -98,8 +139,20 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getEndpointType}
+         * @param endpointType Property endpointType: The type of the endpoint.
+         * @return {@code this}
+         */
+        public Builder endpointType(com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.endpointType = endpointType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getModuleName}
-         * @param moduleName the value to be set.
+         * @param moduleName Property moduleName: The name of the module in the instance for which a whitelist is configured.
+         *                   Valid
+         *                   values: Registry and Chart.
          * @return {@code this}
          */
         public Builder moduleName(java.lang.String moduleName) {
@@ -108,11 +161,35 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getModuleName}
+         * @param moduleName Property moduleName: The name of the module in the instance for which a whitelist is configured.
+         *                   Valid
+         *                   values: Registry and Chart.
+         * @return {@code this}
+         */
+        public Builder moduleName(com.aliyun.ros.cdk.core.IResolvable moduleName) {
+            this.moduleName = moduleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceEndpointAclPolicyProps#getRegionId}
-         * @param regionId the value to be set.
+         * @param regionId Property regionId: Region ID of instance.
+         *                 Default is current region.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceEndpointAclPolicyProps#getRegionId}
+         * @param regionId Property regionId: Region ID of instance.
+         *                 Default is current region.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.regionId = regionId;
             return this;
         }
@@ -133,12 +210,12 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceEndpointAclPolicyProps {
-        private final java.lang.String entry;
-        private final java.lang.String instanceId;
-        private final java.lang.String comment;
-        private final java.lang.String endpointType;
-        private final java.lang.String moduleName;
-        private final java.lang.String regionId;
+        private final java.lang.Object entry;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object comment;
+        private final java.lang.Object endpointType;
+        private final java.lang.Object moduleName;
+        private final java.lang.Object regionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -146,18 +223,18 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.entry = software.amazon.jsii.Kernel.get(this, "entry", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.moduleName = software.amazon.jsii.Kernel.get(this, "moduleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.entry = software.amazon.jsii.Kernel.get(this, "entry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.comment = software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.moduleName = software.amazon.jsii.Kernel.get(this, "moduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String entry, final java.lang.String instanceId, final java.lang.String comment, final java.lang.String endpointType, final java.lang.String moduleName, final java.lang.String regionId) {
+        protected Jsii$Proxy(final java.lang.Object entry, final java.lang.Object instanceId, final java.lang.Object comment, final java.lang.Object endpointType, final java.lang.Object moduleName, final java.lang.Object regionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.entry = java.util.Objects.requireNonNull(entry, "entry is required");
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
@@ -168,32 +245,32 @@ public interface InstanceEndpointAclPolicyProps extends software.amazon.jsii.Jsi
         }
 
         @Override
-        public final java.lang.String getEntry() {
+        public final java.lang.Object getEntry() {
             return this.entry;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getComment() {
+        public final java.lang.Object getComment() {
             return this.comment;
         }
 
         @Override
-        public final java.lang.String getEndpointType() {
+        public final java.lang.Object getEndpointType() {
             return this.endpointType;
         }
 
         @Override
-        public final java.lang.String getModuleName() {
+        public final java.lang.Object getModuleName() {
             return this.moduleName;
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 

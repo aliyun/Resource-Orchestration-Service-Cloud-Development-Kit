@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
     public interface ISubscriptionInstanceProps
     {
         /// <summary>Property configuration: Subscription configuration.</summary>
-        [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.ConfigurationProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.ConfigurationProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Configuration
         {
@@ -23,9 +23,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// Default: MySQL.
         /// </remarks>
-        [JsiiProperty(name: "sourceEndpointInstanceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "sourceEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SourceEndpointInstanceType
+        object? SourceEndpointInstanceType
         {
             get
             {
@@ -43,7 +43,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
             /// <summary>Property configuration: Subscription configuration.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.ConfigurationProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-dts.RosSubscriptionInstance.ConfigurationProperty\"}]}}", isOptional: true)]
             public object? Configuration
             {
                 get => GetInstanceProperty<object?>();
@@ -54,10 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             /// Default: MySQL.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sourceEndpointInstanceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SourceEndpointInstanceType
+            [JsiiProperty(name: "sourceEndpointInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SourceEndpointInstanceType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

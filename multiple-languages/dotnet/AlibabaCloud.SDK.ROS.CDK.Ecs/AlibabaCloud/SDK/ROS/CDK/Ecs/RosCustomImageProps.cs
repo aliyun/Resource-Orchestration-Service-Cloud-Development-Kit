@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// X86_64 (default)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "architecture", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Architecture
+        [JsiiProperty(name: "architecture", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Architecture
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: null.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -52,8 +52,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Cannot begin with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "imageName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ImageName
+        [JsiiProperty(name: "imageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ImageName
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: instanceId: Instance ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceId
         {
             get;
             set;
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "platform", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Platform
+        [JsiiProperty(name: "platform", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Platform
         {
             get;
             set;
@@ -85,8 +85,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: resourceGroupId: The enterprise resource group ID where the custom image is located.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -96,8 +96,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: snapshotId: The snapshot ID. A custom image is created from the specified snapshot.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "snapshotId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SnapshotId
+        [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SnapshotId
         {
             get;
             set;

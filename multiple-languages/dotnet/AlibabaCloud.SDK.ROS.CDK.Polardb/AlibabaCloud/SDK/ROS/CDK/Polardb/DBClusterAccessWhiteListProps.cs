@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     public class DBClusterAccessWhiteListProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterAccessWhiteListProps
     {
         /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.</summary>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbClusterId
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
         /// ranges from 1 to 32.
         /// </remarks>
-        [JsiiProperty(name: "securityIps", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SecurityIps
+        [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SecurityIps
         {
             get;
             set;
@@ -42,8 +42,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbClusterIpArrayName
+        [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbClusterIpArrayName
         {
             get;
             set;

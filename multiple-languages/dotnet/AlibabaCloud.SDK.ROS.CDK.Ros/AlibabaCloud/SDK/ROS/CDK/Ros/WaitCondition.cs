@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         }
 
         /// <summary>Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.</summary>
-        [JsiiProperty(name: "attrData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrData
+        [JsiiProperty(name: "attrData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.</summary>
-        [JsiiProperty(name: "attrErrorData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrErrorData
+        [JsiiProperty(name: "attrErrorData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrErrorData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.</summary>
-        [JsiiProperty(name: "attrJoinedErrorData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrJoinedErrorData
+        [JsiiProperty(name: "attrJoinedErrorData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrJoinedErrorData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

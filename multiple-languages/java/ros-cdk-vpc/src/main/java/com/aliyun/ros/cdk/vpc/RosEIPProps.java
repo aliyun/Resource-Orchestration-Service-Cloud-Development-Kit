@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::EIP`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.184Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPProps.Jsii$Proxy.class)
 public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBandwidth() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return null;
     }
 
@@ -28,61 +28,61 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIsp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetmode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetmode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> getTags() {
         return null;
     }
 
@@ -97,18 +97,18 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEIPProps> {
         private java.lang.Object autoPay;
-        private java.lang.Number bandwidth;
+        private java.lang.Object bandwidth;
         private java.lang.Object deletionProtection;
-        private java.lang.String description;
-        private java.lang.String instanceChargeType;
-        private java.lang.String internetChargeType;
-        private java.lang.String isp;
-        private java.lang.String name;
-        private java.lang.String netmode;
-        private java.lang.Number period;
-        private java.lang.String pricingCycle;
-        private java.lang.String resourceGroupId;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private java.lang.Object description;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object isp;
+        private java.lang.Object name;
+        private java.lang.Object netmode;
+        private java.lang.Object period;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object resourceGroupId;
+        private java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosEIPProps#getAutoPay}
@@ -136,6 +136,16 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getBandwidth}
+         * @param bandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.bandwidth = bandwidth;
             return this;
         }
@@ -171,11 +181,31 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getInstanceChargeType}
          * @param instanceChargeType the value to be set.
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getInstanceChargeType}
+         * @param instanceChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.instanceChargeType = instanceChargeType;
             return this;
         }
@@ -191,11 +221,31 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getInternetChargeType}
+         * @param internetChargeType the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getIsp}
          * @param isp the value to be set.
          * @return {@code this}
          */
         public Builder isp(java.lang.String isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getIsp}
+         * @param isp the value to be set.
+         * @return {@code this}
+         */
+        public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
             this.isp = isp;
             return this;
         }
@@ -211,11 +261,31 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getNetmode}
          * @param netmode the value to be set.
          * @return {@code this}
          */
         public Builder netmode(java.lang.String netmode) {
+            this.netmode = netmode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getNetmode}
+         * @param netmode the value to be set.
+         * @return {@code this}
+         */
+        public Builder netmode(com.aliyun.ros.cdk.core.IResolvable netmode) {
             this.netmode = netmode;
             return this;
         }
@@ -231,11 +301,31 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getPricingCycle}
          * @param pricingCycle the value to be set.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getPricingCycle}
+         * @param pricingCycle the value to be set.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.pricingCycle = pricingCycle;
             return this;
         }
@@ -251,13 +341,23 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)tags;
             return this;
         }
 
@@ -278,18 +378,18 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosEIPProps {
         private final java.lang.Object autoPay;
-        private final java.lang.Number bandwidth;
+        private final java.lang.Object bandwidth;
         private final java.lang.Object deletionProtection;
-        private final java.lang.String description;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String isp;
-        private final java.lang.String name;
-        private final java.lang.String netmode;
-        private final java.lang.Number period;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String resourceGroupId;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
+        private final java.lang.Object description;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object isp;
+        private final java.lang.Object name;
+        private final java.lang.Object netmode;
+        private final java.lang.Object period;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
+        private final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -298,25 +398,25 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object autoPay, final java.lang.Number bandwidth, final java.lang.Object deletionProtection, final java.lang.String description, final java.lang.String instanceChargeType, final java.lang.String internetChargeType, final java.lang.String isp, final java.lang.String name, final java.lang.String netmode, final java.lang.Number period, final java.lang.String pricingCycle, final java.lang.String resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
+        protected Jsii$Proxy(final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object description, final java.lang.Object instanceChargeType, final java.lang.Object internetChargeType, final java.lang.Object isp, final java.lang.Object name, final java.lang.Object netmode, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.util.List<? extends com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.autoPay = autoPay;
             this.bandwidth = bandwidth;
@@ -330,7 +430,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.period = period;
             this.pricingCycle = pricingCycle;
             this.resourceGroupId = resourceGroupId;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty>)tags;
         }
 
         @Override
@@ -339,7 +439,7 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
@@ -349,52 +449,52 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getIsp() {
+        public final java.lang.Object getIsp() {
             return this.isp;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getNetmode() {
+        public final java.lang.Object getNetmode() {
             return this.netmode;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.vpc.RosEIP.TagsProperty> getTags() {
             return this.tags;
         }
 

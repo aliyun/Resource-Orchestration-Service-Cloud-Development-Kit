@@ -3,12 +3,13 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::AnyCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.307Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.976Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.AnyClusterProps")
 @software.amazon.jsii.Jsii.Proxy(AnyClusterProps.Jsii$Proxy.class)
 public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property clusterConfig: Cluster config.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterConfig();
 
@@ -26,7 +27,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnyClusterProps#getClusterConfig}
-         * @param clusterConfig the value to be set. This parameter is required.
+         * @param clusterConfig Property clusterConfig: Cluster config. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> clusterConfig) {
@@ -36,7 +37,7 @@ public interface AnyClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnyClusterProps#getClusterConfig}
-         * @param clusterConfig the value to be set. This parameter is required.
+         * @param clusterConfig Property clusterConfig: Cluster config. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterConfig(com.aliyun.ros.cdk.core.IResolvable clusterConfig) {

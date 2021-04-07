@@ -3,24 +3,32 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.849Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneProps.Jsii$Proxy.class)
 public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property zoneName: Zone name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneName();
 
     /**
+     * Property proxyPattern: ZONE: completely hijack the entire zone.
+     * <p>
+     * RECORD: Incomplete hijacking, recursive resolution agent.
+     * Default to ZONE.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProxyPattern() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyPattern() {
         return null;
     }
 
     /**
+     * Property remark: 50 characters at most.
+     * <p>
+     * It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRemark() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
         return null;
     }
 
@@ -34,13 +42,13 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ZoneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ZoneProps> {
-        private java.lang.String zoneName;
-        private java.lang.String proxyPattern;
-        private java.lang.String remark;
+        private java.lang.Object zoneName;
+        private java.lang.Object proxyPattern;
+        private java.lang.Object remark;
 
         /**
          * Sets the value of {@link ZoneProps#getZoneName}
-         * @param zoneName the value to be set. This parameter is required.
+         * @param zoneName Property zoneName: Zone name. This parameter is required.
          * @return {@code this}
          */
         public Builder zoneName(java.lang.String zoneName) {
@@ -49,8 +57,20 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ZoneProps#getZoneName}
+         * @param zoneName Property zoneName: Zone name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneName(com.aliyun.ros.cdk.core.IResolvable zoneName) {
+            this.zoneName = zoneName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ZoneProps#getProxyPattern}
-         * @param proxyPattern the value to be set.
+         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone.
+         *                     RECORD: Incomplete hijacking, recursive resolution agent.
+         *                     Default to ZONE.
          * @return {@code this}
          */
         public Builder proxyPattern(java.lang.String proxyPattern) {
@@ -59,11 +79,35 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ZoneProps#getProxyPattern}
+         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone.
+         *                     RECORD: Incomplete hijacking, recursive resolution agent.
+         *                     Default to ZONE.
+         * @return {@code this}
+         */
+        public Builder proxyPattern(com.aliyun.ros.cdk.core.IResolvable proxyPattern) {
+            this.proxyPattern = proxyPattern;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ZoneProps#getRemark}
-         * @param remark the value to be set.
+         * @param remark Property remark: 50 characters at most.
+         *               It can only contain numbers, Chinese, English and special characters: "_-,.，。".
          * @return {@code this}
          */
         public Builder remark(java.lang.String remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZoneProps#getRemark}
+         * @param remark Property remark: 50 characters at most.
+         *               It can only contain numbers, Chinese, English and special characters: "_-,.，。".
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
             this.remark = remark;
             return this;
         }
@@ -84,9 +128,9 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ZoneProps {
-        private final java.lang.String zoneName;
-        private final java.lang.String proxyPattern;
-        private final java.lang.String remark;
+        private final java.lang.Object zoneName;
+        private final java.lang.Object proxyPattern;
+        private final java.lang.Object remark;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -94,15 +138,15 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.zoneName = software.amazon.jsii.Kernel.get(this, "zoneName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.proxyPattern = software.amazon.jsii.Kernel.get(this, "proxyPattern", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneName = software.amazon.jsii.Kernel.get(this, "zoneName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyPattern = software.amazon.jsii.Kernel.get(this, "proxyPattern", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String zoneName, final java.lang.String proxyPattern, final java.lang.String remark) {
+        protected Jsii$Proxy(final java.lang.Object zoneName, final java.lang.Object proxyPattern, final java.lang.Object remark) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.zoneName = java.util.Objects.requireNonNull(zoneName, "zoneName is required");
             this.proxyPattern = proxyPattern;
@@ -110,17 +154,17 @@ public interface ZoneProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getZoneName() {
+        public final java.lang.Object getZoneName() {
             return this.zoneName;
         }
 
         @Override
-        public final java.lang.String getProxyPattern() {
+        public final java.lang.Object getProxyPattern() {
             return this.proxyPattern;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
         }
 

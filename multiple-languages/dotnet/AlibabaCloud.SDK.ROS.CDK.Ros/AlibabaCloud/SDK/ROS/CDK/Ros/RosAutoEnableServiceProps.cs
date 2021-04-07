@@ -17,11 +17,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// ApiGateway: API Gateway
         /// BatchCompute: Batch Compute
         /// BrainIndustrial: Brain Industrial
+        /// CloudStorageGateway: Cloud Storage Gateway
         /// CMS: Cloud Monitor Service
         /// CR: Container Registry
         /// CS: Container Service
         /// DataHub: Data Hub
-        /// DCDN: Dynamic Route for CDN
+        /// DataWorks: DataWorksDCDN: Dynamic Route for CDN
         /// EMAS: Enterprise Mobile Application Studio
         /// FC: Function Compute
         /// FNF: Serverless Workflow
@@ -37,12 +38,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// PrivateLink: Private Link
         /// PrivateZone: Private Zone
         /// RocketMQ: RocketMQ
+        /// SAE: Serverless App Engine
         /// SLS: Log Service
         /// VS: Video Surveillance
         /// Xtrace: Tracing Anlaysis
         /// </remarks>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ServiceName
         {
             get;
             set;

@@ -11,12 +11,12 @@ export interface NatGatewayProps {
     /**
      * Property vpcId: The VPC id to create NAT gateway.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The VSwitch id to create NAT gateway.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * Property autoPay: Specifies whether to enable automatic payment. Default is false.
@@ -37,50 +37,50 @@ export interface NatGatewayProps {
     /**
      * Property description: Description of the NAT gateway, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
-     * Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
      * PayByLcu: billed on a pay-by-LCU basis.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly natGatewayName?: string;
+    readonly natGatewayName?: string | ros.IResolvable;
 
     /**
      * Property natType: The type of the NAT gateway. Valid values:
      * - Enhanced: enhanced NAT gateway.
      */
-    readonly natType?: string;
+    readonly natType?: string | ros.IResolvable;
 
     /**
      * Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
      */
-    readonly spec?: string;
+    readonly spec?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosNatGateway.TagsProperty[];
 }
 
 /**
@@ -96,17 +96,17 @@ export class NatGateway extends ros.Resource {
     /**
      * Attribute ForwardTableId: The forward table id.
      */
-    public readonly attrForwardTableId: any;
+    public readonly attrForwardTableId: ros.IResolvable;
 
     /**
      * Attribute NatGatewayId: The Id of created NAT gateway.
      */
-    public readonly attrNatGatewayId: any;
+    public readonly attrNatGatewayId: ros.IResolvable;
 
     /**
      * Attribute SNatTableId: The SNAT table id.
      */
-    public readonly attrSNatTableId: any;
+    public readonly attrSNatTableId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::NatGateway`.
@@ -132,7 +132,7 @@ export class NatGateway extends ros.Resource {
             deletionForce: props.deletionForce ? props.deletionForce : false,
             vpcId: props.vpcId,
             spec: props.spec,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatGateway;
         this.attrForwardTableId = rosNatGateway.attrForwardTableId;

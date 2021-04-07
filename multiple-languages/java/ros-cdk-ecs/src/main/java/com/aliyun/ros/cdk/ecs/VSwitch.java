@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::VSwitch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.403Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.VSwitch")
 public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::VSwitch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public VSwitch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.VSwitchProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::VSwitch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public VSwitch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.VSwitchProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CidrBlock: CIDR Block of created VSwitch.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCidrBlock() {
-        return software.amazon.jsii.Kernel.get(this, "attrCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "attrCidrBlock", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Ipv6CidrBlock: The IPv6 network segment of the VSwitch.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpv6CidrBlock() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpv6CidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpv6CidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpv6CidrBlock", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute VSwitchId: Id of created VSwitch.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.VSwitch> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,64 +104,150 @@ public class VSwitch extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block.
+         * <p>
          * @return {@code this}
-         * @param cidrBlock This parameter is required.
+         * @param cidrBlock Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block. This parameter is required.
          */
         public Builder cidrBlock(final java.lang.String cidrBlock) {
             this.props.cidrBlock(cidrBlock);
             return this;
         }
+        /**
+         * Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block.
+         * <p>
+         * @return {@code this}
+         * @param cidrBlock Property cidrBlock: CIDR Block of created VSwitch, It must belong to itself VPC CIDR block. This parameter is required.
+         */
+        public Builder cidrBlock(final com.aliyun.ros.cdk.core.IResolvable cidrBlock) {
+            this.props.cidrBlock(cidrBlock);
+            return this;
+        }
 
         /**
+         * Property vpcId: VPC id to create vswtich.
+         * <p>
          * @return {@code this}
-         * @param vpcId This parameter is required.
+         * @param vpcId Property vpcId: VPC id to create vswtich. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
+        /**
+         * Property vpcId: VPC id to create vswtich.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: VPC id to create vswtich. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
 
         /**
+         * Property zoneId: The availability zone in which the VSwitch will be created.
+         * <p>
          * @return {@code this}
-         * @param zoneId This parameter is required.
+         * @param zoneId Property zoneId: The availability zone in which the VSwitch will be created. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }
+        /**
+         * Property zoneId: The availability zone in which the VSwitch will be created.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The availability zone in which the VSwitch will be created. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
 
         /**
+         * Property description: Description of the VSwitch, [2, 256] characters.
+         * <p>
+         * Do not fill or empty, the default is empty.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description of the VSwitch, [2, 256] characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description of the VSwitch, [2, 256] characters.
+         * <p>
+         * Do not fill or empty, the default is empty.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description of the VSwitch, [2, 256] characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment.
+         * <p>
+         * Value: 0-255 (decimal).
+         * The IPv6 segment mask of the switch defaults to 64 bits.
+         * <p>
          * @return {@code this}
-         * @param ipv6CidrBlock This parameter is required.
+         * @param ipv6CidrBlock Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment. This parameter is required.
          */
         public Builder ipv6CidrBlock(final java.lang.Number ipv6CidrBlock) {
             this.props.ipv6CidrBlock(ipv6CidrBlock);
             return this;
         }
+        /**
+         * Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment.
+         * <p>
+         * Value: 0-255 (decimal).
+         * The IPv6 segment mask of the switch defaults to 64 bits.
+         * <p>
+         * @return {@code this}
+         * @param ipv6CidrBlock Property ipv6CidrBlock: The IPv6 network segment of the switch supports the last 8 bits of the VPC IPv6 network segment. This parameter is required.
+         */
+        public Builder ipv6CidrBlock(final com.aliyun.ros.cdk.core.IResolvable ipv6CidrBlock) {
+            this.props.ipv6CidrBlock(ipv6CidrBlock);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to vswitch.
+         * <p>
+         * Max support 20 tags to add during create vswitch. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tags to attach to vswitch. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosVSwitch.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }
 
         /**
+         * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * <p>
          * @return {@code this}
-         * @param vSwitchName This parameter is required.
+         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
          */
         public Builder vSwitchName(final java.lang.String vSwitchName) {
+            this.props.vSwitchName(vSwitchName);
+            return this;
+        }
+        /**
+         * Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchName Property vSwitchName: Display name of the vSwitch instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'. This parameter is required.
+         */
+        public Builder vSwitchName(final com.aliyun.ros.cdk.core.IResolvable vSwitchName) {
             this.props.vSwitchName(vSwitchName);
             return this;
         }

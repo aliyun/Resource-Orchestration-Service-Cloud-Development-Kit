@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::DBNodes`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBNodes")
 public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBNodes(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBNodesProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBNodes(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBNodesProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DBNodeIds: The ID list of added cluster nodes.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbNodeIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbNodeIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbNodeIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbNodeIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute OrderIds: The order ID list of added cluster nodes.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.DBNodes> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,19 +97,43 @@ public class DBNodes extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property amount: Number of nodes to be added to cluster.
+         * <p>
          * @return {@code this}
-         * @param amount This parameter is required.
+         * @param amount Property amount: Number of nodes to be added to cluster. This parameter is required.
          */
         public Builder amount(final java.lang.Number amount) {
             this.props.amount(amount);
             return this;
         }
+        /**
+         * Property amount: Number of nodes to be added to cluster.
+         * <p>
+         * @return {@code this}
+         * @param amount Property amount: Number of nodes to be added to cluster. This parameter is required.
+         */
+        public Builder amount(final com.aliyun.ros.cdk.core.IResolvable amount) {
+            this.props.amount(amount);
+            return this;
+        }
 
         /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
+         * <p>
          * @return {@code this}
-         * @param dbClusterId This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to. This parameter is required.
          */
         public Builder dbClusterId(final java.lang.String dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
+        /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
+         * <p>
+         * @return {@code this}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to. This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.props.dbClusterId(dbClusterId);
             return this;
         }

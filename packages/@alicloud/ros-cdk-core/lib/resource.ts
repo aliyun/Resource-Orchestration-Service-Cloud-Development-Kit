@@ -9,6 +9,7 @@ import { RosCondition } from "./ros-condition";
 import { Token } from "./token";
 import { Lazy } from "./lazy";
 import { Stack } from "./stack";
+import {IResolvable} from "./resolvable";
 /**
  * Interface for the Resource construct.
  */
@@ -108,8 +109,12 @@ export abstract class Resource extends Construct implements IResource {
     }
   }
 
-  public getAtt(name: string) {
-    return Token.asString(this.resource?.getAtt(name));
+  public addCount(count: number | IResolvable) {
+    this.resource?.addCount(count);
+  }
+
+  public getAtt(name: string): IResolvable {
+    return Token.asAny(this.resource?.getAtt(name));
   }
 
   /**

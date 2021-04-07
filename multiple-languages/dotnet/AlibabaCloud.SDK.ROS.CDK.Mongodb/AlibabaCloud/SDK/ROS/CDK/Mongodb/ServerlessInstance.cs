@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         }
 
         /// <summary>Attribute ConnectionURI: Connection uri.</summary>
-        [JsiiProperty(name: "attrConnectionUri", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionUri
+        [JsiiProperty(name: "attrConnectionUri", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionUri
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DBInstanceId: The instance id of created mongodb instance.</summary>
-        [JsiiProperty(name: "attrDbInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbInstanceId
+        [JsiiProperty(name: "attrDbInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DBInstanceStatus: Status of mongodb instance.</summary>
-        [JsiiProperty(name: "attrDbInstanceStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbInstanceStatus
+        [JsiiProperty(name: "attrDbInstanceStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbInstanceStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute OrderId: Order Id of created instance.</summary>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

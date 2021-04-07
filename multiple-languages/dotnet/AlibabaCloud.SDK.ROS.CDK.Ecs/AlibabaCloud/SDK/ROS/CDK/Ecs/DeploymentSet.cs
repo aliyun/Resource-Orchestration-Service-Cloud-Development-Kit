@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute DeploymentSetId: The ID of the deployment set.</summary>
-        [JsiiProperty(name: "attrDeploymentSetId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDeploymentSetId
+        [JsiiProperty(name: "attrDeploymentSetId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDeploymentSetId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

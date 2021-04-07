@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Attribute</strong>: Device: The device where the volume is exposed on ecs instance.
         /// </remarks>
-        [JsiiProperty(name: "attrDevice", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDevice
+        [JsiiProperty(name: "attrDevice", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDevice
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: DiskId: The disk id of created disk
         /// </remarks>
-        [JsiiProperty(name: "attrDiskId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDiskId
+        [JsiiProperty(name: "attrDiskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDiskId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Status: The disk status now.
         /// </remarks>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: diskId: The disk id to attached.
         /// </remarks>
-        [JsiiProperty(name: "diskId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DiskId
+        [JsiiProperty(name: "diskId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DiskId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -97,10 +97,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The instanceId to attach the disk.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: device: The device where the volume is exposed on the instance. could be /dev/xvd[b-z]. If not specification, will use default value.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "device", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Device
+        [JsiiProperty(name: "device", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Device
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Bss
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: waitForOrderProduced: Wait util all orders related ROS resources are produced. 
+        /// <strong>Property</strong>: waitForOrderProduced: Wait util all orders related ROS resources are produced.
         /// Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
         /// </remarks>
         [JsiiOptional]

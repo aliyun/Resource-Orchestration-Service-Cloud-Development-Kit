@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     public class AccessGroupProps : AlibabaCloud.SDK.ROS.CDK.Nas.IAccessGroupProps
     {
         /// <summary>Property accessGroupName: Permission group name.</summary>
-        [JsiiProperty(name: "accessGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccessGroupName
+        [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccessGroupName
         {
             get;
             set;
         }
 
         /// <summary>Property accessGroupType: Permission group type, including the Vpc and Classic types.</summary>
-        [JsiiProperty(name: "accessGroupType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccessGroupType
+        [JsiiProperty(name: "accessGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccessGroupType
         {
             get;
             set;
@@ -31,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// It is the same as the permission group name by default.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;

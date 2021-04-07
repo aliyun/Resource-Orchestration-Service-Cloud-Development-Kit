@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The id of load balancer.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LoadBalancerId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: vServerGroupName: Display name of the VServerGroup.
         /// </remarks>
-        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VServerGroupName
+        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VServerGroupName
         {
             get;
             set;

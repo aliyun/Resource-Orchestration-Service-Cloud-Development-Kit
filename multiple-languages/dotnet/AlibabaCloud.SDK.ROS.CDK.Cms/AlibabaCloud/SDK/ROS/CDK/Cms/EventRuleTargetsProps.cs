@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public class EventRuleTargetsProps : AlibabaCloud.SDK.ROS.CDK.Cms.IEventRuleTargetsProps
     {
         /// <summary>Property ruleName: The name of the alert rule.</summary>
-        [JsiiProperty(name: "ruleName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RuleName
+        [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RuleName
         {
             get;
             set;

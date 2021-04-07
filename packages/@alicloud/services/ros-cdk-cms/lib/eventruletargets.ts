@@ -11,7 +11,7 @@ export interface EventRuleTargetsProps {
     /**
      * Property ruleName: The name of the alert rule.
      */
-    readonly ruleName: string;
+    readonly ruleName: string | ros.IResolvable;
 
     /**
      * Property contactParameters: CONTACT configuration.A maximum of 5 parameters

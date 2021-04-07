@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
     public interface IUserProps
     {
         /// <summary>Property uid: UserAliYunUid.</summary>
-        [JsiiProperty(name: "uid", typeJson: "{\"primitive\":\"string\"}")]
-        string Uid
+        [JsiiProperty(name: "uid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Uid
         {
             get;
         }
 
         /// <summary>Property mobile: UserMobile.</summary>
-        [JsiiProperty(name: "mobile", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "mobile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Mobile
+        object? Mobile
         {
             get
             {
@@ -27,9 +27,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         }
 
         /// <summary>Property roleNames: UserRole.</summary>
-        [JsiiProperty(name: "roleNames", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "roleNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? RoleNames
+        object? RoleNames
         {
             get
             {
@@ -38,9 +38,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         }
 
         /// <summary>Property status: UserStatus.</summary>
-        [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Status
+        object? Status
         {
             get
             {
@@ -49,9 +49,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         }
 
         /// <summary>Property tid:.</summary>
-        [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Tid
+        object? Tid
         {
             get
             {
@@ -60,9 +60,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         }
 
         /// <summary>Property userName: UserNickName.</summary>
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? UserName
+        object? UserName
         {
             get
             {
@@ -79,50 +79,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
             }
 
             /// <summary>Property uid: UserAliYunUid.</summary>
-            [JsiiProperty(name: "uid", typeJson: "{\"primitive\":\"string\"}")]
-            public string Uid
+            [JsiiProperty(name: "uid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Uid
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property mobile: UserMobile.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "mobile", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Mobile
+            [JsiiProperty(name: "mobile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Mobile
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property roleNames: UserRole.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "roleNames", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? RoleNames
+            [JsiiProperty(name: "roleNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? RoleNames
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property status: UserStatus.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Status
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Status
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tid:.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Tid
+            [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Tid
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property userName: UserNickName.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? UserName
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UserName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

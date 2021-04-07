@@ -37,6 +37,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        [JsiiProperty(name: "associationPropertyMetadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        System.Collections.Generic.IDictionary<string, object>? AssociationPropertyMetadata
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         [JsiiProperty(name: "confirm", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         bool? Confirm
@@ -47,9 +57,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
-        [JsiiProperty(name: "constraintDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "constraintDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ConstraintDescription
+        object? ConstraintDescription
         {
             get
             {
@@ -67,9 +77,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -137,6 +147,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        bool? TextArea
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         [JsiiProperty(name: "type", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.RosParameterType\"}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         AlibabaCloud.SDK.ROS.CDK.Core.RosParameterType? Type
@@ -176,6 +196,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
 
             [JsiiOptional]
+            [JsiiProperty(name: "associationPropertyMetadata", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, object>? AssociationPropertyMetadata
+            {
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
+            }
+
+            [JsiiOptional]
             [JsiiProperty(name: "confirm", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
             public bool? Confirm
             {
@@ -183,10 +210,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
 
             [JsiiOptional]
-            [JsiiProperty(name: "constraintDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ConstraintDescription
+            [JsiiProperty(name: "constraintDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? ConstraintDescription
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             [JsiiOptional]
@@ -197,10 +224,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
 
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             [JsiiOptional]
@@ -241,6 +268,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             [JsiiOptional]
             [JsiiProperty(name: "noEcho", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
             public bool? NoEcho
+            {
+                get => GetInstanceProperty<bool?>();
+            }
+
+            [JsiiOptional]
+            [JsiiProperty(name: "textArea", typeJson: "{\"primitive\":\"boolean\"}", isOptional: true)]
+            public bool? TextArea
             {
                 get => GetInstanceProperty<bool?>();
             }

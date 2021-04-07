@@ -11,7 +11,7 @@ export interface VpcBinderProps {
     /**
      * Property instanceName: Instance name
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * Property vpcs: Vpc binding configuration.
@@ -32,12 +32,12 @@ export class VpcBinder extends ros.Resource {
     /**
      * Attribute Domains: The domain names used to access the OTS instance in the VPC.
      */
-    public readonly attrDomains: any;
+    public readonly attrDomains: ros.IResolvable;
 
     /**
      * Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.
      */
-    public readonly attrEndpoints: any;
+    public readonly attrEndpoints: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OTS::VpcBinder`.

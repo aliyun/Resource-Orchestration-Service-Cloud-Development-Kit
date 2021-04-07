@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: appId: Successful application deployment target ID
         /// </remarks>
-        [JsiiProperty(name: "appId", typeJson: "{\"primitive\":\"string\"}")]
-        string AppId
+        [JsiiProperty(name: "appId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AppId
         {
             get;
         }
@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
-        [JsiiProperty(name: "internet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "internet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Internet
+        object? Internet
         {
             get
             {
@@ -33,9 +33,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
         /// </remarks>
-        [JsiiProperty(name: "internetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "internetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InternetSlbId
+        object? InternetSlbId
         {
             get
             {
@@ -46,9 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
-        [JsiiProperty(name: "intranet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "intranet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Intranet
+        object? Intranet
         {
             get
             {
@@ -59,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
         /// </remarks>
-        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IntranetSlbId
+        object? IntranetSlbId
         {
             get
             {
@@ -80,50 +80,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             /// <remarks>
             /// <strong>Property</strong>: appId: Successful application deployment target ID
             /// </remarks>
-            [JsiiProperty(name: "appId", typeJson: "{\"primitive\":\"string\"}")]
-            public string AppId
+            [JsiiProperty(name: "appId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AppId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "internet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Internet
+            [JsiiProperty(name: "internet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Internet
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "internetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InternetSlbId
+            [JsiiProperty(name: "internetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InternetSlbId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "intranet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Intranet
+            [JsiiProperty(name: "intranet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Intranet
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "intranetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IntranetSlbId
+            [JsiiProperty(name: "intranetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IntranetSlbId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -16,7 +16,7 @@ export interface EIPProps {
     /**
      * Property bandwidth: Bandwidth for the output network. Default is 5MB.
      */
-    readonly bandwidth?: number;
+    readonly bandwidth?: number | ros.IResolvable;
 
     /**
      * Property deletionProtection: Whether to enable deletion protection.
@@ -27,52 +27,53 @@ export interface EIPProps {
     /**
      * Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property instanceChargeType: The resource charge type. Default value is Postpaid
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
      */
-    readonly isp?: string;
+    readonly isp?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property netmode: The network type. Valid value: public (public network).
      */
-    readonly netmode?: string;
+    readonly netmode?: string | ros.IResolvable;
 
     /**
-     * Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. 
+     *   While choose pay by year, it could be from 1 to 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosEIP.TagsProperty[];
 }
 
 /**
@@ -88,17 +89,17 @@ export class Eip extends ros.Resource {
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
-    public readonly attrAllocationId: any;
+    public readonly attrAllocationId: ros.IResolvable;
 
     /**
      * Attribute EipAddress: IP address of created EIP.
      */
-    public readonly attrEipAddress: any;
+    public readonly attrEipAddress: ros.IResolvable;
 
     /**
      * Attribute OrderId: Order ID of prepaid EIP instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::EIP`.
@@ -123,7 +124,7 @@ export class Eip extends ros.Resource {
             internetChargeType: props.internetChargeType ? props.internetChargeType : 'PayByBandwidth',
             netmode: props.netmode,
             bandwidth: props.bandwidth ? props.bandwidth : 5,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIP;
         this.attrAllocationId = rosEIP.attrAllocationId;

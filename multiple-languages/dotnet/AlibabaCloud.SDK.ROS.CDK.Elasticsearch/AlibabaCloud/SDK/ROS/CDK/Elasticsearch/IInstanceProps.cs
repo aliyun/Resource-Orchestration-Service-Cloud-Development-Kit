@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%&amp;*()_+-=).
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-        string Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Password
         {
             get;
         }
@@ -29,15 +29,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
         /// </remarks>
-        [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
-        string Version
+        [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Version
         {
             get;
         }
 
         /// <summary>Property vSwitchId: The ID of VSwitch.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VSwitchId
         {
             get;
         }
@@ -46,9 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -71,9 +71,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>
-        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceChargeType
+        object? InstanceChargeType
         {
             get
             {
@@ -110,9 +110,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Period
+        object? Period
         {
             get
             {
@@ -146,9 +146,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         }
 
         /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -160,9 +160,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]? Tags
         {
             get
             {
@@ -189,27 +189,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%&amp;*()_+-=).
             /// </remarks>
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-            public string Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Password
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property version: Elasticsearch version.</summary>
             /// <remarks>
             /// Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
-            public string Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Version
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vSwitchId: The ID of VSwitch.</summary>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VSwitchId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: The description of instance.</summary>
@@ -217,10 +217,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property enablePublic: Whether enable public access.</summary>
@@ -236,10 +236,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 
             /// <summary>Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceChargeType
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.</summary>
@@ -266,10 +266,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateWhitelist: Set the instance's IP whitelist in VPC network.</summary>
@@ -293,10 +293,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 
             /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to instance.</summary>
@@ -304,10 +304,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]?>();
             }
         }
     }

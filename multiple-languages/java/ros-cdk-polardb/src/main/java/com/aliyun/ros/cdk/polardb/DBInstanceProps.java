@@ -3,38 +3,62 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.832Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property characterSetName: The character set of the database.
+     * <p>
+     * For more information, see Character sets.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCharacterSetName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCharacterSetName();
 
     /**
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     * Property dbName: The name of the database to be created.
+     * <p>
+     * The name must comply with the following rules:
+     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
+     * (-), and underscores (_).
+     * It must end with a letter or a digit. It can be up to 64 characters in length.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
     /**
+     * Property accountName: The name of the database account to be used.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountName() {
         return null;
     }
 
     /**
+     * Property accountPrivilege: The permissions of the database account on the database.
+     * <p>
+     * Valid values:
+     * ReadWrite: has read and write permissions on the database.
+     * ReadOnly: has the read-only permission on the database.
+     * DMLOnly: runs only data manipulation language (DML) statements.
+     * DDLOnly: runs only data definition language (DDL) statements.
+     * Default value: ReadWrite.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountPrivilege() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
         return null;
     }
 
     /**
+     * Property dbDescription: The description of the database.
+     * <p>
+     * Valid values:
+     * It cannot start with http:// or https://.
+     * It must be 2 to 256 characters in length.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
         return null;
     }
 
@@ -48,16 +72,17 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DBInstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DBInstanceProps> {
-        private java.lang.String characterSetName;
-        private java.lang.String dbClusterId;
-        private java.lang.String dbName;
-        private java.lang.String accountName;
-        private java.lang.String accountPrivilege;
-        private java.lang.String dbDescription;
+        private java.lang.Object characterSetName;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object dbName;
+        private java.lang.Object accountName;
+        private java.lang.Object accountPrivilege;
+        private java.lang.Object dbDescription;
 
         /**
          * Sets the value of {@link DBInstanceProps#getCharacterSetName}
-         * @param characterSetName the value to be set. This parameter is required.
+         * @param characterSetName Property characterSetName: The character set of the database. This parameter is required.
+         *                         For more information, see Character sets.
          * @return {@code this}
          */
         public Builder characterSetName(java.lang.String characterSetName) {
@@ -66,8 +91,19 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getCharacterSetName}
+         * @param characterSetName Property characterSetName: The character set of the database. This parameter is required.
+         *                         For more information, see Character sets.
+         * @return {@code this}
+         */
+        public Builder characterSetName(com.aliyun.ros.cdk.core.IResolvable characterSetName) {
+            this.characterSetName = characterSetName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getDbClusterId}
-         * @param dbClusterId the value to be set. This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
@@ -76,8 +112,22 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getDbClusterId}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getDbName}
-         * @param dbName the value to be set. This parameter is required.
+         * @param dbName Property dbName: The name of the database to be created. This parameter is required.
+         *               The name must comply with the following rules:
+         *               It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
+         *               (-), and underscores (_).
+         *               It must end with a letter or a digit. It can be up to 64 characters in length.
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
@@ -86,8 +136,22 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getDbName}
+         * @param dbName Property dbName: The name of the database to be created. This parameter is required.
+         *               The name must comply with the following rules:
+         *               It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
+         *               (-), and underscores (_).
+         *               It must end with a letter or a digit. It can be up to 64 characters in length.
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getAccountName}
-         * @param accountName the value to be set.
+         * @param accountName Property accountName: The name of the database account to be used.
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
@@ -96,8 +160,24 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getAccountName}
+         * @param accountName Property accountName: The name of the database account to be used.
+         * @return {@code this}
+         */
+        public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getAccountPrivilege}
-         * @param accountPrivilege the value to be set.
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         *                         Valid values:
+         *                         ReadWrite: has read and write permissions on the database.
+         *                         ReadOnly: has the read-only permission on the database.
+         *                         DMLOnly: runs only data manipulation language (DML) statements.
+         *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         Default value: ReadWrite.
          * @return {@code this}
          */
         public Builder accountPrivilege(java.lang.String accountPrivilege) {
@@ -106,11 +186,43 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DBInstanceProps#getAccountPrivilege}
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         *                         Valid values:
+         *                         ReadWrite: has read and write permissions on the database.
+         *                         ReadOnly: has the read-only permission on the database.
+         *                         DMLOnly: runs only data manipulation language (DML) statements.
+         *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         Default value: ReadWrite.
+         * @return {@code this}
+         */
+        public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
+            this.accountPrivilege = accountPrivilege;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DBInstanceProps#getDbDescription}
-         * @param dbDescription the value to be set.
+         * @param dbDescription Property dbDescription: The description of the database.
+         *                      Valid values:
+         *                      It cannot start with http:// or https://.
+         *                      It must be 2 to 256 characters in length.
          * @return {@code this}
          */
         public Builder dbDescription(java.lang.String dbDescription) {
+            this.dbDescription = dbDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DBInstanceProps#getDbDescription}
+         * @param dbDescription Property dbDescription: The description of the database.
+         *                      Valid values:
+         *                      It cannot start with http:// or https://.
+         *                      It must be 2 to 256 characters in length.
+         * @return {@code this}
+         */
+        public Builder dbDescription(com.aliyun.ros.cdk.core.IResolvable dbDescription) {
             this.dbDescription = dbDescription;
             return this;
         }
@@ -131,12 +243,12 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DBInstanceProps {
-        private final java.lang.String characterSetName;
-        private final java.lang.String dbClusterId;
-        private final java.lang.String dbName;
-        private final java.lang.String accountName;
-        private final java.lang.String accountPrivilege;
-        private final java.lang.String dbDescription;
+        private final java.lang.Object characterSetName;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object dbName;
+        private final java.lang.Object accountName;
+        private final java.lang.Object accountPrivilege;
+        private final java.lang.Object dbDescription;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +256,18 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String characterSetName, final java.lang.String dbClusterId, final java.lang.String dbName, final java.lang.String accountName, final java.lang.String accountPrivilege, final java.lang.String dbDescription) {
+        protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbClusterId, final java.lang.Object dbName, final java.lang.Object accountName, final java.lang.Object accountPrivilege, final java.lang.Object dbDescription) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
@@ -166,32 +278,32 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getCharacterSetName() {
+        public final java.lang.Object getCharacterSetName() {
             return this.characterSetName;
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 
         @Override
-        public final java.lang.String getAccountName() {
+        public final java.lang.Object getAccountName() {
             return this.accountName;
         }
 
         @Override
-        public final java.lang.String getAccountPrivilege() {
+        public final java.lang.Object getAccountPrivilege() {
             return this.accountPrivilege;
         }
 
         @Override
-        public final java.lang.String getDbDescription() {
+        public final java.lang.Object getDbDescription() {
             return this.dbDescription;
         }
 

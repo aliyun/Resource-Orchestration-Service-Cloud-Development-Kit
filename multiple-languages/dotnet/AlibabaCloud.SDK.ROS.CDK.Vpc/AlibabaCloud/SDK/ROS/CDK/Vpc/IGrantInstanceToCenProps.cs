@@ -9,22 +9,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IGrantInstanceToCenProps
     {
         /// <summary>Property cenId: The ID of the CEN instance to be authorized.</summary>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-        string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenId
         {
             get;
         }
 
         /// <summary>Property cenOwnerId: The UID of the account to which the target CEN instance belongs.</summary>
-        [JsiiProperty(name: "cenOwnerId", typeJson: "{\"primitive\":\"number\"}")]
-        double CenOwnerId
+        [JsiiProperty(name: "cenOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenOwnerId
         {
             get;
         }
 
         /// <summary>Property instanceId: The ID of the network instance.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// VBR: Virtual Border Router (VBR).
         /// CCN: Cloud Connect Network (CCN).
         /// </remarks>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceType
         {
             get;
         }
@@ -51,24 +51,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property cenId: The ID of the CEN instance to be authorized.</summary>
-            [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenId
+            [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property cenOwnerId: The UID of the account to which the target CEN instance belongs.</summary>
-            [JsiiProperty(name: "cenOwnerId", typeJson: "{\"primitive\":\"number\"}")]
-            public double CenOwnerId
+            [JsiiProperty(name: "cenOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenOwnerId
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: The ID of the network instance.</summary>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceType: The type of the network instance.</summary>
@@ -78,10 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// VBR: Virtual Border Router (VBR).
             /// CCN: Cloud Connect Network (CCN).
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceType
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

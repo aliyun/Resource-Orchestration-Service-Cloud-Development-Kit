@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logstoreName", typeJson: "{\"primitive\":\"string\"}")]
-        string LogstoreName
+        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LogstoreName
         {
             get;
         }
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ProjectName
         {
             get;
         }
@@ -79,9 +79,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Must be specified if AutoSplit is set to true.
         /// Allowed Values: 1-64.
         /// </remarks>
-        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MaxSplitShard
+        object? MaxSplitShard
         {
             get
             {
@@ -108,9 +108,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// Allowed Values: 1-100, default to 2.
         /// </remarks>
-        [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? ShardCount
+        object? ShardCount
         {
             get
             {
@@ -122,9 +122,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// Allowed Values: 1-3600, default to 30.
         /// </remarks>
-        [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Ttl
+        object? Ttl
         {
             get
             {
@@ -146,10 +146,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "logstoreName", typeJson: "{\"primitive\":\"string\"}")]
-            public string LogstoreName
+            [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LogstoreName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property projectName: Project name: 1.</summary>
@@ -158,10 +158,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ProjectName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.</summary>
@@ -203,10 +203,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// Allowed Values: 1-64.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxSplitShard", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MaxSplitShard
+            [JsiiProperty(name: "maxSplitShard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxSplitShard
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property preserveStorage: Whether to keep the log permanently.</summary>
@@ -226,10 +226,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// Allowed Values: 1-100, default to 2.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? ShardCount
+            [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShardCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ttl: The lifecycle of log in the logstore in days.</summary>
@@ -237,10 +237,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// Allowed Values: 1-3600, default to 30.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Ttl
+            [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ttl
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

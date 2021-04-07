@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: scalingGroupId: The id of operated scaling group.
         /// </remarks>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}")]
-        string ScalingGroupId
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ScalingGroupId
         {
             get;
         }
@@ -46,9 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: scalingConfigurationId: The id of scaling configuration which will be activate.
         /// </remarks>
-        [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ScalingConfigurationId
+        object? ScalingConfigurationId
         {
             get
             {
@@ -74,9 +74,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// <strong>Property</strong>: scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
         /// </remarks>
-        [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? ScalingRuleArisExecuteVersion
+        object? ScalingRuleArisExecuteVersion
         {
             get
             {
@@ -95,10 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <remarks>
             /// <strong>Property</strong>: scalingGroupId: The id of operated scaling group.
             /// </remarks>
-            [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ScalingGroupId
+            [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ScalingGroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -125,10 +125,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: scalingConfigurationId: The id of scaling configuration which will be activate.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ScalingConfigurationId
+            [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScalingConfigurationId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -147,10 +147,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? ScalingRuleArisExecuteVersion
+            [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScalingRuleArisExecuteVersion
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

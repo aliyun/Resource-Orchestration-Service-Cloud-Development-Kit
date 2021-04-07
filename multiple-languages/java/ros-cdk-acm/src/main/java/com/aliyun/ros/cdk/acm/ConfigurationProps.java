@@ -3,50 +3,62 @@ package com.aliyun.ros.cdk.acm;
 /**
  * Properties for defining a `ALIYUN::ACM::Configuration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.047Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.612Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.ConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ConfigurationProps.Jsii$Proxy.class)
 public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property content: The contents of the configuration.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContent();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContent();
 
     /**
+     * Property dataId: The ID of the configuration.
+     * <p>
+     * Allowed characters are upper and lower case letters, numbers, decimal points (.), Colons (:), asterisks (*), underscores (_), and underscores (-). When the ID prefix is the following value, ACM will automatically use KMS service to encrypt this configuration:
+     * The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
+     * The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDataId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDataId();
 
     /**
+     * Property namespaceId: ID of namespace.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceId();
 
     /**
+     * Property appName: Configuration application name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAppName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppName() {
         return null;
     }
 
     /**
+     * Property desc: Configuration description explains.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesc() {
         return null;
     }
 
     /**
+     * Property group: Group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroup() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroup() {
         return null;
     }
 
     /**
+     * Property tags: Label configurations, such as the presence of a plurality of tags, separated by commas.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getTags() {
         return null;
     }
 
     /**
+     * Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text/html, properties.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
         return null;
     }
 
@@ -60,18 +72,18 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ConfigurationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ConfigurationProps> {
-        private java.lang.String content;
-        private java.lang.String dataId;
-        private java.lang.String namespaceId;
-        private java.lang.String appName;
-        private java.lang.String desc;
-        private java.lang.String group;
+        private java.lang.Object content;
+        private java.lang.Object dataId;
+        private java.lang.Object namespaceId;
+        private java.lang.Object appName;
+        private java.lang.Object desc;
+        private java.lang.Object group;
         private java.lang.String tags;
-        private java.lang.String type;
+        private java.lang.Object type;
 
         /**
          * Sets the value of {@link ConfigurationProps#getContent}
-         * @param content the value to be set. This parameter is required.
+         * @param content Property content: The contents of the configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder content(java.lang.String content) {
@@ -80,8 +92,21 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getContent}
+         * @param content Property content: The contents of the configuration. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder content(com.aliyun.ros.cdk.core.IResolvable content) {
+            this.content = content;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getDataId}
-         * @param dataId the value to be set. This parameter is required.
+         * @param dataId Property dataId: The ID of the configuration. This parameter is required.
+         *               Allowed characters are upper and lower case letters, numbers, decimal points (.), Colons (:), asterisks (*), underscores (_), and underscores (-). When the ID prefix is the following value, ACM will automatically use KMS service to encrypt this configuration:
+         *               The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
+         *               The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
          * @return {@code this}
          */
         public Builder dataId(java.lang.String dataId) {
@@ -90,8 +115,21 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getDataId}
+         * @param dataId Property dataId: The ID of the configuration. This parameter is required.
+         *               Allowed characters are upper and lower case letters, numbers, decimal points (.), Colons (:), asterisks (*), underscores (_), and underscores (-). When the ID prefix is the following value, ACM will automatically use KMS service to encrypt this configuration:
+         *               The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
+         *               The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
+         * @return {@code this}
+         */
+        public Builder dataId(com.aliyun.ros.cdk.core.IResolvable dataId) {
+            this.dataId = dataId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getNamespaceId}
-         * @param namespaceId the value to be set. This parameter is required.
+         * @param namespaceId Property namespaceId: ID of namespace. This parameter is required.
          * @return {@code this}
          */
         public Builder namespaceId(java.lang.String namespaceId) {
@@ -100,8 +138,18 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getNamespaceId}
+         * @param namespaceId Property namespaceId: ID of namespace. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder namespaceId(com.aliyun.ros.cdk.core.IResolvable namespaceId) {
+            this.namespaceId = namespaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getAppName}
-         * @param appName the value to be set.
+         * @param appName Property appName: Configuration application name.
          * @return {@code this}
          */
         public Builder appName(java.lang.String appName) {
@@ -110,8 +158,18 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getAppName}
+         * @param appName Property appName: Configuration application name.
+         * @return {@code this}
+         */
+        public Builder appName(com.aliyun.ros.cdk.core.IResolvable appName) {
+            this.appName = appName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getDesc}
-         * @param desc the value to be set.
+         * @param desc Property desc: Configuration description explains.
          * @return {@code this}
          */
         public Builder desc(java.lang.String desc) {
@@ -120,8 +178,18 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getDesc}
+         * @param desc Property desc: Configuration description explains.
+         * @return {@code this}
+         */
+        public Builder desc(com.aliyun.ros.cdk.core.IResolvable desc) {
+            this.desc = desc;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getGroup}
-         * @param group the value to be set.
+         * @param group Property group: Group.
          * @return {@code this}
          */
         public Builder group(java.lang.String group) {
@@ -130,8 +198,18 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ConfigurationProps#getGroup}
+         * @param group Property group: Group.
+         * @return {@code this}
+         */
+        public Builder group(com.aliyun.ros.cdk.core.IResolvable group) {
+            this.group = group;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ConfigurationProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Label configurations, such as the presence of a plurality of tags, separated by commas.
          * @return {@code this}
          */
         public Builder tags(java.lang.String tags) {
@@ -141,10 +219,20 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ConfigurationProps#getType}
-         * @param type the value to be set.
+         * @param type Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text/html, properties.
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ConfigurationProps#getType}
+         * @param type Property type: Provisioning content format, optional values as follows: text, json, xml, yaml, text/html, properties.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
             this.type = type;
             return this;
         }
@@ -165,14 +253,14 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ConfigurationProps {
-        private final java.lang.String content;
-        private final java.lang.String dataId;
-        private final java.lang.String namespaceId;
-        private final java.lang.String appName;
-        private final java.lang.String desc;
-        private final java.lang.String group;
+        private final java.lang.Object content;
+        private final java.lang.Object dataId;
+        private final java.lang.Object namespaceId;
+        private final java.lang.Object appName;
+        private final java.lang.Object desc;
+        private final java.lang.Object group;
         private final java.lang.String tags;
-        private final java.lang.String type;
+        private final java.lang.Object type;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -180,20 +268,20 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dataId = software.amazon.jsii.Kernel.get(this, "dataId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.group = software.amazon.jsii.Kernel.get(this, "group", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataId = software.amazon.jsii.Kernel.get(this, "dataId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.group = software.amazon.jsii.Kernel.get(this, "group", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String content, final java.lang.String dataId, final java.lang.String namespaceId, final java.lang.String appName, final java.lang.String desc, final java.lang.String group, final java.lang.String tags, final java.lang.String type) {
+        protected Jsii$Proxy(final java.lang.Object content, final java.lang.Object dataId, final java.lang.Object namespaceId, final java.lang.Object appName, final java.lang.Object desc, final java.lang.Object group, final java.lang.String tags, final java.lang.Object type) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.content = java.util.Objects.requireNonNull(content, "content is required");
             this.dataId = java.util.Objects.requireNonNull(dataId, "dataId is required");
@@ -206,32 +294,32 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getContent() {
+        public final java.lang.Object getContent() {
             return this.content;
         }
 
         @Override
-        public final java.lang.String getDataId() {
+        public final java.lang.Object getDataId() {
             return this.dataId;
         }
 
         @Override
-        public final java.lang.String getNamespaceId() {
+        public final java.lang.Object getNamespaceId() {
             return this.namespaceId;
         }
 
         @Override
-        public final java.lang.String getAppName() {
+        public final java.lang.Object getAppName() {
             return this.appName;
         }
 
         @Override
-        public final java.lang.String getDesc() {
+        public final java.lang.Object getDesc() {
             return this.desc;
         }
 
         @Override
-        public final java.lang.String getGroup() {
+        public final java.lang.Object getGroup() {
             return this.group;
         }
 
@@ -241,7 +329,7 @@ public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 

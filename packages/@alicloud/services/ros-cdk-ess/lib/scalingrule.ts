@@ -11,7 +11,7 @@ export interface ScalingRuleProps {
     /**
      * Property scalingGroupId: ID of the scaling group of a scaling rule.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * Property adjustmentType: Adjustment mode of a scaling rule. Optional values:
@@ -19,7 +19,7 @@ export interface ScalingRuleProps {
      * - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
      * - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
      */
-    readonly adjustmentType?: string;
+    readonly adjustmentType?: string | ros.IResolvable;
 
     /**
      * Property adjustmentValue: Adjusted value of a scaling rule. Value range:
@@ -27,12 +27,12 @@ export interface ScalingRuleProps {
      * - PercentChangeInCapacity: [-100, 10000]
      * - TotalCapacity: [0, 1000]
      */
-    readonly adjustmentValue?: number;
+    readonly adjustmentValue?: number | ros.IResolvable;
 
     /**
      * Property cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
      */
-    readonly cooldown?: number;
+    readonly cooldown?: number | ros.IResolvable;
 
     /**
      * Property disableScaleIn: Specifies whether to disable scale-in. This parameter is applicable only to target tracking scaling rules.
@@ -45,13 +45,13 @@ export interface ScalingRuleProps {
      * Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
      * Valid values: 0 to 86400. Unit: seconds. Default value: 300.
      */
-    readonly estimatedInstanceWarmup?: number;
+    readonly estimatedInstanceWarmup?: number | ros.IResolvable;
 
     /**
      * Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.
      *  Default value: the same as the value of MaxSize
      */
-    readonly initialMaxSize?: number;
+    readonly initialMaxSize?: number | ros.IResolvable;
 
     /**
      * Property metricName: The predefined metric to monitor. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
@@ -67,12 +67,12 @@ export interface ScalingRuleProps {
      * - IntranetRx: the average internal network inbound traffic
      * - IntranetTx: the average internal network outbound traffic
      */
-    readonly metricName?: string;
+    readonly metricName?: string | ros.IResolvable;
 
     /**
      * Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule. This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
      */
-    readonly minAdjustmentMagnitude?: number;
+    readonly minAdjustmentMagnitude?: number | ros.IResolvable;
 
     /**
      * Property predictiveScalingMode: The mode of the predictive scaling rule. Valid values:
@@ -80,13 +80,13 @@ export interface ScalingRuleProps {
      * - PredictOnly: generates forecasts but does not create forecast tasks.
      * Default value: PredictAndScale
      */
-    readonly predictiveScalingMode?: string;
+    readonly predictiveScalingMode?: string | ros.IResolvable;
 
     /**
      * Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time. By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
      *  Default value: 0
      */
-    readonly predictiveTaskBufferTime?: number;
+    readonly predictiveTaskBufferTime?: number | ros.IResolvable;
 
     /**
      * Property predictiveValueBehavior: The action taken on the predicted maximum value. Valid values:
@@ -95,18 +95,18 @@ export interface ScalingRuleProps {
      *  - PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
      *  Default value: MaxOverridePredictiveValue
      */
-    readonly predictiveValueBehavior?: string;
+    readonly predictiveValueBehavior?: string | ros.IResolvable;
 
     /**
      * Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer. When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
      *  Default value: 0
      */
-    readonly predictiveValueBuffer?: number;
+    readonly predictiveValueBuffer?: number | ros.IResolvable;
 
     /**
      * Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
      */
-    readonly scalingRuleName?: string;
+    readonly scalingRuleName?: string | ros.IResolvable;
 
     /**
      * Property scalingRuleType: The type of the scaling rule. Valid values:
@@ -116,7 +116,7 @@ export interface ScalingRuleProps {
      * - PredictiveScalingRule: uses machine learning to analyze historical monitoring data of the scaling group and then predicts the future values of monitored metrics, the rule then automatically creates scheduled tasks to set the boundary values for the scaling group.
      *  If this parameter value is not specified, the default value is SimpleScalingRule.
      */
-    readonly scalingRuleType?: string;
+    readonly scalingRuleType?: string | ros.IResolvable;
 
     /**
      * Property stepAdjustment:
@@ -126,7 +126,7 @@ export interface ScalingRuleProps {
     /**
      * Property targetValue: The target value of a metric. This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
      */
-    readonly targetValue?: number;
+    readonly targetValue?: number | ros.IResolvable;
 }
 
 /**
@@ -142,12 +142,12 @@ export class ScalingRule extends ros.Resource {
     /**
      * Attribute ScalingRuleAri: Unique identifier of a scaling rule.
      */
-    public readonly attrScalingRuleAri: any;
+    public readonly attrScalingRuleAri: ros.IResolvable;
 
     /**
      * Attribute ScalingRuleId: ID of a scaling rule, generated by the system and globally unique.
      */
-    public readonly attrScalingRuleId: any;
+    public readonly attrScalingRuleId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingRule`.

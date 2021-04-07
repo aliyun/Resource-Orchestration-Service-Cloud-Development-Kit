@@ -4,14 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
 {
-    /// <summary>(deprecated) Backwards compatibility for when 'RuntimeInfo'&#xD; was defined here.</summary>
+    /// <summary>(deprecated) Backwards compatibility for when 'RuntimeInfo' was defined here.</summary>
     /// <remarks>
     /// This is necessary because its used as an input in the stable
-    /// 
+    ///
     /// <strong>Stability</strong>: Deprecated
-    /// 
+    ///
     /// <strong>See</strong>: core.ConstructNode.synth
-    /// 
+    ///
     /// <strong>Alicloud</strong>: /ros-cdk-core library.
     /// </remarks>
     [JsiiInterface(nativeType: typeof(IRuntimeInfo), fullyQualifiedName: "@alicloud/ros-cdk-cxapi.RuntimeInfo")]
@@ -19,14 +19,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
     public interface IRuntimeInfo : AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.IRuntimeInfo
     {
 
-        /// <summary>(deprecated) Backwards compatibility for when 'RuntimeInfo'&#xD; was defined here.</summary>
+        /// <summary>(deprecated) Backwards compatibility for when 'RuntimeInfo' was defined here.</summary>
         /// <remarks>
         /// This is necessary because its used as an input in the stable
-        /// 
+        ///
         /// <strong>Stability</strong>: Deprecated
-        /// 
+        ///
         /// <strong>See</strong>: core.ConstructNode.synth
-        /// 
+        ///
         /// <strong>Alicloud</strong>: /ros-cdk-core library.
         /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IRuntimeInfo), fullyQualifiedName: "@alicloud/ros-cdk-cxapi.RuntimeInfo")]

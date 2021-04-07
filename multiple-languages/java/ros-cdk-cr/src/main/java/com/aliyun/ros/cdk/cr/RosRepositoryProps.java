@@ -3,30 +3,36 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Properties for defining a `ALIYUN::CR::Repository`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.297Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.973Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosRepositoryProps")
 @software.amazon.jsii.Jsii.Proxy(RosRepositoryProps.Jsii$Proxy.class)
 public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRepoName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRepoName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRepoNamespace();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRepoNamespace();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRepoType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRepoType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSummary();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSummary();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDetail() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDetail() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRepoSource() {
         return null;
     }
 
@@ -40,11 +46,12 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRepositoryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRepositoryProps> {
-        private java.lang.String repoName;
-        private java.lang.String repoNamespace;
-        private java.lang.String repoType;
-        private java.lang.String summary;
-        private java.lang.String detail;
+        private java.lang.Object repoName;
+        private java.lang.Object repoNamespace;
+        private java.lang.Object repoType;
+        private java.lang.Object summary;
+        private java.lang.Object detail;
+        private java.lang.Object repoSource;
 
         /**
          * Sets the value of {@link RosRepositoryProps#getRepoName}
@@ -52,6 +59,16 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder repoName(java.lang.String repoName) {
+            this.repoName = repoName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getRepoName}
+         * @param repoName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder repoName(com.aliyun.ros.cdk.core.IResolvable repoName) {
             this.repoName = repoName;
             return this;
         }
@@ -67,11 +84,31 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRepositoryProps#getRepoNamespace}
+         * @param repoNamespace the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder repoNamespace(com.aliyun.ros.cdk.core.IResolvable repoNamespace) {
+            this.repoNamespace = repoNamespace;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRepositoryProps#getRepoType}
          * @param repoType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder repoType(java.lang.String repoType) {
+            this.repoType = repoType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getRepoType}
+         * @param repoType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder repoType(com.aliyun.ros.cdk.core.IResolvable repoType) {
             this.repoType = repoType;
             return this;
         }
@@ -87,6 +124,16 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRepositoryProps#getSummary}
+         * @param summary the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder summary(com.aliyun.ros.cdk.core.IResolvable summary) {
+            this.summary = summary;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRepositoryProps#getDetail}
          * @param detail the value to be set.
          * @return {@code this}
@@ -97,13 +144,43 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRepositoryProps#getDetail}
+         * @param detail the value to be set.
+         * @return {@code this}
+         */
+        public Builder detail(com.aliyun.ros.cdk.core.IResolvable detail) {
+            this.detail = detail;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getRepoSource}
+         * @param repoSource the value to be set.
+         * @return {@code this}
+         */
+        public Builder repoSource(com.aliyun.ros.cdk.core.IResolvable repoSource) {
+            this.repoSource = repoSource;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRepositoryProps#getRepoSource}
+         * @param repoSource the value to be set.
+         * @return {@code this}
+         */
+        public Builder repoSource(com.aliyun.ros.cdk.cr.RosRepository.RepoSourceProperty repoSource) {
+            this.repoSource = repoSource;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosRepositoryProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosRepositoryProps build() {
-            return new Jsii$Proxy(repoName, repoNamespace, repoType, summary, detail);
+            return new Jsii$Proxy(repoName, repoNamespace, repoType, summary, detail, repoSource);
         }
     }
 
@@ -112,11 +189,12 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRepositoryProps {
-        private final java.lang.String repoName;
-        private final java.lang.String repoNamespace;
-        private final java.lang.String repoType;
-        private final java.lang.String summary;
-        private final java.lang.String detail;
+        private final java.lang.Object repoName;
+        private final java.lang.Object repoNamespace;
+        private final java.lang.Object repoType;
+        private final java.lang.Object summary;
+        private final java.lang.Object detail;
+        private final java.lang.Object repoSource;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -124,48 +202,55 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.repoName = software.amazon.jsii.Kernel.get(this, "repoName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.repoNamespace = software.amazon.jsii.Kernel.get(this, "repoNamespace", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.repoType = software.amazon.jsii.Kernel.get(this, "repoType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.summary = software.amazon.jsii.Kernel.get(this, "summary", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.repoName = software.amazon.jsii.Kernel.get(this, "repoName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repoNamespace = software.amazon.jsii.Kernel.get(this, "repoNamespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repoType = software.amazon.jsii.Kernel.get(this, "repoType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.summary = software.amazon.jsii.Kernel.get(this, "summary", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.repoSource = software.amazon.jsii.Kernel.get(this, "repoSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String repoName, final java.lang.String repoNamespace, final java.lang.String repoType, final java.lang.String summary, final java.lang.String detail) {
+        protected Jsii$Proxy(final java.lang.Object repoName, final java.lang.Object repoNamespace, final java.lang.Object repoType, final java.lang.Object summary, final java.lang.Object detail, final java.lang.Object repoSource) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.repoName = java.util.Objects.requireNonNull(repoName, "repoName is required");
             this.repoNamespace = java.util.Objects.requireNonNull(repoNamespace, "repoNamespace is required");
             this.repoType = java.util.Objects.requireNonNull(repoType, "repoType is required");
             this.summary = java.util.Objects.requireNonNull(summary, "summary is required");
             this.detail = detail;
+            this.repoSource = repoSource;
         }
 
         @Override
-        public final java.lang.String getRepoName() {
+        public final java.lang.Object getRepoName() {
             return this.repoName;
         }
 
         @Override
-        public final java.lang.String getRepoNamespace() {
+        public final java.lang.Object getRepoNamespace() {
             return this.repoNamespace;
         }
 
         @Override
-        public final java.lang.String getRepoType() {
+        public final java.lang.Object getRepoType() {
             return this.repoType;
         }
 
         @Override
-        public final java.lang.String getSummary() {
+        public final java.lang.Object getSummary() {
             return this.summary;
         }
 
         @Override
-        public final java.lang.String getDetail() {
+        public final java.lang.Object getDetail() {
             return this.detail;
+        }
+
+        @Override
+        public final java.lang.Object getRepoSource() {
+            return this.repoSource;
         }
 
         @Override
@@ -180,6 +265,9 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             data.set("summary", om.valueToTree(this.getSummary()));
             if (this.getDetail() != null) {
                 data.set("detail", om.valueToTree(this.getDetail()));
+            }
+            if (this.getRepoSource() != null) {
+                data.set("repoSource", om.valueToTree(this.getRepoSource()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -203,7 +291,8 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             if (!repoNamespace.equals(that.repoNamespace)) return false;
             if (!repoType.equals(that.repoType)) return false;
             if (!summary.equals(that.summary)) return false;
-            return this.detail != null ? this.detail.equals(that.detail) : that.detail == null;
+            if (this.detail != null ? !this.detail.equals(that.detail) : that.detail != null) return false;
+            return this.repoSource != null ? this.repoSource.equals(that.repoSource) : that.repoSource == null;
         }
 
         @Override
@@ -213,6 +302,7 @@ public interface RosRepositoryProps extends software.amazon.jsii.JsiiSerializabl
             result = 31 * result + (this.repoType.hashCode());
             result = 31 * result + (this.summary.hashCode());
             result = 31 * result + (this.detail != null ? this.detail.hashCode() : 0);
+            result = 31 * result + (this.repoSource != null ? this.repoSource.hashCode() : 0);
             return result;
         }
     }

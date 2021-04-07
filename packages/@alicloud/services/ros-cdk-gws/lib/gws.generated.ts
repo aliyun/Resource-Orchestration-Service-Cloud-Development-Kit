@@ -11,17 +11,17 @@ export interface RosClusterProps {
      * @Property clusterType: Cluster Type:
      * gws.s1.standard
      */
-    readonly clusterType: string;
+    readonly clusterType: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC id
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property name: Cluster name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property policy: Cluster policy
@@ -31,7 +31,7 @@ export interface RosClusterProps {
     /**
      * @Property vSwitchId: VSwitch id
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -93,12 +93,12 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster id
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute Name: Cluster name
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -107,17 +107,17 @@ export class RosCluster extends ros.RosResource {
      * @Property clusterType: Cluster Type:
      * gws.s1.standard
      */
-    public clusterType: string;
+    public clusterType: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC id
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property name: Cluster name
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property policy: Cluster policy
@@ -127,7 +127,7 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property vSwitchId: VSwitch id
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GWS::Cluster`.
@@ -138,8 +138,8 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterType = props.clusterType;
@@ -172,19 +172,19 @@ export namespace RosCluster {
         /**
          * @Property localDrive: Local drive
          */
-        readonly localDrive: string;
+        readonly localDrive: string | ros.IResolvable;
         /**
          * @Property usbRedirect: USB redirect
          */
-        readonly usbRedirect: string;
+        readonly usbRedirect: string | ros.IResolvable;
         /**
          * @Property clipboard: Clipboard
          */
-        readonly clipboard: string;
+        readonly clipboard: string | ros.IResolvable;
         /**
          * @Property watermark: Watermark
          */
-        readonly watermark: string;
+        readonly watermark: string | ros.IResolvable;
     }
 }
 /**
@@ -259,34 +259,34 @@ export interface RosInstanceProps {
     /**
      * @Property clusterId: Cluster id
      */
-    readonly clusterId: string;
+    readonly clusterId: string | ros.IResolvable;
 
     /**
      * @Property imageId: Mirror id
      */
-    readonly imageId: string;
+    readonly imageId: string | ros.IResolvable;
 
     /**
      * @Property instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 
     /**
      * @Property systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
      */
-    readonly systemDiskCategory: string;
+    readonly systemDiskCategory: string | ros.IResolvable;
 
     /**
      * @Property systemDiskSize: System disk size
      */
-    readonly systemDiskSize: number;
+    readonly systemDiskSize: number | ros.IResolvable;
 
     /**
      * @Property workMode: Work mode:
      * Desktop
      * Application
      */
-    readonly workMode: string;
+    readonly workMode: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicAddress: Whether to allocate a public network address
@@ -308,7 +308,7 @@ export interface RosInstanceProps {
      * PostPaid (default): Pay-As-You-Go
      * PrePaid: Subscription
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: Network charge type:
@@ -316,7 +316,7 @@ export interface RosInstanceProps {
      * PayByBandwidth: fixed-bandwidth billing
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
@@ -324,7 +324,7 @@ export interface RosInstanceProps {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetMaxBandwidthIn?: number;
+    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
@@ -332,12 +332,12 @@ export interface RosInstanceProps {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetMaxBandwidthOut?: number;
+    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
      * @Property name: Instance name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property period: Period of subscription.
@@ -345,18 +345,18 @@ export interface RosInstanceProps {
      * When PeriodUnit is Month, the value range is 1-9, 12, 24, 36, 48, 60
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property periodUnit: Unit of period. Week or Month.
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    readonly periodUnit?: string;
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch id
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -477,32 +477,32 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster id
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute InstanceChargeType: Instance charge type
      */
-    public readonly attrInstanceChargeType: any;
+    public readonly attrInstanceChargeType: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: Instance id
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * @Attribute MaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps)
      */
-    public readonly attrMaxBandwidthIn: any;
+    public readonly attrMaxBandwidthIn: ros.IResolvable;
 
     /**
      * @Attribute MaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps)
      */
-    public readonly attrMaxBandwidthOut: any;
+    public readonly attrMaxBandwidthOut: ros.IResolvable;
 
     /**
      * @Attribute Name: Instance name
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -510,34 +510,34 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property clusterId: Cluster id
      */
-    public clusterId: string;
+    public clusterId: string | ros.IResolvable;
 
     /**
      * @Property imageId: Mirror id
      */
-    public imageId: string;
+    public imageId: string | ros.IResolvable;
 
     /**
      * @Property instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
      */
-    public instanceType: string;
+    public instanceType: string | ros.IResolvable;
 
     /**
      * @Property systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
      */
-    public systemDiskCategory: string;
+    public systemDiskCategory: string | ros.IResolvable;
 
     /**
      * @Property systemDiskSize: System disk size
      */
-    public systemDiskSize: number;
+    public systemDiskSize: number | ros.IResolvable;
 
     /**
      * @Property workMode: Work mode:
      * Desktop
      * Application
      */
-    public workMode: string;
+    public workMode: string | ros.IResolvable;
 
     /**
      * @Property allocatePublicAddress: Whether to allocate a public network address
@@ -559,7 +559,7 @@ export class RosInstance extends ros.RosResource {
      * PostPaid (default): Pay-As-You-Go
      * PrePaid: Subscription
      */
-    public instanceChargeType: string | undefined;
+    public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: Network charge type:
@@ -567,7 +567,7 @@ export class RosInstance extends ros.RosResource {
      * PayByBandwidth: fixed-bandwidth billing
      * This value is only valid when AllocatePublicAddress is true.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
@@ -575,7 +575,7 @@ export class RosInstance extends ros.RosResource {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    public internetMaxBandwidthIn: number | undefined;
+    public internetMaxBandwidthIn: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
@@ -583,12 +583,12 @@ export class RosInstance extends ros.RosResource {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    public internetMaxBandwidthOut: number | undefined;
+    public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
     /**
      * @Property name: Instance name
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Period of subscription.
@@ -596,18 +596,18 @@ export class RosInstance extends ros.RosResource {
      * When PeriodUnit is Month, the value range is 1-9, 12, 24, 36, 48, 60
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property periodUnit: Unit of period. Week or Month.
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    public periodUnit: string | undefined;
+    public periodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: VSwitch id
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::GWS::Instance`.
@@ -618,12 +618,12 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrInstanceChargeType = ros.Token.asString(this.getAtt('InstanceChargeType'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrMaxBandwidthIn = ros.Token.asString(this.getAtt('MaxBandwidthIn'));
-        this.attrMaxBandwidthOut = ros.Token.asString(this.getAtt('MaxBandwidthOut'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrInstanceChargeType = this.getAtt('InstanceChargeType');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrMaxBandwidthIn = this.getAtt('MaxBandwidthIn');
+        this.attrMaxBandwidthOut = this.getAtt('MaxBandwidthOut');
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterId = props.clusterId;
@@ -680,15 +680,15 @@ export namespace RosInstance {
         /**
          * @Property appArgs: The running parameters of the application.
          */
-        readonly appArgs?: string;
+        readonly appArgs?: string | ros.IResolvable;
         /**
          * @Property appPath: The running path of the application.
          */
-        readonly appPath?: string;
+        readonly appPath?: string | ros.IResolvable;
         /**
          * @Property appName: The name of the application.
          */
-        readonly appName?: string;
+        readonly appName?: string | ros.IResolvable;
     }
 }
 /**

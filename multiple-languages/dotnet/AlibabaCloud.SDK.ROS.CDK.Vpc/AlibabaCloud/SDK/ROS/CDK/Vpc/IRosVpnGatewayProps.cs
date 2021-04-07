@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
         /// Value: 5|10|20|50|100|200.
         /// </remarks>
-        [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-        double Bandwidth
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Bandwidth
         {
             get;
         }
@@ -21,8 +21,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: vpcId: VPC ID to which the VPN gateway belongs.
         /// </remarks>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-        string VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VpcId
         {
             get;
         }
@@ -46,9 +46,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: description: Description of the VPN gateway.
         /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -90,9 +90,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: instanceChargeType: Accounting type of the VPN gateway, the value is:
         /// PREPAY, POSTPAY
         /// </remarks>
-        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceChargeType
+        object? InstanceChargeType
         {
             get
             {
@@ -104,9 +104,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
         /// The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Name
+        object? Name
         {
             get
             {
@@ -118,9 +118,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: period: Purchase time, value: 1~9|12|24|36.
         /// When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
         /// </remarks>
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Period
+        object? Period
         {
             get
             {
@@ -131,9 +131,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: sslConnections: The maximum number of clients allowed to connect at the same time.
         /// </remarks>
-        [JsiiProperty(name: "sslConnections", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "sslConnections", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? SslConnections
+        object? SslConnections
         {
             get
             {
@@ -144,9 +144,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]? Tags
         {
             get
             {
@@ -157,9 +157,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -179,19 +179,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <strong>Property</strong>: bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
             /// Value: 5|10|20|50|100|200.
             /// </remarks>
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-            public double Bandwidth
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Bandwidth
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: vpcId: VPC ID to which the VPN gateway belongs.
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VpcId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -211,10 +211,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -246,10 +246,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// PREPAY, POSTPAY
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceChargeType
+            [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -257,10 +257,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Name
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -268,40 +268,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: sslConnections: The maximum number of clients allowed to connect at the same time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sslConnections", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? SslConnections
+            [JsiiProperty(name: "sslConnections", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SslConnections
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
-            public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnGateway.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.RosVpnGateway.ITagsProperty[]?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

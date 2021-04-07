@@ -227,6 +227,8 @@ function specPrimitiveToCodePrimitive(type: schema.PrimitiveType): CodeName {
       return CodeName.forPrimitive('Date');
     case 'Any':
       return CodeName.forPrimitive('any');
+    case 'AnyDict':
+      return CodeName.forPrimitive('AnyDict');
     default:
       throw new Error(`Invalid primitive type: ${type}`);
   }
@@ -238,7 +240,8 @@ export function isPrimitive(type: CodeName): boolean {
     type.className === 'number' ||
     type.className === 'any' ||
     type.className === 'string' ||
-    type.className === 'Date'
+    type.className === 'Date' ||
+    type.className === 'AnyDict'
   );
 }
 

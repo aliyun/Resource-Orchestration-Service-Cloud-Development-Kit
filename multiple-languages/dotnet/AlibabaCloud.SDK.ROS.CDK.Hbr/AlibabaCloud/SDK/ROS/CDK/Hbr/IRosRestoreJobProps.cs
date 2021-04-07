@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: restoreType: Restore type
         /// </remarks>
-        [JsiiProperty(name: "restoreType", typeJson: "{\"primitive\":\"string\"}")]
-        string RestoreType
+        [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RestoreType
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: snapshotId: Snapshot ID
         /// </remarks>
-        [JsiiProperty(name: "snapshotId", typeJson: "{\"primitive\":\"string\"}")]
-        string SnapshotId
+        [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SnapshotId
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: sourceClientId: Source client ID. It should be provided when SourceType=FILE.
         /// </remarks>
-        [JsiiProperty(name: "sourceClientId", typeJson: "{\"primitive\":\"string\"}")]
-        string SourceClientId
+        [JsiiProperty(name: "sourceClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SourceClientId
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
         /// </remarks>
-        [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string SourceInstanceId
+        [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SourceInstanceId
         {
             get;
         }
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: sourceType: Source type
         /// </remarks>
-        [JsiiProperty(name: "sourceType", typeJson: "{\"primitive\":\"string\"}")]
-        string SourceType
+        [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SourceType
         {
             get;
         }
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: targetClientId: Target client ID. It should be provided when RestoreType=FILE.
         /// </remarks>
-        [JsiiProperty(name: "targetClientId", typeJson: "{\"primitive\":\"string\"}")]
-        string TargetClientId
+        [JsiiProperty(name: "targetClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TargetClientId
         {
             get;
         }
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
         /// </remarks>
-        [JsiiProperty(name: "targetInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string TargetInstanceId
+        [JsiiProperty(name: "targetInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TargetInstanceId
         {
             get;
         }
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
         /// </remarks>
-        [JsiiProperty(name: "targetPath", typeJson: "{\"primitive\":\"string\"}")]
-        string TargetPath
+        [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TargetPath
         {
             get;
         }
@@ -83,8 +83,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: vaultId: Vault ID
         /// </remarks>
-        [JsiiProperty(name: "vaultId", typeJson: "{\"primitive\":\"string\"}")]
-        string VaultId
+        [JsiiProperty(name: "vaultId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VaultId
         {
             get;
         }
@@ -100,82 +100,82 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             /// <remarks>
             /// <strong>Property</strong>: restoreType: Restore type
             /// </remarks>
-            [JsiiProperty(name: "restoreType", typeJson: "{\"primitive\":\"string\"}")]
-            public string RestoreType
+            [JsiiProperty(name: "restoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RestoreType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: snapshotId: Snapshot ID
             /// </remarks>
-            [JsiiProperty(name: "snapshotId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SnapshotId
+            [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SnapshotId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: sourceClientId: Source client ID. It should be provided when SourceType=FILE.
             /// </remarks>
-            [JsiiProperty(name: "sourceClientId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SourceClientId
+            [JsiiProperty(name: "sourceClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SourceClientId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: sourceInstanceId: Source instance ID. It should be provided when SourceType=ECS_FILE.
             /// </remarks>
-            [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SourceInstanceId
+            [JsiiProperty(name: "sourceInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SourceInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: sourceType: Source type
             /// </remarks>
-            [JsiiProperty(name: "sourceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string SourceType
+            [JsiiProperty(name: "sourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SourceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: targetClientId: Target client ID. It should be provided when RestoreType=FILE.
             /// </remarks>
-            [JsiiProperty(name: "targetClientId", typeJson: "{\"primitive\":\"string\"}")]
-            public string TargetClientId
+            [JsiiProperty(name: "targetClientId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetClientId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: targetInstanceId: Target instance ID. It should be provided when RestoreType=ECS_FILE.
             /// </remarks>
-            [JsiiProperty(name: "targetInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string TargetInstanceId
+            [JsiiProperty(name: "targetInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: targetPath: Target path. For instance, "/".
             /// </remarks>
-            [JsiiProperty(name: "targetPath", typeJson: "{\"primitive\":\"string\"}")]
-            public string TargetPath
+            [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetPath
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: vaultId: Vault ID
             /// </remarks>
-            [JsiiProperty(name: "vaultId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VaultId
+            [JsiiProperty(name: "vaultId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VaultId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

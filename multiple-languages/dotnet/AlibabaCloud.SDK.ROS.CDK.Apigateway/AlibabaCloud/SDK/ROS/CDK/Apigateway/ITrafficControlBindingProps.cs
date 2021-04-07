@@ -16,22 +16,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property groupId: The id of group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupId
         {
             get;
         }
 
         /// <summary>Property stageName: Bind traffic in this stage.</summary>
-        [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}")]
-        string StageName
+        [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object StageName
         {
             get;
         }
 
         /// <summary>Property trafficControlId: The id of traffic control.</summary>
-        [JsiiProperty(name: "trafficControlId", typeJson: "{\"primitive\":\"string\"}")]
-        string TrafficControlId
+        [JsiiProperty(name: "trafficControlId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TrafficControlId
         {
             get;
         }
@@ -52,24 +52,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <summary>Property groupId: The id of group.</summary>
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property stageName: Bind traffic in this stage.</summary>
-            [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}")]
-            public string StageName
+            [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object StageName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property trafficControlId: The id of traffic control.</summary>
-            [JsiiProperty(name: "trafficControlId", typeJson: "{\"primitive\":\"string\"}")]
-            public string TrafficControlId
+            [JsiiProperty(name: "trafficControlId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TrafficControlId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

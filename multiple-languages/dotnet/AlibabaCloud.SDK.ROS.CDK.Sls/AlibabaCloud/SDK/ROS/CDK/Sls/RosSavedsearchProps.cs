@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// <strong>Property</strong>: project: Project name
         /// </remarks>
-        [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Project
+        [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Project
         {
             get;
             set;

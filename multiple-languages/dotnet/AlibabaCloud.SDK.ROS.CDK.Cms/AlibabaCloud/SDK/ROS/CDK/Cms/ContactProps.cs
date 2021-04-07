@@ -19,16 +19,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Property contactName: The name of the alarm contact.</summary>
-        [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ContactName
+        [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ContactName
         {
             get;
             set;
         }
 
         /// <summary>Property describe: The description of the alert contact.</summary>
-        [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Describe
+        [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Describe
         {
             get;
             set;

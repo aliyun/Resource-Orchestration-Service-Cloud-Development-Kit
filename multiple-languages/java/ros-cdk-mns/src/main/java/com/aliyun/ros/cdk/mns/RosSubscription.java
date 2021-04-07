@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mns;
 /**
  * A ROS template type:  `ALIYUN::MNS::Subscription`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.071Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.700Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscription")
 public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,20 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSubscriptionUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrSubscriptionUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSubscriptionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSubscriptionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSubscriptionUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrSubscriptionUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopicName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopicName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +75,8 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getEndpoint() {
-        return software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getEndpoint() {
+        return software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +87,14 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSubscriptionName() {
-        return software.amazon.jsii.Kernel.get(this, "subscriptionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEndpoint(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpoint", java.util.Objects.requireNonNull(value, "endpoint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSubscriptionName() {
+        return software.amazon.jsii.Kernel.get(this, "subscriptionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +105,14 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTopicName() {
-        return software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSubscriptionName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "subscriptionName", java.util.Objects.requireNonNull(value, "subscriptionName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTopicName() {
+        return software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +123,14 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getFilterTag() {
-        return software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTopicName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "topicName", java.util.Objects.requireNonNull(value, "topicName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFilterTag() {
+        return software.amazon.jsii.Kernel.get(this, "filterTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +141,14 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNotifyContentFormat() {
-        return software.amazon.jsii.Kernel.get(this, "notifyContentFormat", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFilterTag(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "filterTag", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNotifyContentFormat() {
+        return software.amazon.jsii.Kernel.get(this, "notifyContentFormat", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,13 +159,25 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNotifyStrategy() {
-        return software.amazon.jsii.Kernel.get(this, "notifyStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNotifyContentFormat(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "notifyContentFormat", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNotifyStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "notifyStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNotifyStrategy(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "notifyStrategy", value);
+    }
+
+    /**
+     */
+    public void setNotifyStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "notifyStrategy", value);
     }
 
@@ -167,12 +215,28 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
             this.props.endpoint(endpoint);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param endpoint This parameter is required.
+         */
+        public Builder endpoint(final com.aliyun.ros.cdk.core.IResolvable endpoint) {
+            this.props.endpoint(endpoint);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param subscriptionName This parameter is required.
          */
         public Builder subscriptionName(final java.lang.String subscriptionName) {
+            this.props.subscriptionName(subscriptionName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param subscriptionName This parameter is required.
+         */
+        public Builder subscriptionName(final com.aliyun.ros.cdk.core.IResolvable subscriptionName) {
             this.props.subscriptionName(subscriptionName);
             return this;
         }
@@ -185,12 +249,28 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
             this.props.topicName(topicName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param topicName This parameter is required.
+         */
+        public Builder topicName(final com.aliyun.ros.cdk.core.IResolvable topicName) {
+            this.props.topicName(topicName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param filterTag This parameter is required.
          */
         public Builder filterTag(final java.lang.String filterTag) {
+            this.props.filterTag(filterTag);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param filterTag This parameter is required.
+         */
+        public Builder filterTag(final com.aliyun.ros.cdk.core.IResolvable filterTag) {
             this.props.filterTag(filterTag);
             return this;
         }
@@ -203,12 +283,28 @@ public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
             this.props.notifyContentFormat(notifyContentFormat);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param notifyContentFormat This parameter is required.
+         */
+        public Builder notifyContentFormat(final com.aliyun.ros.cdk.core.IResolvable notifyContentFormat) {
+            this.props.notifyContentFormat(notifyContentFormat);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param notifyStrategy This parameter is required.
          */
         public Builder notifyStrategy(final java.lang.String notifyStrategy) {
+            this.props.notifyStrategy(notifyStrategy);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param notifyStrategy This parameter is required.
+         */
+        public Builder notifyStrategy(final com.aliyun.ros.cdk.core.IResolvable notifyStrategy) {
             this.props.notifyStrategy(notifyStrategy);
             return this;
         }

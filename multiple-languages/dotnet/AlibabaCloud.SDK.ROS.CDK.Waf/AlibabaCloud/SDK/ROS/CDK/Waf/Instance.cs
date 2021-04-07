@@ -33,45 +33,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         }
 
         /// <summary>Attribute EndDate: Due date of the instance.</summary>
-        [JsiiProperty(name: "attrEndDate", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEndDate
+        [JsiiProperty(name: "attrEndDate", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndDate
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InDebt: Instance is overdue.</summary>
-        [JsiiProperty(name: "attrInDebt", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInDebt
+        [JsiiProperty(name: "attrInDebt", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInDebt
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceId: Instance ID.</summary>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute RemainDay: Number of available days for WAF Trial version.</summary>
-        [JsiiProperty(name: "attrRemainDay", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRemainDay
+        [JsiiProperty(name: "attrRemainDay", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRemainDay
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SubscriptionType: Subscription type of the instance.</summary>
-        [JsiiProperty(name: "attrSubscriptionType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionType
+        [JsiiProperty(name: "attrSubscriptionType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Trial: Trial version.</summary>
-        [JsiiProperty(name: "attrTrial", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTrial
+        [JsiiProperty(name: "attrTrial", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTrial
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

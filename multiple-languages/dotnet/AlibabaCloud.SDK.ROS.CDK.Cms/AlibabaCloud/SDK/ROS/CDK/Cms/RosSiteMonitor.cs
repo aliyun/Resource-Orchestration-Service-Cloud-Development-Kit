@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Attribute</strong>: TaskId: The ID of the site monitoring task.
         /// </remarks>
-        [JsiiProperty(name: "attrTaskId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTaskId
+        [JsiiProperty(name: "attrTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTaskId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: address: The URL or IP address monitored by the monitoring task.
         /// </remarks>
-        [JsiiProperty(name: "address", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Address
+        [JsiiProperty(name: "address", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Address
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <strong>Property</strong>: taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
         /// It can contain letters, digits, and underscores (_).
         /// </remarks>
-        [JsiiProperty(name: "taskName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TaskName
+        [JsiiProperty(name: "taskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TaskName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <strong>Property</strong>: taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
         /// UDP, DNS, SMTP, POP3, and FTP.
         /// </remarks>
-        [JsiiProperty(name: "taskType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TaskType
+        [JsiiProperty(name: "taskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TaskType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -102,10 +102,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <strong>Property</strong>: alertIds:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "alertIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? AlertIds
+        [JsiiProperty(name: "alertIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? AlertIds
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -114,10 +114,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// minutes. Default value: 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "interval", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Interval
+        [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Interval
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -142,10 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// options vary based on the protocol.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "optionsJson", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? OptionsJson
+        [JsiiProperty(name: "optionsJson", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? OptionsJson
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IIspCitiesProperty), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosSiteMonitor.IspCitiesProperty")]
@@ -154,8 +154,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: city:
             /// </remarks>
-            [JsiiProperty(name: "city", typeJson: "{\"primitive\":\"string\"}")]
-            string City
+            [JsiiProperty(name: "city", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object City
             {
                 get;
             }
@@ -163,8 +163,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: isp:
             /// </remarks>
-            [JsiiProperty(name: "isp", typeJson: "{\"primitive\":\"string\"}")]
-            string Isp
+            [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Isp
             {
                 get;
             }
@@ -179,19 +179,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// <remarks>
                 /// <strong>Property</strong>: city:
                 /// </remarks>
-                [JsiiProperty(name: "city", typeJson: "{\"primitive\":\"string\"}")]
-                public string City
+                [JsiiProperty(name: "city", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object City
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: isp:
                 /// </remarks>
-                [JsiiProperty(name: "isp", typeJson: "{\"primitive\":\"string\"}")]
-                public string Isp
+                [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Isp
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -203,8 +203,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: city:
             /// </remarks>
-            [JsiiProperty(name: "city", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string City
+            [JsiiProperty(name: "city", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object City
             {
                 get;
                 set;
@@ -213,8 +213,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: isp:
             /// </remarks>
-            [JsiiProperty(name: "isp", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Isp
+            [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Isp
             {
                 get;
                 set;

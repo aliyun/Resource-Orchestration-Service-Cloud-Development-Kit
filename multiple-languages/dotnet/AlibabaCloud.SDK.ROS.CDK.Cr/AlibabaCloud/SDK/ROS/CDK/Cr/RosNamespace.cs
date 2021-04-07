@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Attribute</strong>: NamespaceId: The namespace id
         /// </remarks>
-        [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNamespaceId
+        [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,10 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: namespace: domain name
         /// </remarks>
-        [JsiiProperty(name: "namespace", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Namespace
+        [JsiiProperty(name: "namespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Namespace
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <strong>Property</strong>: defaultVisibility: repository default visibility, public or private
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DefaultVisibility
+        [JsiiProperty(name: "defaultVisibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DefaultVisibility
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

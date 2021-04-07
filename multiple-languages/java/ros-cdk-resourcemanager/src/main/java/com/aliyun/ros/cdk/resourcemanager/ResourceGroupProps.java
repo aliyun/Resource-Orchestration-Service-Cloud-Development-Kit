@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::ResourceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.318Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.995Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.ResourceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceGroupProps.Jsii$Proxy.class)
 public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property displayName: The display name of the resource group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDisplayName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDisplayName();
 
     /**
+     * Property name: The unique identifier of the resource group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      * @return a {@link Builder} of {@link ResourceGroupProps}
@@ -26,12 +28,12 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ResourceGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ResourceGroupProps> {
-        private java.lang.String displayName;
-        private java.lang.String name;
+        private java.lang.Object displayName;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link ResourceGroupProps#getDisplayName}
-         * @param displayName the value to be set. This parameter is required.
+         * @param displayName Property displayName: The display name of the resource group. This parameter is required.
          * @return {@code this}
          */
         public Builder displayName(java.lang.String displayName) {
@@ -40,11 +42,31 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ResourceGroupProps#getDisplayName}
+         * @param displayName Property displayName: The display name of the resource group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ResourceGroupProps#getName}
-         * @param name the value to be set. This parameter is required.
+         * @param name Property name: The unique identifier of the resource group. This parameter is required.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourceGroupProps#getName}
+         * @param name Property name: The unique identifier of the resource group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -65,8 +87,8 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResourceGroupProps {
-        private final java.lang.String displayName;
-        private final java.lang.String name;
+        private final java.lang.Object displayName;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String displayName, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object displayName, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.displayName = java.util.Objects.requireNonNull(displayName, "displayName is required");
             this.name = java.util.Objects.requireNonNull(name, "name is required");
         }
 
         @Override
-        public final java.lang.String getDisplayName() {
+        public final java.lang.Object getDisplayName() {
             return this.displayName;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

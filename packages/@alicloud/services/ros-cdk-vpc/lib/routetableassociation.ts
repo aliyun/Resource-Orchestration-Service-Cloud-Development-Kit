@@ -11,12 +11,12 @@ export interface RouteTableAssociationProps {
     /**
      * Property routeTableId: The ID of the route table.
      */
-    readonly routeTableId: string;
+    readonly routeTableId: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The ID of the VSwitch.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 }
 
 /**
@@ -32,12 +32,12 @@ export class RouteTableAssociation extends ros.Resource {
     /**
      * Attribute RouteTableId: The ID of the route table.
      */
-    public readonly attrRouteTableId: any;
+    public readonly attrRouteTableId: ros.IResolvable;
 
     /**
      * Attribute VSwitchId: The VSwitch ID which the route table associated with.
      */
-    public readonly attrVSwitchId: any;
+    public readonly attrVSwitchId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTableAssociation`.

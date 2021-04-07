@@ -3,44 +3,51 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::TrafficControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.146Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.720Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControlProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficControlProps.Jsii$Proxy.class)
 public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property apiDefault: Default API traffic value.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getApiDefault();
+    @org.jetbrains.annotations.NotNull java.lang.Object getApiDefault();
 
     /**
+     * Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTrafficControlName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlName();
 
     /**
+     * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTrafficControlUnit();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlUnit();
 
     /**
+     * Property appDefault: Default APP traffic value.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAppDefault() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppDefault() {
         return null;
     }
 
     /**
+     * Property description: Description of the traffic control, less than 180 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property special: Special traffic controls.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpecial() {
         return null;
     }
 
     /**
+     * Property userDefault: Default user traffic value.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserDefault() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserDefault() {
         return null;
     }
 
@@ -54,17 +61,17 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link TrafficControlProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TrafficControlProps> {
-        private java.lang.Number apiDefault;
-        private java.lang.String trafficControlName;
-        private java.lang.String trafficControlUnit;
-        private java.lang.String appDefault;
-        private java.lang.String description;
+        private java.lang.Object apiDefault;
+        private java.lang.Object trafficControlName;
+        private java.lang.Object trafficControlUnit;
+        private java.lang.Object appDefault;
+        private java.lang.Object description;
         private java.lang.Object special;
-        private java.lang.String userDefault;
+        private java.lang.Object userDefault;
 
         /**
          * Sets the value of {@link TrafficControlProps#getApiDefault}
-         * @param apiDefault the value to be set. This parameter is required.
+         * @param apiDefault Property apiDefault: Default API traffic value. This parameter is required.
          * @return {@code this}
          */
         public Builder apiDefault(java.lang.Number apiDefault) {
@@ -73,8 +80,18 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link TrafficControlProps#getApiDefault}
+         * @param apiDefault Property apiDefault: Default API traffic value. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder apiDefault(com.aliyun.ros.cdk.core.IResolvable apiDefault) {
+            this.apiDefault = apiDefault;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlName}
-         * @param trafficControlName the value to be set. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          * @return {@code this}
          */
         public Builder trafficControlName(java.lang.String trafficControlName) {
@@ -83,8 +100,18 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link TrafficControlProps#getTrafficControlName}
+         * @param trafficControlName Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder trafficControlName(com.aliyun.ros.cdk.core.IResolvable trafficControlName) {
+            this.trafficControlName = trafficControlName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlUnit}
-         * @param trafficControlUnit the value to be set. This parameter is required.
+         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
          * @return {@code this}
          */
         public Builder trafficControlUnit(java.lang.String trafficControlUnit) {
@@ -93,8 +120,18 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link TrafficControlProps#getTrafficControlUnit}
+         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder trafficControlUnit(com.aliyun.ros.cdk.core.IResolvable trafficControlUnit) {
+            this.trafficControlUnit = trafficControlUnit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlProps#getAppDefault}
-         * @param appDefault the value to be set.
+         * @param appDefault Property appDefault: Default APP traffic value.
          * @return {@code this}
          */
         public Builder appDefault(java.lang.String appDefault) {
@@ -103,8 +140,18 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link TrafficControlProps#getAppDefault}
+         * @param appDefault Property appDefault: Default APP traffic value.
+         * @return {@code this}
+         */
+        public Builder appDefault(com.aliyun.ros.cdk.core.IResolvable appDefault) {
+            this.appDefault = appDefault;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the traffic control, less than 180 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -113,8 +160,18 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link TrafficControlProps#getDescription}
+         * @param description Property description: Description of the traffic control, less than 180 characters.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrafficControlProps#getSpecial}
-         * @param special the value to be set.
+         * @param special Property special: Special traffic controls.
          * @return {@code this}
          */
         public Builder special(com.aliyun.ros.cdk.core.IResolvable special) {
@@ -124,7 +181,7 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getSpecial}
-         * @param special the value to be set.
+         * @param special Property special: Special traffic controls.
          * @return {@code this}
          */
         public Builder special(java.util.List<? extends java.lang.Object> special) {
@@ -134,10 +191,20 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getUserDefault}
-         * @param userDefault the value to be set.
+         * @param userDefault Property userDefault: Default user traffic value.
          * @return {@code this}
          */
         public Builder userDefault(java.lang.String userDefault) {
+            this.userDefault = userDefault;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TrafficControlProps#getUserDefault}
+         * @param userDefault Property userDefault: Default user traffic value.
+         * @return {@code this}
+         */
+        public Builder userDefault(com.aliyun.ros.cdk.core.IResolvable userDefault) {
             this.userDefault = userDefault;
             return this;
         }
@@ -158,13 +225,13 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrafficControlProps {
-        private final java.lang.Number apiDefault;
-        private final java.lang.String trafficControlName;
-        private final java.lang.String trafficControlUnit;
-        private final java.lang.String appDefault;
-        private final java.lang.String description;
+        private final java.lang.Object apiDefault;
+        private final java.lang.Object trafficControlName;
+        private final java.lang.Object trafficControlUnit;
+        private final java.lang.Object appDefault;
+        private final java.lang.Object description;
         private final java.lang.Object special;
-        private final java.lang.String userDefault;
+        private final java.lang.Object userDefault;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -172,19 +239,19 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.apiDefault = software.amazon.jsii.Kernel.get(this, "apiDefault", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.trafficControlName = software.amazon.jsii.Kernel.get(this, "trafficControlName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.trafficControlUnit = software.amazon.jsii.Kernel.get(this, "trafficControlUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.appDefault = software.amazon.jsii.Kernel.get(this, "appDefault", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.apiDefault = software.amazon.jsii.Kernel.get(this, "apiDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.trafficControlName = software.amazon.jsii.Kernel.get(this, "trafficControlName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.trafficControlUnit = software.amazon.jsii.Kernel.get(this, "trafficControlUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appDefault = software.amazon.jsii.Kernel.get(this, "appDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.special = software.amazon.jsii.Kernel.get(this, "special", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.userDefault = software.amazon.jsii.Kernel.get(this, "userDefault", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userDefault = software.amazon.jsii.Kernel.get(this, "userDefault", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number apiDefault, final java.lang.String trafficControlName, final java.lang.String trafficControlUnit, final java.lang.String appDefault, final java.lang.String description, final java.lang.Object special, final java.lang.String userDefault) {
+        protected Jsii$Proxy(final java.lang.Object apiDefault, final java.lang.Object trafficControlName, final java.lang.Object trafficControlUnit, final java.lang.Object appDefault, final java.lang.Object description, final java.lang.Object special, final java.lang.Object userDefault) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiDefault = java.util.Objects.requireNonNull(apiDefault, "apiDefault is required");
             this.trafficControlName = java.util.Objects.requireNonNull(trafficControlName, "trafficControlName is required");
@@ -196,27 +263,27 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.Number getApiDefault() {
+        public final java.lang.Object getApiDefault() {
             return this.apiDefault;
         }
 
         @Override
-        public final java.lang.String getTrafficControlName() {
+        public final java.lang.Object getTrafficControlName() {
             return this.trafficControlName;
         }
 
         @Override
-        public final java.lang.String getTrafficControlUnit() {
+        public final java.lang.Object getTrafficControlUnit() {
             return this.trafficControlUnit;
         }
 
         @Override
-        public final java.lang.String getAppDefault() {
+        public final java.lang.Object getAppDefault() {
             return this.appDefault;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -226,7 +293,7 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getUserDefault() {
+        public final java.lang.Object getUserDefault() {
             return this.userDefault;
         }
 

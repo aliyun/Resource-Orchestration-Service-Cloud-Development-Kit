@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Properties for defining a `ALIYUN::PVTZ::ZoneVpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.195Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.850Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneVpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(ZoneVpcBinderProps.Jsii$Proxy.class)
 public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property vpcs:.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcs();
 
     /**
+     * Property zoneId: Zone Id.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
      * @return a {@link Builder} of {@link ZoneVpcBinderProps}
@@ -27,11 +29,11 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
      */
     public static final class Builder implements software.amazon.jsii.Builder<ZoneVpcBinderProps> {
         private java.lang.Object vpcs;
-        private java.lang.String zoneId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link ZoneVpcBinderProps#getVpcs}
-         * @param vpcs the value to be set. This parameter is required.
+         * @param vpcs Property vpcs:. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcs(com.aliyun.ros.cdk.core.IResolvable vpcs) {
@@ -41,7 +43,7 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ZoneVpcBinderProps#getVpcs}
-         * @param vpcs the value to be set. This parameter is required.
+         * @param vpcs Property vpcs:. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcs(java.util.List<? extends java.lang.Object> vpcs) {
@@ -51,10 +53,20 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ZoneVpcBinderProps#getZoneId}
-         * @param zoneId the value to be set. This parameter is required.
+         * @param zoneId Property zoneId: Zone Id. This parameter is required.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ZoneVpcBinderProps#getZoneId}
+         * @param zoneId Property zoneId: Zone Id. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -76,7 +88,7 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ZoneVpcBinderProps {
         private final java.lang.Object vpcs;
-        private final java.lang.String zoneId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +97,13 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.vpcs = software.amazon.jsii.Kernel.get(this, "vpcs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object vpcs, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object vpcs, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcs = java.util.Objects.requireNonNull(vpcs, "vpcs is required");
             this.zoneId = java.util.Objects.requireNonNull(zoneId, "zoneId is required");
@@ -103,7 +115,7 @@ public interface ZoneVpcBinderProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

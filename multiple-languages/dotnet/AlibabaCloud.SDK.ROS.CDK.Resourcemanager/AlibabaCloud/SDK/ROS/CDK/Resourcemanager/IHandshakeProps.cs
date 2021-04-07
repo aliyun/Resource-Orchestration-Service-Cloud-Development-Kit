@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public interface IHandshakeProps
     {
         /// <summary>Property targetEntity: Invited account ID or login email.</summary>
-        [JsiiProperty(name: "targetEntity", typeJson: "{\"primitive\":\"string\"}")]
-        string TargetEntity
+        [JsiiProperty(name: "targetEntity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TargetEntity
         {
             get;
         }
@@ -19,16 +19,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// Valid values: Account, Email
         /// </remarks>
-        [JsiiProperty(name: "targetType", typeJson: "{\"primitive\":\"string\"}")]
-        string TargetType
+        [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TargetType
         {
             get;
         }
 
         /// <summary>Property note: Remarks.</summary>
-        [JsiiProperty(name: "note", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "note", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Note
+        object? Note
         {
             get
             {
@@ -45,28 +45,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
 
             /// <summary>Property targetEntity: Invited account ID or login email.</summary>
-            [JsiiProperty(name: "targetEntity", typeJson: "{\"primitive\":\"string\"}")]
-            public string TargetEntity
+            [JsiiProperty(name: "targetEntity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetEntity
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property targetType: Type of account being invited.</summary>
             /// <remarks>
             /// Valid values: Account, Email
             /// </remarks>
-            [JsiiProperty(name: "targetType", typeJson: "{\"primitive\":\"string\"}")]
-            public string TargetType
+            [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TargetType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property note: Remarks.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "note", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Note
+            [JsiiProperty(name: "note", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Note
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

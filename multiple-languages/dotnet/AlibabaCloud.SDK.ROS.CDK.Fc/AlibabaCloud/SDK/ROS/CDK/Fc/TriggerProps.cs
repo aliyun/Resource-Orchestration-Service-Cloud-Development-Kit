@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class TriggerProps : AlibabaCloud.SDK.ROS.CDK.Fc.ITriggerProps
     {
         /// <summary>Property functionName: Function name.</summary>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object FunctionName
         {
             get;
             set;
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ServiceName
         {
             get;
             set;
@@ -41,16 +41,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Example : "image_resize"
         /// </remarks>
-        [JsiiProperty(name: "triggerName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TriggerName
+        [JsiiProperty(name: "triggerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TriggerName
         {
             get;
             set;
         }
 
         /// <summary>Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss".</summary>
-        [JsiiProperty(name: "triggerType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TriggerType
+        [JsiiProperty(name: "triggerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TriggerType
         {
             get;
             set;
@@ -62,8 +62,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Example : "acs:ram::1234567890:role/fc-test"
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "invocationRole", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InvocationRole
+        [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InvocationRole
         {
             get;
             set;
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Example : "LATEST"
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Qualifier
+        [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Qualifier
         {
             get;
             set;
@@ -87,8 +87,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// Example : "acs:oss:cn-shanghai:12345:mybucket"
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sourceArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SourceArn
+        [JsiiProperty(name: "sourceArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SourceArn
         {
             get;
             set;

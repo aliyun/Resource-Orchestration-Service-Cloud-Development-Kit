@@ -3,44 +3,53 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::BandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.529Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.BandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageProps.Jsii$Proxy.class)
 public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
+     * Property ipCount: Total internet IPs of this Bandwidth package, [1-5].
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getIpCount();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpCount();
 
     /**
+     * Property natGatewayId: Create bandwidth package for specified NAT gateway.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNatGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNatGatewayId();
 
     /**
+     * Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBandwidthPackageName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageName() {
         return null;
     }
 
     /**
+     * Property description: Description of the bandwidth package, [2, 256] characters.
+     * <p>
+     * Do not fill or empty, the default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property zoneId: The availability zone where the bandwidth package will be created.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -54,17 +63,17 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link BandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BandwidthPackageProps> {
-        private java.lang.Number bandwidth;
-        private java.lang.Number ipCount;
-        private java.lang.String natGatewayId;
-        private java.lang.String bandwidthPackageName;
-        private java.lang.String description;
-        private java.lang.String internetChargeType;
-        private java.lang.String zoneId;
+        private java.lang.Object bandwidth;
+        private java.lang.Object ipCount;
+        private java.lang.Object natGatewayId;
+        private java.lang.Object bandwidthPackageName;
+        private java.lang.Object description;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link BandwidthPackageProps#getBandwidth}
-         * @param bandwidth the value to be set. This parameter is required.
+         * @param bandwidth Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic. This parameter is required.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -73,8 +82,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getBandwidth}
+         * @param bandwidth Property bandwidth: Bandwidth, [5-5000]M for PayByBandwidth, [5-50]M for PayByTraffic. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getIpCount}
-         * @param ipCount the value to be set. This parameter is required.
+         * @param ipCount Property ipCount: Total internet IPs of this Bandwidth package, [1-5]. This parameter is required.
          * @return {@code this}
          */
         public Builder ipCount(java.lang.Number ipCount) {
@@ -83,8 +102,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getIpCount}
+         * @param ipCount Property ipCount: Total internet IPs of this Bandwidth package, [1-5]. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipCount(com.aliyun.ros.cdk.core.IResolvable ipCount) {
+            this.ipCount = ipCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getNatGatewayId}
-         * @param natGatewayId the value to be set. This parameter is required.
+         * @param natGatewayId Property natGatewayId: Create bandwidth package for specified NAT gateway. This parameter is required.
          * @return {@code this}
          */
         public Builder natGatewayId(java.lang.String natGatewayId) {
@@ -93,8 +122,18 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getNatGatewayId}
+         * @param natGatewayId Property natGatewayId: Create bandwidth package for specified NAT gateway. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder natGatewayId(com.aliyun.ros.cdk.core.IResolvable natGatewayId) {
+            this.natGatewayId = natGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getBandwidthPackageName}
-         * @param bandwidthPackageName the value to be set.
+         * @param bandwidthPackageName Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder bandwidthPackageName(java.lang.String bandwidthPackageName) {
@@ -103,8 +142,19 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getBandwidthPackageName}
+         * @param bandwidthPackageName Property bandwidthPackageName: Display name of the bandwidth package, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageName(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageName) {
+            this.bandwidthPackageName = bandwidthPackageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the bandwidth package, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -113,8 +163,19 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getDescription}
+         * @param description Property description: Description of the bandwidth package, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -123,11 +184,31 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: Nat Gateway internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByTraffic.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: The availability zone where the bandwidth package will be created.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BandwidthPackageProps#getZoneId}
+         * @param zoneId Property zoneId: The availability zone where the bandwidth package will be created.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -148,13 +229,13 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BandwidthPackageProps {
-        private final java.lang.Number bandwidth;
-        private final java.lang.Number ipCount;
-        private final java.lang.String natGatewayId;
-        private final java.lang.String bandwidthPackageName;
-        private final java.lang.String description;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String zoneId;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object ipCount;
+        private final java.lang.Object natGatewayId;
+        private final java.lang.Object bandwidthPackageName;
+        private final java.lang.Object description;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -162,19 +243,19 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ipCount = software.amazon.jsii.Kernel.get(this, "ipCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.natGatewayId = software.amazon.jsii.Kernel.get(this, "natGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.bandwidthPackageName = software.amazon.jsii.Kernel.get(this, "bandwidthPackageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipCount = software.amazon.jsii.Kernel.get(this, "ipCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.natGatewayId = software.amazon.jsii.Kernel.get(this, "natGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthPackageName = software.amazon.jsii.Kernel.get(this, "bandwidthPackageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number bandwidth, final java.lang.Number ipCount, final java.lang.String natGatewayId, final java.lang.String bandwidthPackageName, final java.lang.String description, final java.lang.String internetChargeType, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object ipCount, final java.lang.Object natGatewayId, final java.lang.Object bandwidthPackageName, final java.lang.Object description, final java.lang.Object internetChargeType, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
             this.ipCount = java.util.Objects.requireNonNull(ipCount, "ipCount is required");
@@ -186,37 +267,37 @@ public interface BandwidthPackageProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.Number getIpCount() {
+        public final java.lang.Object getIpCount() {
             return this.ipCount;
         }
 
         @Override
-        public final java.lang.String getNatGatewayId() {
+        public final java.lang.Object getNatGatewayId() {
             return this.natGatewayId;
         }
 
         @Override
-        public final java.lang.String getBandwidthPackageName() {
+        public final java.lang.Object getBandwidthPackageName() {
             return this.bandwidthPackageName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

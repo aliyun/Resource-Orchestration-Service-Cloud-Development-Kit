@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.uis;
 /**
  * A ROS template type:  `ALIYUN::UIS::UisNode`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.429Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.132Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.uis.$Module.class, fqn = "@alicloud/ros-cdk-uis.RosUisNode")
 public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,20 +44,20 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUisNodeActiveIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrUisNodeActiveIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUisNodeActiveIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrUisNodeActiveIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUisNodeId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUisNodeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUisNodeId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUisNodeId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUisNodeIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrUisNodeIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUisNodeIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrUisNodeIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -75,8 +75,8 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getIpAddrsNum() {
-        return software.amazon.jsii.Kernel.get(this, "ipAddrsNum", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getIpAddrsNum() {
+        return software.amazon.jsii.Kernel.get(this, "ipAddrsNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +87,14 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getUisId() {
-        return software.amazon.jsii.Kernel.get(this, "uisId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIpAddrsNum(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipAddrsNum", java.util.Objects.requireNonNull(value, "ipAddrsNum is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUisId() {
+        return software.amazon.jsii.Kernel.get(this, "uisId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +105,14 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getUisNodeAreaId() {
-        return software.amazon.jsii.Kernel.get(this, "uisNodeAreaId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUisId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uisId", java.util.Objects.requireNonNull(value, "uisId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeAreaId() {
+        return software.amazon.jsii.Kernel.get(this, "uisNodeAreaId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +123,14 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getUisNodeBandwidth() {
-        return software.amazon.jsii.Kernel.get(this, "uisNodeBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setUisNodeAreaId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uisNodeAreaId", java.util.Objects.requireNonNull(value, "uisNodeAreaId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getUisNodeBandwidth() {
+        return software.amazon.jsii.Kernel.get(this, "uisNodeBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +141,14 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUisNodeBandwidth(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "uisNodeBandwidth", java.util.Objects.requireNonNull(value, "uisNodeBandwidth is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,13 +159,25 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "name", value);
     }
 
@@ -179,12 +215,28 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ipAddrsNum(ipAddrsNum);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ipAddrsNum This parameter is required.
+         */
+        public Builder ipAddrsNum(final com.aliyun.ros.cdk.core.IResolvable ipAddrsNum) {
+            this.props.ipAddrsNum(ipAddrsNum);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param uisId This parameter is required.
          */
         public Builder uisId(final java.lang.String uisId) {
+            this.props.uisId(uisId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param uisId This parameter is required.
+         */
+        public Builder uisId(final com.aliyun.ros.cdk.core.IResolvable uisId) {
             this.props.uisId(uisId);
             return this;
         }
@@ -197,12 +249,28 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
             this.props.uisNodeAreaId(uisNodeAreaId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param uisNodeAreaId This parameter is required.
+         */
+        public Builder uisNodeAreaId(final com.aliyun.ros.cdk.core.IResolvable uisNodeAreaId) {
+            this.props.uisNodeAreaId(uisNodeAreaId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param uisNodeBandwidth This parameter is required.
          */
         public Builder uisNodeBandwidth(final java.lang.Number uisNodeBandwidth) {
+            this.props.uisNodeBandwidth(uisNodeBandwidth);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param uisNodeBandwidth This parameter is required.
+         */
+        public Builder uisNodeBandwidth(final com.aliyun.ros.cdk.core.IResolvable uisNodeBandwidth) {
             this.props.uisNodeBandwidth(uisNodeBandwidth);
             return this;
         }
@@ -215,12 +283,28 @@ public class RosUisNode extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

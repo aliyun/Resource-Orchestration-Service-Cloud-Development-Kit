@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  `ALIYUN::SLS::ApplyConfigToMachineGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.399Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.100Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.ApplyConfigToMachineGroup")
 public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public ApplyConfigToMachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public ApplyConfigToMachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::SLS::ApplyConfigToMachineGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public ApplyConfigToMachineGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -57,8 +69,8 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sls.ApplyConfigToMachineGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -66,8 +78,8 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -85,28 +97,64 @@ public class ApplyConfigToMachineGroup extends com.aliyun.ros.cdk.core.Resource 
         }
 
         /**
+         * Property configName: Apply config to the config name.
+         * <p>
          * @return {@code this}
-         * @param configName This parameter is required.
+         * @param configName Property configName: Apply config to the config name. This parameter is required.
          */
         public Builder configName(final java.lang.String configName) {
             this.props().configName(configName);
             return this;
         }
+        /**
+         * Property configName: Apply config to the config name.
+         * <p>
+         * @return {@code this}
+         * @param configName Property configName: Apply config to the config name. This parameter is required.
+         */
+        public Builder configName(final com.aliyun.ros.cdk.core.IResolvable configName) {
+            this.props().configName(configName);
+            return this;
+        }
 
         /**
+         * Property groupName: Apply config to the group name.
+         * <p>
          * @return {@code this}
-         * @param groupName This parameter is required.
+         * @param groupName Property groupName: Apply config to the group name. This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
             this.props().groupName(groupName);
             return this;
         }
+        /**
+         * Property groupName: Apply config to the group name.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: Apply config to the group name. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props().groupName(groupName);
+            return this;
+        }
 
         /**
+         * Property projectName: Apply config to the project name.
+         * <p>
          * @return {@code this}
-         * @param projectName This parameter is required.
+         * @param projectName Property projectName: Apply config to the project name. This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
+            this.props().projectName(projectName);
+            return this;
+        }
+        /**
+         * Property projectName: Apply config to the project name.
+         * <p>
+         * @return {@code this}
+         * @param projectName Property projectName: Apply config to the project name. This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props().projectName(projectName);
             return this;
         }

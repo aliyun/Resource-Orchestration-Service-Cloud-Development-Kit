@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS resource type:  `ALIYUN::SLS::Savedsearch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Savedsearch")
 public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLS::Savedsearch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Savedsearch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.SavedsearchProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLS::Savedsearch`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Savedsearch(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sls.SavedsearchProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SavedsearchName: Savedsearch name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSavedsearchName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSavedsearchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSavedsearchName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSavedsearchName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sls.Savedsearch> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,16 +90,20 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property detail:.
+         * <p>
          * @return {@code this}
-         * @param detail This parameter is required.
+         * @param detail Property detail:. This parameter is required.
          */
         public Builder detail(final com.aliyun.ros.cdk.core.IResolvable detail) {
             this.props.detail(detail);
             return this;
         }
         /**
+         * Property detail:.
+         * <p>
          * @return {@code this}
-         * @param detail This parameter is required.
+         * @param detail Property detail:. This parameter is required.
          */
         public Builder detail(final com.aliyun.ros.cdk.sls.RosSavedsearch.DetailProperty detail) {
             this.props.detail(detail);
@@ -98,10 +111,22 @@ public class Savedsearch extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property project: Project name.
+         * <p>
          * @return {@code this}
-         * @param project This parameter is required.
+         * @param project Property project: Project name. This parameter is required.
          */
         public Builder project(final java.lang.String project) {
+            this.props.project(project);
+            return this;
+        }
+        /**
+         * Property project: Project name.
+         * <p>
+         * @return {@code this}
+         * @param project Property project: Project name. This parameter is required.
+         */
+        public Builder project(final com.aliyun.ros.cdk.core.IResolvable project) {
             this.props.project(project);
             return this;
         }

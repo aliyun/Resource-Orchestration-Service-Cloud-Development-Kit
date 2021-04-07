@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class GroupProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IGroupProps
     {
         /// <summary>Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupName
         {
             get;
             set;
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property description: Description of the Group, less than 180 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceId
         {
             get;
             set;
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// host: pass through host headers
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "passthroughHeaders", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PassthroughHeaders
+        [JsiiProperty(name: "passthroughHeaders", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PassthroughHeaders
         {
             get;
             set;
@@ -69,8 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosGroup.ITagsProperty[]? Tags
         {
             get;
             set;

@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Attribute</strong>: CommandId: The id of command created.
         /// </remarks>
-        [JsiiProperty(name: "attrCommandId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCommandId
+        [JsiiProperty(name: "attrCommandId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCommandId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InvokeId: The invoke id of command.
         /// </remarks>
-        [JsiiProperty(name: "attrInvokeId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInvokeId
+        [JsiiProperty(name: "attrInvokeId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInvokeId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -76,10 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
         /// Each custom parameter key cannot exceed 64 bytes.
         /// </remarks>
-        [JsiiProperty(name: "commandContent", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string CommandContent
+        [JsiiProperty(name: "commandContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object CommandContent
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: The instance id list. Select up to 20 instances at a time.Instances status must be running.
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        public virtual string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object InstanceIds
         {
-            get => GetInstanceProperty<string[]>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// RunPowerShellScript: PowerShell scripts for Windows instances
         /// RunShellScript: shell scripts for Linux instances
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Type
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -120,10 +120,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "contentEncoding", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ContentEncoding
+        [JsiiProperty(name: "contentEncoding", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ContentEncoding
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -131,10 +131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: description: The description of the script, which supports all character sets. It can be up to 512 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -155,10 +155,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// The parameter value follows the cron expression. For more information, see Configure scheduled commands.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "frequency", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Frequency
+        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Frequency
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -180,10 +180,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: name: The name of the script, which supports all character sets. It can be up to 128 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -223,10 +223,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: 60.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Timeout
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -237,10 +237,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist\$(version).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "workingDir", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? WorkingDir
+        [JsiiProperty(name: "workingDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? WorkingDir
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

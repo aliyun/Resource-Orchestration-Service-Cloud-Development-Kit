@@ -11,24 +11,24 @@ export interface VpnConnectionProps {
     /**
      * Property customerGatewayId: The ID of the user gateway.
      */
-    readonly customerGatewayId: string;
+    readonly customerGatewayId: string | ros.IResolvable;
 
     /**
      * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
      */
-    readonly localSubnet: string;
+    readonly localSubnet: string | ros.IResolvable;
 
     /**
      * Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
      */
-    readonly remoteSubnet: string;
+    readonly remoteSubnet: string | ros.IResolvable;
 
     /**
      * Property vpnGatewayId: ID of the VPN gateway.
      */
-    readonly vpnGatewayId: string;
+    readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
      * Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
@@ -56,7 +56,7 @@ export interface VpnConnectionProps {
      * Property name: The name of the IPsec connection.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -72,17 +72,17 @@ export class VpnConnection extends ros.Resource {
     /**
      * Attribute PeerVpnConnectionConfig: Peer vpc connection config.
      */
-    public readonly attrPeerVpnConnectionConfig: any;
+    public readonly attrPeerVpnConnectionConfig: ros.IResolvable;
 
     /**
      * Attribute Status: Status of the IPsec connection.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Attribute VpnConnectionId: ID of the IPsec connection.
      */
-    public readonly attrVpnConnectionId: any;
+    public readonly attrVpnConnectionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::VpnConnection`.

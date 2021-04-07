@@ -26,7 +26,7 @@ export interface ShardingInstanceProps {
     /**
      * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -36,67 +36,72 @@ export interface ShardingInstanceProps {
     /**
      * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property protocolType: Protocol type. Valid value: mongodb or dynamodb.
      */
-    readonly protocolType?: string;
+    readonly protocolType?: string | ros.IResolvable;
 
     /**
      * Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
-    readonly restoreTime?: string;
+    readonly restoreTime?: string | ros.IResolvable;
 
     /**
      * Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
-    readonly srcDbInstanceId?: string;
+    readonly srcDbInstanceId?: string | ros.IResolvable;
 
     /**
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosShardingInstance.TagsProperty[];
 
     /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -112,17 +117,17 @@ export class ShardingInstance extends ros.Resource {
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MONGODB::ShardingInstance`.
@@ -153,6 +158,7 @@ export class ShardingInstance extends ros.Resource {
             srcDbInstanceId: props.srcDbInstanceId,
             replicaSet: props.replicaSet,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosShardingInstance;
         this.attrDbInstanceId = rosShardingInstance.attrDbInstanceId;

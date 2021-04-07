@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         }
 
         /// <summary>Attribute ContactGroupId: The ID of the alert contact group that you created.</summary>
-        [JsiiProperty(name: "attrContactGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContactGroupId
+        [JsiiProperty(name: "attrContactGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContactGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

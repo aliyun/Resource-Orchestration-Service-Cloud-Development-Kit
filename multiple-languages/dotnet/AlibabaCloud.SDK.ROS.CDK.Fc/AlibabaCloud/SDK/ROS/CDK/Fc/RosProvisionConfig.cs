@@ -47,46 +47,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// <strong>Attribute</strong>: FunctionName: The function name
         /// </remarks>
-        [JsiiProperty(name: "attrFunctionName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFunctionName
+        [JsiiProperty(name: "attrFunctionName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFunctionName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Qualifier: The service alias
         /// </remarks>
-        [JsiiProperty(name: "attrQualifier", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrQualifier
+        [JsiiProperty(name: "attrQualifier", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQualifier
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Resource: The resource
         /// </remarks>
-        [JsiiProperty(name: "attrResource", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrResource
+        [JsiiProperty(name: "attrResource", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResource
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ServiceName: The service name
         /// </remarks>
-        [JsiiProperty(name: "attrServiceName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrServiceName
+        [JsiiProperty(name: "attrServiceName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Target: Number of provision
         /// </remarks>
-        [JsiiProperty(name: "attrTarget", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTarget
+        [JsiiProperty(name: "attrTarget", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTarget
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -105,10 +105,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// <strong>Property</strong>: functionName: Function name
         /// </remarks>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object FunctionName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -116,30 +116,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <strong>Property</strong>: qualifier: Service's alias.
         /// Example : "LATEST"
         /// </remarks>
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Qualifier
+        [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Qualifier
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: serviceName: Service name
         /// </remarks>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ServiceName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: target: Number of provision
         /// </remarks>
-        [JsiiProperty(name: "target", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Target
+        [JsiiProperty(name: "target", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Target
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Attribute AccelerateRegionIds: The ID list of the accelerate region.</summary>
-        [JsiiProperty(name: "attrAccelerateRegionIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccelerateRegionIds
+        [JsiiProperty(name: "attrAccelerateRegionIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccelerateRegionIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute IpSetIds: The ID list of the ip set.</summary>
-        [JsiiProperty(name: "attrIpSetIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpSetIds
+        [JsiiProperty(name: "attrIpSetIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpSetIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute IpVersions: The IP version list of the accelerate region.</summary>
-        [JsiiProperty(name: "attrIpVersions", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpVersions
+        [JsiiProperty(name: "attrIpVersions", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpVersions
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

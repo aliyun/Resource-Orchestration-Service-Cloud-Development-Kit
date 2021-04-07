@@ -47,19 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// <strong>Attribute</strong>: AppliedMachineGroups: Applied machine groups.
         /// </remarks>
-        [JsiiProperty(name: "attrAppliedMachineGroups", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppliedMachineGroups
+        [JsiiProperty(name: "attrAppliedMachineGroups", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppliedMachineGroups
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Endpoint: Endpoint address.
         /// </remarks>
-        [JsiiProperty(name: "attrEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEndpoint
+        [JsiiProperty(name: "attrEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: LogtailConfigName: Logtail config name.
+        /// </remarks>
+        [JsiiProperty(name: "attrLogtailConfigName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogtailConfigName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -81,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logstoreName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LogstoreName
+        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LogstoreName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -94,10 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logtailConfigName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LogtailConfigName
+        [JsiiProperty(name: "logtailConfigName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LogtailConfigName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -107,10 +116,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ProjectName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -211,8 +220,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "logtailConfigName", typeJson: "{\"primitive\":\"string\"}")]
-            string LogtailConfigName
+            [JsiiProperty(name: "logtailConfigName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LogtailConfigName
             {
                 get;
             }
@@ -223,8 +232,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-            string ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ProjectName
             {
                 get;
             }
@@ -242,10 +251,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// 2. Must start and end with lowercase letters and numbers.
                 /// 3. The name length is 3-63 characters.
                 /// </remarks>
-                [JsiiProperty(name: "logtailConfigName", typeJson: "{\"primitive\":\"string\"}")]
-                public string LogtailConfigName
+                [JsiiProperty(name: "logtailConfigName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LogtailConfigName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -254,10 +263,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
                 /// 2. Must start and end with lowercase letters and numbers.
                 /// 3. The name length is 3-63 characters.
                 /// </remarks>
-                [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-                public string ProjectName
+                [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ProjectName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -272,8 +281,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "logtailConfigName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string LogtailConfigName
+            [JsiiProperty(name: "logtailConfigName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object LogtailConfigName
             {
                 get;
                 set;
@@ -285,8 +294,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ProjectName
             {
                 get;
                 set;

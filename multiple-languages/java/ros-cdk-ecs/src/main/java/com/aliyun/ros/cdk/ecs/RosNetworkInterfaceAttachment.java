@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::NetworkInterfaceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.664Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachment")
 public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTrunkNetworkInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTrunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTrunkNetworkInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTrunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", java.util.Objects.requireNonNull(value, "instanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +99,25 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTrunkNetworkInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "trunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNetworkInterfaceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceId", java.util.Objects.requireNonNull(value, "networkInterfaceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTrunkNetworkInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "trunkNetworkInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTrunkNetworkInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "trunkNetworkInstanceId", value);
+    }
+
+    /**
+     */
+    public void setTrunkNetworkInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "trunkNetworkInstanceId", value);
     }
 
@@ -137,6 +155,14 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -146,12 +172,28 @@ public class RosNetworkInterfaceAttachment extends com.aliyun.ros.cdk.core.RosRe
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceId This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param trunkNetworkInstanceId This parameter is required.
          */
         public Builder trunkNetworkInstanceId(final java.lang.String trunkNetworkInstanceId) {
+            this.props.trunkNetworkInstanceId(trunkNetworkInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param trunkNetworkInstanceId This parameter is required.
+         */
+        public Builder trunkNetworkInstanceId(final com.aliyun.ros.cdk.core.IResolvable trunkNetworkInstanceId) {
             this.props.trunkNetworkInstanceId(trunkNetworkInstanceId);
             return this;
         }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::WaitConditionHandle`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionHandle")
 public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,32 +44,32 @@ public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCurlCli() {
-        return software.amazon.jsii.Kernel.get(this, "attrCurlCli", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCurlCli() {
+        return software.amazon.jsii.Kernel.get(this, "attrCurlCli", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHeaders() {
-        return software.amazon.jsii.Kernel.get(this, "attrHeaders", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHeaders() {
+        return software.amazon.jsii.Kernel.get(this, "attrHeaders", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPowerShellCurlCli() {
-        return software.amazon.jsii.Kernel.get(this, "attrPowerShellCurlCli", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPowerShellCurlCli() {
+        return software.amazon.jsii.Kernel.get(this, "attrPowerShellCurlCli", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUrl() {
-        return software.amazon.jsii.Kernel.get(this, "attrUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUrl() {
+        return software.amazon.jsii.Kernel.get(this, "attrUrl", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrWindowsCurlCli() {
-        return software.amazon.jsii.Kernel.get(this, "attrWindowsCurlCli", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrWindowsCurlCli() {
+        return software.amazon.jsii.Kernel.get(this, "attrWindowsCurlCli", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -87,8 +87,8 @@ public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getCount() {
-        return software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
+        return software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +99,25 @@ public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMode() {
-        return software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "count", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
+        return software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "mode", value);
+    }
+
+    /**
+     */
+    public void setMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "mode", value);
     }
 
@@ -143,12 +155,28 @@ public class RosWaitConditionHandle extends com.aliyun.ros.cdk.core.RosResource 
             this.props.count(count);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param count This parameter is required.
+         */
+        public Builder count(final com.aliyun.ros.cdk.core.IResolvable count) {
+            this.props.count(count);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param mode This parameter is required.
          */
         public Builder mode(final java.lang.String mode) {
+            this.props.mode(mode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param mode This parameter is required.
+         */
+        public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
             this.props.mode(mode);
             return this;
         }

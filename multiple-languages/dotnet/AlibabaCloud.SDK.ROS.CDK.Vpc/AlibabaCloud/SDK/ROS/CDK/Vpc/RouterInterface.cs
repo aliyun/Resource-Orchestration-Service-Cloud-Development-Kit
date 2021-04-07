@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute RouterInterfaceId: The ID of created RouterInterface.</summary>
-        [JsiiProperty(name: "attrRouterInterfaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRouterInterfaceId
+        [JsiiProperty(name: "attrRouterInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRouterInterfaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

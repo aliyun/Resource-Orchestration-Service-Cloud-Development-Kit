@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class DedicatedHostProps : AlibabaCloud.SDK.ROS.CDK.Ecs.IDedicatedHostProps
     {
         /// <summary>Property dedicatedHostType: The instance type of host.</summary>
-        [JsiiProperty(name: "dedicatedHostType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DedicatedHostType
+        [JsiiProperty(name: "dedicatedHostType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DedicatedHostType
         {
             get;
             set;
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "actionOnMaintenance", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ActionOnMaintenance
+        [JsiiProperty(name: "actionOnMaintenance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ActionOnMaintenance
         {
             get;
             set;
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// If you do not specify the DedicatedHostId parameter when you create an instance on a dedicated host, Alibaba Cloud automatically selects a dedicated host from the resource pool to host the instance. For more information, see Automatic deployment. Valid values:on: The dedicated host is added to the resource pool for automatic deployment.off: The dedicated host is not added to the resource pool for automatic deployment.Default value: on.Note When you create a dedicated host: If you do not specify this parameter, the dedicated host is added to the automatic deployment resource pool.If you do not want to add the dedicated host to the automatic deployment resource pool, set the value to off.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoPlacement", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AutoPlacement
+        [JsiiProperty(name: "autoPlacement", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoPlacement
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoReleaseTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AutoReleaseTime
+        [JsiiProperty(name: "autoReleaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoReleaseTime
         {
             get;
             set;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// When the parameter InstanceChargeType is PrePaid, it will take effect. Range of value:True: automatic renewal.False: no automatic renewal. Default value is False.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoRenew", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AutoRenew
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoRenew
         {
             get;
             set;
@@ -68,8 +68,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// When the parameter InstanceChargeType is PrePaid, it will take effect.It could be 1, 2, 3, 6, 12. Default value is 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? AutoRenewPeriod
+        [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoRenewPeriod
         {
             get;
             set;
@@ -80,8 +80,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// If specified Prepaid, please ensure you have sufficient balance in your account. Or instance creation will be failure. Default value is Postpaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ChargeType
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ChargeType
         {
             get;
             set;
@@ -92,8 +92,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dedicatedHostName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DedicatedHostName
+        [JsiiProperty(name: "dedicatedHostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DedicatedHostName
         {
             get;
             set;
@@ -101,8 +101,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property description: The description of host.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -113,8 +113,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Unit: seconds. Valid values: 15 to 310.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "networkAttributesSlbUdpTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? NetworkAttributesSlbUdpTimeout
+        [JsiiProperty(name: "networkAttributesSlbUdpTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetworkAttributesSlbUdpTimeout
         {
             get;
             set;
@@ -125,8 +125,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Unit: seconds. Valid values: 15 to 310.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "networkAttributesUdpTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? NetworkAttributesUdpTimeout
+        [JsiiProperty(name: "networkAttributesUdpTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetworkAttributesUdpTimeout
         {
             get;
             set;
@@ -137,8 +137,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Unit is month, it could be from 1 to 9 or 12, 24, 36, 48, 60. Default value is 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -149,8 +149,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value is Month.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "periodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PeriodUnit
+        [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PeriodUnit
         {
             get;
             set;
@@ -161,8 +161,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Valid values: 1 to 100.Default value: 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "quantity", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Quantity
+        [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Quantity
         {
             get;
             set;
@@ -173,8 +173,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// If this is left blank, the system automatically fills in the ID of the default resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -185,8 +185,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosDedicatedHost.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ecs.RosDedicatedHost.ITagsProperty[]? Tags
         {
             get;
             set;
@@ -194,8 +194,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property zoneId: The zone to create the host.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneId
         {
             get;
             set;

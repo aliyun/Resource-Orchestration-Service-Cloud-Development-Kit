@@ -11,7 +11,7 @@ export interface UserToGroupAdditionProps {
     /**
      * Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * Property users: list name of a users to which you want to add the group.

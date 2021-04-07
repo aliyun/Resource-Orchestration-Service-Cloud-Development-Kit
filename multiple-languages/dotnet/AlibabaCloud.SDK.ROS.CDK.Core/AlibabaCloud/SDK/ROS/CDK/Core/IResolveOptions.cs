@@ -4,9 +4,9 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Options to the resolve() operation&#xD; &#xD; NOT the same as the ResolveContext;</summary>
+    /// <summary>Options to the resolve() operation.</summary>
     /// <remarks>
-    /// ResolveContext is exposed to Token
+    /// NOT the same as the ResolveContext; ResolveContext is exposed to Token
     /// implementors and resolution hooks, whereas this struct is just to bundle
     /// a number of things that would otherwise be arguments to resolve() in a
     /// readable way.
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
-        /// <summary>Options to the resolve() operation&#xD; &#xD; NOT the same as the ResolveContext;</summary>
+        /// <summary>Options to the resolve() operation.</summary>
         /// <remarks>
-        /// ResolveContext is exposed to Token
+        /// NOT the same as the ResolveContext; ResolveContext is exposed to Token
         /// implementors and resolution hooks, whereas this struct is just to bundle
         /// a number of things that would otherwise be arguments to resolve() in a
         /// readable way.

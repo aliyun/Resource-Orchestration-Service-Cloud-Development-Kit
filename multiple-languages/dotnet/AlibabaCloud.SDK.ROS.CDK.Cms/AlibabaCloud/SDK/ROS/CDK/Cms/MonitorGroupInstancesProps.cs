@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     public class MonitorGroupInstancesProps : AlibabaCloud.SDK.ROS.CDK.Cms.IMonitorGroupInstancesProps
     {
         /// <summary>Property groupId: The ID of the application group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupId
         {
             get;
             set;

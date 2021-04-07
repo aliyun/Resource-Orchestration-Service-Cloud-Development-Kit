@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: accountName: The name of the database account to be granted access permissions.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AccountName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -69,20 +69,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
         /// Separate multiple permissions with a comma (,).
         /// </remarks>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AccountPrivilege
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbClusterId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// You can grant access permissions on one or more databases to the database account.
         /// Separate multiple databases with a comma (,).
         /// </remarks>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 

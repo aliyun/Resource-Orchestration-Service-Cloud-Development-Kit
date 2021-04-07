@@ -3,18 +3,22 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::SslVpnClientCert`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.506Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnClientCertProps")
 @software.amazon.jsii.Jsii.Proxy(SslVpnClientCertProps.Jsii$Proxy.class)
 public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property sslVpnServerId: ID of the SSL-VPN server.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSslVpnServerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSslVpnServerId();
 
     /**
+     * Property name: The name of the client certificate.
+     * <p>
+     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -28,12 +32,12 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link SslVpnClientCertProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SslVpnClientCertProps> {
-        private java.lang.String sslVpnServerId;
-        private java.lang.String name;
+        private java.lang.Object sslVpnServerId;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link SslVpnClientCertProps#getSslVpnServerId}
-         * @param sslVpnServerId the value to be set. This parameter is required.
+         * @param sslVpnServerId Property sslVpnServerId: ID of the SSL-VPN server. This parameter is required.
          * @return {@code this}
          */
         public Builder sslVpnServerId(java.lang.String sslVpnServerId) {
@@ -42,11 +46,33 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link SslVpnClientCertProps#getSslVpnServerId}
+         * @param sslVpnServerId Property sslVpnServerId: ID of the SSL-VPN server. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sslVpnServerId(com.aliyun.ros.cdk.core.IResolvable sslVpnServerId) {
+            this.sslVpnServerId = sslVpnServerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SslVpnClientCertProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the client certificate.
+         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SslVpnClientCertProps#getName}
+         * @param name Property name: The name of the client certificate.
+         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -67,8 +93,8 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SslVpnClientCertProps {
-        private final java.lang.String sslVpnServerId;
-        private final java.lang.String name;
+        private final java.lang.Object sslVpnServerId;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -76,26 +102,26 @@ public interface SslVpnClientCertProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.sslVpnServerId = software.amazon.jsii.Kernel.get(this, "sslVpnServerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.sslVpnServerId = software.amazon.jsii.Kernel.get(this, "sslVpnServerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String sslVpnServerId, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object sslVpnServerId, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.sslVpnServerId = java.util.Objects.requireNonNull(sslVpnServerId, "sslVpnServerId is required");
             this.name = name;
         }
 
         @Override
-        public final java.lang.String getSslVpnServerId() {
+        public final java.lang.Object getSslVpnServerId() {
             return this.sslVpnServerId;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

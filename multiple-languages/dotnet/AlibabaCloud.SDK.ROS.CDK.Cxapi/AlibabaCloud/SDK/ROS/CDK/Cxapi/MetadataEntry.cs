@@ -4,14 +4,14 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
 {
-    /// <summary>(deprecated) Backwards compatibility for when 'MetadataEntry'&#xD; was defined here.</summary>
+    /// <summary>(deprecated) Backwards compatibility for when 'MetadataEntry' was defined here.</summary>
     /// <remarks>
     /// This is necessary because its used as an input in the stable
-    /// 
+    ///
     /// <strong>Stability</strong>: Deprecated
-    /// 
+    ///
     /// <strong>See</strong>: core.ConstructNode.metadata
-    /// 
+    ///
     /// <strong>Alicloud</strong>: /ros-cdk-core library.
     /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cxapi.MetadataEntry")]

@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Attribute</strong>: SecurityIps: The security ips of selected database instance.
         /// </remarks>
-        [JsiiProperty(name: "attrSecurityIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityIps
+        [JsiiProperty(name: "attrSecurityIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,20 +62,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Property</strong>: dbInstanceId: Database instance id to update security ips.
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbInstanceId
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbInstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: dbInstanceIpArrayAttribute: Security ips to add or remove.
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceIpArrayAttribute", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbInstanceIpArrayAttribute
+        [JsiiProperty(name: "dbInstanceIpArrayAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbInstanceIpArrayAttribute
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -90,10 +90,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <strong>Property</strong>: dbInstanceIpArrayName: Group name of the security ips, only support lower characters and '_'. Advice use a new group name avoid effect your database system. If the properties is not specified, it will set to default group, please be careful.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceIpArrayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DbInstanceIpArrayName
+        [JsiiProperty(name: "dbInstanceIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DbInstanceIpArrayName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

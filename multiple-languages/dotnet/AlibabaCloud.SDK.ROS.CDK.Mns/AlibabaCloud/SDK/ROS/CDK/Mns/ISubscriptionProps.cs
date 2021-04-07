@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <summary>Property endpoint: Terminal address of the message recipient for the created subscription.</summary>
         /// <remarks>
         /// Currently, four types of endpoints are supported:
-        /// 
+        ///
         /// <list type="number">
         /// <description>HttpEndpoint, which must be prefixed with "http://";</description>
         /// <description>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</description>
@@ -19,30 +19,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <description>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "endpoint", typeJson: "{\"primitive\":\"string\"}")]
-        string Endpoint
+        [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Endpoint
         {
             get;
         }
 
         /// <summary>Property subscriptionName: Subscription name.</summary>
-        [JsiiProperty(name: "subscriptionName", typeJson: "{\"primitive\":\"string\"}")]
-        string SubscriptionName
+        [JsiiProperty(name: "subscriptionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SubscriptionName
         {
             get;
         }
 
         /// <summary>Property topicName: Topic name.</summary>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-        string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TopicName
         {
             get;
         }
 
         /// <summary>Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.</summary>
-        [JsiiProperty(name: "filterTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "filterTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? FilterTag
+        object? FilterTag
         {
             get
             {
@@ -54,9 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
         /// </remarks>
-        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NotifyContentFormat
+        object? NotifyContentFormat
         {
             get
             {
@@ -68,9 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
         /// </remarks>
-        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NotifyStrategy
+        object? NotifyStrategy
         {
             get
             {
@@ -89,7 +89,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             /// <summary>Property endpoint: Terminal address of the message recipient for the created subscription.</summary>
             /// <remarks>
             /// Currently, four types of endpoints are supported:
-            /// 
+            ///
             /// <list type="number">
             /// <description>HttpEndpoint, which must be prefixed with "http://";</description>
             /// <description>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</description>
@@ -97,32 +97,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             /// <description>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</description>
             /// </list>
             /// </remarks>
-            [JsiiProperty(name: "endpoint", typeJson: "{\"primitive\":\"string\"}")]
-            public string Endpoint
+            [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Endpoint
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property subscriptionName: Subscription name.</summary>
-            [JsiiProperty(name: "subscriptionName", typeJson: "{\"primitive\":\"string\"}")]
-            public string SubscriptionName
+            [JsiiProperty(name: "subscriptionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SubscriptionName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property topicName: Topic name.</summary>
-            [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TopicName
+            [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TopicName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property filterTag: Message filter tag in the created subscription (Only messages with consistent tags are pushed.) The value is a string of no more than 16 characters. The default value is no message filter.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "filterTag", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? FilterTag
+            [JsiiProperty(name: "filterTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FilterTag
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property notifyContentFormat: Format of the message content pushed to the endpoint.</summary>
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             /// XML, JSON, or SIMPLIFIED; default value: XML. For details about message formats, refer to Basic Concepts/NotifyContentFormat.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NotifyContentFormat
+            [JsiiProperty(name: "notifyContentFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NotifyContentFormat
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property notifyStrategy: Retry policy that will be applied when an error occurs during message push to the endpoint.</summary>
@@ -141,10 +141,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             /// BACKOFF_RETRY or EXPONENTIAL_DECAY_RETRY; default value: BACKOFF_RETRY. For details about retry policies, refer to Basic Concepts/NotifyStrategy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "notifyStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NotifyStrategy
+            [JsiiProperty(name: "notifyStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NotifyStrategy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

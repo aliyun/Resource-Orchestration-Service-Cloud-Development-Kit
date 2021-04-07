@@ -3,16 +3,18 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.VpcBinderProps")
 @software.amazon.jsii.Jsii.Proxy(VpcBinderProps.Jsii$Proxy.class)
 public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceName: Instance name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
+     * Property vpcs: Vpc binding configuration.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcs();
 
@@ -26,12 +28,12 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link VpcBinderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<VpcBinderProps> {
-        private java.lang.String instanceName;
+        private java.lang.Object instanceName;
         private java.lang.Object vpcs;
 
         /**
          * Sets the value of {@link VpcBinderProps#getInstanceName}
-         * @param instanceName the value to be set. This parameter is required.
+         * @param instanceName Property instanceName: Instance name. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -40,8 +42,18 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VpcBinderProps#getInstanceName}
+         * @param instanceName Property instanceName: Instance name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcBinderProps#getVpcs}
-         * @param vpcs the value to be set. This parameter is required.
+         * @param vpcs Property vpcs: Vpc binding configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcs(com.aliyun.ros.cdk.core.IResolvable vpcs) {
@@ -51,7 +63,7 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link VpcBinderProps#getVpcs}
-         * @param vpcs the value to be set. This parameter is required.
+         * @param vpcs Property vpcs: Vpc binding configuration. This parameter is required.
          * @return {@code this}
          */
         public Builder vpcs(java.util.List<? extends java.lang.Object> vpcs) {
@@ -75,7 +87,7 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcBinderProps {
-        private final java.lang.String instanceName;
+        private final java.lang.Object instanceName;
         private final java.lang.Object vpcs;
 
         /**
@@ -84,21 +96,21 @@ public interface VpcBinderProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcs = software.amazon.jsii.Kernel.get(this, "vpcs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceName, final java.lang.Object vpcs) {
+        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object vpcs) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
             this.vpcs = java.util.Objects.requireNonNull(vpcs, "vpcs is required");
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 

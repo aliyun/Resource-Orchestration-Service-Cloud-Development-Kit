@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <summary>Attribute MountTargetDomain: Mount point domain name.</summary>
-        [JsiiProperty(name: "attrMountTargetDomain", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMountTargetDomain
+        [JsiiProperty(name: "attrMountTargetDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMountTargetDomain
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

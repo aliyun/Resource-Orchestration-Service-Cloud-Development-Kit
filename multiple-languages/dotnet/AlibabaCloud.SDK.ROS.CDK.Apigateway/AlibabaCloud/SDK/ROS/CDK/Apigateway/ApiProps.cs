@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class ApiProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.IApiProps
     {
         /// <summary>Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-        [JsiiProperty(name: "apiName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ApiName
+        [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ApiName
         {
             get;
             set;
         }
 
         /// <summary>Property groupId: The id of the Group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property resultSample: The sample of the result.</summary>
-        [JsiiProperty(name: "resultSample", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ResultSample
+        [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ResultSample
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// Default is "JSON".
         /// </remarks>
-        [JsiiProperty(name: "resultType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ResultType
+        [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ResultType
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// "PUBLIC" or "PRIVATE".
         /// </remarks>
-        [JsiiProperty(name: "visibility", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Visibility
+        [JsiiProperty(name: "visibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Visibility
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// HEADER_QUERY: Allow AppCode header and query authentication
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AppCodeAuthType
+        [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AppCodeAuthType
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// "APP","ANONYMOUS", or "APPOPENID"
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "authType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AuthType
+        [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AuthType
         {
             get;
             set;
@@ -109,8 +109,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property description: Description of the API, less than 180 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -139,8 +139,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property failResultSample: The sample of the fail result.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "failResultSample", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? FailResultSample
+        [JsiiProperty(name: "failResultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? FailResultSample
         {
             get;
             set;
@@ -210,8 +210,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]? Tags
         {
             get;
             set;

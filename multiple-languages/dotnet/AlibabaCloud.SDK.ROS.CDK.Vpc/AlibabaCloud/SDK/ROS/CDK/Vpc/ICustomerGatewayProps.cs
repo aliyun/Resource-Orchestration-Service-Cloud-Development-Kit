@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface ICustomerGatewayProps
     {
         /// <summary>Property ipAddress: The IP address of the user gateway.</summary>
-        [JsiiProperty(name: "ipAddress", typeJson: "{\"primitive\":\"string\"}")]
-        string IpAddress
+        [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object IpAddress
         {
             get;
         }
@@ -19,9 +19,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -33,9 +33,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Name
+        object? Name
         {
             get
             {
@@ -52,10 +52,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property ipAddress: The IP address of the user gateway.</summary>
-            [JsiiProperty(name: "ipAddress", typeJson: "{\"primitive\":\"string\"}")]
-            public string IpAddress
+            [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object IpAddress
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Description of the user gateway.</summary>
@@ -63,10 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property name: The name of the user gateway.</summary>
@@ -74,10 +74,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Name
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

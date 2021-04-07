@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// the topological relationships with sub-devices, and synchronize the topological relationships
         /// to IoT Platform.
         /// </remarks>
-        [JsiiProperty(name: "nodeType", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double NodeType
+        [JsiiProperty(name: "nodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object NodeType
         {
             get;
             set;
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// contain Chinese characters, English letters, digits, and underscores (_).
         /// Note A product name must be unique in an account.
         /// </remarks>
-        [JsiiProperty(name: "productName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProductName
+        [JsiiProperty(name: "productName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProductName
         {
             get;
             set;
@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Edition).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aliyunCommodityCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AliyunCommodityCode
+        [JsiiProperty(name: "aliyunCommodityCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AliyunCommodityCode
         {
             get;
             set;
@@ -66,8 +66,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If this parameter is passed, the default value is secret.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "authType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AuthType
+        [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AuthType
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "categoryKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CategoryKey
+        [JsiiProperty(name: "categoryKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CategoryKey
         {
             get;
             set;
@@ -94,8 +94,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// 1: Alink JSON.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dataFormat", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DataFormat
+        [JsiiProperty(name: "dataFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DataFormat
         {
             get;
             set;
@@ -107,8 +107,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -137,8 +137,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// instance that you need to buy the incoming instance ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IotInstanceId
         {
             get;
             set;
@@ -151,8 +151,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If you do not LoRaWAN network credentials, visit the network management platform to create things together.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "joinPermissionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? JoinPermissionId
+        [JsiiProperty(name: "joinPermissionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? JoinPermissionId
         {
             get;
             set;
@@ -170,8 +170,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// The default value is WIFI.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetType
         {
             get;
             set;
@@ -189,8 +189,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// zigbee: ZigBee.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "protocolType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProtocolType
+        [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProtocolType
         {
             get;
             set;
@@ -215,8 +215,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If this parameter is passed, the product will be classified as a default resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;

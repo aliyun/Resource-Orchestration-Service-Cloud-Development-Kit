@@ -3,38 +3,38 @@ package com.aliyun.ros.cdk.acm;
 /**
  * Properties for defining a `ALIYUN::ACM::Configuration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.049Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.615Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.RosConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(RosConfigurationProps.Jsii$Proxy.class)
 public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContent();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContent();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDataId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDataId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAppName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesc() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroup() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroup() {
         return null;
     }
 
@@ -46,7 +46,7 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
         return null;
     }
 
@@ -60,14 +60,14 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosConfigurationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosConfigurationProps> {
-        private java.lang.String content;
-        private java.lang.String dataId;
-        private java.lang.String namespaceId;
-        private java.lang.String appName;
-        private java.lang.String desc;
-        private java.lang.String group;
+        private java.lang.Object content;
+        private java.lang.Object dataId;
+        private java.lang.Object namespaceId;
+        private java.lang.Object appName;
+        private java.lang.Object desc;
+        private java.lang.Object group;
         private java.lang.String tags;
-        private java.lang.String type;
+        private java.lang.Object type;
 
         /**
          * Sets the value of {@link RosConfigurationProps#getContent}
@@ -75,6 +75,16 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder content(java.lang.String content) {
+            this.content = content;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosConfigurationProps#getContent}
+         * @param content the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder content(com.aliyun.ros.cdk.core.IResolvable content) {
             this.content = content;
             return this;
         }
@@ -90,11 +100,31 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosConfigurationProps#getDataId}
+         * @param dataId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dataId(com.aliyun.ros.cdk.core.IResolvable dataId) {
+            this.dataId = dataId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosConfigurationProps#getNamespaceId}
          * @param namespaceId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder namespaceId(java.lang.String namespaceId) {
+            this.namespaceId = namespaceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosConfigurationProps#getNamespaceId}
+         * @param namespaceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder namespaceId(com.aliyun.ros.cdk.core.IResolvable namespaceId) {
             this.namespaceId = namespaceId;
             return this;
         }
@@ -110,6 +140,16 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosConfigurationProps#getAppName}
+         * @param appName the value to be set.
+         * @return {@code this}
+         */
+        public Builder appName(com.aliyun.ros.cdk.core.IResolvable appName) {
+            this.appName = appName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosConfigurationProps#getDesc}
          * @param desc the value to be set.
          * @return {@code this}
@@ -120,11 +160,31 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosConfigurationProps#getDesc}
+         * @param desc the value to be set.
+         * @return {@code this}
+         */
+        public Builder desc(com.aliyun.ros.cdk.core.IResolvable desc) {
+            this.desc = desc;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosConfigurationProps#getGroup}
          * @param group the value to be set.
          * @return {@code this}
          */
         public Builder group(java.lang.String group) {
+            this.group = group;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosConfigurationProps#getGroup}
+         * @param group the value to be set.
+         * @return {@code this}
+         */
+        public Builder group(com.aliyun.ros.cdk.core.IResolvable group) {
             this.group = group;
             return this;
         }
@@ -150,6 +210,16 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosConfigurationProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosConfigurationProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -165,14 +235,14 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosConfigurationProps {
-        private final java.lang.String content;
-        private final java.lang.String dataId;
-        private final java.lang.String namespaceId;
-        private final java.lang.String appName;
-        private final java.lang.String desc;
-        private final java.lang.String group;
+        private final java.lang.Object content;
+        private final java.lang.Object dataId;
+        private final java.lang.Object namespaceId;
+        private final java.lang.Object appName;
+        private final java.lang.Object desc;
+        private final java.lang.Object group;
         private final java.lang.String tags;
-        private final java.lang.String type;
+        private final java.lang.Object type;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -180,20 +250,20 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dataId = software.amazon.jsii.Kernel.get(this, "dataId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.group = software.amazon.jsii.Kernel.get(this, "group", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.content = software.amazon.jsii.Kernel.get(this, "content", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataId = software.amazon.jsii.Kernel.get(this, "dataId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desc = software.amazon.jsii.Kernel.get(this, "desc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.group = software.amazon.jsii.Kernel.get(this, "group", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String content, final java.lang.String dataId, final java.lang.String namespaceId, final java.lang.String appName, final java.lang.String desc, final java.lang.String group, final java.lang.String tags, final java.lang.String type) {
+        protected Jsii$Proxy(final java.lang.Object content, final java.lang.Object dataId, final java.lang.Object namespaceId, final java.lang.Object appName, final java.lang.Object desc, final java.lang.Object group, final java.lang.String tags, final java.lang.Object type) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.content = java.util.Objects.requireNonNull(content, "content is required");
             this.dataId = java.util.Objects.requireNonNull(dataId, "dataId is required");
@@ -206,32 +276,32 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getContent() {
+        public final java.lang.Object getContent() {
             return this.content;
         }
 
         @Override
-        public final java.lang.String getDataId() {
+        public final java.lang.Object getDataId() {
             return this.dataId;
         }
 
         @Override
-        public final java.lang.String getNamespaceId() {
+        public final java.lang.Object getNamespaceId() {
             return this.namespaceId;
         }
 
         @Override
-        public final java.lang.String getAppName() {
+        public final java.lang.Object getAppName() {
             return this.appName;
         }
 
         @Override
-        public final java.lang.String getDesc() {
+        public final java.lang.Object getDesc() {
             return this.desc;
         }
 
         @Override
-        public final java.lang.String getGroup() {
+        public final java.lang.Object getGroup() {
             return this.group;
         }
 
@@ -241,7 +311,7 @@ public interface RosConfigurationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 

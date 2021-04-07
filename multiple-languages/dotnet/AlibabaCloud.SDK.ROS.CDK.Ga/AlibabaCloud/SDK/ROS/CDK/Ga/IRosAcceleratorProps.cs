@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: duration: The Duration of the GA instance
         /// </remarks>
-        [JsiiProperty(name: "duration", typeJson: "{\"primitive\":\"string\"}")]
-        string Duration
+        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Duration
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: pricingCycle: The PricingCycle of the GA instance.
         /// </remarks>
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"primitive\":\"string\"}")]
-        string PricingCycle
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PricingCycle
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: spec: The instance type of the GA instance
         /// </remarks>
-        [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-        string Spec
+        [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Spec
         {
             get;
         }
@@ -38,9 +38,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: acceleratorName: The Name of the GA instance
         /// </remarks>
-        [JsiiProperty(name: "acceleratorName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "acceleratorName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AcceleratorName
+        object? AcceleratorName
         {
             get
             {
@@ -51,9 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: autoPay: The AutoPay of the GA instance.
         /// </remarks>
-        [JsiiProperty(name: "autoPay", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoPay
+        object? AutoPay
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// <remarks>
         /// <strong>Property</strong>: autoUseCoupon: The AutoUseCoupon of the GA instance.
         /// </remarks>
-        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AutoUseCoupon
+        object? AutoUseCoupon
         {
             get
             {
@@ -85,58 +85,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <remarks>
             /// <strong>Property</strong>: duration: The Duration of the GA instance
             /// </remarks>
-            [JsiiProperty(name: "duration", typeJson: "{\"primitive\":\"string\"}")]
-            public string Duration
+            [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Duration
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: pricingCycle: The PricingCycle of the GA instance.
             /// </remarks>
-            [JsiiProperty(name: "pricingCycle", typeJson: "{\"primitive\":\"string\"}")]
-            public string PricingCycle
+            [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PricingCycle
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: spec: The instance type of the GA instance
             /// </remarks>
-            [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-            public string Spec
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Spec
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: acceleratorName: The Name of the GA instance
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "acceleratorName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AcceleratorName
+            [JsiiProperty(name: "acceleratorName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AcceleratorName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: autoPay: The AutoPay of the GA instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoPay", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoPay
+            [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoPay
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: autoUseCoupon: The AutoUseCoupon of the GA instance.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AutoUseCoupon
+            [JsiiProperty(name: "autoUseCoupon", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoUseCoupon
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

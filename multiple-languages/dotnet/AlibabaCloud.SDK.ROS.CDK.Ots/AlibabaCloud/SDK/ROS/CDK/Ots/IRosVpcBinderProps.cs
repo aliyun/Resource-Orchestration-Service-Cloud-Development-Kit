@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: instanceName: Instance name
         /// </remarks>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceName
         {
             get;
         }
@@ -37,10 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: instanceName: Instance name
             /// </remarks>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>

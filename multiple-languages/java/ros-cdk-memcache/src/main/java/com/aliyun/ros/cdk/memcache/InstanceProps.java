@@ -3,122 +3,209 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * Properties for defining a `ALIYUN::Memcache::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property autoRenew: Specifies whether to enable auto renewal.
+     * <p>
+     * Valid values:
+     * true
+     * false
+     * Note Default value: false.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoRenew() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
+     * Property autoRenewPeriod: The period of the auto renewal.
+     * <p>
+     * Unit: months. Valid values:
+     * 1
+     * 2
+     * 3
+     * 6
+     * 12
+     * Note You must specify this parameter if the value of the AutoRenew parameter is true.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoRenewPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
     }
 
     /**
+     * Property autoUseCoupon: Specifies whether to use a coupon.
+     * <p>
+     * Valid values:
+     * true
+     * false
+     * Note Default value: false.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoUseCoupon() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoUseCoupon() {
         return null;
     }
 
     /**
+     * Property backupPolicy: Backup policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackupPolicy() {
         return null;
     }
 
     /**
+     * Property capacity: The storage capacity of the instance.
+     * <p>
+     * Unit: MB.
+     * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+     * the CreateInstance operation.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
         return null;
     }
 
     /**
+     * Property chargeType: The billing method of the instance.
+     * <p>
+     * Valid values:
+     * PrePaid: subscription.
+     * PostPaid: pay-as-you-go.
+     * Note Default value: PostPaid.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
     /**
+     * Property config: The parameter configuration of the instance, in a JSON string.
+     * <p>
+     * For more information,
+     * see Set parameters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConfig() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfig() {
         return null;
     }
 
     /**
+     * Property couponNo: The coupon number.
+     * <p>
+     * Default value: youhuiquan_promotion_option_id_for_blank.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCouponNo() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCouponNo() {
         return null;
     }
 
     /**
+     * Property instanceClass: The instance type.
+     * <p>
+     * For more information, see Instance types.
+     * Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+     * the CreateInstance operation.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceClass() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceClass() {
         return null;
     }
 
     /**
+     * Property instanceName: The name of the instance.
+     * <p>
+     * The name can be 2 to 128 characters in length and must start
+     * with a letter. The following characters are not supported: at signs (&#64;), forward slashes (/), colons (:), equal signs (=), double quotation marks
+     * ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
+     * Property networkType: The network type of the instance.
+     * <p>
+     * Valid values:
+     * CLASSIC
+     * VPC
+     * Note Default value: CLASSIC.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
+     * Property password: The password of the instance.
+     * <p>
+     * The password can be 8 to 32 characters in length and
+     * must contain at least three types of the following characters: uppercase letters,
+     * lowercase letters, digits, and special characters. Special characters include ! at signs (&#64;), number signs (#), dollar signs ($), percent signs (%), carets (^),
+     * ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
+     * hyphens (-), and equal signs (=).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
     /**
+     * Property period: The subscription period.
+     * <p>
+     * You must specify this parameter if the value of the ChargeType
+     * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
+     * and 36.
+     * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property privateIpAddress: The internal IP address of the instance.
+     * <p>
+     * Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
+     * block of the VSwitch to which the instance belongs.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property vpcId: The ID of the VPC.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
+     * Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.
+     * <p>
+     * If set to:
+     * <p>
+     * <ul>
+     * <li>true: enables password free.</li>
+     * <li>false: disables password free.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcPasswordFree() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The ID of the VSwitch.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
+     * Property zoneId: The ID of the zone in which the instance is created.
+     * <p>
+     * You can call the DescribeRegions operation to query the latest region list.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -132,29 +219,33 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link InstanceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<InstanceProps> {
-        private java.lang.String autoRenew;
-        private java.lang.String autoRenewPeriod;
-        private java.lang.String autoUseCoupon;
+        private java.lang.Object autoRenew;
+        private java.lang.Object autoRenewPeriod;
+        private java.lang.Object autoUseCoupon;
         private java.lang.Object backupPolicy;
-        private java.lang.Number capacity;
-        private java.lang.String chargeType;
-        private java.lang.String config;
-        private java.lang.String couponNo;
-        private java.lang.String instanceClass;
-        private java.lang.String instanceName;
-        private java.lang.String networkType;
-        private java.lang.String password;
-        private java.lang.String period;
-        private java.lang.String privateIpAddress;
-        private java.lang.String resourceGroupId;
-        private java.lang.String vpcId;
+        private java.lang.Object capacity;
+        private java.lang.Object chargeType;
+        private java.lang.Object config;
+        private java.lang.Object couponNo;
+        private java.lang.Object instanceClass;
+        private java.lang.Object instanceName;
+        private java.lang.Object networkType;
+        private java.lang.Object password;
+        private java.lang.Object period;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object vpcId;
         private java.lang.Object vpcPasswordFree;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link InstanceProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto renewal.
+         *                  Valid values:
+         *                  true
+         *                  false
+         *                  Note Default value: false.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.String autoRenew) {
@@ -163,8 +254,29 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getAutoRenew}
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto renewal.
+         *                  Valid values:
+         *                  true
+         *                  false
+         *                  Note Default value: false.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod the value to be set.
+         * @param autoRenewPeriod Property autoRenewPeriod: The period of the auto renewal.
+         *                        Unit: months. Valid values:
+         *                        1
+         *                        2
+         *                        3
+         *                        6
+         *                        12
+         *                        Note You must specify this parameter if the value of the AutoRenew parameter is true.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.String autoRenewPeriod) {
@@ -173,8 +285,29 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getAutoRenewPeriod}
+         * @param autoRenewPeriod Property autoRenewPeriod: The period of the auto renewal.
+         *                        Unit: months. Valid values:
+         *                        1
+         *                        2
+         *                        3
+         *                        6
+         *                        12
+         *                        Note You must specify this parameter if the value of the AutoRenew parameter is true.
+         * @return {@code this}
+         */
+        public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.autoRenewPeriod = autoRenewPeriod;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getAutoUseCoupon}
-         * @param autoUseCoupon the value to be set.
+         * @param autoUseCoupon Property autoUseCoupon: Specifies whether to use a coupon.
+         *                      Valid values:
+         *                      true
+         *                      false
+         *                      Note Default value: false.
          * @return {@code this}
          */
         public Builder autoUseCoupon(java.lang.String autoUseCoupon) {
@@ -183,18 +316,22 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link InstanceProps#getBackupPolicy}
-         * @param backupPolicy the value to be set.
+         * Sets the value of {@link InstanceProps#getAutoUseCoupon}
+         * @param autoUseCoupon Property autoUseCoupon: Specifies whether to use a coupon.
+         *                      Valid values:
+         *                      true
+         *                      false
+         *                      Note Default value: false.
          * @return {@code this}
          */
-        public Builder backupPolicy(com.aliyun.ros.cdk.memcache.RosInstance.BackupPolicyProperty backupPolicy) {
-            this.backupPolicy = backupPolicy;
+        public Builder autoUseCoupon(com.aliyun.ros.cdk.core.IResolvable autoUseCoupon) {
+            this.autoUseCoupon = autoUseCoupon;
             return this;
         }
 
         /**
          * Sets the value of {@link InstanceProps#getBackupPolicy}
-         * @param backupPolicy the value to be set.
+         * @param backupPolicy Property backupPolicy: Backup policy.
          * @return {@code this}
          */
         public Builder backupPolicy(com.aliyun.ros.cdk.core.IResolvable backupPolicy) {
@@ -203,8 +340,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getBackupPolicy}
+         * @param backupPolicy Property backupPolicy: Backup policy.
+         * @return {@code this}
+         */
+        public Builder backupPolicy(com.aliyun.ros.cdk.memcache.RosInstance.BackupPolicyProperty backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getCapacity}
-         * @param capacity the value to be set.
+         * @param capacity Property capacity: The storage capacity of the instance.
+         *                 Unit: MB.
+         *                 Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+         *                 the CreateInstance operation.
          * @return {@code this}
          */
         public Builder capacity(java.lang.Number capacity) {
@@ -213,8 +363,25 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getCapacity}
+         * @param capacity Property capacity: The storage capacity of the instance.
+         *                 Unit: MB.
+         *                 Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+         *                 the CreateInstance operation.
+         * @return {@code this}
+         */
+        public Builder capacity(com.aliyun.ros.cdk.core.IResolvable capacity) {
+            this.capacity = capacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getChargeType}
-         * @param chargeType the value to be set.
+         * @param chargeType Property chargeType: The billing method of the instance.
+         *                   Valid values:
+         *                   PrePaid: subscription.
+         *                   PostPaid: pay-as-you-go.
+         *                   Note Default value: PostPaid.
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -223,8 +390,24 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getChargeType}
+         * @param chargeType Property chargeType: The billing method of the instance.
+         *                   Valid values:
+         *                   PrePaid: subscription.
+         *                   PostPaid: pay-as-you-go.
+         *                   Note Default value: PostPaid.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getConfig}
-         * @param config the value to be set.
+         * @param config Property config: The parameter configuration of the instance, in a JSON string.
+         *               For more information,
+         *               see Set parameters.
          * @return {@code this}
          */
         public Builder config(java.lang.String config) {
@@ -233,8 +416,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getConfig}
+         * @param config Property config: The parameter configuration of the instance, in a JSON string.
+         *               For more information,
+         *               see Set parameters.
+         * @return {@code this}
+         */
+        public Builder config(com.aliyun.ros.cdk.core.IResolvable config) {
+            this.config = config;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getCouponNo}
-         * @param couponNo the value to be set.
+         * @param couponNo Property couponNo: The coupon number.
+         *                 Default value: youhuiquan_promotion_option_id_for_blank.
          * @return {@code this}
          */
         public Builder couponNo(java.lang.String couponNo) {
@@ -243,8 +439,22 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getCouponNo}
+         * @param couponNo Property couponNo: The coupon number.
+         *                 Default value: youhuiquan_promotion_option_id_for_blank.
+         * @return {@code this}
+         */
+        public Builder couponNo(com.aliyun.ros.cdk.core.IResolvable couponNo) {
+            this.couponNo = couponNo;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getInstanceClass}
-         * @param instanceClass the value to be set.
+         * @param instanceClass Property instanceClass: The instance type.
+         *                      For more information, see Instance types.
+         *                      Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+         *                      the CreateInstance operation.
          * @return {@code this}
          */
         public Builder instanceClass(java.lang.String instanceClass) {
@@ -253,8 +463,24 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getInstanceClass}
+         * @param instanceClass Property instanceClass: The instance type.
+         *                      For more information, see Instance types.
+         *                      Note You need to pass at least one of the Capacity and InstanceClass parameters when calling
+         *                      the CreateInstance operation.
+         * @return {@code this}
+         */
+        public Builder instanceClass(com.aliyun.ros.cdk.core.IResolvable instanceClass) {
+            this.instanceClass = instanceClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getInstanceName}
-         * @param instanceName the value to be set.
+         * @param instanceName Property instanceName: The name of the instance.
+         *                     The name can be 2 to 128 characters in length and must start
+         *                     with a letter. The following characters are not supported: at signs (&#64;), forward slashes (/), colons (:), equal signs (=), double quotation marks
+         *                     ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -263,8 +489,25 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getInstanceName}
+         * @param instanceName Property instanceName: The name of the instance.
+         *                     The name can be 2 to 128 characters in length and must start
+         *                     with a letter. The following characters are not supported: at signs (&#64;), forward slashes (/), colons (:), equal signs (=), double quotation marks
+         *                     ("), angle brackets (&lt;&gt;), braces ([]), curly brackets ({}) and spaces.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getNetworkType}
-         * @param networkType the value to be set.
+         * @param networkType Property networkType: The network type of the instance.
+         *                    Valid values:
+         *                    CLASSIC
+         *                    VPC
+         *                    Note Default value: CLASSIC.
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
@@ -273,8 +516,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getNetworkType}
+         * @param networkType Property networkType: The network type of the instance.
+         *                    Valid values:
+         *                    CLASSIC
+         *                    VPC
+         *                    Note Default value: CLASSIC.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getPassword}
-         * @param password the value to be set.
+         * @param password Property password: The password of the instance.
+         *                 The password can be 8 to 32 characters in length and
+         *                 must contain at least three types of the following characters: uppercase letters,
+         *                 lowercase letters, digits, and special characters. Special characters include ! at signs (&#64;), number signs (#), dollar signs ($), percent signs (%), carets (^),
+         *                 ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
+         *                 hyphens (-), and equal signs (=).
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
@@ -283,8 +545,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getPassword}
+         * @param password Property password: The password of the instance.
+         *                 The password can be 8 to 32 characters in length and
+         *                 must contain at least three types of the following characters: uppercase letters,
+         *                 lowercase letters, digits, and special characters. Special characters include ! at signs (&#64;), number signs (#), dollar signs ($), percent signs (%), carets (^),
+         *                 ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
+         *                 hyphens (-), and equal signs (=).
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: The subscription period.
+         *               You must specify this parameter if the value of the ChargeType
+         *               parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
+         *               and 36.
+         *               Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
@@ -293,8 +574,24 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getPeriod}
+         * @param period Property period: The subscription period.
+         *               You must specify this parameter if the value of the ChargeType
+         *               parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
+         *               and 36.
+         *               Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress the value to be set.
+         * @param privateIpAddress Property privateIpAddress: The internal IP address of the instance.
+         *                         Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
+         *                         block of the VSwitch to which the instance belongs.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
@@ -303,8 +600,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getPrivateIpAddress}
+         * @param privateIpAddress Property privateIpAddress: The internal IP address of the instance.
+         *                         Note The internal IP address must be located in the Classless Inter-Domain Routing (CIDR)
+         *                         block of the VSwitch to which the instance belongs.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group ID.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -313,8 +622,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group ID.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: The ID of the VPC.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -323,8 +642,24 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getVpcPasswordFree}
-         * @param vpcPasswordFree the value to be set.
+         * @param vpcPasswordFree Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.
+         *                        If set to:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true: enables password free.</li>
+         *                        <li>false: disables password free.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder vpcPasswordFree(java.lang.Boolean vpcPasswordFree) {
@@ -334,7 +669,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getVpcPasswordFree}
-         * @param vpcPasswordFree the value to be set.
+         * @param vpcPasswordFree Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.
+         *                        If set to:
+         *                        <p>
+         *                        <ul>
+         *                        <li>true: enables password free.</li>
+         *                        <li>false: disables password free.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder vpcPasswordFree(com.aliyun.ros.cdk.core.IResolvable vpcPasswordFree) {
@@ -344,7 +685,7 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -353,11 +694,33 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link InstanceProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link InstanceProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: The ID of the zone in which the instance is created.
+         *               You can call the DescribeRegions operation to query the latest region list.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link InstanceProps#getZoneId}
+         * @param zoneId Property zoneId: The ID of the zone in which the instance is created.
+         *               You can call the DescribeRegions operation to query the latest region list.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -378,25 +741,25 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements InstanceProps {
-        private final java.lang.String autoRenew;
-        private final java.lang.String autoRenewPeriod;
-        private final java.lang.String autoUseCoupon;
+        private final java.lang.Object autoRenew;
+        private final java.lang.Object autoRenewPeriod;
+        private final java.lang.Object autoUseCoupon;
         private final java.lang.Object backupPolicy;
-        private final java.lang.Number capacity;
-        private final java.lang.String chargeType;
-        private final java.lang.String config;
-        private final java.lang.String couponNo;
-        private final java.lang.String instanceClass;
-        private final java.lang.String instanceName;
-        private final java.lang.String networkType;
-        private final java.lang.String password;
-        private final java.lang.String period;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String vpcId;
+        private final java.lang.Object capacity;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object config;
+        private final java.lang.Object couponNo;
+        private final java.lang.Object instanceClass;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object networkType;
+        private final java.lang.Object password;
+        private final java.lang.Object period;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object vpcId;
         private final java.lang.Object vpcPasswordFree;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -404,31 +767,31 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenewPeriod = software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoUseCoupon = software.amazon.jsii.Kernel.get(this, "autoUseCoupon", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupPolicy = software.amazon.jsii.Kernel.get(this, "backupPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.couponNo = software.amazon.jsii.Kernel.get(this, "couponNo", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.couponNo = software.amazon.jsii.Kernel.get(this, "couponNo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcPasswordFree = software.amazon.jsii.Kernel.get(this, "vpcPasswordFree", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String autoRenew, final java.lang.String autoRenewPeriod, final java.lang.String autoUseCoupon, final java.lang.Object backupPolicy, final java.lang.Number capacity, final java.lang.String chargeType, final java.lang.String config, final java.lang.String couponNo, final java.lang.String instanceClass, final java.lang.String instanceName, final java.lang.String networkType, final java.lang.String password, final java.lang.String period, final java.lang.String privateIpAddress, final java.lang.String resourceGroupId, final java.lang.String vpcId, final java.lang.Object vpcPasswordFree, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object autoRenew, final java.lang.Object autoRenewPeriod, final java.lang.Object autoUseCoupon, final java.lang.Object backupPolicy, final java.lang.Object capacity, final java.lang.Object chargeType, final java.lang.Object config, final java.lang.Object couponNo, final java.lang.Object instanceClass, final java.lang.Object instanceName, final java.lang.Object networkType, final java.lang.Object password, final java.lang.Object period, final java.lang.Object privateIpAddress, final java.lang.Object resourceGroupId, final java.lang.Object vpcId, final java.lang.Object vpcPasswordFree, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.autoRenew = autoRenew;
             this.autoRenewPeriod = autoRenewPeriod;
@@ -452,17 +815,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAutoRenew() {
+        public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
         }
 
         @Override
-        public final java.lang.String getAutoRenewPeriod() {
+        public final java.lang.Object getAutoRenewPeriod() {
             return this.autoRenewPeriod;
         }
 
         @Override
-        public final java.lang.String getAutoUseCoupon() {
+        public final java.lang.Object getAutoUseCoupon() {
             return this.autoUseCoupon;
         }
 
@@ -472,62 +835,62 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getCapacity() {
+        public final java.lang.Object getCapacity() {
             return this.capacity;
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.String getConfig() {
+        public final java.lang.Object getConfig() {
             return this.config;
         }
 
         @Override
-        public final java.lang.String getCouponNo() {
+        public final java.lang.Object getCouponNo() {
             return this.couponNo;
         }
 
         @Override
-        public final java.lang.String getInstanceClass() {
+        public final java.lang.Object getInstanceClass() {
             return this.instanceClass;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
         @Override
-        public final java.lang.String getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
@@ -537,12 +900,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

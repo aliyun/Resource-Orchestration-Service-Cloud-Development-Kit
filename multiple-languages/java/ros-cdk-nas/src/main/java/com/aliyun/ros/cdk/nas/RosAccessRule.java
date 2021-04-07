@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS template type:  `ALIYUN::NAS::AccessRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessRule")
 public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAccessRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAccessRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAccessRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAccessRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAccessGroupName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "accessGroupName", java.util.Objects.requireNonNull(value, "accessGroupName is required"));
+    }
+
+    /**
+     */
+    public void setAccessGroupName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "accessGroupName", java.util.Objects.requireNonNull(value, "accessGroupName is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSourceCidrIp() {
-        return software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceCidrIp() {
+        return software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
-        return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setSourceCidrIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sourceCidrIp", java.util.Objects.requireNonNull(value, "sourceCidrIp is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
+        return software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRwAccessType() {
-        return software.amazon.jsii.Kernel.get(this, "rwAccessType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPriority(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "priority", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRwAccessType() {
+        return software.amazon.jsii.Kernel.get(this, "rwAccessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,13 +129,25 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getUserAccessType() {
-        return software.amazon.jsii.Kernel.get(this, "userAccessType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRwAccessType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "rwAccessType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUserAccessType() {
+        return software.amazon.jsii.Kernel.get(this, "userAccessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setUserAccessType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "userAccessType", value);
+    }
+
+    /**
+     */
+    public void setUserAccessType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "userAccessType", value);
     }
 
@@ -155,12 +185,28 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.accessGroupName(accessGroupName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param accessGroupName This parameter is required.
+         */
+        public Builder accessGroupName(final com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
+            this.props.accessGroupName(accessGroupName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param sourceCidrIp This parameter is required.
          */
         public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceCidrIp This parameter is required.
+         */
+        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
             this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
@@ -173,6 +219,14 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.priority(priority);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param priority This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -182,12 +236,28 @@ public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.rwAccessType(rwAccessType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param rwAccessType This parameter is required.
+         */
+        public Builder rwAccessType(final com.aliyun.ros.cdk.core.IResolvable rwAccessType) {
+            this.props.rwAccessType(rwAccessType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param userAccessType This parameter is required.
          */
         public Builder userAccessType(final java.lang.String userAccessType) {
+            this.props.userAccessType(userAccessType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param userAccessType This parameter is required.
+         */
+        public Builder userAccessType(final com.aliyun.ros.cdk.core.IResolvable userAccessType) {
             this.props.userAccessType(userAccessType);
             return this;
         }

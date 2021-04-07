@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbClusterId
         {
             get;
         }
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
         /// ranges from 1 to 32.
         /// </remarks>
-        [JsiiProperty(name: "securityIps", typeJson: "{\"primitive\":\"string\"}")]
-        string SecurityIps
+        [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SecurityIps
         {
             get;
         }
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// the Default whitelist group is modified by default.
         /// Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DbClusterIpArrayName
+        object? DbClusterIpArrayName
         {
             get
             {
@@ -58,10 +58,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// <remarks>
             /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
             /// </remarks>
-            [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbClusterId
+            [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -73,10 +73,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
             /// ranges from 1 to 32.
             /// </remarks>
-            [JsiiProperty(name: "securityIps", typeJson: "{\"primitive\":\"string\"}")]
-            public string SecurityIps
+            [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SecurityIps
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -85,10 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DbClusterIpArrayName
+            [JsiiProperty(name: "dbClusterIpArrayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbClusterIpArrayName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::SSHKeyPairAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.693Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.361Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachment")
 public class RosSSHKeyPairAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -48,14 +48,14 @@ public class RosSSHKeyPairAttachment extends com.aliyun.ros.cdk.core.RosResource
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -81,13 +81,19 @@ public class RosSSHKeyPairAttachment extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getKeyPairName() {
-        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName() {
+        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setKeyPairName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", java.util.Objects.requireNonNull(value, "keyPairName is required"));
+    }
+
+    /**
+     */
+    public void setKeyPairName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "keyPairName", java.util.Objects.requireNonNull(value, "keyPairName is required"));
     }
 
@@ -139,6 +145,14 @@ public class RosSSHKeyPairAttachment extends com.aliyun.ros.cdk.core.RosResource
          * @param keyPairName This parameter is required.
          */
         public Builder keyPairName(final java.lang.String keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
             return this;
         }

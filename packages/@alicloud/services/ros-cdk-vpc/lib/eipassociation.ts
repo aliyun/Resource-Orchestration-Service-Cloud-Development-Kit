@@ -11,12 +11,12 @@ export interface EIPAssociationProps {
     /**
      * Property allocationId: EIP instance id to bind.
      */
-    readonly allocationId: string;
+    readonly allocationId: string | ros.IResolvable;
 
     /**
      * Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property mode: The mode of association. Valid values:
@@ -25,13 +25,13 @@ export interface EIPAssociationProps {
      * MULTI_BINDED: Multi-EIP to ENI mode.
      * This is required only when the value of InstanceType is NetworkInterface.
      */
-    readonly mode?: string;
+    readonly mode?: string | ros.IResolvable;
 
     /**
      * Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
      * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 }
 
 /**
@@ -47,12 +47,12 @@ export class EIPAssociation extends ros.Resource {
     /**
      * Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
-    public readonly attrAllocationId: any;
+    public readonly attrAllocationId: ros.IResolvable;
 
     /**
      * Attribute EipAddress: IP address of created EIP.
      */
-    public readonly attrEipAddress: any;
+    public readonly attrEipAddress: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::EIPAssociation`.

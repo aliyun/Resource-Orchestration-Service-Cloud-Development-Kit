@@ -33,59 +33,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <summary>Attribute InternetAccess: Whether enable Internet access.</summary>
-        [JsiiProperty(name: "attrInternetAccess", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInternetAccess
+        [JsiiProperty(name: "attrInternetAccess", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetAccess
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LogProject: Log project of service.</summary>
-        [JsiiProperty(name: "attrLogProject", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLogProject
+        [JsiiProperty(name: "attrLogProject", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogProject
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Logstore: Log store of service.</summary>
-        [JsiiProperty(name: "attrLogstore", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLogstore
+        [JsiiProperty(name: "attrLogstore", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogstore
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Role: Role of service.</summary>
-        [JsiiProperty(name: "attrRole", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRole
+        [JsiiProperty(name: "attrRole", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRole
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ServiceId: The service ID.</summary>
-        [JsiiProperty(name: "attrServiceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrServiceId
+        [JsiiProperty(name: "attrServiceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ServiceName: The service name.</summary>
-        [JsiiProperty(name: "attrServiceName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrServiceName
+        [JsiiProperty(name: "attrServiceName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrServiceName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Tags: Tags of service.</summary>
-        [JsiiProperty(name: "attrTags", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTags
+        [JsiiProperty(name: "attrTags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTags
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VpcId: VPC ID.</summary>
-        [JsiiProperty(name: "attrVpcId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcId
+        [JsiiProperty(name: "attrVpcId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

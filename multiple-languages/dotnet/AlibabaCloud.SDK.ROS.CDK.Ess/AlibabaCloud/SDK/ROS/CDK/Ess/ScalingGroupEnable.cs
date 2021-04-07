@@ -33,59 +33,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <summary>Attribute LifecycleState: The scaling group status.</summary>
-        [JsiiProperty(name: "attrLifecycleState", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLifecycleState
+        [JsiiProperty(name: "attrLifecycleState", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLifecycleState
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingGroupId: The scaling group id.</summary>
-        [JsiiProperty(name: "attrScalingGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingGroupId
+        [JsiiProperty(name: "attrScalingGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingInstanceDetails: Detail information of auto created scaling instances.</summary>
-        [JsiiProperty(name: "attrScalingInstanceDetails", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingInstanceDetails
+        [JsiiProperty(name: "attrScalingInstanceDetails", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingInstanceDetails
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingInstances: The auto created scaling instances.</summary>
-        [JsiiProperty(name: "attrScalingInstances", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingInstances
+        [JsiiProperty(name: "attrScalingInstances", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingInstances
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingRuleArisExecuteErrorInfo: The error info of the execution of scaling rule aris.</summary>
-        [JsiiProperty(name: "attrScalingRuleArisExecuteErrorInfo", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingRuleArisExecuteErrorInfo
+        [JsiiProperty(name: "attrScalingRuleArisExecuteErrorInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingRuleArisExecuteErrorInfo
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingRuleArisExecuteResultInstancesAdded: Instances added via the execution of scaling rule aris.</summary>
-        [JsiiProperty(name: "attrScalingRuleArisExecuteResultInstancesAdded", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingRuleArisExecuteResultInstancesAdded
+        [JsiiProperty(name: "attrScalingRuleArisExecuteResultInstancesAdded", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingRuleArisExecuteResultInstancesAdded
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingRuleArisExecuteResultInstancesRemoved: Instances removed via the execution of scaling rule aris.</summary>
-        [JsiiProperty(name: "attrScalingRuleArisExecuteResultInstancesRemoved", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingRuleArisExecuteResultInstancesRemoved
+        [JsiiProperty(name: "attrScalingRuleArisExecuteResultInstancesRemoved", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingRuleArisExecuteResultInstancesRemoved
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ScalingRuleArisExecuteResultNumberOfAddedInstances: The number of added vm via the execution of scaling rule aris.</summary>
-        [JsiiProperty(name: "attrScalingRuleArisExecuteResultNumberOfAddedInstances", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrScalingRuleArisExecuteResultNumberOfAddedInstances
+        [JsiiProperty(name: "attrScalingRuleArisExecuteResultNumberOfAddedInstances", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrScalingRuleArisExecuteResultNumberOfAddedInstances
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

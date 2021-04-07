@@ -3,18 +3,24 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Properties for defining a `ALIYUN::DNS::Domain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.092Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainProps")
 @software.amazon.jsii.Jsii.Proxy(RosDomainProps.Jsii$Proxy.class)
 public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomainName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> getTags() {
         return null;
     }
 
@@ -28,8 +34,9 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDomainProps> {
-        private java.lang.String domainName;
-        private java.lang.String groupId;
+        private java.lang.Object domainName;
+        private java.lang.Object groupId;
+        private java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosDomainProps#getDomainName}
@@ -37,6 +44,16 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
+            this.domainName = domainName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainProps#getDomainName}
+         * @param domainName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {
             this.domainName = domainName;
             return this;
         }
@@ -52,13 +69,34 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDomainProps#getGroupId}
+         * @param groupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDomainProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDomainProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosDomainProps build() {
-            return new Jsii$Proxy(domainName, groupId);
+            return new Jsii$Proxy(domainName, groupId, tags);
         }
     }
 
@@ -67,8 +105,9 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDomainProps {
-        private final java.lang.String domainName;
-        private final java.lang.String groupId;
+        private final java.lang.Object domainName;
+        private final java.lang.Object groupId;
+        private final java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -76,27 +115,35 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.dns.RosDomain.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domainName, final java.lang.String groupId) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object groupId, final java.util.List<? extends com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
             this.groupId = groupId;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getDomainName() {
+        public final java.lang.Object getDomainName() {
             return this.domainName;
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.dns.RosDomain.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -108,6 +155,9 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
             data.set("domainName", om.valueToTree(this.getDomainName()));
             if (this.getGroupId() != null) {
                 data.set("groupId", om.valueToTree(this.getGroupId()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -128,13 +178,15 @@ public interface RosDomainProps extends software.amazon.jsii.JsiiSerializable {
             RosDomainProps.Jsii$Proxy that = (RosDomainProps.Jsii$Proxy) o;
 
             if (!domainName.equals(that.domainName)) return false;
-            return this.groupId != null ? this.groupId.equals(that.groupId) : that.groupId == null;
+            if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.domainName.hashCode();
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

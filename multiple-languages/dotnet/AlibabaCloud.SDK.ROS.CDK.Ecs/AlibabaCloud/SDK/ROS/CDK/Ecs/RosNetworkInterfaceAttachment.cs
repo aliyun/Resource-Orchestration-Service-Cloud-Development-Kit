@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Attribute</strong>: NetworkInterfaceId: ID of your Network Interface.
         /// </remarks>
-        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNetworkInterfaceId
+        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetworkInterfaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: TrunkNetworkInstanceId: ID of Trunk Network Interface.
         /// </remarks>
-        [JsiiProperty(name: "attrTrunkNetworkInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTrunkNetworkInstanceId
+        [JsiiProperty(name: "attrTrunkNetworkInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTrunkNetworkInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,20 +78,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: instanceId: ECS instance id
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: networkInterfaceId: Network interface id
         /// </remarks>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string NetworkInterfaceId
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object NetworkInterfaceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -99,10 +99,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: trunkNetworkInstanceId: undefined
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "trunkNetworkInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? TrunkNetworkInstanceId
+        [JsiiProperty(name: "trunkNetworkInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TrunkNetworkInstanceId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

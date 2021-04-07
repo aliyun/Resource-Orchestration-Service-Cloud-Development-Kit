@@ -15,8 +15,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
         /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// Valid values: String and StringList.
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Type
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// The value must be 1 to 4096 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Value
+        [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Value
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// MaxLength: The maximum length of the parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "constraints", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Constraints
+        [JsiiProperty(name: "constraints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Constraints
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// The description must be 1 to 200 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;

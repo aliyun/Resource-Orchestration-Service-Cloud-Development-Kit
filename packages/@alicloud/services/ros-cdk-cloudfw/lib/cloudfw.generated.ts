@@ -10,12 +10,12 @@ export interface RosAddressBookProps {
     /**
      * @Property description: Address book description.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * @Property groupName: Name Address book.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property groupType: Type the address book, the optional values ​​are:
@@ -24,7 +24,7 @@ export interface RosAddressBookProps {
      * port: Port Address Book
      * tag: ECS label address book
      */
-    readonly groupType: string;
+    readonly groupType: string | ros.IResolvable;
 
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -33,7 +33,7 @@ export interface RosAddressBookProps {
      * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
-    readonly addressList?: string;
+    readonly addressList?: string | ros.IResolvable;
 
     /**
      * @Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book. Default to false.
@@ -43,7 +43,7 @@ export interface RosAddressBookProps {
     /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 
     /**
      * @Property tagList:
@@ -55,7 +55,7 @@ export interface RosAddressBookProps {
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
      * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
      */
-    readonly tagRelation?: string;
+    readonly tagRelation?: string | ros.IResolvable;
 }
 
 /**
@@ -156,7 +156,7 @@ export class RosAddressBook extends ros.RosResource {
     /**
      * @Attribute GroupUuid: After a successful return to the address book to add unique identification ID.
      */
-    public readonly attrGroupUuid: any;
+    public readonly attrGroupUuid: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -164,12 +164,12 @@ export class RosAddressBook extends ros.RosResource {
     /**
      * @Property description: Address book description.
      */
-    public description: string;
+    public description: string | ros.IResolvable;
 
     /**
      * @Property groupName: Name Address book.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property groupType: Type the address book, the optional values ​​are:
@@ -178,7 +178,7 @@ export class RosAddressBook extends ros.RosResource {
      * port: Port Address Book
      * tag: ECS label address book
      */
-    public groupType: string;
+    public groupType: string | ros.IResolvable;
 
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -187,7 +187,7 @@ export class RosAddressBook extends ros.RosResource {
      * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
-    public addressList: string | undefined;
+    public addressList: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book. Default to false.
@@ -197,7 +197,7 @@ export class RosAddressBook extends ros.RosResource {
     /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
-    public regionId: string | undefined;
+    public regionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tagList:
@@ -209,7 +209,7 @@ export class RosAddressBook extends ros.RosResource {
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
      * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
      */
-    public tagRelation: string | undefined;
+    public tagRelation: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CLOUDFW::AddressBook`.
@@ -220,7 +220,7 @@ export class RosAddressBook extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAddressBookProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAddressBook.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupUuid = ros.Token.asString(this.getAtt('GroupUuid'));
+        this.attrGroupUuid = this.getAtt('GroupUuid');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
@@ -259,11 +259,11 @@ export namespace RosAddressBook {
         /**
          * @Property tagKey: ECS labels to be matched Key.
          */
-        readonly tagKey?: string;
+        readonly tagKey?: string | ros.IResolvable;
         /**
          * @Property tagValue: ECS tag value to be matched.
          */
-        readonly tagValue?: string;
+        readonly tagValue?: string | ros.IResolvable;
     }
 }
 /**
@@ -309,19 +309,19 @@ export interface RosControlPolicyProps {
      * drop: rejected
      * log: Observation
      */
-    readonly aclAction: string;
+    readonly aclAction: string | ros.IResolvable;
 
     /**
      * @Property applicationName: Application types supported by the security policy.
      * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
      * NOTE ANY indicates that the policy is applied to all types of applications.
      */
-    readonly applicationName: string;
+    readonly applicationName: string | ros.IResolvable;
 
     /**
      * @Property description: Security access control policy description information.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * @Property destination: Security Access Control destination address policy.
@@ -330,7 +330,7 @@ export interface RosControlPolicyProps {
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
      */
-    readonly destination: string;
+    readonly destination: string | ros.IResolvable;
 
     /**
      * @Property destinationType: Security Access Control destination address type of policy.
@@ -339,26 +339,26 @@ export interface RosControlPolicyProps {
      * domain: The purpose domain
      * location: The purpose area
      */
-    readonly destinationType: string;
+    readonly destinationType: string | ros.IResolvable;
 
     /**
      * @Property direction: Security access control traffic direction policies.
      * in: internal and external traffic access control
      * out: within the flow of external access control
      */
-    readonly direction: string;
+    readonly direction: string | ros.IResolvable;
 
     /**
      * @Property newOrder: Security access control priority policy in force. Priority number increments sequentially from 1, lower the priority number, the higher the priority.
      * Description -1 indicates the lowest priority.
      */
-    readonly newOrder: number;
+    readonly newOrder: number | ros.IResolvable;
 
     /**
      * @Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
      * Allowed values: ANY, TCP, UDP, ICMP
      */
-    readonly proto: string;
+    readonly proto: string | ros.IResolvable;
 
     /**
      * @Property source: Security access control source address policy.
@@ -366,7 +366,7 @@ export interface RosControlPolicyProps {
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
-    readonly source: string;
+    readonly source: string | ros.IResolvable;
 
     /**
      * @Property sourceType: Security access control source address type of policy.
@@ -374,31 +374,31 @@ export interface RosControlPolicyProps {
      * group: source address book
      * location: the source area
      */
-    readonly sourceType: string;
+    readonly sourceType: string | ros.IResolvable;
 
     /**
      * @Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
-    readonly destPort?: string;
+    readonly destPort?: string | ros.IResolvable;
 
     /**
      * @Property destPortGroup: Security access control policy access traffic destination port address book name.
      * Description DestPortType is group, set the item.
      */
-    readonly destPortGroup?: string;
+    readonly destPortGroup?: string | ros.IResolvable;
 
     /**
      * @Property destPortType: Security access control policy access destination port traffic type.
      * port: Port
      * group: port address book
      */
-    readonly destPortType?: string;
+    readonly destPortType?: string | ros.IResolvable;
 
     /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 }
 
 /**
@@ -562,7 +562,7 @@ export class RosControlPolicy extends ros.RosResource {
     /**
      * @Attribute AclUuid: Security access control ID that uniquely identifies the policy.
      */
-    public readonly attrAclUuid: any;
+    public readonly attrAclUuid: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -573,19 +573,19 @@ export class RosControlPolicy extends ros.RosResource {
      * drop: rejected
      * log: Observation
      */
-    public aclAction: string;
+    public aclAction: string | ros.IResolvable;
 
     /**
      * @Property applicationName: Application types supported by the security policy.
      * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
      * NOTE ANY indicates that the policy is applied to all types of applications.
      */
-    public applicationName: string;
+    public applicationName: string | ros.IResolvable;
 
     /**
      * @Property description: Security access control policy description information.
      */
-    public description: string;
+    public description: string | ros.IResolvable;
 
     /**
      * @Property destination: Security Access Control destination address policy.
@@ -594,7 +594,7 @@ export class RosControlPolicy extends ros.RosResource {
      * When DestinationType for the domain, Destination for the purpose of a domain name. For example:. * Aliyuncs.com
      * When DestinationType as location, Destination area for the purpose (see below position encoding specific regions). For example: [ "BJ11", "ZB"]
      */
-    public destination: string;
+    public destination: string | ros.IResolvable;
 
     /**
      * @Property destinationType: Security Access Control destination address type of policy.
@@ -603,26 +603,26 @@ export class RosControlPolicy extends ros.RosResource {
      * domain: The purpose domain
      * location: The purpose area
      */
-    public destinationType: string;
+    public destinationType: string | ros.IResolvable;
 
     /**
      * @Property direction: Security access control traffic direction policies.
      * in: internal and external traffic access control
      * out: within the flow of external access control
      */
-    public direction: string;
+    public direction: string | ros.IResolvable;
 
     /**
      * @Property newOrder: Security access control priority policy in force. Priority number increments sequentially from 1, lower the priority number, the higher the priority.
      * Description -1 indicates the lowest priority.
      */
-    public newOrder: number;
+    public newOrder: number | ros.IResolvable;
 
     /**
      * @Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
      * Allowed values: ANY, TCP, UDP, ICMP
      */
-    public proto: string;
+    public proto: string | ros.IResolvable;
 
     /**
      * @Property source: Security access control source address policy.
@@ -630,7 +630,7 @@ export class RosControlPolicy extends ros.RosResource {
      * When SourceType as a group, Source name for the source address book. For example: db_group
      * When SourceType as location, Source source region (specific region position encoder see below). For example, [ "BJ11", "ZB"]
      */
-    public source: string;
+    public source: string | ros.IResolvable;
 
     /**
      * @Property sourceType: Security access control source address type of policy.
@@ -638,31 +638,31 @@ export class RosControlPolicy extends ros.RosResource {
      * group: source address book
      * location: the source area
      */
-    public sourceType: string;
+    public sourceType: string | ros.IResolvable;
 
     /**
      * @Property destPort: Security access control policy access traffic destination port.
      * Note When DestPortType to port, set the item.
      */
-    public destPort: string | undefined;
+    public destPort: string | ros.IResolvable | undefined;
 
     /**
      * @Property destPortGroup: Security access control policy access traffic destination port address book name.
      * Description DestPortType is group, set the item.
      */
-    public destPortGroup: string | undefined;
+    public destPortGroup: string | ros.IResolvable | undefined;
 
     /**
      * @Property destPortType: Security access control policy access destination port traffic type.
      * port: Port
      * group: port address book
      */
-    public destPortType: string | undefined;
+    public destPortType: string | ros.IResolvable | undefined;
 
     /**
      * @Property regionId: Region ID. Default to cn-hangzhou.
      */
-    public regionId: string | undefined;
+    public regionId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CLOUDFW::ControlPolicy`.
@@ -673,7 +673,7 @@ export class RosControlPolicy extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosControlPolicyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosControlPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAclUuid = ros.Token.asString(this.getAtt('AclUuid'));
+        this.attrAclUuid = this.getAtt('AclUuid');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclAction = props.aclAction;

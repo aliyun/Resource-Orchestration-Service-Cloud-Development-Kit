@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// Specifies the switch ID for the VPC.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VSwitchId
         {
             get;
         }
@@ -22,9 +22,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// It is a string of [2, 256] English or Chinese characters.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -36,9 +36,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
         /// </remarks>
-        [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NetworkInterfaceName
+        object? NetworkInterfaceName
         {
             get
             {
@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
         /// </remarks>
-        [JsiiProperty(name: "primaryIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "primaryIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PrimaryIpAddress
+        object? PrimaryIpAddress
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
         /// </remarks>
-        [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? PrivateIpAddresses
+        object? PrivateIpAddresses
         {
             get
             {
@@ -75,9 +75,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Property resourceGroupId: Resource group id.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -89,9 +89,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The security group and the ENI must be in a same VPC.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityGroupId
+        object? SecurityGroupId
         {
             get
             {
@@ -103,9 +103,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// The security groups and the ENI must belong to the same VPC.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? SecurityGroupIds
+        object? SecurityGroupIds
         {
             get
             {
@@ -117,9 +117,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosNetworkInterface.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Ecs.RosNetworkInterface.ITagsProperty[]? Tags
         {
             get
             {
@@ -139,10 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// Specifies the switch ID for the VPC.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VSwitchId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Description of your ENI.</summary>
@@ -150,10 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// It is a string of [2, 256] English or Chinese characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property networkInterfaceName: Name of your ENI.</summary>
@@ -161,10 +161,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// It is a string of [2, 128]  Chinese or English characters. It must begin with a letter and can contain numbers, underscores (_), colons (:), or hyphens (-).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NetworkInterfaceName
+            [JsiiProperty(name: "networkInterfaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NetworkInterfaceName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property primaryIpAddress: The primary private IP address of the ENI.</summary>
@@ -172,10 +172,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The specified IP address must have the same Host ID as the VSwitch. If no IP addresses are specified, a random network ID is assigned for the ENI.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "primaryIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PrimaryIpAddress
+            [JsiiProperty(name: "primaryIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrimaryIpAddress
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateIpAddresses: Specifies secondary private IP addresses of the ENI.</summary>
@@ -183,18 +183,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// This IP address must be an available IP address in the CIDR block of the VSwitch to which the ENI belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? PrivateIpAddresses
+            [JsiiProperty(name: "privateIpAddresses", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? PrivateIpAddresses
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceGroupId: Resource group id.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityGroupId: The ID of the security group that the ENI joins.</summary>
@@ -202,10 +202,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The security group and the ENI must be in a same VPC.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityGroupIds: The IDs of the security groups that the ENI joins.</summary>
@@ -213,10 +213,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// The security groups and the ENI must belong to the same VPC.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? SecurityGroupIds
+            [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? SecurityGroupIds
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to instance.</summary>
@@ -224,10 +224,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosNetworkInterface.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ecs.RosNetworkInterface.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosNetworkInterface.ITagsProperty[]?>();
             }
         }
     }

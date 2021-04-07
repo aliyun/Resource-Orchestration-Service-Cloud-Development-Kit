@@ -3,26 +3,52 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::Database`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(DatabaseProps.Jsii$Proxy.class)
 public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property characterSetName: The character set you want to use for the database.
+     * <p>
+     * Valid values:
+     * MySQL and MariaDB: utf8 | gbk | latin1 | utf8mb4.
+     * SQL Server: Chinese_PRC_CI_AS | Chinese_PRC_CS_AS | SQL_Latin1_General_CP1_CI_AS | SQL_Latin1_General_CP1_CS_AS
+     * | Chinese_PRC_BIN.
+     * PostgreSQL: KOI8U | UTF8 | WIN866 | WIN874 | WIN1250 | WIN1251 | WIN1252 | WIN1253 | WIN1254 |
+     * WIN1255 | WIN1256 | WIN1257 | WIN1258 | EUC_CN | EUC_KR | EUC_TW | EUC_JP | EUC_JIS_2004
+     * | KOI8R | MULE_INTERNAL | LATIN1 | LATIN2 | LATIN3 | LATIN4 | LATIN5 | LATIN6 | LATIN7
+     * | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
+     * SQL_ASCII.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCharacterSetName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCharacterSetName();
 
     /**
+     * Property dbInstanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
+     * Property dbName: The name of the database you want to create.
+     * <p>
+     * Note
+     * The name must be 2 to 64 characters in length.
+     * The name must start with a lowercase letter and end with a lowercase letter or digit.
+     * The name can contain lowercase letters, digits, underscores (_), and hyphens (-).
+     * The name must be unique in the instance.
+     * For more information about invalid characters, see Forbidden keywords table.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
     /**
+     * Property dbDescription: The description of the database.
+     * <p>
+     * The description must be 2 to 256 characters in length.
+     * The description must start with a letter and can contain letters, digits, underscores
+     * (_), and hyphens (-).
+     * Note The description cannot start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
         return null;
     }
 
@@ -36,14 +62,23 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DatabaseProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DatabaseProps> {
-        private java.lang.String characterSetName;
-        private java.lang.String dbInstanceId;
-        private java.lang.String dbName;
-        private java.lang.String dbDescription;
+        private java.lang.Object characterSetName;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object dbName;
+        private java.lang.Object dbDescription;
 
         /**
          * Sets the value of {@link DatabaseProps#getCharacterSetName}
-         * @param characterSetName the value to be set. This parameter is required.
+         * @param characterSetName Property characterSetName: The character set you want to use for the database. This parameter is required.
+         *                         Valid values:
+         *                         MySQL and MariaDB: utf8 | gbk | latin1 | utf8mb4.
+         *                         SQL Server: Chinese_PRC_CI_AS | Chinese_PRC_CS_AS | SQL_Latin1_General_CP1_CI_AS | SQL_Latin1_General_CP1_CS_AS
+         *                         | Chinese_PRC_BIN.
+         *                         PostgreSQL: KOI8U | UTF8 | WIN866 | WIN874 | WIN1250 | WIN1251 | WIN1252 | WIN1253 | WIN1254 |
+         *                         WIN1255 | WIN1256 | WIN1257 | WIN1258 | EUC_CN | EUC_KR | EUC_TW | EUC_JP | EUC_JIS_2004
+         *                         | KOI8R | MULE_INTERNAL | LATIN1 | LATIN2 | LATIN3 | LATIN4 | LATIN5 | LATIN6 | LATIN7
+         *                         | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
+         *                         SQL_ASCII.
          * @return {@code this}
          */
         public Builder characterSetName(java.lang.String characterSetName) {
@@ -52,8 +87,27 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DatabaseProps#getCharacterSetName}
+         * @param characterSetName Property characterSetName: The character set you want to use for the database. This parameter is required.
+         *                         Valid values:
+         *                         MySQL and MariaDB: utf8 | gbk | latin1 | utf8mb4.
+         *                         SQL Server: Chinese_PRC_CI_AS | Chinese_PRC_CS_AS | SQL_Latin1_General_CP1_CI_AS | SQL_Latin1_General_CP1_CS_AS
+         *                         | Chinese_PRC_BIN.
+         *                         PostgreSQL: KOI8U | UTF8 | WIN866 | WIN874 | WIN1250 | WIN1251 | WIN1252 | WIN1253 | WIN1254 |
+         *                         WIN1255 | WIN1256 | WIN1257 | WIN1258 | EUC_CN | EUC_KR | EUC_TW | EUC_JP | EUC_JIS_2004
+         *                         | KOI8R | MULE_INTERNAL | LATIN1 | LATIN2 | LATIN3 | LATIN4 | LATIN5 | LATIN6 | LATIN7
+         *                         | LATIN8 | LATIN9 | LATIN10 | ISO_8859_5 | ISO_8859_6 | ISO_8859_7 | ISO_8859_8 |
+         *                         SQL_ASCII.
+         * @return {@code this}
+         */
+        public Builder characterSetName(com.aliyun.ros.cdk.core.IResolvable characterSetName) {
+            this.characterSetName = characterSetName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DatabaseProps#getDbInstanceId}
-         * @param dbInstanceId the value to be set. This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder dbInstanceId(java.lang.String dbInstanceId) {
@@ -62,8 +116,24 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DatabaseProps#getDbInstanceId}
+         * @param dbInstanceId Property dbInstanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DatabaseProps#getDbName}
-         * @param dbName the value to be set. This parameter is required.
+         * @param dbName Property dbName: The name of the database you want to create. This parameter is required.
+         *               Note
+         *               The name must be 2 to 64 characters in length.
+         *               The name must start with a lowercase letter and end with a lowercase letter or digit.
+         *               The name can contain lowercase letters, digits, underscores (_), and hyphens (-).
+         *               The name must be unique in the instance.
+         *               For more information about invalid characters, see Forbidden keywords table.
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
@@ -72,11 +142,45 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DatabaseProps#getDbName}
+         * @param dbName Property dbName: The name of the database you want to create. This parameter is required.
+         *               Note
+         *               The name must be 2 to 64 characters in length.
+         *               The name must start with a lowercase letter and end with a lowercase letter or digit.
+         *               The name can contain lowercase letters, digits, underscores (_), and hyphens (-).
+         *               The name must be unique in the instance.
+         *               For more information about invalid characters, see Forbidden keywords table.
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DatabaseProps#getDbDescription}
-         * @param dbDescription the value to be set.
+         * @param dbDescription Property dbDescription: The description of the database.
+         *                      The description must be 2 to 256 characters in length.
+         *                      The description must start with a letter and can contain letters, digits, underscores
+         *                      (_), and hyphens (-).
+         *                      Note The description cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder dbDescription(java.lang.String dbDescription) {
+            this.dbDescription = dbDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DatabaseProps#getDbDescription}
+         * @param dbDescription Property dbDescription: The description of the database.
+         *                      The description must be 2 to 256 characters in length.
+         *                      The description must start with a letter and can contain letters, digits, underscores
+         *                      (_), and hyphens (-).
+         *                      Note The description cannot start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder dbDescription(com.aliyun.ros.cdk.core.IResolvable dbDescription) {
             this.dbDescription = dbDescription;
             return this;
         }
@@ -97,10 +201,10 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DatabaseProps {
-        private final java.lang.String characterSetName;
-        private final java.lang.String dbInstanceId;
-        private final java.lang.String dbName;
-        private final java.lang.String dbDescription;
+        private final java.lang.Object characterSetName;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object dbName;
+        private final java.lang.Object dbDescription;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -108,16 +212,16 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.characterSetName = software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbDescription = software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String characterSetName, final java.lang.String dbInstanceId, final java.lang.String dbName, final java.lang.String dbDescription) {
+        protected Jsii$Proxy(final java.lang.Object characterSetName, final java.lang.Object dbInstanceId, final java.lang.Object dbName, final java.lang.Object dbDescription) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.characterSetName = java.util.Objects.requireNonNull(characterSetName, "characterSetName is required");
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
@@ -126,22 +230,22 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getCharacterSetName() {
+        public final java.lang.Object getCharacterSetName() {
             return this.characterSetName;
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 
         @Override
-        public final java.lang.String getDbDescription() {
+        public final java.lang.Object getDbDescription() {
             return this.dbDescription;
         }
 

@@ -53,20 +53,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
         /// </remarks>
-        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double BandwidthLimit
+        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BandwidthLimit
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: cenId: The ID of the CEN instance.
         /// </remarks>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object CenId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -81,20 +81,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: localRegionId: The ID of the local region.
         /// </remarks>
-        [JsiiProperty(name: "localRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LocalRegionId
+        [JsiiProperty(name: "localRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LocalRegionId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: oppositeRegionId: The ID of the other interconnected region.
         /// </remarks>
-        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string OppositeRegionId
+        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object OppositeRegionId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

@@ -11,24 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public class TrafficControlProps : AlibabaCloud.SDK.ROS.CDK.Apigateway.ITrafficControlProps
     {
         /// <summary>Property apiDefault: Default API traffic value.</summary>
-        [JsiiProperty(name: "apiDefault", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double ApiDefault
+        [JsiiProperty(name: "apiDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ApiDefault
         {
             get;
             set;
         }
 
         /// <summary>Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-        [JsiiProperty(name: "trafficControlName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TrafficControlName
+        [JsiiProperty(name: "trafficControlName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TrafficControlName
         {
             get;
             set;
         }
 
         /// <summary>Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.</summary>
-        [JsiiProperty(name: "trafficControlUnit", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TrafficControlUnit
+        [JsiiProperty(name: "trafficControlUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TrafficControlUnit
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property appDefault: Default APP traffic value.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "appDefault", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AppDefault
+        [JsiiProperty(name: "appDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AppDefault
         {
             get;
             set;
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property description: Description of the traffic control, less than 180 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 
         /// <summary>Property userDefault: Default user traffic value.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "userDefault", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? UserDefault
+        [JsiiProperty(name: "userDefault", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UserDefault
         {
             get;
             set;

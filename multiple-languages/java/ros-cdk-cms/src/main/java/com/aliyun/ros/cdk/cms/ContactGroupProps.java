@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::ContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.874Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ContactGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ContactGroupProps.Jsii$Proxy.class)
 public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property contactGroupName: The name of the alert contact group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContactGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupName();
 
     /**
+     * Property contactNames: The name of the alert contact.
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getContactNames();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactNames();
 
     /**
+     * Property describe: The description of the alert contact group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescribe();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescribe();
 
     /**
      * @return a {@link Builder} of {@link ContactGroupProps}
@@ -30,13 +33,13 @@ public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link ContactGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ContactGroupProps> {
-        private java.lang.String contactGroupName;
-        private java.util.List<java.lang.String> contactNames;
-        private java.lang.String describe;
+        private java.lang.Object contactGroupName;
+        private java.lang.Object contactNames;
+        private java.lang.Object describe;
 
         /**
          * Sets the value of {@link ContactGroupProps#getContactGroupName}
-         * @param contactGroupName the value to be set. This parameter is required.
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group. This parameter is required.
          * @return {@code this}
          */
         public Builder contactGroupName(java.lang.String contactGroupName) {
@@ -45,21 +48,51 @@ public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
-         * Sets the value of {@link ContactGroupProps#getContactNames}
-         * @param contactNames the value to be set. This parameter is required.
+         * Sets the value of {@link ContactGroupProps#getContactGroupName}
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group. This parameter is required.
          * @return {@code this}
          */
-        public Builder contactNames(java.util.List<java.lang.String> contactNames) {
+        public Builder contactGroupName(com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
+            this.contactGroupName = contactGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ContactGroupProps#getContactNames}
+         * @param contactNames Property contactNames: The name of the alert contact. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactNames(com.aliyun.ros.cdk.core.IResolvable contactNames) {
+            this.contactNames = contactNames;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ContactGroupProps#getContactNames}
+         * @param contactNames Property contactNames: The name of the alert contact. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactNames(java.util.List<? extends java.lang.Object> contactNames) {
             this.contactNames = contactNames;
             return this;
         }
 
         /**
          * Sets the value of {@link ContactGroupProps#getDescribe}
-         * @param describe the value to be set. This parameter is required.
+         * @param describe Property describe: The description of the alert contact group. This parameter is required.
          * @return {@code this}
          */
         public Builder describe(java.lang.String describe) {
+            this.describe = describe;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ContactGroupProps#getDescribe}
+         * @param describe Property describe: The description of the alert contact group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder describe(com.aliyun.ros.cdk.core.IResolvable describe) {
             this.describe = describe;
             return this;
         }
@@ -80,9 +113,9 @@ public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ContactGroupProps {
-        private final java.lang.String contactGroupName;
-        private final java.util.List<java.lang.String> contactNames;
-        private final java.lang.String describe;
+        private final java.lang.Object contactGroupName;
+        private final java.lang.Object contactNames;
+        private final java.lang.Object describe;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +123,15 @@ public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.contactNames = software.amazon.jsii.Kernel.get(this, "contactNames", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.describe = software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contactNames = software.amazon.jsii.Kernel.get(this, "contactNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.describe = software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String contactGroupName, final java.util.List<java.lang.String> contactNames, final java.lang.String describe) {
+        protected Jsii$Proxy(final java.lang.Object contactGroupName, final java.lang.Object contactNames, final java.lang.Object describe) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactGroupName = java.util.Objects.requireNonNull(contactGroupName, "contactGroupName is required");
             this.contactNames = java.util.Objects.requireNonNull(contactNames, "contactNames is required");
@@ -106,17 +139,17 @@ public interface ContactGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getContactGroupName() {
+        public final java.lang.Object getContactGroupName() {
             return this.contactGroupName;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getContactNames() {
+        public final java.lang.Object getContactNames() {
             return this.contactNames;
         }
 
         @Override
-        public final java.lang.String getDescribe() {
+        public final java.lang.Object getDescribe() {
             return this.describe;
         }
 

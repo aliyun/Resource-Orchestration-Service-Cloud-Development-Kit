@@ -11,22 +11,22 @@ export interface ScheduleProps {
     /**
      * Property cronExpression: Cron expression.
      */
-    readonly cronExpression: string;
+    readonly cronExpression: string | ros.IResolvable;
 
     /**
      * Property flowName: Flow name.
      */
-    readonly flowName: string;
+    readonly flowName: string | ros.IResolvable;
 
     /**
      * Property scheduleName: Schedule name.
      */
-    readonly scheduleName: string;
+    readonly scheduleName: string | ros.IResolvable;
 
     /**
      * Property description: Description of the schedule.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property enable: Whether enable schedule.
@@ -36,7 +36,7 @@ export interface ScheduleProps {
     /**
      * Property payload: Payload.
      */
-    readonly payload?: string;
+    readonly payload?: string | ros.IResolvable;
 }
 
 /**
@@ -52,17 +52,17 @@ export class Schedule extends ros.Resource {
     /**
      * Attribute FlowName: Flow name.
      */
-    public readonly attrFlowName: any;
+    public readonly attrFlowName: ros.IResolvable;
 
     /**
      * Attribute ScheduleId: Schedule Id
      */
-    public readonly attrScheduleId: any;
+    public readonly attrScheduleId: ros.IResolvable;
 
     /**
      * Attribute ScheduleName: Schedule name.
      */
-    public readonly attrScheduleName: any;
+    public readonly attrScheduleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FNF::Schedule`.

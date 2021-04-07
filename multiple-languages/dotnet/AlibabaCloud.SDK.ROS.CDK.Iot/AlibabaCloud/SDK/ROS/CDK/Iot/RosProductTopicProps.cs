@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// PUB: Publish. Devices can publish messages using the topics of this category.
         /// ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
         /// </remarks>
-        [JsiiProperty(name: "operation", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Operation
+        [JsiiProperty(name: "operation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Operation
         {
             get;
             set;
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// <strong>Property</strong>: productKey: The unique identifier of the product for which you want to create a topic category.
         /// </remarks>
-        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProductKey
+        [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProductKey
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: topicShortName: The custom category hierarchy in the topic category. By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
         /// Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
         /// </remarks>
-        [JsiiProperty(name: "topicShortName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TopicShortName
+        [JsiiProperty(name: "topicShortName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TopicShortName
         {
             get;
             set;
@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: desc: The description of the topic category. You can enter a description with up to 100 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "desc", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Desc
+        [JsiiProperty(name: "desc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Desc
         {
             get;
             set;
@@ -59,8 +59,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: iotInstanceId: Instance ID you purchased. Public instances do not need pass this property.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IotInstanceId
         {
             get;
             set;

@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IPeeringRouterInterfaceConnectionProps
     {
         /// <summary>Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.</summary>
-        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-        string OppositeInterfaceId
+        [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object OppositeInterfaceId
         {
             get;
         }
 
         /// <summary>Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.</summary>
-        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-        string RouterInterfaceId
+        [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RouterInterfaceId
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.</summary>
-            [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string OppositeInterfaceId
+            [JsiiProperty(name: "oppositeInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object OppositeInterfaceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.</summary>
-            [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string RouterInterfaceId
+            [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RouterInterfaceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

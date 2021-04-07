@@ -11,7 +11,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
     public class ShardingInstanceProps : AlibabaCloud.SDK.ROS.CDK.Mongodb.IShardingInstanceProps
     {
         /// <summary>Property configServer:.</summary>
-        [JsiiProperty(name: "configServer", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        [JsiiProperty(name: "configServer", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.ConfigServerProperty\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
         public object ConfigServer
         {
             get;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccountPassword
+        [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccountPassword
         {
             get;
             set;
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ChargeType
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ChargeType
         {
             get;
             set;
@@ -66,8 +66,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property dbInstanceDescription: Description of created database instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DbInstanceDescription
+        [JsiiProperty(name: "dbInstanceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DbInstanceDescription
         {
             get;
             set;
@@ -75,8 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property engineVersion: Database instance version.Support 3.4, 4.0, 4.2.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EngineVersion
+        [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EngineVersion
         {
             get;
             set;
@@ -87,8 +87,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         /// Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NetworkType
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetworkType
         {
             get;
             set;
@@ -96,8 +96,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -108,8 +108,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         /// Valid value: mongodb or dynamodb.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "protocolType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProtocolType
+        [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProtocolType
         {
             get;
             set;
@@ -120,8 +120,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         /// The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "restoreTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RestoreTime
+        [JsiiProperty(name: "restoreTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RestoreTime
         {
             get;
             set;
@@ -129,8 +129,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property securityIpArray: Security ips to add or remove.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "securityIpArray", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SecurityIpArray
+        [JsiiProperty(name: "securityIpArray", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecurityIpArray
         {
             get;
             set;
@@ -138,8 +138,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property srcDbInstanceId: Create an instance of the backup set based on an instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SrcDbInstanceId
+        [JsiiProperty(name: "srcDbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SrcDbInstanceId
         {
             get;
             set;
@@ -147,8 +147,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "storageEngine", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? StorageEngine
+        [JsiiProperty(name: "storageEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? StorageEngine
         {
             get;
             set;
@@ -159,8 +159,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-mongodb.RosShardingInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Mongodb.RosShardingInstance.ITagsProperty[]? Tags
         {
             get;
             set;
@@ -168,8 +168,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property vpcId: The VPC id to create mongodb instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VpcId
         {
             get;
             set;
@@ -177,8 +177,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
 
         /// <summary>Property vSwitchId: The vSwitch Id to create mongodb instance.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VSwitchId
         {
             get;
             set;
@@ -189,8 +189,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mongodb
         /// If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ZoneId
         {
             get;
             set;

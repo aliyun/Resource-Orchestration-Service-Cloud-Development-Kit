@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
         /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// Valid values: String and StringList.
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-        string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Type
         {
             get;
         }
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// The value must be 1 to 4096 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
-        string Value
+        [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Value
         {
             get;
         }
@@ -47,9 +47,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// MinLength: The minimum length of the parameter.
         /// MaxLength: The maximum length of the parameter.
         /// </remarks>
-        [JsiiProperty(name: "constraints", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "constraints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Constraints
+        object? Constraints
         {
             get
             {
@@ -61,9 +61,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// The description must be 1 to 200 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -84,30 +84,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
             /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property type: The data type of the common parameter.</summary>
             /// <remarks>
             /// Valid values: String and StringList.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property value: The value of the parameter.</summary>
             /// <remarks>
             /// The value must be 1 to 4096 characters in length.
             /// </remarks>
-            [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
-            public string Value
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property constraints: The constraints of the parameter.</summary>
@@ -119,10 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// MaxLength: The maximum length of the parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "constraints", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Constraints
+            [JsiiProperty(name: "constraints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Constraints
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: The description of the parameter.</summary>
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// The description must be 1 to 200 characters in length.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

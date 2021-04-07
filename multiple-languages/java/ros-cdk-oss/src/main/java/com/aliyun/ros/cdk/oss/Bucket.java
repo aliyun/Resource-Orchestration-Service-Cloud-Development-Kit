@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * A ROS resource type:  `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.140Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.766Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Bucket")
 public class Bucket extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OSS::Bucket`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Bucket(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oss.BucketProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::OSS::Bucket`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Bucket(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oss.BucketProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DomainName: The public DNS name of the specified bucket.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InternalDomainName: The internal DNS name of the specified bucket.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInternalDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "attrInternalDomainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInternalDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "attrInternalDomainName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Name: The name of Bucket.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.oss.Bucket> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,51 +104,87 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property bucketName: bucket name.
+         * <p>
          * @return {@code this}
-         * @param bucketName This parameter is required.
+         * @param bucketName Property bucketName: bucket name. This parameter is required.
          */
         public Builder bucketName(final java.lang.String bucketName) {
             this.props.bucketName(bucketName);
             return this;
         }
+        /**
+         * Property bucketName: bucket name.
+         * <p>
+         * @return {@code this}
+         * @param bucketName Property bucketName: bucket name. This parameter is required.
+         */
+        public Builder bucketName(final com.aliyun.ros.cdk.core.IResolvable bucketName) {
+            this.props.bucketName(bucketName);
+            return this;
+        }
 
         /**
+         * Property accessControl: The access control list.
+         * <p>
          * @return {@code this}
-         * @param accessControl This parameter is required.
+         * @param accessControl Property accessControl: The access control list. This parameter is required.
          */
         public Builder accessControl(final java.lang.String accessControl) {
             this.props.accessControl(accessControl);
             return this;
         }
-
         /**
+         * Property accessControl: The access control list.
+         * <p>
          * @return {@code this}
-         * @param corsConfiguration This parameter is required.
+         * @param accessControl Property accessControl: The access control list. This parameter is required.
          */
-        public Builder corsConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
-            this.props.corsConfiguration(corsConfiguration);
+        public Builder accessControl(final com.aliyun.ros.cdk.core.IResolvable accessControl) {
+            this.props.accessControl(accessControl);
             return this;
         }
+
         /**
+         * Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
+         * <p>
          * @return {@code this}
-         * @param corsConfiguration This parameter is required.
+         * @param corsConfiguration Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket. This parameter is required.
          */
         public Builder corsConfiguration(final com.aliyun.ros.cdk.core.IResolvable corsConfiguration) {
             this.props.corsConfiguration(corsConfiguration);
             return this;
         }
+        /**
+         * Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
+         * <p>
+         * @return {@code this}
+         * @param corsConfiguration Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket. This parameter is required.
+         */
+        public Builder corsConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
+            this.props.corsConfiguration(corsConfiguration);
+            return this;
+        }
 
         /**
+         * Property deletionForce: Whether force delete the relative objects in the bucket.
+         * <p>
+         * Default value is false.
+         * <p>
          * @return {@code this}
-         * @param deletionForce This parameter is required.
+         * @param deletionForce Property deletionForce: Whether force delete the relative objects in the bucket. This parameter is required.
          */
         public Builder deletionForce(final java.lang.Boolean deletionForce) {
             this.props.deletionForce(deletionForce);
             return this;
         }
         /**
+         * Property deletionForce: Whether force delete the relative objects in the bucket.
+         * <p>
+         * Default value is false.
+         * <p>
          * @return {@code this}
-         * @param deletionForce This parameter is required.
+         * @param deletionForce Property deletionForce: Whether force delete the relative objects in the bucket. This parameter is required.
          */
         public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.props.deletionForce(deletionForce);
@@ -145,16 +192,20 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
+         * <p>
          * @return {@code this}
-         * @param lifecycleConfiguration This parameter is required.
+         * @param lifecycleConfiguration Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime. This parameter is required.
          */
         public Builder lifecycleConfiguration(final com.aliyun.ros.cdk.core.IResolvable lifecycleConfiguration) {
             this.props.lifecycleConfiguration(lifecycleConfiguration);
             return this;
         }
         /**
+         * Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
+         * <p>
          * @return {@code this}
-         * @param lifecycleConfiguration This parameter is required.
+         * @param lifecycleConfiguration Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime. This parameter is required.
          */
         public Builder lifecycleConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.LifecycleConfigurationProperty lifecycleConfiguration) {
             this.props.lifecycleConfiguration(lifecycleConfiguration);
@@ -162,16 +213,20 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property loggingConfiguration: Settings that defines where logs are stored.
+         * <p>
          * @return {@code this}
-         * @param loggingConfiguration This parameter is required.
+         * @param loggingConfiguration Property loggingConfiguration: Settings that defines where logs are stored. This parameter is required.
          */
         public Builder loggingConfiguration(final com.aliyun.ros.cdk.core.IResolvable loggingConfiguration) {
             this.props.loggingConfiguration(loggingConfiguration);
             return this;
         }
         /**
+         * Property loggingConfiguration: Settings that defines where logs are stored.
+         * <p>
          * @return {@code this}
-         * @param loggingConfiguration This parameter is required.
+         * @param loggingConfiguration Property loggingConfiguration: Settings that defines where logs are stored. This parameter is required.
          */
         public Builder loggingConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.LoggingConfigurationProperty loggingConfiguration) {
             this.props.loggingConfiguration(loggingConfiguration);
@@ -179,16 +234,20 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property policy: Bucket policy.
+         * <p>
          * @return {@code this}
-         * @param policy This parameter is required.
+         * @param policy Property policy: Bucket policy. This parameter is required.
          */
         public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
             this.props.policy(policy);
             return this;
         }
         /**
+         * Property policy: Bucket policy.
+         * <p>
          * @return {@code this}
-         * @param policy This parameter is required.
+         * @param policy Property policy: Bucket policy. This parameter is required.
          */
         public Builder policy(final java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
             this.props.policy(policy);
@@ -196,16 +255,20 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property refererConfiguration: undefined.
+         * <p>
          * @return {@code this}
-         * @param refererConfiguration This parameter is required.
+         * @param refererConfiguration Property refererConfiguration: undefined. This parameter is required.
          */
         public Builder refererConfiguration(final com.aliyun.ros.cdk.core.IResolvable refererConfiguration) {
             this.props.refererConfiguration(refererConfiguration);
             return this;
         }
         /**
+         * Property refererConfiguration: undefined.
+         * <p>
          * @return {@code this}
-         * @param refererConfiguration This parameter is required.
+         * @param refererConfiguration Property refererConfiguration: undefined. This parameter is required.
          */
         public Builder refererConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.RefererConfigurationProperty refererConfiguration) {
             this.props.refererConfiguration(refererConfiguration);
@@ -213,16 +276,20 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
+         * <p>
          * @return {@code this}
-         * @param serverSideEncryptionConfiguration This parameter is required.
+         * @param serverSideEncryptionConfiguration Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule. This parameter is required.
          */
         public Builder serverSideEncryptionConfiguration(final com.aliyun.ros.cdk.core.IResolvable serverSideEncryptionConfiguration) {
             this.props.serverSideEncryptionConfiguration(serverSideEncryptionConfiguration);
             return this;
         }
         /**
+         * Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
+         * <p>
          * @return {@code this}
-         * @param serverSideEncryptionConfiguration This parameter is required.
+         * @param serverSideEncryptionConfiguration Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule. This parameter is required.
          */
         public Builder serverSideEncryptionConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.ServerSideEncryptionConfigurationProperty serverSideEncryptionConfiguration) {
             this.props.serverSideEncryptionConfiguration(serverSideEncryptionConfiguration);
@@ -230,34 +297,56 @@ public class Bucket extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property storageClass: Specifies the storage class of the bucket.
+         * <p>
+         * Default is "Standard".
+         * <p>
          * @return {@code this}
-         * @param storageClass This parameter is required.
+         * @param storageClass Property storageClass: Specifies the storage class of the bucket. This parameter is required.
          */
         public Builder storageClass(final java.lang.String storageClass) {
             this.props.storageClass(storageClass);
             return this;
         }
+        /**
+         * Property storageClass: Specifies the storage class of the bucket.
+         * <p>
+         * Default is "Standard".
+         * <p>
+         * @return {@code this}
+         * @param storageClass Property storageClass: Specifies the storage class of the bucket. This parameter is required.
+         */
+        public Builder storageClass(final com.aliyun.ros.cdk.core.IResolvable storageClass) {
+            this.props.storageClass(storageClass);
+            return this;
+        }
 
         /**
+         * Property tags: Bucket tags in k-v pairs format.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Bucket tags in k-v pairs format. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
             return this;
         }
 
         /**
+         * Property websiteConfiguration: The properties of website config.
+         * <p>
          * @return {@code this}
-         * @param websiteConfiguration This parameter is required.
+         * @param websiteConfiguration Property websiteConfiguration: The properties of website config. This parameter is required.
          */
         public Builder websiteConfiguration(final com.aliyun.ros.cdk.core.IResolvable websiteConfiguration) {
             this.props.websiteConfiguration(websiteConfiguration);
             return this;
         }
         /**
+         * Property websiteConfiguration: The properties of website config.
+         * <p>
          * @return {@code this}
-         * @param websiteConfiguration This parameter is required.
+         * @param websiteConfiguration Property websiteConfiguration: The properties of website config. This parameter is required.
          */
         public Builder websiteConfiguration(final com.aliyun.ros.cdk.oss.RosBucket.WebsiteConfigurationProperty websiteConfiguration) {
             this.props.websiteConfiguration(websiteConfiguration);

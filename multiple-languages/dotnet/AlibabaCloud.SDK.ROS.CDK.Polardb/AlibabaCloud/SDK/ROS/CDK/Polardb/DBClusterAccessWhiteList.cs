@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.</summary>
-        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbClusterId
+        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

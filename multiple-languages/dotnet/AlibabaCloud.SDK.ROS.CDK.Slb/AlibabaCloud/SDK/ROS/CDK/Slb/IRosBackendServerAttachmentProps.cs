@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The id of load balancer.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object LoadBalancerId
         {
             get;
         }
@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: backendServerList: The comma delimited instance id list.If the property "BackendServers" is setting, this property will be ignored.
         /// </remarks>
-        [JsiiProperty(name: "backendServerList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "backendServerList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? BackendServerList
+        object? BackendServerList
         {
             get
             {
@@ -67,20 +67,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: loadBalancerId: The id of load balancer.
             /// </remarks>
-            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-            public string LoadBalancerId
+            [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object LoadBalancerId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: backendServerList: The comma delimited instance id list.If the property "BackendServers" is setting, this property will be ignored.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "backendServerList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? BackendServerList
+            [JsiiProperty(name: "backendServerList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? BackendServerList
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

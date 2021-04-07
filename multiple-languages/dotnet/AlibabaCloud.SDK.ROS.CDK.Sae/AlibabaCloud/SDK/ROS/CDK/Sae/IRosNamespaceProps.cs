@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
         /// </remarks>
-        [JsiiProperty(name: "namespaceId", typeJson: "{\"primitive\":\"string\"}")]
-        string NamespaceId
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NamespaceId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: namespaceName: Namespace name
         /// </remarks>
-        [JsiiProperty(name: "namespaceName", typeJson: "{\"primitive\":\"string\"}")]
-        string NamespaceName
+        [JsiiProperty(name: "namespaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NamespaceName
         {
             get;
         }
@@ -29,9 +29,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: namespaceDescription: Namespace description
         /// </remarks>
-        [JsiiProperty(name: "namespaceDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "namespaceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NamespaceDescription
+        object? NamespaceDescription
         {
             get
             {
@@ -50,29 +50,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
             /// <remarks>
             /// <strong>Property</strong>: namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
             /// </remarks>
-            [JsiiProperty(name: "namespaceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string NamespaceId
+            [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NamespaceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: namespaceName: Namespace name
             /// </remarks>
-            [JsiiProperty(name: "namespaceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string NamespaceName
+            [JsiiProperty(name: "namespaceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NamespaceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: namespaceDescription: Namespace description
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "namespaceDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NamespaceDescription
+            [JsiiProperty(name: "namespaceDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NamespaceDescription
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

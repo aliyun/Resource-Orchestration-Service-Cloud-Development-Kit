@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.045Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.RosTopicProps")
 @software.amazon.jsii.Jsii.Proxy(RosTopicProps.Jsii$Proxy.class)
 public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRemark();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRemark();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopic();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPartitionNum() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
         return null;
     }
 
@@ -36,10 +36,10 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTopicProps> {
-        private java.lang.String instanceId;
-        private java.lang.String remark;
-        private java.lang.String topic;
-        private java.lang.Number partitionNum;
+        private java.lang.Object instanceId;
+        private java.lang.Object remark;
+        private java.lang.Object topic;
+        private java.lang.Object partitionNum;
 
         /**
          * Sets the value of {@link RosTopicProps#getInstanceId}
@@ -47,6 +47,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getInstanceId}
+         * @param instanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.instanceId = instanceId;
             return this;
         }
@@ -62,6 +72,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getRemark}
+         * @param remark the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getTopic}
          * @param topic the value to be set. This parameter is required.
          * @return {@code this}
@@ -72,11 +92,31 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTopicProps#getTopic}
+         * @param topic the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder topic(com.aliyun.ros.cdk.core.IResolvable topic) {
+            this.topic = topic;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTopicProps#getPartitionNum}
          * @param partitionNum the value to be set.
          * @return {@code this}
          */
         public Builder partitionNum(java.lang.Number partitionNum) {
+            this.partitionNum = partitionNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTopicProps#getPartitionNum}
+         * @param partitionNum the value to be set.
+         * @return {@code this}
+         */
+        public Builder partitionNum(com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.partitionNum = partitionNum;
             return this;
         }
@@ -97,10 +137,10 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTopicProps {
-        private final java.lang.String instanceId;
-        private final java.lang.String remark;
-        private final java.lang.String topic;
-        private final java.lang.Number partitionNum;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object remark;
+        private final java.lang.Object topic;
+        private final java.lang.Object partitionNum;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -108,16 +148,16 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceId, final java.lang.String remark, final java.lang.String topic, final java.lang.Number partitionNum) {
+        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object remark, final java.lang.Object topic, final java.lang.Object partitionNum) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
             this.remark = java.util.Objects.requireNonNull(remark, "remark is required");
@@ -126,22 +166,22 @@ public interface RosTopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
         }
 
         @Override
-        public final java.lang.String getTopic() {
+        public final java.lang.Object getTopic() {
             return this.topic;
         }
 
         @Override
-        public final java.lang.Number getPartitionNum() {
+        public final java.lang.Object getPartitionNum() {
             return this.partitionNum;
         }
 

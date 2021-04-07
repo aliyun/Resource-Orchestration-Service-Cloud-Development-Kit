@@ -11,27 +11,27 @@ export interface ADInfoProps {
     /**
      * Property adAccountName: Domain account name.
      */
-    readonly adAccountName: string;
+    readonly adAccountName: string | ros.IResolvable;
 
     /**
      * Property addns: Active directory domain name.
      */
-    readonly addns: string;
+    readonly addns: string | ros.IResolvable;
 
     /**
      * Property adPassword: Domain password.
      */
-    readonly adPassword: string;
+    readonly adPassword: string | ros.IResolvable;
 
     /**
      * Property adServerIpAddress: The IP address of the AD server, it must be in the same VPC as the RDS.
      */
-    readonly adServerIpAddress: string;
+    readonly adServerIpAddress: string | ros.IResolvable;
 
     /**
      * Property dbInstanceId: The ID of the instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 }
 
 /**
@@ -47,12 +47,12 @@ export class ADInfo extends ros.Resource {
     /**
      * Attribute ADDNS: Active directory domain name.
      */
-    public readonly attrAddns: any;
+    public readonly attrAddns: ros.IResolvable;
 
     /**
      * Attribute DBInstanceId: The ID of the instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::ADInfo`.

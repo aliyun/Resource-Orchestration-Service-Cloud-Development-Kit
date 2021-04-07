@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * Properties for defining a `ALIYUN::FNF::Flow`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.965Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.RosFlowProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowProps.Jsii$Proxy.class)
 public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDefinition();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDefinition();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRequestId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRequestId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRoleArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRoleArn() {
         return null;
     }
 
@@ -44,11 +44,11 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosFlowProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFlowProps> {
-        private java.lang.String definition;
-        private java.lang.String name;
-        private java.lang.String description;
-        private java.lang.String requestId;
-        private java.lang.String roleArn;
+        private java.lang.Object definition;
+        private java.lang.Object name;
+        private java.lang.Object description;
+        private java.lang.Object requestId;
+        private java.lang.Object roleArn;
 
         /**
          * Sets the value of {@link RosFlowProps#getDefinition}
@@ -56,6 +56,16 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder definition(java.lang.String definition) {
+            this.definition = definition;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProps#getDefinition}
+         * @param definition the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder definition(com.aliyun.ros.cdk.core.IResolvable definition) {
             this.definition = definition;
             return this;
         }
@@ -71,11 +81,31 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosFlowProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFlowProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -91,11 +121,31 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosFlowProps#getRequestId}
+         * @param requestId the value to be set.
+         * @return {@code this}
+         */
+        public Builder requestId(com.aliyun.ros.cdk.core.IResolvable requestId) {
+            this.requestId = requestId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFlowProps#getRoleArn}
          * @param roleArn the value to be set.
          * @return {@code this}
          */
         public Builder roleArn(java.lang.String roleArn) {
+            this.roleArn = roleArn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFlowProps#getRoleArn}
+         * @param roleArn the value to be set.
+         * @return {@code this}
+         */
+        public Builder roleArn(com.aliyun.ros.cdk.core.IResolvable roleArn) {
             this.roleArn = roleArn;
             return this;
         }
@@ -116,11 +166,11 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFlowProps {
-        private final java.lang.String definition;
-        private final java.lang.String name;
-        private final java.lang.String description;
-        private final java.lang.String requestId;
-        private final java.lang.String roleArn;
+        private final java.lang.Object definition;
+        private final java.lang.Object name;
+        private final java.lang.Object description;
+        private final java.lang.Object requestId;
+        private final java.lang.Object roleArn;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,17 +178,17 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.definition = software.amazon.jsii.Kernel.get(this, "definition", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.requestId = software.amazon.jsii.Kernel.get(this, "requestId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.definition = software.amazon.jsii.Kernel.get(this, "definition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.requestId = software.amazon.jsii.Kernel.get(this, "requestId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleArn = software.amazon.jsii.Kernel.get(this, "roleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String definition, final java.lang.String name, final java.lang.String description, final java.lang.String requestId, final java.lang.String roleArn) {
+        protected Jsii$Proxy(final java.lang.Object definition, final java.lang.Object name, final java.lang.Object description, final java.lang.Object requestId, final java.lang.Object roleArn) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.definition = java.util.Objects.requireNonNull(definition, "definition is required");
             this.name = java.util.Objects.requireNonNull(name, "name is required");
@@ -148,27 +198,27 @@ public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDefinition() {
+        public final java.lang.Object getDefinition() {
             return this.definition;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getRequestId() {
+        public final java.lang.Object getRequestId() {
             return this.requestId;
         }
 
         @Override
-        public final java.lang.String getRoleArn() {
+        public final java.lang.Object getRoleArn() {
             return this.roleArn;
         }
 

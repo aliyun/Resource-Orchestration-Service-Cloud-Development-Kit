@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// Medium (Enterprise Edition), the public network bandwidth range from 1 to 1000.
         /// Large (Enterprise Edition), the public network bandwidth range 1-2000.
         /// </remarks>
-        [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-        double Bandwidth
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Bandwidth
         {
             get;
         }
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: ipv6AddressId: ID of IPv6 address.
         /// </remarks>
-        [JsiiProperty(name: "ipv6AddressId", typeJson: "{\"primitive\":\"string\"}")]
-        string Ipv6AddressId
+        [JsiiProperty(name: "ipv6AddressId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Ipv6AddressId
         {
             get;
         }
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: ipv6GatewayId: ID of IPv6 gateway.
         /// </remarks>
-        [JsiiProperty(name: "ipv6GatewayId", typeJson: "{\"primitive\":\"string\"}")]
-        string Ipv6GatewayId
+        [JsiiProperty(name: "ipv6GatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Ipv6GatewayId
         {
             get;
         }
@@ -45,9 +45,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// PayByTraffic: by using the traffic accounting.
         /// PayByBandwidth (default): Bandwidth billing.
         /// </remarks>
-        [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InternetChargeType
+        object? InternetChargeType
         {
             get
             {
@@ -58,9 +58,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidth.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Vpc.RosIpv6InternetBandwidth.ITagsProperty[]? Tags
         {
             get
             {
@@ -84,28 +84,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// Medium (Enterprise Edition), the public network bandwidth range from 1 to 1000.
             /// Large (Enterprise Edition), the public network bandwidth range 1-2000.
             /// </remarks>
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-            public double Bandwidth
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Bandwidth
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: ipv6AddressId: ID of IPv6 address.
             /// </remarks>
-            [JsiiProperty(name: "ipv6AddressId", typeJson: "{\"primitive\":\"string\"}")]
-            public string Ipv6AddressId
+            [JsiiProperty(name: "ipv6AddressId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Ipv6AddressId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: ipv6GatewayId: ID of IPv6 gateway.
             /// </remarks>
-            [JsiiProperty(name: "ipv6GatewayId", typeJson: "{\"primitive\":\"string\"}")]
-            public string Ipv6GatewayId
+            [JsiiProperty(name: "ipv6GatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Ipv6GatewayId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -114,20 +114,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// PayByBandwidth (default): Bandwidth billing.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InternetChargeType
+            [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InternetChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
-            public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-vpc.RosIpv6InternetBandwidth.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Vpc.RosIpv6InternetBandwidth.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.RosIpv6InternetBandwidth.ITagsProperty[]?>();
             }
         }
     }

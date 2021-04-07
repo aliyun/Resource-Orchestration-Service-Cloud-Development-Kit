@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
     public interface IDomainProps
     {
         /// <summary>Property domainName: Domain name.</summary>
-        [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}")]
-        string DomainName
+        [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DomainName
         {
             get;
         }
 
         /// <summary>Property groupId: Domain name grouping, the default is the "default grouping" GroupId.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupId
+        object? GroupId
         {
             get
             {
@@ -30,9 +30,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-dns.RosDomain.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Dns.RosDomain.ITagsProperty[]? Tags
         {
             get
             {
@@ -49,18 +49,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             }
 
             /// <summary>Property domainName: Domain name.</summary>
-            [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DomainName
+            [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DomainName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property groupId: Domain name grouping, the default is the "default grouping" GroupId.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to instance.</summary>
@@ -68,10 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-dns.RosDomain.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Dns.RosDomain.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Dns.RosDomain.ITagsProperty[]?>();
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS template type:  `ALIYUN::ARMS::AlertContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.172Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.729Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosAlertContactGroup")
 public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getContactGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setContactGroupName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "contactGroupName", java.util.Objects.requireNonNull(value, "contactGroupName is required"));
+    }
+
+    /**
+     */
+    public void setContactGroupName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "contactGroupName", java.util.Objects.requireNonNull(value, "contactGroupName is required"));
     }
 
@@ -73,13 +79,13 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setContactIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Number> value) {
+    public void setContactIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "contactIds", java.util.Objects.requireNonNull(value, "contactIds is required"));
     }
 
     /**
      */
-    public void setContactIds(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+    public void setContactIds(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "contactIds", java.util.Objects.requireNonNull(value, "contactIds is required"));
     }
 
@@ -93,8 +99,8 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getProxyUserId() {
-        return software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProxyUserId() {
+        return software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +111,25 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProxyUserId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proxyUserId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "regionId", value);
+    }
+
+    /**
+     */
+    public void setRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "regionId", value);
     }
 
@@ -149,12 +167,20 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.contactGroupName(contactGroupName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param contactGroupName This parameter is required.
+         */
+        public Builder contactGroupName(final com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
+            this.props.contactGroupName(contactGroupName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param contactIds This parameter is required.
          */
-        public Builder contactIds(final java.util.List<? extends java.lang.Number> contactIds) {
+        public Builder contactIds(final com.aliyun.ros.cdk.core.IResolvable contactIds) {
             this.props.contactIds(contactIds);
             return this;
         }
@@ -162,7 +188,7 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param contactIds This parameter is required.
          */
-        public Builder contactIds(final com.aliyun.ros.cdk.core.IResolvable contactIds) {
+        public Builder contactIds(final java.util.List<? extends java.lang.Object> contactIds) {
             this.props.contactIds(contactIds);
             return this;
         }
@@ -175,12 +201,28 @@ public class RosAlertContactGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.proxyUserId(proxyUserId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param proxyUserId This parameter is required.
+         */
+        public Builder proxyUserId(final com.aliyun.ros.cdk.core.IResolvable proxyUserId) {
+            this.props.proxyUserId(proxyUserId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param regionId This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param regionId This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
             return this;
         }

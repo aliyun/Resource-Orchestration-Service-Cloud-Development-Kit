@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::NetworkInterfacePermission`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.666Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.332Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosNetworkInterfacePermission")
 public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfacePermissionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfacePermissionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfacePermissionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfacePermissionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAccountId() {
-        return software.amazon.jsii.Kernel.get(this, "accountId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAccountId() {
+        return software.amazon.jsii.Kernel.get(this, "accountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAccountId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "accountId", java.util.Objects.requireNonNull(value, "accountId is required"));
+    }
+
+    /**
+     */
+    public void setAccountId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "accountId", java.util.Objects.requireNonNull(value, "accountId is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getPermission() {
-        return software.amazon.jsii.Kernel.get(this, "permission", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNetworkInterfaceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkInterfaceId", java.util.Objects.requireNonNull(value, "networkInterfaceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPermission() {
+        return software.amazon.jsii.Kernel.get(this, "permission", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setPermission(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "permission", java.util.Objects.requireNonNull(value, "permission is required"));
+    }
+
+    /**
+     */
+    public void setPermission(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "permission", java.util.Objects.requireNonNull(value, "permission is required"));
     }
 
@@ -131,6 +149,14 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
             this.props.accountId(accountId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param accountId This parameter is required.
+         */
+        public Builder accountId(final com.aliyun.ros.cdk.core.IResolvable accountId) {
+            this.props.accountId(accountId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -140,12 +166,28 @@ public class RosNetworkInterfacePermission extends com.aliyun.ros.cdk.core.RosRe
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param networkInterfaceId This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param permission This parameter is required.
          */
         public Builder permission(final java.lang.String permission) {
+            this.props.permission(permission);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param permission This parameter is required.
+         */
+        public Builder permission(final com.aliyun.ros.cdk.core.IResolvable permission) {
             this.props.permission(permission);
             return this;
         }

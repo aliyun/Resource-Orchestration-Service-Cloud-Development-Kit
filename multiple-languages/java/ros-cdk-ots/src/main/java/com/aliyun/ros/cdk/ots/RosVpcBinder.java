@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::VpcBinder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.158Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosVpcBinder")
 public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomains() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomains", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomains() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomains", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEndpoints() {
-        return software.amazon.jsii.Kernel.get(this, "attrEndpoints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEndpoints() {
+        return software.amazon.jsii.Kernel.get(this, "attrEndpoints", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,13 +69,19 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setInstanceName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceName", java.util.Objects.requireNonNull(value, "instanceName is required"));
+    }
+
+    /**
+     */
+    public void setInstanceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceName", java.util.Objects.requireNonNull(value, "instanceName is required"));
     }
 
@@ -106,22 +112,22 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getInstanceVpcName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getInstanceVpcName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getNetwork();
+        @org.jetbrains.annotations.NotNull java.lang.Object getNetwork();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getVirtualSwitchId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getVirtualSwitchId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
         /**
          * @return a {@link Builder} of {@link VpcsProperty}
@@ -135,10 +141,10 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<VpcsProperty> {
-            private java.lang.String instanceVpcName;
-            private java.lang.String network;
-            private java.lang.String virtualSwitchId;
-            private java.lang.String vpcId;
+            private java.lang.Object instanceVpcName;
+            private java.lang.Object network;
+            private java.lang.Object virtualSwitchId;
+            private java.lang.Object vpcId;
 
             /**
              * Sets the value of {@link VpcsProperty#getInstanceVpcName}
@@ -147,6 +153,17 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder instanceVpcName(java.lang.String instanceVpcName) {
+                this.instanceVpcName = instanceVpcName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcsProperty#getInstanceVpcName}
+             * @param instanceVpcName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceVpcName(com.aliyun.ros.cdk.core.IResolvable instanceVpcName) {
                 this.instanceVpcName = instanceVpcName;
                 return this;
             }
@@ -163,6 +180,17 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VpcsProperty#getNetwork}
+             * @param network the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder network(com.aliyun.ros.cdk.core.IResolvable network) {
+                this.network = network;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VpcsProperty#getVirtualSwitchId}
              * @param virtualSwitchId the value to be set. This parameter is required.
              * @return {@code this}
@@ -174,12 +202,34 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link VpcsProperty#getVirtualSwitchId}
+             * @param virtualSwitchId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder virtualSwitchId(com.aliyun.ros.cdk.core.IResolvable virtualSwitchId) {
+                this.virtualSwitchId = virtualSwitchId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link VpcsProperty#getVpcId}
              * @param vpcId the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder vpcId(java.lang.String vpcId) {
+                this.vpcId = vpcId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link VpcsProperty#getVpcId}
+             * @param vpcId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
                 this.vpcId = vpcId;
                 return this;
             }
@@ -202,10 +252,10 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements VpcsProperty {
-            private final java.lang.String instanceVpcName;
-            private final java.lang.String network;
-            private final java.lang.String virtualSwitchId;
-            private final java.lang.String vpcId;
+            private final java.lang.Object instanceVpcName;
+            private final java.lang.Object network;
+            private final java.lang.Object virtualSwitchId;
+            private final java.lang.Object vpcId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -213,16 +263,16 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.instanceVpcName = software.amazon.jsii.Kernel.get(this, "instanceVpcName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.network = software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.virtualSwitchId = software.amazon.jsii.Kernel.get(this, "virtualSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.instanceVpcName = software.amazon.jsii.Kernel.get(this, "instanceVpcName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.network = software.amazon.jsii.Kernel.get(this, "network", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.virtualSwitchId = software.amazon.jsii.Kernel.get(this, "virtualSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String instanceVpcName, final java.lang.String network, final java.lang.String virtualSwitchId, final java.lang.String vpcId) {
+            protected Jsii$Proxy(final java.lang.Object instanceVpcName, final java.lang.Object network, final java.lang.Object virtualSwitchId, final java.lang.Object vpcId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.instanceVpcName = java.util.Objects.requireNonNull(instanceVpcName, "instanceVpcName is required");
                 this.network = java.util.Objects.requireNonNull(network, "network is required");
@@ -231,22 +281,22 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getInstanceVpcName() {
+            public final java.lang.Object getInstanceVpcName() {
                 return this.instanceVpcName;
             }
 
             @Override
-            public final java.lang.String getNetwork() {
+            public final java.lang.Object getNetwork() {
                 return this.network;
             }
 
             @Override
-            public final java.lang.String getVirtualSwitchId() {
+            public final java.lang.Object getVirtualSwitchId() {
                 return this.virtualSwitchId;
             }
 
             @Override
-            public final java.lang.String getVpcId() {
+            public final java.lang.Object getVpcId() {
                 return this.vpcId;
             }
 
@@ -326,6 +376,14 @@ public class RosVpcBinder extends com.aliyun.ros.cdk.core.RosResource {
          * @param instanceName This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceName This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.props.instanceName(instanceName);
             return this;
         }

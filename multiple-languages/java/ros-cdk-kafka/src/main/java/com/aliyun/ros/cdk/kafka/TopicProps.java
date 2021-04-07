@@ -3,26 +3,48 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * Properties for defining a `ALIYUN::KAFKA::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located.
+     * <p>
+     * You can call the GetInstanceList operation to query instances.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
+     * Property remark: The description of the topic.
+     * <p>
+     * The value of this parameter must meet the following
+     * requirements:
+     * The value can only contain letters, digits, hyphens (-), and underscores (_).
+     * The value must be 3 to 64 characters in length.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRemark();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRemark();
 
     /**
+     * Property topic: The name of the topic.
+     * <p>
+     * The value of this parameter must meet the following requirements:
+     * The name can only contain letters, digits, hyphens (-), and underscores (_).
+     * The name must be 3 to 64 characters in length, and will be automatically truncated
+     * if it contains more characters.
+     * The name cannot be modified after being created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopic();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
 
     /**
+     * Property partitionNum: The number of partitions in the topic.
+     * <p>
+     * Valid values:
+     * 1 to 48
+     * We recommend that you set the number of partitions to a multiple of 6 to reduce the
+     * risk of data skew.Note:For special requirements,submit a ticket.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPartitionNum() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPartitionNum() {
         return null;
     }
 
@@ -36,14 +58,15 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TopicProps> {
-        private java.lang.String instanceId;
-        private java.lang.String remark;
-        private java.lang.String topic;
-        private java.lang.Number partitionNum;
+        private java.lang.Object instanceId;
+        private java.lang.Object remark;
+        private java.lang.Object topic;
+        private java.lang.Object partitionNum;
 
         /**
          * Sets the value of {@link TopicProps#getInstanceId}
-         * @param instanceId the value to be set. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located. This parameter is required.
+         *                   You can call the GetInstanceList operation to query instances.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -52,8 +75,23 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the Message Queue for Apache Kafka instance where the topic is located. This parameter is required.
+         *                   You can call the GetInstanceList operation to query instances.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getRemark}
-         * @param remark the value to be set. This parameter is required.
+         * @param remark Property remark: The description of the topic. This parameter is required.
+         *               The value of this parameter must meet the following
+         *               requirements:
+         *               The value can only contain letters, digits, hyphens (-), and underscores (_).
+         *               The value must be 3 to 64 characters in length.
          * @return {@code this}
          */
         public Builder remark(java.lang.String remark) {
@@ -62,8 +100,27 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getRemark}
+         * @param remark Property remark: The description of the topic. This parameter is required.
+         *               The value of this parameter must meet the following
+         *               requirements:
+         *               The value can only contain letters, digits, hyphens (-), and underscores (_).
+         *               The value must be 3 to 64 characters in length.
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getTopic}
-         * @param topic the value to be set. This parameter is required.
+         * @param topic Property topic: The name of the topic. This parameter is required.
+         *              The value of this parameter must meet the following requirements:
+         *              The name can only contain letters, digits, hyphens (-), and underscores (_).
+         *              The name must be 3 to 64 characters in length, and will be automatically truncated
+         *              if it contains more characters.
+         *              The name cannot be modified after being created.
          * @return {@code this}
          */
         public Builder topic(java.lang.String topic) {
@@ -72,11 +129,44 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getTopic}
+         * @param topic Property topic: The name of the topic. This parameter is required.
+         *              The value of this parameter must meet the following requirements:
+         *              The name can only contain letters, digits, hyphens (-), and underscores (_).
+         *              The name must be 3 to 64 characters in length, and will be automatically truncated
+         *              if it contains more characters.
+         *              The name cannot be modified after being created.
+         * @return {@code this}
+         */
+        public Builder topic(com.aliyun.ros.cdk.core.IResolvable topic) {
+            this.topic = topic;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getPartitionNum}
-         * @param partitionNum the value to be set.
+         * @param partitionNum Property partitionNum: The number of partitions in the topic.
+         *                     Valid values:
+         *                     1 to 48
+         *                     We recommend that you set the number of partitions to a multiple of 6 to reduce the
+         *                     risk of data skew.Note:For special requirements,submit a ticket.
          * @return {@code this}
          */
         public Builder partitionNum(java.lang.Number partitionNum) {
+            this.partitionNum = partitionNum;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getPartitionNum}
+         * @param partitionNum Property partitionNum: The number of partitions in the topic.
+         *                     Valid values:
+         *                     1 to 48
+         *                     We recommend that you set the number of partitions to a multiple of 6 to reduce the
+         *                     risk of data skew.Note:For special requirements,submit a ticket.
+         * @return {@code this}
+         */
+        public Builder partitionNum(com.aliyun.ros.cdk.core.IResolvable partitionNum) {
             this.partitionNum = partitionNum;
             return this;
         }
@@ -97,10 +187,10 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TopicProps {
-        private final java.lang.String instanceId;
-        private final java.lang.String remark;
-        private final java.lang.String topic;
-        private final java.lang.Number partitionNum;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object remark;
+        private final java.lang.Object topic;
+        private final java.lang.Object partitionNum;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -108,16 +198,16 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.partitionNum = software.amazon.jsii.Kernel.get(this, "partitionNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceId, final java.lang.String remark, final java.lang.String topic, final java.lang.Number partitionNum) {
+        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object remark, final java.lang.Object topic, final java.lang.Object partitionNum) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
             this.remark = java.util.Objects.requireNonNull(remark, "remark is required");
@@ -126,22 +216,22 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
         }
 
         @Override
-        public final java.lang.String getTopic() {
+        public final java.lang.Object getTopic() {
             return this.topic;
         }
 
         @Override
-        public final java.lang.Number getPartitionNum() {
+        public final java.lang.Object getPartitionNum() {
             return this.partitionNum;
         }
 

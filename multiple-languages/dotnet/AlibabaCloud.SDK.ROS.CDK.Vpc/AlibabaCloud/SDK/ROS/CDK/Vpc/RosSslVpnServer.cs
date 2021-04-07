@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Attribute</strong>: SslVpnServerId: ID of the SSL-VPN server.
         /// </remarks>
-        [JsiiProperty(name: "attrSslVpnServerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSslVpnServerId
+        [JsiiProperty(name: "attrSslVpnServerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslVpnServerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -64,10 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
         /// The network segment cannot conflict with the LocalSubnet address segment.
         /// </remarks>
-        [JsiiProperty(name: "clientIpPool", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClientIpPool
+        [JsiiProperty(name: "clientIpPool", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClientIpPool
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -82,20 +82,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
         /// The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
         /// </remarks>
-        [JsiiProperty(name: "localSubnet", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LocalSubnet
+        [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LocalSubnet
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: vpnGatewayId: ID of the VPN gateway.
         /// </remarks>
-        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string VpnGatewayId
+        [JsiiProperty(name: "vpnGatewayId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object VpnGatewayId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -104,10 +104,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "cipher", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Cipher
+        [JsiiProperty(name: "cipher", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Cipher
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -127,10 +127,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// But it can't start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -139,10 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// 22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Port
+        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Port
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -150,10 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <strong>Property</strong>: proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "proto", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Proto
+        [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Proto
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

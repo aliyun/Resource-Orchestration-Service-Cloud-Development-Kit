@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS template type:  `ALIYUN::SAG::ACLAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosACLAssociation")
 public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAclId() {
-        return software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAclId() {
+        return software.amazon.jsii.Kernel.get(this, "aclId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -60,14 +60,20 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setAclId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aclId", java.util.Objects.requireNonNull(value, "aclId is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -75,13 +81,19 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSmartAgId() {
-        return software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSmartAgId() {
+        return software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSmartAgId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "smartAgId", java.util.Objects.requireNonNull(value, "smartAgId is required"));
+    }
+
+    /**
+     */
+    public void setSmartAgId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "smartAgId", java.util.Objects.requireNonNull(value, "smartAgId is required"));
     }
 
@@ -119,12 +131,28 @@ public class RosACLAssociation extends com.aliyun.ros.cdk.core.RosResource {
             this.props.aclId(aclId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param aclId This parameter is required.
+         */
+        public Builder aclId(final com.aliyun.ros.cdk.core.IResolvable aclId) {
+            this.props.aclId(aclId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param smartAgId This parameter is required.
          */
         public Builder smartAgId(final java.lang.String smartAgId) {
+            this.props.smartAgId(smartAgId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param smartAgId This parameter is required.
+         */
+        public Builder smartAgId(final com.aliyun.ros.cdk.core.IResolvable smartAgId) {
             this.props.smartAgId(smartAgId);
             return this;
         }

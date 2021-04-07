@@ -33,82 +33,82 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Attribute ContainerGroupId: The ID of the container group.</summary>
-        [JsiiProperty(name: "attrContainerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContainerGroupId
+        [JsiiProperty(name: "attrContainerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContainerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ContainerGroupName: The name of the container group.</summary>
-        [JsiiProperty(name: "attrContainerGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContainerGroupName
+        [JsiiProperty(name: "attrContainerGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContainerGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute EniInstanceId: ENI instance ID.</summary>
-        [JsiiProperty(name: "attrEniInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEniInstanceId
+        [JsiiProperty(name: "attrEniInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEniInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InternetIp: Internet IP.</summary>
-        [JsiiProperty(name: "attrInternetIp", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInternetIp
+        [JsiiProperty(name: "attrInternetIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInternetIp
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute IntranetIp: Intranet IP.</summary>
-        [JsiiProperty(name: "attrIntranetIp", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIntranetIp
+        [JsiiProperty(name: "attrIntranetIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIntranetIp
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Ipv6Address: Ipv6 address.</summary>
-        [JsiiProperty(name: "attrIpv6Address", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpv6Address
+        [JsiiProperty(name: "attrIpv6Address", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6Address
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute RegionId: The ID of the region in which the instance resides.</summary>
-        [JsiiProperty(name: "attrRegionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRegionId
+        [JsiiProperty(name: "attrRegionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRegionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecurityGroupId: The ID of the security group to which the instance belongs.</summary>
         /// <remarks>
         /// Instances in the same security group can access one another.
         /// </remarks>
-        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityGroupId
+        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VSwitchId: The ID of the VSwitch.</summary>
         /// <remarks>
         /// Currently, ECI instances can only be deployed in VPCs.
         /// </remarks>
-        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVSwitchId
+        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ZoneId: The ID of the zone in which the instance resides.</summary>
         /// <remarks>
         /// If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
         /// </remarks>
-        [JsiiProperty(name: "attrZoneId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrZoneId
+        [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

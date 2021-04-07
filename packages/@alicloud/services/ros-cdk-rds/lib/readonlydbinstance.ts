@@ -11,17 +11,17 @@ export interface ReadOnlyDBInstanceProps {
     /**
      * Property dbInstanceClass: The type of the instance. For more information, see Instance type list. The type of the read-only instance must be no less than that of the master instance. Otherwise, the read-only instance incurs high latency and high load.
      */
-    readonly dbInstanceClass: string;
+    readonly dbInstanceClass: string | ros.IResolvable;
 
     /**
      * Property dbInstanceId: The ID of the master instance.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property dbInstanceStorage: The storage space of the instance. Value range: 5 to 3000. The value must be a multiple of 5. Unit: GB.
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * Property engineVersion: The version of the database. The database and the master instance must have the same database version. Valid values:
@@ -30,12 +30,12 @@ export interface ReadOnlyDBInstanceProps {
      * - 8.0
      * - 2017_ent
      */
-    readonly engineVersion: string;
+    readonly engineVersion: string | ros.IResolvable;
 
     /**
      * Property zoneId: The ID of the zone. You can call the DescribeRegions API operation to view the latest zones.
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
      * Property category: The edition of the instance. Valid values:
@@ -43,12 +43,12 @@ export interface ReadOnlyDBInstanceProps {
      * - HighAvailability
      * - AlwaysOn
      */
-    readonly category?: string;
+    readonly category?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceStorageType: The storage type of the instance. Valid values:
@@ -56,22 +56,22 @@ export interface ReadOnlyDBInstanceProps {
      * - cloud_ssd: SSDs.
      * - cloud_essd: ESSDs.
      */
-    readonly dbInstanceStorageType?: string;
+    readonly dbInstanceStorageType?: string | ros.IResolvable;
 
     /**
      * Property payType: The billing method. The system only supports Pay-As-You-Go. Valid value: Postpaid.
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * Property privateIpAddress: The private IP address of the read-only instance. It must be within the IP address range provided by the switch. The system automatically assigns an IP address based on the VPCId and VSwitchId by default.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property tags: The tags of an instance.
@@ -88,17 +88,17 @@ export interface ReadOnlyDBInstanceProps {
      * Cannot begin with http:// or https://.
      * Can be a null string.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * Property vpcId: The ID of the VPC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The ID of the VSwitch.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -114,17 +114,17 @@ export class ReadOnlyDBInstance extends ros.Resource {
     /**
      * Attribute ConnectionString: DB instance connection url by Intranet.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     /**
      * Attribute DBInstanceId: The instance id of created database instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Attribute Port: Intranet port of created DB instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::ReadOnlyDBInstance`.
@@ -150,7 +150,7 @@ export class ReadOnlyDBInstance extends ros.Resource {
             dbInstanceId: props.dbInstanceId,
             dbInstanceStorage: props.dbInstanceStorage,
             dbInstanceDescription: props.dbInstanceDescription,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosReadOnlyDBInstance;
         this.attrConnectionString = rosReadOnlyDBInstance.attrConnectionString;

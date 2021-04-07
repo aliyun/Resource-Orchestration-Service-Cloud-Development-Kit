@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute GroupId: Application group ID generated after the group is created.</summary>
-        [JsiiProperty(name: "attrGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupId
+        [JsiiProperty(name: "attrGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

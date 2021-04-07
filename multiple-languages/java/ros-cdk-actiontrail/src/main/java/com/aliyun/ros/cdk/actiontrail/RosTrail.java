@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * A ROS template type:  `ALIYUN::ACTIONTRAIL::Trail`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.052Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.621Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrail")
 public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getOssBucketName() {
-        return software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", java.util.Objects.requireNonNull(value, "name is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getOssBucketName() {
+        return software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOssBucketName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossBucketName", java.util.Objects.requireNonNull(value, "ossBucketName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEventRw() {
-        return software.amazon.jsii.Kernel.get(this, "eventRw", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRoleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "roleName", java.util.Objects.requireNonNull(value, "roleName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEventRw() {
+        return software.amazon.jsii.Kernel.get(this, "eventRw", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getOssKeyPrefix() {
-        return software.amazon.jsii.Kernel.get(this, "ossKeyPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEventRw(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eventRw", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOssKeyPrefix() {
+        return software.amazon.jsii.Kernel.get(this, "ossKeyPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +147,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSlsProjectArn() {
-        return software.amazon.jsii.Kernel.get(this, "slsProjectArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOssKeyPrefix(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ossKeyPrefix", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSlsProjectArn() {
+        return software.amazon.jsii.Kernel.get(this, "slsProjectArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,13 +165,25 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSlsWriteRoleArn() {
-        return software.amazon.jsii.Kernel.get(this, "slsWriteRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSlsProjectArn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "slsProjectArn", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSlsWriteRoleArn() {
+        return software.amazon.jsii.Kernel.get(this, "slsWriteRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSlsWriteRoleArn(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "slsWriteRoleArn", value);
+    }
+
+    /**
+     */
+    public void setSlsWriteRoleArn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "slsWriteRoleArn", value);
     }
 
@@ -179,12 +221,28 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param ossBucketName This parameter is required.
          */
         public Builder ossBucketName(final java.lang.String ossBucketName) {
+            this.props.ossBucketName(ossBucketName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ossBucketName This parameter is required.
+         */
+        public Builder ossBucketName(final com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
             this.props.ossBucketName(ossBucketName);
             return this;
         }
@@ -197,12 +255,28 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
             this.props.roleName(roleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param roleName This parameter is required.
+         */
+        public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.props.roleName(roleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param eventRw This parameter is required.
          */
         public Builder eventRw(final java.lang.String eventRw) {
+            this.props.eventRw(eventRw);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param eventRw This parameter is required.
+         */
+        public Builder eventRw(final com.aliyun.ros.cdk.core.IResolvable eventRw) {
             this.props.eventRw(eventRw);
             return this;
         }
@@ -215,6 +289,14 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ossKeyPrefix(ossKeyPrefix);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ossKeyPrefix This parameter is required.
+         */
+        public Builder ossKeyPrefix(final com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
+            this.props.ossKeyPrefix(ossKeyPrefix);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -224,12 +306,28 @@ public class RosTrail extends com.aliyun.ros.cdk.core.RosResource {
             this.props.slsProjectArn(slsProjectArn);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param slsProjectArn This parameter is required.
+         */
+        public Builder slsProjectArn(final com.aliyun.ros.cdk.core.IResolvable slsProjectArn) {
+            this.props.slsProjectArn(slsProjectArn);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param slsWriteRoleArn This parameter is required.
          */
         public Builder slsWriteRoleArn(final java.lang.String slsWriteRoleArn) {
+            this.props.slsWriteRoleArn(slsWriteRoleArn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param slsWriteRoleArn This parameter is required.
+         */
+        public Builder slsWriteRoleArn(final com.aliyun.ros.cdk.core.IResolvable slsWriteRoleArn) {
             this.props.slsWriteRoleArn(slsWriteRoleArn);
             return this;
         }

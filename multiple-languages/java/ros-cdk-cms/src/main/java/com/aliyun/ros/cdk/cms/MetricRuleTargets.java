@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::MetricRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.247Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTargets")
 public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTargets`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public MetricRuleTargets(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.MetricRuleTargetsProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTargets`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public MetricRuleTargets(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.MetricRuleTargetsProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Arns: The ARN list of targets.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArns() {
-        return software.amazon.jsii.Kernel.get(this, "attrArns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArns() {
+        return software.amazon.jsii.Kernel.get(this, "attrArns", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Ids: The ID list of targets.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.MetricRuleTargets> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,25 +97,41 @@ public class MetricRuleTargets extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ruleId: The ID of the alert rule.
+         * <p>
          * @return {@code this}
-         * @param ruleId This parameter is required.
+         * @param ruleId Property ruleId: The ID of the alert rule. This parameter is required.
          */
         public Builder ruleId(final java.lang.String ruleId) {
             this.props.ruleId(ruleId);
             return this;
         }
+        /**
+         * Property ruleId: The ID of the alert rule.
+         * <p>
+         * @return {@code this}
+         * @param ruleId Property ruleId: The ID of the alert rule. This parameter is required.
+         */
+        public Builder ruleId(final com.aliyun.ros.cdk.core.IResolvable ruleId) {
+            this.props.ruleId(ruleId);
+            return this;
+        }
 
         /**
+         * Property targets: undefined.
+         * <p>
          * @return {@code this}
-         * @param targets This parameter is required.
+         * @param targets Property targets: undefined. This parameter is required.
          */
         public Builder targets(final com.aliyun.ros.cdk.core.IResolvable targets) {
             this.props.targets(targets);
             return this;
         }
         /**
+         * Property targets: undefined.
+         * <p>
          * @return {@code this}
-         * @param targets This parameter is required.
+         * @param targets Property targets: undefined. This parameter is required.
          */
         public Builder targets(final java.util.List<? extends java.lang.Object> targets) {
             this.props.targets(targets);

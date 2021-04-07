@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Attribute</strong>: CertId: Certificate ID.
         /// </remarks>
-        [JsiiProperty(name: "attrCertId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCertId
+        [JsiiProperty(name: "attrCertId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCertId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Property</strong>: cert: Specify the content of the certificate. To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "cert", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Cert
+        [JsiiProperty(name: "cert", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Cert
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -79,20 +79,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// <strong>Property</strong>: key: Specify the certificate private key content. To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Key
+        [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Key
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: name: Custom certificate name. The certificate name under a user cannot be duplicated.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Name
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <strong>Property</strong>: lang: Specifies the language type for requesting and receiving messages.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "lang", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Lang
+        [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Lang
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -111,10 +111,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <strong>Property</strong>: sourceIp: Specifies the source IP address of the request.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sourceIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SourceIp
+        [JsiiProperty(name: "sourceIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SourceIp
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

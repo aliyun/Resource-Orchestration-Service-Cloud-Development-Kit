@@ -11,7 +11,7 @@ export interface CommonBandwidthPackageIpProps {
     /**
      * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    readonly bandwidthPackageId: string;
+    readonly bandwidthPackageId: string | ros.IResolvable;
 
     /**
      * Property eips: List of eip associated with the Internet Shared Bandwidth instance.
@@ -32,12 +32,12 @@ export class CommonBandwidthPackageIp extends ros.Resource {
     /**
      * Attribute AllocationIds: All eip allocation ids of common bandwidth package.
      */
-    public readonly attrAllocationIds: any;
+    public readonly attrAllocationIds: ros.IResolvable;
 
     /**
      * Attribute IpAddresses: All eip addresses of common bandwidth package.
      */
-    public readonly attrIpAddresses: any;
+    public readonly attrIpAddresses: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackageIp`.

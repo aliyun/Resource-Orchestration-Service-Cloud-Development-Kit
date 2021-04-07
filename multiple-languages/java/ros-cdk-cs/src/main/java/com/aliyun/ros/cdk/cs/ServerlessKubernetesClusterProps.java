@@ -3,84 +3,111 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Properties for defining a `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.387Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ServerlessKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(ServerlessKubernetesClusterProps.Jsii$Proxy.class)
 public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property name: The name of the cluster.
+     * <p>
+     * The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
+     * Property addons: The add-ons to be installed for the cluster.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddons() {
         return null;
     }
 
     /**
+     * Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
+     * <p>
+     * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointPublicAccess() {
         return null;
     }
 
     /**
+     * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKubernetesVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKubernetesVersion() {
         return null;
     }
 
     /**
+     * Property natGateway: Whether to create a NAT gateway.
+     * <p>
+     * The value can be true or false. If not set, the system defaults to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNatGateway() {
         return null;
     }
 
     /**
+     * Property privateZone: Whether to enable PrivateZone for service discovery.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateZone() {
         return null;
     }
 
     /**
+     * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
+     * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
+     * <p>
+     * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServiceCidr() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceCidr() {
         return null;
     }
 
     /**
+     * Property tags: Tag the cluster.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vpcId: VPC ID.
+     * <p>
+     * If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+     * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
+     * Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
+     * Property vSwitchIds: The IDs of VSwitches.
+     * <p>
+     * If you leave this property empty, the system automatically creates a VSwitch.
+     * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
         return null;
     }
 
     /**
+     * Property zoneId: The zone ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -94,23 +121,24 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
      * A builder for {@link ServerlessKubernetesClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServerlessKubernetesClusterProps> {
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object addons;
         private java.lang.Object endpointPublicAccess;
-        private java.lang.String kubernetesVersion;
+        private java.lang.Object kubernetesVersion;
         private java.lang.Object natGateway;
         private java.lang.Object privateZone;
-        private java.lang.String securityGroupId;
-        private java.lang.String serviceCidr;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object serviceCidr;
+        private java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
         private java.lang.Object vSwitchIds;
-        private java.lang.String zoneId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getName}
-         * @param name the value to be set. This parameter is required.
+         * @param name Property name: The name of the cluster. This parameter is required.
+         *             The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -119,8 +147,19 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getName}
+         * @param name Property name: The name of the cluster. This parameter is required.
+         *             The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getAddons}
-         * @param addons the value to be set.
+         * @param addons Property addons: The add-ons to be installed for the cluster.
          * @return {@code this}
          */
         public Builder addons(com.aliyun.ros.cdk.core.IResolvable addons) {
@@ -130,7 +169,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getAddons}
-         * @param addons the value to be set.
+         * @param addons Property addons: The add-ons to be installed for the cluster.
          * @return {@code this}
          */
         public Builder addons(java.util.List<? extends java.lang.Object> addons) {
@@ -140,7 +179,8 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getEndpointPublicAccess}
-         * @param endpointPublicAccess the value to be set.
+         * @param endpointPublicAccess Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
+         *                             false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
          * @return {@code this}
          */
         public Builder endpointPublicAccess(java.lang.Boolean endpointPublicAccess) {
@@ -150,7 +190,8 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getEndpointPublicAccess}
-         * @param endpointPublicAccess the value to be set.
+         * @param endpointPublicAccess Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
+         *                             false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
          * @return {@code this}
          */
         public Builder endpointPublicAccess(com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
@@ -160,7 +201,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getKubernetesVersion}
-         * @param kubernetesVersion the value to be set.
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster.
          * @return {@code this}
          */
         public Builder kubernetesVersion(java.lang.String kubernetesVersion) {
@@ -169,8 +210,19 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getKubernetesVersion}
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster.
+         * @return {@code this}
+         */
+        public Builder kubernetesVersion(com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.kubernetesVersion = kubernetesVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getNatGateway}
-         * @param natGateway the value to be set.
+         * @param natGateway Property natGateway: Whether to create a NAT gateway.
+         *                   The value can be true or false. If not set, the system defaults to false.
          * @return {@code this}
          */
         public Builder natGateway(java.lang.Boolean natGateway) {
@@ -180,7 +232,8 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getNatGateway}
-         * @param natGateway the value to be set.
+         * @param natGateway Property natGateway: Whether to create a NAT gateway.
+         *                   The value can be true or false. If not set, the system defaults to false.
          * @return {@code this}
          */
         public Builder natGateway(com.aliyun.ros.cdk.core.IResolvable natGateway) {
@@ -190,7 +243,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getPrivateZone}
-         * @param privateZone the value to be set.
+         * @param privateZone Property privateZone: Whether to enable PrivateZone for service discovery.
          * @return {@code this}
          */
         public Builder privateZone(java.lang.Boolean privateZone) {
@@ -200,7 +253,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getPrivateZone}
-         * @param privateZone the value to be set.
+         * @param privateZone Property privateZone: Whether to enable PrivateZone for service discovery.
          * @return {@code this}
          */
         public Builder privateZone(com.aliyun.ros.cdk.core.IResolvable privateZone) {
@@ -210,7 +263,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set.
+         * @param securityGroupId Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
@@ -219,8 +272,19 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getServiceCidr}
-         * @param serviceCidr the value to be set.
+         * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
+         *                    When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
          * @return {@code this}
          */
         public Builder serviceCidr(java.lang.String serviceCidr) {
@@ -229,19 +293,32 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getServiceCidr}
+         * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
+         *                    When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+         * @return {@code this}
+         */
+        public Builder serviceCidr(com.aliyun.ros.cdk.core.IResolvable serviceCidr) {
+            this.serviceCidr = serviceCidr;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tag the cluster.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: VPC ID.
+         *              If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+         *              VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -250,8 +327,20 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getVpcId}
+         * @param vpcId Property vpcId: VPC ID.
+         *              If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+         *              VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -260,8 +349,20 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
+         * @param vSwitchIds Property vSwitchIds: The IDs of VSwitches.
+         *                   If you leave this property empty, the system automatically creates a VSwitch.
+         *                   Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
          * @return {@code this}
          */
         public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
@@ -271,7 +372,9 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
+         * @param vSwitchIds Property vSwitchIds: The IDs of VSwitches.
+         *                   If you leave this property empty, the system automatically creates a VSwitch.
+         *                   Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
          * @return {@code this}
          */
         public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
@@ -281,10 +384,20 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
 
         /**
          * Sets the value of {@link ServerlessKubernetesClusterProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: The zone ID.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServerlessKubernetesClusterProps#getZoneId}
+         * @param zoneId Property zoneId: The zone ID.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -305,19 +418,19 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerlessKubernetesClusterProps {
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object addons;
         private final java.lang.Object endpointPublicAccess;
-        private final java.lang.String kubernetesVersion;
+        private final java.lang.Object kubernetesVersion;
         private final java.lang.Object natGateway;
         private final java.lang.Object privateZone;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String serviceCidr;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object serviceCidr;
+        private final java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object vSwitchIds;
-        private final java.lang.String zoneId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -325,26 +438,26 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointPublicAccess = software.amazon.jsii.Kernel.get(this, "endpointPublicAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.kubernetesVersion = software.amazon.jsii.Kernel.get(this, "kubernetesVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natGateway = software.amazon.jsii.Kernel.get(this, "natGateway", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateZone = software.amazon.jsii.Kernel.get(this, "privateZone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceCidr = software.amazon.jsii.Kernel.get(this, "serviceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.Object addons, final java.lang.Object endpointPublicAccess, final java.lang.String kubernetesVersion, final java.lang.Object natGateway, final java.lang.Object privateZone, final java.lang.String securityGroupId, final java.lang.String serviceCidr, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.Object vSwitchIds, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object addons, final java.lang.Object endpointPublicAccess, final java.lang.Object kubernetesVersion, final java.lang.Object natGateway, final java.lang.Object privateZone, final java.lang.Object securityGroupId, final java.lang.Object serviceCidr, final java.util.List<? extends com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object vSwitchIds, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.addons = addons;
@@ -354,7 +467,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
             this.privateZone = privateZone;
             this.securityGroupId = securityGroupId;
             this.serviceCidr = serviceCidr;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
             this.vSwitchIds = vSwitchIds;
@@ -362,7 +475,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -377,7 +490,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getKubernetesVersion() {
+        public final java.lang.Object getKubernetesVersion() {
             return this.kubernetesVersion;
         }
 
@@ -392,27 +505,27 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getServiceCidr() {
+        public final java.lang.Object getServiceCidr() {
             return this.serviceCidr;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -422,7 +535,7 @@ public interface ServerlessKubernetesClusterProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

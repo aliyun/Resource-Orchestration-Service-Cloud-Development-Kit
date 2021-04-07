@@ -11,12 +11,12 @@ export interface StageConfigProps {
     /**
      * Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property stageName: The name of the Stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * Property variables: Variables in the stage, key-value pairs.

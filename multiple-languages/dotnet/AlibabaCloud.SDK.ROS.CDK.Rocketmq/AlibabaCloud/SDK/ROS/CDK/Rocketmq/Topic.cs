@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         }
 
         /// <summary>Attribute InstanceId: The ID of the instance.</summary>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MessageType: The type of the message.</summary>
-        [JsiiProperty(name: "attrMessageType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMessageType
+        [JsiiProperty(name: "attrMessageType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMessageType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Topic: The name of the topic.</summary>
-        [JsiiProperty(name: "attrTopic", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopic
+        [JsiiProperty(name: "attrTopic", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopic
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

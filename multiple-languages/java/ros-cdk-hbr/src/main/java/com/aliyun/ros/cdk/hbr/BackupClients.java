@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * A ROS resource type:  `ALIYUN::HBR::BackupClients`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.014Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.606Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.BackupClients")
 public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::HBR::BackupClients`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public BackupClients(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.hbr.BackupClientsProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::HBR::BackupClients`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public BackupClients(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.hbr.BackupClientsProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ClientIds: ID list of clients installed in instances.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClientIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrClientIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceIds: ID list of instances to install backup client.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.hbr.BackupClients> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,10 +97,22 @@ public class BackupClients extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceIds: ID list of instances to install backup client.
+         * <p>
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param instanceIds Property instanceIds: ID list of instances to install backup client. This parameter is required.
          */
-        public Builder instanceIds(final java.util.List<java.lang.String> instanceIds) {
+        public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.props.instanceIds(instanceIds);
+            return this;
+        }
+        /**
+         * Property instanceIds: ID list of instances to install backup client.
+         * <p>
+         * @return {@code this}
+         * @param instanceIds Property instanceIds: ID list of instances to install backup client. This parameter is required.
+         */
+        public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }

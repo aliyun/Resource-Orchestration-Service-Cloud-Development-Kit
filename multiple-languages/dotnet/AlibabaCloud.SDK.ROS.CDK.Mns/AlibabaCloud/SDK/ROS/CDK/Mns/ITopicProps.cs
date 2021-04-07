@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
     public interface ITopicProps
     {
         /// <summary>Property topicName: Topic name.</summary>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-        string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TopicName
         {
             get;
         }
@@ -34,9 +34,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
         /// </remarks>
-        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MaximumMessageSize
+        object? MaximumMessageSize
         {
             get
             {
@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             }
 
             /// <summary>Property topicName: Topic name.</summary>
-            [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TopicName
+            [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TopicName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property loggingEnabled: Whether to enable log management.</summary>
@@ -76,10 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
             /// An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MaximumMessageSize
+            [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaximumMessageSize
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,46 +3,46 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::LifecycleHook`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.482Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosLifecycleHookProps")
 @software.amazon.jsii.Jsii.Proxy(RosLifecycleHookProps.Jsii$Proxy.class)
 public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLifecycleTransition();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLifecycleTransition();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDefaultResult() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultResult() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getHeartbeatTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHeartbeatTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLifecycleHookName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLifecycleHookName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNotificationArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNotificationArn() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNotificationMetadata() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNotificationMetadata() {
         return null;
     }
 
@@ -56,13 +56,13 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosLifecycleHookProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosLifecycleHookProps> {
-        private java.lang.String lifecycleTransition;
-        private java.lang.String scalingGroupId;
-        private java.lang.String defaultResult;
-        private java.lang.Number heartbeatTimeout;
-        private java.lang.String lifecycleHookName;
-        private java.lang.String notificationArn;
-        private java.lang.String notificationMetadata;
+        private java.lang.Object lifecycleTransition;
+        private java.lang.Object scalingGroupId;
+        private java.lang.Object defaultResult;
+        private java.lang.Object heartbeatTimeout;
+        private java.lang.Object lifecycleHookName;
+        private java.lang.Object notificationArn;
+        private java.lang.Object notificationMetadata;
 
         /**
          * Sets the value of {@link RosLifecycleHookProps#getLifecycleTransition}
@@ -70,6 +70,16 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder lifecycleTransition(java.lang.String lifecycleTransition) {
+            this.lifecycleTransition = lifecycleTransition;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLifecycleHookProps#getLifecycleTransition}
+         * @param lifecycleTransition the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder lifecycleTransition(com.aliyun.ros.cdk.core.IResolvable lifecycleTransition) {
             this.lifecycleTransition = lifecycleTransition;
             return this;
         }
@@ -85,11 +95,31 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosLifecycleHookProps#getScalingGroupId}
+         * @param scalingGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLifecycleHookProps#getDefaultResult}
          * @param defaultResult the value to be set.
          * @return {@code this}
          */
         public Builder defaultResult(java.lang.String defaultResult) {
+            this.defaultResult = defaultResult;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLifecycleHookProps#getDefaultResult}
+         * @param defaultResult the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultResult(com.aliyun.ros.cdk.core.IResolvable defaultResult) {
             this.defaultResult = defaultResult;
             return this;
         }
@@ -105,11 +135,31 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosLifecycleHookProps#getHeartbeatTimeout}
+         * @param heartbeatTimeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder heartbeatTimeout(com.aliyun.ros.cdk.core.IResolvable heartbeatTimeout) {
+            this.heartbeatTimeout = heartbeatTimeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLifecycleHookProps#getLifecycleHookName}
          * @param lifecycleHookName the value to be set.
          * @return {@code this}
          */
         public Builder lifecycleHookName(java.lang.String lifecycleHookName) {
+            this.lifecycleHookName = lifecycleHookName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLifecycleHookProps#getLifecycleHookName}
+         * @param lifecycleHookName the value to be set.
+         * @return {@code this}
+         */
+        public Builder lifecycleHookName(com.aliyun.ros.cdk.core.IResolvable lifecycleHookName) {
             this.lifecycleHookName = lifecycleHookName;
             return this;
         }
@@ -125,11 +175,31 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosLifecycleHookProps#getNotificationArn}
+         * @param notificationArn the value to be set.
+         * @return {@code this}
+         */
+        public Builder notificationArn(com.aliyun.ros.cdk.core.IResolvable notificationArn) {
+            this.notificationArn = notificationArn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosLifecycleHookProps#getNotificationMetadata}
          * @param notificationMetadata the value to be set.
          * @return {@code this}
          */
         public Builder notificationMetadata(java.lang.String notificationMetadata) {
+            this.notificationMetadata = notificationMetadata;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosLifecycleHookProps#getNotificationMetadata}
+         * @param notificationMetadata the value to be set.
+         * @return {@code this}
+         */
+        public Builder notificationMetadata(com.aliyun.ros.cdk.core.IResolvable notificationMetadata) {
             this.notificationMetadata = notificationMetadata;
             return this;
         }
@@ -150,13 +220,13 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosLifecycleHookProps {
-        private final java.lang.String lifecycleTransition;
-        private final java.lang.String scalingGroupId;
-        private final java.lang.String defaultResult;
-        private final java.lang.Number heartbeatTimeout;
-        private final java.lang.String lifecycleHookName;
-        private final java.lang.String notificationArn;
-        private final java.lang.String notificationMetadata;
+        private final java.lang.Object lifecycleTransition;
+        private final java.lang.Object scalingGroupId;
+        private final java.lang.Object defaultResult;
+        private final java.lang.Object heartbeatTimeout;
+        private final java.lang.Object lifecycleHookName;
+        private final java.lang.Object notificationArn;
+        private final java.lang.Object notificationMetadata;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -164,19 +234,19 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.lifecycleTransition = software.amazon.jsii.Kernel.get(this, "lifecycleTransition", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.defaultResult = software.amazon.jsii.Kernel.get(this, "defaultResult", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.heartbeatTimeout = software.amazon.jsii.Kernel.get(this, "heartbeatTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.lifecycleHookName = software.amazon.jsii.Kernel.get(this, "lifecycleHookName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.notificationArn = software.amazon.jsii.Kernel.get(this, "notificationArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.notificationMetadata = software.amazon.jsii.Kernel.get(this, "notificationMetadata", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.lifecycleTransition = software.amazon.jsii.Kernel.get(this, "lifecycleTransition", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.defaultResult = software.amazon.jsii.Kernel.get(this, "defaultResult", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.heartbeatTimeout = software.amazon.jsii.Kernel.get(this, "heartbeatTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.lifecycleHookName = software.amazon.jsii.Kernel.get(this, "lifecycleHookName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.notificationArn = software.amazon.jsii.Kernel.get(this, "notificationArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.notificationMetadata = software.amazon.jsii.Kernel.get(this, "notificationMetadata", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String lifecycleTransition, final java.lang.String scalingGroupId, final java.lang.String defaultResult, final java.lang.Number heartbeatTimeout, final java.lang.String lifecycleHookName, final java.lang.String notificationArn, final java.lang.String notificationMetadata) {
+        protected Jsii$Proxy(final java.lang.Object lifecycleTransition, final java.lang.Object scalingGroupId, final java.lang.Object defaultResult, final java.lang.Object heartbeatTimeout, final java.lang.Object lifecycleHookName, final java.lang.Object notificationArn, final java.lang.Object notificationMetadata) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.lifecycleTransition = java.util.Objects.requireNonNull(lifecycleTransition, "lifecycleTransition is required");
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
@@ -188,37 +258,37 @@ public interface RosLifecycleHookProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getLifecycleTransition() {
+        public final java.lang.Object getLifecycleTransition() {
             return this.lifecycleTransition;
         }
 
         @Override
-        public final java.lang.String getScalingGroupId() {
+        public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
         }
 
         @Override
-        public final java.lang.String getDefaultResult() {
+        public final java.lang.Object getDefaultResult() {
             return this.defaultResult;
         }
 
         @Override
-        public final java.lang.Number getHeartbeatTimeout() {
+        public final java.lang.Object getHeartbeatTimeout() {
             return this.heartbeatTimeout;
         }
 
         @Override
-        public final java.lang.String getLifecycleHookName() {
+        public final java.lang.Object getLifecycleHookName() {
             return this.lifecycleHookName;
         }
 
         @Override
-        public final java.lang.String getNotificationArn() {
+        public final java.lang.Object getNotificationArn() {
             return this.notificationArn;
         }
 
         @Override
-        public final java.lang.String getNotificationMetadata() {
+        public final java.lang.Object getNotificationMetadata() {
             return this.notificationMetadata;
         }
 

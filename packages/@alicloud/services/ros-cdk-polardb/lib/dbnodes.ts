@@ -11,12 +11,12 @@ export interface DBNodesProps {
     /**
      * Property amount: Number of nodes to be added to cluster.
      */
-    readonly amount: number;
+    readonly amount: number | ros.IResolvable;
 
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to be added nodes to.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 }
 
 /**
@@ -32,12 +32,12 @@ export class DBNodes extends ros.Resource {
     /**
      * Attribute DBNodeIds: The ID list of added cluster nodes.
      */
-    public readonly attrDbNodeIds: any;
+    public readonly attrDbNodeIds: ros.IResolvable;
 
     /**
      * Attribute OrderIds: The order ID list of added cluster nodes.
      */
-    public readonly attrOrderIds: any;
+    public readonly attrOrderIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBNodes`.

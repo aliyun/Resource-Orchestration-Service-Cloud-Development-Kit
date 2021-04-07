@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <remarks>
         /// <strong>Attribute</strong>: Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
         /// </remarks>
-        [JsiiProperty(name: "attrData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrData
+        [JsiiProperty(name: "attrData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
         /// </remarks>
-        [JsiiProperty(name: "attrErrorData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrErrorData
+        [JsiiProperty(name: "attrErrorData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrErrorData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
         /// </remarks>
-        [JsiiProperty(name: "attrJoinedErrorData", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrJoinedErrorData
+        [JsiiProperty(name: "attrJoinedErrorData", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrJoinedErrorData
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -87,20 +87,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <remarks>
         /// <strong>Property</strong>: handle: A reference to the wait condition handle used to signal this wait condition.
         /// </remarks>
-        [JsiiProperty(name: "handle", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Handle
+        [JsiiProperty(name: "handle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Handle
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: timeout: The number of seconds to wait for the correct number of signals to arrive.
         /// </remarks>
-        [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Timeout
+        [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Timeout
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -108,10 +108,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// <strong>Property</strong>: count: The number of success signals that must be received before the stack creation process continues.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "count", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Count
+        [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Count
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

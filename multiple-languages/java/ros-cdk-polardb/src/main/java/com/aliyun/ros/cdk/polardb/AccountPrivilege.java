@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::AccountPrivilege`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.164Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.AccountPrivilege")
 public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::AccountPrivilege`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AccountPrivilege(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.AccountPrivilegeProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::AccountPrivilege`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AccountPrivilege(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.AccountPrivilegeProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.AccountPrivilege> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,37 +83,113 @@ public class AccountPrivilege extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property accountName: The name of the database account to be granted access permissions.
+         * <p>
          * @return {@code this}
-         * @param accountName This parameter is required.
+         * @param accountName Property accountName: The name of the database account to be granted access permissions. This parameter is required.
          */
         public Builder accountName(final java.lang.String accountName) {
             this.props.accountName(accountName);
             return this;
         }
+        /**
+         * Property accountName: The name of the database account to be granted access permissions.
+         * <p>
+         * @return {@code this}
+         * @param accountName Property accountName: The name of the database account to be granted access permissions. This parameter is required.
+         */
+        public Builder accountName(final com.aliyun.ros.cdk.core.IResolvable accountName) {
+            this.props.accountName(accountName);
+            return this;
+        }
 
         /**
+         * Property accountPrivilege: The permissions of the database account on the database.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ReadWrite: has read and write permissions on the database.</li>
+         * <li>ReadOnly: has the read-only permission on the database.</li>
+         * <li>DMLOnly: runs only data manipulation language (DML) statements.</li>
+         * <li>DDLOnly: runs only data definition language (DDL) statements.
+         * The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
+         * Separate multiple permissions with a comma (,).</li>
+         * </ul>
+         * <p>
          * @return {@code this}
-         * @param accountPrivilege This parameter is required.
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database. This parameter is required.
          */
         public Builder accountPrivilege(final java.lang.String accountPrivilege) {
             this.props.accountPrivilege(accountPrivilege);
             return this;
         }
+        /**
+         * Property accountPrivilege: The permissions of the database account on the database.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ReadWrite: has read and write permissions on the database.</li>
+         * <li>ReadOnly: has the read-only permission on the database.</li>
+         * <li>DMLOnly: runs only data manipulation language (DML) statements.</li>
+         * <li>DDLOnly: runs only data definition language (DDL) statements.
+         * The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
+         * Separate multiple permissions with a comma (,).</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database. This parameter is required.
+         */
+        public Builder accountPrivilege(final com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
+            this.props.accountPrivilege(accountPrivilege);
+            return this;
+        }
 
         /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
+         * <p>
          * @return {@code this}
-         * @param dbClusterId This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs. This parameter is required.
          */
         public Builder dbClusterId(final java.lang.String dbClusterId) {
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
+         * <p>
+         * @return {@code this}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs. This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
+         * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         * <p>
+         * You can grant access permissions on one or more databases to the database account.
+         * Separate multiple databases with a comma (,).
+         * <p>
          * @return {@code this}
-         * @param dbName This parameter is required.
+         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account. This parameter is required.
          */
         public Builder dbName(final java.lang.String dbName) {
+            this.props.dbName(dbName);
+            return this;
+        }
+        /**
+         * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         * <p>
+         * You can grant access permissions on one or more databases to the database account.
+         * Separate multiple databases with a comma (,).
+         * <p>
+         * @return {@code this}
+         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account. This parameter is required.
+         */
+        public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.props.dbName(dbName);
             return this;
         }

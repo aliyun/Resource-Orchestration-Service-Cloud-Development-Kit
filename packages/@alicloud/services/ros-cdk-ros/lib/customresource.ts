@@ -28,14 +28,19 @@ export interface CustomResourceProps {
      *   - web[sync]:http://abc.com
      *   - web[sync,idempotent]:https://abc.com
      */
-    readonly serviceToken: string;
+    readonly serviceToken: string | ros.IResolvable;
 
     /**
      * Property timeout: Timeout seconds before service provider responses.
      * It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&HTTPS request.
      * Timeout seconds are always 10 for sync HTTP&HTTPS request.
      */
-    readonly timeout: number;
+    readonly timeout: number | ros.IResolvable;
+
+    /**
+     * Property httpConfig: Config for HTTP&HTTPS service provider.
+     */
+    readonly httpConfig?: RosCustomResource.HttpConfigProperty | ros.IResolvable;
 
     /**
      * Property parameters: Parameters to be passed to service provider.
@@ -56,7 +61,7 @@ export class CustomResource extends ros.Resource {
     /**
      * Attribute Outputs: Output data received from service provider.
      */
-    public readonly attrOutputs: any;
+    public readonly attrOutputs: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ROS::CustomResource`.
@@ -72,6 +77,7 @@ export class CustomResource extends ros.Resource {
             serviceToken: props.serviceToken,
             parameters: props.parameters,
             timeout: props.timeout ? props.timeout : 60,
+            httpConfig: props.httpConfig,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosCustomResource;
         this.attrOutputs = rosCustomResource.attrOutputs;

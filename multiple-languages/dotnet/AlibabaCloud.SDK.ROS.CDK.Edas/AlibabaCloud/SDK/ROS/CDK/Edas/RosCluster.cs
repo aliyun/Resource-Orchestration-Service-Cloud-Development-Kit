@@ -47,37 +47,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster ID
         /// </remarks>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterName: Cluster name
         /// </remarks>
-        [JsiiProperty(name: "attrClusterName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterName
+        [JsiiProperty(name: "attrClusterName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterType: Cluster type
         /// </remarks>
-        [JsiiProperty(name: "attrClusterType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterType
+        [JsiiProperty(name: "attrClusterType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: IaasProvider: Provider
         /// </remarks>
-        [JsiiProperty(name: "attrIaasProvider", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIaasProvider
+        [JsiiProperty(name: "attrIaasProvider", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIaasProvider
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -89,20 +89,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: clusterName: Cluster name
         /// </remarks>
-        [JsiiProperty(name: "clusterName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClusterName
+        [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
         /// </remarks>
-        [JsiiProperty(name: "clusterType", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double ClusterType
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterType
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -116,10 +116,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: networkMode: Network Type. 1- classic network, 2-VPC
         /// </remarks>
-        [JsiiProperty(name: "networkMode", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double NetworkMode
+        [JsiiProperty(name: "networkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object NetworkMode
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -127,10 +127,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <strong>Property</strong>: logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? LogicalRegionId
+        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? LogicalRegionId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -138,10 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <strong>Property</strong>: oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "oversoldFactor", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? OversoldFactor
+        [JsiiProperty(name: "oversoldFactor", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? OversoldFactor
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -149,10 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <strong>Property</strong>: vpcId: VPC network ID. If network selection VPC, this parameter Required
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VpcId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

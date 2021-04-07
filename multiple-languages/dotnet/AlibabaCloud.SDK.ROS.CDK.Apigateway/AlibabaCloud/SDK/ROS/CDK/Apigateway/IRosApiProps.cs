@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
         /// </remarks>
-        [JsiiProperty(name: "apiName", typeJson: "{\"primitive\":\"string\"}")]
-        string ApiName
+        [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ApiName
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: groupId: The id of the Group.
         /// </remarks>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupId
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: resultSample: The sample of the result.
         /// </remarks>
-        [JsiiProperty(name: "resultSample", typeJson: "{\"primitive\":\"string\"}")]
-        string ResultSample
+        [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ResultSample
         {
             get;
         }
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
         /// </remarks>
-        [JsiiProperty(name: "resultType", typeJson: "{\"primitive\":\"string\"}")]
-        string ResultType
+        [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ResultType
         {
             get;
         }
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
         /// </remarks>
-        [JsiiProperty(name: "visibility", typeJson: "{\"primitive\":\"string\"}")]
-        string Visibility
+        [JsiiProperty(name: "visibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Visibility
         {
             get;
         }
@@ -78,9 +78,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// HEADER: Allow AppCode header authentication
         /// HEADER_QUERY: Allow AppCode header and query authentication
         /// </remarks>
-        [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AppCodeAuthType
+        object? AppCodeAuthType
         {
             get
             {
@@ -91,9 +91,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
         /// </remarks>
-        [JsiiProperty(name: "authType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AuthType
+        object? AuthType
         {
             get
             {
@@ -117,9 +117,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: description: Description of the API, less than 180 characters.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -128,7 +128,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: disableInternet: Set DisableInternet to true, only support intranet to call API. 
+        /// <strong>Property</strong>: disableInternet: Set DisableInternet to true, only support intranet to call API.
         /// Set DisableInternet to false, then the call is not restricted.
         /// </remarks>
         [JsiiProperty(name: "disableInternet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -157,9 +157,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: failResultSample: The sample of the fail result.
         /// </remarks>
-        [JsiiProperty(name: "failResultSample", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "failResultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? FailResultSample
+        object? FailResultSample
         {
             get
             {
@@ -168,9 +168,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
-        /// this is the unique identifier of the request, generally using UUID to identify. 
-        /// The API gateway will verify the validity of this parameter after receiving this parameter. 
+        /// <strong>Property</strong>: forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,
+        /// this is the unique identifier of the request, generally using UUID to identify.
+        /// The API gateway will verify the validity of this parameter after receiving this parameter.
         /// The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
         /// Set ForceNonceCheck to false, then no check.
         /// </remarks>
@@ -252,9 +252,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]? Tags
         {
             get
             {
@@ -273,19 +273,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
             /// </remarks>
-            [JsiiProperty(name: "apiName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ApiName
+            [JsiiProperty(name: "apiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ApiName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: groupId: The id of the Group.
             /// </remarks>
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -300,19 +300,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: resultSample: The sample of the result.
             /// </remarks>
-            [JsiiProperty(name: "resultSample", typeJson: "{\"primitive\":\"string\"}")]
-            public string ResultSample
+            [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ResultSample
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
             /// </remarks>
-            [JsiiProperty(name: "resultType", typeJson: "{\"primitive\":\"string\"}")]
-            public string ResultType
+            [JsiiProperty(name: "resultType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ResultType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -327,10 +327,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <remarks>
             /// <strong>Property</strong>: visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
             /// </remarks>
-            [JsiiProperty(name: "visibility", typeJson: "{\"primitive\":\"string\"}")]
-            public string Visibility
+            [JsiiProperty(name: "visibility", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Visibility
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -341,20 +341,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// HEADER_QUERY: Allow AppCode header and query authentication
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AppCodeAuthType
+            [JsiiProperty(name: "appCodeAuthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AppCodeAuthType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "authType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AuthType
+            [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AuthType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -371,14 +371,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: description: Description of the API, less than 180 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: disableInternet: Set DisableInternet to true, only support intranet to call API. 
+            /// <strong>Property</strong>: disableInternet: Set DisableInternet to true, only support intranet to call API.
             /// Set DisableInternet to false, then the call is not restricted.
             /// </remarks>
             [JsiiOptional]
@@ -402,16 +402,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: failResultSample: The sample of the fail result.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "failResultSample", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? FailResultSample
+            [JsiiProperty(name: "failResultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FailResultSample
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
-            /// this is the unique identifier of the request, generally using UUID to identify. 
-            /// The API gateway will verify the validity of this parameter after receiving this parameter. 
+            /// <strong>Property</strong>: forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting,
+            /// this is the unique identifier of the request, generally using UUID to identify.
+            /// The API gateway will verify the validity of this parameter after receiving this parameter.
             /// The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
             /// Set ForceNonceCheck to false, then no check.
             /// </remarks>
@@ -476,10 +476,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true)]
-            public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-apigateway.RosApi.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Apigateway.RosApi.ITagsProperty[]?>();
             }
         }
     }

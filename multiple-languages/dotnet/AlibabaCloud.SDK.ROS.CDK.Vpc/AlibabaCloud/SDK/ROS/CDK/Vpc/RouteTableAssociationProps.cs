@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public class RouteTableAssociationProps : AlibabaCloud.SDK.ROS.CDK.Vpc.IRouteTableAssociationProps
     {
         /// <summary>Property routeTableId: The ID of the route table.</summary>
-        [JsiiProperty(name: "routeTableId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RouteTableId
+        [JsiiProperty(name: "routeTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RouteTableId
         {
             get;
             set;
         }
 
         /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VSwitchId
         {
             get;
             set;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS resource type:  `ALIYUN::GA::Listener`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.999Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.589Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::GA::Listener`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Listener(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ga.ListenerProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::GA::Listener`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Listener(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ga.ListenerProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ListenerId: The ID of the listener.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrListenerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ga.Listener> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,25 +90,41 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
+         * <p>
          * @return {@code this}
-         * @param acceleratorId This parameter is required.
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added. This parameter is required.
          */
         public Builder acceleratorId(final java.lang.String acceleratorId) {
             this.props.acceleratorId(acceleratorId);
             return this;
         }
+        /**
+         * Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.
+         * <p>
+         * @return {@code this}
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added. This parameter is required.
+         */
+        public Builder acceleratorId(final com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.props.acceleratorId(acceleratorId);
+            return this;
+        }
 
         /**
+         * Property portRanges:.
+         * <p>
          * @return {@code this}
-         * @param portRanges This parameter is required.
+         * @param portRanges Property portRanges:. This parameter is required.
          */
         public Builder portRanges(final com.aliyun.ros.cdk.core.IResolvable portRanges) {
             this.props.portRanges(portRanges);
             return this;
         }
         /**
+         * Property portRanges:.
+         * <p>
          * @return {@code this}
-         * @param portRanges This parameter is required.
+         * @param portRanges Property portRanges:. This parameter is required.
          */
         public Builder portRanges(final java.util.List<? extends java.lang.Object> portRanges) {
             this.props.portRanges(portRanges);
@@ -107,37 +132,111 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property protocol: The network transmission protocol of the listener.
+         * <p>
+         * Valid values:
+         * tcp: TCP protocol
+         * udp: UDP protocol
+         * <p>
          * @return {@code this}
-         * @param protocol This parameter is required.
+         * @param protocol Property protocol: The network transmission protocol of the listener. This parameter is required.
          */
         public Builder protocol(final java.lang.String protocol) {
             this.props.protocol(protocol);
             return this;
         }
+        /**
+         * Property protocol: The network transmission protocol of the listener.
+         * <p>
+         * Valid values:
+         * tcp: TCP protocol
+         * udp: UDP protocol
+         * <p>
+         * @return {@code this}
+         * @param protocol Property protocol: The network transmission protocol of the listener. This parameter is required.
+         */
+        public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.props.protocol(protocol);
+            return this;
+        }
 
         /**
+         * Property clientAffinity: Specifies whether to enable client affinity for the listener.
+         * <p>
+         * If you do not specify the default value in the parameter, client affinity is disabled.
+         * When client affinity is disabled, the connections from a specific source (client)
+         * IP address are not always routed to the same endpoint.
+         * If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
+         * a specific source (client) IP address are always routed to the same endpoint.
+         * <p>
          * @return {@code this}
-         * @param clientAffinity This parameter is required.
+         * @param clientAffinity Property clientAffinity: Specifies whether to enable client affinity for the listener. This parameter is required.
          */
         public Builder clientAffinity(final java.lang.String clientAffinity) {
             this.props.clientAffinity(clientAffinity);
             return this;
         }
+        /**
+         * Property clientAffinity: Specifies whether to enable client affinity for the listener.
+         * <p>
+         * If you do not specify the default value in the parameter, client affinity is disabled.
+         * When client affinity is disabled, the connections from a specific source (client)
+         * IP address are not always routed to the same endpoint.
+         * If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
+         * a specific source (client) IP address are always routed to the same endpoint.
+         * <p>
+         * @return {@code this}
+         * @param clientAffinity Property clientAffinity: Specifies whether to enable client affinity for the listener. This parameter is required.
+         */
+        public Builder clientAffinity(final com.aliyun.ros.cdk.core.IResolvable clientAffinity) {
+            this.props.clientAffinity(clientAffinity);
+            return this;
+        }
 
         /**
+         * Property description: The description of the listener.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of the listener. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: The description of the listener.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of the listener. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property name: The name of the listener.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
+         * (_), and hyphens (-). It must start with a letter or Chinese character.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the listener. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * Property name: The name of the listener.
+         * <p>
+         * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
+         * (_), and hyphens (-). It must start with a letter or Chinese character.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the listener. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }

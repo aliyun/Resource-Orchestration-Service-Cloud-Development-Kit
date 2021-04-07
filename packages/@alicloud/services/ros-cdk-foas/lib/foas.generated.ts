@@ -10,22 +10,22 @@ export interface RosClusterProps {
     /**
      * @Property clusterName: Cluster name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    readonly clusterName: string;
+    readonly clusterName: string | ros.IResolvable;
 
     /**
      * @Property description: Cluster description.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * @Property ossBucket: Bucket name in your OSS.
      */
-    readonly ossBucket: string;
+    readonly ossBucket: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property order: Order detail. Only one of property Order or OrderId can be specified.
@@ -39,7 +39,7 @@ export interface RosClusterProps {
      * @Property orderId: Order Id. Only one of property Order or OrderId can be specified.
      * OrderId is suggested.
      */
-    readonly orderId?: string;
+    readonly orderId?: string | ros.IResolvable;
 }
 
 /**
@@ -139,42 +139,42 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute EngineVersions: Engine Versions.
      */
-    public readonly attrEngineVersions: any;
+    public readonly attrEngineVersions: ros.IResolvable;
 
     /**
      * @Attribute MasterInstanceInfos: Master instance infos.
      */
-    public readonly attrMasterInstanceInfos: any;
+    public readonly attrMasterInstanceInfos: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute SecurityGroupId: Security group Id.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
      * @Attribute SlaveInstanceInfos: Slave instance infos.
      */
-    public readonly attrSlaveInstanceInfos: any;
+    public readonly attrSlaveInstanceInfos: ros.IResolvable;
 
     /**
      * @Attribute State: Cluster status.
      */
-    public readonly attrState: any;
+    public readonly attrState: ros.IResolvable;
 
     /**
      * @Attribute VSwitchIds: VSwitch Ids.
      */
-    public readonly attrVSwitchIds: any;
+    public readonly attrVSwitchIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -182,22 +182,22 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property clusterName: Cluster name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    public clusterName: string;
+    public clusterName: string | ros.IResolvable;
 
     /**
      * @Property description: Cluster description.
      */
-    public description: string;
+    public description: string | ros.IResolvable;
 
     /**
      * @Property ossBucket: Bucket name in your OSS.
      */
-    public ossBucket: string;
+    public ossBucket: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    public vSwitchId: string;
+    public vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property order: Order detail. Only one of property Order or OrderId can be specified.
@@ -211,7 +211,7 @@ export class RosCluster extends ros.RosResource {
      * @Property orderId: Order Id. Only one of property Order or OrderId can be specified.
      * OrderId is suggested.
      */
-    public orderId: string | undefined;
+    public orderId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FOAS::Cluster`.
@@ -222,14 +222,14 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrEngineVersions = ros.Token.asString(this.getAtt('EngineVersions'));
-        this.attrMasterInstanceInfos = ros.Token.asString(this.getAtt('MasterInstanceInfos'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrSecurityGroupId = ros.Token.asString(this.getAtt('SecurityGroupId'));
-        this.attrSlaveInstanceInfos = ros.Token.asString(this.getAtt('SlaveInstanceInfos'));
-        this.attrState = ros.Token.asString(this.getAtt('State'));
-        this.attrVSwitchIds = ros.Token.asString(this.getAtt('VSwitchIds'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrEngineVersions = this.getAtt('EngineVersions');
+        this.attrMasterInstanceInfos = this.getAtt('MasterInstanceInfos');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrSlaveInstanceInfos = this.getAtt('SlaveInstanceInfos');
+        this.attrState = this.getAtt('State');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterName = props.clusterName;
@@ -264,27 +264,27 @@ export namespace RosCluster {
         /**
          * @Property payModel: Pay model. Valid values: pre, post. Default to post.
          */
-        readonly payModel?: string;
+        readonly payModel?: string | ros.IResolvable;
         /**
          * @Property period: Pre paid time period. Unit is month. Default to 1.
          */
-        readonly period?: number;
+        readonly period?: number | ros.IResolvable;
         /**
          * @Property masterNumber: Number of masters. Valid values: 1, 3. Default to 3.
          */
-        readonly masterNumber?: number;
+        readonly masterNumber?: number | ros.IResolvable;
         /**
          * @Property masterSpec: Master spec, such as Ecs_4c16g.
          */
-        readonly masterSpec: string;
+        readonly masterSpec: string | ros.IResolvable;
         /**
          * @Property slaveNumber: Number of masters. Valid values: 2-1000. Default to 2.
          */
-        readonly slaveNumber?: number;
+        readonly slaveNumber?: number | ros.IResolvable;
         /**
          * @Property slaveSpec: Master spec, such as Ecs_4c16g.
          */
-        readonly slaveSpec: string;
+        readonly slaveSpec: string | ros.IResolvable;
     }
 }
 /**
@@ -377,32 +377,32 @@ export interface RosProjectProps {
      * Exclusive cluster: cell
      * Shared cluster: public
      */
-    readonly deployType: string;
+    readonly deployType: string | ros.IResolvable;
 
     /**
      * @Property managerIds: Comma delimited account Id list of managers.
      */
-    readonly managerIds: string;
+    readonly managerIds: string | ros.IResolvable;
 
     /**
      * @Property name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property clusterId: Cluster ID.
      */
-    readonly clusterId?: string;
+    readonly clusterId?: string | ros.IResolvable;
 
     /**
      * @Property description: Project description.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property orderId: Order Id of Shared cluster.
      */
-    readonly orderId?: string;
+    readonly orderId?: string | ros.IResolvable;
 }
 
 /**
@@ -507,7 +507,7 @@ export class RosProject extends ros.RosResource {
     /**
      * @Attribute State: Project state.
      */
-    public readonly attrState: any;
+    public readonly attrState: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -517,32 +517,32 @@ export class RosProject extends ros.RosResource {
      * Exclusive cluster: cell
      * Shared cluster: public
      */
-    public deployType: string;
+    public deployType: string | ros.IResolvable;
 
     /**
      * @Property managerIds: Comma delimited account Id list of managers.
      */
-    public managerIds: string;
+    public managerIds: string | ros.IResolvable;
 
     /**
      * @Property name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property clusterId: Cluster ID.
      */
-    public clusterId: string | undefined;
+    public clusterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Project description.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property orderId: Order Id of Shared cluster.
      */
-    public orderId: string | undefined;
+    public orderId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FOAS::Project`.
@@ -553,7 +553,7 @@ export class RosProject extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProjectProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProject.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrState = ros.Token.asString(this.getAtt('State'));
+        this.attrState = this.getAtt('State');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.deployType = props.deployType;

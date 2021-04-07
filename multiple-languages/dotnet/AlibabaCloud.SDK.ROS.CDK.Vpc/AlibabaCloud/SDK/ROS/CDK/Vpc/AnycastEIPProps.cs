@@ -10,8 +10,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     {
         /// <summary>Property description: Anycast EIP instance description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property instanceChargeType: Anycast EIP instance charge type.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InstanceChargeType
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InstanceChargeType
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property internetChargeType: Anycast EIP instance access public network billing method.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "internetChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InternetChargeType
+        [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InternetChargeType
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property name: Anycast EIP instance name.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property serviceLocation: Anycast EIP instance access area.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "serviceLocation", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ServiceLocation
+        [JsiiProperty(name: "serviceLocation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ServiceLocation
         {
             get;
             set;

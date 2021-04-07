@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Property</strong>: policyName: Authorization policy name.
         /// </remarks>
-        [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-        string PolicyName
+        [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PolicyName
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Property</strong>: policyType: Authorization policy type. Value: "System" or "Custom".
         /// </remarks>
-        [JsiiProperty(name: "policyType", typeJson: "{\"primitive\":\"string\"}")]
-        string PolicyType
+        [JsiiProperty(name: "policyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PolicyType
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Property</strong>: userName: User name.Example: dev.
         /// </remarks>
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}")]
-        string UserName
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object UserName
         {
             get;
         }
@@ -46,28 +46,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyName: Authorization policy name.
             /// </remarks>
-            [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-            public string PolicyName
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PolicyName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: policyType: Authorization policy type. Value: "System" or "Custom".
             /// </remarks>
-            [JsiiProperty(name: "policyType", typeJson: "{\"primitive\":\"string\"}")]
-            public string PolicyType
+            [JsiiProperty(name: "policyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PolicyType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: userName: User name.Example: dev.
             /// </remarks>
-            [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}")]
-            public string UserName
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object UserName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

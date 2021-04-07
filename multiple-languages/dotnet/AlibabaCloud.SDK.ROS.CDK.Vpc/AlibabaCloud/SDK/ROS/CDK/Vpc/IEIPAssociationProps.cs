@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IEIPAssociationProps
     {
         /// <summary>Property allocationId: EIP instance id to bind.</summary>
-        [JsiiProperty(name: "allocationId", typeJson: "{\"primitive\":\"string\"}")]
-        string AllocationId
+        [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AllocationId
         {
             get;
         }
 
         /// <summary>Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -30,9 +30,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// MULTI_BINDED: Multi-EIP to ENI mode.
         /// This is required only when the value of InstanceType is NetworkInterface.
         /// </remarks>
-        [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Mode
+        object? Mode
         {
             get
             {
@@ -44,9 +44,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
         /// </remarks>
-        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PrivateIpAddress
+        object? PrivateIpAddress
         {
             get
             {
@@ -63,17 +63,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property allocationId: EIP instance id to bind.</summary>
-            [JsiiProperty(name: "allocationId", typeJson: "{\"primitive\":\"string\"}")]
-            public string AllocationId
+            [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AllocationId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.</summary>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property mode: The mode of association.</summary>
@@ -85,10 +85,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// This is required only when the value of InstanceType is NetworkInterface.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Mode
+            [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Mode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateIpAddress: An IP address in the CIDR block of the VSwitch.</summary>
@@ -96,10 +96,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PrivateIpAddress
+            [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateIpAddress
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

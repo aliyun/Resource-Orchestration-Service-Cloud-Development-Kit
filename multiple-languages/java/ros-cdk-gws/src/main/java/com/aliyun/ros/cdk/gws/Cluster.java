@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gws;
 /**
  * A ROS resource type:  `ALIYUN::GWS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.006Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.597Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.Cluster")
 public class Cluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::GWS::Cluster`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Cluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gws.ClusterProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::GWS::Cluster`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Cluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gws.ClusterProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ClusterId: Cluster id.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Name: Cluster name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
-        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.gws.Cluster> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,54 +97,106 @@ public class Cluster extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property clusterType: Cluster Type: gws.s1.standard.
+         * <p>
          * @return {@code this}
-         * @param clusterType This parameter is required.
+         * @param clusterType Property clusterType: Cluster Type: gws.s1.standard. This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
+        /**
+         * Property clusterType: Cluster Type: gws.s1.standard.
+         * <p>
+         * @return {@code this}
+         * @param clusterType Property clusterType: Cluster Type: gws.s1.standard. This parameter is required.
+         */
+        public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.props.clusterType(clusterType);
+            return this;
+        }
 
         /**
+         * Property vpcId: VPC id.
+         * <p>
          * @return {@code this}
-         * @param vpcId This parameter is required.
+         * @param vpcId Property vpcId: VPC id. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
+        /**
+         * Property vpcId: VPC id.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: VPC id. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
 
         /**
+         * Property name: Cluster name.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: Cluster name. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
-
         /**
+         * Property name: Cluster name.
+         * <p>
          * @return {@code this}
-         * @param policy This parameter is required.
+         * @param name Property name: Cluster name. This parameter is required.
          */
-        public Builder policy(final com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
-            this.props.policy(policy);
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
             return this;
         }
+
         /**
+         * Property policy: Cluster policy.
+         * <p>
          * @return {@code this}
-         * @param policy This parameter is required.
+         * @param policy Property policy: Cluster policy. This parameter is required.
          */
         public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
             this.props.policy(policy);
             return this;
         }
+        /**
+         * Property policy: Cluster policy.
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: Cluster policy. This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
+            this.props.policy(policy);
+            return this;
+        }
 
         /**
+         * Property vSwitchId: VSwitch id.
+         * <p>
          * @return {@code this}
-         * @param vSwitchId This parameter is required.
+         * @param vSwitchId Property vSwitchId: VSwitch id. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+        /**
+         * Property vSwitchId: VSwitch id.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: VSwitch id. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }

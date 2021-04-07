@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     public class DomainExtensionProps : AlibabaCloud.SDK.ROS.CDK.Slb.IDomainExtensionProps
     {
         /// <summary>Property domain: The domain name.</summary>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Domain
         {
             get;
             set;
@@ -23,24 +23,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// Valid value:
         /// 1-65535
         /// </remarks>
-        [JsiiProperty(name: "listenerPort", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double ListenerPort
+        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ListenerPort
         {
             get;
             set;
         }
 
         /// <summary>Property loadBalancerId: The ID of Server Load Balancer instance.</summary>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LoadBalancerId
         {
             get;
             set;
         }
 
         /// <summary>Property serverCertificateId: The ID of the certificate corresponding to the domain name.</summary>
-        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ServerCertificateId
+        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ServerCertificateId
         {
             get;
             set;

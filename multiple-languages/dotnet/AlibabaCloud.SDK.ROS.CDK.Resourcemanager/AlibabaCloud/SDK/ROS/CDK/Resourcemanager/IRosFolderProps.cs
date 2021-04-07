@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// <strong>Property</strong>: folderName: The name of the folder
         /// </remarks>
-        [JsiiProperty(name: "folderName", typeJson: "{\"primitive\":\"string\"}")]
-        string FolderName
+        [JsiiProperty(name: "folderName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object FolderName
         {
             get;
         }
@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// <strong>Property</strong>: parentFolderId: The ID of the parent folder. If not set, the system default value will be used
         /// </remarks>
-        [JsiiProperty(name: "parentFolderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "parentFolderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ParentFolderId
+        object? ParentFolderId
         {
             get
             {
@@ -41,20 +41,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             /// <remarks>
             /// <strong>Property</strong>: folderName: The name of the folder
             /// </remarks>
-            [JsiiProperty(name: "folderName", typeJson: "{\"primitive\":\"string\"}")]
-            public string FolderName
+            [JsiiProperty(name: "folderName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object FolderName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: parentFolderId: The ID of the parent folder. If not set, the system default value will be used
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "parentFolderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ParentFolderId
+            [JsiiProperty(name: "parentFolderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ParentFolderId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::FunctionInvoker`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.951Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosFunctionInvokerProps")
 @software.amazon.jsii.Jsii.Proxy(RosFunctionInvokerProps.Jsii$Proxy.class)
 public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFunctionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
      */
@@ -30,25 +30,25 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEvent() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEvent() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getExecuteVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getExecuteVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getQualifier() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQualifier() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getServiceRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceRegionId() {
         return null;
     }
 
@@ -62,14 +62,14 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosFunctionInvokerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosFunctionInvokerProps> {
-        private java.lang.String functionName;
-        private java.lang.String serviceName;
+        private java.lang.Object functionName;
+        private java.lang.Object serviceName;
         private java.lang.Object async;
         private java.lang.Object checkError;
-        private java.lang.String event;
-        private java.lang.Number executeVersion;
-        private java.lang.String qualifier;
-        private java.lang.String serviceRegionId;
+        private java.lang.Object event;
+        private java.lang.Object executeVersion;
+        private java.lang.Object qualifier;
+        private java.lang.Object serviceRegionId;
 
         /**
          * Sets the value of {@link RosFunctionInvokerProps#getFunctionName}
@@ -82,11 +82,31 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosFunctionInvokerProps#getFunctionName}
+         * @param functionName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.functionName = functionName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionInvokerProps#getServiceName}
          * @param serviceName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionInvokerProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.serviceName = serviceName;
             return this;
         }
@@ -142,11 +162,31 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosFunctionInvokerProps#getEvent}
+         * @param event the value to be set.
+         * @return {@code this}
+         */
+        public Builder event(com.aliyun.ros.cdk.core.IResolvable event) {
+            this.event = event;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionInvokerProps#getExecuteVersion}
          * @param executeVersion the value to be set.
          * @return {@code this}
          */
         public Builder executeVersion(java.lang.Number executeVersion) {
+            this.executeVersion = executeVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionInvokerProps#getExecuteVersion}
+         * @param executeVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder executeVersion(com.aliyun.ros.cdk.core.IResolvable executeVersion) {
             this.executeVersion = executeVersion;
             return this;
         }
@@ -162,11 +202,31 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosFunctionInvokerProps#getQualifier}
+         * @param qualifier the value to be set.
+         * @return {@code this}
+         */
+        public Builder qualifier(com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.qualifier = qualifier;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosFunctionInvokerProps#getServiceRegionId}
          * @param serviceRegionId the value to be set.
          * @return {@code this}
          */
         public Builder serviceRegionId(java.lang.String serviceRegionId) {
+            this.serviceRegionId = serviceRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosFunctionInvokerProps#getServiceRegionId}
+         * @param serviceRegionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder serviceRegionId(com.aliyun.ros.cdk.core.IResolvable serviceRegionId) {
             this.serviceRegionId = serviceRegionId;
             return this;
         }
@@ -187,14 +247,14 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosFunctionInvokerProps {
-        private final java.lang.String functionName;
-        private final java.lang.String serviceName;
+        private final java.lang.Object functionName;
+        private final java.lang.Object serviceName;
         private final java.lang.Object async;
         private final java.lang.Object checkError;
-        private final java.lang.String event;
-        private final java.lang.Number executeVersion;
-        private final java.lang.String qualifier;
-        private final java.lang.String serviceRegionId;
+        private final java.lang.Object event;
+        private final java.lang.Object executeVersion;
+        private final java.lang.Object qualifier;
+        private final java.lang.Object serviceRegionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -202,20 +262,20 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.async = software.amazon.jsii.Kernel.get(this, "async", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.checkError = software.amazon.jsii.Kernel.get(this, "checkError", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.event = software.amazon.jsii.Kernel.get(this, "event", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.executeVersion = software.amazon.jsii.Kernel.get(this, "executeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceRegionId = software.amazon.jsii.Kernel.get(this, "serviceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.event = software.amazon.jsii.Kernel.get(this, "event", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.executeVersion = software.amazon.jsii.Kernel.get(this, "executeVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceRegionId = software.amazon.jsii.Kernel.get(this, "serviceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String serviceName, final java.lang.Object async, final java.lang.Object checkError, final java.lang.String event, final java.lang.Number executeVersion, final java.lang.String qualifier, final java.lang.String serviceRegionId) {
+        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object serviceName, final java.lang.Object async, final java.lang.Object checkError, final java.lang.Object event, final java.lang.Object executeVersion, final java.lang.Object qualifier, final java.lang.Object serviceRegionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
             this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
@@ -228,12 +288,12 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getFunctionName() {
+        public final java.lang.Object getFunctionName() {
             return this.functionName;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
@@ -248,22 +308,22 @@ public interface RosFunctionInvokerProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getEvent() {
+        public final java.lang.Object getEvent() {
             return this.event;
         }
 
         @Override
-        public final java.lang.Number getExecuteVersion() {
+        public final java.lang.Object getExecuteVersion() {
             return this.executeVersion;
         }
 
         @Override
-        public final java.lang.String getQualifier() {
+        public final java.lang.Object getQualifier() {
             return this.qualifier;
         }
 
         @Override
-        public final java.lang.String getServiceRegionId() {
+        public final java.lang.Object getServiceRegionId() {
             return this.serviceRegionId;
         }
 

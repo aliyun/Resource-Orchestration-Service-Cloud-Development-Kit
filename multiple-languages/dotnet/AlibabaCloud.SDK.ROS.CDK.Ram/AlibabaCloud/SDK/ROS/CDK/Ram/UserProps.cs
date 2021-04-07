@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public class UserProps : AlibabaCloud.SDK.ROS.CDK.Ram.IUserProps
     {
         /// <summary>Property userName: Specifies the user name, containing up to 64 characters.</summary>
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string UserName
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object UserName
         {
             get;
             set;
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         /// <summary>Property comments: Comments of ram user.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "comments", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Comments
+        [JsiiProperty(name: "comments", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Comments
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         /// <summary>Property displayName: Display name, up to 128 characters or Chinese characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DisplayName
+        [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DisplayName
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         /// <summary>Property email: Email of ram user.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "email", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Email
+        [JsiiProperty(name: "email", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Email
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         /// <summary>Property mobilePhone: Phone number of ram user.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "mobilePhone", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MobilePhone
+        [JsiiProperty(name: "mobilePhone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MobilePhone
         {
             get;
             set;

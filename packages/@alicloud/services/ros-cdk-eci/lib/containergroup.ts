@@ -17,22 +17,27 @@ export interface ContainerGroupProps {
      * Property containerGroupName: The name of the container group. 
      * The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
      */
-    readonly containerGroupName: string;
+    readonly containerGroupName: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    readonly securityGroupId: string;
+    readonly securityGroupId: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property activeDeadlineSeconds: The validity period in seconds.
      */
-    readonly activeDeadlineSeconds?: number;
+    readonly activeDeadlineSeconds?: number | ros.IResolvable;
 
     /**
      * Property autoMatchImageCache: Specifies whether to automatically match the image cache.
@@ -42,7 +47,7 @@ export interface ContainerGroupProps {
     /**
      * Property cpu: CPU size
      */
-    readonly cpu?: number;
+    readonly cpu?: number | ros.IResolvable;
 
     /**
      * Property dnsConfig: The information about DNS configurations.
@@ -52,7 +57,7 @@ export interface ContainerGroupProps {
     /**
      * Property eipInstanceId: Elastic IP ID
      */
-    readonly eipInstanceId?: string;
+    readonly eipInstanceId?: string | ros.IResolvable;
 
     /**
      * Property hostAliase: Customize the hostname mapping of a container inside the pod
@@ -67,7 +72,7 @@ export interface ContainerGroupProps {
     /**
      * Property imageSnapshotId: Image cache ID or snapshot ID.
      */
-    readonly imageSnapshotId?: string;
+    readonly imageSnapshotId?: string | ros.IResolvable;
 
     /**
      * Property initContainer: The containers that constitute the container group for initializing.
@@ -77,27 +82,27 @@ export interface ContainerGroupProps {
     /**
      * Property instanceType: The type of the ECS instance.
      */
-    readonly instanceType?: string;
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * Property ipv6AddressCount: The number of IPv6 addresses.
      */
-    readonly ipv6AddressCount?: number;
+    readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
      * Property memory: memory size
      */
-    readonly memory?: number;
+    readonly memory?: number | ros.IResolvable;
 
     /**
      * Property ramRoleName: The RAM role that the container group assumes. ECI and ECS share the same RAM role.
      */
-    readonly ramRoleName?: string;
+    readonly ramRoleName?: string | ros.IResolvable;
 
     /**
      * Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
-    readonly restartPolicy?: string;
+    readonly restartPolicy?: string | ros.IResolvable;
 
     /**
      * Property securityContextSysctl: ECI Sysctl is valid for every container in ECI.
@@ -115,7 +120,7 @@ export interface ContainerGroupProps {
     /**
      * Property spotPriceLimit: Set the hourly maximum price of the instance. It supports a maximum of 3 decimal places. It takes effect when the value of the parameter SpotStrategy is SpotWithPriceLimit.
      */
-    readonly spotPriceLimit?: number;
+    readonly spotPriceLimit?: number | ros.IResolvable;
 
     /**
      * Property spotStrategy: Instance preemption strategy.
@@ -124,7 +129,7 @@ export interface ContainerGroupProps {
      * SpotWithPriceLimit: Preemptive instance that sets a cap price.
      * SpotAsPriceGo: The system automatically bids, following the current market actual price.
      */
-    readonly spotStrategy?: string;
+    readonly spotStrategy?: string | ros.IResolvable;
 
     /**
      * Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
@@ -134,7 +139,7 @@ export interface ContainerGroupProps {
     /**
      * Property terminationGracePeriodSeconds: The buffer time for the program to handle operations before it is stopped.
      */
-    readonly terminationGracePeriodSeconds?: number;
+    readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
 
     /**
      * Property volume: The data volume. You can specify a maximum of 20 data volumes.
@@ -144,7 +149,7 @@ export interface ContainerGroupProps {
     /**
      * Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -160,52 +165,52 @@ export class ContainerGroup extends ros.Resource {
     /**
      * Attribute ContainerGroupId: The ID of the container group.
      */
-    public readonly attrContainerGroupId: any;
+    public readonly attrContainerGroupId: ros.IResolvable;
 
     /**
      * Attribute ContainerGroupName: The name of the container group.
      */
-    public readonly attrContainerGroupName: any;
+    public readonly attrContainerGroupName: ros.IResolvable;
 
     /**
      * Attribute EniInstanceId: ENI instance ID.
      */
-    public readonly attrEniInstanceId: any;
+    public readonly attrEniInstanceId: ros.IResolvable;
 
     /**
      * Attribute InternetIp: Internet IP.
      */
-    public readonly attrInternetIp: any;
+    public readonly attrInternetIp: ros.IResolvable;
 
     /**
      * Attribute IntranetIp: Intranet IP.
      */
-    public readonly attrIntranetIp: any;
+    public readonly attrIntranetIp: ros.IResolvable;
 
     /**
      * Attribute Ipv6Address: Ipv6 address.
      */
-    public readonly attrIpv6Address: any;
+    public readonly attrIpv6Address: ros.IResolvable;
 
     /**
      * Attribute RegionId: The ID of the region in which the instance resides.
      */
-    public readonly attrRegionId: any;
+    public readonly attrRegionId: ros.IResolvable;
 
     /**
      * Attribute SecurityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
      * Attribute VSwitchId: The ID of the VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    public readonly attrVSwitchId: any;
+    public readonly attrVSwitchId: ros.IResolvable;
 
     /**
      * Attribute ZoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    public readonly attrZoneId: any;
+    public readonly attrZoneId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECI::ContainerGroup`.
@@ -243,6 +248,7 @@ export class ContainerGroup extends ros.Resource {
             slsEnable: props.slsEnable,
             restartPolicy: props.restartPolicy,
             volume: props.volume,
+            acrRegistryInfo: props.acrRegistryInfo,
             tag: props.tag,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosContainerGroup;

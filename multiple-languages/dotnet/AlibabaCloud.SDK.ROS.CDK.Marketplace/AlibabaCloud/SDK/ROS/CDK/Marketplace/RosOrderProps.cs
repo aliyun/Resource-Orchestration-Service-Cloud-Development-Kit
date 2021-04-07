@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <remarks>
         /// <strong>Property</strong>: productCode: Product code for the resource.
         /// </remarks>
-        [JsiiProperty(name: "productCode", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProductCode
+        [JsiiProperty(name: "productCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProductCode
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <remarks>
         /// <strong>Property</strong>: skuCode: Sku code for the resource.
         /// </remarks>
-        [JsiiProperty(name: "skuCode", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SkuCode
+        [JsiiProperty(name: "skuCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SkuCode
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <strong>Property</strong>: chargeType: The resource charge type. Default value is Prepaid
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ChargeType
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ChargeType
         {
             get;
             set;
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <strong>Property</strong>: duration: Duration of the resource. If ChargeType is specified as Postpaid, this value will be ignore.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "duration", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Duration
+        [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Duration
         {
             get;
             set;
@@ -67,8 +67,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <strong>Property</strong>: pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PricingCycle
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PricingCycle
         {
             get;
             set;
@@ -78,8 +78,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Marketplace
         /// <strong>Property</strong>: quantity: Resource number. Default value is 1
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "quantity", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Quantity
+        [JsiiProperty(name: "quantity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Quantity
         {
             get;
             set;

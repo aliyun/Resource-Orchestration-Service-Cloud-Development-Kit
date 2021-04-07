@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
         /// A time point 90 days after creation or modification cannot be entered.
         /// </remarks>
-        [JsiiProperty(name: "launchTime", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LaunchTime
+        [JsiiProperty(name: "launchTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LaunchTime
         {
             get;
             set;
@@ -27,8 +27,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Fill in the unique identifier of the scaling rule.
         /// </remarks>
-        [JsiiProperty(name: "scheduledAction", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ScheduledAction
+        [JsiiProperty(name: "scheduledAction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ScheduledAction
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Value range: [0, 21600]
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "launchExpirationTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? LaunchExpirationTime
+        [JsiiProperty(name: "launchExpirationTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LaunchExpirationTime
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recurrenceEndTime", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RecurrenceEndTime
+        [JsiiProperty(name: "recurrenceEndTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RecurrenceEndTime
         {
             get;
             set;
@@ -73,7 +73,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property recurrenceType: Type of the scheduled task to be repeated.</summary>
         /// <remarks>
         /// Optional values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>Daily: Recurrence interval by day for a scheduled task.</description>
         /// <description>Weekly: Recurrence interval by week for a scheduled task.</description>
@@ -82,8 +82,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// </list>
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recurrenceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RecurrenceType
+        [JsiiProperty(name: "recurrenceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RecurrenceType
         {
             get;
             set;
@@ -99,8 +99,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// </list>
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recurrenceValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RecurrenceValue
+        [JsiiProperty(name: "recurrenceValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RecurrenceValue
         {
             get;
             set;
@@ -113,8 +113,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// If this parameter is not specified, the default value ScheduledScalingTaskId is used.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "scheduledTaskName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ScheduledTaskName
+        [JsiiProperty(name: "scheduledTaskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ScheduledTaskName
         {
             get;
             set;

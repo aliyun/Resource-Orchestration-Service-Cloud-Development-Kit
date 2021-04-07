@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Attribute MasterSlaveServerGroupId: Active/standby server group ID.</summary>
-        [JsiiProperty(name: "attrMasterSlaveServerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterSlaveServerGroupId
+        [JsiiProperty(name: "attrMasterSlaveServerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterSlaveServerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

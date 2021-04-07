@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Attribute</strong>: ClientIds: ID list of clients installed in instances
         /// </remarks>
-        [JsiiProperty(name: "attrClientIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClientIds
+        [JsiiProperty(name: "attrClientIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClientIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceIds: ID list of instances to install backup client
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceIds
+        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,10 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: ID list of instances to install backup client
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        public virtual string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object InstanceIds
         {
-            get => GetInstanceProperty<string[]>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.elasticsearch;
 /**
  * A ROS resource type:  `ALIYUN::ElasticSearch::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.764Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.438Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.elasticsearch.InstanceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Instance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.elasticsearch.InstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,39 +49,75 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Domain: Instance connection domain (only VPC network access supported).
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomain() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomain() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceChargeType: Instance charge type.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceChargeType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceId: The ID of the Elasticsearch instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKibanaDomain() {
-        return software.amazon.jsii.Kernel.get(this, "attrKibanaDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute KibanaDomain: Kibana console domain (Internet access supported).
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKibanaPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrKibanaPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKibanaDomain() {
+        return software.amazon.jsii.Kernel.get(this, "attrKibanaDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute KibanaPort: Kibana console port.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKibanaPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrKibanaPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Port:  Instance connection port.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrStatus() {
-        return software.amazon.jsii.Kernel.get(this, "attrStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute PublicDomain: Instance public connection domain.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicDomain() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Status: The Elasticsearch instance status.
+     * <p>
+     * Includes active, activating, inactive. Some operations are denied when status is not active.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrStatus() {
+        return software.amazon.jsii.Kernel.get(this, "attrStatus", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Version: Elasticsearch version.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVersion() {
+        return software.amazon.jsii.Kernel.get(this, "attrVersion", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VSwitchId: The ID of VSwitch.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVSwitchId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -82,8 +126,8 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.elasticsearch.Instance> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -91,8 +135,8 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -111,16 +155,20 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dataNode: The Elasticsearch cluster's data node setting.
+         * <p>
          * @return {@code this}
-         * @param dataNode This parameter is required.
+         * @param dataNode Property dataNode: The Elasticsearch cluster's data node setting. This parameter is required.
          */
         public Builder dataNode(final com.aliyun.ros.cdk.elasticsearch.RosInstance.DataNodeProperty dataNode) {
             this.props.dataNode(dataNode);
             return this;
         }
         /**
+         * Property dataNode: The Elasticsearch cluster's data node setting.
+         * <p>
          * @return {@code this}
-         * @param dataNode This parameter is required.
+         * @param dataNode Property dataNode: The Elasticsearch cluster's data node setting. This parameter is required.
          */
         public Builder dataNode(final com.aliyun.ros.cdk.core.IResolvable dataNode) {
             this.props.dataNode(dataNode);
@@ -128,61 +176,162 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property password: The password of the instance.
+         * <p>
+         * The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!&#64;#$%&amp;*()_+-=).
+         * <p>
          * @return {@code this}
-         * @param password This parameter is required.
+         * @param password Property password: The password of the instance. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props.password(password);
             return this;
         }
+        /**
+         * Property password: The password of the instance.
+         * <p>
+         * The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!&#64;#$%&amp;*()_+-=).
+         * <p>
+         * @return {@code this}
+         * @param password Property password: The password of the instance. This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
+            this.props.password(password);
+            return this;
+        }
 
         /**
+         * Property version: Elasticsearch version.
+         * <p>
+         * Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
+         * <p>
          * @return {@code this}
-         * @param version This parameter is required.
+         * @param version Property version: Elasticsearch version. This parameter is required.
          */
         public Builder version(final java.lang.String version) {
             this.props.version(version);
             return this;
         }
+        /**
+         * Property version: Elasticsearch version.
+         * <p>
+         * Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
+         * <p>
+         * @return {@code this}
+         * @param version Property version: Elasticsearch version. This parameter is required.
+         */
+        public Builder version(final com.aliyun.ros.cdk.core.IResolvable version) {
+            this.props.version(version);
+            return this;
+        }
 
         /**
+         * Property vSwitchId: The ID of VSwitch.
+         * <p>
          * @return {@code this}
-         * @param vSwitchId This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of VSwitch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * Property vSwitchId: The ID of VSwitch.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: The ID of VSwitch. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
+         * Property description: The description of instance.
+         * <p>
+         * It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: The description of instance.
+         * <p>
+         * It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of instance. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property enablePublic: Whether enable public access.
+         * <p>
+         * If properties is true, will allocate public address.Default: false.
+         * <p>
          * @return {@code this}
-         * @param instanceChargeType This parameter is required.
+         * @param enablePublic Property enablePublic: Whether enable public access. This parameter is required.
+         */
+        public Builder enablePublic(final java.lang.Boolean enablePublic) {
+            this.props.enablePublic(enablePublic);
+            return this;
+        }
+        /**
+         * Property enablePublic: Whether enable public access.
+         * <p>
+         * If properties is true, will allocate public address.Default: false.
+         * <p>
+         * @return {@code this}
+         * @param enablePublic Property enablePublic: Whether enable public access. This parameter is required.
+         */
+        public Builder enablePublic(final com.aliyun.ros.cdk.core.IResolvable enablePublic) {
+            this.props.enablePublic(enablePublic);
+            return this;
+        }
+
+        /**
+         * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid. This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
             this.props.instanceChargeType(instanceChargeType);
             return this;
         }
+        /**
+         * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
+         * <p>
+         * @return {@code this}
+         * @param instanceChargeType Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid. This parameter is required.
+         */
+        public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.props.instanceChargeType(instanceChargeType);
+            return this;
+        }
 
         /**
+         * Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
+         * <p>
          * @return {@code this}
-         * @param kibanaWhitelist This parameter is required.
+         * @param kibanaWhitelist Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network. This parameter is required.
          */
         public Builder kibanaWhitelist(final java.util.List<? extends java.lang.Object> kibanaWhitelist) {
             this.props.kibanaWhitelist(kibanaWhitelist);
             return this;
         }
         /**
+         * Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
+         * <p>
          * @return {@code this}
-         * @param kibanaWhitelist This parameter is required.
+         * @param kibanaWhitelist Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network. This parameter is required.
          */
         public Builder kibanaWhitelist(final com.aliyun.ros.cdk.core.IResolvable kibanaWhitelist) {
             this.props.kibanaWhitelist(kibanaWhitelist);
@@ -190,16 +339,24 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property masterNode: The dedicated master node setting.
+         * <p>
+         * If specified, dedicated master node will be created.
+         * <p>
          * @return {@code this}
-         * @param masterNode This parameter is required.
+         * @param masterNode Property masterNode: The dedicated master node setting. This parameter is required.
          */
         public Builder masterNode(final com.aliyun.ros.cdk.core.IResolvable masterNode) {
             this.props.masterNode(masterNode);
             return this;
         }
         /**
+         * Property masterNode: The dedicated master node setting.
+         * <p>
+         * If specified, dedicated master node will be created.
+         * <p>
          * @return {@code this}
-         * @param masterNode This parameter is required.
+         * @param masterNode Property masterNode: The dedicated master node setting. This parameter is required.
          */
         public Builder masterNode(final com.aliyun.ros.cdk.elasticsearch.RosInstance.MasterNodeProperty masterNode) {
             this.props.masterNode(masterNode);
@@ -207,25 +364,45 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property period: The duration that you will buy Elasticsearch instance (in month).
+         * <p>
+         * It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * <p>
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param period Property period: The duration that you will buy Elasticsearch instance (in month). This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
+        /**
+         * Property period: The duration that you will buy Elasticsearch instance (in month).
+         * <p>
+         * It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: The duration that you will buy Elasticsearch instance (in month). This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
+         * Property privateWhitelist: Set the instance's IP whitelist in VPC network.
+         * <p>
          * @return {@code this}
-         * @param privateWhitelist This parameter is required.
+         * @param privateWhitelist Property privateWhitelist: Set the instance's IP whitelist in VPC network. This parameter is required.
          */
         public Builder privateWhitelist(final java.util.List<? extends java.lang.Object> privateWhitelist) {
             this.props.privateWhitelist(privateWhitelist);
             return this;
         }
         /**
+         * Property privateWhitelist: Set the instance's IP whitelist in VPC network.
+         * <p>
          * @return {@code this}
-         * @param privateWhitelist This parameter is required.
+         * @param privateWhitelist Property privateWhitelist: Set the instance's IP whitelist in VPC network. This parameter is required.
          */
         public Builder privateWhitelist(final com.aliyun.ros.cdk.core.IResolvable privateWhitelist) {
             this.props.privateWhitelist(privateWhitelist);
@@ -233,19 +410,61 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property publicWhitelist: Set the instance's IP whitelist in Internet.
+         * <p>
+         * The AllocatePublicAddress should be true.
+         * <p>
          * @return {@code this}
-         * @param publicWhitelist This parameter is required.
+         * @param publicWhitelist Property publicWhitelist: Set the instance's IP whitelist in Internet. This parameter is required.
          */
         public Builder publicWhitelist(final java.util.List<? extends java.lang.Object> publicWhitelist) {
             this.props.publicWhitelist(publicWhitelist);
             return this;
         }
         /**
+         * Property publicWhitelist: Set the instance's IP whitelist in Internet.
+         * <p>
+         * The AllocatePublicAddress should be true.
+         * <p>
          * @return {@code this}
-         * @param publicWhitelist This parameter is required.
+         * @param publicWhitelist Property publicWhitelist: Set the instance's IP whitelist in Internet. This parameter is required.
          */
         public Builder publicWhitelist(final com.aliyun.ros.cdk.core.IResolvable publicWhitelist) {
             this.props.publicWhitelist(publicWhitelist);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.elasticsearch.RosInstance.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

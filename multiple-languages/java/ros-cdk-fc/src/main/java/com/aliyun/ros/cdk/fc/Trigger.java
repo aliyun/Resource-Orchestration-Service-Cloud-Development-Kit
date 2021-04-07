@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS resource type:  `ALIYUN::FC::Trigger`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.960Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Trigger")
 public class Trigger extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::Trigger`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Trigger(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.TriggerProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::Trigger`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Trigger(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.TriggerProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,27 +49,31 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute FunctionName: Function name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFunctionName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFunctionName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFunctionName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ServiceName: Service name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TriggerId: The trigger ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTriggerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTriggerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTriggerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTriggerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TriggerName: Trigger name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTriggerName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTriggerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTriggerName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTriggerName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -70,8 +82,8 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc.Trigger> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -79,8 +91,8 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -99,34 +111,66 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property functionName: Function name.
+         * <p>
          * @return {@code this}
-         * @param functionName This parameter is required.
+         * @param functionName Property functionName: Function name. This parameter is required.
          */
         public Builder functionName(final java.lang.String functionName) {
             this.props.functionName(functionName);
             return this;
         }
+        /**
+         * Property functionName: Function name.
+         * <p>
+         * @return {@code this}
+         * @param functionName Property functionName: Function name. This parameter is required.
+         */
+        public Builder functionName(final com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.props.functionName(functionName);
+            return this;
+        }
 
         /**
+         * Property serviceName: Service name.
+         * <p>
          * @return {@code this}
-         * @param serviceName This parameter is required.
+         * @param serviceName Property serviceName: Service name. This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
+        /**
+         * Property serviceName: Service name.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: Service name. This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
 
         /**
+         * Property triggerConfig: Event source specific trigger configuration.
+         * <p>
+         * The value is different according to trigger type.
+         * <p>
          * @return {@code this}
-         * @param triggerConfig This parameter is required.
+         * @param triggerConfig Property triggerConfig: Event source specific trigger configuration. This parameter is required.
          */
         public Builder triggerConfig(final com.aliyun.ros.cdk.core.IResolvable triggerConfig) {
             this.props.triggerConfig(triggerConfig);
             return this;
         }
         /**
+         * Property triggerConfig: Event source specific trigger configuration.
+         * <p>
+         * The value is different according to trigger type.
+         * <p>
          * @return {@code this}
-         * @param triggerConfig This parameter is required.
+         * @param triggerConfig Property triggerConfig: Event source specific trigger configuration. This parameter is required.
          */
         public Builder triggerConfig(final java.util.Map<java.lang.String, ? extends java.lang.Object> triggerConfig) {
             this.props.triggerConfig(triggerConfig);
@@ -134,46 +178,126 @@ public class Trigger extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property triggerName: Trigger name.
+         * <p>
+         * Example : "image_resize"
+         * <p>
          * @return {@code this}
-         * @param triggerName This parameter is required.
+         * @param triggerName Property triggerName: Trigger name. This parameter is required.
          */
         public Builder triggerName(final java.lang.String triggerName) {
             this.props.triggerName(triggerName);
             return this;
         }
+        /**
+         * Property triggerName: Trigger name.
+         * <p>
+         * Example : "image_resize"
+         * <p>
+         * @return {@code this}
+         * @param triggerName Property triggerName: Trigger name. This parameter is required.
+         */
+        public Builder triggerName(final com.aliyun.ros.cdk.core.IResolvable triggerName) {
+            this.props.triggerName(triggerName);
+            return this;
+        }
 
         /**
+         * Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss".
+         * <p>
          * @return {@code this}
-         * @param triggerType This parameter is required.
+         * @param triggerType Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss". This parameter is required.
          */
         public Builder triggerType(final java.lang.String triggerType) {
             this.props.triggerType(triggerType);
             return this;
         }
+        /**
+         * Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss".
+         * <p>
+         * @return {@code this}
+         * @param triggerType Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss". This parameter is required.
+         */
+        public Builder triggerType(final com.aliyun.ros.cdk.core.IResolvable triggerType) {
+            this.props.triggerType(triggerType);
+            return this;
+        }
 
         /**
+         * Property invocationRole: The role grants event source the permission to run function on behalf of user.
+         * <p>
+         * This is optional for some triggers.
+         * Example : "acs:ram::1234567890:role/fc-test"
+         * <p>
          * @return {@code this}
-         * @param invocationRole This parameter is required.
+         * @param invocationRole Property invocationRole: The role grants event source the permission to run function on behalf of user. This parameter is required.
          */
         public Builder invocationRole(final java.lang.String invocationRole) {
             this.props.invocationRole(invocationRole);
             return this;
         }
+        /**
+         * Property invocationRole: The role grants event source the permission to run function on behalf of user.
+         * <p>
+         * This is optional for some triggers.
+         * Example : "acs:ram::1234567890:role/fc-test"
+         * <p>
+         * @return {@code this}
+         * @param invocationRole Property invocationRole: The role grants event source the permission to run function on behalf of user. This parameter is required.
+         */
+        public Builder invocationRole(final com.aliyun.ros.cdk.core.IResolvable invocationRole) {
+            this.props.invocationRole(invocationRole);
+            return this;
+        }
 
         /**
+         * Property qualifier: service version or alias.
+         * <p>
+         * Example : "LATEST"
+         * <p>
          * @return {@code this}
-         * @param qualifier This parameter is required.
+         * @param qualifier Property qualifier: service version or alias. This parameter is required.
          */
         public Builder qualifier(final java.lang.String qualifier) {
             this.props.qualifier(qualifier);
             return this;
         }
+        /**
+         * Property qualifier: service version or alias.
+         * <p>
+         * Example : "LATEST"
+         * <p>
+         * @return {@code this}
+         * @param qualifier Property qualifier: service version or alias. This parameter is required.
+         */
+        public Builder qualifier(final com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.props.qualifier(qualifier);
+            return this;
+        }
 
         /**
+         * Property sourceArn: The Aliyun Resource Name (ARN) of event source.
+         * <p>
+         * This is optional for some triggers.
+         * Example : "acs:oss:cn-shanghai:12345:mybucket"
+         * <p>
          * @return {@code this}
-         * @param sourceArn This parameter is required.
+         * @param sourceArn Property sourceArn: The Aliyun Resource Name (ARN) of event source. This parameter is required.
          */
         public Builder sourceArn(final java.lang.String sourceArn) {
+            this.props.sourceArn(sourceArn);
+            return this;
+        }
+        /**
+         * Property sourceArn: The Aliyun Resource Name (ARN) of event source.
+         * <p>
+         * This is optional for some triggers.
+         * Example : "acs:oss:cn-shanghai:12345:mybucket"
+         * <p>
+         * @return {@code this}
+         * @param sourceArn Property sourceArn: The Aliyun Resource Name (ARN) of event source. This parameter is required.
+         */
+        public Builder sourceArn(final com.aliyun.ros.cdk.core.IResolvable sourceArn) {
             this.props.sourceArn(sourceArn);
             return this;
         }

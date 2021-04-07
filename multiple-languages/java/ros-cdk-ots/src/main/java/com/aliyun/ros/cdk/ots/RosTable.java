@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * A ROS template type:  `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.154Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.778Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosTable")
 public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTableName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTableName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTableName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setInstanceName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceName", java.util.Objects.requireNonNull(value, "instanceName is required"));
+    }
+
+    /**
+     */
+    public void setInstanceName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceName", java.util.Objects.requireNonNull(value, "instanceName is required"));
     }
 
@@ -93,13 +99,19 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTableName() {
-        return software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTableName() {
+        return software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTableName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tableName", java.util.Objects.requireNonNull(value, "tableName is required"));
+    }
+
+    /**
+     */
+    public void setTableName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "tableName", java.util.Objects.requireNonNull(value, "tableName is required"));
     }
 
@@ -123,8 +135,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getDeviationCellVersionInSec() {
-        return software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeviationCellVersionInSec() {
+        return software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,13 +147,25 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getMaxVersions() {
-        return software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDeviationCellVersionInSec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deviationCellVersionInSec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMaxVersions() {
+        return software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMaxVersions(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "maxVersions", value);
+    }
+
+    /**
+     */
+    public void setMaxVersions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "maxVersions", value);
     }
 
@@ -183,13 +207,19 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTimeToLive() {
-        return software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTimeToLive() {
+        return software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTimeToLive(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "timeToLive", value);
+    }
+
+    /**
+     */
+    public void setTimeToLive(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "timeToLive", value);
     }
     /**
@@ -202,12 +232,12 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
         /**
          * @return a {@link Builder} of {@link ColumnsProperty}
@@ -221,8 +251,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ColumnsProperty> {
-            private java.lang.String name;
-            private java.lang.String type;
+            private java.lang.Object name;
+            private java.lang.Object type;
 
             /**
              * Sets the value of {@link ColumnsProperty#getName}
@@ -236,12 +266,34 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ColumnsProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ColumnsProperty#getType}
              * @param type the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ColumnsProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
                 this.type = type;
                 return this;
             }
@@ -264,8 +316,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ColumnsProperty {
-            private final java.lang.String name;
-            private final java.lang.String type;
+            private final java.lang.Object name;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -273,26 +325,26 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String name, final java.lang.String type) {
+            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(name, "name is required");
                 this.type = java.util.Objects.requireNonNull(type, "type is required");
             }
 
             @Override
-            public final java.lang.String getName() {
+            public final java.lang.Object getName() {
                 return this.name;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
@@ -344,12 +396,12 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
         /**
          * @return a {@link Builder} of {@link PrimaryKeyProperty}
@@ -363,8 +415,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<PrimaryKeyProperty> {
-            private java.lang.String name;
-            private java.lang.String type;
+            private java.lang.Object name;
+            private java.lang.Object type;
 
             /**
              * Sets the value of {@link PrimaryKeyProperty#getName}
@@ -378,12 +430,34 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link PrimaryKeyProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link PrimaryKeyProperty#getType}
              * @param type the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link PrimaryKeyProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
                 this.type = type;
                 return this;
             }
@@ -406,8 +480,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PrimaryKeyProperty {
-            private final java.lang.String name;
-            private final java.lang.String type;
+            private final java.lang.Object name;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -415,26 +489,26 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String name, final java.lang.String type) {
+            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(name, "name is required");
                 this.type = java.util.Objects.requireNonNull(type, "type is required");
             }
 
             @Override
-            public final java.lang.String getName() {
+            public final java.lang.Object getName() {
                 return this.name;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
@@ -486,12 +560,12 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getRead();
+        @org.jetbrains.annotations.NotNull java.lang.Object getRead();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getWrite();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWrite();
 
         /**
          * @return a {@link Builder} of {@link ReservedThroughputProperty}
@@ -505,8 +579,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ReservedThroughputProperty> {
-            private java.lang.Number read;
-            private java.lang.Number write;
+            private java.lang.Object read;
+            private java.lang.Object write;
 
             /**
              * Sets the value of {@link ReservedThroughputProperty#getRead}
@@ -520,12 +594,34 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ReservedThroughputProperty#getRead}
+             * @param read the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder read(com.aliyun.ros.cdk.core.IResolvable read) {
+                this.read = read;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ReservedThroughputProperty#getWrite}
              * @param write the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder write(java.lang.Number write) {
+                this.write = write;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ReservedThroughputProperty#getWrite}
+             * @param write the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder write(com.aliyun.ros.cdk.core.IResolvable write) {
                 this.write = write;
                 return this;
             }
@@ -548,8 +644,8 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ReservedThroughputProperty {
-            private final java.lang.Number read;
-            private final java.lang.Number write;
+            private final java.lang.Object read;
+            private final java.lang.Object write;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -557,26 +653,26 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.read = software.amazon.jsii.Kernel.get(this, "read", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.write = software.amazon.jsii.Kernel.get(this, "write", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.read = software.amazon.jsii.Kernel.get(this, "read", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.write = software.amazon.jsii.Kernel.get(this, "write", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Number read, final java.lang.Number write) {
+            protected Jsii$Proxy(final java.lang.Object read, final java.lang.Object write) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.read = java.util.Objects.requireNonNull(read, "read is required");
                 this.write = java.util.Objects.requireNonNull(write, "write is required");
             }
 
             @Override
-            public final java.lang.Number getRead() {
+            public final java.lang.Object getRead() {
                 return this.read;
             }
 
             @Override
-            public final java.lang.Number getWrite() {
+            public final java.lang.Object getWrite() {
                 return this.write;
             }
 
@@ -628,22 +724,22 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getColumns();
+        @org.jetbrains.annotations.NotNull java.lang.Object getColumns();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getIndexName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getIndexName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getPrimaryKeys();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPrimaryKeys();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getIndexType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIndexType() {
             return null;
         }
 
@@ -659,10 +755,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SecondaryIndicesProperty> {
-            private java.util.List<java.lang.String> columns;
-            private java.lang.String indexName;
-            private java.util.List<java.lang.String> primaryKeys;
-            private java.lang.String indexType;
+            private java.lang.Object columns;
+            private java.lang.Object indexName;
+            private java.lang.Object primaryKeys;
+            private java.lang.Object indexType;
 
             /**
              * Sets the value of {@link SecondaryIndicesProperty#getColumns}
@@ -670,7 +766,18 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder columns(java.util.List<java.lang.String> columns) {
+            public Builder columns(com.aliyun.ros.cdk.core.IResolvable columns) {
+                this.columns = columns;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecondaryIndicesProperty#getColumns}
+             * @param columns the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder columns(java.util.List<? extends java.lang.Object> columns) {
                 this.columns = columns;
                 return this;
             }
@@ -687,12 +794,34 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SecondaryIndicesProperty#getIndexName}
+             * @param indexName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder indexName(com.aliyun.ros.cdk.core.IResolvable indexName) {
+                this.indexName = indexName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SecondaryIndicesProperty#getPrimaryKeys}
              * @param primaryKeys the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-            public Builder primaryKeys(java.util.List<java.lang.String> primaryKeys) {
+            public Builder primaryKeys(com.aliyun.ros.cdk.core.IResolvable primaryKeys) {
+                this.primaryKeys = primaryKeys;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecondaryIndicesProperty#getPrimaryKeys}
+             * @param primaryKeys the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder primaryKeys(java.util.List<? extends java.lang.Object> primaryKeys) {
                 this.primaryKeys = primaryKeys;
                 return this;
             }
@@ -704,6 +833,17 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder indexType(java.lang.String indexType) {
+                this.indexType = indexType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SecondaryIndicesProperty#getIndexType}
+             * @param indexType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder indexType(com.aliyun.ros.cdk.core.IResolvable indexType) {
                 this.indexType = indexType;
                 return this;
             }
@@ -726,10 +866,10 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecondaryIndicesProperty {
-            private final java.util.List<java.lang.String> columns;
-            private final java.lang.String indexName;
-            private final java.util.List<java.lang.String> primaryKeys;
-            private final java.lang.String indexType;
+            private final java.lang.Object columns;
+            private final java.lang.Object indexName;
+            private final java.lang.Object primaryKeys;
+            private final java.lang.Object indexType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -737,16 +877,16 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.columns = software.amazon.jsii.Kernel.get(this, "columns", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-                this.indexName = software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.primaryKeys = software.amazon.jsii.Kernel.get(this, "primaryKeys", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-                this.indexType = software.amazon.jsii.Kernel.get(this, "indexType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.columns = software.amazon.jsii.Kernel.get(this, "columns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.indexName = software.amazon.jsii.Kernel.get(this, "indexName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.primaryKeys = software.amazon.jsii.Kernel.get(this, "primaryKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.indexType = software.amazon.jsii.Kernel.get(this, "indexType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.util.List<java.lang.String> columns, final java.lang.String indexName, final java.util.List<java.lang.String> primaryKeys, final java.lang.String indexType) {
+            protected Jsii$Proxy(final java.lang.Object columns, final java.lang.Object indexName, final java.lang.Object primaryKeys, final java.lang.Object indexType) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.columns = java.util.Objects.requireNonNull(columns, "columns is required");
                 this.indexName = java.util.Objects.requireNonNull(indexName, "indexName is required");
@@ -755,22 +895,22 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.util.List<java.lang.String> getColumns() {
+            public final java.lang.Object getColumns() {
                 return this.columns;
             }
 
             @Override
-            public final java.lang.String getIndexName() {
+            public final java.lang.Object getIndexName() {
                 return this.indexName;
             }
 
             @Override
-            public final java.util.List<java.lang.String> getPrimaryKeys() {
+            public final java.lang.Object getPrimaryKeys() {
                 return this.primaryKeys;
             }
 
             @Override
-            public final java.lang.String getIndexType() {
+            public final java.lang.Object getIndexType() {
                 return this.indexType;
             }
 
@@ -855,6 +995,14 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceName This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -878,6 +1026,14 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          * @param tableName This parameter is required.
          */
         public Builder tableName(final java.lang.String tableName) {
+            this.props.tableName(tableName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tableName This parameter is required.
+         */
+        public Builder tableName(final com.aliyun.ros.cdk.core.IResolvable tableName) {
             this.props.tableName(tableName);
             return this;
         }
@@ -907,12 +1063,28 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
             this.props.deviationCellVersionInSec(deviationCellVersionInSec);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param deviationCellVersionInSec This parameter is required.
+         */
+        public Builder deviationCellVersionInSec(final com.aliyun.ros.cdk.core.IResolvable deviationCellVersionInSec) {
+            this.props.deviationCellVersionInSec(deviationCellVersionInSec);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param maxVersions This parameter is required.
          */
         public Builder maxVersions(final java.lang.Number maxVersions) {
+            this.props.maxVersions(maxVersions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param maxVersions This parameter is required.
+         */
+        public Builder maxVersions(final com.aliyun.ros.cdk.core.IResolvable maxVersions) {
             this.props.maxVersions(maxVersions);
             return this;
         }
@@ -956,6 +1128,14 @@ public class RosTable extends com.aliyun.ros.cdk.core.RosResource {
          * @param timeToLive This parameter is required.
          */
         public Builder timeToLive(final java.lang.Number timeToLive) {
+            this.props.timeToLive(timeToLive);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param timeToLive This parameter is required.
+         */
+        public Builder timeToLive(final com.aliyun.ros.cdk.core.IResolvable timeToLive) {
             this.props.timeToLive(timeToLive);
             return this;
         }

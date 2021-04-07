@@ -4,7 +4,11 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Lazily produce a value&#xD; &#xD; Can be used to return a string, list or numeric value whose actual value&#xD; will only be calculated later, during synthesis.</summary>
+    /// <summary>Lazily produce a value.</summary>
+    /// <remarks>
+    /// Can be used to return a string, list or numeric value whose actual value
+    /// will only be calculated later, during synthesis.
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Lazy), fullyQualifiedName: "@alicloud/ros-cdk-core.Lazy")]
     public class Lazy : DeputyBase
     {

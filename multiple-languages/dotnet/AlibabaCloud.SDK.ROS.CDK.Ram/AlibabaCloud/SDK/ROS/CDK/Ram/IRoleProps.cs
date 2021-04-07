@@ -9,23 +9,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public interface IRoleProps
     {
         /// <summary>Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.</summary>
-        [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"}]}}")]
         object AssumeRolePolicyDocument
         {
             get;
         }
 
         /// <summary>Property roleName: Specifies the role name, containing up to 64 characters.</summary>
-        [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}")]
-        string RoleName
+        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RoleName
         {
             get;
         }
 
         /// <summary>Property description: Remark information, up to 1024 characters or Chinese characters.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -38,9 +38,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
         /// The default value is used if the parameter is not specified.
         /// </remarks>
-        [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MaxSessionDuration
+        object? MaxSessionDuration
         {
             get
             {
@@ -68,25 +68,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <summary>Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.</summary>
-            [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"}]}}")]
             public object AssumeRolePolicyDocument
             {
                 get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property roleName: Specifies the role name, containing up to 64 characters.</summary>
-            [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RoleName
+            [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RoleName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Remark information, up to 1024 characters or Chinese characters.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property maxSessionDuration: The maximum session duration of the RAM role.</summary>
@@ -95,10 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// The default value is used if the parameter is not specified.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MaxSessionDuration
+            [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxSessionDuration
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property policies: Describes what actions are allowed on what resources.</summary>

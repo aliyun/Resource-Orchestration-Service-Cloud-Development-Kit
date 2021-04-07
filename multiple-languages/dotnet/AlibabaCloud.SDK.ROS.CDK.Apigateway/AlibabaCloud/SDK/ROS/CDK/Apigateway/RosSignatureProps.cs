@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: signatureKey: The key of the signature.
         /// </remarks>
-        [JsiiProperty(name: "signatureKey", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SignatureKey
+        [JsiiProperty(name: "signatureKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SignatureKey
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
         /// </remarks>
-        [JsiiProperty(name: "signatureName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SignatureName
+        [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SignatureName
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         /// <remarks>
         /// <strong>Property</strong>: signatureSecret: The secret of the signature.
         /// </remarks>
-        [JsiiProperty(name: "signatureSecret", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SignatureSecret
+        [JsiiProperty(name: "signatureSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SignatureSecret
         {
             get;
             set;

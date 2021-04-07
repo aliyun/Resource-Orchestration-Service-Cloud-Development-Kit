@@ -32,11 +32,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         {
         }
 
-        /// <summary>Attribute SubscriptionUrl: URL of created subscription.</summary>
-        [JsiiProperty(name: "attrSubscriptionUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionUrl
+        /// <summary>Attribute SubscriptionName: Subscription name.</summary>
+        [JsiiProperty(name: "attrSubscriptionName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute SubscriptionUrl: URL of created subscription.</summary>
+        [JsiiProperty(name: "attrSubscriptionUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionUrl
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute TopicName: Topic name.</summary>
+        [JsiiProperty(name: "attrTopicName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

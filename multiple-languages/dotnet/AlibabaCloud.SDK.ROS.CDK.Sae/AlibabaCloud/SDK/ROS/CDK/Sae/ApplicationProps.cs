@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// Allowed numbers, letters and underlined combinations thereof. We must begin with the letters, the maximum length of 36 characters.
         /// </remarks>
-        [JsiiProperty(name: "appName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AppName
+        [JsiiProperty(name: "appName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AppName
         {
             get;
             set;
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// Currently only supports fixed specifications instance type.
         /// </remarks>
-        [JsiiProperty(name: "cpu", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Cpu
+        [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Cpu
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// Currently only supports fixed specifications instance type.
         /// </remarks>
-        [JsiiProperty(name: "memory", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Memory
+        [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Memory
         {
             get;
             set;
@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Canada supports only the name of the scribe lowercase namespace must begin with a letter.
         /// Namespace can interface to obtain from DescribeNamespaceList.
         /// </remarks>
-        [JsiiProperty(name: "namespaceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string NamespaceId
+        [JsiiProperty(name: "namespaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object NamespaceId
         {
             get;
             set;
@@ -59,16 +59,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// Support FatJar, War, Image.
         /// </remarks>
-        [JsiiProperty(name: "packageType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string PackageType
+        [JsiiProperty(name: "packageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object PackageType
         {
             get;
             set;
         }
 
         /// <summary>Property replicas: The initial number of instances.</summary>
-        [JsiiProperty(name: "replicas", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Replicas
+        [JsiiProperty(name: "replicas", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Replicas
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// No more than 1024 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "appDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AppDescription
+        [JsiiProperty(name: "appDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AppDescription
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// The command object in memory executable container must be. For example: sleep. This command will cause the image to set the original startup command failure.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "command", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Command
+        [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Command
         {
             get;
             set;
@@ -103,8 +103,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Parameters required for the start-command. For example: [ "1d"]
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "commandArgs", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CommandArgs
+        [JsiiProperty(name: "commandArgs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CommandArgs
         {
             get;
             set;
@@ -115,8 +115,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "customHostAlias", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CustomHostAlias
+        [JsiiProperty(name: "customHostAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CustomHostAlias
         {
             get;
             set;
@@ -133,8 +133,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property edasContainerVersion: EDAS pandora runtime environment used by the application.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "edasContainerVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EdasContainerVersion
+        [JsiiProperty(name: "edasContainerVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EdasContainerVersion
         {
             get;
             set;
@@ -145,8 +145,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// For example: [{ "name": "envtmp", "value": "0"}]
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "envs", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Envs
+        [JsiiProperty(name: "envs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Envs
         {
             get;
             set;
@@ -157,8 +157,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Image only type of application can be configured to mirror address.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "imageUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ImageUrl
+        [JsiiProperty(name: "imageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ImageUrl
         {
             get;
             set;
@@ -170,8 +170,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// $ JarStartArgs
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "jarStartArgs", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? JarStartArgs
+        [JsiiProperty(name: "jarStartArgs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? JarStartArgs
         {
             get;
             set;
@@ -183,8 +183,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// $ JarStartArgs
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "jarStartOptions", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? JarStartOptions
+        [JsiiProperty(name: "jarStartOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? JarStartOptions
         {
             get;
             set;
@@ -195,8 +195,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Mirroring not supported.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "jdk", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Jdk
+        [JsiiProperty(name: "jdk", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Jdk
         {
             get;
             set;
@@ -207,8 +207,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "liveness", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Liveness
+        [JsiiProperty(name: "liveness", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Liveness
         {
             get;
             set;
@@ -216,8 +216,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property mountDesc: Mount Description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "mountDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MountDesc
+        [JsiiProperty(name: "mountDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MountDesc
         {
             get;
             set;
@@ -225,8 +225,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property mountHost: nas mount point in the application of vpc.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "mountHost", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MountHost
+        [JsiiProperty(name: "mountHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MountHost
         {
             get;
             set;
@@ -237,8 +237,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "nasId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NasId
+        [JsiiProperty(name: "nasId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NasId
         {
             get;
             set;
@@ -249,8 +249,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Only FatJar War or the type of application can be configured to deploy packet address.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "packageUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PackageUrl
+        [JsiiProperty(name: "packageUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PackageUrl
         {
             get;
             set;
@@ -261,8 +261,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Please customize it meaning.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "packageVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PackageVersion
+        [JsiiProperty(name: "packageVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PackageVersion
         {
             get;
             set;
@@ -270,8 +270,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "postStart", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PostStart
+        [JsiiProperty(name: "postStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PostStart
         {
             get;
             set;
@@ -279,8 +279,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "preStop", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PreStop
+        [JsiiProperty(name: "preStop", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PreStop
         {
             get;
             set;
@@ -291,8 +291,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "readiness", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Readiness
+        [JsiiProperty(name: "readiness", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Readiness
         {
             get;
             set;
@@ -300,8 +300,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property securityGroupId: Security group ID.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SecurityGroupId
         {
             get;
             set;
@@ -309,8 +309,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property slsConfigs: Log collection configuration file.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "slsConfigs", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SlsConfigs
+        [JsiiProperty(name: "slsConfigs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SlsConfigs
         {
             get;
             set;
@@ -321,8 +321,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-sae.RosApplication.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Sae.RosApplication.ITagsProperty[]? Tags
         {
             get;
             set;
@@ -333,8 +333,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Default Asia/Shanghai.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timezone", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Timezone
+        [JsiiProperty(name: "timezone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Timezone
         {
             get;
             set;
@@ -345,8 +345,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// In Serverless in a corresponding one of the VPC namespace only, and can not be modified. Serverless first created in the application name space will form a binding relationship. You may correspond to a plurality of namespaces VPC. Do not fill was VpcId namespace binding.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VpcId
         {
             get;
             set;
@@ -357,8 +357,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// The switch must be located above the VPC. The same switch with EDAS namespace binding relationship. Do not fill was VSwitchId namespace binding.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VSwitchId
         {
             get;
             set;
@@ -369,8 +369,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Apply the default startup command: java $ JAVA_OPTS $ CATALINA_OPTS -Options org.apache.catalina.startup.Bootstrap "$ @" start
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "warStartOptions", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? WarStartOptions
+        [JsiiProperty(name: "warStartOptions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? WarStartOptions
         {
             get;
             set;
@@ -381,8 +381,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// Mirroring not supported.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "webContainer", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? WebContainer
+        [JsiiProperty(name: "webContainer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? WebContainer
         {
             get;
             set;

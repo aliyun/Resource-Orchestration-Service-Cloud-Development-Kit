@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// <strong>Property</strong>: targetEntity: Invited account ID or login email
         /// </remarks>
-        [JsiiProperty(name: "targetEntity", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TargetEntity
+        [JsiiProperty(name: "targetEntity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TargetEntity
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// <strong>Property</strong>: targetType: Type of account being invited. Valid values: Account, Email
         /// </remarks>
-        [JsiiProperty(name: "targetType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TargetType
+        [JsiiProperty(name: "targetType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TargetType
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <strong>Property</strong>: note: Remarks
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "note", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Note
+        [JsiiProperty(name: "note", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Note
         {
             get;
             set;

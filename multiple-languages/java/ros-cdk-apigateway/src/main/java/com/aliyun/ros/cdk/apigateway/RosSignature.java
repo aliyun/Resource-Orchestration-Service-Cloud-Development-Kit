@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.111Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosSignature")
 public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSignatureId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSignatureId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSignatureId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSignatureId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSignatureKey() {
-        return software.amazon.jsii.Kernel.get(this, "signatureKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSignatureKey() {
+        return software.amazon.jsii.Kernel.get(this, "signatureKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSignatureName() {
-        return software.amazon.jsii.Kernel.get(this, "signatureName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSignatureKey(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "signatureKey", java.util.Objects.requireNonNull(value, "signatureKey is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSignatureName() {
+        return software.amazon.jsii.Kernel.get(this, "signatureName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +93,25 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSignatureSecret() {
-        return software.amazon.jsii.Kernel.get(this, "signatureSecret", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSignatureName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "signatureName", java.util.Objects.requireNonNull(value, "signatureName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSignatureSecret() {
+        return software.amazon.jsii.Kernel.get(this, "signatureSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSignatureSecret(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "signatureSecret", java.util.Objects.requireNonNull(value, "signatureSecret is required"));
+    }
+
+    /**
+     */
+    public void setSignatureSecret(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "signatureSecret", java.util.Objects.requireNonNull(value, "signatureSecret is required"));
     }
 
@@ -131,6 +149,14 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
             this.props.signatureKey(signatureKey);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param signatureKey This parameter is required.
+         */
+        public Builder signatureKey(final com.aliyun.ros.cdk.core.IResolvable signatureKey) {
+            this.props.signatureKey(signatureKey);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -140,12 +166,28 @@ public class RosSignature extends com.aliyun.ros.cdk.core.RosResource {
             this.props.signatureName(signatureName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param signatureName This parameter is required.
+         */
+        public Builder signatureName(final com.aliyun.ros.cdk.core.IResolvable signatureName) {
+            this.props.signatureName(signatureName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param signatureSecret This parameter is required.
          */
         public Builder signatureSecret(final java.lang.String signatureSecret) {
+            this.props.signatureSecret(signatureSecret);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param signatureSecret This parameter is required.
+         */
+        public Builder signatureSecret(final com.aliyun.ros.cdk.core.IResolvable signatureSecret) {
             this.props.signatureSecret(signatureSecret);
             return this;
         }

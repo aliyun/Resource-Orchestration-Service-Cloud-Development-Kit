@@ -36,17 +36,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         /// <remarks>
         /// You can call the GetInstanceList operation to query instances.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Topic: Topic name.</summary>
-        [JsiiProperty(name: "attrTopic", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopic
+        [JsiiProperty(name: "attrTopic", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopic
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

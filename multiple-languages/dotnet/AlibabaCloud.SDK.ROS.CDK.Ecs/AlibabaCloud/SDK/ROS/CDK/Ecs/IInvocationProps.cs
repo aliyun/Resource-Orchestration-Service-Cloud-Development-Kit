@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IInvocationProps
     {
         /// <summary>Property commandId: The id of command.</summary>
-        [JsiiProperty(name: "commandId", typeJson: "{\"primitive\":\"string\"}")]
-        string CommandId
+        [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CommandId
         {
             get;
         }
@@ -29,9 +29,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
         /// </remarks>
-        [JsiiProperty(name: "frequency", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Frequency
+        object? Frequency
         {
             get
             {
@@ -81,10 +81,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property commandId: The id of command.</summary>
-            [JsiiProperty(name: "commandId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CommandId
+            [JsiiProperty(name: "commandId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CommandId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceIds: The instance id list.</summary>
@@ -102,10 +102,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "frequency", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Frequency
+            [JsiiProperty(name: "frequency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Frequency
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.</summary>

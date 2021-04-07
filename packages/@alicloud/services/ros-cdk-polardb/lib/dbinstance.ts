@@ -11,12 +11,12 @@ export interface DBInstanceProps {
     /**
      * Property characterSetName: The character set of the database. For more information, see Character sets.
      */
-    readonly characterSetName: string;
+    readonly characterSetName: string | ros.IResolvable;
 
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property dbName: The name of the database to be created. The name must comply with the following rules:
@@ -24,12 +24,12 @@ export interface DBInstanceProps {
      * (-), and underscores (_).
      * It must end with a letter or a digit. It can be up to 64 characters in length.
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 
     /**
      * Property accountName: The name of the database account to be used.
      */
-    readonly accountName?: string;
+    readonly accountName?: string | ros.IResolvable;
 
     /**
      * Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -39,14 +39,14 @@ export interface DBInstanceProps {
      * DDLOnly: runs only data definition language (DDL) statements.
      * Default value: ReadWrite.
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * Property dbDescription: The description of the database. Valid values:
      * It cannot start with http:// or https://.
      * It must be 2 to 256 characters in length.
      */
-    readonly dbDescription?: string;
+    readonly dbDescription?: string | ros.IResolvable;
 }
 
 /**

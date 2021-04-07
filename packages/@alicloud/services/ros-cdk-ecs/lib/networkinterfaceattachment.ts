@@ -11,17 +11,17 @@ export interface NetworkInterfaceAttachmentProps {
     /**
      * Property instanceId: ECS instance id
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property networkInterfaceId: Network interface id
      */
-    readonly networkInterfaceId: string;
+    readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
      * Property trunkNetworkInstanceId: undefined
      */
-    readonly trunkNetworkInstanceId?: string;
+    readonly trunkNetworkInstanceId?: string | ros.IResolvable;
 }
 
 /**
@@ -37,12 +37,12 @@ export class NetworkInterfaceAttachment extends ros.Resource {
     /**
      * Attribute NetworkInterfaceId: ID of your Network Interface.
      */
-    public readonly attrNetworkInterfaceId: any;
+    public readonly attrNetworkInterfaceId: ros.IResolvable;
 
     /**
      * Attribute TrunkNetworkInstanceId: ID of Trunk Network Interface.
      */
-    public readonly attrTrunkNetworkInstanceId: any;
+    public readonly attrTrunkNetworkInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfaceAttachment`.

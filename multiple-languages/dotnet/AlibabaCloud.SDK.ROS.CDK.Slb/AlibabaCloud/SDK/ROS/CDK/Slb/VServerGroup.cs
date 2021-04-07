@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Attribute BackendServers: Backend server list in this VServerGroup.</summary>
-        [JsiiProperty(name: "attrBackendServers", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBackendServers
+        [JsiiProperty(name: "attrBackendServers", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBackendServers
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VServerGroupId: The id of VServerGroup created.</summary>
-        [JsiiProperty(name: "attrVServerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVServerGroupId
+        [JsiiProperty(name: "attrVServerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVServerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

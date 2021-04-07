@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class CopyImageProps : AlibabaCloud.SDK.ROS.CDK.Ecs.ICopyImageProps
     {
         /// <summary>Property destinationRegionId: ID of the region to where the destination custom image belongs.</summary>
-        [JsiiProperty(name: "destinationRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DestinationRegionId
+        [JsiiProperty(name: "destinationRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DestinationRegionId
         {
             get;
             set;
         }
 
         /// <summary>Property imageId: ID of the source custom image.</summary>
-        [JsiiProperty(name: "imageId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ImageId
+        [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ImageId
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property destinationDescription: The description of the destination custom image.It cannot begin with http:// or https://.  Default value: null.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "destinationDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DestinationDescription
+        [JsiiProperty(name: "destinationDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DestinationDescription
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property destinationImageName: Name of the destination custom image.The name is a string of 2 to 128 characters. It must begin with an English or a Chinese character. It can contain A-Z, a-z, Chinese characters, numbers, periods (.), colons (:), underscores (_), and hyphens (-).  Default value: null.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "destinationImageName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DestinationImageName
+        [JsiiProperty(name: "destinationImageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DestinationImageName
         {
             get;
             set;
@@ -55,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property kmsKeyId: The ID of the key used to encrypt the image.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "kmsKeyId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? KmsKeyId
+        [JsiiProperty(name: "kmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? KmsKeyId
         {
             get;
             set;

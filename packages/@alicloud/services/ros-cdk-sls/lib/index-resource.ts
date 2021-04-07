@@ -20,7 +20,7 @@ export interface IndexProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * Property projectName: Project name:
@@ -28,7 +28,7 @@ export interface IndexProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * Property keyIndices: Key index configurations.

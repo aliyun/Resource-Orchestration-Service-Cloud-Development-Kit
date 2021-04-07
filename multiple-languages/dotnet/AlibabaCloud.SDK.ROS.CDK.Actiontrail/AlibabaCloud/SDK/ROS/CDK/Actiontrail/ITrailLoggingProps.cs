@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <summary>Property name: The name of the trail to be enabled.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -38,10 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
             }
 
             /// <summary>Property name: The name of the trail to be enabled.</summary>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

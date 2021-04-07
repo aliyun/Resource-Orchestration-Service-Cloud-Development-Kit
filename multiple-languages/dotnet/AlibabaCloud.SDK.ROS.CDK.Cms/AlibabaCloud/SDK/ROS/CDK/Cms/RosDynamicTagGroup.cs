@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Attribute</strong>: DynamicTagRuleId: Dynamic tag rule ID.
         /// </remarks>
-        [JsiiProperty(name: "attrDynamicTagRuleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDynamicTagRuleId
+        [JsiiProperty(name: "attrDynamicTagRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDynamicTagRuleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: TagKey: Tag key.
         /// </remarks>
-        [JsiiProperty(name: "attrTagKey", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTagKey
+        [JsiiProperty(name: "attrTagKey", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTagKey
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: contactGroupList: Alarm contacts.
         /// </remarks>
-        [JsiiProperty(name: "contactGroupList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        public virtual string[] ContactGroupList
+        [JsiiProperty(name: "contactGroupList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object ContactGroupList
         {
-            get => GetInstanceProperty<string[]>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -88,10 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: tagKey: Tag key.
         /// </remarks>
-        [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TagKey
+        [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TagKey
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -140,10 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MatchExpressFilterRelation
+        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MatchExpressFilterRelation
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -152,10 +152,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateIdList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? TemplateIdList
+        [JsiiProperty(name: "templateIdList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? TemplateIdList
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IMatchExpressProperty), fullyQualifiedName: "@alicloud/ros-cdk-cms.RosDynamicTagGroup.MatchExpressProperty")]
@@ -164,8 +164,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: tagValue: Tag value, used with TagValueMatchFunction.
             /// </remarks>
-            [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}")]
-            string TagValue
+            [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object TagValue
             {
                 get;
             }
@@ -179,8 +179,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// equals: equals
             /// all: All
             /// </remarks>
-            [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"primitive\":\"string\"}")]
-            string TagValueMatchFunction
+            [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object TagValueMatchFunction
             {
                 get;
             }
@@ -195,10 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// <remarks>
                 /// <strong>Property</strong>: tagValue: Tag value, used with TagValueMatchFunction.
                 /// </remarks>
-                [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}")]
-                public string TagValue
+                [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object TagValue
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -210,10 +210,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// equals: equals
                 /// all: All
                 /// </remarks>
-                [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"primitive\":\"string\"}")]
-                public string TagValueMatchFunction
+                [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object TagValueMatchFunction
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -225,8 +225,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: tagValue: Tag value, used with TagValueMatchFunction.
             /// </remarks>
-            [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string TagValue
+            [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object TagValue
             {
                 get;
                 set;
@@ -241,8 +241,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// equals: equals
             /// all: All
             /// </remarks>
-            [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string TagValueMatchFunction
+            [JsiiProperty(name: "tagValueMatchFunction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object TagValueMatchFunction
             {
                 get;
                 set;

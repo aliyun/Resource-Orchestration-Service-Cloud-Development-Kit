@@ -11,12 +11,12 @@ export interface SecurityGroupProps {
     /**
      * Property description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property securityGroupEgress: egress rules for the security group.
@@ -31,24 +31,24 @@ export interface SecurityGroupProps {
     /**
      * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly securityGroupName?: string;
+    readonly securityGroupName?: string | ros.IResolvable;
 
     /**
      * Property securityGroupType: The type of the security group. Valid values:
      * normal: basic security group
      * enterprise: advanced security group
      */
-    readonly securityGroupType?: string;
+    readonly securityGroupType?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosSecurityGroup.TagsProperty[];
 
     /**
      * Property vpcId: Physical ID of the VPC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -64,7 +64,12 @@ export class SecurityGroup extends ros.Resource {
     /**
      * Attribute SecurityGroupId: generated security group id for security group.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
+
+    /**
+     * Attribute SecurityGroupName: The name of security group.
+     */
+    public readonly attrSecurityGroupName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::SecurityGroup`.
@@ -83,10 +88,11 @@ export class SecurityGroup extends ros.Resource {
             resourceGroupId: props.resourceGroupId,
             securityGroupType: props.securityGroupType,
             securityGroupIngress: props.securityGroupIngress,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             securityGroupEgress: props.securityGroupEgress,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSecurityGroup;
         this.attrSecurityGroupId = rosSecurityGroup.attrSecurityGroupId;
+        this.attrSecurityGroupName = rosSecurityGroup.attrSecurityGroupName;
     }
 }

@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Property</strong>: uisNodeId: Node instance ID.
         /// </remarks>
-        [JsiiProperty(name: "uisNodeId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string UisNodeId
+        [JsiiProperty(name: "uisNodeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object UisNodeId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Property</strong>: uisProtocol: The protocol name used by the software and server. The default value is SSLVPN.
         /// </remarks>
-        [JsiiProperty(name: "uisProtocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string UisProtocol
+        [JsiiProperty(name: "uisProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object UisProtocol
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: description: A description of the tunnel connection.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -45,7 +45,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: greConfig: The config for GRE. Item can be overwritten, but removed.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "greConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-uis.RosUisConnection.GreConfigProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "greConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-uis.RosUisConnection.GreConfigProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
         public object? GreConfig
         {
             get;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: name: The name of the tunnel connection.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;

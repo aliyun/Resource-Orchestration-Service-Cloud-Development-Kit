@@ -16,27 +16,32 @@ export interface InstanceProps {
     /**
      * Property password: The password of the instance. The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!@#$%&*()_+-=).
      */
-    readonly password: string;
+    readonly password: string | ros.IResolvable;
 
     /**
      * Property version: Elasticsearch version. Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
      */
-    readonly version: string;
+    readonly version: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The ID of VSwitch.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * Property description: The description of instance. It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property enablePublic: Whether enable public access. If properties is true, will allocate public address.Default: false.
+     */
+    readonly enablePublic?: boolean | ros.IResolvable;
 
     /**
      * Property instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property kibanaWhitelist: Set the Kibana's IP whitelist in internet network.
@@ -51,7 +56,7 @@ export interface InstanceProps {
     /**
      * Property period: The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property privateWhitelist: Set the instance's IP whitelist in VPC network.
@@ -59,9 +64,19 @@ export interface InstanceProps {
     readonly privateWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property publicWhitelist: Set the instance's IP whitelist in Internet.
+     * Property publicWhitelist: Set the instance's IP whitelist in Internet. The AllocatePublicAddress should be true.
      */
     readonly publicWhitelist?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -77,32 +92,52 @@ export class Instance extends ros.Resource {
     /**
      * Attribute Domain: Instance connection domain (only VPC network access supported).
      */
-    public readonly attrDomain: any;
+    public readonly attrDomain: ros.IResolvable;
+
+    /**
+     * Attribute InstanceChargeType: Instance charge type.
+     */
+    public readonly attrInstanceChargeType: ros.IResolvable;
 
     /**
      * Attribute InstanceId: The ID of the Elasticsearch instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute KibanaDomain: Kibana console domain (Internet access supported).
      */
-    public readonly attrKibanaDomain: any;
+    public readonly attrKibanaDomain: ros.IResolvable;
 
     /**
      * Attribute KibanaPort: Kibana console port.
      */
-    public readonly attrKibanaPort: any;
+    public readonly attrKibanaPort: ros.IResolvable;
 
     /**
      * Attribute Port:  Instance connection port.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
+
+    /**
+     * Attribute PublicDomain: Instance public connection domain.
+     */
+    public readonly attrPublicDomain: ros.IResolvable;
 
     /**
      * Attribute Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
+
+    /**
+     * Attribute VSwitchId: The ID of VSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * Attribute Version: Elasticsearch version.
+     */
+    public readonly attrVersion: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ElasticSearch::Instance`.
@@ -117,22 +152,29 @@ export class Instance extends ros.Resource {
         const rosInstance = new RosInstance(this, id,  {
             masterNode: props.masterNode,
             description: props.description,
-            privateWhitelist: props.privateWhitelist,
+            resourceGroupId: props.resourceGroupId,
             publicWhitelist: props.publicWhitelist,
-            version: props.version,
-            dataNode: props.dataNode,
             instanceChargeType: props.instanceChargeType ? props.instanceChargeType : 'PostPaid',
             vSwitchId: props.vSwitchId,
-            kibanaWhitelist: props.kibanaWhitelist,
             period: props.period ? props.period : 1,
+            enablePublic: props.enablePublic,
+            privateWhitelist: props.privateWhitelist,
+            version: props.version,
+            dataNode: props.dataNode,
+            kibanaWhitelist: props.kibanaWhitelist,
+            tags: props.tags,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrDomain = rosInstance.attrDomain;
+        this.attrInstanceChargeType = rosInstance.attrInstanceChargeType;
         this.attrInstanceId = rosInstance.attrInstanceId;
         this.attrKibanaDomain = rosInstance.attrKibanaDomain;
         this.attrKibanaPort = rosInstance.attrKibanaPort;
         this.attrPort = rosInstance.attrPort;
+        this.attrPublicDomain = rosInstance.attrPublicDomain;
         this.attrStatus = rosInstance.attrStatus;
+        this.attrVSwitchId = rosInstance.attrVSwitchId;
+        this.attrVersion = rosInstance.attrVersion;
     }
 }

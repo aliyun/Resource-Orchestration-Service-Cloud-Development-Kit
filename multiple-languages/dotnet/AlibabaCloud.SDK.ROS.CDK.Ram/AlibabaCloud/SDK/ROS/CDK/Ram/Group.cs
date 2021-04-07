@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <summary>Attribute GroupName: Id of ram group.</summary>
-        [JsiiProperty(name: "attrGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupName
+        [JsiiProperty(name: "attrGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -19,7 +19,7 @@ export interface AlertProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly project: string;
+    readonly project: string | ros.IResolvable;
 }
 
 /**
@@ -35,7 +35,7 @@ export class Alert extends ros.Resource {
     /**
      * Attribute Name: Alert name.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Alert`.

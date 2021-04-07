@@ -13,13 +13,13 @@ export interface DeploymentSetProps {
      * start with a letter and cannot start with http:// or https://. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
-    readonly deploymentSetName?: string;
+    readonly deploymentSetName?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the deployment set. It must be 2 to 256 characters in length. It
      * cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set. Valid values:
@@ -28,7 +28,7 @@ export interface DeploymentSetProps {
      * KeepStopped: keeps the instances shut down and restarts them after the deployment
      * set is replenished.
      */
-    readonly onUnableToRedeployFailedInstance?: string;
+    readonly onUnableToRedeployFailedInstance?: string | ros.IResolvable;
 }
 
 /**
@@ -44,7 +44,7 @@ export class DeploymentSet extends ros.Resource {
     /**
      * Attribute DeploymentSetId: The ID of the deployment set.
      */
-    public readonly attrDeploymentSetId: any;
+    public readonly attrDeploymentSetId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::DeploymentSet`.

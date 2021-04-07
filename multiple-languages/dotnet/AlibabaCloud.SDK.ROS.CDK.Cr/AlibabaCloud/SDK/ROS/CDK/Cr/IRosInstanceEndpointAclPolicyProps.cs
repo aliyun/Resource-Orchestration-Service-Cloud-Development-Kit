@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: entry: The IP address range that is allowed to access the instance.
         /// </remarks>
-        [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}")]
-        string Entry
+        [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Entry
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -29,9 +29,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: comment: The description of the entry.
         /// </remarks>
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Comment
+        object? Comment
         {
             get
             {
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: endpointType: The type of the endpoint.
         /// </remarks>
-        [JsiiProperty(name: "endpointType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EndpointType
+        object? EndpointType
         {
             get
             {
@@ -56,9 +56,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <strong>Property</strong>: moduleName: The name of the module in the instance for which a whitelist is configured. Valid
         /// values: Registry and Chart.
         /// </remarks>
-        [JsiiProperty(name: "moduleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "moduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ModuleName
+        object? ModuleName
         {
             get
             {
@@ -69,9 +69,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         /// <remarks>
         /// <strong>Property</strong>: regionId: Region ID of instance. Default is current region.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RegionId
+        object? RegionId
         {
             get
             {
@@ -90,39 +90,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// <remarks>
             /// <strong>Property</strong>: entry: The IP address range that is allowed to access the instance.
             /// </remarks>
-            [JsiiProperty(name: "entry", typeJson: "{\"primitive\":\"string\"}")]
-            public string Entry
+            [JsiiProperty(name: "entry", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Entry
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: comment: The description of the entry.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Comment
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Comment
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: endpointType: The type of the endpoint.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "endpointType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EndpointType
+            [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EndpointType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -130,20 +130,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             /// values: Registry and Chart.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "moduleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ModuleName
+            [JsiiProperty(name: "moduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ModuleName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: regionId: Region ID of instance. Default is current region.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RegionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

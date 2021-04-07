@@ -11,12 +11,12 @@ export interface AddressBookProps {
     /**
      * Property description: Address book description.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * Property groupName: Name Address book.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * Property groupType: Type the address book, the optional values ​​are:
@@ -25,7 +25,7 @@ export interface AddressBookProps {
      * port: Port Address Book
      * tag: ECS label address book
      */
-    readonly groupType: string;
+    readonly groupType: string | ros.IResolvable;
 
     /**
      * Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -34,7 +34,7 @@ export interface AddressBookProps {
      * When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
      * When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
      */
-    readonly addressList?: string;
+    readonly addressList?: string | ros.IResolvable;
 
     /**
      * Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book. Default to false.
@@ -44,7 +44,7 @@ export interface AddressBookProps {
     /**
      * Property regionId: Region ID. Default to cn-hangzhou.
      */
-    readonly regionId?: string;
+    readonly regionId?: string | ros.IResolvable;
 
     /**
      * Property tagList:
@@ -56,7 +56,7 @@ export interface AddressBookProps {
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
      * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
      */
-    readonly tagRelation?: string;
+    readonly tagRelation?: string | ros.IResolvable;
 }
 
 /**
@@ -72,7 +72,7 @@ export class AddressBook extends ros.Resource {
     /**
      * Attribute GroupUuid: After a successful return to the address book to add unique identification ID.
      */
-    public readonly attrGroupUuid: any;
+    public readonly attrGroupUuid: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CLOUDFW::AddressBook`.

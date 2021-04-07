@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
     public interface IDrdsDBProps
     {
         /// <summary>Property drdsInstanceId: DRDS instance ID.</summary>
-        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string DrdsInstanceId
+        [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DrdsInstanceId
         {
             get;
         }
 
         /// <summary>Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.</summary>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountName
+        object? AccountName
         {
             get
             {
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// Valid values:
         /// RDS or POLARDB
         /// </remarks>
-        [JsiiProperty(name: "dbInstType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dbInstType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DbInstType
+        object? DbInstType
         {
             get
             {
@@ -53,9 +53,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <summary>Property dbName: Database Name.</summary>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DbName
+        object? DbName
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <summary>Property encode: Encoding used by the database.</summary>
-        [JsiiProperty(name: "encode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "encode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Encode
+        object? Encode
         {
             get
             {
@@ -86,9 +86,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <summary>Property password: The logon password of the database instance.</summary>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Password
+        object? Password
         {
             get
             {
@@ -97,9 +97,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         }
 
         /// <summary>Property rdsInstance: This property is required only for vertical partitioning.</summary>
-        [JsiiProperty(name: "rdsInstance", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "rdsInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? RdsInstance
+        object? RdsInstance
         {
             get
             {
@@ -114,9 +114,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
         /// and table sharding.
         /// VERTICAL: indicates VERTICAL partitioning.
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Type
+        object? Type
         {
             get
             {
@@ -133,18 +133,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             }
 
             /// <summary>Property drdsInstanceId: DRDS instance ID.</summary>
-            [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DrdsInstanceId
+            [JsiiProperty(name: "drdsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DrdsInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accountName: In the vertical split scenario, an account name with access rights to the corresponding database on all RDSs.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountName
+            [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dbInstanceIsCreating: Check whether the RDS instance is being created.</summary>
@@ -161,26 +161,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// RDS or POLARDB
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbInstType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DbInstType
+            [JsiiProperty(name: "dbInstType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbInstType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dbName: Database Name.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DbName
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property encode: Encoding used by the database.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "encode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Encode
+            [JsiiProperty(name: "encode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Encode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instDbName:.</summary>
@@ -193,18 +193,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
             /// <summary>Property password: The logon password of the database instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Password
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property rdsInstance: This property is required only for vertical partitioning.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "rdsInstance", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? RdsInstance
+            [JsiiProperty(name: "rdsInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? RdsInstance
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property type: Database Sharding method.</summary>
@@ -215,10 +215,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
             /// VERTICAL: indicates VERTICAL partitioning.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Type
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

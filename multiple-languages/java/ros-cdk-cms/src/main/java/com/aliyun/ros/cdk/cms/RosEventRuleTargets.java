@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.275Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.928Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargets")
 public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -48,14 +48,14 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -63,13 +63,19 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuleName() {
-        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuleName() {
+        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRuleName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ruleName", java.util.Objects.requireNonNull(value, "ruleName is required"));
+    }
+
+    /**
+     */
+    public void setRuleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ruleName", java.util.Objects.requireNonNull(value, "ruleName is required"));
     }
 
@@ -172,21 +178,21 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getContactGroupName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getContactGroupName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getLevel() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLevel() {
             return null;
         }
 
@@ -202,9 +208,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ContactParametersProperty> {
-            private java.lang.String contactGroupName;
-            private java.lang.String id;
-            private java.lang.String level;
+            private java.lang.Object contactGroupName;
+            private java.lang.Object id;
+            private java.lang.Object level;
 
             /**
              * Sets the value of {@link ContactParametersProperty#getContactGroupName}
@@ -213,6 +219,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder contactGroupName(java.lang.String contactGroupName) {
+                this.contactGroupName = contactGroupName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ContactParametersProperty#getContactGroupName}
+             * @param contactGroupName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder contactGroupName(com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
                 this.contactGroupName = contactGroupName;
                 return this;
             }
@@ -229,12 +246,34 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ContactParametersProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ContactParametersProperty#getLevel}
              * @param level the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder level(java.lang.String level) {
+                this.level = level;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ContactParametersProperty#getLevel}
+             * @param level the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder level(com.aliyun.ros.cdk.core.IResolvable level) {
                 this.level = level;
                 return this;
             }
@@ -257,9 +296,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ContactParametersProperty {
-            private final java.lang.String contactGroupName;
-            private final java.lang.String id;
-            private final java.lang.String level;
+            private final java.lang.Object contactGroupName;
+            private final java.lang.Object id;
+            private final java.lang.Object level;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -267,15 +306,15 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.level = software.amazon.jsii.Kernel.get(this, "level", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.level = software.amazon.jsii.Kernel.get(this, "level", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String contactGroupName, final java.lang.String id, final java.lang.String level) {
+            protected Jsii$Proxy(final java.lang.Object contactGroupName, final java.lang.Object id, final java.lang.Object level) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.contactGroupName = contactGroupName;
                 this.id = id;
@@ -283,17 +322,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getContactGroupName() {
+            public final java.lang.Object getContactGroupName() {
                 return this.contactGroupName;
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getLevel() {
+            public final java.lang.Object getLevel() {
                 return this.level;
             }
 
@@ -354,28 +393,28 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getFunctionName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getFunctionName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getRegion() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getServiceName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServiceName() {
             return null;
         }
 
@@ -391,10 +430,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<FcParametersProperty> {
-            private java.lang.String functionName;
-            private java.lang.String id;
-            private java.lang.String region;
-            private java.lang.String serviceName;
+            private java.lang.Object functionName;
+            private java.lang.Object id;
+            private java.lang.Object region;
+            private java.lang.Object serviceName;
 
             /**
              * Sets the value of {@link FcParametersProperty#getFunctionName}
@@ -403,6 +442,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder functionName(java.lang.String functionName) {
+                this.functionName = functionName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FcParametersProperty#getFunctionName}
+             * @param functionName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
                 this.functionName = functionName;
                 return this;
             }
@@ -419,6 +469,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link FcParametersProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link FcParametersProperty#getRegion}
              * @param region the value to be set.
              * @return {@code this}
@@ -430,12 +491,34 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link FcParametersProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link FcParametersProperty#getServiceName}
              * @param serviceName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serviceName(java.lang.String serviceName) {
+                this.serviceName = serviceName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link FcParametersProperty#getServiceName}
+             * @param serviceName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
                 this.serviceName = serviceName;
                 return this;
             }
@@ -458,10 +541,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FcParametersProperty {
-            private final java.lang.String functionName;
-            private final java.lang.String id;
-            private final java.lang.String region;
-            private final java.lang.String serviceName;
+            private final java.lang.Object functionName;
+            private final java.lang.Object id;
+            private final java.lang.Object region;
+            private final java.lang.Object serviceName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -469,16 +552,16 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String id, final java.lang.String region, final java.lang.String serviceName) {
+            protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object id, final java.lang.Object region, final java.lang.Object serviceName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.functionName = functionName;
                 this.id = id;
@@ -487,22 +570,22 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getFunctionName() {
+            public final java.lang.Object getFunctionName() {
                 return this.functionName;
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getRegion() {
+            public final java.lang.Object getRegion() {
                 return this.region;
             }
 
             @Override
-            public final java.lang.String getServiceName() {
+            public final java.lang.Object getServiceName() {
                 return this.serviceName;
             }
 
@@ -568,21 +651,21 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getQueue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getQueue() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getRegion() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
             return null;
         }
 
@@ -598,9 +681,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MnsParametersProperty> {
-            private java.lang.String id;
-            private java.lang.String queue;
-            private java.lang.String region;
+            private java.lang.Object id;
+            private java.lang.Object queue;
+            private java.lang.Object region;
 
             /**
              * Sets the value of {@link MnsParametersProperty#getId}
@@ -609,6 +692,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder id(java.lang.String id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MnsParametersProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
                 this.id = id;
                 return this;
             }
@@ -625,12 +719,34 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link MnsParametersProperty#getQueue}
+             * @param queue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder queue(com.aliyun.ros.cdk.core.IResolvable queue) {
+                this.queue = queue;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MnsParametersProperty#getRegion}
              * @param region the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MnsParametersProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
                 this.region = region;
                 return this;
             }
@@ -653,9 +769,9 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MnsParametersProperty {
-            private final java.lang.String id;
-            private final java.lang.String queue;
-            private final java.lang.String region;
+            private final java.lang.Object id;
+            private final java.lang.Object queue;
+            private final java.lang.Object region;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -663,15 +779,15 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.queue = software.amazon.jsii.Kernel.get(this, "queue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.queue = software.amazon.jsii.Kernel.get(this, "queue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String id, final java.lang.String queue, final java.lang.String region) {
+            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object queue, final java.lang.Object region) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.id = id;
                 this.queue = queue;
@@ -679,17 +795,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getQueue() {
+            public final java.lang.Object getQueue() {
                 return this.queue;
             }
 
             @Override
-            public final java.lang.String getRegion() {
+            public final java.lang.Object getRegion() {
                 return this.region;
             }
 
@@ -750,28 +866,28 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getLogStore() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLogStore() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getProject() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProject() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getRegion() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getRegion() {
             return null;
         }
 
@@ -787,10 +903,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<SlsParametersProperty> {
-            private java.lang.String id;
-            private java.lang.String logStore;
-            private java.lang.String project;
-            private java.lang.String region;
+            private java.lang.Object id;
+            private java.lang.Object logStore;
+            private java.lang.Object project;
+            private java.lang.Object region;
 
             /**
              * Sets the value of {@link SlsParametersProperty#getId}
@@ -799,6 +915,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder id(java.lang.String id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SlsParametersProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
                 this.id = id;
                 return this;
             }
@@ -815,6 +942,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SlsParametersProperty#getLogStore}
+             * @param logStore the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logStore(com.aliyun.ros.cdk.core.IResolvable logStore) {
+                this.logStore = logStore;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SlsParametersProperty#getProject}
              * @param project the value to be set.
              * @return {@code this}
@@ -826,12 +964,34 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link SlsParametersProperty#getProject}
+             * @param project the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder project(com.aliyun.ros.cdk.core.IResolvable project) {
+                this.project = project;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link SlsParametersProperty#getRegion}
              * @param region the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder region(java.lang.String region) {
+                this.region = region;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SlsParametersProperty#getRegion}
+             * @param region the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder region(com.aliyun.ros.cdk.core.IResolvable region) {
                 this.region = region;
                 return this;
             }
@@ -854,10 +1014,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SlsParametersProperty {
-            private final java.lang.String id;
-            private final java.lang.String logStore;
-            private final java.lang.String project;
-            private final java.lang.String region;
+            private final java.lang.Object id;
+            private final java.lang.Object logStore;
+            private final java.lang.Object project;
+            private final java.lang.Object region;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -865,16 +1025,16 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.logStore = software.amazon.jsii.Kernel.get(this, "logStore", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logStore = software.amazon.jsii.Kernel.get(this, "logStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.region = software.amazon.jsii.Kernel.get(this, "region", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String id, final java.lang.String logStore, final java.lang.String project, final java.lang.String region) {
+            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object logStore, final java.lang.Object project, final java.lang.Object region) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.id = id;
                 this.logStore = logStore;
@@ -883,22 +1043,22 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getLogStore() {
+            public final java.lang.Object getLogStore() {
                 return this.logStore;
             }
 
             @Override
-            public final java.lang.String getProject() {
+            public final java.lang.Object getProject() {
                 return this.project;
             }
 
             @Override
-            public final java.lang.String getRegion() {
+            public final java.lang.Object getRegion() {
                 return this.region;
             }
 
@@ -964,28 +1124,28 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getMethod() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMethod() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getProtocol() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProtocol() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getUrl() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getUrl() {
             return null;
         }
 
@@ -1001,10 +1161,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<WebhookParametersProperty> {
-            private java.lang.String id;
-            private java.lang.String method;
-            private java.lang.String protocol;
-            private java.lang.String url;
+            private java.lang.Object id;
+            private java.lang.Object method;
+            private java.lang.Object protocol;
+            private java.lang.Object url;
 
             /**
              * Sets the value of {@link WebhookParametersProperty#getId}
@@ -1013,6 +1173,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder id(java.lang.String id) {
+                this.id = id;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WebhookParametersProperty#getId}
+             * @param id the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder id(com.aliyun.ros.cdk.core.IResolvable id) {
                 this.id = id;
                 return this;
             }
@@ -1029,6 +1200,17 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WebhookParametersProperty#getMethod}
+             * @param method the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder method(com.aliyun.ros.cdk.core.IResolvable method) {
+                this.method = method;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WebhookParametersProperty#getProtocol}
              * @param protocol the value to be set.
              * @return {@code this}
@@ -1040,12 +1222,34 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link WebhookParametersProperty#getProtocol}
+             * @param protocol the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder protocol(com.aliyun.ros.cdk.core.IResolvable protocol) {
+                this.protocol = protocol;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link WebhookParametersProperty#getUrl}
              * @param url the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder url(java.lang.String url) {
+                this.url = url;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link WebhookParametersProperty#getUrl}
+             * @param url the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder url(com.aliyun.ros.cdk.core.IResolvable url) {
                 this.url = url;
                 return this;
             }
@@ -1068,10 +1272,10 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements WebhookParametersProperty {
-            private final java.lang.String id;
-            private final java.lang.String method;
-            private final java.lang.String protocol;
-            private final java.lang.String url;
+            private final java.lang.Object id;
+            private final java.lang.Object method;
+            private final java.lang.Object protocol;
+            private final java.lang.Object url;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1079,16 +1283,16 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.method = software.amazon.jsii.Kernel.get(this, "method", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.url = software.amazon.jsii.Kernel.get(this, "url", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.id = software.amazon.jsii.Kernel.get(this, "id", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.method = software.amazon.jsii.Kernel.get(this, "method", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.url = software.amazon.jsii.Kernel.get(this, "url", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String id, final java.lang.String method, final java.lang.String protocol, final java.lang.String url) {
+            protected Jsii$Proxy(final java.lang.Object id, final java.lang.Object method, final java.lang.Object protocol, final java.lang.Object url) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.id = id;
                 this.method = method;
@@ -1097,22 +1301,22 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getId() {
+            public final java.lang.Object getId() {
                 return this.id;
             }
 
             @Override
-            public final java.lang.String getMethod() {
+            public final java.lang.Object getMethod() {
                 return this.method;
             }
 
             @Override
-            public final java.lang.String getProtocol() {
+            public final java.lang.Object getProtocol() {
                 return this.protocol;
             }
 
             @Override
-            public final java.lang.String getUrl() {
+            public final java.lang.Object getUrl() {
                 return this.url;
             }
 
@@ -1200,6 +1404,14 @@ public class RosEventRuleTargets extends com.aliyun.ros.cdk.core.RosResource {
          * @param ruleName This parameter is required.
          */
         public Builder ruleName(final java.lang.String ruleName) {
+            this.props.ruleName(ruleName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ruleName This parameter is required.
+         */
+        public Builder ruleName(final com.aliyun.ros.cdk.core.IResolvable ruleName) {
             this.props.ruleName(ruleName);
             return this;
         }

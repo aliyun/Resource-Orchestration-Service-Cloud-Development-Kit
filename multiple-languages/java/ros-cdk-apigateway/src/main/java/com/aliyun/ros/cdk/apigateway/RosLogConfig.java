@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::LogConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosLogConfig")
 public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSlsLogStore() {
-        return software.amazon.jsii.Kernel.get(this, "attrSlsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSlsLogStore() {
+        return software.amazon.jsii.Kernel.get(this, "attrSlsLogStore", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSlsProject() {
-        return software.amazon.jsii.Kernel.get(this, "attrSlsProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSlsProject() {
+        return software.amazon.jsii.Kernel.get(this, "attrSlsProject", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSlsLogStore() {
-        return software.amazon.jsii.Kernel.get(this, "slsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSlsLogStore() {
+        return software.amazon.jsii.Kernel.get(this, "slsLogStore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,13 +81,25 @@ public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSlsProject() {
-        return software.amazon.jsii.Kernel.get(this, "slsProject", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSlsLogStore(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "slsLogStore", java.util.Objects.requireNonNull(value, "slsLogStore is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSlsProject() {
+        return software.amazon.jsii.Kernel.get(this, "slsProject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSlsProject(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "slsProject", java.util.Objects.requireNonNull(value, "slsProject is required"));
+    }
+
+    /**
+     */
+    public void setSlsProject(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "slsProject", java.util.Objects.requireNonNull(value, "slsProject is required"));
     }
 
@@ -125,12 +137,28 @@ public class RosLogConfig extends com.aliyun.ros.cdk.core.RosResource {
             this.props.slsLogStore(slsLogStore);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param slsLogStore This parameter is required.
+         */
+        public Builder slsLogStore(final com.aliyun.ros.cdk.core.IResolvable slsLogStore) {
+            this.props.slsLogStore(slsLogStore);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param slsProject This parameter is required.
          */
         public Builder slsProject(final java.lang.String slsProject) {
+            this.props.slsProject(slsProject);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param slsProject This parameter is required.
+         */
+        public Builder slsProject(final com.aliyun.ros.cdk.core.IResolvable slsProject) {
             this.props.slsProject(slsProject);
             return this;
         }

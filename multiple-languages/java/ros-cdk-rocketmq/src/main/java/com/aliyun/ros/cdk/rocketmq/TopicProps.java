@@ -3,32 +3,51 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * Properties for defining a `ALIYUN::ROCKETMQ::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.TopicProps")
 @software.amazon.jsii.Jsii.Proxy(TopicProps.Jsii$Proxy.class)
 public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceId: The ID of the instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
+     * Property messageType: The type of the message.
+     * <p>
+     * Valid values:
+     * 0: normal message
+     * 1: partitionally ordered message
+     * 2: globally ordered message
+     * 4: transactional message
+     * 5: scheduled/delayed message
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMessageType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMessageType();
 
     /**
+     * Property topic: The name of the topic you want to create.
+     * <p>
+     * Note:
+     * "CID" and "GID" are the reserved fields of a group ID, and they cannot be the start of a topic name.
+     * If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
+     * If no namespaces are available in the instance, the topic name must be unique both in the instance and across instances.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTopic();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
 
     /**
+     * Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPerm() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPerm() {
         return null;
     }
 
     /**
+     * Property remark: The remarks on the request.
+     * <p>
+     * This parameter can be left blank.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRemark() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRemark() {
         return null;
     }
 
@@ -42,15 +61,15 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TopicProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TopicProps> {
-        private java.lang.String instanceId;
-        private java.lang.Number messageType;
-        private java.lang.String topic;
-        private java.lang.Number perm;
-        private java.lang.String remark;
+        private java.lang.Object instanceId;
+        private java.lang.Object messageType;
+        private java.lang.Object topic;
+        private java.lang.Object perm;
+        private java.lang.Object remark;
 
         /**
          * Sets the value of {@link TopicProps#getInstanceId}
-         * @param instanceId the value to be set. This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -59,8 +78,24 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getMessageType}
-         * @param messageType the value to be set. This parameter is required.
+         * @param messageType Property messageType: The type of the message. This parameter is required.
+         *                    Valid values:
+         *                    0: normal message
+         *                    1: partitionally ordered message
+         *                    2: globally ordered message
+         *                    4: transactional message
+         *                    5: scheduled/delayed message
          * @return {@code this}
          */
         public Builder messageType(java.lang.Number messageType) {
@@ -69,8 +104,28 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getMessageType}
+         * @param messageType Property messageType: The type of the message. This parameter is required.
+         *                    Valid values:
+         *                    0: normal message
+         *                    1: partitionally ordered message
+         *                    2: globally ordered message
+         *                    4: transactional message
+         *                    5: scheduled/delayed message
+         * @return {@code this}
+         */
+        public Builder messageType(com.aliyun.ros.cdk.core.IResolvable messageType) {
+            this.messageType = messageType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getTopic}
-         * @param topic the value to be set. This parameter is required.
+         * @param topic Property topic: The name of the topic you want to create. This parameter is required.
+         *              Note:
+         *              "CID" and "GID" are the reserved fields of a group ID, and they cannot be the start of a topic name.
+         *              If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
+         *              If no namespaces are available in the instance, the topic name must be unique both in the instance and across instances.
          * @return {@code this}
          */
         public Builder topic(java.lang.String topic) {
@@ -79,8 +134,22 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getTopic}
+         * @param topic Property topic: The name of the topic you want to create. This parameter is required.
+         *              Note:
+         *              "CID" and "GID" are the reserved fields of a group ID, and they cannot be the start of a topic name.
+         *              If namespaces are available in the instance for which the topic is created, the topic name must be unique in the instance and can be duplicated across instances.
+         *              If no namespaces are available in the instance, the topic name must be unique both in the instance and across instances.
+         * @return {@code this}
+         */
+        public Builder topic(com.aliyun.ros.cdk.core.IResolvable topic) {
+            this.topic = topic;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getPerm}
-         * @param perm the value to be set.
+         * @param perm Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.
          * @return {@code this}
          */
         public Builder perm(java.lang.Number perm) {
@@ -89,11 +158,33 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TopicProps#getPerm}
+         * @param perm Property perm: Set the read-write mode for the topic Valid values.: 6: Both read and write operations are supported. 4: Write operation is prohibited. 2: Read operation is prohibited.
+         * @return {@code this}
+         */
+        public Builder perm(com.aliyun.ros.cdk.core.IResolvable perm) {
+            this.perm = perm;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TopicProps#getRemark}
-         * @param remark the value to be set.
+         * @param remark Property remark: The remarks on the request.
+         *               This parameter can be left blank.
          * @return {@code this}
          */
         public Builder remark(java.lang.String remark) {
+            this.remark = remark;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TopicProps#getRemark}
+         * @param remark Property remark: The remarks on the request.
+         *               This parameter can be left blank.
+         * @return {@code this}
+         */
+        public Builder remark(com.aliyun.ros.cdk.core.IResolvable remark) {
             this.remark = remark;
             return this;
         }
@@ -114,11 +205,11 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TopicProps {
-        private final java.lang.String instanceId;
-        private final java.lang.Number messageType;
-        private final java.lang.String topic;
-        private final java.lang.Number perm;
-        private final java.lang.String remark;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object messageType;
+        private final java.lang.Object topic;
+        private final java.lang.Object perm;
+        private final java.lang.Object remark;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +217,17 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.messageType = software.amazon.jsii.Kernel.get(this, "messageType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.perm = software.amazon.jsii.Kernel.get(this, "perm", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.messageType = software.amazon.jsii.Kernel.get(this, "messageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.perm = software.amazon.jsii.Kernel.get(this, "perm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remark = software.amazon.jsii.Kernel.get(this, "remark", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceId, final java.lang.Number messageType, final java.lang.String topic, final java.lang.Number perm, final java.lang.String remark) {
+        protected Jsii$Proxy(final java.lang.Object instanceId, final java.lang.Object messageType, final java.lang.Object topic, final java.lang.Object perm, final java.lang.Object remark) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceId = java.util.Objects.requireNonNull(instanceId, "instanceId is required");
             this.messageType = java.util.Objects.requireNonNull(messageType, "messageType is required");
@@ -146,27 +237,27 @@ public interface TopicProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.Number getMessageType() {
+        public final java.lang.Object getMessageType() {
             return this.messageType;
         }
 
         @Override
-        public final java.lang.String getTopic() {
+        public final java.lang.Object getTopic() {
             return this.topic;
         }
 
         @Override
-        public final java.lang.Number getPerm() {
+        public final java.lang.Object getPerm() {
             return this.perm;
         }
 
         @Override
-        public final java.lang.String getRemark() {
+        public final java.lang.Object getRemark() {
             return this.remark;
         }
 

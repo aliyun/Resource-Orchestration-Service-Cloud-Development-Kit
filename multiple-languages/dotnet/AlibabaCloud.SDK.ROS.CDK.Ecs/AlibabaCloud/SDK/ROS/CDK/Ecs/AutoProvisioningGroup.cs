@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute AutoProvisioningGroupId: The ID of the auto provisioning group.</summary>
-        [JsiiProperty(name: "attrAutoProvisioningGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoProvisioningGroupId
+        [JsiiProperty(name: "attrAutoProvisioningGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoProvisioningGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AutoProvisioningGroupName: The name of the auto provisioning group.</summary>
-        [JsiiProperty(name: "attrAutoProvisioningGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoProvisioningGroupName
+        [JsiiProperty(name: "attrAutoProvisioningGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoProvisioningGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

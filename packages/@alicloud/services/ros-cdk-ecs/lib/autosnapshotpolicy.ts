@@ -13,7 +13,7 @@ export interface AutoSnapshotPolicyProps {
      * A maximum of seven time points can be selected.
      * The format is a list of [1, 2, ..., 7] and the time points are separated by commas (,).
      */
-    readonly repeatWeekdays: number[] | ros.IResolvable;
+    readonly repeatWeekdays: Array<number | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property retentionDays: The snapshot retention time, and the unit of measurement is day. Optional values:
@@ -21,7 +21,7 @@ export interface AutoSnapshotPolicyProps {
      * [1, 65536]: The number of days retained.
      * Default value: -1.
      */
-    readonly retentionDays: number;
+    readonly retentionDays: number | ros.IResolvable;
 
     /**
      * Property timePoints: The automatic snapshot creation schedule, and the unit of measurement is hour. Value range: [0, 23], which represents from 00:00 to 24:00, for example 1 indicates 01:00. When you want to schedule multiple automatic snapshot tasks for a disk in a day, you can set the TimePoints to an array.
@@ -37,12 +37,17 @@ export interface AutoSnapshotPolicyProps {
      * Cannot start with http:// or https://.
      * Default value: null.
      */
-    readonly autoSnapshotPolicyName?: string;
+    readonly autoSnapshotPolicyName?: string | ros.IResolvable;
 
     /**
      * Property diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
      */
-    readonly diskIds?: string[];
+    readonly diskIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosAutoSnapshotPolicy.TagsProperty[];
 }
 
 /**
@@ -58,7 +63,7 @@ export class AutoSnapshotPolicy extends ros.Resource {
     /**
      * Attribute AutoSnapshotPolicyId: The automatic snapshot policy ID.
      */
-    public readonly attrAutoSnapshotPolicyId: any;
+    public readonly attrAutoSnapshotPolicyId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::AutoSnapshotPolicy`.
@@ -71,11 +76,12 @@ export class AutoSnapshotPolicy extends ros.Resource {
         super(scope, id);
 
         const rosAutoSnapshotPolicy = new RosAutoSnapshotPolicy(this, id,  {
-            diskIds: props.diskIds,
             timePoints: props.timePoints,
+            diskIds: props.diskIds,
             retentionDays: props.retentionDays,
             repeatWeekdays: props.repeatWeekdays,
             autoSnapshotPolicyName: props.autoSnapshotPolicyName,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAutoSnapshotPolicy;
         this.attrAutoSnapshotPolicyId = rosAutoSnapshotPolicy.attrAutoSnapshotPolicyId;

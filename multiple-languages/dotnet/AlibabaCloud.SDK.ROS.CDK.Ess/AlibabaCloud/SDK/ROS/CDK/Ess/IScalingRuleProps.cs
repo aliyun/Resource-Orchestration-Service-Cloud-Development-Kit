@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     public interface IScalingRuleProps
     {
         /// <summary>Property scalingGroupId: ID of the scaling group of a scaling rule.</summary>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}")]
-        string ScalingGroupId
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ScalingGroupId
         {
             get;
         }
@@ -18,16 +18,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property adjustmentType: Adjustment mode of a scaling rule.</summary>
         /// <remarks>
         /// Optional values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</description>
         /// <description>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</description>
         /// <description>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "adjustmentType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "adjustmentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AdjustmentType
+        object? AdjustmentType
         {
             get
             {
@@ -38,16 +38,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property adjustmentValue: Adjusted value of a scaling rule.</summary>
         /// <remarks>
         /// Value range:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>QuantityChangeInCapacity: [-500, 500]</description>
         /// <description>PercentChangeInCapacity: [-100, 10000]</description>
         /// <description>TotalCapacity: [0, 1000]</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "adjustmentValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "adjustmentValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? AdjustmentValue
+        object? AdjustmentValue
         {
             get
             {
@@ -59,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Value range: [0, 86,400], in seconds. The default value is empty.
         /// </remarks>
-        [JsiiProperty(name: "cooldown", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "cooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Cooldown
+        object? Cooldown
         {
             get
             {
@@ -90,9 +90,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Note: When calculating the number of ECS instances to be adjusted, the system does not count ECS instances in the warm-up state as part of the current capacity of the scaling group.
         /// Valid values: 0 to 86400. Unit: seconds. Default value: 300.
         /// </remarks>
-        [JsiiProperty(name: "estimatedInstanceWarmup", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "estimatedInstanceWarmup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? EstimatedInstanceWarmup
+        object? EstimatedInstanceWarmup
         {
             get
             {
@@ -104,9 +104,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// Default value: the same as the value of MaxSize
         /// </remarks>
-        [JsiiProperty(name: "initialMaxSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "initialMaxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? InitialMaxSize
+        object? InitialMaxSize
         {
             get
             {
@@ -118,7 +118,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
         /// Valid values of a target tracking scaling rule:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</description>
         /// <description>ClassicInternetTx: the average public network outbound traffic over the classic network</description>
@@ -132,9 +132,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <description>IntranetTx: the average internal network outbound traffic</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "metricName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MetricName
+        object? MetricName
         {
             get
             {
@@ -146,9 +146,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
         /// </remarks>
-        [JsiiProperty(name: "minAdjustmentMagnitude", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "minAdjustmentMagnitude", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MinAdjustmentMagnitude
+        object? MinAdjustmentMagnitude
         {
             get
             {
@@ -159,16 +159,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property predictiveScalingMode: The mode of the predictive scaling rule.</summary>
         /// <remarks>
         /// Valid values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>PredictAndScale: generates forecasts and creates forecast tasks.</description>
         /// <description>PredictOnly: generates forecasts but does not create forecast tasks.
         /// Default value: PredictAndScale</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "predictiveScalingMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "predictiveScalingMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PredictiveScalingMode
+        object? PredictiveScalingMode
         {
             get
             {
@@ -181,9 +181,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// By default, all scheduled tasks that are automatically created for a predictive scaling rule are executed at the beginning of each hour. You can set a buffer time to execute forecast tasks ahead of schedule, so that resources can be prepared in advance. Valid values: 0 to 60. Unit: minutes.
         /// Default value: 0
         /// </remarks>
-        [JsiiProperty(name: "predictiveTaskBufferTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "predictiveTaskBufferTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? PredictiveTaskBufferTime
+        object? PredictiveTaskBufferTime
         {
             get
             {
@@ -194,10 +194,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property predictiveValueBehavior: The action taken on the predicted maximum value.</summary>
         /// <remarks>
         /// Valid values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>MaxOverridePredictiveValue: uses the initial maximum capacity as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>PredictiveValueOverrideMax: uses the predicted value as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.</description>
         /// <description>PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
@@ -205,9 +205,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// </list></description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "predictiveValueBehavior", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "predictiveValueBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PredictiveValueBehavior
+        object? PredictiveValueBehavior
         {
             get
             {
@@ -220,9 +220,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// When the value after the increase is greater than the initial maximum capacity, the value after the increase is used for forecast tasks. Valid values: 0 to 100
         /// Default value: 0
         /// </remarks>
-        [JsiiProperty(name: "predictiveValueBuffer", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "predictiveValueBuffer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? PredictiveValueBuffer
+        object? PredictiveValueBuffer
         {
             get
             {
@@ -234,9 +234,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
         /// </remarks>
-        [JsiiProperty(name: "scalingRuleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "scalingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ScalingRuleName
+        object? ScalingRuleName
         {
             get
             {
@@ -247,7 +247,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <summary>Property scalingRuleType: The type of the scaling rule.</summary>
         /// <remarks>
         /// Valid values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>SimpleScalingRule: scales ECS instances based on the values of AdjustmentType and AdjustmentValue.</description>
         /// <description>TargetTrackingScalingRule: dynamically calculates the number of ECS instances to be adjusted and tries to keep the value of a predefined monitoring metric close to TargetValue.</description>
@@ -256,9 +256,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// If this parameter value is not specified, the default value is SimpleScalingRule.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "scalingRuleType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "scalingRuleType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ScalingRuleType
+        object? ScalingRuleType
         {
             get
             {
@@ -281,9 +281,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// <remarks>
         /// This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
         /// </remarks>
-        [JsiiProperty(name: "targetValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "targetValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TargetValue
+        object? TargetValue
         {
             get
             {
@@ -300,16 +300,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
 
             /// <summary>Property scalingGroupId: ID of the scaling group of a scaling rule.</summary>
-            [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ScalingGroupId
+            [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ScalingGroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property adjustmentType: Adjustment mode of a scaling rule.</summary>
             /// <remarks>
             /// Optional values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</description>
             /// <description>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</description>
@@ -317,16 +317,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "adjustmentType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AdjustmentType
+            [JsiiProperty(name: "adjustmentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AdjustmentType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property adjustmentValue: Adjusted value of a scaling rule.</summary>
             /// <remarks>
             /// Value range:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>QuantityChangeInCapacity: [-500, 500]</description>
             /// <description>PercentChangeInCapacity: [-100, 10000]</description>
@@ -334,10 +334,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "adjustmentValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? AdjustmentValue
+            [JsiiProperty(name: "adjustmentValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AdjustmentValue
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property cooldown: Cool-down time of a scaling rule.</summary>
@@ -345,10 +345,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Value range: [0, 86,400], in seconds. The default value is empty.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cooldown", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Cooldown
+            [JsiiProperty(name: "cooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Cooldown
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property disableScaleIn: Specifies whether to disable scale-in.</summary>
@@ -370,10 +370,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Valid values: 0 to 86400. Unit: seconds. Default value: 300.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "estimatedInstanceWarmup", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? EstimatedInstanceWarmup
+            [JsiiProperty(name: "estimatedInstanceWarmup", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EstimatedInstanceWarmup
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property initialMaxSize: The maximum number of ECS instances in the scaling group, which is used together with PredictiveValueBehavior.</summary>
@@ -381,17 +381,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Default value: the same as the value of MaxSize
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "initialMaxSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? InitialMaxSize
+            [JsiiProperty(name: "initialMaxSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InitialMaxSize
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property metricName: The predefined metric to monitor.</summary>
             /// <remarks>
             /// This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules.
             /// Valid values of a target tracking scaling rule:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>CpuUtilization: the average CPU utilization- ClassicInternetRx: the average public network inbound traffic over the classic network</description>
             /// <description>ClassicInternetTx: the average public network outbound traffic over the classic network</description>
@@ -406,10 +406,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "metricName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MetricName
+            [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MetricName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property minAdjustmentMagnitude: The minimum number of ECS instances to be adjusted in a scaling rule.</summary>
@@ -417,16 +417,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// This parameter takes effect only when the scaling rule type is SimpleScalingRule or StepScalingRule and AdjustmentType is PercentChangeInCapacity.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "minAdjustmentMagnitude", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MinAdjustmentMagnitude
+            [JsiiProperty(name: "minAdjustmentMagnitude", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MinAdjustmentMagnitude
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property predictiveScalingMode: The mode of the predictive scaling rule.</summary>
             /// <remarks>
             /// Valid values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>PredictAndScale: generates forecasts and creates forecast tasks.</description>
             /// <description>PredictOnly: generates forecasts but does not create forecast tasks.
@@ -434,10 +434,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "predictiveScalingMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PredictiveScalingMode
+            [JsiiProperty(name: "predictiveScalingMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PredictiveScalingMode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property predictiveTaskBufferTime: The amount of buffer time ahead of the forecast task execution time.</summary>
@@ -446,19 +446,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Default value: 0
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "predictiveTaskBufferTime", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? PredictiveTaskBufferTime
+            [JsiiProperty(name: "predictiveTaskBufferTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PredictiveTaskBufferTime
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property predictiveValueBehavior: The action taken on the predicted maximum value.</summary>
             /// <remarks>
             /// Valid values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>MaxOverridePredictiveValue: uses the initial maximum capacity as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>PredictiveValueOverrideMax: uses the predicted value as the maximum value for forecast tasks when the predicted value is greater than the initial maximum capacity.</description>
             /// <description>PredictiveValueOverrideMaxWithBuffer: increases the predicted value with a ratio, which is specified by PredictiveValueBuffer. If the value after the increase is greater than the initial maximum capacity, the value after the increase is used as the maximum value for forecast tasks.
@@ -467,10 +467,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "predictiveValueBehavior", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PredictiveValueBehavior
+            [JsiiProperty(name: "predictiveValueBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PredictiveValueBehavior
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property predictiveValueBuffer: The ratio of the increment to the predicted value when PredictiveValueBehavior is set to PredictiveValueOverrideMaxWithBuffer.</summary>
@@ -479,10 +479,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// Default value: 0
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "predictiveValueBuffer", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? PredictiveValueBuffer
+            [JsiiProperty(name: "predictiveValueBuffer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PredictiveValueBuffer
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.</summary>
@@ -490,16 +490,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scalingRuleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ScalingRuleName
+            [JsiiProperty(name: "scalingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScalingRuleName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property scalingRuleType: The type of the scaling rule.</summary>
             /// <remarks>
             /// Valid values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>SimpleScalingRule: scales ECS instances based on the values of AdjustmentType and AdjustmentValue.</description>
             /// <description>TargetTrackingScalingRule: dynamically calculates the number of ECS instances to be adjusted and tries to keep the value of a predefined monitoring metric close to TargetValue.</description>
@@ -509,10 +509,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "scalingRuleType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ScalingRuleType
+            [JsiiProperty(name: "scalingRuleType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ScalingRuleType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property stepAdjustment:.</summary>
@@ -528,10 +528,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// This parameter is required and applicable only to target tracking scaling rules and predictive scaling rules. The value of TargetValue must be greater than 0 and can have a maximum of three decimal places.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "targetValue", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TargetValue
+            [JsiiProperty(name: "targetValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TargetValue
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

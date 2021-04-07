@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Attribute</strong>: CenBandwidthPackageId: The ID of the bandwidth package.
         /// </remarks>
-        [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCenBandwidthPackageId
+        [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenBandwidthPackageId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
         /// </remarks>
-        [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Bandwidth
+        [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Bandwidth
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: geographicRegionAId: The other area A to connect.
         /// Valid value: China | North-America | Asia-Pacific | Europe | Australia
         /// </remarks>
-        [JsiiProperty(name: "geographicRegionAId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string GeographicRegionAId
+        [JsiiProperty(name: "geographicRegionAId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GeographicRegionAId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: geographicRegionBId: The other area B to connect.
         /// Valid value: China | North-America | Asia-Pacific | Europe | Australia
         /// </remarks>
-        [JsiiProperty(name: "geographicRegionBId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string GeographicRegionBId
+        [JsiiProperty(name: "geographicRegionBId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GeographicRegionBId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -126,10 +126,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: autoRenewDuration: Duration of each automatic renewals. It takes effect when AutoRenew is true.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoRenewDuration", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? AutoRenewDuration
+        [JsiiProperty(name: "autoRenewDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AutoRenewDuration
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -137,10 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: bandwidthPackageChargeType: The billing method. Valid value: PREPAY, POSTPAY (Default)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "bandwidthPackageChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? BandwidthPackageChargeType
+        [JsiiProperty(name: "bandwidthPackageChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? BandwidthPackageChargeType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -149,10 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -161,10 +161,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -172,10 +172,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: period: The purchase period. The default value is 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -183,10 +183,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <strong>Property</strong>: pricingCycle: The pricing cycle.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pricingCycle", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? PricingCycle
+        [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PricingCycle
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

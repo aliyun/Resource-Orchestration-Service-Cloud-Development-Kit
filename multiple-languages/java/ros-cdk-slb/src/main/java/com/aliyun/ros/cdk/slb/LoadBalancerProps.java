@@ -3,116 +3,165 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.382Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.072Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property addressType: Loader balancer address type.
+     * <p>
+     * Support 'internet' and 'intranet' only, default is 'internet'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAddressType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressType() {
         return null;
     }
 
     /**
+     * Property autoPay: Optional.
+     * <p>
+     * Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
+     * Valid values: true | false (default value)
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
+     * <p>
+     * Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBandwidth() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return null;
     }
 
     /**
+     * Property deletionProtection: Whether to enable deletion protection.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
     }
 
     /**
+     * Property duration: Optional.
+     * <p>
+     * The subscription duration of a Subscription Internet instance.
+     * Valid values:
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
+     * If PricingCycle is year, the value range is 1 to 3.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
+     * Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property loadBalancerName: Name of created load balancer.
+     * <p>
+     * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
     }
 
     /**
+     * Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+     * <p>
+     * Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerSpec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
         return null;
     }
 
     /**
+     * Property masterZoneId: The master zone id to create load balancer instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterZoneId() {
         return null;
     }
 
     /**
+     * Property modificationProtectionReason: Set the reason for modifying the protection status.
+     * <p>
+     * The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
+     * Only valid when ModificationProtectionStatus is ConsoleProtection.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getModificationProtectionReason() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionReason() {
         return null;
     }
 
     /**
+     * Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getModificationProtectionStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionStatus() {
         return null;
     }
 
     /**
+     * Property payType: Optional.
+     * <p>
+     * The billing method of the instance to be created.
+     * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
     }
 
     /**
+     * Property pricingCycle: Optional.
+     * <p>
+     * The duration of the Subscription-billed Internet instance to be created.
+     * Valid values: month | year.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property slaveZoneId: The slave zone id to create load balancer instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSlaveZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlaveZoneId() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to slb.
+     * <p>
+     * Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vpcId: The VPC id to create load balancer instance.
+     * <p>
+     * For VPC network only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The VSwitch id to create load balancer instance.
+     * <p>
+     * For VPC network only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -126,28 +175,29 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link LoadBalancerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LoadBalancerProps> {
-        private java.lang.String addressType;
+        private java.lang.Object addressType;
         private java.lang.Object autoPay;
-        private java.lang.Number bandwidth;
+        private java.lang.Object bandwidth;
         private java.lang.Object deletionProtection;
-        private java.lang.Number duration;
-        private java.lang.String internetChargeType;
-        private java.lang.String loadBalancerName;
-        private java.lang.String loadBalancerSpec;
-        private java.lang.String masterZoneId;
-        private java.lang.String modificationProtectionReason;
-        private java.lang.String modificationProtectionStatus;
-        private java.lang.String payType;
-        private java.lang.String pricingCycle;
-        private java.lang.String resourceGroupId;
-        private java.lang.String slaveZoneId;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object duration;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object loadBalancerName;
+        private java.lang.Object loadBalancerSpec;
+        private java.lang.Object masterZoneId;
+        private java.lang.Object modificationProtectionReason;
+        private java.lang.Object modificationProtectionStatus;
+        private java.lang.Object payType;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object slaveZoneId;
+        private java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressType}
-         * @param addressType the value to be set.
+         * @param addressType Property addressType: Loader balancer address type.
+         *                    Support 'internet' and 'intranet' only, default is 'internet'.
          * @return {@code this}
          */
         public Builder addressType(java.lang.String addressType) {
@@ -156,8 +206,21 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getAddressType}
+         * @param addressType Property addressType: Loader balancer address type.
+         *                    Support 'internet' and 'intranet' only, default is 'internet'.
+         * @return {@code this}
+         */
+        public Builder addressType(com.aliyun.ros.cdk.core.IResolvable addressType) {
+            this.addressType = addressType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Optional.
+         *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
+         *                Valid values: true | false (default value)
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -167,7 +230,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Optional.
+         *                Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
+         *                Valid values: true | false (default value)
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -177,7 +242,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getBandwidth}
-         * @param bandwidth the value to be set.
+         * @param bandwidth Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
+         *                  Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -186,8 +252,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second).
+         *                  Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
          * @return {@code this}
          */
         public Builder deletionProtection(java.lang.Boolean deletionProtection) {
@@ -197,7 +274,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getDeletionProtection}
-         * @param deletionProtection the value to be set.
+         * @param deletionProtection Property deletionProtection: Whether to enable deletion protection.
          * @return {@code this}
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {
@@ -207,7 +284,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getDuration}
-         * @param duration the value to be set.
+         * @param duration Property duration: Optional.
+         *                 The subscription duration of a Subscription Internet instance.
+         *                 Valid values:
+         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
+         *                 If PricingCycle is year, the value range is 1 to 3.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
@@ -216,8 +297,22 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getDuration}
+         * @param duration Property duration: Optional.
+         *                 The subscription duration of a Subscription Internet instance.
+         *                 Valid values:
+         *                 If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
+         *                 If PricingCycle is year, the value range is 1 to 3.
+         * @return {@code this}
+         */
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.duration = duration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -226,8 +321,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName the value to be set.
+         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
+         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
@@ -236,8 +342,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
+         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
+         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @return {@code this}
+         */
+        public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
+            this.loadBalancerName = loadBalancerName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerSpec}
-         * @param loadBalancerSpec the value to be set.
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
          * @return {@code this}
          */
         public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
@@ -246,8 +364,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getLoadBalancerSpec}
+         * @param loadBalancerSpec Property loadBalancerSpec: The specification of the Server Load Balancer instance.
+         *                         Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
+         * @return {@code this}
+         */
+        public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
+            this.loadBalancerSpec = loadBalancerSpec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getMasterZoneId}
-         * @param masterZoneId the value to be set.
+         * @param masterZoneId Property masterZoneId: The master zone id to create load balancer instance.
          * @return {@code this}
          */
         public Builder masterZoneId(java.lang.String masterZoneId) {
@@ -256,8 +385,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getMasterZoneId}
+         * @param masterZoneId Property masterZoneId: The master zone id to create load balancer instance.
+         * @return {@code this}
+         */
+        public Builder masterZoneId(com.aliyun.ros.cdk.core.IResolvable masterZoneId) {
+            this.masterZoneId = masterZoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionReason}
-         * @param modificationProtectionReason the value to be set.
+         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status.
+         *                                     The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
+         *                                     Only valid when ModificationProtectionStatus is ConsoleProtection.
          * @return {@code this}
          */
         public Builder modificationProtectionReason(java.lang.String modificationProtectionReason) {
@@ -266,8 +407,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getModificationProtectionReason}
+         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status.
+         *                                     The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
+         *                                     Only valid when ModificationProtectionStatus is ConsoleProtection.
+         * @return {@code this}
+         */
+        public Builder modificationProtectionReason(com.aliyun.ros.cdk.core.IResolvable modificationProtectionReason) {
+            this.modificationProtectionReason = modificationProtectionReason;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionStatus}
-         * @param modificationProtectionStatus the value to be set.
+         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
          * @return {@code this}
          */
         public Builder modificationProtectionStatus(java.lang.String modificationProtectionStatus) {
@@ -276,8 +429,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getModificationProtectionStatus}
+         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+         * @return {@code this}
+         */
+        public Builder modificationProtectionStatus(com.aliyun.ros.cdk.core.IResolvable modificationProtectionStatus) {
+            this.modificationProtectionStatus = modificationProtectionStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getPayType}
-         * @param payType the value to be set.
+         * @param payType Property payType: Optional.
+         *                The billing method of the instance to be created.
+         *                Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -286,8 +451,22 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getPayType}
+         * @param payType Property payType: Optional.
+         *                The billing method of the instance to be created.
+         *                Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: Optional.
+         *                     The duration of the Subscription-billed Internet instance to be created.
+         *                     Valid values: month | year.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -296,8 +475,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: Optional.
+         *                     The duration of the Subscription-billed Internet instance to be created.
+         *                     Valid values: month | year.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -306,8 +497,18 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getSlaveZoneId}
-         * @param slaveZoneId the value to be set.
+         * @param slaveZoneId Property slaveZoneId: The slave zone id to create load balancer instance.
          * @return {@code this}
          */
         public Builder slaveZoneId(java.lang.String slaveZoneId) {
@@ -316,19 +517,31 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getSlaveZoneId}
+         * @param slaveZoneId Property slaveZoneId: The slave zone id to create load balancer instance.
+         * @return {@code this}
+         */
+        public Builder slaveZoneId(com.aliyun.ros.cdk.core.IResolvable slaveZoneId) {
+            this.slaveZoneId = slaveZoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to slb.
+         *             Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link LoadBalancerProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: The VPC id to create load balancer instance.
+         *              For VPC network only.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -337,11 +550,34 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link LoadBalancerProps#getVpcId}
+         * @param vpcId Property vpcId: The VPC id to create load balancer instance.
+         *              For VPC network only.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LoadBalancerProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance.
+         *                  For VPC network only.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LoadBalancerProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance.
+         *                  For VPC network only.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -362,24 +598,24 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LoadBalancerProps {
-        private final java.lang.String addressType;
+        private final java.lang.Object addressType;
         private final java.lang.Object autoPay;
-        private final java.lang.Number bandwidth;
+        private final java.lang.Object bandwidth;
         private final java.lang.Object deletionProtection;
-        private final java.lang.Number duration;
-        private final java.lang.String internetChargeType;
-        private final java.lang.String loadBalancerName;
-        private final java.lang.String loadBalancerSpec;
-        private final java.lang.String masterZoneId;
-        private final java.lang.String modificationProtectionReason;
-        private final java.lang.String modificationProtectionStatus;
-        private final java.lang.String payType;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String slaveZoneId;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object duration;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object loadBalancerName;
+        private final java.lang.Object loadBalancerSpec;
+        private final java.lang.Object masterZoneId;
+        private final java.lang.Object modificationProtectionReason;
+        private final java.lang.Object modificationProtectionStatus;
+        private final java.lang.Object payType;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object slaveZoneId;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -387,31 +623,31 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.addressType = software.amazon.jsii.Kernel.get(this, "addressType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterZoneId = software.amazon.jsii.Kernel.get(this, "masterZoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.modificationProtectionReason = software.amazon.jsii.Kernel.get(this, "modificationProtectionReason", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.modificationProtectionStatus = software.amazon.jsii.Kernel.get(this, "modificationProtectionStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slaveZoneId = software.amazon.jsii.Kernel.get(this, "slaveZoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerName = software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerSpec = software.amazon.jsii.Kernel.get(this, "loadBalancerSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterZoneId = software.amazon.jsii.Kernel.get(this, "masterZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.modificationProtectionReason = software.amazon.jsii.Kernel.get(this, "modificationProtectionReason", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.modificationProtectionStatus = software.amazon.jsii.Kernel.get(this, "modificationProtectionStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slaveZoneId = software.amazon.jsii.Kernel.get(this, "slaveZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String addressType, final java.lang.Object autoPay, final java.lang.Number bandwidth, final java.lang.Object deletionProtection, final java.lang.Number duration, final java.lang.String internetChargeType, final java.lang.String loadBalancerName, final java.lang.String loadBalancerSpec, final java.lang.String masterZoneId, final java.lang.String modificationProtectionReason, final java.lang.String modificationProtectionStatus, final java.lang.String payType, final java.lang.String pricingCycle, final java.lang.String resourceGroupId, final java.lang.String slaveZoneId, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String vpcId, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object addressType, final java.lang.Object autoPay, final java.lang.Object bandwidth, final java.lang.Object deletionProtection, final java.lang.Object duration, final java.lang.Object internetChargeType, final java.lang.Object loadBalancerName, final java.lang.Object loadBalancerSpec, final java.lang.Object masterZoneId, final java.lang.Object modificationProtectionReason, final java.lang.Object modificationProtectionStatus, final java.lang.Object payType, final java.lang.Object pricingCycle, final java.lang.Object resourceGroupId, final java.lang.Object slaveZoneId, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.addressType = addressType;
             this.autoPay = autoPay;
@@ -428,13 +664,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
             this.pricingCycle = pricingCycle;
             this.resourceGroupId = resourceGroupId;
             this.slaveZoneId = slaveZoneId;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
         }
 
         @Override
-        public final java.lang.String getAddressType() {
+        public final java.lang.Object getAddressType() {
             return this.addressType;
         }
 
@@ -444,7 +680,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
@@ -454,72 +690,72 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.Number getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerName() {
+        public final java.lang.Object getLoadBalancerName() {
             return this.loadBalancerName;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerSpec() {
+        public final java.lang.Object getLoadBalancerSpec() {
             return this.loadBalancerSpec;
         }
 
         @Override
-        public final java.lang.String getMasterZoneId() {
+        public final java.lang.Object getMasterZoneId() {
             return this.masterZoneId;
         }
 
         @Override
-        public final java.lang.String getModificationProtectionReason() {
+        public final java.lang.Object getModificationProtectionReason() {
             return this.modificationProtectionReason;
         }
 
         @Override
-        public final java.lang.String getModificationProtectionStatus() {
+        public final java.lang.Object getModificationProtectionStatus() {
             return this.modificationProtectionStatus;
         }
 
         @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSlaveZoneId() {
+        public final java.lang.Object getSlaveZoneId() {
             return this.slaveZoneId;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancer.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

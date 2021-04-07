@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::AccessRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessRuleProps.Jsii$Proxy.class)
 public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceCidrIp();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceCidrIp();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRwAccessType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRwAccessType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserAccessType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserAccessType() {
         return null;
     }
 
@@ -44,11 +44,11 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosAccessRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccessRuleProps> {
-        private java.lang.String accessGroupName;
-        private java.lang.String sourceCidrIp;
-        private java.lang.Number priority;
-        private java.lang.String rwAccessType;
-        private java.lang.String userAccessType;
+        private java.lang.Object accessGroupName;
+        private java.lang.Object sourceCidrIp;
+        private java.lang.Object priority;
+        private java.lang.Object rwAccessType;
+        private java.lang.Object userAccessType;
 
         /**
          * Sets the value of {@link RosAccessRuleProps#getAccessGroupName}
@@ -56,6 +56,16 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
+            this.accessGroupName = accessGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessRuleProps#getAccessGroupName}
+         * @param accessGroupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
             this.accessGroupName = accessGroupName;
             return this;
         }
@@ -71,11 +81,31 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosAccessRuleProps#getSourceCidrIp}
+         * @param sourceCidrIp the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceCidrIp(com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+            this.sourceCidrIp = sourceCidrIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccessRuleProps#getPriority}
          * @param priority the value to be set.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessRuleProps#getPriority}
+         * @param priority the value to be set.
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
             this.priority = priority;
             return this;
         }
@@ -91,11 +121,31 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosAccessRuleProps#getRwAccessType}
+         * @param rwAccessType the value to be set.
+         * @return {@code this}
+         */
+        public Builder rwAccessType(com.aliyun.ros.cdk.core.IResolvable rwAccessType) {
+            this.rwAccessType = rwAccessType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccessRuleProps#getUserAccessType}
          * @param userAccessType the value to be set.
          * @return {@code this}
          */
         public Builder userAccessType(java.lang.String userAccessType) {
+            this.userAccessType = userAccessType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessRuleProps#getUserAccessType}
+         * @param userAccessType the value to be set.
+         * @return {@code this}
+         */
+        public Builder userAccessType(com.aliyun.ros.cdk.core.IResolvable userAccessType) {
             this.userAccessType = userAccessType;
             return this;
         }
@@ -116,11 +166,11 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccessRuleProps {
-        private final java.lang.String accessGroupName;
-        private final java.lang.String sourceCidrIp;
-        private final java.lang.Number priority;
-        private final java.lang.String rwAccessType;
-        private final java.lang.String userAccessType;
+        private final java.lang.Object accessGroupName;
+        private final java.lang.Object sourceCidrIp;
+        private final java.lang.Object priority;
+        private final java.lang.Object rwAccessType;
+        private final java.lang.Object userAccessType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,17 +178,17 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceCidrIp = software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.rwAccessType = software.amazon.jsii.Kernel.get(this, "rwAccessType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.userAccessType = software.amazon.jsii.Kernel.get(this, "userAccessType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceCidrIp = software.amazon.jsii.Kernel.get(this, "sourceCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rwAccessType = software.amazon.jsii.Kernel.get(this, "rwAccessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.userAccessType = software.amazon.jsii.Kernel.get(this, "userAccessType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accessGroupName, final java.lang.String sourceCidrIp, final java.lang.Number priority, final java.lang.String rwAccessType, final java.lang.String userAccessType) {
+        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object sourceCidrIp, final java.lang.Object priority, final java.lang.Object rwAccessType, final java.lang.Object userAccessType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
             this.sourceCidrIp = java.util.Objects.requireNonNull(sourceCidrIp, "sourceCidrIp is required");
@@ -148,27 +198,27 @@ public interface RosAccessRuleProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getAccessGroupName() {
+        public final java.lang.Object getAccessGroupName() {
             return this.accessGroupName;
         }
 
         @Override
-        public final java.lang.String getSourceCidrIp() {
+        public final java.lang.Object getSourceCidrIp() {
             return this.sourceCidrIp;
         }
 
         @Override
-        public final java.lang.Number getPriority() {
+        public final java.lang.Object getPriority() {
             return this.priority;
         }
 
         @Override
-        public final java.lang.String getRwAccessType() {
+        public final java.lang.Object getRwAccessType() {
             return this.rwAccessType;
         }
 
         @Override
-        public final java.lang.String getUserAccessType() {
+        public final java.lang.Object getUserAccessType() {
             return this.userAccessType;
         }
 

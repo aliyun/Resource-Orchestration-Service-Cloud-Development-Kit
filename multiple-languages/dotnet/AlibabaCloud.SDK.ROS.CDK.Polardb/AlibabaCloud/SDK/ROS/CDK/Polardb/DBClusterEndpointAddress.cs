@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Attribute Address: The details of the endpoint address.</summary>
-        [JsiiProperty(name: "attrAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAddress
+        [JsiiProperty(name: "attrAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ConnectionString: The connection string of the endpoint address.</summary>
-        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionString
+        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

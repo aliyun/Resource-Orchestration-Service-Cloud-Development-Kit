@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS template type:  `ALIYUN::ROS::Stack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.343Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.020Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosStack")
 public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -48,14 +48,14 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -81,6 +81,24 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateBody() {
         return software.amazon.jsii.Kernel.get(this, "templateBody", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -99,8 +117,8 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTemplateId() {
-        return software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateId() {
+        return software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTemplateUrl() {
-        return software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTemplateId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateUrl() {
+        return software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +147,14 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTemplateVersion() {
-        return software.amazon.jsii.Kernel.get(this, "templateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTemplateUrl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateUrl", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateVersion() {
+        return software.amazon.jsii.Kernel.get(this, "templateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,13 +165,25 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTimeoutMins() {
-        return software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setTemplateVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutMins() {
+        return software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTimeoutMins(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "timeoutMins", value);
+    }
+
+    /**
+     */
+    public void setTimeoutMins(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "timeoutMins", value);
     }
 
@@ -190,6 +232,23 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param templateBody This parameter is required.
          */
         public Builder templateBody(final com.aliyun.ros.cdk.core.IResolvable templateBody) {
@@ -213,12 +272,28 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
             this.props.templateId(templateId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param templateId This parameter is required.
+         */
+        public Builder templateId(final com.aliyun.ros.cdk.core.IResolvable templateId) {
+            this.props.templateId(templateId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param templateUrl This parameter is required.
          */
         public Builder templateUrl(final java.lang.String templateUrl) {
+            this.props.templateUrl(templateUrl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateUrl This parameter is required.
+         */
+        public Builder templateUrl(final com.aliyun.ros.cdk.core.IResolvable templateUrl) {
             this.props.templateUrl(templateUrl);
             return this;
         }
@@ -231,12 +306,28 @@ public class RosStack extends com.aliyun.ros.cdk.core.RosResource {
             this.props.templateVersion(templateVersion);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param templateVersion This parameter is required.
+         */
+        public Builder templateVersion(final com.aliyun.ros.cdk.core.IResolvable templateVersion) {
+            this.props.templateVersion(templateVersion);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param timeoutMins This parameter is required.
          */
         public Builder timeoutMins(final java.lang.Number timeoutMins) {
+            this.props.timeoutMins(timeoutMins);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param timeoutMins This parameter is required.
+         */
+        public Builder timeoutMins(final com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.props.timeoutMins(timeoutMins);
             return this;
         }

@@ -10,53 +10,53 @@ export interface RosApplicationProps {
     /**
      * @Property appName: Application Name. Allowed numbers, letters and underlined combinations thereof. We must begin with the letters, the maximum length of 36 characters.
      */
-    readonly appName: string;
+    readonly appName: string | ros.IResolvable;
 
     /**
      * @Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
      */
-    readonly cpu: number;
+    readonly cpu: number | ros.IResolvable;
 
     /**
      * @Property memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
      */
-    readonly memory: number;
+    readonly memory: number | ros.IResolvable;
 
     /**
      * @Property namespaceId: EDAS namespace corresponding to ID. Canada supports only the name of the scribe lowercase namespace must begin with a letter.
      * Namespace can interface to obtain from DescribeNamespaceList.
      */
-    readonly namespaceId: string;
+    readonly namespaceId: string | ros.IResolvable;
 
     /**
      * @Property packageType: Application package type. Support FatJar, War, Image.
      */
-    readonly packageType: string;
+    readonly packageType: string | ros.IResolvable;
 
     /**
      * @Property replicas: The initial number of instances.
      */
-    readonly replicas: number;
+    readonly replicas: number | ros.IResolvable;
 
     /**
      * @Property appDescription: Application description. No more than 1024 characters.
      */
-    readonly appDescription?: string;
+    readonly appDescription?: string | ros.IResolvable;
 
     /**
      * @Property command: Mirroring the start command. The command object in memory executable container must be. For example: sleep. This command will cause the image to set the original startup command failure.
      */
-    readonly command?: string;
+    readonly command?: string | ros.IResolvable;
 
     /**
      * @Property commandArgs: Mirroring the start command parameters. Parameters required for the start-command. For example: [ "1d"]
      */
-    readonly commandArgs?: string;
+    readonly commandArgs?: string | ros.IResolvable;
 
     /**
      * @Property customHostAlias: Custom mapping host vessel. For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
      */
-    readonly customHostAlias?: string;
+    readonly customHostAlias?: string | ros.IResolvable;
 
     /**
      * @Property deploy: Whether deployed immediately take effect, the default is false.
@@ -66,114 +66,119 @@ export interface RosApplicationProps {
     /**
      * @Property edasContainerVersion: EDAS pandora runtime environment used by the application.
      */
-    readonly edasContainerVersion?: string;
+    readonly edasContainerVersion?: string | ros.IResolvable;
 
     /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
-    readonly envs?: string;
+    readonly envs?: string | ros.IResolvable;
 
     /**
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
      */
-    readonly imageUrl?: string;
+    readonly imageUrl?: string | ros.IResolvable;
 
     /**
      * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
-    readonly jarStartArgs?: string;
+    readonly jarStartArgs?: string | ros.IResolvable;
 
     /**
      * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
-    readonly jarStartOptions?: string;
+    readonly jarStartOptions?: string | ros.IResolvable;
 
     /**
      * @Property jdk: Deployment of JDK version of the package depends on. Mirroring not supported.
      */
-    readonly jdk?: string;
+    readonly jdk?: string | ros.IResolvable;
 
     /**
      * @Property liveness: Container health check, health check fails container will be killed and recovery. Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
      */
-    readonly liveness?: string;
+    readonly liveness?: string | ros.IResolvable;
 
     /**
      * @Property mountDesc: Mount Description
      */
-    readonly mountDesc?: string;
+    readonly mountDesc?: string | ros.IResolvable;
 
     /**
      * @Property mountHost: nas mount point in the application of vpc.
      */
-    readonly mountHost?: string;
+    readonly mountHost?: string | ros.IResolvable;
 
     /**
      * @Property nasId: Mount the NAS ID, you must be in the same region and cluster. It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
      */
-    readonly nasId?: string;
+    readonly nasId?: string | ros.IResolvable;
 
     /**
      * @Property packageUrl: Deployment packages address. Only FatJar War or the type of application can be configured to deploy packet address.
      */
-    readonly packageUrl?: string;
+    readonly packageUrl?: string | ros.IResolvable;
 
     /**
      * @Property packageVersion: The version number of the deployed package, War FatJar type required. Please customize it meaning.
      */
-    readonly packageVersion?: string;
+    readonly packageVersion?: string | ros.IResolvable;
 
     /**
      * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
      */
-    readonly postStart?: string;
+    readonly postStart?: string | ros.IResolvable;
 
     /**
      * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
      */
-    readonly preStop?: string;
+    readonly preStop?: string | ros.IResolvable;
 
     /**
      * @Property readiness: Application launch status check, health check fails repeatedly container will be killed and restarted. Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
      */
-    readonly readiness?: string;
+    readonly readiness?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Security group ID.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property slsConfigs: Log collection configuration file
      */
-    readonly slsConfigs?: string;
+    readonly slsConfigs?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to application. Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosApplication.TagsProperty[];
 
     /**
      * @Property timezone: Application time zone. Default Asia/Shanghai.
      */
-    readonly timezone?: string;
+    readonly timezone?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: EDAS namespace corresponding VPC. In Serverless in a corresponding one of the VPC namespace only, and can not be modified. Serverless first created in the application name space will form a binding relationship. You may correspond to a plurality of namespaces VPC. Do not fill was VpcId namespace binding.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: Application examples where the elastic card virtual switch. The switch must be located above the VPC. The same switch with EDAS namespace binding relationship. Do not fill was VSwitchId namespace binding.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property warStartOptions: War Start the application package option. Apply the default startup command: java $ JAVA_OPTS $ CATALINA_OPTS -Options org.apache.catalina.startup.Bootstrap "$ @" start
      */
-    readonly warStartOptions?: string;
+    readonly warStartOptions?: string | ros.IResolvable;
 
     /**
      * @Property webContainer: Tomcat deployment of the package depends on the version. Mirroring not supported.
      */
-    readonly webContainer?: string;
+    readonly webContainer?: string | ros.IResolvable;
 }
 
 /**
@@ -229,6 +234,14 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('readiness', ros.validateString)(properties.readiness));
     errors.collect(ros.propertyValidator('packageType', ros.requiredValidator)(properties.packageType));
     errors.collect(ros.propertyValidator('packageType', ros.validateString)(properties.packageType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApplication_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('commandArgs', ros.validateString)(properties.commandArgs));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('envs', ros.validateString)(properties.envs));
@@ -291,6 +304,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
       Readiness: ros.stringToRosTemplate(properties.readiness),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SlsConfigs: ros.stringToRosTemplate(properties.slsConfigs),
+      Tags: ros.listMapper(rosApplicationTagsPropertyToRosTemplate)(properties.tags),
       Timezone: ros.stringToRosTemplate(properties.timezone),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -316,12 +330,12 @@ export class RosApplication extends ros.RosResource {
     /**
      * @Attribute AppId: Creating successful application ID.
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public readonly attrChangeOrderId: any;
+    public readonly attrChangeOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -329,53 +343,53 @@ export class RosApplication extends ros.RosResource {
     /**
      * @Property appName: Application Name. Allowed numbers, letters and underlined combinations thereof. We must begin with the letters, the maximum length of 36 characters.
      */
-    public appName: string;
+    public appName: string | ros.IResolvable;
 
     /**
      * @Property cpu: Each instance of the CPU required, in units of milli core, can not be zero. Currently only supports fixed specifications instance type.
      */
-    public cpu: number;
+    public cpu: number | ros.IResolvable;
 
     /**
      * @Property memory: Each instance of the required memory, in units of MB, can not be zero. Currently only supports fixed specifications instance type.
      */
-    public memory: number;
+    public memory: number | ros.IResolvable;
 
     /**
      * @Property namespaceId: EDAS namespace corresponding to ID. Canada supports only the name of the scribe lowercase namespace must begin with a letter.
      * Namespace can interface to obtain from DescribeNamespaceList.
      */
-    public namespaceId: string;
+    public namespaceId: string | ros.IResolvable;
 
     /**
      * @Property packageType: Application package type. Support FatJar, War, Image.
      */
-    public packageType: string;
+    public packageType: string | ros.IResolvable;
 
     /**
      * @Property replicas: The initial number of instances.
      */
-    public replicas: number;
+    public replicas: number | ros.IResolvable;
 
     /**
      * @Property appDescription: Application description. No more than 1024 characters.
      */
-    public appDescription: string | undefined;
+    public appDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property command: Mirroring the start command. The command object in memory executable container must be. For example: sleep. This command will cause the image to set the original startup command failure.
      */
-    public command: string | undefined;
+    public command: string | ros.IResolvable | undefined;
 
     /**
      * @Property commandArgs: Mirroring the start command parameters. Parameters required for the start-command. For example: [ "1d"]
      */
-    public commandArgs: string | undefined;
+    public commandArgs: string | ros.IResolvable | undefined;
 
     /**
      * @Property customHostAlias: Custom mapping host vessel. For example: [{ "hostName": "samplehost", "ip": "127.0.0.1"}]
      */
-    public customHostAlias: string | undefined;
+    public customHostAlias: string | ros.IResolvable | undefined;
 
     /**
      * @Property deploy: Whether deployed immediately take effect, the default is false.
@@ -385,114 +399,119 @@ export class RosApplication extends ros.RosResource {
     /**
      * @Property edasContainerVersion: EDAS pandora runtime environment used by the application.
      */
-    public edasContainerVersion: string | undefined;
+    public edasContainerVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property envs: Container environment variable parameters. For example: [{ "name": "envtmp", "value": "0"}]
      */
-    public envs: string | undefined;
+    public envs: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageUrl: Mirroring address. Image only type of application can be configured to mirror address.
      */
-    public imageUrl: string | undefined;
+    public imageUrl: string | ros.IResolvable | undefined;
 
     /**
      * @Property jarStartArgs: Jar package startup application parameters. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
-    public jarStartArgs: string | undefined;
+    public jarStartArgs: string | ros.IResolvable | undefined;
 
     /**
      * @Property jarStartOptions: Jar start the application package option. Apply the default startup command: $ JAVA_HOME / bin / java $ JarStartOptions -jar $ CATALINA_OPTS "$ package_path"
      * $ JarStartArgs
      */
-    public jarStartOptions: string | undefined;
+    public jarStartOptions: string | ros.IResolvable | undefined;
 
     /**
      * @Property jdk: Deployment of JDK version of the package depends on. Mirroring not supported.
      */
-    public jdk: string | undefined;
+    public jdk: string | ros.IResolvable | undefined;
 
     /**
      * @Property liveness: Container health check, health check fails container will be killed and recovery. Currently only supports mode command issued in the container. The columns: { "exec": { "command": [ "sleep", "5s"]}, "initialDelaySeconds": 10, "timeoutSeconds": 11}
      */
-    public liveness: string | undefined;
+    public liveness: string | ros.IResolvable | undefined;
 
     /**
      * @Property mountDesc: Mount Description
      */
-    public mountDesc: string | undefined;
+    public mountDesc: string | ros.IResolvable | undefined;
 
     /**
      * @Property mountHost: nas mount point in the application of vpc.
      */
-    public mountHost: string | undefined;
+    public mountHost: string | ros.IResolvable | undefined;
 
     /**
      * @Property nasId: Mount the NAS ID, you must be in the same region and cluster. It must be available to create a mount point limit, or switch on its mount point already in the VPC. If you do not fill, and there mountDescs field, the default will automatically purchase a NAS and mount it onto the switch within the VPC.
      */
-    public nasId: string | undefined;
+    public nasId: string | ros.IResolvable | undefined;
 
     /**
      * @Property packageUrl: Deployment packages address. Only FatJar War or the type of application can be configured to deploy packet address.
      */
-    public packageUrl: string | undefined;
+    public packageUrl: string | ros.IResolvable | undefined;
 
     /**
      * @Property packageVersion: The version number of the deployed package, War FatJar type required. Please customize it meaning.
      */
-    public packageVersion: string | undefined;
+    public packageVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property postStart: Executing the script, such as after starting the format: { "exec": { "command": "cat", "/ etc / group"}}
      */
-    public postStart: string | undefined;
+    public postStart: string | ros.IResolvable | undefined;
 
     /**
      * @Property preStop: Script is executed before stopping the format as: { "exec": { "command": "cat", "/ etc / group"}}
      */
-    public preStop: string | undefined;
+    public preStop: string | ros.IResolvable | undefined;
 
     /**
      * @Property readiness: Application launch status check, health check fails repeatedly container will be killed and restarted. Do not pass health check of the vessel will not have to enter SLB traffic. For example: { "exec": { "command": [ "sleep", "6s"]}, "initialDelaySeconds": 15, "timeoutSeconds": 12}
      */
-    public readiness: string | undefined;
+    public readiness: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: Security group ID.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property slsConfigs: Log collection configuration file
      */
-    public slsConfigs: string | undefined;
+    public slsConfigs: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to application. Max support 20 tags to add during create application. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosApplication.TagsProperty[] | undefined;
 
     /**
      * @Property timezone: Application time zone. Default Asia/Shanghai.
      */
-    public timezone: string | undefined;
+    public timezone: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: EDAS namespace corresponding VPC. In Serverless in a corresponding one of the VPC namespace only, and can not be modified. Serverless first created in the application name space will form a binding relationship. You may correspond to a plurality of namespaces VPC. Do not fill was VpcId namespace binding.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: Application examples where the elastic card virtual switch. The switch must be located above the VPC. The same switch with EDAS namespace binding relationship. Do not fill was VSwitchId namespace binding.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property warStartOptions: War Start the application package option. Apply the default startup command: java $ JAVA_OPTS $ CATALINA_OPTS -Options org.apache.catalina.startup.Bootstrap "$ @" start
      */
-    public warStartOptions: string | undefined;
+    public warStartOptions: string | ros.IResolvable | undefined;
 
     /**
      * @Property webContainer: Tomcat deployment of the package depends on the version. Mirroring not supported.
      */
-    public webContainer: string | undefined;
+    public webContainer: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SAE::Application`.
@@ -503,8 +522,8 @@ export class RosApplication extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosApplicationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrChangeOrderId = ros.Token.asString(this.getAtt('ChangeOrderId'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrChangeOrderId = this.getAtt('ChangeOrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appName = props.appName;
@@ -535,6 +554,7 @@ export class RosApplication extends ros.RosResource {
         this.readiness = props.readiness;
         this.securityGroupId = props.securityGroupId;
         this.slsConfigs = props.slsConfigs;
+        this.tags = props.tags;
         this.timezone = props.timezone;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
@@ -573,6 +593,7 @@ export class RosApplication extends ros.RosResource {
             readiness: this.readiness,
             securityGroupId: this.securityGroupId,
             slsConfigs: this.slsConfigs,
+            tags: this.tags,
             timezone: this.timezone,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
@@ -585,6 +606,54 @@ export class RosApplication extends ros.RosResource {
     }
 }
 
+export namespace RosApplication {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplication_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SAE::Application.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplication_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::SAE::Namespace`
  */
@@ -593,17 +662,17 @@ export interface RosNamespaceProps {
     /**
      * @Property namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
      */
-    readonly namespaceId: string;
+    readonly namespaceId: string | ros.IResolvable;
 
     /**
      * @Property namespaceName: Namespace name
      */
-    readonly namespaceName: string;
+    readonly namespaceName: string | ros.IResolvable;
 
     /**
      * @Property namespaceDescription: Namespace description
      */
-    readonly namespaceDescription?: string;
+    readonly namespaceDescription?: string | ros.IResolvable;
 }
 
 /**
@@ -661,7 +730,7 @@ export class RosNamespace extends ros.RosResource {
     /**
      * @Attribute NamespaceId: Namespace ID
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -669,17 +738,17 @@ export class RosNamespace extends ros.RosResource {
     /**
      * @Property namespaceId: Namespace ID. Format: "regionId:logicalId" or "logicalId"
      */
-    public namespaceId: string;
+    public namespaceId: string | ros.IResolvable;
 
     /**
      * @Property namespaceName: Namespace name
      */
-    public namespaceName: string;
+    public namespaceName: string | ros.IResolvable;
 
     /**
      * @Property namespaceDescription: Namespace description
      */
-    public namespaceDescription: string | undefined;
+    public namespaceDescription: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SAE::Namespace`.
@@ -690,7 +759,7 @@ export class RosNamespace extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNamespaceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrNamespaceId = ros.Token.asString(this.getAtt('NamespaceId'));
+        this.attrNamespaceId = this.getAtt('NamespaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.namespaceId = props.namespaceId;
@@ -719,27 +788,27 @@ export interface RosSlbBindingProps {
     /**
      * @Property appId: Successful application deployment target ID
      */
-    readonly appId: string;
+    readonly appId: string | ros.IResolvable;
 
     /**
      * @Property internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    readonly internet?: string;
+    readonly internet?: string | ros.IResolvable;
 
     /**
      * @Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    readonly internetSlbId?: string;
+    readonly internetSlbId?: string | ros.IResolvable;
 
     /**
      * @Property intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    readonly intranet?: string;
+    readonly intranet?: string | ros.IResolvable;
 
     /**
      * @Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    readonly intranetSlbId?: string;
+    readonly intranetSlbId?: string | ros.IResolvable;
 }
 
 /**
@@ -800,12 +869,12 @@ export class RosSlbBinding extends ros.RosResource {
     /**
      * @Attribute AppId: Successful application deployment target ID
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.
      */
-    public readonly attrChangeOrderId: any;
+    public readonly attrChangeOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -813,27 +882,27 @@ export class RosSlbBinding extends ros.RosResource {
     /**
      * @Property appId: Successful application deployment target ID
      */
-    public appId: string;
+    public appId: string | ros.IResolvable;
 
     /**
      * @Property internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    public internet: string | undefined;
+    public internet: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    public internetSlbId: string | undefined;
+    public internetSlbId: string | ros.IResolvable | undefined;
 
     /**
      * @Property intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
      */
-    public intranet: string | undefined;
+    public intranet: string | ros.IResolvable | undefined;
 
     /**
      * @Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
      */
-    public intranetSlbId: string | undefined;
+    public intranetSlbId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SAE::SlbBinding`.
@@ -844,8 +913,8 @@ export class RosSlbBinding extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSlbBindingProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSlbBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrChangeOrderId = ros.Token.asString(this.getAtt('ChangeOrderId'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrChangeOrderId = this.getAtt('ChangeOrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appId = props.appId;

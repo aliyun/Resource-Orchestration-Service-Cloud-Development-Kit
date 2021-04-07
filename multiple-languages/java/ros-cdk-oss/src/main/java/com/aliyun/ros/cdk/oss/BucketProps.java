@@ -3,76 +3,92 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Properties for defining a `ALIYUN::OSS::Bucket`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.141Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.BucketProps")
 @software.amazon.jsii.Jsii.Proxy(BucketProps.Jsii$Proxy.class)
 public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property bucketName: bucket name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBucketName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBucketName();
 
     /**
+     * Property accessControl: The access control list.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccessControl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessControl() {
         return null;
     }
 
     /**
+     * Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCorsConfiguration() {
         return null;
     }
 
     /**
+     * Property deletionForce: Whether force delete the relative objects in the bucket.
+     * <p>
+     * Default value is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
     /**
+     * Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLifecycleConfiguration() {
         return null;
     }
 
     /**
+     * Property loggingConfiguration: Settings that defines where logs are stored.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoggingConfiguration() {
         return null;
     }
 
     /**
+     * Property policy: Bucket policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
         return null;
     }
 
     /**
+     * Property refererConfiguration: undefined.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRefererConfiguration() {
         return null;
     }
 
     /**
+     * Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServerSideEncryptionConfiguration() {
         return null;
     }
 
     /**
+     * Property storageClass: Specifies the storage class of the bucket.
+     * <p>
+     * Default is "Standard".
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getStorageClass() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStorageClass() {
         return null;
     }
 
     /**
+     * Property tags: Bucket tags in k-v pairs format.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return null;
     }
 
     /**
+     * Property websiteConfiguration: The properties of website config.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebsiteConfiguration() {
         return null;
@@ -88,8 +104,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link BucketProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BucketProps> {
-        private java.lang.String bucketName;
-        private java.lang.String accessControl;
+        private java.lang.Object bucketName;
+        private java.lang.Object accessControl;
         private java.lang.Object corsConfiguration;
         private java.lang.Object deletionForce;
         private java.lang.Object lifecycleConfiguration;
@@ -97,13 +113,13 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         private java.lang.Object policy;
         private java.lang.Object refererConfiguration;
         private java.lang.Object serverSideEncryptionConfiguration;
-        private java.lang.String storageClass;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object storageClass;
+        private java.util.Map<java.lang.String, java.lang.Object> tags;
         private java.lang.Object websiteConfiguration;
 
         /**
          * Sets the value of {@link BucketProps#getBucketName}
-         * @param bucketName the value to be set. This parameter is required.
+         * @param bucketName Property bucketName: bucket name. This parameter is required.
          * @return {@code this}
          */
         public Builder bucketName(java.lang.String bucketName) {
@@ -112,8 +128,18 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BucketProps#getBucketName}
+         * @param bucketName Property bucketName: bucket name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bucketName(com.aliyun.ros.cdk.core.IResolvable bucketName) {
+            this.bucketName = bucketName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BucketProps#getAccessControl}
-         * @param accessControl the value to be set.
+         * @param accessControl Property accessControl: The access control list.
          * @return {@code this}
          */
         public Builder accessControl(java.lang.String accessControl) {
@@ -122,18 +148,18 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link BucketProps#getCorsConfiguration}
-         * @param corsConfiguration the value to be set.
+         * Sets the value of {@link BucketProps#getAccessControl}
+         * @param accessControl Property accessControl: The access control list.
          * @return {@code this}
          */
-        public Builder corsConfiguration(com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
-            this.corsConfiguration = corsConfiguration;
+        public Builder accessControl(com.aliyun.ros.cdk.core.IResolvable accessControl) {
+            this.accessControl = accessControl;
             return this;
         }
 
         /**
          * Sets the value of {@link BucketProps#getCorsConfiguration}
-         * @param corsConfiguration the value to be set.
+         * @param corsConfiguration Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
          * @return {@code this}
          */
         public Builder corsConfiguration(com.aliyun.ros.cdk.core.IResolvable corsConfiguration) {
@@ -142,8 +168,19 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BucketProps#getCorsConfiguration}
+         * @param corsConfiguration Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
+         * @return {@code this}
+         */
+        public Builder corsConfiguration(com.aliyun.ros.cdk.oss.RosBucket.CORSConfigurationProperty corsConfiguration) {
+            this.corsConfiguration = corsConfiguration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BucketProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the relative objects in the bucket.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(java.lang.Boolean deletionForce) {
@@ -153,7 +190,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the relative objects in the bucket.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
@@ -163,7 +201,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getLifecycleConfiguration}
-         * @param lifecycleConfiguration the value to be set.
+         * @param lifecycleConfiguration Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
          * @return {@code this}
          */
         public Builder lifecycleConfiguration(com.aliyun.ros.cdk.core.IResolvable lifecycleConfiguration) {
@@ -173,7 +211,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getLifecycleConfiguration}
-         * @param lifecycleConfiguration the value to be set.
+         * @param lifecycleConfiguration Property lifecycleConfiguration: Rules that define how oss bucket manages objects during their lifetime.
          * @return {@code this}
          */
         public Builder lifecycleConfiguration(com.aliyun.ros.cdk.oss.RosBucket.LifecycleConfigurationProperty lifecycleConfiguration) {
@@ -183,7 +221,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getLoggingConfiguration}
-         * @param loggingConfiguration the value to be set.
+         * @param loggingConfiguration Property loggingConfiguration: Settings that defines where logs are stored.
          * @return {@code this}
          */
         public Builder loggingConfiguration(com.aliyun.ros.cdk.core.IResolvable loggingConfiguration) {
@@ -193,7 +231,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getLoggingConfiguration}
-         * @param loggingConfiguration the value to be set.
+         * @param loggingConfiguration Property loggingConfiguration: Settings that defines where logs are stored.
          * @return {@code this}
          */
         public Builder loggingConfiguration(com.aliyun.ros.cdk.oss.RosBucket.LoggingConfigurationProperty loggingConfiguration) {
@@ -203,7 +241,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getPolicy}
-         * @param policy the value to be set.
+         * @param policy Property policy: Bucket policy.
          * @return {@code this}
          */
         public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
@@ -213,7 +251,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getPolicy}
-         * @param policy the value to be set.
+         * @param policy Property policy: Bucket policy.
          * @return {@code this}
          */
         public Builder policy(java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
@@ -223,7 +261,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getRefererConfiguration}
-         * @param refererConfiguration the value to be set.
+         * @param refererConfiguration Property refererConfiguration: undefined.
          * @return {@code this}
          */
         public Builder refererConfiguration(com.aliyun.ros.cdk.core.IResolvable refererConfiguration) {
@@ -233,7 +271,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getRefererConfiguration}
-         * @param refererConfiguration the value to be set.
+         * @param refererConfiguration Property refererConfiguration: undefined.
          * @return {@code this}
          */
         public Builder refererConfiguration(com.aliyun.ros.cdk.oss.RosBucket.RefererConfigurationProperty refererConfiguration) {
@@ -243,7 +281,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getServerSideEncryptionConfiguration}
-         * @param serverSideEncryptionConfiguration the value to be set.
+         * @param serverSideEncryptionConfiguration Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
          * @return {@code this}
          */
         public Builder serverSideEncryptionConfiguration(com.aliyun.ros.cdk.core.IResolvable serverSideEncryptionConfiguration) {
@@ -253,7 +291,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getServerSideEncryptionConfiguration}
-         * @param serverSideEncryptionConfiguration the value to be set.
+         * @param serverSideEncryptionConfiguration Property serverSideEncryptionConfiguration: Specifies the bucket used to store the server-side encryption rule.
          * @return {@code this}
          */
         public Builder serverSideEncryptionConfiguration(com.aliyun.ros.cdk.oss.RosBucket.ServerSideEncryptionConfigurationProperty serverSideEncryptionConfiguration) {
@@ -263,7 +301,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getStorageClass}
-         * @param storageClass the value to be set.
+         * @param storageClass Property storageClass: Specifies the storage class of the bucket.
+         *                     Default is "Standard".
          * @return {@code this}
          */
         public Builder storageClass(java.lang.String storageClass) {
@@ -272,19 +311,30 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BucketProps#getStorageClass}
+         * @param storageClass Property storageClass: Specifies the storage class of the bucket.
+         *                     Default is "Standard".
+         * @return {@code this}
+         */
+        public Builder storageClass(com.aliyun.ros.cdk.core.IResolvable storageClass) {
+            this.storageClass = storageClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BucketProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Bucket tags in k-v pairs format.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link BucketProps#getWebsiteConfiguration}
-         * @param websiteConfiguration the value to be set.
+         * @param websiteConfiguration Property websiteConfiguration: The properties of website config.
          * @return {@code this}
          */
         public Builder websiteConfiguration(com.aliyun.ros.cdk.core.IResolvable websiteConfiguration) {
@@ -294,7 +344,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BucketProps#getWebsiteConfiguration}
-         * @param websiteConfiguration the value to be set.
+         * @param websiteConfiguration Property websiteConfiguration: The properties of website config.
          * @return {@code this}
          */
         public Builder websiteConfiguration(com.aliyun.ros.cdk.oss.RosBucket.WebsiteConfigurationProperty websiteConfiguration) {
@@ -318,8 +368,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BucketProps {
-        private final java.lang.String bucketName;
-        private final java.lang.String accessControl;
+        private final java.lang.Object bucketName;
+        private final java.lang.Object accessControl;
         private final java.lang.Object corsConfiguration;
         private final java.lang.Object deletionForce;
         private final java.lang.Object lifecycleConfiguration;
@@ -327,8 +377,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object policy;
         private final java.lang.Object refererConfiguration;
         private final java.lang.Object serverSideEncryptionConfiguration;
-        private final java.lang.String storageClass;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object storageClass;
+        private final java.util.Map<java.lang.String, java.lang.Object> tags;
         private final java.lang.Object websiteConfiguration;
 
         /**
@@ -337,8 +387,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bucketName = software.amazon.jsii.Kernel.get(this, "bucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessControl = software.amazon.jsii.Kernel.get(this, "accessControl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.corsConfiguration = software.amazon.jsii.Kernel.get(this, "corsConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lifecycleConfiguration = software.amazon.jsii.Kernel.get(this, "lifecycleConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -346,8 +396,8 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.refererConfiguration = software.amazon.jsii.Kernel.get(this, "refererConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.serverSideEncryptionConfiguration = software.amazon.jsii.Kernel.get(this, "serverSideEncryptionConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.storageClass = software.amazon.jsii.Kernel.get(this, "storageClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
             this.websiteConfiguration = software.amazon.jsii.Kernel.get(this, "websiteConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -355,7 +405,7 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String bucketName, final java.lang.String accessControl, final java.lang.Object corsConfiguration, final java.lang.Object deletionForce, final java.lang.Object lifecycleConfiguration, final java.lang.Object loggingConfiguration, final java.lang.Object policy, final java.lang.Object refererConfiguration, final java.lang.Object serverSideEncryptionConfiguration, final java.lang.String storageClass, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.Object websiteConfiguration) {
+        protected Jsii$Proxy(final java.lang.Object bucketName, final java.lang.Object accessControl, final java.lang.Object corsConfiguration, final java.lang.Object deletionForce, final java.lang.Object lifecycleConfiguration, final java.lang.Object loggingConfiguration, final java.lang.Object policy, final java.lang.Object refererConfiguration, final java.lang.Object serverSideEncryptionConfiguration, final java.lang.Object storageClass, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object websiteConfiguration) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bucketName = java.util.Objects.requireNonNull(bucketName, "bucketName is required");
             this.accessControl = accessControl;
@@ -367,17 +417,17 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
             this.refererConfiguration = refererConfiguration;
             this.serverSideEncryptionConfiguration = serverSideEncryptionConfiguration;
             this.storageClass = storageClass;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             this.websiteConfiguration = websiteConfiguration;
         }
 
         @Override
-        public final java.lang.String getBucketName() {
+        public final java.lang.Object getBucketName() {
             return this.bucketName;
         }
 
         @Override
-        public final java.lang.String getAccessControl() {
+        public final java.lang.Object getAccessControl() {
             return this.accessControl;
         }
 
@@ -417,12 +467,12 @@ public interface BucketProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getStorageClass() {
+        public final java.lang.Object getStorageClass() {
             return this.storageClass;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
 

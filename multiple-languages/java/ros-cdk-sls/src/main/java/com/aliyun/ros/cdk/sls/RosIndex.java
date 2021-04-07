@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Index`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosIndex")
 public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -48,14 +48,14 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -81,8 +81,8 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName() {
-        return software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName() {
+        return software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +93,25 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLogstoreName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "logstoreName", java.util.Objects.requireNonNull(value, "logstoreName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setProjectName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "projectName", java.util.Objects.requireNonNull(value, "projectName is required"));
+    }
+
+    /**
+     */
+    public void setProjectName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "projectName", java.util.Objects.requireNonNull(value, "projectName is required"));
     }
 
@@ -160,7 +172,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDelimiter() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDelimiter() {
             return null;
         }
 
@@ -185,7 +197,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         public static final class Builder implements software.amazon.jsii.Builder<FullTextIndexProperty> {
             private java.lang.Object enable;
             private java.lang.Object caseSensitive;
-            private java.lang.String delimiter;
+            private java.lang.Object delimiter;
             private java.lang.Object includeChinese;
 
             /**
@@ -244,6 +256,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link FullTextIndexProperty#getDelimiter}
+             * @param delimiter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder delimiter(com.aliyun.ros.cdk.core.IResolvable delimiter) {
+                this.delimiter = delimiter;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link FullTextIndexProperty#getIncludeChinese}
              * @param includeChinese the value to be set.
              * @return {@code this}
@@ -285,7 +308,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FullTextIndexProperty {
             private final java.lang.Object enable;
             private final java.lang.Object caseSensitive;
-            private final java.lang.String delimiter;
+            private final java.lang.Object delimiter;
             private final java.lang.Object includeChinese;
 
             /**
@@ -296,14 +319,14 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
                 super(objRef);
                 this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.caseSensitive = software.amazon.jsii.Kernel.get(this, "caseSensitive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.delimiter = software.amazon.jsii.Kernel.get(this, "delimiter", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.delimiter = software.amazon.jsii.Kernel.get(this, "delimiter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.includeChinese = software.amazon.jsii.Kernel.get(this, "includeChinese", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object enable, final java.lang.Object caseSensitive, final java.lang.String delimiter, final java.lang.Object includeChinese) {
+            protected Jsii$Proxy(final java.lang.Object enable, final java.lang.Object caseSensitive, final java.lang.Object delimiter, final java.lang.Object includeChinese) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
                 this.caseSensitive = caseSensitive;
@@ -322,7 +345,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getDelimiter() {
+            public final java.lang.Object getDelimiter() {
                 return this.delimiter;
             }
 
@@ -391,17 +414,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getAlias() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlias() {
             return null;
         }
 
@@ -424,9 +447,9 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<JsonKeyIndicesProperty> {
-            private java.lang.String name;
-            private java.lang.String type;
-            private java.lang.String alias;
+            private java.lang.Object name;
+            private java.lang.Object type;
+            private java.lang.Object alias;
             private java.lang.Object enableAnalytics;
 
             /**
@@ -436,6 +459,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder name(java.lang.String name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link JsonKeyIndicesProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
                 this.name = name;
                 return this;
             }
@@ -452,12 +486,34 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link JsonKeyIndicesProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link JsonKeyIndicesProperty#getAlias}
              * @param alias the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder alias(java.lang.String alias) {
+                this.alias = alias;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link JsonKeyIndicesProperty#getAlias}
+             * @param alias the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder alias(com.aliyun.ros.cdk.core.IResolvable alias) {
                 this.alias = alias;
                 return this;
             }
@@ -502,9 +558,9 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements JsonKeyIndicesProperty {
-            private final java.lang.String name;
-            private final java.lang.String type;
-            private final java.lang.String alias;
+            private final java.lang.Object name;
+            private final java.lang.Object type;
+            private final java.lang.Object alias;
             private final java.lang.Object enableAnalytics;
 
             /**
@@ -513,16 +569,16 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.alias = software.amazon.jsii.Kernel.get(this, "alias", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.alias = software.amazon.jsii.Kernel.get(this, "alias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.enableAnalytics = software.amazon.jsii.Kernel.get(this, "enableAnalytics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String name, final java.lang.String type, final java.lang.String alias, final java.lang.Object enableAnalytics) {
+            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object alias, final java.lang.Object enableAnalytics) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(name, "name is required");
                 this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -531,17 +587,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getName() {
+            public final java.lang.Object getName() {
                 return this.name;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
             @Override
-            public final java.lang.String getAlias() {
+            public final java.lang.Object getAlias() {
                 return this.alias;
             }
 
@@ -608,17 +664,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getAlias() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAlias() {
             return null;
         }
 
@@ -632,7 +688,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDelimiter() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDelimiter() {
             return null;
         }
 
@@ -669,11 +725,11 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<KeyIndicesProperty> {
-            private java.lang.String name;
-            private java.lang.String type;
-            private java.lang.String alias;
+            private java.lang.Object name;
+            private java.lang.Object type;
+            private java.lang.Object alias;
             private java.lang.Object caseSensitive;
-            private java.lang.String delimiter;
+            private java.lang.Object delimiter;
             private java.lang.Object enableAnalytics;
             private java.lang.Object includeChinese;
             private java.lang.Object jsonKeyIndices;
@@ -690,6 +746,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link KeyIndicesProperty#getName}
+             * @param name the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+                this.name = name;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link KeyIndicesProperty#getType}
              * @param type the value to be set. This parameter is required.
              * @return {@code this}
@@ -701,12 +768,34 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link KeyIndicesProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link KeyIndicesProperty#getAlias}
              * @param alias the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder alias(java.lang.String alias) {
+                this.alias = alias;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KeyIndicesProperty#getAlias}
+             * @param alias the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder alias(com.aliyun.ros.cdk.core.IResolvable alias) {
                 this.alias = alias;
                 return this;
             }
@@ -740,6 +829,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder delimiter(java.lang.String delimiter) {
+                this.delimiter = delimiter;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link KeyIndicesProperty#getDelimiter}
+             * @param delimiter the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder delimiter(com.aliyun.ros.cdk.core.IResolvable delimiter) {
                 this.delimiter = delimiter;
                 return this;
             }
@@ -828,11 +928,11 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements KeyIndicesProperty {
-            private final java.lang.String name;
-            private final java.lang.String type;
-            private final java.lang.String alias;
+            private final java.lang.Object name;
+            private final java.lang.Object type;
+            private final java.lang.Object alias;
             private final java.lang.Object caseSensitive;
-            private final java.lang.String delimiter;
+            private final java.lang.Object delimiter;
             private final java.lang.Object enableAnalytics;
             private final java.lang.Object includeChinese;
             private final java.lang.Object jsonKeyIndices;
@@ -843,11 +943,11 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.alias = software.amazon.jsii.Kernel.get(this, "alias", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.alias = software.amazon.jsii.Kernel.get(this, "alias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.caseSensitive = software.amazon.jsii.Kernel.get(this, "caseSensitive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.delimiter = software.amazon.jsii.Kernel.get(this, "delimiter", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.delimiter = software.amazon.jsii.Kernel.get(this, "delimiter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.enableAnalytics = software.amazon.jsii.Kernel.get(this, "enableAnalytics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.includeChinese = software.amazon.jsii.Kernel.get(this, "includeChinese", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.jsonKeyIndices = software.amazon.jsii.Kernel.get(this, "jsonKeyIndices", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -856,7 +956,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String name, final java.lang.String type, final java.lang.String alias, final java.lang.Object caseSensitive, final java.lang.String delimiter, final java.lang.Object enableAnalytics, final java.lang.Object includeChinese, final java.lang.Object jsonKeyIndices) {
+            protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object alias, final java.lang.Object caseSensitive, final java.lang.Object delimiter, final java.lang.Object enableAnalytics, final java.lang.Object includeChinese, final java.lang.Object jsonKeyIndices) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.name = java.util.Objects.requireNonNull(name, "name is required");
                 this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -869,17 +969,17 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getName() {
+            public final java.lang.Object getName() {
                 return this.name;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
             @Override
-            public final java.lang.String getAlias() {
+            public final java.lang.Object getAlias() {
                 return this.alias;
             }
 
@@ -889,7 +989,7 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getDelimiter() {
+            public final java.lang.Object getDelimiter() {
                 return this.delimiter;
             }
 
@@ -1028,12 +1128,28 @@ public class RosIndex extends com.aliyun.ros.cdk.core.RosResource {
             this.props.logstoreName(logstoreName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param logstoreName This parameter is required.
+         */
+        public Builder logstoreName(final com.aliyun.ros.cdk.core.IResolvable logstoreName) {
+            this.props.logstoreName(logstoreName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param projectName This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
+            this.props.projectName(projectName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param projectName This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props.projectName(projectName);
             return this;
         }

@@ -3,40 +3,48 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Alias`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.939Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.AliasProps")
 @software.amazon.jsii.Jsii.Proxy(AliasProps.Jsii$Proxy.class)
 public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property aliasName: Alias name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAliasName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAliasName();
 
     /**
+     * Property serviceName: Service name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
+     * Property additionalVersion: Additional version.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAdditionalVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdditionalVersion() {
         return null;
     }
 
     /**
+     * Property additionalWeight: Traffic weight of additional version.
+     * <p>
+     * From 0 to 100.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAdditionalWeight() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdditionalWeight() {
         return null;
     }
 
     /**
+     * Property description: Version description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property versionId: Version ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVersionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVersionId() {
         return null;
     }
 
@@ -50,16 +58,16 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AliasProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AliasProps> {
-        private java.lang.String aliasName;
-        private java.lang.String serviceName;
-        private java.lang.String additionalVersion;
-        private java.lang.Number additionalWeight;
-        private java.lang.String description;
-        private java.lang.String versionId;
+        private java.lang.Object aliasName;
+        private java.lang.Object serviceName;
+        private java.lang.Object additionalVersion;
+        private java.lang.Object additionalWeight;
+        private java.lang.Object description;
+        private java.lang.Object versionId;
 
         /**
          * Sets the value of {@link AliasProps#getAliasName}
-         * @param aliasName the value to be set. This parameter is required.
+         * @param aliasName Property aliasName: Alias name. This parameter is required.
          * @return {@code this}
          */
         public Builder aliasName(java.lang.String aliasName) {
@@ -68,8 +76,18 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AliasProps#getAliasName}
+         * @param aliasName Property aliasName: Alias name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aliasName(com.aliyun.ros.cdk.core.IResolvable aliasName) {
+            this.aliasName = aliasName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AliasProps#getServiceName}
-         * @param serviceName the value to be set. This parameter is required.
+         * @param serviceName Property serviceName: Service name. This parameter is required.
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
@@ -78,8 +96,18 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AliasProps#getServiceName}
+         * @param serviceName Property serviceName: Service name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AliasProps#getAdditionalVersion}
-         * @param additionalVersion the value to be set.
+         * @param additionalVersion Property additionalVersion: Additional version.
          * @return {@code this}
          */
         public Builder additionalVersion(java.lang.String additionalVersion) {
@@ -88,8 +116,19 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AliasProps#getAdditionalVersion}
+         * @param additionalVersion Property additionalVersion: Additional version.
+         * @return {@code this}
+         */
+        public Builder additionalVersion(com.aliyun.ros.cdk.core.IResolvable additionalVersion) {
+            this.additionalVersion = additionalVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AliasProps#getAdditionalWeight}
-         * @param additionalWeight the value to be set.
+         * @param additionalWeight Property additionalWeight: Traffic weight of additional version.
+         *                         From 0 to 100.
          * @return {@code this}
          */
         public Builder additionalWeight(java.lang.Number additionalWeight) {
@@ -98,8 +137,19 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AliasProps#getAdditionalWeight}
+         * @param additionalWeight Property additionalWeight: Traffic weight of additional version.
+         *                         From 0 to 100.
+         * @return {@code this}
+         */
+        public Builder additionalWeight(com.aliyun.ros.cdk.core.IResolvable additionalWeight) {
+            this.additionalWeight = additionalWeight;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AliasProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Version description.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -108,11 +158,31 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AliasProps#getDescription}
+         * @param description Property description: Version description.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AliasProps#getVersionId}
-         * @param versionId the value to be set.
+         * @param versionId Property versionId: Version ID.
          * @return {@code this}
          */
         public Builder versionId(java.lang.String versionId) {
+            this.versionId = versionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AliasProps#getVersionId}
+         * @param versionId Property versionId: Version ID.
+         * @return {@code this}
+         */
+        public Builder versionId(com.aliyun.ros.cdk.core.IResolvable versionId) {
             this.versionId = versionId;
             return this;
         }
@@ -133,12 +203,12 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AliasProps {
-        private final java.lang.String aliasName;
-        private final java.lang.String serviceName;
-        private final java.lang.String additionalVersion;
-        private final java.lang.Number additionalWeight;
-        private final java.lang.String description;
-        private final java.lang.String versionId;
+        private final java.lang.Object aliasName;
+        private final java.lang.Object serviceName;
+        private final java.lang.Object additionalVersion;
+        private final java.lang.Object additionalWeight;
+        private final java.lang.Object description;
+        private final java.lang.Object versionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -146,18 +216,18 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aliasName = software.amazon.jsii.Kernel.get(this, "aliasName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.additionalVersion = software.amazon.jsii.Kernel.get(this, "additionalVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.additionalWeight = software.amazon.jsii.Kernel.get(this, "additionalWeight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.versionId = software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.aliasName = software.amazon.jsii.Kernel.get(this, "aliasName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.additionalVersion = software.amazon.jsii.Kernel.get(this, "additionalVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.additionalWeight = software.amazon.jsii.Kernel.get(this, "additionalWeight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.versionId = software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aliasName, final java.lang.String serviceName, final java.lang.String additionalVersion, final java.lang.Number additionalWeight, final java.lang.String description, final java.lang.String versionId) {
+        protected Jsii$Proxy(final java.lang.Object aliasName, final java.lang.Object serviceName, final java.lang.Object additionalVersion, final java.lang.Object additionalWeight, final java.lang.Object description, final java.lang.Object versionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aliasName = java.util.Objects.requireNonNull(aliasName, "aliasName is required");
             this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
@@ -168,32 +238,32 @@ public interface AliasProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAliasName() {
+        public final java.lang.Object getAliasName() {
             return this.aliasName;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
         @Override
-        public final java.lang.String getAdditionalVersion() {
+        public final java.lang.Object getAdditionalVersion() {
             return this.additionalVersion;
         }
 
         @Override
-        public final java.lang.Number getAdditionalWeight() {
+        public final java.lang.Object getAdditionalWeight() {
             return this.additionalWeight;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getVersionId() {
+        public final java.lang.Object getVersionId() {
             return this.versionId;
         }
 

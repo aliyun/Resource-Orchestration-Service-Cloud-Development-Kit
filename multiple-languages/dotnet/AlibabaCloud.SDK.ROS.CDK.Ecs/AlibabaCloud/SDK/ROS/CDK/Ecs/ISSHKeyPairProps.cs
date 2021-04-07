@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
         /// </remarks>
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}")]
-        string KeyPairName
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object KeyPairName
         {
             get;
         }
@@ -22,9 +22,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// If PublicKeyBody is specified, existed public key body will be imported instead of creating new SSH key pair.
         /// </remarks>
-        [JsiiProperty(name: "publicKeyBody", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "publicKeyBody", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PublicKeyBody
+        object? PublicKeyBody
         {
             get
             {
@@ -33,9 +33,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Property resourceGroupId: Resource group id.</summary>
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ResourceGroupId
+        object? ResourceGroupId
         {
             get
             {
@@ -47,9 +47,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosSSHKeyPair.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Ecs.RosSSHKeyPair.ITagsProperty[]? Tags
         {
             get
             {
@@ -69,10 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
             /// </remarks>
-            [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}")]
-            public string KeyPairName
+            [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object KeyPairName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property publicKeyBody: SSH Public key.</summary>
@@ -80,18 +80,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// If PublicKeyBody is specified, existed public key body will be imported instead of creating new SSH key pair.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "publicKeyBody", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PublicKeyBody
+            [JsiiProperty(name: "publicKeyBody", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PublicKeyBody
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceGroupId: Resource group id.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ResourceGroupId
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to instance.</summary>
@@ -99,10 +99,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosSSHKeyPair.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Ecs.RosSSHKeyPair.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Ecs.RosSSHKeyPair.ITagsProperty[]?>();
             }
         }
     }

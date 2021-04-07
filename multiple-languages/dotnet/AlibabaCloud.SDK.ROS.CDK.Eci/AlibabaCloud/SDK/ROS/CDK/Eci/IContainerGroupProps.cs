@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
         /// </remarks>
-        [JsiiProperty(name: "containerGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        string ContainerGroupName
+        [JsiiProperty(name: "containerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ContainerGroupName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// Instances in the same security group can access one another.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}")]
-        string SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SecurityGroupId
         {
             get;
         }
@@ -39,16 +39,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// Currently, ECI instances can only be deployed in VPCs.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VSwitchId
         {
             get;
         }
 
-        /// <summary>Property activeDeadlineSeconds: The validity period in seconds.</summary>
-        [JsiiProperty(name: "activeDeadlineSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        /// <summary>Property acrRegistryInfo: Enterprise Edition access credential configuration information.</summary>
+        [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? ActiveDeadlineSeconds
+        object? AcrRegistryInfo
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property activeDeadlineSeconds: The validity period in seconds.</summary>
+        [JsiiProperty(name: "activeDeadlineSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ActiveDeadlineSeconds
         {
             get
             {
@@ -68,9 +79,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property cpu: CPU size.</summary>
-        [JsiiProperty(name: "cpu", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Cpu
+        object? Cpu
         {
             get
             {
@@ -90,9 +101,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property eipInstanceId: Elastic IP ID.</summary>
-        [JsiiProperty(name: "eipInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "eipInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EipInstanceId
+        object? EipInstanceId
         {
             get
             {
@@ -123,9 +134,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property imageSnapshotId: Image cache ID or snapshot ID.</summary>
-        [JsiiProperty(name: "imageSnapshotId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "imageSnapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ImageSnapshotId
+        object? ImageSnapshotId
         {
             get
             {
@@ -145,9 +156,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property instanceType: The type of the ECS instance.</summary>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceType
+        object? InstanceType
         {
             get
             {
@@ -156,9 +167,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property ipv6AddressCount: The number of IPv6 addresses.</summary>
-        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Ipv6AddressCount
+        object? Ipv6AddressCount
         {
             get
             {
@@ -167,9 +178,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property memory: memory size.</summary>
-        [JsiiProperty(name: "memory", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Memory
+        object? Memory
         {
             get
             {
@@ -181,9 +192,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// ECI and ECS share the same RAM role.
         /// </remarks>
-        [JsiiProperty(name: "ramRoleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RamRoleName
+        object? RamRoleName
         {
             get
             {
@@ -195,9 +206,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// Default value: Always.
         /// </remarks>
-        [JsiiProperty(name: "restartPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "restartPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RestartPolicy
+        object? RestartPolicy
         {
             get
             {
@@ -239,9 +250,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// It supports a maximum of 3 decimal places. It takes effect when the value of the parameter SpotStrategy is SpotWithPriceLimit.
         /// </remarks>
-        [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? SpotPriceLimit
+        object? SpotPriceLimit
         {
             get
             {
@@ -256,9 +267,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// SpotWithPriceLimit: Preemptive instance that sets a cap price.
         /// SpotAsPriceGo: The system automatically bids, following the current market actual price.
         /// </remarks>
-        [JsiiProperty(name: "spotStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SpotStrategy
+        object? SpotStrategy
         {
             get
             {
@@ -281,9 +292,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Property terminationGracePeriodSeconds: The buffer time for the program to handle operations before it is stopped.</summary>
-        [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TerminationGracePeriodSeconds
+        object? TerminationGracePeriodSeconds
         {
             get
             {
@@ -309,9 +320,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ZoneId
+        object? ZoneId
         {
             get
             {
@@ -338,38 +349,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// <remarks>
             /// The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
             /// </remarks>
-            [JsiiProperty(name: "containerGroupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ContainerGroupName
+            [JsiiProperty(name: "containerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ContainerGroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property securityGroupId: The ID of the security group to which the instance belongs.</summary>
             /// <remarks>
             /// Instances in the same security group can access one another.
             /// </remarks>
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SecurityGroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vSwitchId: The ID of the specified VSwitch.</summary>
             /// <remarks>
             /// Currently, ECI instances can only be deployed in VPCs.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VSwitchId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property acrRegistryInfo: Enterprise Edition access credential configuration information.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosContainerGroup.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AcrRegistryInfo
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property activeDeadlineSeconds: The validity period in seconds.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "activeDeadlineSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? ActiveDeadlineSeconds
+            [JsiiProperty(name: "activeDeadlineSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ActiveDeadlineSeconds
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property autoMatchImageCache: Specifies whether to automatically match the image cache.</summary>
@@ -382,10 +401,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
             /// <summary>Property cpu: CPU size.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "cpu", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Cpu
+            [JsiiProperty(name: "cpu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Cpu
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dnsConfig: The information about DNS configurations.</summary>
@@ -398,10 +417,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
             /// <summary>Property eipInstanceId: Elastic IP ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "eipInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EipInstanceId
+            [JsiiProperty(name: "eipInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EipInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property hostAliase: Customize the hostname mapping of a container inside the pod.</summary>
@@ -422,10 +441,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
             /// <summary>Property imageSnapshotId: Image cache ID or snapshot ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "imageSnapshotId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ImageSnapshotId
+            [JsiiProperty(name: "imageSnapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ImageSnapshotId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property initContainer: The containers that constitute the container group for initializing.</summary>
@@ -438,26 +457,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
             /// <summary>Property instanceType: The type of the ECS instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceType
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ipv6AddressCount: The number of IPv6 addresses.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Ipv6AddressCount
+            [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6AddressCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property memory: memory size.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "memory", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Memory
+            [JsiiProperty(name: "memory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Memory
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ramRoleName: The RAM role that the container group assumes.</summary>
@@ -465,10 +484,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// ECI and ECS share the same RAM role.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ramRoleName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RamRoleName
+            [JsiiProperty(name: "ramRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RamRoleName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property restartPolicy: The policy for restarting the instance.</summary>
@@ -476,10 +495,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// Default value: Always.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "restartPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RestartPolicy
+            [JsiiProperty(name: "restartPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RestartPolicy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityContextSysctl: ECI Sysctl is valid for every container in ECI.</summary>
@@ -511,10 +530,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// It supports a maximum of 3 decimal places. It takes effect when the value of the parameter SpotStrategy is SpotWithPriceLimit.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? SpotPriceLimit
+            [JsiiProperty(name: "spotPriceLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotPriceLimit
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property spotStrategy: Instance preemption strategy.</summary>
@@ -525,10 +544,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// SpotAsPriceGo: The system automatically bids, following the current market actual price.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "spotStrategy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SpotStrategy
+            [JsiiProperty(name: "spotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SpotStrategy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tag: The list of container group tags in the form of key/value pairs.</summary>
@@ -544,10 +563,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
 
             /// <summary>Property terminationGracePeriodSeconds: The buffer time for the program to handle operations before it is stopped.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TerminationGracePeriodSeconds
+            [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TerminationGracePeriodSeconds
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property volume: The data volume.</summary>
@@ -566,10 +585,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
             /// If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

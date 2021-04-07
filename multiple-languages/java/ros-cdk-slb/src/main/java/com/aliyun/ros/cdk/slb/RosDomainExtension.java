@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::DomainExtension`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.387Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.077Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosDomainExtension")
 public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomainExtensionId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomainExtensionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomainExtensionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomainExtensionId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrListenerPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrListenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrListenerPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrListenerPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDomain() {
-        return software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDomain() {
+        return software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDomain(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "domain", java.util.Objects.requireNonNull(value, "domain is required"));
+    }
+
+    /**
+     */
+    public void setDomain(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "domain", java.util.Objects.requireNonNull(value, "domain is required"));
     }
 
@@ -81,8 +87,8 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort() {
-        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort() {
+        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setListenerPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "listenerPort", java.util.Objects.requireNonNull(value, "listenerPort is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +117,25 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getServerCertificateId() {
-        return software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getServerCertificateId() {
+        return software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setServerCertificateId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serverCertificateId", java.util.Objects.requireNonNull(value, "serverCertificateId is required"));
+    }
+
+    /**
+     */
+    public void setServerCertificateId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serverCertificateId", java.util.Objects.requireNonNull(value, "serverCertificateId is required"));
     }
 
@@ -149,12 +173,28 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
             this.props.domain(domain);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param domain This parameter is required.
+         */
+        public Builder domain(final com.aliyun.ros.cdk.core.IResolvable domain) {
+            this.props.domain(domain);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param listenerPort This parameter is required.
          */
         public Builder listenerPort(final java.lang.Number listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param listenerPort This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
             this.props.listenerPort(listenerPort);
             return this;
         }
@@ -167,12 +207,28 @@ public class RosDomainExtension extends com.aliyun.ros.cdk.core.RosResource {
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param loadBalancerId This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param serverCertificateId This parameter is required.
          */
         public Builder serverCertificateId(final java.lang.String serverCertificateId) {
+            this.props.serverCertificateId(serverCertificateId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverCertificateId This parameter is required.
+         */
+        public Builder serverCertificateId(final com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.props.serverCertificateId(serverCertificateId);
             return this;
         }

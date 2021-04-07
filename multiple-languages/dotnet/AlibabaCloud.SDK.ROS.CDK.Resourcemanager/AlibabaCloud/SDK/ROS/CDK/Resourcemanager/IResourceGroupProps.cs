@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public interface IResourceGroupProps
     {
         /// <summary>Property displayName: The display name of the resource group.</summary>
-        [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}")]
-        string DisplayName
+        [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DisplayName
         {
             get;
         }
 
         /// <summary>Property name: The unique identifier of the resource group.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
             }
 
             /// <summary>Property displayName: The display name of the resource group.</summary>
-            [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DisplayName
+            [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DisplayName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property name: The unique identifier of the resource group.</summary>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

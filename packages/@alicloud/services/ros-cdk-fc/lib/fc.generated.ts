@@ -10,32 +10,32 @@ export interface RosAliasProps {
     /**
      * @Property aliasName: Alias name
      */
-    readonly aliasName: string;
+    readonly aliasName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property additionalVersion: Additional version
      */
-    readonly additionalVersion?: string;
+    readonly additionalVersion?: string | ros.IResolvable;
 
     /**
      * @Property additionalWeight: Traffic weight of additional version. From 0 to 100.
      */
-    readonly additionalWeight?: number;
+    readonly additionalWeight?: number | ros.IResolvable;
 
     /**
      * @Property description: Version description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property versionId: Version ID
      */
-    readonly versionId?: string;
+    readonly versionId?: string | ros.IResolvable;
 }
 
 /**
@@ -113,17 +113,17 @@ export class RosAlias extends ros.RosResource {
     /**
      * @Attribute AliasName: The alias name
      */
-    public readonly attrAliasName: any;
+    public readonly attrAliasName: ros.IResolvable;
 
     /**
      * @Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * @Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: any;
+    public readonly attrVersionId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -131,32 +131,32 @@ export class RosAlias extends ros.RosResource {
     /**
      * @Property aliasName: Alias name
      */
-    public aliasName: string;
+    public aliasName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property additionalVersion: Additional version
      */
-    public additionalVersion: string | undefined;
+    public additionalVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property additionalWeight: Traffic weight of additional version. From 0 to 100.
      */
-    public additionalWeight: number | undefined;
+    public additionalWeight: number | ros.IResolvable | undefined;
 
     /**
      * @Property description: Version description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property versionId: Version ID
      */
-    public versionId: string | undefined;
+    public versionId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FC::Alias`.
@@ -167,9 +167,9 @@ export class RosAlias extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAliasProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAlias.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAliasName = ros.Token.asString(this.getAtt('AliasName'));
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
-        this.attrVersionId = ros.Token.asString(this.getAtt('VersionId'));
+        this.attrAliasName = this.getAtt('AliasName');
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrVersionId = this.getAtt('VersionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aliasName = props.aliasName;
@@ -204,17 +204,17 @@ export interface RosCustomDomainProps {
     /**
      * @Property domainName: domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * @Property protocol: HTTP or HTTP,HTTPS
      */
-    readonly protocol: string;
+    readonly protocol: string | ros.IResolvable;
 
     /**
      * @Property apiVersion: api version
      */
-    readonly apiVersion?: string;
+    readonly apiVersion?: string | ros.IResolvable;
 
     /**
      * @Property certConfig: certificate info
@@ -286,12 +286,12 @@ export class RosCustomDomain extends ros.RosResource {
     /**
      * @Attribute Domain: The domain with protocol.
      */
-    public readonly attrDomain: any;
+    public readonly attrDomain: ros.IResolvable;
 
     /**
      * @Attribute DomainName: The domain name
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -299,17 +299,17 @@ export class RosCustomDomain extends ros.RosResource {
     /**
      * @Property domainName: domain name
      */
-    public domainName: string;
+    public domainName: string | ros.IResolvable;
 
     /**
      * @Property protocol: HTTP or HTTP,HTTPS
      */
-    public protocol: string;
+    public protocol: string | ros.IResolvable;
 
     /**
      * @Property apiVersion: api version
      */
-    public apiVersion: string | undefined;
+    public apiVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property certConfig: certificate info
@@ -330,8 +330,8 @@ export class RosCustomDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCustomDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCustomDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDomain = ros.Token.asString(this.getAtt('Domain'));
-        this.attrDomainName = ros.Token.asString(this.getAtt('DomainName'));
+        this.attrDomain = this.getAtt('Domain');
+        this.attrDomainName = this.getAtt('DomainName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
@@ -364,15 +364,15 @@ export namespace RosCustomDomain {
         /**
          * @Property privateKey: private key
          */
-        readonly privateKey: string;
+        readonly privateKey: string | ros.IResolvable;
         /**
          * @Property certName: custom certificate name
          */
-        readonly certName: string;
+        readonly certName: string | ros.IResolvable;
         /**
          * @Property certificate: certificate
          */
-        readonly certificate: string;
+        readonly certificate: string | ros.IResolvable;
     }
 }
 /**
@@ -462,19 +462,19 @@ export namespace RosCustomDomain {
         /**
          * @Property path: HTTP request path when a function is called with a custom domain name, for example: "/login/*"
          */
-        readonly path: string;
+        readonly path: string | ros.IResolvable;
         /**
          * @Property functionName: Path to the function, for example: "login"
          */
-        readonly functionName: string;
+        readonly functionName: string | ros.IResolvable;
         /**
          * @Property serviceName: Path to the service, for example: "blogService"
          */
-        readonly serviceName: string;
+        readonly serviceName: string | ros.IResolvable;
         /**
          * @Property qualifier: Service version or alias
          */
-        readonly qualifier?: string;
+        readonly qualifier?: string | ros.IResolvable;
     }
 }
 /**
@@ -524,22 +524,22 @@ export interface RosFunctionProps {
     /**
      * @Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * @Property handler: The function execution entry point.
      */
-    readonly handler: string;
+    readonly handler: string | ros.IResolvable;
 
     /**
      * @Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
      */
-    readonly runtime: string;
+    readonly runtime: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property asyncConfiguration: Configuration of asynchronous function calls
@@ -549,7 +549,7 @@ export interface RosFunctionProps {
     /**
      * @Property caPort: Custom runtime and custom container runtime dedicated fields, which represent the port that the started custom http server listens to. The default value is 9000
      */
-    readonly caPort?: number;
+    readonly caPort?: number | ros.IResolvable;
 
     /**
      * @Property code: The code that contains the function implementation.
@@ -564,7 +564,7 @@ export interface RosFunctionProps {
     /**
      * @Property description: Function description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
@@ -574,27 +574,32 @@ export interface RosFunctionProps {
     /**
      * @Property initializationTimeout: the max execution time of the initializer, in second
      */
-    readonly initializationTimeout?: number;
+    readonly initializationTimeout?: number | ros.IResolvable;
 
     /**
      * @Property initializer: the entry point of the initializer
      */
-    readonly initializer?: string;
+    readonly initializer?: string | ros.IResolvable;
 
     /**
      * @Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
-    readonly instanceConcurrency?: number;
+    readonly instanceConcurrency?: number | ros.IResolvable;
+
+    /**
+     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     */
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
-    readonly memorySize?: number;
+    readonly memorySize?: number | ros.IResolvable;
 
     /**
      * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
      */
-    readonly timeout?: number;
+    readonly timeout?: number | ros.IResolvable;
 }
 
 /**
@@ -611,7 +616,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('memorySize', ros.validateRange)({
             data: properties.memorySize,
             min: 128,
-            max: 3072,
+            max: 32768,
           }));
     }
     errors.collect(ros.propertyValidator('memorySize', ros.validateNumber)(properties.memorySize));
@@ -629,9 +634,9 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('customContainerConfig', RosFunction_CustomContainerConfigPropertyValidator)(properties.customContainerConfig));
     errors.collect(ros.propertyValidator('code', RosFunction_CodePropertyValidator)(properties.code));
     errors.collect(ros.propertyValidator('asyncConfiguration', RosFunction_AsyncConfigurationPropertyValidator)(properties.asyncConfiguration));
+    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('caPort', ros.validateNumber)(properties.caPort));
     errors.collect(ros.propertyValidator('runtime', ros.requiredValidator)(properties.runtime));
     errors.collect(ros.propertyValidator('runtime', ros.validateString)(properties.runtime));
     errors.collect(ros.propertyValidator('environmentVariables', ros.hashValidator(ros.validateAny))(properties.environmentVariables));
@@ -654,6 +659,13 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateNumber)(properties.instanceConcurrency));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["e1","c1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
     return errors.wrap('supplied properties not correct for "RosFunctionProps"');
 }
 
@@ -684,6 +696,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
       InitializationTimeout: ros.numberToRosTemplate(properties.initializationTimeout),
       Initializer: ros.stringToRosTemplate(properties.initializer),
       InstanceConcurrency: ros.numberToRosTemplate(properties.instanceConcurrency),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
       MemorySize: ros.numberToRosTemplate(properties.memorySize),
       Timeout: ros.numberToRosTemplate(properties.timeout),
     };
@@ -706,22 +719,27 @@ export class RosFunction extends ros.RosResource {
     /**
      * @Attribute ARN: The ARN for ALIYUN::ROS::CustomResource
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute FunctionId: The function ID
      */
-    public readonly attrFunctionId: any;
+    public readonly attrFunctionId: ros.IResolvable;
 
     /**
      * @Attribute FunctionName: The function name
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
+
+    /**
+     * @Attribute ServiceId: The service ID
+     */
+    public readonly attrServiceId: ros.IResolvable;
 
     /**
      * @Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -729,22 +747,22 @@ export class RosFunction extends ros.RosResource {
     /**
      * @Property functionName: Function name
      */
-    public functionName: string;
+    public functionName: string | ros.IResolvable;
 
     /**
      * @Property handler: The function execution entry point.
      */
-    public handler: string;
+    public handler: string | ros.IResolvable;
 
     /**
      * @Property runtime: The function runtime environment. Supporting nodejs6, nodejs8, nodejs10, nodejs12, python2.7, python3, java8, custom, custom-container and so on
      */
-    public runtime: string;
+    public runtime: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property asyncConfiguration: Configuration of asynchronous function calls
@@ -754,7 +772,7 @@ export class RosFunction extends ros.RosResource {
     /**
      * @Property caPort: Custom runtime and custom container runtime dedicated fields, which represent the port that the started custom http server listens to. The default value is 9000
      */
-    public caPort: number | undefined;
+    public caPort: number | ros.IResolvable | undefined;
 
     /**
      * @Property code: The code that contains the function implementation.
@@ -769,7 +787,7 @@ export class RosFunction extends ros.RosResource {
     /**
      * @Property description: Function description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property environmentVariables: The environment variable set for the function, you can get the value of the environment variable in the function.
@@ -779,27 +797,32 @@ export class RosFunction extends ros.RosResource {
     /**
      * @Property initializationTimeout: the max execution time of the initializer, in second
      */
-    public initializationTimeout: number | undefined;
+    public initializationTimeout: number | ros.IResolvable | undefined;
 
     /**
      * @Property initializer: the entry point of the initializer
      */
-    public initializer: string | undefined;
+    public initializer: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceConcurrency: Function instance concurrency. Value can be between 1 to 100.
      */
-    public instanceConcurrency: number | undefined;
+    public instanceConcurrency: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceType: Instance type. Value:e1: flexible instance. Memory size between 128 and 3072c1: performance instance. Memory size allow values are 4096, 8192, 16384 and 32768
+     */
+    public instanceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property memorySize: The amount of memory that’s used to run function, in MB. Function Compute uses this value to allocate CPU resources proportionally. Defaults to 128 MB. It can be multiple of 64 MB and between 128 MB and 3072 MB.
      */
-    public memorySize: number | undefined;
+    public memorySize: number | ros.IResolvable | undefined;
 
     /**
      * @Property timeout: The maximum time duration a function can run, in seconds. After which Function Compute terminates the execution. Defaults to 3 seconds, and can be between 1 to 600 seconds.
      */
-    public timeout: number | undefined;
+    public timeout: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FC::Function`.
@@ -810,10 +833,11 @@ export class RosFunction extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosFunctionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFunction.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArn = ros.Token.asString(this.getAtt('ARN'));
-        this.attrFunctionId = ros.Token.asString(this.getAtt('FunctionId'));
-        this.attrFunctionName = ros.Token.asString(this.getAtt('FunctionName'));
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
+        this.attrArn = this.getAtt('ARN');
+        this.attrFunctionId = this.getAtt('FunctionId');
+        this.attrFunctionName = this.getAtt('FunctionName');
+        this.attrServiceId = this.getAtt('ServiceId');
+        this.attrServiceName = this.getAtt('ServiceName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;
@@ -829,6 +853,7 @@ export class RosFunction extends ros.RosResource {
         this.initializationTimeout = props.initializationTimeout;
         this.initializer = props.initializer;
         this.instanceConcurrency = props.instanceConcurrency;
+        this.instanceType = props.instanceType;
         this.memorySize = props.memorySize;
         this.timeout = props.timeout;
     }
@@ -849,6 +874,7 @@ export class RosFunction extends ros.RosResource {
             initializationTimeout: this.initializationTimeout,
             initializer: this.initializer,
             instanceConcurrency: this.instanceConcurrency,
+            instanceType: this.instanceType,
             memorySize: this.memorySize,
             timeout: this.timeout,
         };
@@ -870,11 +896,11 @@ export namespace RosFunction {
         /**
          * @Property maxAsyncEventAgeInSeconds: Configure the maximum lifetime of messages. The duration is calculated from the time the asynchronous call is triggered, and ends when the message is dequeued for processing. If this period of time is longer than the setting value of MaxAsyncEventAgeInSeconds, the message will be discarded. The unconsumed messages will be counted in the cloud monitoring AsyncEventExpiredDropped indicator.
          */
-        readonly maxAsyncEventAgeInSeconds?: number;
+        readonly maxAsyncEventAgeInSeconds?: number | ros.IResolvable;
         /**
          * @Property maxAsyncRetryAttempts: Configure the number of retries
          */
-        readonly maxAsyncRetryAttempts?: number;
+        readonly maxAsyncRetryAttempts?: number | ros.IResolvable;
     }
 }
 /**
@@ -935,22 +961,22 @@ export namespace RosFunction {
      * Your source code can contain up to 4096 characters. For JSON, you must use backslashes to escape quotes and special characters, such as line breaks.
      * Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
          */
-        readonly sourceCode?: string;
+        readonly sourceCode?: string | ros.IResolvable;
         /**
          * @Property zipFile: Base64 encoded zip file content.
      * Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
          */
-        readonly zipFile?: string;
+        readonly zipFile?: string | ros.IResolvable;
         /**
          * @Property ossObjectName: OSS object name.
      * Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
          */
-        readonly ossObjectName?: string;
+        readonly ossObjectName?: string | ros.IResolvable;
         /**
          * @Property ossBucketName: OSS bucket name.
      * Priority: ZipFile > SourceCode > OssBucketName&OssObjectName.
          */
-        readonly ossBucketName?: string;
+        readonly ossBucketName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1004,15 +1030,21 @@ export namespace RosFunction {
         /**
          * @Property args: Container startup parameters. For example: ["-arg1", "value1"]
          */
-        readonly args?: string;
+        readonly args?: string | ros.IResolvable;
+        /**
+         * @Property accelerationType: Whether to enable image acceleration. Valid Values:
+     * Default: Indicates that image acceleration is enabled.
+     * None: Indicates that image acceleration is disabled.
+         */
+        readonly accelerationType?: string | ros.IResolvable;
         /**
          * @Property command: Container start command. For example: ["/code/myserver"]
          */
-        readonly command?: string;
+        readonly command?: string | ros.IResolvable;
         /**
          * @Property image: Container image address. For example: registry-vpc.cn-hangzhou.aliyuncs.com/fc-demo/helloworld:v1beta1
          */
-        readonly image: string;
+        readonly image: string | ros.IResolvable;
     }
 }
 /**
@@ -1026,6 +1058,7 @@ function RosFunction_CustomContainerConfigPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('args', ros.validateString)(properties.args));
+    errors.collect(ros.propertyValidator('accelerationType', ros.validateString)(properties.accelerationType));
     errors.collect(ros.propertyValidator('command', ros.validateString)(properties.command));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
@@ -1045,6 +1078,7 @@ function rosFunctionCustomContainerConfigPropertyToRosTemplate(properties: any):
     RosFunction_CustomContainerConfigPropertyValidator(properties).assertSuccess();
     return {
       Args: ros.stringToRosTemplate(properties.args),
+      AccelerationType: ros.stringToRosTemplate(properties.accelerationType),
       Command: ros.stringToRosTemplate(properties.command),
       Image: ros.stringToRosTemplate(properties.image),
     };
@@ -1058,11 +1092,11 @@ export namespace RosFunction {
         /**
          * @Property onSuccess: When the function is invoked successfully, FC will call the target corresponding to the configuration
          */
-        readonly onSuccess?: string;
+        readonly onSuccess?: string | ros.IResolvable;
         /**
          * @Property onFailure: When the function is invoked failed (system error or function internal error), FC will call the target corresponding to the configuration
          */
-        readonly onFailure?: string;
+        readonly onFailure?: string | ros.IResolvable;
     }
 }
 /**
@@ -1105,12 +1139,12 @@ export interface RosFunctionInvokerProps {
     /**
      * @Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property async: Invocation type, Sync or Async. Defaults to Sync.
@@ -1128,22 +1162,22 @@ export interface RosFunctionInvokerProps {
      * @Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value.
      * If the value needs to be binary, encode it via base64 before passing to this property.
      */
-    readonly event?: string;
+    readonly event?: string | ros.IResolvable;
 
     /**
      * @Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. The change of the property leads to the invoke of the function.
      */
-    readonly executeVersion?: number;
+    readonly executeVersion?: number | ros.IResolvable;
 
     /**
      * @Property qualifier: service version, can be versionId or aliasName
      */
-    readonly qualifier?: string;
+    readonly qualifier?: string | ros.IResolvable;
 
     /**
      * @Property serviceRegionId: Which region service belongs to.
      */
-    readonly serviceRegionId?: string;
+    readonly serviceRegionId?: string | ros.IResolvable;
 }
 
 /**
@@ -1221,7 +1255,7 @@ NoResult: Async invoke has no result.
 Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
 Failure: Error Message.
      */
-    public readonly attrResult: any;
+    public readonly attrResult: ros.IResolvable;
 
     /**
      * @Attribute ResultType: Result type:
@@ -1229,7 +1263,7 @@ NoResult: Async invoke has no result.
 Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
-    public readonly attrResultType: any;
+    public readonly attrResultType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1237,12 +1271,12 @@ Failure: Sync invoke fails.
     /**
      * @Property functionName: Function name
      */
-    public functionName: string;
+    public functionName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property async: Invocation type, Sync or Async. Defaults to Sync.
@@ -1260,22 +1294,22 @@ Failure: Sync invoke fails.
      * @Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value.
      * If the value needs to be binary, encode it via base64 before passing to this property.
      */
-    public event: string | undefined;
+    public event: string | ros.IResolvable | undefined;
 
     /**
      * @Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. The change of the property leads to the invoke of the function.
      */
-    public executeVersion: number | undefined;
+    public executeVersion: number | ros.IResolvable | undefined;
 
     /**
      * @Property qualifier: service version, can be versionId or aliasName
      */
-    public qualifier: string | undefined;
+    public qualifier: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceRegionId: Which region service belongs to.
      */
-    public serviceRegionId: string | undefined;
+    public serviceRegionId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FC::FunctionInvoker`.
@@ -1286,8 +1320,8 @@ Failure: Sync invoke fails.
      */
     constructor(scope: ros.Construct, id: string, props: RosFunctionInvokerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFunctionInvoker.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrResult = ros.Token.asString(this.getAtt('Result'));
-        this.attrResultType = ros.Token.asString(this.getAtt('ResultType'));
+        this.attrResult = this.getAtt('Result');
+        this.attrResultType = this.getAtt('ResultType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;
@@ -1326,23 +1360,23 @@ export interface RosProvisionConfigProps {
     /**
      * @Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * @Property qualifier: Service's alias.
      * Example : "LATEST"
      */
-    readonly qualifier: string;
+    readonly qualifier: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property target: Number of provision
      */
-    readonly target: number;
+    readonly target: number | ros.IResolvable;
 }
 
 /**
@@ -1411,27 +1445,27 @@ export class RosProvisionConfig extends ros.RosResource {
     /**
      * @Attribute FunctionName: The function name
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
 
     /**
      * @Attribute Qualifier: The service alias
      */
-    public readonly attrQualifier: any;
+    public readonly attrQualifier: ros.IResolvable;
 
     /**
      * @Attribute Resource: The resource
      */
-    public readonly attrResource: any;
+    public readonly attrResource: ros.IResolvable;
 
     /**
      * @Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * @Attribute Target: Number of provision
      */
-    public readonly attrTarget: any;
+    public readonly attrTarget: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1439,23 +1473,23 @@ export class RosProvisionConfig extends ros.RosResource {
     /**
      * @Property functionName: Function name
      */
-    public functionName: string;
+    public functionName: string | ros.IResolvable;
 
     /**
      * @Property qualifier: Service's alias.
      * Example : "LATEST"
      */
-    public qualifier: string;
+    public qualifier: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property target: Number of provision
      */
-    public target: number;
+    public target: number | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::ProvisionConfig`.
@@ -1466,11 +1500,11 @@ export class RosProvisionConfig extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosProvisionConfigProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosProvisionConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrFunctionName = ros.Token.asString(this.getAtt('FunctionName'));
-        this.attrQualifier = ros.Token.asString(this.getAtt('Qualifier'));
-        this.attrResource = ros.Token.asString(this.getAtt('Resource'));
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
-        this.attrTarget = ros.Token.asString(this.getAtt('Target'));
+        this.attrFunctionName = this.getAtt('FunctionName');
+        this.attrQualifier = this.getAtt('Qualifier');
+        this.attrResource = this.getAtt('Resource');
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrTarget = this.getAtt('Target');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;
@@ -1501,7 +1535,7 @@ export interface RosServiceProps {
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified. Default value is false.
@@ -1511,7 +1545,7 @@ export interface RosServiceProps {
     /**
      * @Property description: Service description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property internetAccess: Set it to true to enable Internet access.
@@ -1531,12 +1565,17 @@ export interface RosServiceProps {
     /**
      * @Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
-    readonly role?: string;
+    readonly role?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to service. Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosService.TagsProperty[];
+
+    /**
+     * @Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    readonly tracingConfig?: RosService.TracingConfigProperty | ros.IResolvable;
 
     /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
@@ -1558,6 +1597,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('internetAccess', ros.validateBoolean)(properties.internetAccess));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('tracingConfig', RosService_TracingConfigPropertyValidator)(properties.tracingConfig));
     errors.collect(ros.propertyValidator('vpcConfig', RosService_VpcConfigPropertyValidator)(properties.vpcConfig));
     errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
     if(properties.serviceName && (Array.isArray(properties.serviceName) || (typeof properties.serviceName) === 'string')) {
@@ -1575,7 +1615,7 @@ function RosServicePropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosService_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('nasConfig', RosService_NasConfigPropertyValidator)(properties.nasConfig));
     errors.collect(ros.propertyValidator('logConfig', RosService_LogConfigPropertyValidator)(properties.logConfig));
     return errors.wrap('supplied properties not correct for "RosServiceProps"');
@@ -1602,7 +1642,8 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
       LogConfig: rosServiceLogConfigPropertyToRosTemplate(properties.logConfig),
       NasConfig: rosServiceNasConfigPropertyToRosTemplate(properties.nasConfig),
       Role: ros.stringToRosTemplate(properties.role),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosServiceTagsPropertyToRosTemplate)(properties.tags),
+      TracingConfig: rosServiceTracingConfigPropertyToRosTemplate(properties.tracingConfig),
       VpcConfig: rosServiceVpcConfigPropertyToRosTemplate(properties.vpcConfig),
     };
 }
@@ -1622,19 +1663,44 @@ export class RosService extends ros.RosResource {
      */
 
     /**
+     * @Attribute InternetAccess: Whether enable Internet access
+     */
+    public readonly attrInternetAccess: ros.IResolvable;
+
+    /**
+     * @Attribute LogProject: Log project of service
+     */
+    public readonly attrLogProject: ros.IResolvable;
+
+    /**
+     * @Attribute Logstore: Log store of service
+     */
+    public readonly attrLogstore: ros.IResolvable;
+
+    /**
+     * @Attribute Role: Role of service
+     */
+    public readonly attrRole: ros.IResolvable;
+
+    /**
      * @Attribute ServiceId: The service ID
      */
-    public readonly attrServiceId: any;
+    public readonly attrServiceId: ros.IResolvable;
 
     /**
      * @Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * @Attribute Tags: Tags of service
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: VPC ID
+     */
+    public readonly attrVpcId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1642,7 +1708,7 @@ export class RosService extends ros.RosResource {
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified. Default value is false.
@@ -1652,7 +1718,7 @@ export class RosService extends ros.RosResource {
     /**
      * @Property description: Service description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetAccess: Set it to true to enable Internet access.
@@ -1672,12 +1738,17 @@ export class RosService extends ros.RosResource {
     /**
      * @Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
-    public role: string | undefined;
+    public role: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to service. Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosService.TagsProperty[] | undefined;
+
+    /**
+     * @Property tracingConfig: The Tracing Analysis configuration. After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    public tracingConfig: RosService.TracingConfigProperty | ros.IResolvable | undefined;
 
     /**
      * @Property vpcConfig: VPC configuration. Function Compute uses the config to setup ENI in the specific VPC.
@@ -1693,9 +1764,14 @@ export class RosService extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosServiceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosService.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrServiceId = ros.Token.asString(this.getAtt('ServiceId'));
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
-        this.attrTags = ros.Token.asString(this.getAtt('Tags'));
+        this.attrInternetAccess = this.getAtt('InternetAccess');
+        this.attrLogProject = this.getAtt('LogProject');
+        this.attrLogstore = this.getAtt('Logstore');
+        this.attrRole = this.getAtt('Role');
+        this.attrServiceId = this.getAtt('ServiceId');
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.serviceName = props.serviceName;
@@ -1705,7 +1781,8 @@ export class RosService extends ros.RosResource {
         this.logConfig = props.logConfig;
         this.nasConfig = props.nasConfig;
         this.role = props.role;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::FC::Service", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
+        this.tracingConfig = props.tracingConfig;
         this.vpcConfig = props.vpcConfig;
     }
 
@@ -1719,7 +1796,8 @@ export class RosService extends ros.RosResource {
             logConfig: this.logConfig,
             nasConfig: this.nasConfig,
             role: this.role,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
+            tracingConfig: this.tracingConfig,
             vpcConfig: this.vpcConfig,
         };
     }
@@ -1736,11 +1814,15 @@ export namespace RosService {
         /**
          * @Property project: The project name of Logs service
          */
-        readonly project?: string;
+        readonly project?: string | ros.IResolvable;
         /**
          * @Property logstore: The log store name of Logs service
          */
-        readonly logstore?: string;
+        readonly logstore?: string | ros.IResolvable;
+        /**
+         * @Property enableRequestMetrics: Whether enable request metrics.
+         */
+        readonly enableRequestMetrics?: boolean | ros.IResolvable;
     }
 }
 /**
@@ -1755,6 +1837,7 @@ function RosService_LogConfigPropertyValidator(properties: any): ros.ValidationR
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
     errors.collect(ros.propertyValidator('logstore', ros.validateString)(properties.logstore));
+    errors.collect(ros.propertyValidator('enableRequestMetrics', ros.validateBoolean)(properties.enableRequestMetrics));
     return errors.wrap('supplied properties not correct for "LogConfigProperty"');
 }
 
@@ -1772,6 +1855,7 @@ function rosServiceLogConfigPropertyToRosTemplate(properties: any): any {
     return {
       Project: ros.stringToRosTemplate(properties.project),
       Logstore: ros.stringToRosTemplate(properties.logstore),
+      EnableRequestMetrics: ros.booleanToRosTemplate(properties.enableRequestMetrics),
     };
 }
 
@@ -1783,11 +1867,11 @@ export namespace RosService {
         /**
          * @Property serverAddr: The address of NAS instance.
          */
-        readonly serverAddr: string;
+        readonly serverAddr: string | ros.IResolvable;
         /**
          * @Property mountDir: A local mount point.
          */
-        readonly mountDir: string;
+        readonly mountDir: string | ros.IResolvable;
     }
 }
 /**
@@ -1836,11 +1920,11 @@ export namespace RosService {
         /**
          * @Property userId: User ID
          */
-        readonly userId: number;
+        readonly userId: number | ros.IResolvable;
         /**
          * @Property groupId: Group ID
          */
-        readonly groupId: number;
+        readonly groupId: number | ros.IResolvable;
     }
 }
 /**
@@ -1898,11 +1982,106 @@ export namespace RosService {
     /**
      * @stability external
      */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
+    export interface TracingConfigProperty {
+        /**
+         * @Property type: The type of the tracing analysis system.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property params: The tracing analysis parameters.
+         */
+        readonly params?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TracingConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `TracingConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosService_TracingConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('params', ros.hashValidator(ros.validateAny))(properties.params));
+    return errors.wrap('supplied properties not correct for "TracingConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.TracingConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `TracingConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::FC::Service.TracingConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosServiceTracingConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosService_TracingConfigPropertyValidator(properties).assertSuccess();
+    return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Params: ros.hashMapper(ros.objectToRosTemplate)(properties.params),
+    };
+}
+
+export namespace RosService {
+    /**
+     * @stability external
+     */
     export interface VpcConfigProperty {
         /**
          * @Property vpcId: VPC ID
          */
-        readonly vpcId: string;
+        readonly vpcId: string | ros.IResolvable;
         /**
          * @Property vSwitchIds: List of VSwitch IDs
          */
@@ -1910,7 +2089,7 @@ export namespace RosService {
         /**
          * @Property securityGroupId: Security group ID
          */
-        readonly securityGroupId: string;
+        readonly securityGroupId: string | ros.IResolvable;
     }
 }
 /**
@@ -1958,12 +2137,12 @@ export interface RosTriggerProps {
     /**
      * @Property functionName: Function name.
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name.
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property triggerConfig: Event source specific trigger configuration. The value is different according to trigger type.
@@ -1974,31 +2153,31 @@ export interface RosTriggerProps {
      * @Property triggerName: Trigger name.
      * Example : "image_resize"
      */
-    readonly triggerName: string;
+    readonly triggerName: string | ros.IResolvable;
 
     /**
      * @Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted.
      * Example : "oss"
      */
-    readonly triggerType: string;
+    readonly triggerType: string | ros.IResolvable;
 
     /**
      * @Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
      * Example : "acs:ram::1234567890:role/fc-test"
      */
-    readonly invocationRole?: string;
+    readonly invocationRole?: string | ros.IResolvable;
 
     /**
      * @Property qualifier: service version or alias.
      * Example : "LATEST"
      */
-    readonly qualifier?: string;
+    readonly qualifier?: string | ros.IResolvable;
 
     /**
      * @Property sourceArn: The Aliyun Resource Name (ARN) of event source. This is optional for some triggers.
      * Example : "acs:oss:cn-shanghai:12345:mybucket"
      */
-    readonly sourceArn?: string;
+    readonly sourceArn?: string | ros.IResolvable;
 }
 
 /**
@@ -2076,22 +2255,22 @@ export class RosTrigger extends ros.RosResource {
     /**
      * @Attribute FunctionName: Function name.
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
 
     /**
      * @Attribute ServiceName: Service name.
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * @Attribute TriggerId: The trigger ID.
      */
-    public readonly attrTriggerId: any;
+    public readonly attrTriggerId: ros.IResolvable;
 
     /**
      * @Attribute TriggerName: Trigger name.
      */
-    public readonly attrTriggerName: any;
+    public readonly attrTriggerName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2099,12 +2278,12 @@ export class RosTrigger extends ros.RosResource {
     /**
      * @Property functionName: Function name.
      */
-    public functionName: string;
+    public functionName: string | ros.IResolvable;
 
     /**
      * @Property serviceName: Service name.
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property triggerConfig: Event source specific trigger configuration. The value is different according to trigger type.
@@ -2115,31 +2294,31 @@ export class RosTrigger extends ros.RosResource {
      * @Property triggerName: Trigger name.
      * Example : "image_resize"
      */
-    public triggerName: string;
+    public triggerName: string | ros.IResolvable;
 
     /**
      * @Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted.
      * Example : "oss"
      */
-    public triggerType: string;
+    public triggerType: string | ros.IResolvable;
 
     /**
      * @Property invocationRole: The role grants event source the permission to run function on behalf of user. This is optional for some triggers.
      * Example : "acs:ram::1234567890:role/fc-test"
      */
-    public invocationRole: string | undefined;
+    public invocationRole: string | ros.IResolvable | undefined;
 
     /**
      * @Property qualifier: service version or alias.
      * Example : "LATEST"
      */
-    public qualifier: string | undefined;
+    public qualifier: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceArn: The Aliyun Resource Name (ARN) of event source. This is optional for some triggers.
      * Example : "acs:oss:cn-shanghai:12345:mybucket"
      */
-    public sourceArn: string | undefined;
+    public sourceArn: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FC::Trigger`.
@@ -2150,10 +2329,10 @@ export class RosTrigger extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTriggerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTrigger.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrFunctionName = ros.Token.asString(this.getAtt('FunctionName'));
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
-        this.attrTriggerId = ros.Token.asString(this.getAtt('TriggerId'));
-        this.attrTriggerName = ros.Token.asString(this.getAtt('TriggerName'));
+        this.attrFunctionName = this.getAtt('FunctionName');
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrTriggerId = this.getAtt('TriggerId');
+        this.attrTriggerName = this.getAtt('TriggerName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.functionName = props.functionName;
@@ -2192,12 +2371,12 @@ export interface RosVersionProps {
     /**
      * @Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * @Property description: Version description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -2259,12 +2438,12 @@ export class RosVersion extends ros.RosResource {
     /**
      * @Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * @Attribute VersionId: The version ID
      */
-    public readonly attrVersionId: any;
+    public readonly attrVersionId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2272,12 +2451,12 @@ export class RosVersion extends ros.RosResource {
     /**
      * @Property serviceName: Service name
      */
-    public serviceName: string;
+    public serviceName: string | ros.IResolvable;
 
     /**
      * @Property description: Version description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::FC::Version`.
@@ -2288,8 +2467,8 @@ export class RosVersion extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVersionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVersion.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrServiceName = ros.Token.asString(this.getAtt('ServiceName'));
-        this.attrVersionId = ros.Token.asString(this.getAtt('VersionId'));
+        this.attrServiceName = this.getAtt('ServiceName');
+        this.attrVersionId = this.getAtt('VersionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.serviceName = props.serviceName;

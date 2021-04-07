@@ -4,21 +4,24 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>(experimental) Trait for IDependable&#xD; &#xD; Traits are interfaces that are privately implemented by objects.</summary>
+    /// <summary>(experimental) Trait for IDependable.</summary>
     /// <remarks>
-    /// Instead of
+    /// Traits are interfaces that are privately implemented by objects. Instead of
     /// showing up in the public interface of a class, they need to be queried
     /// explicitly. This is used to implement certain framework features that are
     /// not intended to be used by Construct consumers, and so should be hidden
     /// from accidental use.
-    /// 
+    ///
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     /// <example>
     /// <code>// Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
     /// // Usage
-    /// var roots = DependableTrait.Get(construct).DependencyRoots;// Definition
-    /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; } });</code>
+    /// var roots = DependableTrait.Get(construct).DependencyRoots;
+    /// 
+    /// // Definition
+    /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; }
+    /// });</code>
     /// </example>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), fullyQualifiedName: "@alicloud/ros-cdk-core.DependableTrait")]
     public abstract class DependableTrait : DeputyBase
@@ -51,8 +54,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IDependable)}, new object[]{instance})!;
         }
 
-        /// <summary>(experimental) Register `instance` to have the given DependableTrait&#xD; &#xD; Should be called in the class constructor.</summary>
+        /// <summary>(experimental) Register `instance` to have the given DependableTrait.</summary>
         /// <remarks>
+        /// Should be called in the class constructor.
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiMethod(name: "implement", parametersJson: "[{\"name\":\"instance\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IDependable\"}},{\"name\":\"trait\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.DependableTrait\"}}]")]
@@ -61,8 +66,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeStaticVoidMethod(typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IDependable), typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait)}, new object[]{instance, trait});
         }
 
-        /// <summary>(experimental) The set of constructs that form the root of this dependable&#xD; &#xD; All resources under all returned constructs are included in the ordering&#xD; dependency.</summary>
+        /// <summary>(experimental) The set of constructs that form the root of this dependable.</summary>
         /// <remarks>
+        /// All resources under all returned constructs are included in the ordering
+        /// dependency.
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiProperty(name: "dependencyRoots", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"},\"kind\":\"array\"}}")]
@@ -71,21 +79,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get;
         }
 
-        /// <summary>(experimental) Trait for IDependable&#xD; &#xD; Traits are interfaces that are privately implemented by objects.</summary>
+        /// <summary>(experimental) Trait for IDependable.</summary>
         /// <remarks>
-        /// Instead of
+        /// Traits are interfaces that are privately implemented by objects. Instead of
         /// showing up in the public interface of a class, they need to be queried
         /// explicitly. This is used to implement certain framework features that are
         /// not intended to be used by Construct consumers, and so should be hidden
         /// from accidental use.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         /// <example>
         /// <code>// Example automatically generated without compilation. See https://github.com/aws/jsii/issues/826
         /// // Usage
-        /// var roots = DependableTrait.Get(construct).DependencyRoots;// Definition
-        /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; } });</code>
+        /// var roots = DependableTrait.Get(construct).DependencyRoots;
+        /// 
+        /// // Definition
+        /// DependableTrait.Implement(construct, new Struct { get dependencyRoots() { return []; }
+        /// });</code>
         /// </example>
         [JsiiTypeProxy(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait), fullyQualifiedName: "@alicloud/ros-cdk-core.DependableTrait")]
         internal sealed class _Proxy : AlibabaCloud.SDK.ROS.CDK.Core.DependableTrait
@@ -94,8 +105,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             {
             }
 
-            /// <summary>(experimental) The set of constructs that form the root of this dependable&#xD; &#xD; All resources under all returned constructs are included in the ordering&#xD; dependency.</summary>
+            /// <summary>(experimental) The set of constructs that form the root of this dependable.</summary>
             /// <remarks>
+            /// All resources under all returned constructs are included in the ordering
+            /// dependency.
+            ///
             /// <strong>Stability</strong>: Experimental
             /// </remarks>
             [JsiiProperty(name: "dependencyRoots", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"},\"kind\":\"array\"}}")]

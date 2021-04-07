@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     public interface IAccessGroupProps
     {
         /// <summary>Property accessGroupName: Permission group name.</summary>
-        [JsiiProperty(name: "accessGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        string AccessGroupName
+        [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccessGroupName
         {
             get;
         }
 
         /// <summary>Property accessGroupType: Permission group type, including the Vpc and Classic types.</summary>
-        [JsiiProperty(name: "accessGroupType", typeJson: "{\"primitive\":\"string\"}")]
-        string AccessGroupType
+        [JsiiProperty(name: "accessGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccessGroupType
         {
             get;
         }
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         /// <remarks>
         /// It is the same as the permission group name by default.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -45,17 +45,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
 
             /// <summary>Property accessGroupName: Permission group name.</summary>
-            [JsiiProperty(name: "accessGroupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccessGroupName
+            [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccessGroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accessGroupType: Permission group type, including the Vpc and Classic types.</summary>
-            [JsiiProperty(name: "accessGroupType", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccessGroupType
+            [JsiiProperty(name: "accessGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccessGroupType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property description: Permission group description.</summary>
@@ -63,10 +63,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             /// It is the same as the permission group name by default.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

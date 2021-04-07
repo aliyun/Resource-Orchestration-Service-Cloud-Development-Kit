@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::AccessGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.114Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosAccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessGroupProps.Jsii$Proxy.class)
 public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -32,9 +32,9 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosAccessGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccessGroupProps> {
-        private java.lang.String accessGroupName;
-        private java.lang.String accessGroupType;
-        private java.lang.String description;
+        private java.lang.Object accessGroupName;
+        private java.lang.Object accessGroupType;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link RosAccessGroupProps#getAccessGroupName}
@@ -42,6 +42,16 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
+            this.accessGroupName = accessGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessGroupProps#getAccessGroupName}
+         * @param accessGroupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
             this.accessGroupName = accessGroupName;
             return this;
         }
@@ -57,11 +67,31 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosAccessGroupProps#getAccessGroupType}
+         * @param accessGroupType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupType(com.aliyun.ros.cdk.core.IResolvable accessGroupType) {
+            this.accessGroupType = accessGroupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccessGroupProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessGroupProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -82,9 +112,9 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccessGroupProps {
-        private final java.lang.String accessGroupName;
-        private final java.lang.String accessGroupType;
-        private final java.lang.String description;
+        private final java.lang.Object accessGroupName;
+        private final java.lang.Object accessGroupType;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +122,15 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessGroupType = software.amazon.jsii.Kernel.get(this, "accessGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessGroupType = software.amazon.jsii.Kernel.get(this, "accessGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accessGroupName, final java.lang.String accessGroupType, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object accessGroupType, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
             this.accessGroupType = java.util.Objects.requireNonNull(accessGroupType, "accessGroupType is required");
@@ -108,17 +138,17 @@ public interface RosAccessGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getAccessGroupName() {
+        public final java.lang.Object getAccessGroupName() {
             return this.accessGroupName;
         }
 
         @Override
-        public final java.lang.String getAccessGroupType() {
+        public final java.lang.Object getAccessGroupType() {
             return this.accessGroupType;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

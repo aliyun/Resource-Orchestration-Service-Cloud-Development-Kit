@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Property project: Project name.</summary>
-        [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-        string Project
+        [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Project
         {
             get;
         }
@@ -38,10 +38,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             }
 
             /// <summary>Property project: Project name.</summary>
-            [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-            public string Project
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Project
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

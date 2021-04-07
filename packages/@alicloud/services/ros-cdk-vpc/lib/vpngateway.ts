@@ -12,12 +12,12 @@ export interface VpnGatewayProps {
      * Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
      * Value: 5|10|20|50|100|200.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * Property vpcId: VPC ID to which the VPN gateway belongs.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
@@ -30,7 +30,7 @@ export interface VpnGatewayProps {
      * Property description: Description of the VPN gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property enableIpsec: Whether to enable IPsec-VPN. The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -50,29 +50,34 @@ export interface VpnGatewayProps {
      * Property instanceChargeType: Accounting type of the VPN gateway, the value is:
      * PREPAY, POSTPAY
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
      * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property period: Purchase time, value: 1~9|12|24|36.
      * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property sslConnections: The maximum number of clients allowed to connect at the same time.
      */
-    readonly sslConnections?: number;
+    readonly sslConnections?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpnGateway.TagsProperty[];
 
     /**
      * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -88,27 +93,27 @@ export class VpnGateway extends ros.Resource {
     /**
      * Attribute InternetIp: The public IP address of the VPN gateway.
      */
-    public readonly attrInternetIp: any;
+    public readonly attrInternetIp: ros.IResolvable;
 
     /**
      * Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Attribute Spec: The specification of the VPN gateway.
      */
-    public readonly attrSpec: any;
+    public readonly attrSpec: ros.IResolvable;
 
     /**
      * Attribute SslMaxConnections: The maximum number of concurrent SSL-VPN connections.
      */
-    public readonly attrSslMaxConnections: any;
+    public readonly attrSslMaxConnections: ros.IResolvable;
 
     /**
      * Attribute VpnGatewayId: ID of the VPN gateway.
      */
-    public readonly attrVpnGatewayId: any;
+    public readonly attrVpnGatewayId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::VpnGateway`.
@@ -131,6 +136,7 @@ export class VpnGateway extends ros.Resource {
             vSwitchId: props.vSwitchId,
             period: props.period,
             autoPay: props.autoPay ? props.autoPay : false,
+            tags: props.tags,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpnGateway;

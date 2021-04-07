@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS template type:  `ALIYUN::FC::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.946Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.546Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosCustomDomain")
 public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomain() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomain() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDomainName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDomainName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
+    }
+
+    /**
+     */
+    public void setDomainName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
     }
 
@@ -81,8 +87,8 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,13 +99,25 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getApiVersion() {
-        return software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProtocol(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "protocol", java.util.Objects.requireNonNull(value, "protocol is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getApiVersion() {
+        return software.amazon.jsii.Kernel.get(this, "apiVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setApiVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "apiVersion", value);
+    }
+
+    /**
+     */
+    public void setApiVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "apiVersion", value);
     }
 
@@ -148,17 +166,17 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCertificate();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCertificate();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getCertName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getCertName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getPrivateKey();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPrivateKey();
 
         /**
          * @return a {@link Builder} of {@link CertConfigProperty}
@@ -172,9 +190,9 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<CertConfigProperty> {
-            private java.lang.String certificate;
-            private java.lang.String certName;
-            private java.lang.String privateKey;
+            private java.lang.Object certificate;
+            private java.lang.Object certName;
+            private java.lang.Object privateKey;
 
             /**
              * Sets the value of {@link CertConfigProperty#getCertificate}
@@ -183,6 +201,17 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder certificate(java.lang.String certificate) {
+                this.certificate = certificate;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getCertificate}
+             * @param certificate the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certificate(com.aliyun.ros.cdk.core.IResolvable certificate) {
                 this.certificate = certificate;
                 return this;
             }
@@ -199,12 +228,34 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link CertConfigProperty#getCertName}
+             * @param certName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder certName(com.aliyun.ros.cdk.core.IResolvable certName) {
+                this.certName = certName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link CertConfigProperty#getPrivateKey}
              * @param privateKey the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder privateKey(java.lang.String privateKey) {
+                this.privateKey = privateKey;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CertConfigProperty#getPrivateKey}
+             * @param privateKey the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder privateKey(com.aliyun.ros.cdk.core.IResolvable privateKey) {
                 this.privateKey = privateKey;
                 return this;
             }
@@ -227,9 +278,9 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CertConfigProperty {
-            private final java.lang.String certificate;
-            private final java.lang.String certName;
-            private final java.lang.String privateKey;
+            private final java.lang.Object certificate;
+            private final java.lang.Object certName;
+            private final java.lang.Object privateKey;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -237,15 +288,15 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.certName = software.amazon.jsii.Kernel.get(this, "certName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.privateKey = software.amazon.jsii.Kernel.get(this, "privateKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.certificate = software.amazon.jsii.Kernel.get(this, "certificate", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.certName = software.amazon.jsii.Kernel.get(this, "certName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.privateKey = software.amazon.jsii.Kernel.get(this, "privateKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String certificate, final java.lang.String certName, final java.lang.String privateKey) {
+            protected Jsii$Proxy(final java.lang.Object certificate, final java.lang.Object certName, final java.lang.Object privateKey) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.certificate = java.util.Objects.requireNonNull(certificate, "certificate is required");
                 this.certName = java.util.Objects.requireNonNull(certName, "certName is required");
@@ -253,17 +304,17 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getCertificate() {
+            public final java.lang.Object getCertificate() {
                 return this.certificate;
             }
 
             @Override
-            public final java.lang.String getCertName() {
+            public final java.lang.Object getCertName() {
                 return this.certName;
             }
 
             @Override
-            public final java.lang.String getPrivateKey() {
+            public final java.lang.Object getPrivateKey() {
                 return this.privateKey;
             }
 
@@ -443,22 +494,22 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getFunctionName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getPath();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPath();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getQualifier() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getQualifier() {
             return null;
         }
 
@@ -474,10 +525,10 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<RoutesProperty> {
-            private java.lang.String functionName;
-            private java.lang.String path;
-            private java.lang.String serviceName;
-            private java.lang.String qualifier;
+            private java.lang.Object functionName;
+            private java.lang.Object path;
+            private java.lang.Object serviceName;
+            private java.lang.Object qualifier;
 
             /**
              * Sets the value of {@link RoutesProperty#getFunctionName}
@@ -486,6 +537,17 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder functionName(java.lang.String functionName) {
+                this.functionName = functionName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RoutesProperty#getFunctionName}
+             * @param functionName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
                 this.functionName = functionName;
                 return this;
             }
@@ -502,6 +564,17 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RoutesProperty#getPath}
+             * @param path the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder path(com.aliyun.ros.cdk.core.IResolvable path) {
+                this.path = path;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RoutesProperty#getServiceName}
              * @param serviceName the value to be set. This parameter is required.
              * @return {@code this}
@@ -513,12 +586,34 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link RoutesProperty#getServiceName}
+             * @param serviceName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+                this.serviceName = serviceName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link RoutesProperty#getQualifier}
              * @param qualifier the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder qualifier(java.lang.String qualifier) {
+                this.qualifier = qualifier;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link RoutesProperty#getQualifier}
+             * @param qualifier the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder qualifier(com.aliyun.ros.cdk.core.IResolvable qualifier) {
                 this.qualifier = qualifier;
                 return this;
             }
@@ -541,10 +636,10 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RoutesProperty {
-            private final java.lang.String functionName;
-            private final java.lang.String path;
-            private final java.lang.String serviceName;
-            private final java.lang.String qualifier;
+            private final java.lang.Object functionName;
+            private final java.lang.Object path;
+            private final java.lang.Object serviceName;
+            private final java.lang.Object qualifier;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -552,16 +647,16 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.path = software.amazon.jsii.Kernel.get(this, "path", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.path = software.amazon.jsii.Kernel.get(this, "path", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String path, final java.lang.String serviceName, final java.lang.String qualifier) {
+            protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object path, final java.lang.Object serviceName, final java.lang.Object qualifier) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
                 this.path = java.util.Objects.requireNonNull(path, "path is required");
@@ -570,22 +665,22 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getFunctionName() {
+            public final java.lang.Object getFunctionName() {
                 return this.functionName;
             }
 
             @Override
-            public final java.lang.String getPath() {
+            public final java.lang.Object getPath() {
                 return this.path;
             }
 
             @Override
-            public final java.lang.String getServiceName() {
+            public final java.lang.Object getServiceName() {
                 return this.serviceName;
             }
 
             @Override
-            public final java.lang.String getQualifier() {
+            public final java.lang.Object getQualifier() {
                 return this.qualifier;
             }
 
@@ -670,6 +765,14 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.domainName(domainName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param domainName This parameter is required.
+         */
+        public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
+            this.props.domainName(domainName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -679,12 +782,28 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.protocol(protocol);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param protocol This parameter is required.
+         */
+        public Builder protocol(final com.aliyun.ros.cdk.core.IResolvable protocol) {
+            this.props.protocol(protocol);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param apiVersion This parameter is required.
          */
         public Builder apiVersion(final java.lang.String apiVersion) {
+            this.props.apiVersion(apiVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param apiVersion This parameter is required.
+         */
+        public Builder apiVersion(final com.aliyun.ros.cdk.core.IResolvable apiVersion) {
             this.props.apiVersion(apiVersion);
             return this;
         }

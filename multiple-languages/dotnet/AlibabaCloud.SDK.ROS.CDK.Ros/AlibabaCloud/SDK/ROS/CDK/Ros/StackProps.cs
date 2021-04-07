@@ -10,8 +10,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
     {
         /// <summary>Property parameters: The set of parameters passed to this nested stack.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true, isOverride: true)]
         public object? Parameters
+        {
+            get;
+            set;
+        }
+
+        /// <summary>Property resourceGroupId: Resource group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -32,8 +41,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 
         /// <summary>Property templateId: Template ID of template containing the template body.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "templateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TemplateId
+        [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TemplateId
         {
             get;
             set;
@@ -45,8 +54,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TemplateUrl
+        [JsiiProperty(name: "templateUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TemplateUrl
         {
             get;
             set;
@@ -54,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
 
         /// <summary>Property templateVersion: Template version of template containing the template body.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "templateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? TemplateVersion
+        [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TemplateVersion
         {
             get;
             set;
@@ -66,8 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ros
         /// Default to 60 minutes.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "timeoutMins", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? TimeoutMins
+        [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TimeoutMins
         {
             get;
             set;

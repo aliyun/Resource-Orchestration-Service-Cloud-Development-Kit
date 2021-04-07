@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     public class ScalingGroupEnableProps : AlibabaCloud.SDK.ROS.CDK.Ess.IScalingGroupEnableProps
     {
         /// <summary>Property scalingGroupId: The id of operated scaling group.</summary>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ScalingGroupId
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ScalingGroupId
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property scalingConfigurationId: The id of scaling configuration which will be activate.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ScalingConfigurationId
+        [JsiiProperty(name: "scalingConfigurationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ScalingConfigurationId
         {
             get;
             set;
@@ -67,8 +67,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property scalingRuleArisExecuteVersion: The change of the property leads to the execution of all the scaling rule aris in ScalingRuleAris.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? ScalingRuleArisExecuteVersion
+        [JsiiProperty(name: "scalingRuleArisExecuteVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ScalingRuleArisExecuteVersion
         {
             get;
             set;

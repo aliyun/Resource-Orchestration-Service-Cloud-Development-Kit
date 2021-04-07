@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute Ipv6Addresses: Assigned IPv6 addresses.</summary>
-        [JsiiProperty(name: "attrIpv6Addresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpv6Addresses
+        [JsiiProperty(name: "attrIpv6Addresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6Addresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Ipv6AddressIds: Assigned IPv6 address IDs.</summary>
-        [JsiiProperty(name: "attrIpv6AddressIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpv6AddressIds
+        [JsiiProperty(name: "attrIpv6AddressIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpv6AddressIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute NetworkInterfaceId: Elastic network interface ID.</summary>
-        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNetworkInterfaceId
+        [JsiiProperty(name: "attrNetworkInterfaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetworkInterfaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

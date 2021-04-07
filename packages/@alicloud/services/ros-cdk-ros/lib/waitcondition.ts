@@ -11,17 +11,17 @@ export interface WaitConditionProps {
     /**
      * Property handle: A reference to the wait condition handle used to signal this wait condition.
      */
-    readonly handle: string;
+    readonly handle: string | ros.IResolvable;
 
     /**
      * Property timeout: The number of seconds to wait for the correct number of signals to arrive.
      */
-    readonly timeout: number;
+    readonly timeout: number | ros.IResolvable;
 
     /**
      * Property count: The number of success signals that must be received before the stack creation process continues.
      */
-    readonly count?: number;
+    readonly count?: number | ros.IResolvable;
 }
 
 /**
@@ -37,17 +37,17 @@ export class WaitCondition extends ros.Resource {
     /**
      * Attribute Data: JSON serialized dict containing data associated with wait condition signals sent to the handle.
      */
-    public readonly attrData: any;
+    public readonly attrData: ros.IResolvable;
 
     /**
      * Attribute ErrorData: JSON serialized dict containing data associated with wait condition error signals sent to the handle.
      */
-    public readonly attrErrorData: any;
+    public readonly attrErrorData: ros.IResolvable;
 
     /**
      * Attribute JoinedErrorData: String containing data associated with wait condition error signals sent to the handle.
      */
-    public readonly attrJoinedErrorData: any;
+    public readonly attrJoinedErrorData: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ROS::WaitCondition`.

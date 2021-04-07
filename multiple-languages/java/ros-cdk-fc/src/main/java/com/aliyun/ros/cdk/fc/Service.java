@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * A ROS resource type:  `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Service")
 public class Service extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::Service`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Service(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.ServiceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FC::Service`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Service(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.fc.ServiceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,59 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute InternetAccess: Whether enable Internet access.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInternetAccess() {
+        return software.amazon.jsii.Kernel.get(this, "attrInternetAccess", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute LogProject: Log project of service.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrServiceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLogProject() {
+        return software.amazon.jsii.Kernel.get(this, "attrLogProject", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Logstore: Log store of service.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags() {
-        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLogstore() {
+        return software.amazon.jsii.Kernel.get(this, "attrLogstore", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Role: Role of service.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRole() {
+        return software.amazon.jsii.Kernel.get(this, "attrRole", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ServiceId: The service ID.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ServiceName: The service name.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrServiceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrServiceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute Tags: Tags of service.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTags() {
+        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute VpcId: VPC ID.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "attrVpcId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +110,8 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.fc.Service> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +119,8 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,25 +139,45 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serviceName: Service name.
+         * <p>
          * @return {@code this}
-         * @param serviceName This parameter is required.
+         * @param serviceName Property serviceName: Service name. This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }
+        /**
+         * Property serviceName: Service name.
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: Service name. This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
 
         /**
+         * Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.
+         * <p>
+         * Default value is false.
+         * <p>
          * @return {@code this}
-         * @param deletionForce This parameter is required.
+         * @param deletionForce Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified. This parameter is required.
          */
         public Builder deletionForce(final java.lang.Boolean deletionForce) {
             this.props.deletionForce(deletionForce);
             return this;
         }
         /**
+         * Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.
+         * <p>
+         * Default value is false.
+         * <p>
          * @return {@code this}
-         * @param deletionForce This parameter is required.
+         * @param deletionForce Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified. This parameter is required.
          */
         public Builder deletionForce(final com.aliyun.ros.cdk.core.IResolvable deletionForce) {
             this.props.deletionForce(deletionForce);
@@ -119,25 +185,41 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: Service description.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Service description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Service description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Service description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property internetAccess: Set it to true to enable Internet access.
+         * <p>
          * @return {@code this}
-         * @param internetAccess This parameter is required.
+         * @param internetAccess Property internetAccess: Set it to true to enable Internet access. This parameter is required.
          */
         public Builder internetAccess(final java.lang.Boolean internetAccess) {
             this.props.internetAccess(internetAccess);
             return this;
         }
         /**
+         * Property internetAccess: Set it to true to enable Internet access.
+         * <p>
          * @return {@code this}
-         * @param internetAccess This parameter is required.
+         * @param internetAccess Property internetAccess: Set it to true to enable Internet access. This parameter is required.
          */
         public Builder internetAccess(final com.aliyun.ros.cdk.core.IResolvable internetAccess) {
             this.props.internetAccess(internetAccess);
@@ -145,16 +227,24 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property logConfig: Log configuration.
+         * <p>
+         * Function Compute pushes function execution logs to the configured log store.
+         * <p>
          * @return {@code this}
-         * @param logConfig This parameter is required.
+         * @param logConfig Property logConfig: Log configuration. This parameter is required.
          */
         public Builder logConfig(final com.aliyun.ros.cdk.core.IResolvable logConfig) {
             this.props.logConfig(logConfig);
             return this;
         }
         /**
+         * Property logConfig: Log configuration.
+         * <p>
+         * Function Compute pushes function execution logs to the configured log store.
+         * <p>
          * @return {@code this}
-         * @param logConfig This parameter is required.
+         * @param logConfig Property logConfig: Log configuration. This parameter is required.
          */
         public Builder logConfig(final com.aliyun.ros.cdk.fc.RosService.LogConfigProperty logConfig) {
             this.props.logConfig(logConfig);
@@ -162,16 +252,24 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property nasConfig: NAS configuration.
+         * <p>
+         * Function Compute uses a specified NAS configured on the service.
+         * <p>
          * @return {@code this}
-         * @param nasConfig This parameter is required.
+         * @param nasConfig Property nasConfig: NAS configuration. This parameter is required.
          */
         public Builder nasConfig(final com.aliyun.ros.cdk.core.IResolvable nasConfig) {
             this.props.nasConfig(nasConfig);
             return this;
         }
         /**
+         * Property nasConfig: NAS configuration.
+         * <p>
+         * Function Compute uses a specified NAS configured on the service.
+         * <p>
          * @return {@code this}
-         * @param nasConfig This parameter is required.
+         * @param nasConfig Property nasConfig: NAS configuration. This parameter is required.
          */
         public Builder nasConfig(final com.aliyun.ros.cdk.fc.RosService.NasConfigProperty nasConfig) {
             this.props.nasConfig(nasConfig);
@@ -179,34 +277,87 @@ public class Service extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
+         * <p>
+         * The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
+         * <p>
          * @return {@code this}
-         * @param role This parameter is required.
+         * @param role Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. This parameter is required.
          */
         public Builder role(final java.lang.String role) {
             this.props.role(role);
             return this;
         }
+        /**
+         * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
+         * <p>
+         * The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
+         * <p>
+         * @return {@code this}
+         * @param role Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store. This parameter is required.
+         */
+        public Builder role(final com.aliyun.ros.cdk.core.IResolvable role) {
+            this.props.role(role);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to service.
+         * <p>
+         * Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tags to attach to service. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }
 
         /**
+         * Property tracingConfig: The Tracing Analysis configuration.
+         * <p>
+         * After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+         * <p>
          * @return {@code this}
-         * @param vpcConfig This parameter is required.
+         * @param tracingConfig Property tracingConfig: The Tracing Analysis configuration. This parameter is required.
+         */
+        public Builder tracingConfig(final com.aliyun.ros.cdk.core.IResolvable tracingConfig) {
+            this.props.tracingConfig(tracingConfig);
+            return this;
+        }
+        /**
+         * Property tracingConfig: The Tracing Analysis configuration.
+         * <p>
+         * After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+         * <p>
+         * @return {@code this}
+         * @param tracingConfig Property tracingConfig: The Tracing Analysis configuration. This parameter is required.
+         */
+        public Builder tracingConfig(final com.aliyun.ros.cdk.fc.RosService.TracingConfigProperty tracingConfig) {
+            this.props.tracingConfig(tracingConfig);
+            return this;
+        }
+
+        /**
+         * Property vpcConfig: VPC configuration.
+         * <p>
+         * Function Compute uses the config to setup ENI in the specific VPC.
+         * <p>
+         * @return {@code this}
+         * @param vpcConfig Property vpcConfig: VPC configuration. This parameter is required.
          */
         public Builder vpcConfig(final com.aliyun.ros.cdk.core.IResolvable vpcConfig) {
             this.props.vpcConfig(vpcConfig);
             return this;
         }
         /**
+         * Property vpcConfig: VPC configuration.
+         * <p>
+         * Function Compute uses the config to setup ENI in the specific VPC.
+         * <p>
          * @return {@code this}
-         * @param vpcConfig This parameter is required.
+         * @param vpcConfig Property vpcConfig: VPC configuration. This parameter is required.
          */
         public Builder vpcConfig(final com.aliyun.ros.cdk.fc.RosService.VpcConfigProperty vpcConfig) {
             this.props.vpcConfig(vpcConfig);

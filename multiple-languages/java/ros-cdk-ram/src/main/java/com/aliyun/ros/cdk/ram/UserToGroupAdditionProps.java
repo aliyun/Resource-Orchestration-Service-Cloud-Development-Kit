@@ -3,16 +3,18 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::UserToGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.UserToGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(UserToGroupAdditionProps.Jsii$Proxy.class)
 public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
+     * Property users: list name of a users to which you want to add the group.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getUsers();
 
@@ -26,12 +28,12 @@ public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link UserToGroupAdditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<UserToGroupAdditionProps> {
-        private java.lang.String groupName;
+        private java.lang.Object groupName;
         private java.lang.Object users;
 
         /**
          * Sets the value of {@link UserToGroupAdditionProps#getGroupName}
-         * @param groupName the value to be set. This parameter is required.
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -40,8 +42,18 @@ public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link UserToGroupAdditionProps#getGroupName}
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserToGroupAdditionProps#getUsers}
-         * @param users the value to be set. This parameter is required.
+         * @param users Property users: list name of a users to which you want to add the group. This parameter is required.
          * @return {@code this}
          */
         public Builder users(java.util.List<? extends java.lang.Object> users) {
@@ -51,7 +63,7 @@ public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link UserToGroupAdditionProps#getUsers}
-         * @param users the value to be set. This parameter is required.
+         * @param users Property users: list name of a users to which you want to add the group. This parameter is required.
          * @return {@code this}
          */
         public Builder users(com.aliyun.ros.cdk.core.IResolvable users) {
@@ -75,7 +87,7 @@ public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UserToGroupAdditionProps {
-        private final java.lang.String groupName;
+        private final java.lang.Object groupName;
         private final java.lang.Object users;
 
         /**
@@ -84,21 +96,21 @@ public interface UserToGroupAdditionProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.users = software.amazon.jsii.Kernel.get(this, "users", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName, final java.lang.Object users) {
+        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object users) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
             this.users = java.util.Objects.requireNonNull(users, "users is required");
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 

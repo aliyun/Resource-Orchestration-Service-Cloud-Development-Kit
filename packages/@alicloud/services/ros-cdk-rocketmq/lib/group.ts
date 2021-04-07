@@ -14,24 +14,24 @@ export interface GroupProps {
      * A group ID ranges from 7 to 64 bytes.
      * Once a group ID is created, it cannot be edited anymore.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property instanceId: The ID of the instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property groupType: Group ID specify the creation of applicable agreements. Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
      * tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
      * http: represents the Group ID was created only for the HTTP protocol messaging.
      */
-    readonly groupType?: string;
+    readonly groupType?: string | ros.IResolvable;
 
     /**
      * Property remark: The remarks on the request.
      */
-    readonly remark?: string;
+    readonly remark?: string | ros.IResolvable;
 }
 
 /**
@@ -47,17 +47,17 @@ export class Group extends ros.Resource {
     /**
      * Attribute GroupId: Group ID
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * Attribute GroupType: Group Type
      */
-    public readonly attrGroupType: any;
+    public readonly attrGroupType: ros.IResolvable;
 
     /**
      * Attribute InstanceId: Instance ID
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ROCKETMQ::Group`.

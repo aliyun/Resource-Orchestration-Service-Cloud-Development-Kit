@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: certificate: The content of the certificate public key.
         /// </remarks>
-        [JsiiProperty(name: "certificate", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Certificate
+        [JsiiProperty(name: "certificate", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Certificate
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aliCloudCertificateId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AliCloudCertificateId
+        [JsiiProperty(name: "aliCloudCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AliCloudCertificateId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: aliCloudCertificateName: The name of the Alibaba Cloud certificate.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aliCloudCertificateName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AliCloudCertificateName
+        [JsiiProperty(name: "aliCloudCertificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AliCloudCertificateName
         {
             get;
             set;
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: certificateName: The name of the certificate.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "certificateName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CertificateName
+        [JsiiProperty(name: "certificateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CertificateName
         {
             get;
             set;
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: certificateType: The type of the certificate.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "certificateType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? CertificateType
+        [JsiiProperty(name: "certificateType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? CertificateType
         {
             get;
             set;
@@ -68,8 +68,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: privateKey: The private key.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "privateKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PrivateKey
+        [JsiiProperty(name: "privateKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PrivateKey
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: resourceGroupId: Resource group id.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;
@@ -90,8 +90,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-slb.RosCertificate.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Slb.RosCertificate.ITagsProperty[]? Tags
         {
             get;
             set;

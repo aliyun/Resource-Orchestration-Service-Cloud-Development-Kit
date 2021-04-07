@@ -11,30 +11,30 @@ export interface AclRuleProps {
     /**
      * Property domain: Domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property rules: Detailed information of precise access control rules, expressed in JSON format strings.
      */
-    readonly rules: string;
+    readonly rules: string | ros.IResolvable;
 
     /**
      * Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    readonly region?: string;
+    readonly region?: string | ros.IResolvable;
 
     /**
      * Property ruleId: Precise access control rule ID
      */
-    readonly ruleId?: number;
+    readonly ruleId?: number | ros.IResolvable;
 }
 
 /**

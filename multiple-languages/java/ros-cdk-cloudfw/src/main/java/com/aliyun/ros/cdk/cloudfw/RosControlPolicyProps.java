@@ -3,72 +3,72 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Properties for defining a `ALIYUN::CLOUDFW::ControlPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.232Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.863Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosControlPolicyProps.Jsii$Proxy.class)
 public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAclAction();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAclAction();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getApplicationName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescription();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestination();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestination();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestinationType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestinationType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDirection();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDirection();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getNewOrder();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNewOrder();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProto();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProto();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSource();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSource();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSourceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSourceType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPort() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestPortGroup() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPortGroup() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestPortType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestPortType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
@@ -82,20 +82,20 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosControlPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosControlPolicyProps> {
-        private java.lang.String aclAction;
-        private java.lang.String applicationName;
-        private java.lang.String description;
-        private java.lang.String destination;
-        private java.lang.String destinationType;
-        private java.lang.String direction;
-        private java.lang.Number newOrder;
-        private java.lang.String proto;
-        private java.lang.String source;
-        private java.lang.String sourceType;
-        private java.lang.String destPort;
-        private java.lang.String destPortGroup;
-        private java.lang.String destPortType;
-        private java.lang.String regionId;
+        private java.lang.Object aclAction;
+        private java.lang.Object applicationName;
+        private java.lang.Object description;
+        private java.lang.Object destination;
+        private java.lang.Object destinationType;
+        private java.lang.Object direction;
+        private java.lang.Object newOrder;
+        private java.lang.Object proto;
+        private java.lang.Object source;
+        private java.lang.Object sourceType;
+        private java.lang.Object destPort;
+        private java.lang.Object destPortGroup;
+        private java.lang.Object destPortType;
+        private java.lang.Object regionId;
 
         /**
          * Sets the value of {@link RosControlPolicyProps#getAclAction}
@@ -103,6 +103,16 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder aclAction(java.lang.String aclAction) {
+            this.aclAction = aclAction;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getAclAction}
+         * @param aclAction the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclAction(com.aliyun.ros.cdk.core.IResolvable aclAction) {
             this.aclAction = aclAction;
             return this;
         }
@@ -118,11 +128,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getApplicationName}
+         * @param applicationName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getDescription}
          * @param description the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getDescription}
+         * @param description the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -138,11 +168,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getDestination}
+         * @param destination the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destination(com.aliyun.ros.cdk.core.IResolvable destination) {
+            this.destination = destination;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getDestinationType}
          * @param destinationType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder destinationType(java.lang.String destinationType) {
+            this.destinationType = destinationType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getDestinationType}
+         * @param destinationType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationType(com.aliyun.ros.cdk.core.IResolvable destinationType) {
             this.destinationType = destinationType;
             return this;
         }
@@ -158,11 +208,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getDirection}
+         * @param direction the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder direction(com.aliyun.ros.cdk.core.IResolvable direction) {
+            this.direction = direction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getNewOrder}
          * @param newOrder the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder newOrder(java.lang.Number newOrder) {
+            this.newOrder = newOrder;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getNewOrder}
+         * @param newOrder the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder newOrder(com.aliyun.ros.cdk.core.IResolvable newOrder) {
             this.newOrder = newOrder;
             return this;
         }
@@ -178,11 +248,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getProto}
+         * @param proto the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder proto(com.aliyun.ros.cdk.core.IResolvable proto) {
+            this.proto = proto;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getSource}
          * @param source the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder source(java.lang.String source) {
+            this.source = source;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getSource}
+         * @param source the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder source(com.aliyun.ros.cdk.core.IResolvable source) {
             this.source = source;
             return this;
         }
@@ -198,11 +288,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getSourceType}
+         * @param sourceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder sourceType(com.aliyun.ros.cdk.core.IResolvable sourceType) {
+            this.sourceType = sourceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getDestPort}
          * @param destPort the value to be set.
          * @return {@code this}
          */
         public Builder destPort(java.lang.String destPort) {
+            this.destPort = destPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getDestPort}
+         * @param destPort the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPort(com.aliyun.ros.cdk.core.IResolvable destPort) {
             this.destPort = destPort;
             return this;
         }
@@ -218,6 +328,16 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getDestPortGroup}
+         * @param destPortGroup the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPortGroup(com.aliyun.ros.cdk.core.IResolvable destPortGroup) {
+            this.destPortGroup = destPortGroup;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getDestPortType}
          * @param destPortType the value to be set.
          * @return {@code this}
@@ -228,11 +348,31 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosControlPolicyProps#getDestPortType}
+         * @param destPortType the value to be set.
+         * @return {@code this}
+         */
+        public Builder destPortType(com.aliyun.ros.cdk.core.IResolvable destPortType) {
+            this.destPortType = destPortType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosControlPolicyProps#getRegionId}
          * @param regionId the value to be set.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosControlPolicyProps#getRegionId}
+         * @param regionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.regionId = regionId;
             return this;
         }
@@ -253,20 +393,20 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosControlPolicyProps {
-        private final java.lang.String aclAction;
-        private final java.lang.String applicationName;
-        private final java.lang.String description;
-        private final java.lang.String destination;
-        private final java.lang.String destinationType;
-        private final java.lang.String direction;
-        private final java.lang.Number newOrder;
-        private final java.lang.String proto;
-        private final java.lang.String source;
-        private final java.lang.String sourceType;
-        private final java.lang.String destPort;
-        private final java.lang.String destPortGroup;
-        private final java.lang.String destPortType;
-        private final java.lang.String regionId;
+        private final java.lang.Object aclAction;
+        private final java.lang.Object applicationName;
+        private final java.lang.Object description;
+        private final java.lang.Object destination;
+        private final java.lang.Object destinationType;
+        private final java.lang.Object direction;
+        private final java.lang.Object newOrder;
+        private final java.lang.Object proto;
+        private final java.lang.Object source;
+        private final java.lang.Object sourceType;
+        private final java.lang.Object destPort;
+        private final java.lang.Object destPortGroup;
+        private final java.lang.Object destPortType;
+        private final java.lang.Object regionId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -274,26 +414,26 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aclAction = software.amazon.jsii.Kernel.get(this, "aclAction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destination = software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationType = software.amazon.jsii.Kernel.get(this, "destinationType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.direction = software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.newOrder = software.amazon.jsii.Kernel.get(this, "newOrder", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.proto = software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.source = software.amazon.jsii.Kernel.get(this, "source", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destPort = software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destPortGroup = software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destPortType = software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.aclAction = software.amazon.jsii.Kernel.get(this, "aclAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destination = software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationType = software.amazon.jsii.Kernel.get(this, "destinationType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.direction = software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.newOrder = software.amazon.jsii.Kernel.get(this, "newOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proto = software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.source = software.amazon.jsii.Kernel.get(this, "source", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceType = software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPort = software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPortGroup = software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destPortType = software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aclAction, final java.lang.String applicationName, final java.lang.String description, final java.lang.String destination, final java.lang.String destinationType, final java.lang.String direction, final java.lang.Number newOrder, final java.lang.String proto, final java.lang.String source, final java.lang.String sourceType, final java.lang.String destPort, final java.lang.String destPortGroup, final java.lang.String destPortType, final java.lang.String regionId) {
+        protected Jsii$Proxy(final java.lang.Object aclAction, final java.lang.Object applicationName, final java.lang.Object description, final java.lang.Object destination, final java.lang.Object destinationType, final java.lang.Object direction, final java.lang.Object newOrder, final java.lang.Object proto, final java.lang.Object source, final java.lang.Object sourceType, final java.lang.Object destPort, final java.lang.Object destPortGroup, final java.lang.Object destPortType, final java.lang.Object regionId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclAction = java.util.Objects.requireNonNull(aclAction, "aclAction is required");
             this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
@@ -312,72 +452,72 @@ public interface RosControlPolicyProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getAclAction() {
+        public final java.lang.Object getAclAction() {
             return this.aclAction;
         }
 
         @Override
-        public final java.lang.String getApplicationName() {
+        public final java.lang.Object getApplicationName() {
             return this.applicationName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getDestination() {
+        public final java.lang.Object getDestination() {
             return this.destination;
         }
 
         @Override
-        public final java.lang.String getDestinationType() {
+        public final java.lang.Object getDestinationType() {
             return this.destinationType;
         }
 
         @Override
-        public final java.lang.String getDirection() {
+        public final java.lang.Object getDirection() {
             return this.direction;
         }
 
         @Override
-        public final java.lang.Number getNewOrder() {
+        public final java.lang.Object getNewOrder() {
             return this.newOrder;
         }
 
         @Override
-        public final java.lang.String getProto() {
+        public final java.lang.Object getProto() {
             return this.proto;
         }
 
         @Override
-        public final java.lang.String getSource() {
+        public final java.lang.Object getSource() {
             return this.source;
         }
 
         @Override
-        public final java.lang.String getSourceType() {
+        public final java.lang.Object getSourceType() {
             return this.sourceType;
         }
 
         @Override
-        public final java.lang.String getDestPort() {
+        public final java.lang.Object getDestPort() {
             return this.destPort;
         }
 
         @Override
-        public final java.lang.String getDestPortGroup() {
+        public final java.lang.Object getDestPortGroup() {
             return this.destPortGroup;
         }
 
         @Override
-        public final java.lang.String getDestPortType() {
+        public final java.lang.Object getDestPortType() {
             return this.destPortType;
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 

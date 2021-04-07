@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public interface IUserToGroupAdditionProps
     {
         /// <summary>Property groupName: Specifies the group name, containing up to 64 characters.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupName
         {
             get;
         }
@@ -31,10 +31,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <summary>Property groupName: Specifies the group name, containing up to 64 characters.</summary>
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property users: list name of a users to which you want to add the group.</summary>

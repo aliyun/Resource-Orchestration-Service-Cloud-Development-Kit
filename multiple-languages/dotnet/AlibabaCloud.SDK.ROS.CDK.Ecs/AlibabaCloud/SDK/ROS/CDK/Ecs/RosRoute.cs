@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: destinationCidrBlock: The RouteEntry's target network segment.
         /// </remarks>
-        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DestinationCidrBlock
+        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DestinationCidrBlock
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -71,20 +71,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: routeId: RouteId of created route entry.
         /// </remarks>
-        [JsiiProperty(name: "routeId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string RouteId
+        [JsiiProperty(name: "routeId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object RouteId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: routeTableId: RouteTableId of created route entry.
         /// </remarks>
-        [JsiiProperty(name: "routeTableId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string RouteTableId
+        [JsiiProperty(name: "routeTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object RouteTableId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -92,10 +92,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "nextHopId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NextHopId
+        [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NextHopId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -114,10 +114,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "nextHopType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NextHopType
+        [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NextHopType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(INextHopListProperty), fullyQualifiedName: "@alicloud/ros-cdk-ecs.RosRoute.NextHopListProperty")]
@@ -126,8 +126,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// <strong>Property</strong>: nextHopId: Route entry next hop Instance id or Tunnel id.
             /// </remarks>
-            [JsiiProperty(name: "nextHopId", typeJson: "{\"primitive\":\"string\"}")]
-            string NextHopId
+            [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object NextHopId
             {
                 get;
             }
@@ -135,9 +135,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// <strong>Property</strong>: nextHopType: Route entry next hop type. Now support 'Instance|Tunnel|HaVip|RouterInterface'.
             /// </remarks>
-            [JsiiProperty(name: "nextHopType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? NextHopType
+            object? NextHopType
             {
                 get
                 {
@@ -155,20 +155,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 /// <remarks>
                 /// <strong>Property</strong>: nextHopId: Route entry next hop Instance id or Tunnel id.
                 /// </remarks>
-                [JsiiProperty(name: "nextHopId", typeJson: "{\"primitive\":\"string\"}")]
-                public string NextHopId
+                [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object NextHopId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: nextHopType: Route entry next hop type. Now support 'Instance|Tunnel|HaVip|RouterInterface'.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "nextHopType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? NextHopType
+                [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? NextHopType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -180,8 +180,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// <strong>Property</strong>: nextHopId: Route entry next hop Instance id or Tunnel id.
             /// </remarks>
-            [JsiiProperty(name: "nextHopId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string NextHopId
+            [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object NextHopId
             {
                 get;
                 set;
@@ -191,8 +191,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <strong>Property</strong>: nextHopType: Route entry next hop type. Now support 'Instance|Tunnel|HaVip|RouterInterface'.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nextHopType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? NextHopType
+            [JsiiProperty(name: "nextHopType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? NextHopType
             {
                 get;
                 set;

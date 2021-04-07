@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>(experimental) Token subclass that represents values intrinsic to the target document language&#xD; &#xD; This class will disappear in a future release and should not be used.</summary>
+    /// <summary>(experimental) Token subclass that represents values intrinsic to the target document language.</summary>
     /// <remarks>
+    /// This class will disappear in a future release and should not be used.
+    ///
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.Intrinsic), fullyQualifiedName: "@alicloud/ros-cdk-core.Intrinsic", parametersJson: "[{\"name\":\"value\",\"type\":{\"primitive\":\"any\"}}]")]
@@ -53,8 +55,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<object>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{context})!;
         }
 
-        /// <summary>(experimental) Turn this Token into JSON&#xD; &#xD; Called automatically when JSON.stringify() is called on a Token.</summary>
+        /// <summary>(experimental) Turn this Token into JSON.</summary>
         /// <remarks>
+        /// Called automatically when JSON.stringify() is called on a Token.
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiMethod(name: "toJSON", returnsJson: "{\"type\":{\"primitive\":\"any\"}}")]
@@ -63,11 +67,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<object>(new System.Type[]{}, new object[]{})!;
         }
 
-        /// <summary>(experimental) Convert an instance of this Token to a string&#xD; &#xD; This method will be called implicitly by language runtimes if the object&#xD; is embedded into a string.</summary>
+        /// <summary>(experimental) Convert an instance of this Token to a string.</summary>
         /// <remarks>
-        /// We treat it the same as an explicit
+        /// This method will be called implicitly by language runtimes if the object
+        /// is embedded into a string. We treat it the same as an explicit
         /// stringification.
-        /// 
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiMethod(name: "toString", returnsJson: "{\"type\":{\"primitive\":\"string\"}}", isOverride: true)]

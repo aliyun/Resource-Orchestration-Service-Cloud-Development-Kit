@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Attribute EndpointGroupId: The ID of the endpoint group.</summary>
-        [JsiiProperty(name: "attrEndpointGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEndpointGroupId
+        [JsiiProperty(name: "attrEndpointGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndpointGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

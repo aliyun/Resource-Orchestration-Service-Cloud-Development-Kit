@@ -11,37 +11,42 @@ export interface CertificateProps {
     /**
      * Property certificate: The content of the certificate public key.
      */
-    readonly certificate: string;
+    readonly certificate: string | ros.IResolvable;
 
     /**
      * Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
-    readonly aliCloudCertificateId?: string;
+    readonly aliCloudCertificateId?: string | ros.IResolvable;
 
     /**
      * Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
-    readonly aliCloudCertificateName?: string;
+    readonly aliCloudCertificateName?: string | ros.IResolvable;
 
     /**
      * Property certificateName: The name of the certificate.
      */
-    readonly certificateName?: string;
+    readonly certificateName?: string | ros.IResolvable;
 
     /**
      * Property certificateType: The type of the certificate.
      */
-    readonly certificateType?: string;
+    readonly certificateType?: string | ros.IResolvable;
 
     /**
      * Property privateKey: The private key.
      */
-    readonly privateKey?: string;
+    readonly privateKey?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCertificate.TagsProperty[];
 }
 
 /**
@@ -57,12 +62,12 @@ export class Certificate extends ros.Resource {
     /**
      * Attribute CertificateId: The ID of the certificate.
      */
-    public readonly attrCertificateId: any;
+    public readonly attrCertificateId: ros.IResolvable;
 
     /**
      * Attribute Fingerprint: The fingerprint of the certificate.
      */
-    public readonly attrFingerprint: any;
+    public readonly attrFingerprint: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::Certificate`.
@@ -80,6 +85,7 @@ export class Certificate extends ros.Resource {
             privateKey: props.privateKey,
             resourceGroupId: props.resourceGroupId,
             certificateName: props.certificateName,
+            tags: props.tags,
             certificate: props.certificate,
             aliCloudCertificateId: props.aliCloudCertificateId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

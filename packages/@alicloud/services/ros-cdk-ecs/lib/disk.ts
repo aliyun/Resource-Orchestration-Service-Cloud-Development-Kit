@@ -11,12 +11,12 @@ export interface DiskProps {
     /**
      * Property zoneId: The availability zone in which the volume will be created.
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
      * Property autoSnapshotPolicyId: Auto snapshot policy ID.
      */
-    readonly autoSnapshotPolicyId?: string;
+    readonly autoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
      * Property deleteAutoSnapshot: Whether the auto snapshot is released with the disk. Default to false.
@@ -26,17 +26,17 @@ export interface DiskProps {
     /**
      * Property description: Description of the disk, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property diskCategory: The disk category, now support cloud/cloud_ssd/cloud_essd/cloud_efficiency/san_ssd/san_efficiency, depends the region.
      */
-    readonly diskCategory?: string;
+    readonly diskCategory?: string | ros.IResolvable;
 
     /**
      * Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly diskName?: string;
+    readonly diskName?: string | ros.IResolvable;
 
     /**
      * Property encrypted: Whether disk is encrypted, default to false.
@@ -46,42 +46,42 @@ export interface DiskProps {
     /**
      * Property kmsKeyId: KMS key ID used by the cloud disk.
      */
-    readonly kmsKeyId?: string;
+    readonly kmsKeyId?: string | ros.IResolvable;
 
     /**
      * Property performanceLevel: The performance level you select for an ESSD.Default value: PL1. Valid values:PL0: A single enhanced SSD delivers up to 10,000 random read/write IOPS.PL1: A single enhanced SSD delivers up to 50,000 random read/write IOPS.PL2: A single enhanced SSD delivers up to 100,000 random read/write IOPS.PL3: A single enhanced SSD delivers up to 1,000,000 random read/write IOPS.
      */
-    readonly performanceLevel?: string;
+    readonly performanceLevel?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property size: The size of the disk unit in GB.
      */
-    readonly size?: number;
+    readonly size?: number | ros.IResolvable;
 
     /**
      * Property snapshotId: If specified, the backup used as the source to create disk.
      */
-    readonly snapshotId?: string;
+    readonly snapshotId?: string | ros.IResolvable;
 
     /**
      * Property storageSetId: Storage set ID.
      */
-    readonly storageSetId?: string;
+    readonly storageSetId?: string | ros.IResolvable;
 
     /**
      * Property storageSetPartitionNumber: The number of storage set partitions.
      */
-    readonly storageSetPartitionNumber?: number;
+    readonly storageSetPartitionNumber?: number | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to disk. Max support 20 tags to add during create disk. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosDisk.TagsProperty[];
 }
 
 /**
@@ -97,12 +97,12 @@ export class Disk extends ros.Resource {
     /**
      * Attribute DiskId: Id of created disk.
      */
-    public readonly attrDiskId: any;
+    public readonly attrDiskId: ros.IResolvable;
 
     /**
      * Attribute Status: Created disk status.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::Disk`.
@@ -129,7 +129,7 @@ export class Disk extends ros.Resource {
             diskName: props.diskName,
             snapshotId: props.snapshotId,
             storageSetId: props.storageSetId,
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDisk;
         this.attrDiskId = rosDisk.attrDiskId;

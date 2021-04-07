@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute SlsLogStore: Logstore name of SLS.</summary>
-        [JsiiProperty(name: "attrSlsLogStore", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSlsLogStore
+        [JsiiProperty(name: "attrSlsLogStore", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSlsLogStore
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SlsProject: Project name of SLS.</summary>
-        [JsiiProperty(name: "attrSlsProject", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSlsProject
+        [JsiiProperty(name: "attrSlsProject", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSlsProject
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

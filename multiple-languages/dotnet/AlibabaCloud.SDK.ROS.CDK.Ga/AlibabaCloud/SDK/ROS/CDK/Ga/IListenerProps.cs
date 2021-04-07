@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     public interface IListenerProps
     {
         /// <summary>Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.</summary>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-        string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AcceleratorId
         {
             get;
         }
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// tcp: TCP protocol
         /// udp: UDP protocol
         /// </remarks>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-        string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Protocol
         {
             get;
         }
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// If you set the value to SOURCE_IP, client affinity is enabled. When client affinity is enabled, the connections from
         /// a specific source (client) IP address are always routed to the same endpoint.
         /// </remarks>
-        [JsiiProperty(name: "clientAffinity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "clientAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ClientAffinity
+        object? ClientAffinity
         {
             get
             {
@@ -53,9 +53,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Property description: The description of the listener.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -68,9 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// The name must be 2 to 128 characters in length and can contain letters, digits, underscores
         /// (_), and hyphens (-). It must start with a letter or Chinese character.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Name
+        object? Name
         {
             get
             {
@@ -87,10 +87,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
 
             /// <summary>Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.</summary>
-            [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}")]
-            public string AcceleratorId
+            [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AcceleratorId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property portRanges:.</summary>
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// tcp: TCP protocol
             /// udp: UDP protocol
             /// </remarks>
-            [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-            public string Protocol
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Protocol
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property clientAffinity: Specifies whether to enable client affinity for the listener.</summary>
@@ -121,18 +121,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// a specific source (client) IP address are always routed to the same endpoint.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "clientAffinity", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ClientAffinity
+            [JsiiProperty(name: "clientAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ClientAffinity
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: The description of the listener.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property name: The name of the listener.</summary>
@@ -141,10 +141,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// (_), and hyphens (-). It must start with a letter or Chinese character.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Name
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

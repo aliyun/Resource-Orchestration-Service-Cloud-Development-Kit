@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public interface ITriggerProps
     {
         /// <summary>Property functionName: Function name.</summary>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}")]
-        string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object FunctionName
         {
             get;
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-        string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServiceName
         {
             get;
         }
@@ -36,15 +36,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Example : "image_resize"
         /// </remarks>
-        [JsiiProperty(name: "triggerName", typeJson: "{\"primitive\":\"string\"}")]
-        string TriggerName
+        [JsiiProperty(name: "triggerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TriggerName
         {
             get;
         }
 
         /// <summary>Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss".</summary>
-        [JsiiProperty(name: "triggerType", typeJson: "{\"primitive\":\"string\"}")]
-        string TriggerType
+        [JsiiProperty(name: "triggerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TriggerType
         {
             get;
         }
@@ -54,9 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// This is optional for some triggers.
         /// Example : "acs:ram::1234567890:role/fc-test"
         /// </remarks>
-        [JsiiProperty(name: "invocationRole", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InvocationRole
+        object? InvocationRole
         {
             get
             {
@@ -68,9 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Example : "LATEST"
         /// </remarks>
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Qualifier
+        object? Qualifier
         {
             get
             {
@@ -83,9 +83,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// This is optional for some triggers.
         /// Example : "acs:oss:cn-shanghai:12345:mybucket"
         /// </remarks>
-        [JsiiProperty(name: "sourceArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "sourceArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SourceArn
+        object? SourceArn
         {
             get
             {
@@ -102,17 +102,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
 
             /// <summary>Property functionName: Function name.</summary>
-            [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}")]
-            public string FunctionName
+            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object FunctionName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property serviceName: Service name.</summary>
-            [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ServiceName
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServiceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property triggerConfig: Event source specific trigger configuration.</summary>
@@ -129,17 +129,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// <remarks>
             /// Example : "image_resize"
             /// </remarks>
-            [JsiiProperty(name: "triggerName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TriggerName
+            [JsiiProperty(name: "triggerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TriggerName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property triggerType: Trigger type, e.g. oss, timer, logs. This determines how the trigger config is interpreted. Example : "oss".</summary>
-            [JsiiProperty(name: "triggerType", typeJson: "{\"primitive\":\"string\"}")]
-            public string TriggerType
+            [JsiiProperty(name: "triggerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TriggerType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property invocationRole: The role grants event source the permission to run function on behalf of user.</summary>
@@ -148,10 +148,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Example : "acs:ram::1234567890:role/fc-test"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "invocationRole", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InvocationRole
+            [JsiiProperty(name: "invocationRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InvocationRole
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property qualifier: service version or alias.</summary>
@@ -159,10 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Example : "LATEST"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Qualifier
+            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Qualifier
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property sourceArn: The Aliyun Resource Name (ARN) of event source.</summary>
@@ -171,10 +171,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Example : "acs:oss:cn-shanghai:12345:mybucket"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sourceArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SourceArn
+            [JsiiProperty(name: "sourceArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SourceArn
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

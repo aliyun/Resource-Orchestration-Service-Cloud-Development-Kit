@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.277Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(RosEventRuleTargetsProps.Jsii$Proxy.class)
 public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRuleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
      */
@@ -52,7 +52,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link RosEventRuleTargetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEventRuleTargetsProps> {
-        private java.lang.String ruleName;
+        private java.lang.Object ruleName;
         private java.lang.Object contactParameters;
         private java.lang.Object fcParameters;
         private java.lang.Object mnsParameters;
@@ -65,6 +65,16 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
          * @return {@code this}
          */
         public Builder ruleName(java.lang.String ruleName) {
+            this.ruleName = ruleName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEventRuleTargetsProps#getRuleName}
+         * @param ruleName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
             this.ruleName = ruleName;
             return this;
         }
@@ -185,7 +195,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosEventRuleTargetsProps {
-        private final java.lang.String ruleName;
+        private final java.lang.Object ruleName;
         private final java.lang.Object contactParameters;
         private final java.lang.Object fcParameters;
         private final java.lang.Object mnsParameters;
@@ -198,7 +208,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.contactParameters = software.amazon.jsii.Kernel.get(this, "contactParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fcParameters = software.amazon.jsii.Kernel.get(this, "fcParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mnsParameters = software.amazon.jsii.Kernel.get(this, "mnsParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -209,7 +219,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ruleName, final java.lang.Object contactParameters, final java.lang.Object fcParameters, final java.lang.Object mnsParameters, final java.lang.Object slsParameters, final java.lang.Object webhookParameters) {
+        protected Jsii$Proxy(final java.lang.Object ruleName, final java.lang.Object contactParameters, final java.lang.Object fcParameters, final java.lang.Object mnsParameters, final java.lang.Object slsParameters, final java.lang.Object webhookParameters) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
             this.contactParameters = contactParameters;
@@ -220,7 +230,7 @@ public interface RosEventRuleTargetsProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getRuleName() {
+        public final java.lang.Object getRuleName() {
             return this.ruleName;
         }
 

@@ -3,14 +3,15 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::AccessKey`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.197Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.851Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AccessKeyProps")
 @software.amazon.jsii.Jsii.Proxy(AccessKeyProps.Jsii$Proxy.class)
 public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property userName: Specifies the user name, containing up to 64 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUserName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
 
     /**
      * @return a {@link Builder} of {@link AccessKeyProps}
@@ -22,14 +23,24 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AccessKeyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccessKeyProps> {
-        private java.lang.String userName;
+        private java.lang.Object userName;
 
         /**
          * Sets the value of {@link AccessKeyProps#getUserName}
-         * @param userName the value to be set. This parameter is required.
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
          * @return {@code this}
          */
         public Builder userName(java.lang.String userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AccessKeyProps#getUserName}
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
             this.userName = userName;
             return this;
         }
@@ -50,7 +61,7 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessKeyProps {
-        private final java.lang.String userName;
+        private final java.lang.Object userName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -58,19 +69,19 @@ public interface AccessKeyProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String userName) {
+        protected Jsii$Proxy(final java.lang.Object userName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
         }
 
         @Override
-        public final java.lang.String getUserName() {
+        public final java.lang.Object getUserName() {
             return this.userName;
         }
 

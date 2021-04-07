@@ -10,11 +10,13 @@
 @alicloud/ros-cdk-redis.RosInstance.BackupPolicyProperty=com.aliyun.ros.cdk.redis.RosInstance$BackupPolicyProperty
 @alicloud/ros-cdk-redis.RosInstance.InstanceConnectionProperty=com.aliyun.ros.cdk.redis.RosInstance$InstanceConnectionProperty
 @alicloud/ros-cdk-redis.RosInstance.InstanceMaintainTimeProperty=com.aliyun.ros.cdk.redis.RosInstance$InstanceMaintainTimeProperty
+@alicloud/ros-cdk-redis.RosInstance.TagsProperty=com.aliyun.ros.cdk.redis.RosInstance$TagsProperty
 @alicloud/ros-cdk-redis.RosInstanceProps=com.aliyun.ros.cdk.redis.RosInstanceProps
 @alicloud/ros-cdk-redis.RosPrepayInstance=com.aliyun.ros.cdk.redis.RosPrepayInstance
 @alicloud/ros-cdk-redis.RosPrepayInstance.BackupPolicyProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$BackupPolicyProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.InstanceConnectionProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$InstanceConnectionProperty
 @alicloud/ros-cdk-redis.RosPrepayInstance.InstanceMaintainTimeProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$InstanceMaintainTimeProperty
+@alicloud/ros-cdk-redis.RosPrepayInstance.TagsProperty=com.aliyun.ros.cdk.redis.RosPrepayInstance$TagsProperty
 @alicloud/ros-cdk-redis.RosPrepayInstanceProps=com.aliyun.ros.cdk.redis.RosPrepayInstanceProps
 @alicloud/ros-cdk-redis.RosWhitelist=com.aliyun.ros.cdk.redis.RosWhitelist
 @alicloud/ros-cdk-redis.RosWhitelistProps=com.aliyun.ros.cdk.redis.RosWhitelistProps

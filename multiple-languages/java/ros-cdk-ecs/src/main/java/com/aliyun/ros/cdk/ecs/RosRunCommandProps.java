@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::RunCommand`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.357Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RosRunCommandProps.Jsii$Proxy.class)
 public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCommandContent();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCommandContent();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getInstanceIds();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getContentEncoding() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContentEncoding() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -40,7 +40,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFrequency() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
         return null;
     }
 
@@ -52,7 +52,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -70,13 +70,13 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkingDir() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkingDir() {
         return null;
     }
 
@@ -90,19 +90,19 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRunCommandProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRunCommandProps> {
-        private java.lang.String commandContent;
-        private java.util.List<java.lang.String> instanceIds;
-        private java.lang.String type;
-        private java.lang.String contentEncoding;
-        private java.lang.String description;
+        private java.lang.Object commandContent;
+        private java.lang.Object instanceIds;
+        private java.lang.Object type;
+        private java.lang.Object contentEncoding;
+        private java.lang.Object description;
         private java.lang.Object enableParameter;
-        private java.lang.String frequency;
+        private java.lang.Object frequency;
         private java.lang.Object keepCommand;
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object parameters;
         private java.lang.Object timed;
-        private java.lang.Number timeout;
-        private java.lang.String workingDir;
+        private java.lang.Object timeout;
+        private java.lang.Object workingDir;
 
         /**
          * Sets the value of {@link RosRunCommandProps#getCommandContent}
@@ -115,11 +115,31 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getCommandContent}
+         * @param commandContent the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder commandContent(com.aliyun.ros.cdk.core.IResolvable commandContent) {
+            this.commandContent = commandContent;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getInstanceIds}
          * @param instanceIds the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<java.lang.String> instanceIds) {
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.instanceIds = instanceIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getInstanceIds}
+         * @param instanceIds the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
@@ -135,6 +155,16 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getContentEncoding}
          * @param contentEncoding the value to be set.
          * @return {@code this}
@@ -145,11 +175,31 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getContentEncoding}
+         * @param contentEncoding the value to be set.
+         * @return {@code this}
+         */
+        public Builder contentEncoding(com.aliyun.ros.cdk.core.IResolvable contentEncoding) {
+            this.contentEncoding = contentEncoding;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -185,6 +235,16 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getFrequency}
+         * @param frequency the value to be set.
+         * @return {@code this}
+         */
+        public Builder frequency(com.aliyun.ros.cdk.core.IResolvable frequency) {
+            this.frequency = frequency;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getKeepCommand}
          * @param keepCommand the value to be set.
          * @return {@code this}
@@ -210,6 +270,16 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -265,11 +335,31 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRunCommandProps#getTimeout}
+         * @param timeout the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRunCommandProps#getWorkingDir}
          * @param workingDir the value to be set.
          * @return {@code this}
          */
         public Builder workingDir(java.lang.String workingDir) {
+            this.workingDir = workingDir;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRunCommandProps#getWorkingDir}
+         * @param workingDir the value to be set.
+         * @return {@code this}
+         */
+        public Builder workingDir(com.aliyun.ros.cdk.core.IResolvable workingDir) {
             this.workingDir = workingDir;
             return this;
         }
@@ -290,19 +380,19 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRunCommandProps {
-        private final java.lang.String commandContent;
-        private final java.util.List<java.lang.String> instanceIds;
-        private final java.lang.String type;
-        private final java.lang.String contentEncoding;
-        private final java.lang.String description;
+        private final java.lang.Object commandContent;
+        private final java.lang.Object instanceIds;
+        private final java.lang.Object type;
+        private final java.lang.Object contentEncoding;
+        private final java.lang.Object description;
         private final java.lang.Object enableParameter;
-        private final java.lang.String frequency;
+        private final java.lang.Object frequency;
         private final java.lang.Object keepCommand;
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object parameters;
         private final java.lang.Object timed;
-        private final java.lang.Number timeout;
-        private final java.lang.String workingDir;
+        private final java.lang.Object timeout;
+        private final java.lang.Object workingDir;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -310,25 +400,25 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableParameter = software.amazon.jsii.Kernel.get(this, "enableParameter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keepCommand = software.amazon.jsii.Kernel.get(this, "keepCommand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String commandContent, final java.util.List<java.lang.String> instanceIds, final java.lang.String type, final java.lang.String contentEncoding, final java.lang.String description, final java.lang.Object enableParameter, final java.lang.String frequency, final java.lang.Object keepCommand, final java.lang.String name, final java.lang.Object parameters, final java.lang.Object timed, final java.lang.Number timeout, final java.lang.String workingDir) {
+        protected Jsii$Proxy(final java.lang.Object commandContent, final java.lang.Object instanceIds, final java.lang.Object type, final java.lang.Object contentEncoding, final java.lang.Object description, final java.lang.Object enableParameter, final java.lang.Object frequency, final java.lang.Object keepCommand, final java.lang.Object name, final java.lang.Object parameters, final java.lang.Object timed, final java.lang.Object timeout, final java.lang.Object workingDir) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commandContent = java.util.Objects.requireNonNull(commandContent, "commandContent is required");
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
@@ -346,27 +436,27 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getCommandContent() {
+        public final java.lang.Object getCommandContent() {
             return this.commandContent;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getInstanceIds() {
+        public final java.lang.Object getInstanceIds() {
             return this.instanceIds;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getContentEncoding() {
+        public final java.lang.Object getContentEncoding() {
             return this.contentEncoding;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -376,7 +466,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getFrequency() {
+        public final java.lang.Object getFrequency() {
             return this.frequency;
         }
 
@@ -386,7 +476,7 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -401,12 +491,12 @@ public interface RosRunCommandProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
         @Override
-        public final java.lang.String getWorkingDir() {
+        public final java.lang.Object getWorkingDir() {
             return this.workingDir;
         }
 

@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         }
 
         /// <summary>Attribute AclUuid: Security access control ID that uniquely identifies the policy.</summary>
-        [JsiiProperty(name: "attrAclUuid", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAclUuid
+        [JsiiProperty(name: "attrAclUuid", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAclUuid
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

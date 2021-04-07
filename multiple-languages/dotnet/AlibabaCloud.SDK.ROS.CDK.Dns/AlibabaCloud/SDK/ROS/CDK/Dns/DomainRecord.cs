@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <summary>Attribute RecordId: Parse the ID of the record.</summary>
-        [JsiiProperty(name: "attrRecordId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRecordId
+        [JsiiProperty(name: "attrRecordId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRecordId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

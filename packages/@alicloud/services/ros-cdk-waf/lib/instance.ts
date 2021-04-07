@@ -11,67 +11,67 @@ export interface InstanceProps {
     /**
      * Property bigScreen:
      */
-    readonly bigScreen: string;
+    readonly bigScreen: string | ros.IResolvable;
 
     /**
      * Property exclusiveIpPackage:
      */
-    readonly exclusiveIpPackage: string;
+    readonly exclusiveIpPackage: string | ros.IResolvable;
 
     /**
      * Property extBandwidth:
      */
-    readonly extBandwidth: string;
+    readonly extBandwidth: string | ros.IResolvable;
 
     /**
      * Property extDomainPackage:
      */
-    readonly extDomainPackage: string;
+    readonly extDomainPackage: string | ros.IResolvable;
 
     /**
      * Property logStorage:
      */
-    readonly logStorage: string;
+    readonly logStorage: string | ros.IResolvable;
 
     /**
      * Property logTime:
      */
-    readonly logTime: string;
+    readonly logTime: string | ros.IResolvable;
 
     /**
      * Property packageCode:
      */
-    readonly packageCode: string;
+    readonly packageCode: string | ros.IResolvable;
 
     /**
      * Property prefessionalService:
      */
-    readonly prefessionalService: string;
+    readonly prefessionalService: string | ros.IResolvable;
 
     /**
      * Property subscriptionType: Subscription type of the instance
      */
-    readonly subscriptionType: string;
+    readonly subscriptionType: string | ros.IResolvable;
 
     /**
      * Property wafLog:
      */
-    readonly wafLog: string;
+    readonly wafLog: string | ros.IResolvable;
 
     /**
      * Property period:
      */
-    readonly period?: string;
+    readonly period?: string | ros.IResolvable;
 
     /**
      * Property renewalStatus:
      */
-    readonly renewalStatus?: string;
+    readonly renewalStatus?: string | ros.IResolvable;
 
     /**
      * Property renewPeriod:
      */
-    readonly renewPeriod?: string;
+    readonly renewPeriod?: string | ros.IResolvable;
 }
 
 /**
@@ -87,32 +87,32 @@ export class Instance extends ros.Resource {
     /**
      * Attribute EndDate: Due date of the instance
      */
-    public readonly attrEndDate: any;
+    public readonly attrEndDate: ros.IResolvable;
 
     /**
      * Attribute InDebt: Instance is overdue
      */
-    public readonly attrInDebt: any;
+    public readonly attrInDebt: ros.IResolvable;
 
     /**
      * Attribute InstanceId: Instance ID
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute RemainDay: Number of available days for WAF Trial version
      */
-    public readonly attrRemainDay: any;
+    public readonly attrRemainDay: ros.IResolvable;
 
     /**
      * Attribute SubscriptionType: Subscription type of the instance
      */
-    public readonly attrSubscriptionType: any;
+    public readonly attrSubscriptionType: ros.IResolvable;
 
     /**
      * Attribute Trial: Trial version
      */
-    public readonly attrTrial: any;
+    public readonly attrTrial: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::WAF::Instance`.

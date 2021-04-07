@@ -9,37 +9,48 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
     public interface IRepositoryProps
     {
         /// <summary>Property repoName: the name of the repo.</summary>
-        [JsiiProperty(name: "repoName", typeJson: "{\"primitive\":\"string\"}")]
-        string RepoName
+        [JsiiProperty(name: "repoName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RepoName
         {
             get;
         }
 
         /// <summary>Property repoNamespace: the namespace the repo belongs to.</summary>
-        [JsiiProperty(name: "repoNamespace", typeJson: "{\"primitive\":\"string\"}")]
-        string RepoNamespace
+        [JsiiProperty(name: "repoNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RepoNamespace
         {
             get;
         }
 
         /// <summary>Property repoType: repository visibility, public or private.</summary>
-        [JsiiProperty(name: "repoType", typeJson: "{\"primitive\":\"string\"}")]
-        string RepoType
+        [JsiiProperty(name: "repoType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RepoType
         {
             get;
         }
 
         /// <summary>Property summary: description or something alike.</summary>
-        [JsiiProperty(name: "summary", typeJson: "{\"primitive\":\"string\"}")]
-        string Summary
+        [JsiiProperty(name: "summary", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Summary
         {
             get;
         }
 
         /// <summary>Property detail: detailed configuration in markdown format.</summary>
-        [JsiiProperty(name: "detail", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "detail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Detail
+        object? Detail
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property repoSource: Code Source message.</summary>
+        [JsiiProperty(name: "repoSource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cr.RosRepository.RepoSourceProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RepoSource
         {
             get
             {
@@ -56,39 +67,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
             }
 
             /// <summary>Property repoName: the name of the repo.</summary>
-            [JsiiProperty(name: "repoName", typeJson: "{\"primitive\":\"string\"}")]
-            public string RepoName
+            [JsiiProperty(name: "repoName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RepoName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property repoNamespace: the namespace the repo belongs to.</summary>
-            [JsiiProperty(name: "repoNamespace", typeJson: "{\"primitive\":\"string\"}")]
-            public string RepoNamespace
+            [JsiiProperty(name: "repoNamespace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RepoNamespace
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property repoType: repository visibility, public or private.</summary>
-            [JsiiProperty(name: "repoType", typeJson: "{\"primitive\":\"string\"}")]
-            public string RepoType
+            [JsiiProperty(name: "repoType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RepoType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property summary: description or something alike.</summary>
-            [JsiiProperty(name: "summary", typeJson: "{\"primitive\":\"string\"}")]
-            public string Summary
+            [JsiiProperty(name: "summary", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Summary
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property detail: detailed configuration in markdown format.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "detail", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Detail
+            [JsiiProperty(name: "detail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Detail
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property repoSource: Code Source message.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "repoSource", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cr.RosRepository.RepoSourceProperty\"}]}}", isOptional: true)]
+            public object? RepoSource
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

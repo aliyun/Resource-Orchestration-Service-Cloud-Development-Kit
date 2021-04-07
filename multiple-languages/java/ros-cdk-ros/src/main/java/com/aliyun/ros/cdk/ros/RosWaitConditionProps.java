@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitCondition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosWaitConditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosWaitConditionProps.Jsii$Proxy.class)
 public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getHandle();
+    @org.jetbrains.annotations.NotNull java.lang.Object getHandle();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getTimeout();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTimeout();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
         return null;
     }
 
@@ -32,9 +32,9 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosWaitConditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosWaitConditionProps> {
-        private java.lang.String handle;
-        private java.lang.Number timeout;
-        private java.lang.Number count;
+        private java.lang.Object handle;
+        private java.lang.Object timeout;
+        private java.lang.Object count;
 
         /**
          * Sets the value of {@link RosWaitConditionProps#getHandle}
@@ -42,6 +42,16 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder handle(java.lang.String handle) {
+            this.handle = handle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosWaitConditionProps#getHandle}
+         * @param handle the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder handle(com.aliyun.ros.cdk.core.IResolvable handle) {
             this.handle = handle;
             return this;
         }
@@ -57,11 +67,31 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosWaitConditionProps#getTimeout}
+         * @param timeout the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosWaitConditionProps#getCount}
          * @param count the value to be set.
          * @return {@code this}
          */
         public Builder count(java.lang.Number count) {
+            this.count = count;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosWaitConditionProps#getCount}
+         * @param count the value to be set.
+         * @return {@code this}
+         */
+        public Builder count(com.aliyun.ros.cdk.core.IResolvable count) {
             this.count = count;
             return this;
         }
@@ -82,9 +112,9 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosWaitConditionProps {
-        private final java.lang.String handle;
-        private final java.lang.Number timeout;
-        private final java.lang.Number count;
+        private final java.lang.Object handle;
+        private final java.lang.Object timeout;
+        private final java.lang.Object count;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +122,15 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.handle = software.amazon.jsii.Kernel.get(this, "handle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.handle = software.amazon.jsii.Kernel.get(this, "handle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String handle, final java.lang.Number timeout, final java.lang.Number count) {
+        protected Jsii$Proxy(final java.lang.Object handle, final java.lang.Object timeout, final java.lang.Object count) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.handle = java.util.Objects.requireNonNull(handle, "handle is required");
             this.timeout = java.util.Objects.requireNonNull(timeout, "timeout is required");
@@ -108,17 +138,17 @@ public interface RosWaitConditionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getHandle() {
+        public final java.lang.Object getHandle() {
             return this.handle;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
         @Override
-        public final java.lang.Number getCount() {
+        public final java.lang.Object getCount() {
             return this.count;
         }
 

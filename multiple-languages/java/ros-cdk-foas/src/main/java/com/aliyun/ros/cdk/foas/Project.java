@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.foas;
 /**
  * A ROS resource type:  `ALIYUN::FOAS::Project`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.986Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.571Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FOAS::Project`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Project(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.foas.ProjectProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::FOAS::Project`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Project(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.foas.ProjectProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute State: Project state.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrState() {
-        return software.amazon.jsii.Kernel.get(this, "attrState", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrState() {
+        return software.amazon.jsii.Kernel.get(this, "attrState", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.foas.Project> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,55 +90,131 @@ public class Project extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public.
+         * <p>
          * @return {@code this}
-         * @param deployType This parameter is required.
+         * @param deployType Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public. This parameter is required.
          */
         public Builder deployType(final java.lang.String deployType) {
             this.props.deployType(deployType);
             return this;
         }
+        /**
+         * Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public.
+         * <p>
+         * @return {@code this}
+         * @param deployType Property deployType: Cluster type: Exclusive cluster: cell Shared cluster: public. This parameter is required.
+         */
+        public Builder deployType(final com.aliyun.ros.cdk.core.IResolvable deployType) {
+            this.props.deployType(deployType);
+            return this;
+        }
 
         /**
+         * Property managerIds: Comma delimited account Id list of managers.
+         * <p>
          * @return {@code this}
-         * @param managerIds This parameter is required.
+         * @param managerIds Property managerIds: Comma delimited account Id list of managers. This parameter is required.
          */
         public Builder managerIds(final java.lang.String managerIds) {
             this.props.managerIds(managerIds);
             return this;
         }
+        /**
+         * Property managerIds: Comma delimited account Id list of managers.
+         * <p>
+         * @return {@code this}
+         * @param managerIds Property managerIds: Comma delimited account Id list of managers. This parameter is required.
+         */
+        public Builder managerIds(final com.aliyun.ros.cdk.core.IResolvable managerIds) {
+            this.props.managerIds(managerIds);
+            return this;
+        }
 
         /**
+         * Property name: Project name.
+         * <p>
+         * It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: Project name. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
+        /**
+         * Property name: Project name.
+         * <p>
+         * It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: Project name. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
+         * Property clusterId: Cluster ID.
+         * <p>
          * @return {@code this}
-         * @param clusterId This parameter is required.
+         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
          */
         public Builder clusterId(final java.lang.String clusterId) {
             this.props.clusterId(clusterId);
             return this;
         }
+        /**
+         * Property clusterId: Cluster ID.
+         * <p>
+         * @return {@code this}
+         * @param clusterId Property clusterId: Cluster ID. This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
 
         /**
+         * Property description: Project description.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Project description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Project description.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Project description. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property orderId: Order Id of Shared cluster.
+         * <p>
          * @return {@code this}
-         * @param orderId This parameter is required.
+         * @param orderId Property orderId: Order Id of Shared cluster. This parameter is required.
          */
         public Builder orderId(final java.lang.String orderId) {
+            this.props.orderId(orderId);
+            return this;
+        }
+        /**
+         * Property orderId: Order Id of Shared cluster.
+         * <p>
+         * @return {@code this}
+         * @param orderId Property orderId: Order Id of Shared cluster. This parameter is required.
+         */
+        public Builder orderId(final com.aliyun.ros.cdk.core.IResolvable orderId) {
             this.props.orderId(orderId);
             return this;
         }

@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Attribute</strong>: ContactName: The name of the alarm contact.
         /// </remarks>
-        [JsiiProperty(name: "attrContactName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContactName
+        [JsiiProperty(name: "attrContactName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContactName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -72,20 +72,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: contactName: The name of the alarm contact.
         /// </remarks>
-        [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ContactName
+        [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ContactName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: describe: The description of the alert contact.
         /// </remarks>
-        [JsiiProperty(name: "describe", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Describe
+        [JsiiProperty(name: "describe", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Describe
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -101,9 +101,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: aliIm: The TradeManager ID.
             /// </remarks>
-            [JsiiProperty(name: "aliIm", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "aliIm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? AliIm
+            object? AliIm
             {
                 get
                 {
@@ -114,9 +114,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: dingWebHook: The DingTalk Chatbot address.
             /// </remarks>
-            [JsiiProperty(name: "dingWebHook", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "dingWebHook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? DingWebHook
+            object? DingWebHook
             {
                 get
                 {
@@ -127,9 +127,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: mail: The email address of the contact.
             /// </remarks>
-            [JsiiProperty(name: "mail", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "mail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Mail
+            object? Mail
             {
                 get
                 {
@@ -140,9 +140,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: sms: The mobile phone number of the contact.
             /// </remarks>
-            [JsiiProperty(name: "sms", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "sms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Sms
+            object? Sms
             {
                 get
                 {
@@ -161,40 +161,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// <strong>Property</strong>: aliIm: The TradeManager ID.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "aliIm", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? AliIm
+                [JsiiProperty(name: "aliIm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? AliIm
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: dingWebHook: The DingTalk Chatbot address.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "dingWebHook", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? DingWebHook
+                [JsiiProperty(name: "dingWebHook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DingWebHook
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: mail: The email address of the contact.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "mail", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Mail
+                [JsiiProperty(name: "mail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Mail
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: sms: The mobile phone number of the contact.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "sms", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Sms
+                [JsiiProperty(name: "sms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Sms
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -205,8 +205,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: aliIm: The TradeManager ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "aliIm", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? AliIm
+            [JsiiProperty(name: "aliIm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? AliIm
             {
                 get;
                 set;
@@ -216,8 +216,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: dingWebHook: The DingTalk Chatbot address.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dingWebHook", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? DingWebHook
+            [JsiiProperty(name: "dingWebHook", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DingWebHook
             {
                 get;
                 set;
@@ -227,8 +227,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: mail: The email address of the contact.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "mail", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Mail
+            [JsiiProperty(name: "mail", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Mail
             {
                 get;
                 set;
@@ -238,8 +238,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <strong>Property</strong>: sms: The mobile phone number of the contact.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sms", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Sms
+            [JsiiProperty(name: "sms", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Sms
             {
                 get;
                 set;

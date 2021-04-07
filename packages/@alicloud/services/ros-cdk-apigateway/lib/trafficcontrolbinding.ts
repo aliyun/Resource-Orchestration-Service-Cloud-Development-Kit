@@ -16,17 +16,17 @@ export interface TrafficControlBindingProps {
     /**
      * Property groupId: The id of group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property stageName: Bind traffic in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * Property trafficControlId: The id of traffic control.
      */
-    readonly trafficControlId: string;
+    readonly trafficControlId: string | ros.IResolvable;
 }
 
 /**

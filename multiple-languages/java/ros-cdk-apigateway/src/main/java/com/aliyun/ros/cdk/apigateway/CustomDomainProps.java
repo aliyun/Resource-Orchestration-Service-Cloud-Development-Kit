@@ -3,34 +3,39 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.CustomDomainProps")
 @software.amazon.jsii.Jsii.Proxy(CustomDomainProps.Jsii$Proxy.class)
 public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property domainName: Custom domain name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomainName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
+     * Property groupId: The id of the Group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property certificateBody: SSL certificate body.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCertificateBody() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateBody() {
         return null;
     }
 
     /**
+     * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCertificateName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificateName() {
         return null;
     }
 
     /**
+     * Property certificatePrivateKey: SSL certificate key.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCertificatePrivateKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCertificatePrivateKey() {
         return null;
     }
 
@@ -44,15 +49,15 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link CustomDomainProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomDomainProps> {
-        private java.lang.String domainName;
-        private java.lang.String groupId;
-        private java.lang.String certificateBody;
-        private java.lang.String certificateName;
-        private java.lang.String certificatePrivateKey;
+        private java.lang.Object domainName;
+        private java.lang.Object groupId;
+        private java.lang.Object certificateBody;
+        private java.lang.Object certificateName;
+        private java.lang.Object certificatePrivateKey;
 
         /**
          * Sets the value of {@link CustomDomainProps#getDomainName}
-         * @param domainName the value to be set. This parameter is required.
+         * @param domainName Property domainName: Custom domain name. This parameter is required.
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
@@ -61,8 +66,18 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link CustomDomainProps#getDomainName}
+         * @param domainName Property domainName: Custom domain name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {
+            this.domainName = domainName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomDomainProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -71,8 +86,18 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link CustomDomainProps#getGroupId}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomDomainProps#getCertificateBody}
-         * @param certificateBody the value to be set.
+         * @param certificateBody Property certificateBody: SSL certificate body.
          * @return {@code this}
          */
         public Builder certificateBody(java.lang.String certificateBody) {
@@ -81,8 +106,18 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link CustomDomainProps#getCertificateBody}
+         * @param certificateBody Property certificateBody: SSL certificate body.
+         * @return {@code this}
+         */
+        public Builder certificateBody(com.aliyun.ros.cdk.core.IResolvable certificateBody) {
+            this.certificateBody = certificateBody;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomDomainProps#getCertificateName}
-         * @param certificateName the value to be set.
+         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
          * @return {@code this}
          */
         public Builder certificateName(java.lang.String certificateName) {
@@ -91,11 +126,31 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link CustomDomainProps#getCertificateName}
+         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * @return {@code this}
+         */
+        public Builder certificateName(com.aliyun.ros.cdk.core.IResolvable certificateName) {
+            this.certificateName = certificateName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomDomainProps#getCertificatePrivateKey}
-         * @param certificatePrivateKey the value to be set.
+         * @param certificatePrivateKey Property certificatePrivateKey: SSL certificate key.
          * @return {@code this}
          */
         public Builder certificatePrivateKey(java.lang.String certificatePrivateKey) {
+            this.certificatePrivateKey = certificatePrivateKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CustomDomainProps#getCertificatePrivateKey}
+         * @param certificatePrivateKey Property certificatePrivateKey: SSL certificate key.
+         * @return {@code this}
+         */
+        public Builder certificatePrivateKey(com.aliyun.ros.cdk.core.IResolvable certificatePrivateKey) {
             this.certificatePrivateKey = certificatePrivateKey;
             return this;
         }
@@ -116,11 +171,11 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomDomainProps {
-        private final java.lang.String domainName;
-        private final java.lang.String groupId;
-        private final java.lang.String certificateBody;
-        private final java.lang.String certificateName;
-        private final java.lang.String certificatePrivateKey;
+        private final java.lang.Object domainName;
+        private final java.lang.Object groupId;
+        private final java.lang.Object certificateBody;
+        private final java.lang.Object certificateName;
+        private final java.lang.Object certificatePrivateKey;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -128,17 +183,17 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.certificateBody = software.amazon.jsii.Kernel.get(this, "certificateBody", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.certificatePrivateKey = software.amazon.jsii.Kernel.get(this, "certificatePrivateKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificateBody = software.amazon.jsii.Kernel.get(this, "certificateBody", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificateName = software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.certificatePrivateKey = software.amazon.jsii.Kernel.get(this, "certificatePrivateKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domainName, final java.lang.String groupId, final java.lang.String certificateBody, final java.lang.String certificateName, final java.lang.String certificatePrivateKey) {
+        protected Jsii$Proxy(final java.lang.Object domainName, final java.lang.Object groupId, final java.lang.Object certificateBody, final java.lang.Object certificateName, final java.lang.Object certificatePrivateKey) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domainName = java.util.Objects.requireNonNull(domainName, "domainName is required");
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
@@ -148,27 +203,27 @@ public interface CustomDomainProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getDomainName() {
+        public final java.lang.Object getDomainName() {
             return this.domainName;
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getCertificateBody() {
+        public final java.lang.Object getCertificateBody() {
             return this.certificateBody;
         }
 
         @Override
-        public final java.lang.String getCertificateName() {
+        public final java.lang.Object getCertificateName() {
             return this.certificateName;
         }
 
         @Override
-        public final java.lang.String getCertificatePrivateKey() {
+        public final java.lang.Object getCertificatePrivateKey() {
             return this.certificatePrivateKey;
         }
 

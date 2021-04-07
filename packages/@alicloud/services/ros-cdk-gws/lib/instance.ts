@@ -11,34 +11,34 @@ export interface InstanceProps {
     /**
      * Property clusterId: Cluster id
      */
-    readonly clusterId: string;
+    readonly clusterId: string | ros.IResolvable;
 
     /**
      * Property imageId: Mirror id
      */
-    readonly imageId: string;
+    readonly imageId: string | ros.IResolvable;
 
     /**
      * Property instanceType: Examples of specifications, see examples of racial or specifications call DescribeInstanceTypes get specification sheet.
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 
     /**
      * Property systemDiskCategory: System disk categories: cloud_ssd, cloud_essd, cloud, cloud and so on.
      */
-    readonly systemDiskCategory: string;
+    readonly systemDiskCategory: string | ros.IResolvable;
 
     /**
      * Property systemDiskSize: System disk size
      */
-    readonly systemDiskSize: number;
+    readonly systemDiskSize: number | ros.IResolvable;
 
     /**
      * Property workMode: Work mode:
      * Desktop
      * Application
      */
-    readonly workMode: string;
+    readonly workMode: string | ros.IResolvable;
 
     /**
      * Property allocatePublicAddress: Whether to allocate a public network address
@@ -60,7 +60,7 @@ export interface InstanceProps {
      * PostPaid (default): Pay-As-You-Go
      * PrePaid: Subscription
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: Network charge type:
@@ -68,7 +68,7 @@ export interface InstanceProps {
      * PayByBandwidth: fixed-bandwidth billing
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property internetMaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps).
@@ -76,7 +76,7 @@ export interface InstanceProps {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetMaxBandwidthIn?: number;
+    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
     /**
      * Property internetMaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps).
@@ -84,12 +84,12 @@ export interface InstanceProps {
      * Default: 200
      * This value is only valid when AllocatePublicAddress is true.
      */
-    readonly internetMaxBandwidthOut?: number;
+    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
      * Property name: Instance name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property period: Period of subscription.
@@ -97,18 +97,18 @@ export interface InstanceProps {
      * When PeriodUnit is Month, the value range is 1-9, 12, 24, 36, 48, 60
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property periodUnit: Unit of period. Week or Month.
      * This value is only valid when InstanceChargeType is PrePaid.
      */
-    readonly periodUnit?: string;
+    readonly periodUnit?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: VSwitch id
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -124,32 +124,32 @@ export class Instance extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster id
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute InstanceChargeType: Instance charge type
      */
-    public readonly attrInstanceChargeType: any;
+    public readonly attrInstanceChargeType: ros.IResolvable;
 
     /**
      * Attribute InstanceId: Instance id
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * Attribute MaxBandwidthIn: Maximum inbound bandwidth of the public network (in Mbps)
      */
-    public readonly attrMaxBandwidthIn: any;
+    public readonly attrMaxBandwidthIn: ros.IResolvable;
 
     /**
      * Attribute MaxBandwidthOut: Maximum outbound bandwidth of the public network (in Mbps)
      */
-    public readonly attrMaxBandwidthOut: any;
+    public readonly attrMaxBandwidthOut: ros.IResolvable;
 
     /**
      * Attribute Name: Instance name
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GWS::Instance`.

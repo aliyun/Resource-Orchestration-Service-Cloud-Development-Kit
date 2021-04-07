@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
     public class DeviceProps : AlibabaCloud.SDK.ROS.CDK.Iot.IDeviceProps
     {
         /// <summary>Property productKey: The identifier of the product to which the device to be registered belongs.</summary>
-        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProductKey
+        [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProductKey
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// When you create a LoRaWAN devices, this will pass.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "devEui", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DevEui
+        [JsiiProperty(name: "devEui", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DevEui
         {
             get;
             set;
@@ -39,8 +39,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Note If you do not specify this parameter, the system will generate a name for the device.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "deviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DeviceName
+        [JsiiProperty(name: "deviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DeviceName
         {
             get;
             set;
@@ -51,8 +51,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// instance that you need to buy the incoming instance ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IotInstanceId
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// character counts as two characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "nickname", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Nickname
+        [JsiiProperty(name: "nickname", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Nickname
         {
             get;
             set;
@@ -77,8 +77,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// When you create a LoRaWAN devices, this will pass.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pinCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PinCode
+        [JsiiProperty(name: "pinCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PinCode
         {
             get;
             set;

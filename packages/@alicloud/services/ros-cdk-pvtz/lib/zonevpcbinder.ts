@@ -16,7 +16,7 @@ export interface ZoneVpcBinderProps {
     /**
      * Property zoneId: Zone Id
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 }
 
 /**
@@ -28,6 +28,16 @@ export class ZoneVpcBinder extends ros.Resource {
      * A factory method that creates a new instance of this class from an object
      * containing the properties of this ROS resource, which will be assigned to ROS resource.
      */
+
+    /**
+     * Attribute Vpcs: Vpc list
+     */
+    public readonly attrVpcs: ros.IResolvable;
+
+    /**
+     * Attribute ZoneId: Zone Id
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
@@ -44,5 +54,7 @@ export class ZoneVpcBinder extends ros.Resource {
             zoneId: props.zoneId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZoneVpcBinder;
+        this.attrVpcs = rosZoneVpcBinder.attrVpcs;
+        this.attrZoneId = rosZoneVpcBinder.attrZoneId;
     }
 }

@@ -6,14 +6,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
 {
     #pragma warning disable CS8618
 
-    /// <summary>(deprecated) Backwards compatibility for when 'MissingContext'&#xD; was defined here.</summary>
+    /// <summary>(deprecated) Backwards compatibility for when 'MissingContext' was defined here.</summary>
     /// <remarks>
     /// This is necessary because its used as an input in the stable
-    /// 
+    ///
     /// <strong>Stability</strong>: Deprecated
-    /// 
+    ///
     /// <strong>See</strong>: core.Stack.reportMissingContext
-    /// 
+    ///
     /// <strong>Alicloud</strong>: /ros-cdk-core library.
     /// </remarks>
     [JsiiByValue(fqn: "@alicloud/ros-cdk-cxapi.MissingContext")]
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <remarks>
         /// (This is the old untyped definition, which is necessary for backwards compatibility.
         /// See cxschema for a type definition.)
-        /// 
+        ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiProperty(name: "props", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOverride: true)]
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cxapi
         /// <remarks>
         /// (This is the old untyped definition, which is necessary for backwards compatibility.
         /// See cxschema for a type definition.)
-        /// 
+        ///
         /// <strong>Stability</strong>: Deprecated
         /// </remarks>
         [JsiiProperty(name: "provider", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]

@@ -47,37 +47,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Attribute</strong>: AnycastId: Anycast EIP instance ID.
         /// </remarks>
-        [JsiiProperty(name: "attrAnycastId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAnycastId
+        [JsiiProperty(name: "attrAnycastId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAnycastId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: BindInstanceId: The ID of the cloud resource instance to be bound.
         /// </remarks>
-        [JsiiProperty(name: "attrBindInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBindInstanceId
+        [JsiiProperty(name: "attrBindInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBindInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: BindInstanceRegionId: The region ID of the cloud resource instance to be bound.
         /// </remarks>
-        [JsiiProperty(name: "attrBindInstanceRegionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBindInstanceRegionId
+        [JsiiProperty(name: "attrBindInstanceRegionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBindInstanceRegionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: BindInstanceType: The cloud resource instance type to be bound.
         /// </remarks>
-        [JsiiProperty(name: "attrBindInstanceType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBindInstanceType
+        [JsiiProperty(name: "attrBindInstanceType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBindInstanceType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -89,40 +89,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: anycastId: Anycast EIP instance ID.
         /// </remarks>
-        [JsiiProperty(name: "anycastId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AnycastId
+        [JsiiProperty(name: "anycastId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AnycastId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: bindInstanceId: The ID of the cloud resource instance to be bound.
         /// </remarks>
-        [JsiiProperty(name: "bindInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string BindInstanceId
+        [JsiiProperty(name: "bindInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BindInstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
         /// </remarks>
-        [JsiiProperty(name: "bindInstanceRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string BindInstanceRegionId
+        [JsiiProperty(name: "bindInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BindInstanceRegionId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
         /// </remarks>
-        [JsiiProperty(name: "bindInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string BindInstanceType
+        [JsiiProperty(name: "bindInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BindInstanceType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 

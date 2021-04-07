@@ -11,12 +11,12 @@ export interface VServerGroupProps {
     /**
      * Property loadBalancerId: The id of load balancer.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * Property vServerGroupName: Display name of the VServerGroup.
      */
-    readonly vServerGroupName: string;
+    readonly vServerGroupName: string | ros.IResolvable;
 
     /**
      * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
@@ -37,12 +37,12 @@ export class VServerGroup extends ros.Resource {
     /**
      * Attribute BackendServers: Backend server list in this VServerGroup.
      */
-    public readonly attrBackendServers: any;
+    public readonly attrBackendServers: ros.IResolvable;
 
     /**
      * Attribute VServerGroupId: The id of VServerGroup created.
      */
-    public readonly attrVServerGroupId: any;
+    public readonly attrVServerGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::VServerGroup`.

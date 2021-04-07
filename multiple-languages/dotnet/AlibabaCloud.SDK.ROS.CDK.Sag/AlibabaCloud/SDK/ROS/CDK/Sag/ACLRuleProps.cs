@@ -11,24 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     public class ACLRuleProps : AlibabaCloud.SDK.ROS.CDK.Sag.IACLRuleProps
     {
         /// <summary>Property aclId: Access control ID.</summary>
-        [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AclId
+        [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AclId
         {
             get;
             set;
         }
 
         /// <summary>Property destCidr: Destination address, CIDR format and IP address range in IPv4 format.</summary>
-        [JsiiProperty(name: "destCidr", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DestCidr
+        [JsiiProperty(name: "destCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DestCidr
         {
             get;
             set;
         }
 
         /// <summary>Property destPortRange: Destination port range, 80/80.</summary>
-        [JsiiProperty(name: "destPortRange", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DestPortRange
+        [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DestPortRange
         {
             get;
             set;
@@ -38,40 +38,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// Value: in|out
         /// </remarks>
-        [JsiiProperty(name: "direction", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Direction
+        [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Direction
         {
             get;
             set;
         }
 
         /// <summary>Property ipProtocol: Protocol, not case sensitive.</summary>
-        [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string IpProtocol
+        [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object IpProtocol
         {
             get;
             set;
         }
 
         /// <summary>Property policy: Access: accept|drop.</summary>
-        [JsiiProperty(name: "policy", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Policy
+        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Policy
         {
             get;
             set;
         }
 
         /// <summary>Property sourceCidr: Source address, CIDR format and IP address range in IPv4 format.</summary>
-        [JsiiProperty(name: "sourceCidr", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SourceCidr
+        [JsiiProperty(name: "sourceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SourceCidr
         {
             get;
             set;
         }
 
         /// <summary>Property sourcePortRange: Source port range, 80/80.</summary>
-        [JsiiProperty(name: "sourcePortRange", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SourcePortRange
+        [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SourcePortRange
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <summary>Property description: Rule description information, ranging from 1 to 512 characters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// Default: 1
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Priority
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Priority
         {
             get;
             set;

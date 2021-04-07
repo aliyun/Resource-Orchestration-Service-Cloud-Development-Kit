@@ -33,66 +33,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         }
 
         /// <summary>Attribute ClusterConnectionString: The cluster connection string of the db cluster.</summary>
-        [JsiiProperty(name: "attrClusterConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterConnectionString
+        [JsiiProperty(name: "attrClusterConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ClusterEndpointId: The cluster endpoint ID of the db cluster.</summary>
-        [JsiiProperty(name: "attrClusterEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterEndpointId
+        [JsiiProperty(name: "attrClusterEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute CustomConnectionStrings: The custom connection strings of the db cluster.</summary>
-        [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCustomConnectionStrings
+        [JsiiProperty(name: "attrCustomConnectionStrings", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomConnectionStrings
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute CustomEndpointIds: The custom endpoint IDs of the db cluster.</summary>
-        [JsiiProperty(name: "attrCustomEndpointIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCustomEndpointIds
+        [JsiiProperty(name: "attrCustomEndpointIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCustomEndpointIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster.</summary>
-        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbClusterId
+        [JsiiProperty(name: "attrDbClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DBNodeIds: The ID list of cluster nodes.</summary>
-        [JsiiProperty(name: "attrDbNodeIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDbNodeIds
+        [JsiiProperty(name: "attrDbNodeIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDbNodeIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute OrderId: The Order ID.</summary>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PrimaryConnectionString: The primary connection string of the db cluster.</summary>
-        [JsiiProperty(name: "attrPrimaryConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrimaryConnectionString
+        [JsiiProperty(name: "attrPrimaryConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PrimaryEndpointId: The primary endpoint ID of the db cluster.</summary>
-        [JsiiProperty(name: "attrPrimaryEndpointId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrimaryEndpointId
+        [JsiiProperty(name: "attrPrimaryEndpointId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrimaryEndpointId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

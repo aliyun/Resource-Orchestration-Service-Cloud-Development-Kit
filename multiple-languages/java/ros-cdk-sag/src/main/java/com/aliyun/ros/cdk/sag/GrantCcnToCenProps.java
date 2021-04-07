@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Properties for defining a `ALIYUN::SAG::GrantCcnToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.GrantCcnToCenProps")
 @software.amazon.jsii.Jsii.Proxy(GrantCcnToCenProps.Jsii$Proxy.class)
 public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property ccnInstanceId: The ID of the CCN instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCcnInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCcnInstanceId();
 
     /**
+     * Property cenInstanceId: The ID of the CEN instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenInstanceId();
 
     /**
+     * Property cenUid: The ID of the account to which the CEN instance belongs.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenUid();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenUid();
 
     /**
      * @return a {@link Builder} of {@link GrantCcnToCenProps}
@@ -30,13 +33,13 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link GrantCcnToCenProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GrantCcnToCenProps> {
-        private java.lang.String ccnInstanceId;
-        private java.lang.String cenInstanceId;
-        private java.lang.String cenUid;
+        private java.lang.Object ccnInstanceId;
+        private java.lang.Object cenInstanceId;
+        private java.lang.Object cenUid;
 
         /**
          * Sets the value of {@link GrantCcnToCenProps#getCcnInstanceId}
-         * @param ccnInstanceId the value to be set. This parameter is required.
+         * @param ccnInstanceId Property ccnInstanceId: The ID of the CCN instance. This parameter is required.
          * @return {@code this}
          */
         public Builder ccnInstanceId(java.lang.String ccnInstanceId) {
@@ -45,8 +48,18 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link GrantCcnToCenProps#getCcnInstanceId}
+         * @param ccnInstanceId Property ccnInstanceId: The ID of the CCN instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ccnInstanceId(com.aliyun.ros.cdk.core.IResolvable ccnInstanceId) {
+            this.ccnInstanceId = ccnInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GrantCcnToCenProps#getCenInstanceId}
-         * @param cenInstanceId the value to be set. This parameter is required.
+         * @param cenInstanceId Property cenInstanceId: The ID of the CEN instance. This parameter is required.
          * @return {@code this}
          */
         public Builder cenInstanceId(java.lang.String cenInstanceId) {
@@ -55,11 +68,31 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link GrantCcnToCenProps#getCenInstanceId}
+         * @param cenInstanceId Property cenInstanceId: The ID of the CEN instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenInstanceId(com.aliyun.ros.cdk.core.IResolvable cenInstanceId) {
+            this.cenInstanceId = cenInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GrantCcnToCenProps#getCenUid}
-         * @param cenUid the value to be set. This parameter is required.
+         * @param cenUid Property cenUid: The ID of the account to which the CEN instance belongs. This parameter is required.
          * @return {@code this}
          */
         public Builder cenUid(java.lang.String cenUid) {
+            this.cenUid = cenUid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link GrantCcnToCenProps#getCenUid}
+         * @param cenUid Property cenUid: The ID of the account to which the CEN instance belongs. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenUid(com.aliyun.ros.cdk.core.IResolvable cenUid) {
             this.cenUid = cenUid;
             return this;
         }
@@ -80,9 +113,9 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GrantCcnToCenProps {
-        private final java.lang.String ccnInstanceId;
-        private final java.lang.String cenInstanceId;
-        private final java.lang.String cenUid;
+        private final java.lang.Object ccnInstanceId;
+        private final java.lang.Object cenInstanceId;
+        private final java.lang.Object cenUid;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +123,15 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ccnInstanceId = software.amazon.jsii.Kernel.get(this, "ccnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cenInstanceId = software.amazon.jsii.Kernel.get(this, "cenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cenUid = software.amazon.jsii.Kernel.get(this, "cenUid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ccnInstanceId = software.amazon.jsii.Kernel.get(this, "ccnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cenInstanceId = software.amazon.jsii.Kernel.get(this, "cenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cenUid = software.amazon.jsii.Kernel.get(this, "cenUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ccnInstanceId, final java.lang.String cenInstanceId, final java.lang.String cenUid) {
+        protected Jsii$Proxy(final java.lang.Object ccnInstanceId, final java.lang.Object cenInstanceId, final java.lang.Object cenUid) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ccnInstanceId = java.util.Objects.requireNonNull(ccnInstanceId, "ccnInstanceId is required");
             this.cenInstanceId = java.util.Objects.requireNonNull(cenInstanceId, "cenInstanceId is required");
@@ -106,17 +139,17 @@ public interface GrantCcnToCenProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getCcnInstanceId() {
+        public final java.lang.Object getCcnInstanceId() {
             return this.ccnInstanceId;
         }
 
         @Override
-        public final java.lang.String getCenInstanceId() {
+        public final java.lang.Object getCenInstanceId() {
             return this.cenInstanceId;
         }
 
         @Override
-        public final java.lang.String getCenUid() {
+        public final java.lang.Object getCenUid() {
             return this.cenUid;
         }
 

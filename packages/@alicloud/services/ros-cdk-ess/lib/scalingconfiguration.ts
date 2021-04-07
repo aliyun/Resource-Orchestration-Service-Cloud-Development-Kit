@@ -11,12 +11,12 @@ export interface ScalingConfigurationProps {
     /**
      * Property scalingGroupId: Scaling group id to create the scaling configuration.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * Property deploymentSetId: Deployment set ID.
      */
-    readonly deploymentSetId?: string;
+    readonly deploymentSetId?: string | ros.IResolvable;
 
     /**
      * Property diskMappings: Disk mappings to attach to instance.
@@ -26,27 +26,27 @@ export interface ScalingConfigurationProps {
     /**
      * Property hpcClusterId: The HPC cluster ID to which the instance belongs.
      */
-    readonly hpcClusterId?: string;
+    readonly hpcClusterId?: string | ros.IResolvable;
 
     /**
      * Property imageId: Image ID to create ecs instance .
      */
-    readonly imageId?: string;
+    readonly imageId?: string | ros.IResolvable;
 
     /**
      * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property instanceName: The name of the instance launched from the current scaling configuration.
      */
-    readonly instanceName?: string;
+    readonly instanceName?: string | ros.IResolvable;
 
     /**
      * Property instanceType: ecs supported instance type.
      */
-    readonly instanceType?: string;
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * Property instanceTypes: ecs supported instance types. Length [1,10]. If InstanceTypes is specified,the InstanceType will be ignored.
@@ -56,29 +56,29 @@ export interface ScalingConfigurationProps {
     /**
      * Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property internetMaxBandwidthIn: Maximum incoming bandwidth from the public network, measured in Mbps (Mega bit per second). The value range is [1,200]. If this parameter value is not specified, AliyunAPI automatically sets the value to 200 Mbps.
      */
-    readonly internetMaxBandwidthIn?: number;
+    readonly internetMaxBandwidthIn?: number | ros.IResolvable;
 
     /**
      * Property internetMaxBandwidthOut: Maximum outgoing bandwidth from the public network, measured in Mbps (Mega bit per second).
      * The value range for PayByBandwidth is [0,100]. If this parameter value is not specified, AliyunAPI automatically sets the value to 0 Mbps.
      * The value range for PayByTraffic is [0,100]. If this parameter value is not specified, an error is reported
      */
-    readonly internetMaxBandwidthOut?: number;
+    readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
     /**
      * Property ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'none'.
      */
-    readonly ioOptimized?: string;
+    readonly ioOptimized?: string | ros.IResolvable;
 
     /**
      * Property keyPairName: SSH key pair name.
      */
-    readonly keyPairName?: string;
+    readonly keyPairName?: string | ros.IResolvable;
 
     /**
      * Property passwordInherit: Whether to use the password pre-configured in the image you select or not. When PasswordInherit is specified, the Password must be null. For a secure access, make sure that the selected image has password configured.
@@ -88,27 +88,27 @@ export interface ScalingConfigurationProps {
     /**
      * Property ramRoleName: Instance RAM role name. The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
-    readonly ramRoleName?: string;
+    readonly ramRoleName?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property scalingConfigurationName: Name of created scaling configuration.
      */
-    readonly scalingConfigurationName?: string;
+    readonly scalingConfigurationName?: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: Security Group to create ecs instance.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * Property spotPriceLimit: Set the hourly maximum price for the instance. Supports a maximum of 3 decimal places, and the parameter takes effect only when the value of SpotStrategy is SpotWithPriceLimit.It is a default value for all instance types, and can be overwrite by SpotPriceLimitForInstanceType
      */
-    readonly spotPriceLimit?: number;
+    readonly spotPriceLimit?: number | ros.IResolvable;
 
     /**
      * Property spotPriceLimitForInstanceType: Set the hourly maximum price for the instance of specified instance type.
@@ -129,27 +129,27 @@ export interface ScalingConfigurationProps {
      * SpotAsPriceGo: System automatic bidding, following the current market actual price
      * Default: NoSpot.
      */
-    readonly spotStrategy?: string;
+    readonly spotStrategy?: string | ros.IResolvable;
 
     /**
      * Property systemDiskAutoSnapshotPolicyId: Auto snapshot policy ID.
      */
-    readonly systemDiskAutoSnapshotPolicyId?: string;
+    readonly systemDiskAutoSnapshotPolicyId?: string | ros.IResolvable;
 
     /**
      * Property systemDiskCategory: Category of system disk. Default is cloud.support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
      */
-    readonly systemDiskCategory?: string;
+    readonly systemDiskCategory?: string | ros.IResolvable;
 
     /**
      * Property systemDiskPerformanceLevel: The performance level of an ESSD.
      */
-    readonly systemDiskPerformanceLevel?: string;
+    readonly systemDiskPerformanceLevel?: string | ros.IResolvable;
 
     /**
      * Property systemDiskSize: Size of system disk. Unit is GB.
      */
-    readonly systemDiskSize?: number;
+    readonly systemDiskSize?: number | ros.IResolvable;
 
     /**
      * Property tagList: The tags of an instance in list format.
@@ -172,7 +172,7 @@ export interface ScalingConfigurationProps {
     /**
      * Property userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
      */
-    readonly userData?: string;
+    readonly userData?: string | ros.IResolvable;
 }
 
 /**
@@ -188,7 +188,7 @@ export class ScalingConfiguration extends ros.Resource {
     /**
      * Attribute ScalingConfigurationId: The scaling configuration id
      */
-    public readonly attrScalingConfigurationId: any;
+    public readonly attrScalingConfigurationId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ESS::ScalingConfiguration`.

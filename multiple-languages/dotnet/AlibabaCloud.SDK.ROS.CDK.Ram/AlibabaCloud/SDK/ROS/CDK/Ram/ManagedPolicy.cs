@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <summary>Attribute PolicyName: When the logical ID of this resource is provided to the Ref intrinsic function, Ref returns the ARN.</summary>
-        [JsiiProperty(name: "attrPolicyName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPolicyName
+        [JsiiProperty(name: "attrPolicyName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPolicyName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// <strong>Attribute</strong>: GroupId: Domain name group ID
         /// </remarks>
-        [JsiiProperty(name: "attrGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupId
+        [JsiiProperty(name: "attrGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,10 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// <strong>Property</strong>: groupName: Domain name group name
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GroupName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

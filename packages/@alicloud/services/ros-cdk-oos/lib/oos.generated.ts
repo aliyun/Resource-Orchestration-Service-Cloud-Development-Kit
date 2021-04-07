@@ -10,12 +10,12 @@ export interface RosExecutionProps {
     /**
      * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
      */
-    readonly templateName: string;
+    readonly templateName: string | ros.IResolvable;
 
     /**
      * @Property mode: Execution mode.
      */
-    readonly mode?: string;
+    readonly mode?: string | ros.IResolvable;
 
     /**
      * @Property parameters: Parameters for the execution of template.
@@ -25,7 +25,7 @@ export interface RosExecutionProps {
     /**
      * @Property parentExecutionId: Parent execution ID.
      */
-    readonly parentExecutionId?: string;
+    readonly parentExecutionId?: string | ros.IResolvable;
 
     /**
      * @Property resourceOptions: Resource options user by ROS.
@@ -37,12 +37,17 @@ export interface RosExecutionProps {
      * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
      * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
-    readonly safetyCheck?: string;
+    readonly safetyCheck?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
-    readonly templateVersion?: string;
+    readonly templateVersion?: string | ros.IResolvable;
 }
 
 /**
@@ -82,6 +87,7 @@ function RosExecutionPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
     errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosExecutionProps"');
 }
 
@@ -105,6 +111,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
       ParentExecutionId: ros.stringToRosTemplate(properties.parentExecutionId),
       ResourceOptions: rosExecutionResourceOptionsPropertyToRosTemplate(properties.resourceOptions),
       SafetyCheck: ros.stringToRosTemplate(properties.safetyCheck),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       TemplateVersion: ros.stringToRosTemplate(properties.templateVersion),
     };
 }
@@ -126,7 +133,7 @@ export class RosExecution extends ros.RosResource {
     /**
      * @Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
      */
-    public readonly attrCounters: any;
+    public readonly attrCounters: ros.IResolvable;
 
     /**
      * @Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
@@ -134,41 +141,41 @@ You can notify approve to oos execution by adding --data-binary '{"data": {"Noti
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
 You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrCurlCli: any;
+    public readonly attrCurlCli: ros.IResolvable;
 
     /**
      * @Attribute ExecutionId: Execution ID.
      */
-    public readonly attrExecutionId: any;
+    public readonly attrExecutionId: ros.IResolvable;
 
     /**
      * @Attribute Outputs: Execution output.
      */
-    public readonly attrOutputs: any;
+    public readonly attrOutputs: ros.IResolvable;
 
     /**
      * @Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}' 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrPowerShellCurlCli: any;
+    public readonly attrPowerShellCurlCli: ros.IResolvable;
 
     /**
      * @Attribute Status: Execution status.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * @Attribute StatusMessage: Execution status information.
      */
-    public readonly attrStatusMessage: any;
+    public readonly attrStatusMessage: ros.IResolvable;
 
     /**
      * @Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}" 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrWindowsCurlCli: any;
+    public readonly attrWindowsCurlCli: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -176,12 +183,12 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     /**
      * @Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
      */
-    public templateName: string;
+    public templateName: string | ros.IResolvable;
 
     /**
      * @Property mode: Execution mode.
      */
-    public mode: string | undefined;
+    public mode: string | ros.IResolvable | undefined;
 
     /**
      * @Property parameters: Parameters for the execution of template.
@@ -191,7 +198,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
     /**
      * @Property parentExecutionId: Parent execution ID.
      */
-    public parentExecutionId: string | undefined;
+    public parentExecutionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceOptions: Resource options user by ROS.
@@ -203,12 +210,17 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
      * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
      * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
-    public safetyCheck: string | undefined;
+    public safetyCheck: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property templateVersion: Version number of template. Default to the latest version.
      */
-    public templateVersion: string | undefined;
+    public templateVersion: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::OOS::Execution`.
@@ -219,14 +231,14 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
      */
     constructor(scope: ros.Construct, id: string, props: RosExecutionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosExecution.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCounters = ros.Token.asString(this.getAtt('Counters'));
-        this.attrCurlCli = ros.Token.asString(this.getAtt('CurlCli'));
-        this.attrExecutionId = ros.Token.asString(this.getAtt('ExecutionId'));
-        this.attrOutputs = ros.Token.asString(this.getAtt('Outputs'));
-        this.attrPowerShellCurlCli = ros.Token.asString(this.getAtt('PowerShellCurlCli'));
-        this.attrStatus = ros.Token.asString(this.getAtt('Status'));
-        this.attrStatusMessage = ros.Token.asString(this.getAtt('StatusMessage'));
-        this.attrWindowsCurlCli = ros.Token.asString(this.getAtt('WindowsCurlCli'));
+        this.attrCounters = this.getAtt('Counters');
+        this.attrCurlCli = this.getAtt('CurlCli');
+        this.attrExecutionId = this.getAtt('ExecutionId');
+        this.attrOutputs = this.getAtt('Outputs');
+        this.attrPowerShellCurlCli = this.getAtt('PowerShellCurlCli');
+        this.attrStatus = this.getAtt('Status');
+        this.attrStatusMessage = this.getAtt('StatusMessage');
+        this.attrWindowsCurlCli = this.getAtt('WindowsCurlCli');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.templateName = props.templateName;
@@ -235,6 +247,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
         this.parentExecutionId = props.parentExecutionId;
         this.resourceOptions = props.resourceOptions;
         this.safetyCheck = props.safetyCheck;
+        this.tags = props.tags;
         this.templateVersion = props.templateVersion;
     }
 
@@ -247,6 +260,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             parentExecutionId: this.parentExecutionId,
             resourceOptions: this.resourceOptions,
             safetyCheck: this.safetyCheck,
+            tags: this.tags,
             templateVersion: this.templateVersion,
         };
     }
@@ -267,7 +281,7 @@ export namespace RosExecution {
         /**
          * @Property timeout: Timeout seconds before the completion of execution. Default to 1800.
          */
-        readonly timeout?: number;
+        readonly timeout?: number | ros.IResolvable;
         /**
          * @Property successStatuses: It is used for ROS to judge if resource creation is successful.
      * Default to [Success].
@@ -338,19 +352,19 @@ export interface RosParameterProps {
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
      * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property type: The data type of the common parameter. 
      * Valid values: String and StringList.
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * @Property value: The value of the parameter. 
      * The value must be 1 to 4096 characters in length.
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * @Property constraints: The constraints of the parameter. 
@@ -360,13 +374,13 @@ export interface RosParameterProps {
      * MinLength: The minimum length of the parameter.
      * MaxLength: The maximum length of the parameter.
      */
-    readonly constraints?: string;
+    readonly constraints?: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the parameter. 
      * The description must be 1 to 200 characters in length.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -435,12 +449,12 @@ export class RosParameter extends ros.RosResource {
     /**
      * @Attribute Name: The Name of the parameter.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * @Attribute Value: The Value of the parameter.
      */
-    public readonly attrValue: any;
+    public readonly attrValue: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -450,19 +464,19 @@ export class RosParameter extends ros.RosResource {
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
      * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property type: The data type of the common parameter. 
      * Valid values: String and StringList.
      */
-    public type: string;
+    public type: string | ros.IResolvable;
 
     /**
      * @Property value: The value of the parameter. 
      * The value must be 1 to 4096 characters in length.
      */
-    public value: string;
+    public value: string | ros.IResolvable;
 
     /**
      * @Property constraints: The constraints of the parameter. 
@@ -472,13 +486,13 @@ export class RosParameter extends ros.RosResource {
      * MinLength: The minimum length of the parameter.
      * MaxLength: The maximum length of the parameter.
      */
-    public constraints: string | undefined;
+    public constraints: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: The description of the parameter. 
      * The description must be 1 to 200 characters in length.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::OOS::Parameter`.
@@ -489,8 +503,8 @@ export class RosParameter extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosParameterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosParameter.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
-        this.attrValue = ros.Token.asString(this.getAtt('Value'));
+        this.attrName = this.getAtt('Name');
+        this.attrValue = this.getAtt('Value');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -523,17 +537,17 @@ export interface RosTemplateProps {
     /**
      * @Property content: The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB.
      */
-    readonly content: string;
+    readonly content: string | ros.IResolvable;
 
     /**
      * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
      */
-    readonly templateName: string;
+    readonly templateName: string | ros.IResolvable;
 
     /**
      * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 }
 
 /**
@@ -564,14 +578,7 @@ function RosTemplatePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('templateName', ros.validateString)(properties.templateName));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: undefined,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosTemplateProps"');
 }
 
@@ -591,7 +598,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
     return {
       Content: ros.stringToRosTemplate(properties.content),
       TemplateName: ros.stringToRosTemplate(properties.templateName),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
     };
 }
 
@@ -612,17 +619,17 @@ export class RosTemplate extends ros.RosResource {
     /**
      * @Attribute ExecutionPolicy: Execution Policy
      */
-    public readonly attrExecutionPolicy: any;
+    public readonly attrExecutionPolicy: ros.IResolvable;
 
     /**
      * @Attribute TemplateId: Template ID
      */
-    public readonly attrTemplateId: any;
+    public readonly attrTemplateId: ros.IResolvable;
 
     /**
      * @Attribute TemplateName: Template Name
      */
-    public readonly attrTemplateName: any;
+    public readonly attrTemplateName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -630,17 +637,17 @@ export class RosTemplate extends ros.RosResource {
     /**
      * @Property content: The content of the template. The template must be in the JSON or YAML format. Maximum size: 64 KB.
      */
-    public content: string;
+    public content: string | ros.IResolvable;
 
     /**
      * @Property templateName: The name of the template. The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
      */
-    public templateName: string;
+    public templateName: string | ros.IResolvable;
 
     /**
      * @Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * Create a new `ALIYUN::OOS::Template`.
@@ -651,14 +658,14 @@ export class RosTemplate extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTemplateProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrExecutionPolicy = ros.Token.asString(this.getAtt('ExecutionPolicy'));
-        this.attrTemplateId = ros.Token.asString(this.getAtt('TemplateId'));
-        this.attrTemplateName = ros.Token.asString(this.getAtt('TemplateName'));
+        this.attrExecutionPolicy = this.getAtt('ExecutionPolicy');
+        this.attrTemplateId = this.getAtt('TemplateId');
+        this.attrTemplateName = this.getAtt('TemplateName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.content = props.content;
         this.templateName = props.templateName;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::OOS::Template", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -666,7 +673,7 @@ export class RosTemplate extends ros.RosResource {
         return {
             content: this.content,
             templateName: this.templateName,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.emr;
 /**
  * Properties for defining a `ALIYUN::EMR::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.781Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.460Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getChargeType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getChargeType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getEmrVer();
+    @org.jetbrains.annotations.NotNull java.lang.Object getEmrVer();
 
     /**
      */
@@ -26,11 +26,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetType();
 
     /**
      */
@@ -38,11 +38,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getZoneId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAuthorizeContent() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuthorizeContent() {
         return null;
     }
 
@@ -66,13 +66,13 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConfigurations() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConfigurations() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDepositType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDepositType() {
         return null;
     }
 
@@ -96,7 +96,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceGeneration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceGeneration() {
         return null;
     }
 
@@ -114,67 +114,67 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLogPath() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogPath() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMachineType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMachineType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterPwd() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterPwd() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMetaStoreConf() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMetaStoreConf() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMetaStoreType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMetaStoreType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getOptionSoftWareList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOptionSoftWareList() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRelatedClusterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRelatedClusterId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupName() {
         return null;
     }
 
@@ -192,7 +192,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserDefinedEmrEcsRole() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserDefinedEmrEcsRole() {
         return null;
     }
 
@@ -204,19 +204,19 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWhiteListType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWhiteListType() {
         return null;
     }
 
@@ -230,44 +230,44 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.String chargeType;
-        private java.lang.String clusterType;
-        private java.lang.String emrVer;
+        private java.lang.Object chargeType;
+        private java.lang.Object clusterType;
+        private java.lang.Object emrVer;
         private java.lang.Object hostGroup;
-        private java.lang.String name;
-        private java.lang.String netType;
+        private java.lang.Object name;
+        private java.lang.Object netType;
         private java.lang.Object useLocalMetaDb;
-        private java.lang.String zoneId;
-        private java.lang.String authorizeContent;
+        private java.lang.Object zoneId;
+        private java.lang.Object authorizeContent;
         private java.lang.Object autoRenew;
         private java.lang.Object bootstrapAction;
         private java.lang.Object config;
-        private java.lang.String configurations;
-        private java.lang.String depositType;
+        private java.lang.Object configurations;
+        private java.lang.Object depositType;
         private java.lang.Object easEnable;
         private java.lang.Object highAvailabilityEnable;
         private java.lang.Object initCustomHiveMetaDb;
-        private java.lang.String instanceGeneration;
+        private java.lang.Object instanceGeneration;
         private java.lang.Object ioOptimized;
         private java.lang.Object isOpenPublicIp;
-        private java.lang.String keyPairName;
-        private java.lang.String logPath;
-        private java.lang.String machineType;
-        private java.lang.String masterPwd;
-        private java.lang.String metaStoreConf;
-        private java.lang.String metaStoreType;
-        private java.util.List<java.lang.String> optionSoftWareList;
-        private java.lang.Number period;
-        private java.lang.String relatedClusterId;
-        private java.lang.String securityGroupId;
-        private java.lang.String securityGroupName;
+        private java.lang.Object keyPairName;
+        private java.lang.Object logPath;
+        private java.lang.Object machineType;
+        private java.lang.Object masterPwd;
+        private java.lang.Object metaStoreConf;
+        private java.lang.Object metaStoreType;
+        private java.lang.Object optionSoftWareList;
+        private java.lang.Object period;
+        private java.lang.Object relatedClusterId;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object securityGroupName;
         private java.lang.Object sshEnable;
         private java.lang.Object useCustomHiveMetaDb;
-        private java.lang.String userDefinedEmrEcsRole;
+        private java.lang.Object userDefinedEmrEcsRole;
         private java.lang.Object userInfo;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String whiteListType;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object whiteListType;
 
         /**
          * Sets the value of {@link RosClusterProps#getChargeType}
@@ -275,6 +275,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getChargeType}
+         * @param chargeType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
             return this;
         }
@@ -290,11 +300,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getClusterType}
+         * @param clusterType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
+            this.clusterType = clusterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getEmrVer}
          * @param emrVer the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder emrVer(java.lang.String emrVer) {
+            this.emrVer = emrVer;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getEmrVer}
+         * @param emrVer the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder emrVer(com.aliyun.ros.cdk.core.IResolvable emrVer) {
             this.emrVer = emrVer;
             return this;
         }
@@ -330,11 +360,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getNetType}
          * @param netType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder netType(java.lang.String netType) {
+            this.netType = netType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getNetType}
+         * @param netType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
             this.netType = netType;
             return this;
         }
@@ -370,11 +420,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getZoneId}
+         * @param zoneId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getAuthorizeContent}
          * @param authorizeContent the value to be set.
          * @return {@code this}
          */
         public Builder authorizeContent(java.lang.String authorizeContent) {
+            this.authorizeContent = authorizeContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getAuthorizeContent}
+         * @param authorizeContent the value to be set.
+         * @return {@code this}
+         */
+        public Builder authorizeContent(com.aliyun.ros.cdk.core.IResolvable authorizeContent) {
             this.authorizeContent = authorizeContent;
             return this;
         }
@@ -450,11 +520,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getConfigurations}
+         * @param configurations the value to be set.
+         * @return {@code this}
+         */
+        public Builder configurations(com.aliyun.ros.cdk.core.IResolvable configurations) {
+            this.configurations = configurations;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getDepositType}
          * @param depositType the value to be set.
          * @return {@code this}
          */
         public Builder depositType(java.lang.String depositType) {
+            this.depositType = depositType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getDepositType}
+         * @param depositType the value to be set.
+         * @return {@code this}
+         */
+        public Builder depositType(com.aliyun.ros.cdk.core.IResolvable depositType) {
             this.depositType = depositType;
             return this;
         }
@@ -530,6 +620,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getInstanceGeneration}
+         * @param instanceGeneration the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceGeneration(com.aliyun.ros.cdk.core.IResolvable instanceGeneration) {
+            this.instanceGeneration = instanceGeneration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getIoOptimized}
          * @param ioOptimized the value to be set.
          * @return {@code this}
@@ -580,11 +680,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getKeyPairName}
+         * @param keyPairName the value to be set.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getLogPath}
          * @param logPath the value to be set.
          * @return {@code this}
          */
         public Builder logPath(java.lang.String logPath) {
+            this.logPath = logPath;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getLogPath}
+         * @param logPath the value to be set.
+         * @return {@code this}
+         */
+        public Builder logPath(com.aliyun.ros.cdk.core.IResolvable logPath) {
             this.logPath = logPath;
             return this;
         }
@@ -600,11 +720,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getMachineType}
+         * @param machineType the value to be set.
+         * @return {@code this}
+         */
+        public Builder machineType(com.aliyun.ros.cdk.core.IResolvable machineType) {
+            this.machineType = machineType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getMasterPwd}
          * @param masterPwd the value to be set.
          * @return {@code this}
          */
         public Builder masterPwd(java.lang.String masterPwd) {
+            this.masterPwd = masterPwd;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getMasterPwd}
+         * @param masterPwd the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterPwd(com.aliyun.ros.cdk.core.IResolvable masterPwd) {
             this.masterPwd = masterPwd;
             return this;
         }
@@ -620,6 +760,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getMetaStoreConf}
+         * @param metaStoreConf the value to be set.
+         * @return {@code this}
+         */
+        public Builder metaStoreConf(com.aliyun.ros.cdk.core.IResolvable metaStoreConf) {
+            this.metaStoreConf = metaStoreConf;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getMetaStoreType}
          * @param metaStoreType the value to be set.
          * @return {@code this}
@@ -630,11 +780,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getMetaStoreType}
+         * @param metaStoreType the value to be set.
+         * @return {@code this}
+         */
+        public Builder metaStoreType(com.aliyun.ros.cdk.core.IResolvable metaStoreType) {
+            this.metaStoreType = metaStoreType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getOptionSoftWareList}
          * @param optionSoftWareList the value to be set.
          * @return {@code this}
          */
-        public Builder optionSoftWareList(java.util.List<java.lang.String> optionSoftWareList) {
+        public Builder optionSoftWareList(com.aliyun.ros.cdk.core.IResolvable optionSoftWareList) {
+            this.optionSoftWareList = optionSoftWareList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getOptionSoftWareList}
+         * @param optionSoftWareList the value to be set.
+         * @return {@code this}
+         */
+        public Builder optionSoftWareList(java.util.List<? extends java.lang.Object> optionSoftWareList) {
             this.optionSoftWareList = optionSoftWareList;
             return this;
         }
@@ -650,11 +820,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getRelatedClusterId}
          * @param relatedClusterId the value to be set.
          * @return {@code this}
          */
         public Builder relatedClusterId(java.lang.String relatedClusterId) {
+            this.relatedClusterId = relatedClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getRelatedClusterId}
+         * @param relatedClusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder relatedClusterId(com.aliyun.ros.cdk.core.IResolvable relatedClusterId) {
             this.relatedClusterId = relatedClusterId;
             return this;
         }
@@ -670,11 +860,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getSecurityGroupName}
          * @param securityGroupName the value to be set.
          * @return {@code this}
          */
         public Builder securityGroupName(java.lang.String securityGroupName) {
+            this.securityGroupName = securityGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getSecurityGroupName}
+         * @param securityGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupName(com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
             this.securityGroupName = securityGroupName;
             return this;
         }
@@ -730,6 +940,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getUserDefinedEmrEcsRole}
+         * @param userDefinedEmrEcsRole the value to be set.
+         * @return {@code this}
+         */
+        public Builder userDefinedEmrEcsRole(com.aliyun.ros.cdk.core.IResolvable userDefinedEmrEcsRole) {
+            this.userDefinedEmrEcsRole = userDefinedEmrEcsRole;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getUserInfo}
          * @param userInfo the value to be set.
          * @return {@code this}
@@ -760,6 +980,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
@@ -770,11 +1000,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getWhiteListType}
          * @param whiteListType the value to be set.
          * @return {@code this}
          */
         public Builder whiteListType(java.lang.String whiteListType) {
+            this.whiteListType = whiteListType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getWhiteListType}
+         * @param whiteListType the value to be set.
+         * @return {@code this}
+         */
+        public Builder whiteListType(com.aliyun.ros.cdk.core.IResolvable whiteListType) {
             this.whiteListType = whiteListType;
             return this;
         }
@@ -795,44 +1045,44 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterProps {
-        private final java.lang.String chargeType;
-        private final java.lang.String clusterType;
-        private final java.lang.String emrVer;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object clusterType;
+        private final java.lang.Object emrVer;
         private final java.lang.Object hostGroup;
-        private final java.lang.String name;
-        private final java.lang.String netType;
+        private final java.lang.Object name;
+        private final java.lang.Object netType;
         private final java.lang.Object useLocalMetaDb;
-        private final java.lang.String zoneId;
-        private final java.lang.String authorizeContent;
+        private final java.lang.Object zoneId;
+        private final java.lang.Object authorizeContent;
         private final java.lang.Object autoRenew;
         private final java.lang.Object bootstrapAction;
         private final java.lang.Object config;
-        private final java.lang.String configurations;
-        private final java.lang.String depositType;
+        private final java.lang.Object configurations;
+        private final java.lang.Object depositType;
         private final java.lang.Object easEnable;
         private final java.lang.Object highAvailabilityEnable;
         private final java.lang.Object initCustomHiveMetaDb;
-        private final java.lang.String instanceGeneration;
+        private final java.lang.Object instanceGeneration;
         private final java.lang.Object ioOptimized;
         private final java.lang.Object isOpenPublicIp;
-        private final java.lang.String keyPairName;
-        private final java.lang.String logPath;
-        private final java.lang.String machineType;
-        private final java.lang.String masterPwd;
-        private final java.lang.String metaStoreConf;
-        private final java.lang.String metaStoreType;
-        private final java.util.List<java.lang.String> optionSoftWareList;
-        private final java.lang.Number period;
-        private final java.lang.String relatedClusterId;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String securityGroupName;
+        private final java.lang.Object keyPairName;
+        private final java.lang.Object logPath;
+        private final java.lang.Object machineType;
+        private final java.lang.Object masterPwd;
+        private final java.lang.Object metaStoreConf;
+        private final java.lang.Object metaStoreType;
+        private final java.lang.Object optionSoftWareList;
+        private final java.lang.Object period;
+        private final java.lang.Object relatedClusterId;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityGroupName;
         private final java.lang.Object sshEnable;
         private final java.lang.Object useCustomHiveMetaDb;
-        private final java.lang.String userDefinedEmrEcsRole;
+        private final java.lang.Object userDefinedEmrEcsRole;
         private final java.lang.Object userInfo;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String whiteListType;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object whiteListType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -840,50 +1090,50 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.emrVer = software.amazon.jsii.Kernel.get(this, "emrVer", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.emrVer = software.amazon.jsii.Kernel.get(this, "emrVer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hostGroup = software.amazon.jsii.Kernel.get(this, "hostGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.useLocalMetaDb = software.amazon.jsii.Kernel.get(this, "useLocalMetaDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.authorizeContent = software.amazon.jsii.Kernel.get(this, "authorizeContent", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.authorizeContent = software.amazon.jsii.Kernel.get(this, "authorizeContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bootstrapAction = software.amazon.jsii.Kernel.get(this, "bootstrapAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.config = software.amazon.jsii.Kernel.get(this, "config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.configurations = software.amazon.jsii.Kernel.get(this, "configurations", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.depositType = software.amazon.jsii.Kernel.get(this, "depositType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.configurations = software.amazon.jsii.Kernel.get(this, "configurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.depositType = software.amazon.jsii.Kernel.get(this, "depositType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.easEnable = software.amazon.jsii.Kernel.get(this, "easEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.highAvailabilityEnable = software.amazon.jsii.Kernel.get(this, "highAvailabilityEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.initCustomHiveMetaDb = software.amazon.jsii.Kernel.get(this, "initCustomHiveMetaDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.instanceGeneration = software.amazon.jsii.Kernel.get(this, "instanceGeneration", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceGeneration = software.amazon.jsii.Kernel.get(this, "instanceGeneration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isOpenPublicIp = software.amazon.jsii.Kernel.get(this, "isOpenPublicIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logPath = software.amazon.jsii.Kernel.get(this, "logPath", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.machineType = software.amazon.jsii.Kernel.get(this, "machineType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterPwd = software.amazon.jsii.Kernel.get(this, "masterPwd", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.metaStoreConf = software.amazon.jsii.Kernel.get(this, "metaStoreConf", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.metaStoreType = software.amazon.jsii.Kernel.get(this, "metaStoreType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.optionSoftWareList = software.amazon.jsii.Kernel.get(this, "optionSoftWareList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.relatedClusterId = software.amazon.jsii.Kernel.get(this, "relatedClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logPath = software.amazon.jsii.Kernel.get(this, "logPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.machineType = software.amazon.jsii.Kernel.get(this, "machineType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterPwd = software.amazon.jsii.Kernel.get(this, "masterPwd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.metaStoreConf = software.amazon.jsii.Kernel.get(this, "metaStoreConf", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.metaStoreType = software.amazon.jsii.Kernel.get(this, "metaStoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.optionSoftWareList = software.amazon.jsii.Kernel.get(this, "optionSoftWareList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.relatedClusterId = software.amazon.jsii.Kernel.get(this, "relatedClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sshEnable = software.amazon.jsii.Kernel.get(this, "sshEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.useCustomHiveMetaDb = software.amazon.jsii.Kernel.get(this, "useCustomHiveMetaDb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.userDefinedEmrEcsRole = software.amazon.jsii.Kernel.get(this, "userDefinedEmrEcsRole", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userDefinedEmrEcsRole = software.amazon.jsii.Kernel.get(this, "userDefinedEmrEcsRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.userInfo = software.amazon.jsii.Kernel.get(this, "userInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.whiteListType = software.amazon.jsii.Kernel.get(this, "whiteListType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.whiteListType = software.amazon.jsii.Kernel.get(this, "whiteListType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String chargeType, final java.lang.String clusterType, final java.lang.String emrVer, final java.lang.Object hostGroup, final java.lang.String name, final java.lang.String netType, final java.lang.Object useLocalMetaDb, final java.lang.String zoneId, final java.lang.String authorizeContent, final java.lang.Object autoRenew, final java.lang.Object bootstrapAction, final java.lang.Object config, final java.lang.String configurations, final java.lang.String depositType, final java.lang.Object easEnable, final java.lang.Object highAvailabilityEnable, final java.lang.Object initCustomHiveMetaDb, final java.lang.String instanceGeneration, final java.lang.Object ioOptimized, final java.lang.Object isOpenPublicIp, final java.lang.String keyPairName, final java.lang.String logPath, final java.lang.String machineType, final java.lang.String masterPwd, final java.lang.String metaStoreConf, final java.lang.String metaStoreType, final java.util.List<java.lang.String> optionSoftWareList, final java.lang.Number period, final java.lang.String relatedClusterId, final java.lang.String securityGroupId, final java.lang.String securityGroupName, final java.lang.Object sshEnable, final java.lang.Object useCustomHiveMetaDb, final java.lang.String userDefinedEmrEcsRole, final java.lang.Object userInfo, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String whiteListType) {
+        protected Jsii$Proxy(final java.lang.Object chargeType, final java.lang.Object clusterType, final java.lang.Object emrVer, final java.lang.Object hostGroup, final java.lang.Object name, final java.lang.Object netType, final java.lang.Object useLocalMetaDb, final java.lang.Object zoneId, final java.lang.Object authorizeContent, final java.lang.Object autoRenew, final java.lang.Object bootstrapAction, final java.lang.Object config, final java.lang.Object configurations, final java.lang.Object depositType, final java.lang.Object easEnable, final java.lang.Object highAvailabilityEnable, final java.lang.Object initCustomHiveMetaDb, final java.lang.Object instanceGeneration, final java.lang.Object ioOptimized, final java.lang.Object isOpenPublicIp, final java.lang.Object keyPairName, final java.lang.Object logPath, final java.lang.Object machineType, final java.lang.Object masterPwd, final java.lang.Object metaStoreConf, final java.lang.Object metaStoreType, final java.lang.Object optionSoftWareList, final java.lang.Object period, final java.lang.Object relatedClusterId, final java.lang.Object securityGroupId, final java.lang.Object securityGroupName, final java.lang.Object sshEnable, final java.lang.Object useCustomHiveMetaDb, final java.lang.Object userDefinedEmrEcsRole, final java.lang.Object userInfo, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object whiteListType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.chargeType = java.util.Objects.requireNonNull(chargeType, "chargeType is required");
             this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
@@ -926,17 +1176,17 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.String getClusterType() {
+        public final java.lang.Object getClusterType() {
             return this.clusterType;
         }
 
         @Override
-        public final java.lang.String getEmrVer() {
+        public final java.lang.Object getEmrVer() {
             return this.emrVer;
         }
 
@@ -946,12 +1196,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getNetType() {
+        public final java.lang.Object getNetType() {
             return this.netType;
         }
 
@@ -961,12 +1211,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
         @Override
-        public final java.lang.String getAuthorizeContent() {
+        public final java.lang.Object getAuthorizeContent() {
             return this.authorizeContent;
         }
 
@@ -986,12 +1236,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getConfigurations() {
+        public final java.lang.Object getConfigurations() {
             return this.configurations;
         }
 
         @Override
-        public final java.lang.String getDepositType() {
+        public final java.lang.Object getDepositType() {
             return this.depositType;
         }
 
@@ -1011,7 +1261,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceGeneration() {
+        public final java.lang.Object getInstanceGeneration() {
             return this.instanceGeneration;
         }
 
@@ -1026,57 +1276,57 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
         @Override
-        public final java.lang.String getLogPath() {
+        public final java.lang.Object getLogPath() {
             return this.logPath;
         }
 
         @Override
-        public final java.lang.String getMachineType() {
+        public final java.lang.Object getMachineType() {
             return this.machineType;
         }
 
         @Override
-        public final java.lang.String getMasterPwd() {
+        public final java.lang.Object getMasterPwd() {
             return this.masterPwd;
         }
 
         @Override
-        public final java.lang.String getMetaStoreConf() {
+        public final java.lang.Object getMetaStoreConf() {
             return this.metaStoreConf;
         }
 
         @Override
-        public final java.lang.String getMetaStoreType() {
+        public final java.lang.Object getMetaStoreType() {
             return this.metaStoreType;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getOptionSoftWareList() {
+        public final java.lang.Object getOptionSoftWareList() {
             return this.optionSoftWareList;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getRelatedClusterId() {
+        public final java.lang.Object getRelatedClusterId() {
             return this.relatedClusterId;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupName() {
+        public final java.lang.Object getSecurityGroupName() {
             return this.securityGroupName;
         }
 
@@ -1091,7 +1341,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getUserDefinedEmrEcsRole() {
+        public final java.lang.Object getUserDefinedEmrEcsRole() {
             return this.userDefinedEmrEcsRole;
         }
 
@@ -1101,17 +1351,17 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getWhiteListType() {
+        public final java.lang.Object getWhiteListType() {
             return this.whiteListType;
         }
 

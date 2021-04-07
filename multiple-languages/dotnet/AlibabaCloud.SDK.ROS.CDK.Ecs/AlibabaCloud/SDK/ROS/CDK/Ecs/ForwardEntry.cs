@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute ForwardEntryId: The id of created forward entry.</summary>
-        [JsiiProperty(name: "attrForwardEntryId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrForwardEntryId
+        [JsiiProperty(name: "attrForwardEntryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrForwardEntryId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

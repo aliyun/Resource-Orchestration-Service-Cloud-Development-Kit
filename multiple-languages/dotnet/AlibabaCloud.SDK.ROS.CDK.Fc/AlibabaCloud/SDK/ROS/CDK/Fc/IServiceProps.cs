@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public interface IServiceProps
     {
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-        string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServiceName
         {
             get;
         }
@@ -30,9 +30,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         }
 
         /// <summary>Property description: Service description.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -83,9 +83,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
         /// </remarks>
-        [JsiiProperty(name: "role", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Role
+        object? Role
         {
             get
             {
@@ -97,9 +97,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Fc.RosService.ITagsProperty[]? Tags
         {
             get
             {
@@ -144,10 +144,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
 
             /// <summary>Property serviceName: Service name.</summary>
-            [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ServiceName
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServiceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.</summary>
@@ -163,10 +163,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
             /// <summary>Property description: Service description.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property internetAccess: Set it to true to enable Internet access.</summary>
@@ -204,10 +204,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "role", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Role
+            [JsiiProperty(name: "role", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Role
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to service.</summary>
@@ -215,10 +215,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             /// Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-fc.RosService.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Fc.RosService.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Fc.RosService.ITagsProperty[]?>();
             }
 
             /// <summary>Property tracingConfig: The Tracing Analysis configuration.</summary>

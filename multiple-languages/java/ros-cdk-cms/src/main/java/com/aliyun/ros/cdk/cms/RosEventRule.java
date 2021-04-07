@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::EventRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRule")
 public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrData() {
-        return software.amazon.jsii.Kernel.get(this, "attrData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrData() {
+        return software.amazon.jsii.Kernel.get(this, "attrData", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,8 +81,8 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRuleName() {
-        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRuleName() {
+        return software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +93,14 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRuleName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ruleName", java.util.Objects.requireNonNull(value, "ruleName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEventType() {
-        return software.amazon.jsii.Kernel.get(this, "eventType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEventType() {
+        return software.amazon.jsii.Kernel.get(this, "eventType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEventType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eventType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,13 +147,25 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getState() {
-        return software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getState() {
+        return software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setState(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "state", value);
+    }
+
+    /**
+     */
+    public void setState(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "state", value);
     }
     /**
@@ -169,7 +199,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getProduct() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getProduct() {
             return null;
         }
 
@@ -195,7 +225,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             private java.lang.Object eventTypeList;
             private java.lang.Object levelList;
             private java.lang.Object nameList;
-            private java.lang.String product;
+            private java.lang.Object product;
             private java.lang.Object statusList;
 
             /**
@@ -276,6 +306,17 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EventPatternProperty#getProduct}
+             * @param product the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder product(com.aliyun.ros.cdk.core.IResolvable product) {
+                this.product = product;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EventPatternProperty#getStatusList}
              * @param statusList the value to be set.
              * @return {@code this}
@@ -318,7 +359,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object eventTypeList;
             private final java.lang.Object levelList;
             private final java.lang.Object nameList;
-            private final java.lang.String product;
+            private final java.lang.Object product;
             private final java.lang.Object statusList;
 
             /**
@@ -330,14 +371,14 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.eventTypeList = software.amazon.jsii.Kernel.get(this, "eventTypeList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.levelList = software.amazon.jsii.Kernel.get(this, "levelList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.nameList = software.amazon.jsii.Kernel.get(this, "nameList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-                this.product = software.amazon.jsii.Kernel.get(this, "product", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.product = software.amazon.jsii.Kernel.get(this, "product", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.statusList = software.amazon.jsii.Kernel.get(this, "statusList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Object eventTypeList, final java.lang.Object levelList, final java.lang.Object nameList, final java.lang.String product, final java.lang.Object statusList) {
+            protected Jsii$Proxy(final java.lang.Object eventTypeList, final java.lang.Object levelList, final java.lang.Object nameList, final java.lang.Object product, final java.lang.Object statusList) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.eventTypeList = eventTypeList;
                 this.levelList = levelList;
@@ -362,7 +403,7 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getProduct() {
+            public final java.lang.Object getProduct() {
                 return this.product;
             }
 
@@ -480,12 +521,28 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ruleName(ruleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ruleName This parameter is required.
+         */
+        public Builder ruleName(final com.aliyun.ros.cdk.core.IResolvable ruleName) {
+            this.props.ruleName(ruleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -498,6 +555,14 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.eventType(eventType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param eventType This parameter is required.
+         */
+        public Builder eventType(final com.aliyun.ros.cdk.core.IResolvable eventType) {
+            this.props.eventType(eventType);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -507,12 +572,28 @@ public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param groupId This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param state This parameter is required.
          */
         public Builder state(final java.lang.String state) {
+            this.props.state(state);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param state This parameter is required.
+         */
+        public Builder state(final com.aliyun.ros.cdk.core.IResolvable state) {
             this.props.state(state);
             return this;
         }

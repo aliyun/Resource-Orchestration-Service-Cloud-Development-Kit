@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Properties for defining a `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosImageCacheProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageCacheProps.Jsii$Proxy.class)
 public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getImage();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImage();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getImageCacheName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getImageCacheName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSecurityGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEipInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEipInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getImageRegistryCredential() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageRegistryCredential() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -52,20 +52,30 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosImageCacheProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosImageCacheProps> {
-        private java.util.List<java.lang.String> image;
-        private java.lang.String imageCacheName;
-        private java.lang.String securityGroupId;
-        private java.lang.String vSwitchId;
-        private java.lang.String eipInstanceId;
-        private java.util.List<java.lang.String> imageRegistryCredential;
-        private java.lang.String resourceGroupId;
+        private java.lang.Object image;
+        private java.lang.Object imageCacheName;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object eipInstanceId;
+        private java.lang.Object imageRegistryCredential;
+        private java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosImageCacheProps#getImage}
          * @param image the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder image(java.util.List<java.lang.String> image) {
+        public Builder image(com.aliyun.ros.cdk.core.IResolvable image) {
+            this.image = image;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosImageCacheProps#getImage}
+         * @param image the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder image(java.util.List<? extends java.lang.Object> image) {
             this.image = image;
             return this;
         }
@@ -81,11 +91,31 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosImageCacheProps#getImageCacheName}
+         * @param imageCacheName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder imageCacheName(com.aliyun.ros.cdk.core.IResolvable imageCacheName) {
+            this.imageCacheName = imageCacheName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosImageCacheProps#getSecurityGroupId}
          * @param securityGroupId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosImageCacheProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
             return this;
         }
@@ -101,6 +131,16 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosImageCacheProps#getVSwitchId}
+         * @param vSwitchId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosImageCacheProps#getEipInstanceId}
          * @param eipInstanceId the value to be set.
          * @return {@code this}
@@ -111,11 +151,31 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosImageCacheProps#getEipInstanceId}
+         * @param eipInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder eipInstanceId(com.aliyun.ros.cdk.core.IResolvable eipInstanceId) {
+            this.eipInstanceId = eipInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosImageCacheProps#getImageRegistryCredential}
          * @param imageRegistryCredential the value to be set.
          * @return {@code this}
          */
-        public Builder imageRegistryCredential(java.util.List<java.lang.String> imageRegistryCredential) {
+        public Builder imageRegistryCredential(com.aliyun.ros.cdk.core.IResolvable imageRegistryCredential) {
+            this.imageRegistryCredential = imageRegistryCredential;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosImageCacheProps#getImageRegistryCredential}
+         * @param imageRegistryCredential the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageRegistryCredential(java.util.List<? extends java.lang.Object> imageRegistryCredential) {
             this.imageRegistryCredential = imageRegistryCredential;
             return this;
         }
@@ -126,6 +186,16 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosImageCacheProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.resourceGroupId = resourceGroupId;
             return this;
         }
@@ -146,13 +216,13 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosImageCacheProps {
-        private final java.util.List<java.lang.String> image;
-        private final java.lang.String imageCacheName;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String eipInstanceId;
-        private final java.util.List<java.lang.String> imageRegistryCredential;
-        private final java.lang.String resourceGroupId;
+        private final java.lang.Object image;
+        private final java.lang.Object imageCacheName;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object eipInstanceId;
+        private final java.lang.Object imageRegistryCredential;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -160,19 +230,19 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.image = software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.imageCacheName = software.amazon.jsii.Kernel.get(this, "imageCacheName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.eipInstanceId = software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageRegistryCredential = software.amazon.jsii.Kernel.get(this, "imageRegistryCredential", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.image = software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageCacheName = software.amazon.jsii.Kernel.get(this, "imageCacheName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eipInstanceId = software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageRegistryCredential = software.amazon.jsii.Kernel.get(this, "imageRegistryCredential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.util.List<java.lang.String> image, final java.lang.String imageCacheName, final java.lang.String securityGroupId, final java.lang.String vSwitchId, final java.lang.String eipInstanceId, final java.util.List<java.lang.String> imageRegistryCredential, final java.lang.String resourceGroupId) {
+        protected Jsii$Proxy(final java.lang.Object image, final java.lang.Object imageCacheName, final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object eipInstanceId, final java.lang.Object imageRegistryCredential, final java.lang.Object resourceGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.image = java.util.Objects.requireNonNull(image, "image is required");
             this.imageCacheName = java.util.Objects.requireNonNull(imageCacheName, "imageCacheName is required");
@@ -184,37 +254,37 @@ public interface RosImageCacheProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.util.List<java.lang.String> getImage() {
+        public final java.lang.Object getImage() {
             return this.image;
         }
 
         @Override
-        public final java.lang.String getImageCacheName() {
+        public final java.lang.Object getImageCacheName() {
             return this.imageCacheName;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getEipInstanceId() {
+        public final java.lang.Object getEipInstanceId() {
             return this.eipInstanceId;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getImageRegistryCredential() {
+        public final java.lang.Object getImageRegistryCredential() {
             return this.imageRegistryCredential;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 

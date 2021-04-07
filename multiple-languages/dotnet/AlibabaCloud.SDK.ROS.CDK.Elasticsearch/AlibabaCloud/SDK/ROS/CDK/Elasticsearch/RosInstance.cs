@@ -47,106 +47,97 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <remarks>
         /// <strong>Attribute</strong>: Domain: Instance connection domain (only VPC network access supported).
         /// </remarks>
-        [JsiiProperty(name: "attrDomain", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomain
+        [JsiiProperty(name: "attrDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomain
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceChargeType: Instance charge type.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceChargeType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceChargeType
+        [JsiiProperty(name: "attrInstanceChargeType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceChargeType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: The ID of the Elasticsearch instance.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: KibanaDomain: Kibana console domain (Internet access supported).
         /// </remarks>
-        [JsiiProperty(name: "attrKibanaDomain", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrKibanaDomain
+        [JsiiProperty(name: "attrKibanaDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrKibanaDomain
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: KibanaPort: Kibana console port.
         /// </remarks>
-        [JsiiProperty(name: "attrKibanaPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrKibanaPort
+        [JsiiProperty(name: "attrKibanaPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrKibanaPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Port:  Instance connection port.
         /// </remarks>
-        [JsiiProperty(name: "attrPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPort
+        [JsiiProperty(name: "attrPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: PublicDomain: Instance public connection domain.
         /// </remarks>
-        [JsiiProperty(name: "attrPublicDomain", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPublicDomain
+        [JsiiProperty(name: "attrPublicDomain", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicDomain
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Status: The Elasticsearch instance status. Includes active, activating, inactive. Some operations are denied when status is not active.
         /// </remarks>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Version: Elasticsearch version.
         /// </remarks>
-        [JsiiProperty(name: "attrVersion", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVersion
+        [JsiiProperty(name: "attrVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVersion
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: VSwitchId: The ID of VSwitch.
         /// </remarks>
-        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVSwitchId
+        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVSwitchId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
-        /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
         }
 
         /// <remarks>
@@ -168,33 +159,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
 
         /// <remarks>
         /// <strong></strong>: #$%&*()_+-=).
-        /// 
+        ///
         /// <strong>Property</strong>: password: The password of the instance. The password can be 8 to 32 characters in length and must contain three of the following conditions: uppercase letters, lowercase letters, numbers, and special characters (!
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Password
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: version: Elasticsearch version. Supported values: 5.5.3_with_X-Pack, 6.3_with_X-Pack, 6.7_with_X-Pack, 7.4_with_X-Pack, 6.8, 7.4, 7.7 and so on.
         /// </remarks>
-        [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Version
+        [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Version
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: vSwitchId: The ID of VSwitch.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object VSwitchId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -202,10 +193,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <strong>Property</strong>: description: The description of instance. It a string of 0 to 30 characters. It can contain numbers, letters, underscores, (_) and hyphens (-). It must start with a letter, a number or Chinese character.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -224,10 +215,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <strong>Property</strong>: instanceChargeType: Valid values are PrePaid, PostPaid, Default to PostPaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? InstanceChargeType
+        [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceChargeType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -257,10 +248,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <strong>Property</strong>: period: The duration that you will buy Elasticsearch instance (in month). It is valid when instance_charge_type is PrePaid. Valid values: [1~9], 12, 24, 36. Default to 1.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -290,10 +281,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]? Tags
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty[]?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IDataNodeProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.DataNodeProperty")]
@@ -302,8 +304,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: amount: The Elasticsearch cluster's data node quantity, between 2 and 50.
             /// </remarks>
-            [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}")]
-            double Amount
+            [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Amount
             {
                 get;
             }
@@ -313,8 +315,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// cloud_ssd: An SSD disk, supports a maximum of 2048 GiB (2 TB).
             /// cloud_efficiency: An ultra disk, supports a maximum of 5120 GiB (5 TB). If the data to be stored is larger than 2048 GiB, an ultra disk can only support the following data sizes (GiB): [2560, 3072, 3584, 4096, 4608, 5120].
             /// </remarks>
-            [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}")]
-            double DiskSize
+            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DiskSize
             {
                 get;
             }
@@ -322,8 +324,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
             /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}")]
-            string DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DiskType
             {
                 get;
             }
@@ -331,8 +333,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: spec: The data node specifications of the Elasticsearch instance.
             /// </remarks>
-            [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-            string Spec
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Spec
             {
                 get;
             }
@@ -347,10 +349,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 /// <remarks>
                 /// <strong>Property</strong>: amount: The Elasticsearch cluster's data node quantity, between 2 and 50.
                 /// </remarks>
-                [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}")]
-                public double Amount
+                [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Amount
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -358,28 +360,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 /// cloud_ssd: An SSD disk, supports a maximum of 2048 GiB (2 TB).
                 /// cloud_efficiency: An ultra disk, supports a maximum of 5120 GiB (5 TB). If the data to be stored is larger than 2048 GiB, an ultra disk can only support the following data sizes (GiB): [2560, 3072, 3584, 4096, 4608, 5120].
                 /// </remarks>
-                [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}")]
-                public double DiskSize
+                [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DiskSize
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
                 /// </remarks>
-                [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}")]
-                public string DiskType
+                [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DiskType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: spec: The data node specifications of the Elasticsearch instance.
                 /// </remarks>
-                [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-                public string Spec
+                [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Spec
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -391,8 +393,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: amount: The Elasticsearch cluster's data node quantity, between 2 and 50.
             /// </remarks>
-            [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double Amount
+            [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Amount
             {
                 get;
                 set;
@@ -403,8 +405,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// cloud_ssd: An SSD disk, supports a maximum of 2048 GiB (2 TB).
             /// cloud_efficiency: An ultra disk, supports a maximum of 5120 GiB (5 TB). If the data to be stored is larger than 2048 GiB, an ultra disk can only support the following data sizes (GiB): [2560, 3072, 3584, 4096, 4608, 5120].
             /// </remarks>
-            [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double DiskSize
+            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DiskSize
             {
                 get;
                 set;
@@ -413,8 +415,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: diskType: The data node disk type. Supported values: cloud_ssd, cloud_efficiency.
             /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DiskType
             {
                 get;
                 set;
@@ -423,8 +425,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: spec: The data node specifications of the Elasticsearch instance.
             /// </remarks>
-            [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Spec
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Spec
             {
                 get;
                 set;
@@ -436,8 +438,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: spec: The dedicated master node spec.
             /// </remarks>
-            [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-            string Spec
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Spec
             {
                 get;
             }
@@ -445,9 +447,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: amount: The dedicated master node quantity. Default to 3.
             /// </remarks>
-            [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Amount
+            object? Amount
             {
                 get
                 {
@@ -458,9 +460,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: diskSize: The dedicated master node storage space. Default to 20.
             /// </remarks>
-            [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? DiskSize
+            object? DiskSize
             {
                 get
                 {
@@ -471,9 +473,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: diskType: The dedicated master node disk type.
             /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? DiskType
+            object? DiskType
             {
                 get
                 {
@@ -491,40 +493,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
                 /// <remarks>
                 /// <strong>Property</strong>: spec: The dedicated master node spec.
                 /// </remarks>
-                [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}")]
-                public string Spec
+                [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Spec
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: amount: The dedicated master node quantity. Default to 3.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Amount
+                [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Amount
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: diskSize: The dedicated master node storage space. Default to 20.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? DiskSize
+                [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DiskSize
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: diskType: The dedicated master node disk type.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? DiskType
+                [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DiskType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -536,8 +538,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <remarks>
             /// <strong>Property</strong>: spec: The dedicated master node spec.
             /// </remarks>
-            [JsiiProperty(name: "spec", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Spec
+            [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Spec
             {
                 get;
                 set;
@@ -547,8 +549,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <strong>Property</strong>: amount: The dedicated master node quantity. Default to 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "amount", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Amount
+            [JsiiProperty(name: "amount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Amount
             {
                 get;
                 set;
@@ -558,8 +560,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <strong>Property</strong>: diskSize: The dedicated master node storage space. Default to 20.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "diskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? DiskSize
+            [JsiiProperty(name: "diskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DiskSize
             {
                 get;
                 set;
@@ -569,8 +571,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Elasticsearch
             /// <strong>Property</strong>: diskType: The dedicated master node disk type.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? DiskType
+            {
+                get;
+                set;
+            }
+        }
+        [JsiiInterface(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty")]
+        public interface ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Key
+            {
+                get;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? Value
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            [JsiiTypeProxy(nativeType: typeof(ITagsProperty), fullyQualifiedName: "@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty")]
+            internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty
+            {
+                private _Proxy(ByRefValue reference): base(reference)
+                {
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: key: undefined
+                /// </remarks>
+                [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Key
+                {
+                    get => GetInstanceProperty<object>()!;
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: value: undefined
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Value
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+            }
+        }
+        #pragma warning disable CS8618
+
+        [JsiiByValue(fqn: "@alicloud/ros-cdk-elasticsearch.RosInstance.TagsProperty")]
+        public class TagsProperty : AlibabaCloud.SDK.ROS.CDK.Elasticsearch.RosInstance.ITagsProperty
+        {
+            /// <remarks>
+            /// <strong>Property</strong>: key: undefined
+            /// </remarks>
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Key
+            {
+                get;
+                set;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: value: undefined
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Value
             {
                 get;
                 set;

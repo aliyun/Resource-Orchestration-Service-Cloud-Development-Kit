@@ -6,4 +6,5 @@
 @alicloud/ros-cdk-drds.RosDrdsDB.InstDbNameProperty=com.aliyun.ros.cdk.drds.RosDrdsDB$InstDbNameProperty
 @alicloud/ros-cdk-drds.RosDrdsDBProps=com.aliyun.ros.cdk.drds.RosDrdsDBProps
 @alicloud/ros-cdk-drds.RosDrdsInstance=com.aliyun.ros.cdk.drds.RosDrdsInstance
+@alicloud/ros-cdk-drds.RosDrdsInstance.TagsProperty=com.aliyun.ros.cdk.drds.RosDrdsInstance$TagsProperty
 @alicloud/ros-cdk-drds.RosDrdsInstanceProps=com.aliyun.ros.cdk.drds.RosDrdsInstanceProps

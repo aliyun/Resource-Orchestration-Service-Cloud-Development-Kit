@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     public class ACLAssociationProps : AlibabaCloud.SDK.ROS.CDK.Sag.IACLAssociationProps
     {
         /// <summary>Property aclId: Access control ID.</summary>
-        [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AclId
+        [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AclId
         {
             get;
             set;
         }
 
         /// <summary>Property smartAgId: An intelligent gateway instance that needs to bind access control.</summary>
-        [JsiiProperty(name: "smartAgId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SmartAgId
+        [JsiiProperty(name: "smartAgId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SmartAgId
         {
             get;
             set;

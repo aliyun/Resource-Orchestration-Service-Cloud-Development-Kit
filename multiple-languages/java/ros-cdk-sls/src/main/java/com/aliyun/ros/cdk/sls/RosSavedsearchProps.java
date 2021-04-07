@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Savedsearch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosSavedsearchProps")
 @software.amazon.jsii.Jsii.Proxy(RosSavedsearchProps.Jsii$Proxy.class)
 public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProject();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProject();
 
     /**
      * @return a {@link Builder} of {@link RosSavedsearchProps}
@@ -27,7 +27,7 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSavedsearchProps> {
         private java.lang.Object detail;
-        private java.lang.String project;
+        private java.lang.Object project;
 
         /**
          * Sets the value of {@link RosSavedsearchProps#getDetail}
@@ -60,6 +60,16 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosSavedsearchProps#getProject}
+         * @param project the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder project(com.aliyun.ros.cdk.core.IResolvable project) {
+            this.project = project;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosSavedsearchProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -76,7 +86,7 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSavedsearchProps {
         private final java.lang.Object detail;
-        private final java.lang.String project;
+        private final java.lang.Object project;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +95,13 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.detail = software.amazon.jsii.Kernel.get(this, "detail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.project = software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object detail, final java.lang.String project) {
+        protected Jsii$Proxy(final java.lang.Object detail, final java.lang.Object project) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.detail = java.util.Objects.requireNonNull(detail, "detail is required");
             this.project = java.util.Objects.requireNonNull(project, "project is required");
@@ -103,7 +113,7 @@ public interface RosSavedsearchProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getProject() {
+        public final java.lang.Object getProject() {
             return this.project;
         }
 

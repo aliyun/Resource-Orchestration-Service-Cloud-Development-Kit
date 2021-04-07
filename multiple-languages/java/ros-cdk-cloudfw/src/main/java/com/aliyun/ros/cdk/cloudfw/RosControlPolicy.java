@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * A ROS template type:  `ALIYUN::CLOUDFW::ControlPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.862Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosControlPolicy")
 public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAclUuid() {
-        return software.amazon.jsii.Kernel.get(this, "attrAclUuid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAclUuid() {
+        return software.amazon.jsii.Kernel.get(this, "attrAclUuid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,8 +55,8 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAclAction() {
-        return software.amazon.jsii.Kernel.get(this, "aclAction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAclAction() {
+        return software.amazon.jsii.Kernel.get(this, "aclAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -67,8 +67,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getApplicationName() {
-        return software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAclAction(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "aclAction", java.util.Objects.requireNonNull(value, "aclAction is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName() {
+        return software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -79,8 +85,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setApplicationName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "applicationName", java.util.Objects.requireNonNull(value, "applicationName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -91,8 +103,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestination() {
-        return software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", java.util.Objects.requireNonNull(value, "description is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestination() {
+        return software.amazon.jsii.Kernel.get(this, "destination", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -103,8 +121,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestinationType() {
-        return software.amazon.jsii.Kernel.get(this, "destinationType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestination(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destination", java.util.Objects.requireNonNull(value, "destination is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestinationType() {
+        return software.amazon.jsii.Kernel.get(this, "destinationType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -115,13 +139,25 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDirection() {
-        return software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestinationType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationType", java.util.Objects.requireNonNull(value, "destinationType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDirection() {
+        return software.amazon.jsii.Kernel.get(this, "direction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDirection(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "direction", java.util.Objects.requireNonNull(value, "direction is required"));
+    }
+
+    /**
+     */
+    public void setDirection(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "direction", java.util.Objects.requireNonNull(value, "direction is required"));
     }
 
@@ -135,8 +171,8 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getNewOrder() {
-        return software.amazon.jsii.Kernel.get(this, "newOrder", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNewOrder() {
+        return software.amazon.jsii.Kernel.get(this, "newOrder", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +183,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProto() {
-        return software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setNewOrder(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "newOrder", java.util.Objects.requireNonNull(value, "newOrder is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProto() {
+        return software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +201,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSource() {
-        return software.amazon.jsii.Kernel.get(this, "source", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProto(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "proto", java.util.Objects.requireNonNull(value, "proto is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSource() {
+        return software.amazon.jsii.Kernel.get(this, "source", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +219,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSourceType() {
-        return software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "source", java.util.Objects.requireNonNull(value, "source is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceType() {
+        return software.amazon.jsii.Kernel.get(this, "sourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +237,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestPort() {
-        return software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSourceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sourceType", java.util.Objects.requireNonNull(value, "sourceType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestPort() {
+        return software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +255,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestPortGroup() {
-        return software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destPort", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestPortGroup() {
+        return software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +273,14 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDestPortType() {
-        return software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestPortGroup(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destPortGroup", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDestPortType() {
+        return software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,13 +291,25 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDestPortType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destPortType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "regionId", value);
+    }
+
+    /**
+     */
+    public void setRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "regionId", value);
     }
 
@@ -263,12 +347,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.aclAction(aclAction);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param aclAction This parameter is required.
+         */
+        public Builder aclAction(final com.aliyun.ros.cdk.core.IResolvable aclAction) {
+            this.props.aclAction(aclAction);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param applicationName This parameter is required.
          */
         public Builder applicationName(final java.lang.String applicationName) {
+            this.props.applicationName(applicationName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param applicationName This parameter is required.
+         */
+        public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.props.applicationName(applicationName);
             return this;
         }
@@ -281,12 +381,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destination This parameter is required.
          */
         public Builder destination(final java.lang.String destination) {
+            this.props.destination(destination);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destination This parameter is required.
+         */
+        public Builder destination(final com.aliyun.ros.cdk.core.IResolvable destination) {
             this.props.destination(destination);
             return this;
         }
@@ -299,12 +415,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationType(destinationType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationType This parameter is required.
+         */
+        public Builder destinationType(final com.aliyun.ros.cdk.core.IResolvable destinationType) {
+            this.props.destinationType(destinationType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param direction This parameter is required.
          */
         public Builder direction(final java.lang.String direction) {
+            this.props.direction(direction);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param direction This parameter is required.
+         */
+        public Builder direction(final com.aliyun.ros.cdk.core.IResolvable direction) {
             this.props.direction(direction);
             return this;
         }
@@ -317,12 +449,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.newOrder(newOrder);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param newOrder This parameter is required.
+         */
+        public Builder newOrder(final com.aliyun.ros.cdk.core.IResolvable newOrder) {
+            this.props.newOrder(newOrder);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param proto This parameter is required.
          */
         public Builder proto(final java.lang.String proto) {
+            this.props.proto(proto);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proto This parameter is required.
+         */
+        public Builder proto(final com.aliyun.ros.cdk.core.IResolvable proto) {
             this.props.proto(proto);
             return this;
         }
@@ -335,12 +483,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.source(source);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param source This parameter is required.
+         */
+        public Builder source(final com.aliyun.ros.cdk.core.IResolvable source) {
+            this.props.source(source);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param sourceType This parameter is required.
          */
         public Builder sourceType(final java.lang.String sourceType) {
+            this.props.sourceType(sourceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceType This parameter is required.
+         */
+        public Builder sourceType(final com.aliyun.ros.cdk.core.IResolvable sourceType) {
             this.props.sourceType(sourceType);
             return this;
         }
@@ -353,12 +517,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destPort(destPort);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destPort This parameter is required.
+         */
+        public Builder destPort(final com.aliyun.ros.cdk.core.IResolvable destPort) {
+            this.props.destPort(destPort);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param destPortGroup This parameter is required.
          */
         public Builder destPortGroup(final java.lang.String destPortGroup) {
+            this.props.destPortGroup(destPortGroup);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param destPortGroup This parameter is required.
+         */
+        public Builder destPortGroup(final com.aliyun.ros.cdk.core.IResolvable destPortGroup) {
             this.props.destPortGroup(destPortGroup);
             return this;
         }
@@ -371,12 +551,28 @@ public class RosControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destPortType(destPortType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destPortType This parameter is required.
+         */
+        public Builder destPortType(final com.aliyun.ros.cdk.core.IResolvable destPortType) {
+            this.props.destPortType(destPortType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param regionId This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param regionId This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
             return this;
         }

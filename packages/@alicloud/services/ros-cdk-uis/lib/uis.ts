@@ -12,13 +12,13 @@ export interface UisProps {
      * Property description: Description of the instance.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the instance.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -34,27 +34,27 @@ export class Uis extends ros.Resource {
     /**
      * Attribute ClientInfoDB: The client info DB.
      */
-    public readonly attrClientInfoDb: any;
+    public readonly attrClientInfoDb: ros.IResolvable;
 
     /**
      * Attribute ClientInfoDBAccount: The client info DB account.
      */
-    public readonly attrClientInfoDbAccount: any;
+    public readonly attrClientInfoDbAccount: ros.IResolvable;
 
     /**
      * Attribute ClientInfoDBPassword: The client info DB password.
      */
-    public readonly attrClientInfoDbPassword: any;
+    public readonly attrClientInfoDbPassword: ros.IResolvable;
 
     /**
      * Attribute SslClientCertUrl: The ssl client cert url.
      */
-    public readonly attrSslClientCertUrl: any;
+    public readonly attrSslClientCertUrl: ros.IResolvable;
 
     /**
      * Attribute UisId: The ID of the instance.
      */
-    public readonly attrUisId: any;
+    public readonly attrUisId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::UIS::Uis`.

@@ -3,19 +3,20 @@ package com.aliyun.ros.cdk.core;
 /**
  * Initialization props for apps.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.887Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.291Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AppProps")
 @software.amazon.jsii.Jsii.Proxy(AppProps.Jsii$Proxy.class)
 public interface AppProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Automatically call `synth()` before the program exits.
+     * Automatically call 'synth()' before the program exits.
      * <p>
-     * If you set this, you don't have to call <code>synth()</code> explicitly. Note that
+     * If you set this, you don't have to call 'synth()' explicitly. Note that
      * this feature is only available for certain programming languages, and
-     * calling <code>synth()</code> is still recommended.
+     * calling 'synth()' is still recommended.
      * <p>
-     * Default: true if running via CDK CLI (`CDK_OUTDIR` is set), `false`otherwise
+     * Default true if running via CDK CLI ('CDK_OUTDIR' is set), 'false'
+     * otherwise
      */
     default @org.jetbrains.annotations.Nullable java.lang.Boolean getAutoSynth() {
         return null;
@@ -24,9 +25,9 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Additional context values for the application.
      * <p>
-     * Context set by the CLI or the <code>context</code> key in <code>cdk.json</code> has precedence.
+     * Context set by the CLI or the 'context' key in 'cdk.json' has precedence.
      * <p>
-     * Context can be read from any construct using <code>node.getContext(key)</code>.
+     * Context can be read from any construct using 'node.getContext(key)'.
      * <p>
      * Default: - no additional context
      */
@@ -37,7 +38,8 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * The output directory into which to emit synthesized artifacts.
      * <p>
-     * Default: - If this value is _not_ set, considers the environment variable `CDK_OUTDIR`.  If `CDK_OUTDIR` is not defined, uses a temp directory.
+     * Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
+     * If 'CDK_OUTDIR' is not defined, uses a temp directory.
      */
     default @org.jetbrains.annotations.Nullable java.lang.String getOutdir() {
         return null;
@@ -89,10 +91,13 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AppProps#getAutoSynth}
-         * @param autoSynth Automatically call `synth()` before the program exits.
-         *                  If you set this, you don't have to call <code>synth()</code> explicitly. Note that
+         * @param autoSynth Automatically call 'synth()' before the program exits.
+         *                  If you set this, you don't have to call 'synth()' explicitly. Note that
          *                  this feature is only available for certain programming languages, and
-         *                  calling <code>synth()</code> is still recommended.
+         *                  calling 'synth()' is still recommended.
+         *                  <p>
+         *                  Default true if running via CDK CLI ('CDK_OUTDIR' is set), 'false'
+         *                  otherwise
          * @return {@code this}
          */
         public Builder autoSynth(java.lang.Boolean autoSynth) {
@@ -103,9 +108,9 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AppProps#getContext}
          * @param context Additional context values for the application.
-         *                Context set by the CLI or the <code>context</code> key in <code>cdk.json</code> has precedence.
+         *                Context set by the CLI or the 'context' key in 'cdk.json' has precedence.
          *                <p>
-         *                Context can be read from any construct using <code>node.getContext(key)</code>.
+         *                Context can be read from any construct using 'node.getContext(key)'.
          * @return {@code this}
          */
         public Builder context(java.util.Map<java.lang.String, java.lang.String> context) {
@@ -116,6 +121,8 @@ public interface AppProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AppProps#getOutdir}
          * @param outdir The output directory into which to emit synthesized artifacts.
+         *               Default - If this value is <em>not</em> set, considers the environment variable 'CDK_OUTDIR'.
+         *               If 'CDK_OUTDIR' is not defined, uses a temp directory.
          * @return {@code this}
          */
         public Builder outdir(java.lang.String outdir) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::Stack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.345Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.Stack")
 public class Stack extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::Stack`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public Stack(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ros.StackProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::Stack`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public Stack(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ros.StackProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::Stack`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public Stack(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -57,8 +69,8 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ros.Stack> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -66,8 +78,8 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -85,33 +97,68 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property parameters: The set of parameters passed to this nested stack.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
-         */
-        public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
-            this.props().parameters(parameters);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: The set of parameters passed to this nested stack. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props().parameters(parameters);
             return this;
         }
+        /**
+         * Property parameters: The set of parameters passed to this nested stack.
+         * <p>
+         * @return {@code this}
+         * @param parameters Property parameters: The set of parameters passed to this nested stack. This parameter is required.
+         */
+        public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
+            this.props().parameters(parameters);
+            return this;
+        }
 
         /**
+         * Property resourceGroupId: Resource group.
+         * <p>
          * @return {@code this}
-         * @param templateBody This parameter is required.
+         * @param resourceGroupId Property resourceGroupId: Resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: Resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: Resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property templateBody: Structure containing the template body.
+         * <p>
+         * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
+         * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
+         * <p>
+         * @return {@code this}
+         * @param templateBody Property templateBody: Structure containing the template body. This parameter is required.
          */
         public Builder templateBody(final com.aliyun.ros.cdk.core.IResolvable templateBody) {
             this.props().templateBody(templateBody);
             return this;
         }
         /**
+         * Property templateBody: Structure containing the template body.
+         * <p>
+         * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
+         * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
+         * <p>
          * @return {@code this}
-         * @param templateBody This parameter is required.
+         * @param templateBody Property templateBody: Structure containing the template body. This parameter is required.
          */
         public Builder templateBody(final java.util.Map<java.lang.String, ? extends java.lang.Object> templateBody) {
             this.props().templateBody(templateBody);
@@ -119,37 +166,95 @@ public class Stack extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property templateId: Template ID of template containing the template body.
+         * <p>
          * @return {@code this}
-         * @param templateId This parameter is required.
+         * @param templateId Property templateId: Template ID of template containing the template body. This parameter is required.
          */
         public Builder templateId(final java.lang.String templateId) {
             this.props().templateId(templateId);
             return this;
         }
+        /**
+         * Property templateId: Template ID of template containing the template body.
+         * <p>
+         * @return {@code this}
+         * @param templateId Property templateId: Template ID of template containing the template body. This parameter is required.
+         */
+        public Builder templateId(final com.aliyun.ros.cdk.core.IResolvable templateId) {
+            this.props().templateId(templateId);
+            return this;
+        }
 
         /**
+         * Property templateUrl: Location of file containing the template body.
+         * <p>
+         * The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+         * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
+         * <p>
          * @return {@code this}
-         * @param templateUrl This parameter is required.
+         * @param templateUrl Property templateUrl: Location of file containing the template body. This parameter is required.
          */
         public Builder templateUrl(final java.lang.String templateUrl) {
             this.props().templateUrl(templateUrl);
             return this;
         }
+        /**
+         * Property templateUrl: Location of file containing the template body.
+         * <p>
+         * The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+         * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
+         * <p>
+         * @return {@code this}
+         * @param templateUrl Property templateUrl: Location of file containing the template body. This parameter is required.
+         */
+        public Builder templateUrl(final com.aliyun.ros.cdk.core.IResolvable templateUrl) {
+            this.props().templateUrl(templateUrl);
+            return this;
+        }
 
         /**
+         * Property templateVersion: Template version of template containing the template body.
+         * <p>
          * @return {@code this}
-         * @param templateVersion This parameter is required.
+         * @param templateVersion Property templateVersion: Template version of template containing the template body. This parameter is required.
          */
         public Builder templateVersion(final java.lang.String templateVersion) {
             this.props().templateVersion(templateVersion);
             return this;
         }
+        /**
+         * Property templateVersion: Template version of template containing the template body.
+         * <p>
+         * @return {@code this}
+         * @param templateVersion Property templateVersion: Template version of template containing the template body. This parameter is required.
+         */
+        public Builder templateVersion(final com.aliyun.ros.cdk.core.IResolvable templateVersion) {
+            this.props().templateVersion(templateVersion);
+            return this;
+        }
 
         /**
+         * Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update.
+         * <p>
+         * Default to 60 minutes.
+         * <p>
          * @return {@code this}
-         * @param timeoutMins This parameter is required.
+         * @param timeoutMins Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update. This parameter is required.
          */
         public Builder timeoutMins(final java.lang.Number timeoutMins) {
+            this.props().timeoutMins(timeoutMins);
+            return this;
+        }
+        /**
+         * Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update.
+         * <p>
+         * Default to 60 minutes.
+         * <p>
+         * @return {@code this}
+         * @param timeoutMins Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update. This parameter is required.
+         */
+        public Builder timeoutMins(final com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.props().timeoutMins(timeoutMins);
             return this;
         }

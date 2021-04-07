@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.foas;
 /**
  * Properties for defining a `ALIYUN::FOAS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.988Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.foas.$Module.class, fqn = "@alicloud/ros-cdk-foas.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDescription();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDescription();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOssBucket();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOssBucket();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
      */
@@ -32,7 +32,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOrderId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOrderId() {
         return null;
     }
 
@@ -46,12 +46,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.String clusterName;
-        private java.lang.String description;
-        private java.lang.String ossBucket;
-        private java.lang.String vSwitchId;
+        private java.lang.Object clusterName;
+        private java.lang.Object description;
+        private java.lang.Object ossBucket;
+        private java.lang.Object vSwitchId;
         private java.lang.Object order;
-        private java.lang.String orderId;
+        private java.lang.Object orderId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterName}
@@ -59,6 +59,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder clusterName(java.lang.String clusterName) {
+            this.clusterName = clusterName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterName}
+         * @param clusterName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterName(com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.clusterName = clusterName;
             return this;
         }
@@ -74,11 +84,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getDescription}
+         * @param description the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getOssBucket}
          * @param ossBucket the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder ossBucket(java.lang.String ossBucket) {
+            this.ossBucket = ossBucket;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getOssBucket}
+         * @param ossBucket the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ossBucket(com.aliyun.ros.cdk.core.IResolvable ossBucket) {
             this.ossBucket = ossBucket;
             return this;
         }
@@ -94,12 +124,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getOrder}
-         * @param order the value to be set.
+         * Sets the value of {@link RosClusterProps#getVSwitchId}
+         * @param vSwitchId the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder order(com.aliyun.ros.cdk.foas.RosCluster.OrderProperty order) {
-            this.order = order;
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
             return this;
         }
 
@@ -114,11 +144,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getOrder}
+         * @param order the value to be set.
+         * @return {@code this}
+         */
+        public Builder order(com.aliyun.ros.cdk.foas.RosCluster.OrderProperty order) {
+            this.order = order;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getOrderId}
          * @param orderId the value to be set.
          * @return {@code this}
          */
         public Builder orderId(java.lang.String orderId) {
+            this.orderId = orderId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getOrderId}
+         * @param orderId the value to be set.
+         * @return {@code this}
+         */
+        public Builder orderId(com.aliyun.ros.cdk.core.IResolvable orderId) {
             this.orderId = orderId;
             return this;
         }
@@ -139,12 +189,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterProps {
-        private final java.lang.String clusterName;
-        private final java.lang.String description;
-        private final java.lang.String ossBucket;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object clusterName;
+        private final java.lang.Object description;
+        private final java.lang.Object ossBucket;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object order;
-        private final java.lang.String orderId;
+        private final java.lang.Object orderId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -152,18 +202,18 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ossBucket = software.amazon.jsii.Kernel.get(this, "ossBucket", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterName = software.amazon.jsii.Kernel.get(this, "clusterName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ossBucket = software.amazon.jsii.Kernel.get(this, "ossBucket", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.order = software.amazon.jsii.Kernel.get(this, "order", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.orderId = software.amazon.jsii.Kernel.get(this, "orderId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.orderId = software.amazon.jsii.Kernel.get(this, "orderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterName, final java.lang.String description, final java.lang.String ossBucket, final java.lang.String vSwitchId, final java.lang.Object order, final java.lang.String orderId) {
+        protected Jsii$Proxy(final java.lang.Object clusterName, final java.lang.Object description, final java.lang.Object ossBucket, final java.lang.Object vSwitchId, final java.lang.Object order, final java.lang.Object orderId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterName = java.util.Objects.requireNonNull(clusterName, "clusterName is required");
             this.description = java.util.Objects.requireNonNull(description, "description is required");
@@ -174,22 +224,22 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getClusterName() {
+        public final java.lang.Object getClusterName() {
             return this.clusterName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getOssBucket() {
+        public final java.lang.Object getOssBucket() {
             return this.ossBucket;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -199,7 +249,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getOrderId() {
+        public final java.lang.Object getOrderId() {
             return this.orderId;
         }
 

@@ -3,18 +3,22 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.718Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.395Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(SSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceIds: The comma delimited ECS instance id list.
+     * <p>
+     * Only support Linux.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
+     * Property keyPairName: SSH key pair name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getKeyPairName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName();
 
     /**
      * @return a {@link Builder} of {@link SSHKeyPairAttachmentProps}
@@ -27,11 +31,12 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
      */
     public static final class Builder implements software.amazon.jsii.Builder<SSHKeyPairAttachmentProps> {
         private java.lang.Object instanceIds;
-        private java.lang.String keyPairName;
+        private java.lang.Object keyPairName;
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
+         *                    Only support Linux.
          * @return {@code this}
          */
         public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
@@ -41,7 +46,8 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
+         *                    Only support Linux.
          * @return {@code this}
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
@@ -51,10 +57,20 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getKeyPairName}
-         * @param keyPairName the value to be set. This parameter is required.
+         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
          * @return {@code this}
          */
         public Builder keyPairName(java.lang.String keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SSHKeyPairAttachmentProps#getKeyPairName}
+         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.keyPairName = keyPairName;
             return this;
         }
@@ -76,7 +92,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SSHKeyPairAttachmentProps {
         private final java.lang.Object instanceIds;
-        private final java.lang.String keyPairName;
+        private final java.lang.Object keyPairName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +101,13 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceIds, final java.lang.String keyPairName) {
+        protected Jsii$Proxy(final java.lang.Object instanceIds, final java.lang.Object keyPairName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
             this.keyPairName = java.util.Objects.requireNonNull(keyPairName, "keyPairName is required");
@@ -103,7 +119,7 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 

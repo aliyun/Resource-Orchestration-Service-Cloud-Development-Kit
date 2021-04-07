@@ -3,80 +3,145 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::RunCommand`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.714Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property commandContent: The plaintext content or the Base64-encoded content of the script.
+     * <p>
+     * The Base64-encoded script content cannot exceed 16 KB.
+     * You can enable the custom parameter function by setting EnableParameter=true in the script content:
+     * Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+     * The number of custom parameters cannot exceed 20.
+     * A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+     * Each custom parameter key cannot exceed 64 bytes.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCommandContent();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCommandContent();
 
     /**
+     * Property instanceIds: The instance id list.
+     * <p>
+     * Select up to 20 instances at a time.Instances status must be running.
      */
-    @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getInstanceIds();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
     /**
+     * Property type: The language type of the O&M script.
+     * <p>
+     * Valid values:
+     * RunBatScript: batch scripts for Windows instances
+     * RunPowerShellScript: PowerShell scripts for Windows instances
+     * RunShellScript: shell scripts for Linux instances
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
+     * Property contentEncoding: The encoding mode of script content (CommandContent).
+     * <p>
+     * Valid values (case insensitive):
+     * PlainText: The script content is not encoded, and transmitted in plaintext.
+     * Base64: base64-encoded.
+     * Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getContentEncoding() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getContentEncoding() {
         return null;
     }
 
     /**
+     * Property description: The description of the script, which supports all character sets.
+     * <p>
+     * It can be up to 512 characters in length.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property enableParameter: Specifies whether the script contains custom parameters.
+     * <p>
+     * Default value: false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableParameter() {
         return null;
     }
 
     /**
+     * Property frequency: The execution period of recurring tasks.
+     * <p>
+     * If the Timed parameter is set to True, you must specify the Frequency parameter. The interval between two recurring tasks cannot be less than 10 seconds.
+     * The parameter value follows the cron expression. For more information, see Configure scheduled commands.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFrequency() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
         return null;
     }
 
     /**
+     * Property keepCommand: Specifies whether to retain the script after it is run.
+     * <p>
+     * Valid values:
+     * true: The script is retained. You can call the InvokeCommand operation to run the script again, call the DescribeCommands operation to query the script, and call the DeleteCommands operation to delete the script. The retained script takes up the quota of Cloud Assistant scripts.
+     * false: The script is not retained. It is automatically deleted after running, without taking up the quota of Cloud Assistant scripts.
+     * Default value: false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKeepCommand() {
         return null;
     }
 
     /**
+     * Property name: The name of the script, which supports all character sets.
+     * <p>
+     * It can be up to 128 characters in length.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+     * <p>
+     * Number of custom parameters: 0 to 10.
+     * The key cannot be an empty string. It can be up to 64 characters in length.
+     * The value can be an empty string.
+     * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+     * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+     * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
     }
 
     /**
+     * Property timed: Specifies whether to periodically run the script.
+     * <p>
+     * Valid values:
+     * true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
+     * false: runs once only.
+     * Default value: false
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTimed() {
         return null;
     }
 
     /**
+     * Property timeout: The timeout period for script execution.
+     * <p>
+     * Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
+     * Default value: 60.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeout() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeout() {
         return null;
     }
 
     /**
+     * Property workingDir: The running directory of the script in the ECS instance.
+     * <p>
+     * Default value:
+     * Linux instances: under the home directory of the administrator (root user): /root.
+     * Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist$(version).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWorkingDir() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWorkingDir() {
         return null;
     }
 
@@ -90,23 +155,29 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RunCommandProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RunCommandProps> {
-        private java.lang.String commandContent;
-        private java.util.List<java.lang.String> instanceIds;
-        private java.lang.String type;
-        private java.lang.String contentEncoding;
-        private java.lang.String description;
+        private java.lang.Object commandContent;
+        private java.lang.Object instanceIds;
+        private java.lang.Object type;
+        private java.lang.Object contentEncoding;
+        private java.lang.Object description;
         private java.lang.Object enableParameter;
-        private java.lang.String frequency;
+        private java.lang.Object frequency;
         private java.lang.Object keepCommand;
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object parameters;
         private java.lang.Object timed;
-        private java.lang.Number timeout;
-        private java.lang.String workingDir;
+        private java.lang.Object timeout;
+        private java.lang.Object workingDir;
 
         /**
          * Sets the value of {@link RunCommandProps#getCommandContent}
-         * @param commandContent the value to be set. This parameter is required.
+         * @param commandContent Property commandContent: The plaintext content or the Base64-encoded content of the script. This parameter is required.
+         *                       The Base64-encoded script content cannot exceed 16 KB.
+         *                       You can enable the custom parameter function by setting EnableParameter=true in the script content:
+         *                       Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+         *                       The number of custom parameters cannot exceed 20.
+         *                       A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+         *                       Each custom parameter key cannot exceed 64 bytes.
          * @return {@code this}
          */
         public Builder commandContent(java.lang.String commandContent) {
@@ -115,18 +186,50 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RunCommandProps#getInstanceIds}
-         * @param instanceIds the value to be set. This parameter is required.
+         * Sets the value of {@link RunCommandProps#getCommandContent}
+         * @param commandContent Property commandContent: The plaintext content or the Base64-encoded content of the script. This parameter is required.
+         *                       The Base64-encoded script content cannot exceed 16 KB.
+         *                       You can enable the custom parameter function by setting EnableParameter=true in the script content:
+         *                       Define custom parameters in the {{}} format. Within {{}}, the spaces and line breaks before and after the name of the parameter are ignored.
+         *                       The number of custom parameters cannot exceed 20.
+         *                       A custom parameter name can contain only letters, digits, underscores (_), and hyphens (-). It is case insensitive.
+         *                       Each custom parameter key cannot exceed 64 bytes.
          * @return {@code this}
          */
-        public Builder instanceIds(java.util.List<java.lang.String> instanceIds) {
+        public Builder commandContent(com.aliyun.ros.cdk.core.IResolvable commandContent) {
+            this.commandContent = commandContent;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RunCommandProps#getInstanceIds}
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
+         *                    Select up to 20 instances at a time.Instances status must be running.
+         * @return {@code this}
+         */
+        public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {
+            this.instanceIds = instanceIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RunCommandProps#getInstanceIds}
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
+         *                    Select up to 20 instances at a time.Instances status must be running.
+         * @return {@code this}
+         */
+        public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
             this.instanceIds = instanceIds;
             return this;
         }
 
         /**
          * Sets the value of {@link RunCommandProps#getType}
-         * @param type the value to be set. This parameter is required.
+         * @param type Property type: The language type of the O&M script. This parameter is required.
+         *             Valid values:
+         *             RunBatScript: batch scripts for Windows instances
+         *             RunPowerShellScript: PowerShell scripts for Windows instances
+         *             RunShellScript: shell scripts for Linux instances
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -135,8 +238,26 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getType}
+         * @param type Property type: The language type of the O&M script. This parameter is required.
+         *             Valid values:
+         *             RunBatScript: batch scripts for Windows instances
+         *             RunPowerShellScript: PowerShell scripts for Windows instances
+         *             RunShellScript: shell scripts for Linux instances
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getContentEncoding}
-         * @param contentEncoding the value to be set.
+         * @param contentEncoding Property contentEncoding: The encoding mode of script content (CommandContent).
+         *                        Valid values (case insensitive):
+         *                        PlainText: The script content is not encoded, and transmitted in plaintext.
+         *                        Base64: base64-encoded.
+         *                        Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
          * @return {@code this}
          */
         public Builder contentEncoding(java.lang.String contentEncoding) {
@@ -145,8 +266,23 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getContentEncoding}
+         * @param contentEncoding Property contentEncoding: The encoding mode of script content (CommandContent).
+         *                        Valid values (case insensitive):
+         *                        PlainText: The script content is not encoded, and transmitted in plaintext.
+         *                        Base64: base64-encoded.
+         *                        Default value: PlainText. If the specified value of this parameter is invalid, PlainText is used by default.
+         * @return {@code this}
+         */
+        public Builder contentEncoding(com.aliyun.ros.cdk.core.IResolvable contentEncoding) {
+            this.contentEncoding = contentEncoding;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the script, which supports all character sets.
+         *                    It can be up to 512 characters in length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -155,8 +291,20 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getDescription}
+         * @param description Property description: The description of the script, which supports all character sets.
+         *                    It can be up to 512 characters in length.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getEnableParameter}
-         * @param enableParameter the value to be set.
+         * @param enableParameter Property enableParameter: Specifies whether the script contains custom parameters.
+         *                        Default value: false
          * @return {@code this}
          */
         public Builder enableParameter(java.lang.Boolean enableParameter) {
@@ -166,7 +314,8 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getEnableParameter}
-         * @param enableParameter the value to be set.
+         * @param enableParameter Property enableParameter: Specifies whether the script contains custom parameters.
+         *                        Default value: false
          * @return {@code this}
          */
         public Builder enableParameter(com.aliyun.ros.cdk.core.IResolvable enableParameter) {
@@ -176,7 +325,9 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getFrequency}
-         * @param frequency the value to be set.
+         * @param frequency Property frequency: The execution period of recurring tasks.
+         *                  If the Timed parameter is set to True, you must specify the Frequency parameter. The interval between two recurring tasks cannot be less than 10 seconds.
+         *                  The parameter value follows the cron expression. For more information, see Configure scheduled commands.
          * @return {@code this}
          */
         public Builder frequency(java.lang.String frequency) {
@@ -185,8 +336,24 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getFrequency}
+         * @param frequency Property frequency: The execution period of recurring tasks.
+         *                  If the Timed parameter is set to True, you must specify the Frequency parameter. The interval between two recurring tasks cannot be less than 10 seconds.
+         *                  The parameter value follows the cron expression. For more information, see Configure scheduled commands.
+         * @return {@code this}
+         */
+        public Builder frequency(com.aliyun.ros.cdk.core.IResolvable frequency) {
+            this.frequency = frequency;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getKeepCommand}
-         * @param keepCommand the value to be set.
+         * @param keepCommand Property keepCommand: Specifies whether to retain the script after it is run.
+         *                    Valid values:
+         *                    true: The script is retained. You can call the InvokeCommand operation to run the script again, call the DescribeCommands operation to query the script, and call the DeleteCommands operation to delete the script. The retained script takes up the quota of Cloud Assistant scripts.
+         *                    false: The script is not retained. It is automatically deleted after running, without taking up the quota of Cloud Assistant scripts.
+         *                    Default value: false
          * @return {@code this}
          */
         public Builder keepCommand(java.lang.Boolean keepCommand) {
@@ -196,7 +363,11 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getKeepCommand}
-         * @param keepCommand the value to be set.
+         * @param keepCommand Property keepCommand: Specifies whether to retain the script after it is run.
+         *                    Valid values:
+         *                    true: The script is retained. You can call the InvokeCommand operation to run the script again, call the DescribeCommands operation to query the script, and call the DeleteCommands operation to delete the script. The retained script takes up the quota of Cloud Assistant scripts.
+         *                    false: The script is not retained. It is automatically deleted after running, without taking up the quota of Cloud Assistant scripts.
+         *                    Default value: false
          * @return {@code this}
          */
         public Builder keepCommand(com.aliyun.ros.cdk.core.IResolvable keepCommand) {
@@ -206,7 +377,8 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the script, which supports all character sets.
+         *             It can be up to 128 characters in length.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -215,8 +387,25 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getName}
+         * @param name Property name: The name of the script, which supports all character sets.
+         *             It can be up to 128 characters in length.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         *                   Number of custom parameters: 0 to 10.
+         *                   The key cannot be an empty string. It can be up to 64 characters in length.
+         *                   The value can be an empty string.
+         *                   After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         *                   The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         *                   Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -226,7 +415,13 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         *                   Number of custom parameters: 0 to 10.
+         *                   The key cannot be an empty string. It can be up to 64 characters in length.
+         *                   The value can be an empty string.
+         *                   After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         *                   The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         *                   Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
          * @return {@code this}
          */
         public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
@@ -236,7 +431,11 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getTimed}
-         * @param timed the value to be set.
+         * @param timed Property timed: Specifies whether to periodically run the script.
+         *              Valid values:
+         *              true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
+         *              false: runs once only.
+         *              Default value: false
          * @return {@code this}
          */
         public Builder timed(java.lang.Boolean timed) {
@@ -246,7 +445,11 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getTimed}
-         * @param timed the value to be set.
+         * @param timed Property timed: Specifies whether to periodically run the script.
+         *              Valid values:
+         *              true: runs the script on a regular basis based on the value set for the Frequency parameter. The result of the previous execution task does not affect the next execution task.
+         *              false: runs once only.
+         *              Default value: false
          * @return {@code this}
          */
         public Builder timed(com.aliyun.ros.cdk.core.IResolvable timed) {
@@ -256,7 +459,9 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getTimeout}
-         * @param timeout the value to be set.
+         * @param timeout Property timeout: The timeout period for script execution.
+         *                Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
+         *                Default value: 60.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -265,11 +470,39 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RunCommandProps#getTimeout}
+         * @param timeout Property timeout: The timeout period for script execution.
+         *                Unit: seconds. A timeout error occurs when a script cannot be run because the process slows down, a specific module or the Cloud Assistant client does not exist. When the script times out, the script process is forcibly terminated.
+         *                Default value: 60.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RunCommandProps#getWorkingDir}
-         * @param workingDir the value to be set.
+         * @param workingDir Property workingDir: The running directory of the script in the ECS instance.
+         *                   Default value:
+         *                   Linux instances: under the home directory of the administrator (root user): /root.
+         *                   Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist$(version).
          * @return {@code this}
          */
         public Builder workingDir(java.lang.String workingDir) {
+            this.workingDir = workingDir;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RunCommandProps#getWorkingDir}
+         * @param workingDir Property workingDir: The running directory of the script in the ECS instance.
+         *                   Default value:
+         *                   Linux instances: under the home directory of the administrator (root user): /root.
+         *                   Windows instances: under the directory where the process of the Cloud Assistant client is located, such as C:\ProgramData\aliyun\assist$(version).
+         * @return {@code this}
+         */
+        public Builder workingDir(com.aliyun.ros.cdk.core.IResolvable workingDir) {
             this.workingDir = workingDir;
             return this;
         }
@@ -290,19 +523,19 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RunCommandProps {
-        private final java.lang.String commandContent;
-        private final java.util.List<java.lang.String> instanceIds;
-        private final java.lang.String type;
-        private final java.lang.String contentEncoding;
-        private final java.lang.String description;
+        private final java.lang.Object commandContent;
+        private final java.lang.Object instanceIds;
+        private final java.lang.Object type;
+        private final java.lang.Object contentEncoding;
+        private final java.lang.Object description;
         private final java.lang.Object enableParameter;
-        private final java.lang.String frequency;
+        private final java.lang.Object frequency;
         private final java.lang.Object keepCommand;
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object parameters;
         private final java.lang.Object timed;
-        private final java.lang.Number timeout;
-        private final java.lang.String workingDir;
+        private final java.lang.Object timeout;
+        private final java.lang.Object workingDir;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -310,25 +543,25 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.commandContent = software.amazon.jsii.Kernel.get(this, "commandContent", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.contentEncoding = software.amazon.jsii.Kernel.get(this, "contentEncoding", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableParameter = software.amazon.jsii.Kernel.get(this, "enableParameter", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.frequency = software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.keepCommand = software.amazon.jsii.Kernel.get(this, "keepCommand", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.timed = software.amazon.jsii.Kernel.get(this, "timed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.workingDir = software.amazon.jsii.Kernel.get(this, "workingDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String commandContent, final java.util.List<java.lang.String> instanceIds, final java.lang.String type, final java.lang.String contentEncoding, final java.lang.String description, final java.lang.Object enableParameter, final java.lang.String frequency, final java.lang.Object keepCommand, final java.lang.String name, final java.lang.Object parameters, final java.lang.Object timed, final java.lang.Number timeout, final java.lang.String workingDir) {
+        protected Jsii$Proxy(final java.lang.Object commandContent, final java.lang.Object instanceIds, final java.lang.Object type, final java.lang.Object contentEncoding, final java.lang.Object description, final java.lang.Object enableParameter, final java.lang.Object frequency, final java.lang.Object keepCommand, final java.lang.Object name, final java.lang.Object parameters, final java.lang.Object timed, final java.lang.Object timeout, final java.lang.Object workingDir) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.commandContent = java.util.Objects.requireNonNull(commandContent, "commandContent is required");
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
@@ -346,27 +579,27 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getCommandContent() {
+        public final java.lang.Object getCommandContent() {
             return this.commandContent;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getInstanceIds() {
+        public final java.lang.Object getInstanceIds() {
             return this.instanceIds;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getContentEncoding() {
+        public final java.lang.Object getContentEncoding() {
             return this.contentEncoding;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -376,7 +609,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getFrequency() {
+        public final java.lang.Object getFrequency() {
             return this.frequency;
         }
 
@@ -386,7 +619,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -401,12 +634,12 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
         @Override
-        public final java.lang.String getWorkingDir() {
+        public final java.lang.Object getWorkingDir() {
             return this.workingDir;
         }
 

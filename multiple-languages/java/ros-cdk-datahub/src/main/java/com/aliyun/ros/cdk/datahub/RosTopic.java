@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.datahub;
 /**
  * A ROS template type:  `ALIYUN::DATAHUB::Topic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.045Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.datahub.$Module.class, fqn = "@alicloud/ros-cdk-datahub.RosTopic")
 public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "attrProjectName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTopicName() {
-        return software.amazon.jsii.Kernel.get(this, "attrTopicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopicName() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopicName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getComment() {
-        return software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getComment() {
+        return software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setComment(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "comment", java.util.Objects.requireNonNull(value, "comment is required"));
+    }
+
+    /**
+     */
+    public void setComment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "comment", java.util.Objects.requireNonNull(value, "comment is required"));
     }
 
@@ -81,8 +87,8 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProjectName() {
-        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProjectName() {
+        return software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRecordType() {
-        return software.amazon.jsii.Kernel.get(this, "recordType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setProjectName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "projectName", java.util.Objects.requireNonNull(value, "projectName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRecordType() {
+        return software.amazon.jsii.Kernel.get(this, "recordType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTopicName() {
-        return software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRecordType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "recordType", java.util.Objects.requireNonNull(value, "recordType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTopicName() {
+        return software.amazon.jsii.Kernel.get(this, "topicName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +135,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getLifecycle() {
-        return software.amazon.jsii.Kernel.get(this, "lifecycle", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setTopicName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "topicName", java.util.Objects.requireNonNull(value, "topicName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLifecycle() {
+        return software.amazon.jsii.Kernel.get(this, "lifecycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +153,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRecordSchema() {
-        return software.amazon.jsii.Kernel.get(this, "recordSchema", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLifecycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "lifecycle", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRecordSchema() {
+        return software.amazon.jsii.Kernel.get(this, "recordSchema", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,13 +171,25 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getShardCount() {
-        return software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setRecordSchema(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "recordSchema", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
+        return software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setShardCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "shardCount", value);
+    }
+
+    /**
+     */
+    public void setShardCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "shardCount", value);
     }
 
@@ -185,12 +227,28 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.comment(comment);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param comment This parameter is required.
+         */
+        public Builder comment(final com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.props.comment(comment);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param projectName This parameter is required.
          */
         public Builder projectName(final java.lang.String projectName) {
+            this.props.projectName(projectName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param projectName This parameter is required.
+         */
+        public Builder projectName(final com.aliyun.ros.cdk.core.IResolvable projectName) {
             this.props.projectName(projectName);
             return this;
         }
@@ -203,12 +261,28 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.recordType(recordType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param recordType This parameter is required.
+         */
+        public Builder recordType(final com.aliyun.ros.cdk.core.IResolvable recordType) {
+            this.props.recordType(recordType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param topicName This parameter is required.
          */
         public Builder topicName(final java.lang.String topicName) {
+            this.props.topicName(topicName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param topicName This parameter is required.
+         */
+        public Builder topicName(final com.aliyun.ros.cdk.core.IResolvable topicName) {
             this.props.topicName(topicName);
             return this;
         }
@@ -221,6 +295,14 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.lifecycle(lifecycle);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param lifecycle This parameter is required.
+         */
+        public Builder lifecycle(final com.aliyun.ros.cdk.core.IResolvable lifecycle) {
+            this.props.lifecycle(lifecycle);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -230,12 +312,28 @@ public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
             this.props.recordSchema(recordSchema);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param recordSchema This parameter is required.
+         */
+        public Builder recordSchema(final com.aliyun.ros.cdk.core.IResolvable recordSchema) {
+            this.props.recordSchema(recordSchema);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param shardCount This parameter is required.
          */
         public Builder shardCount(final java.lang.Number shardCount) {
+            this.props.shardCount(shardCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param shardCount This parameter is required.
+         */
+        public Builder shardCount(final com.aliyun.ros.cdk.core.IResolvable shardCount) {
             this.props.shardCount(shardCount);
             return this;
         }

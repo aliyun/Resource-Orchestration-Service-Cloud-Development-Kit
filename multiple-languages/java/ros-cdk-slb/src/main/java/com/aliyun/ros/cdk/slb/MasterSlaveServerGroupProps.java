@@ -3,22 +3,27 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.383Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.MasterSlaveServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MasterSlaveServerGroupProps.Jsii$Proxy.class)
 public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property loadBalancerId: The ID of the Server Load Balancer instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
+     * Property masterSlaveBackendServers: A list of active/standby server group.
+     * <p>
+     * An active/standby server group can only contain two backend servers.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMasterSlaveBackendServers();
 
     /**
+     * Property masterSlaveServerGroupName: The name of the active/standby server group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterSlaveServerGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterSlaveServerGroupName() {
         return null;
     }
 
@@ -32,13 +37,13 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link MasterSlaveServerGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MasterSlaveServerGroupProps> {
-        private java.lang.String loadBalancerId;
+        private java.lang.Object loadBalancerId;
         private java.lang.Object masterSlaveBackendServers;
-        private java.lang.String masterSlaveServerGroupName;
+        private java.lang.Object masterSlaveServerGroupName;
 
         /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getLoadBalancerId}
-         * @param loadBalancerId the value to be set. This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The ID of the Server Load Balancer instance. This parameter is required.
          * @return {@code this}
          */
         public Builder loadBalancerId(java.lang.String loadBalancerId) {
@@ -47,8 +52,19 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link MasterSlaveServerGroupProps#getLoadBalancerId}
+         * @param loadBalancerId Property loadBalancerId: The ID of the Server Load Balancer instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveBackendServers}
-         * @param masterSlaveBackendServers the value to be set. This parameter is required.
+         * @param masterSlaveBackendServers Property masterSlaveBackendServers: A list of active/standby server group. This parameter is required.
+         *                                  An active/standby server group can only contain two backend servers.
          * @return {@code this}
          */
         public Builder masterSlaveBackendServers(com.aliyun.ros.cdk.core.IResolvable masterSlaveBackendServers) {
@@ -58,7 +74,8 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveBackendServers}
-         * @param masterSlaveBackendServers the value to be set. This parameter is required.
+         * @param masterSlaveBackendServers Property masterSlaveBackendServers: A list of active/standby server group. This parameter is required.
+         *                                  An active/standby server group can only contain two backend servers.
          * @return {@code this}
          */
         public Builder masterSlaveBackendServers(java.util.List<? extends java.lang.Object> masterSlaveBackendServers) {
@@ -68,10 +85,20 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveServerGroupName}
-         * @param masterSlaveServerGroupName the value to be set.
+         * @param masterSlaveServerGroupName Property masterSlaveServerGroupName: The name of the active/standby server group.
          * @return {@code this}
          */
         public Builder masterSlaveServerGroupName(java.lang.String masterSlaveServerGroupName) {
+            this.masterSlaveServerGroupName = masterSlaveServerGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link MasterSlaveServerGroupProps#getMasterSlaveServerGroupName}
+         * @param masterSlaveServerGroupName Property masterSlaveServerGroupName: The name of the active/standby server group.
+         * @return {@code this}
+         */
+        public Builder masterSlaveServerGroupName(com.aliyun.ros.cdk.core.IResolvable masterSlaveServerGroupName) {
             this.masterSlaveServerGroupName = masterSlaveServerGroupName;
             return this;
         }
@@ -92,9 +119,9 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MasterSlaveServerGroupProps {
-        private final java.lang.String loadBalancerId;
+        private final java.lang.Object loadBalancerId;
         private final java.lang.Object masterSlaveBackendServers;
-        private final java.lang.String masterSlaveServerGroupName;
+        private final java.lang.Object masterSlaveServerGroupName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,15 +129,15 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.masterSlaveBackendServers = software.amazon.jsii.Kernel.get(this, "masterSlaveBackendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.masterSlaveServerGroupName = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.masterSlaveServerGroupName = software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String loadBalancerId, final java.lang.Object masterSlaveBackendServers, final java.lang.String masterSlaveServerGroupName) {
+        protected Jsii$Proxy(final java.lang.Object loadBalancerId, final java.lang.Object masterSlaveBackendServers, final java.lang.Object masterSlaveServerGroupName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.loadBalancerId = java.util.Objects.requireNonNull(loadBalancerId, "loadBalancerId is required");
             this.masterSlaveBackendServers = java.util.Objects.requireNonNull(masterSlaveBackendServers, "masterSlaveBackendServers is required");
@@ -118,7 +145,7 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
@@ -128,7 +155,7 @@ public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
-        public final java.lang.String getMasterSlaveServerGroupName() {
+        public final java.lang.Object getMasterSlaveServerGroupName() {
             return this.masterSlaveServerGroupName;
         }
 

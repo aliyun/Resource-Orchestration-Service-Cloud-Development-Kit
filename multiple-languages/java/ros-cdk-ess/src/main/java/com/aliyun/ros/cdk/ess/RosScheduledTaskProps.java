@@ -3,52 +3,52 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScheduledTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.900Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.491Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosScheduledTaskProps.Jsii$Proxy.class)
 public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLaunchTime();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLaunchTime();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScheduledAction();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScheduledAction();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getLaunchExpirationTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchExpirationTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceEndTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceEndTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceValue() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScheduledTaskName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScheduledTaskName() {
         return null;
     }
 
@@ -68,14 +68,14 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosScheduledTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScheduledTaskProps> {
-        private java.lang.String launchTime;
-        private java.lang.String scheduledAction;
-        private java.lang.String description;
-        private java.lang.Number launchExpirationTime;
-        private java.lang.String recurrenceEndTime;
-        private java.lang.String recurrenceType;
-        private java.lang.String recurrenceValue;
-        private java.lang.String scheduledTaskName;
+        private java.lang.Object launchTime;
+        private java.lang.Object scheduledAction;
+        private java.lang.Object description;
+        private java.lang.Object launchExpirationTime;
+        private java.lang.Object recurrenceEndTime;
+        private java.lang.Object recurrenceType;
+        private java.lang.Object recurrenceValue;
+        private java.lang.Object scheduledTaskName;
         private java.lang.Object taskEnabled;
 
         /**
@@ -84,6 +84,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder launchTime(java.lang.String launchTime) {
+            this.launchTime = launchTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getLaunchTime}
+         * @param launchTime the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder launchTime(com.aliyun.ros.cdk.core.IResolvable launchTime) {
             this.launchTime = launchTime;
             return this;
         }
@@ -99,11 +109,31 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getScheduledAction}
+         * @param scheduledAction the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scheduledAction(com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
+            this.scheduledAction = scheduledAction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -119,11 +149,31 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getLaunchExpirationTime}
+         * @param launchExpirationTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchExpirationTime(com.aliyun.ros.cdk.core.IResolvable launchExpirationTime) {
+            this.launchExpirationTime = launchExpirationTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getRecurrenceEndTime}
          * @param recurrenceEndTime the value to be set.
          * @return {@code this}
          */
         public Builder recurrenceEndTime(java.lang.String recurrenceEndTime) {
+            this.recurrenceEndTime = recurrenceEndTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getRecurrenceEndTime}
+         * @param recurrenceEndTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder recurrenceEndTime(com.aliyun.ros.cdk.core.IResolvable recurrenceEndTime) {
             this.recurrenceEndTime = recurrenceEndTime;
             return this;
         }
@@ -139,6 +189,16 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getRecurrenceType}
+         * @param recurrenceType the value to be set.
+         * @return {@code this}
+         */
+        public Builder recurrenceType(com.aliyun.ros.cdk.core.IResolvable recurrenceType) {
+            this.recurrenceType = recurrenceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getRecurrenceValue}
          * @param recurrenceValue the value to be set.
          * @return {@code this}
@@ -149,11 +209,31 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosScheduledTaskProps#getRecurrenceValue}
+         * @param recurrenceValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder recurrenceValue(com.aliyun.ros.cdk.core.IResolvable recurrenceValue) {
+            this.recurrenceValue = recurrenceValue;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScheduledTaskProps#getScheduledTaskName}
          * @param scheduledTaskName the value to be set.
          * @return {@code this}
          */
         public Builder scheduledTaskName(java.lang.String scheduledTaskName) {
+            this.scheduledTaskName = scheduledTaskName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScheduledTaskProps#getScheduledTaskName}
+         * @param scheduledTaskName the value to be set.
+         * @return {@code this}
+         */
+        public Builder scheduledTaskName(com.aliyun.ros.cdk.core.IResolvable scheduledTaskName) {
             this.scheduledTaskName = scheduledTaskName;
             return this;
         }
@@ -194,14 +274,14 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScheduledTaskProps {
-        private final java.lang.String launchTime;
-        private final java.lang.String scheduledAction;
-        private final java.lang.String description;
-        private final java.lang.Number launchExpirationTime;
-        private final java.lang.String recurrenceEndTime;
-        private final java.lang.String recurrenceType;
-        private final java.lang.String recurrenceValue;
-        private final java.lang.String scheduledTaskName;
+        private final java.lang.Object launchTime;
+        private final java.lang.Object scheduledAction;
+        private final java.lang.Object description;
+        private final java.lang.Object launchExpirationTime;
+        private final java.lang.Object recurrenceEndTime;
+        private final java.lang.Object recurrenceType;
+        private final java.lang.Object recurrenceValue;
+        private final java.lang.Object scheduledTaskName;
         private final java.lang.Object taskEnabled;
 
         /**
@@ -210,21 +290,21 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.launchTime = software.amazon.jsii.Kernel.get(this, "launchTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchExpirationTime = software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.recurrenceEndTime = software.amazon.jsii.Kernel.get(this, "recurrenceEndTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scheduledTaskName = software.amazon.jsii.Kernel.get(this, "scheduledTaskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.launchTime = software.amazon.jsii.Kernel.get(this, "launchTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchExpirationTime = software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceEndTime = software.amazon.jsii.Kernel.get(this, "recurrenceEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduledTaskName = software.amazon.jsii.Kernel.get(this, "scheduledTaskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.taskEnabled = software.amazon.jsii.Kernel.get(this, "taskEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String launchTime, final java.lang.String scheduledAction, final java.lang.String description, final java.lang.Number launchExpirationTime, final java.lang.String recurrenceEndTime, final java.lang.String recurrenceType, final java.lang.String recurrenceValue, final java.lang.String scheduledTaskName, final java.lang.Object taskEnabled) {
+        protected Jsii$Proxy(final java.lang.Object launchTime, final java.lang.Object scheduledAction, final java.lang.Object description, final java.lang.Object launchExpirationTime, final java.lang.Object recurrenceEndTime, final java.lang.Object recurrenceType, final java.lang.Object recurrenceValue, final java.lang.Object scheduledTaskName, final java.lang.Object taskEnabled) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.launchTime = java.util.Objects.requireNonNull(launchTime, "launchTime is required");
             this.scheduledAction = java.util.Objects.requireNonNull(scheduledAction, "scheduledAction is required");
@@ -238,42 +318,42 @@ public interface RosScheduledTaskProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getLaunchTime() {
+        public final java.lang.Object getLaunchTime() {
             return this.launchTime;
         }
 
         @Override
-        public final java.lang.String getScheduledAction() {
+        public final java.lang.Object getScheduledAction() {
             return this.scheduledAction;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getLaunchExpirationTime() {
+        public final java.lang.Object getLaunchExpirationTime() {
             return this.launchExpirationTime;
         }
 
         @Override
-        public final java.lang.String getRecurrenceEndTime() {
+        public final java.lang.Object getRecurrenceEndTime() {
             return this.recurrenceEndTime;
         }
 
         @Override
-        public final java.lang.String getRecurrenceType() {
+        public final java.lang.Object getRecurrenceType() {
             return this.recurrenceType;
         }
 
         @Override
-        public final java.lang.String getRecurrenceValue() {
+        public final java.lang.Object getRecurrenceValue() {
             return this.recurrenceValue;
         }
 
         @Override
-        public final java.lang.String getScheduledTaskName() {
+        public final java.lang.Object getScheduledTaskName() {
             return this.scheduledTaskName;
         }
 

@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public interface IProvisionConfigProps
     {
         /// <summary>Property functionName: Function name.</summary>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}")]
-        string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object FunctionName
         {
             get;
         }
@@ -19,22 +19,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// <remarks>
         /// Example : "LATEST"
         /// </remarks>
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}")]
-        string Qualifier
+        [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Qualifier
         {
             get;
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-        string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServiceName
         {
             get;
         }
 
         /// <summary>Property target: Number of provision.</summary>
-        [JsiiProperty(name: "target", typeJson: "{\"primitive\":\"number\"}")]
-        double Target
+        [JsiiProperty(name: "target", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Target
         {
             get;
         }
@@ -48,34 +48,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
 
             /// <summary>Property functionName: Function name.</summary>
-            [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}")]
-            public string FunctionName
+            [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object FunctionName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property qualifier: Service's alias.</summary>
             /// <remarks>
             /// Example : "LATEST"
             /// </remarks>
-            [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}")]
-            public string Qualifier
+            [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Qualifier
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property serviceName: Service name.</summary>
-            [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ServiceName
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServiceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property target: Number of provision.</summary>
-            [JsiiProperty(name: "target", typeJson: "{\"primitive\":\"number\"}")]
-            public double Target
+            [JsiiProperty(name: "target", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Target
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

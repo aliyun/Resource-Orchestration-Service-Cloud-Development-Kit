@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Attribute LogstoreName: Logstore name.</summary>
-        [JsiiProperty(name: "attrLogstoreName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLogstoreName
+        [JsiiProperty(name: "attrLogstoreName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogstoreName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

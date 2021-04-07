@@ -11,32 +11,32 @@ export interface ClusterProps {
     /**
      * Property clusterName: Cluster name
      */
-    readonly clusterName: string;
+    readonly clusterName: string | ros.IResolvable;
 
     /**
      * Property clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
      */
-    readonly clusterType: number;
+    readonly clusterType: number | ros.IResolvable;
 
     /**
      * Property networkMode: Network Type. 1- classic network, 2-VPC
      */
-    readonly networkMode: number;
+    readonly networkMode: number | ros.IResolvable;
 
     /**
      * Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
      */
-    readonly logicalRegionId?: string;
+    readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
      * Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
      */
-    readonly oversoldFactor?: number;
+    readonly oversoldFactor?: number | ros.IResolvable;
 
     /**
      * Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -52,22 +52,22 @@ export class Cluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster ID
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute ClusterName: Cluster name
      */
-    public readonly attrClusterName: any;
+    public readonly attrClusterName: ros.IResolvable;
 
     /**
      * Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: any;
+    public readonly attrClusterType: ros.IResolvable;
 
     /**
      * Attribute IaasProvider: Provider
      */
-    public readonly attrIaasProvider: any;
+    public readonly attrIaasProvider: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::Cluster`.

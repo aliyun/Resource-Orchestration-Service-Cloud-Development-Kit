@@ -33,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             {
             }
 
-            /// <summary>The creation stack of this resolvable which will be appended to errors&#xD; thrown during resolution.</summary>
+            /// <summary>The creation stack of this resolvable which will be appended to errors thrown during resolution.</summary>
             /// <remarks>
             /// If this returns an empty array the stack will not be attached.
             /// </remarks>

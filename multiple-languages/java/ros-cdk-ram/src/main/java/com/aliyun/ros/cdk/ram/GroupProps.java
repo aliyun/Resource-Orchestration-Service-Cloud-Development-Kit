@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupName: Specifies the group name, containing up to 64 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
+     * Property comments: Remark information, up to 128 characters or Chinese characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComments() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComments() {
         return null;
     }
 
     /**
+     * Property policies: Describes what actions are allowed on what resources.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicies() {
         return null;
@@ -34,13 +37,13 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link GroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<GroupProps> {
-        private java.lang.String groupName;
-        private java.lang.String comments;
+        private java.lang.Object groupName;
+        private java.lang.Object comments;
         private java.lang.Object policies;
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
-         * @param groupName the value to be set. This parameter is required.
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -49,8 +52,18 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getGroupName}
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getComments}
-         * @param comments the value to be set.
+         * @param comments Property comments: Remark information, up to 128 characters or Chinese characters.
          * @return {@code this}
          */
         public Builder comments(java.lang.String comments) {
@@ -59,8 +72,18 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link GroupProps#getComments}
+         * @param comments Property comments: Remark information, up to 128 characters or Chinese characters.
+         * @return {@code this}
+         */
+        public Builder comments(com.aliyun.ros.cdk.core.IResolvable comments) {
+            this.comments = comments;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link GroupProps#getPolicies}
-         * @param policies the value to be set.
+         * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
          */
         public Builder policies(com.aliyun.ros.cdk.core.IResolvable policies) {
@@ -70,7 +93,7 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GroupProps#getPolicies}
-         * @param policies the value to be set.
+         * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
          */
         public Builder policies(java.util.List<? extends java.lang.Object> policies) {
@@ -94,8 +117,8 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements GroupProps {
-        private final java.lang.String groupName;
-        private final java.lang.String comments;
+        private final java.lang.Object groupName;
+        private final java.lang.Object comments;
         private final java.lang.Object policies;
 
         /**
@@ -104,15 +127,15 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName, final java.lang.String comments, final java.lang.Object policies) {
+        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object comments, final java.lang.Object policies) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
             this.comments = comments;
@@ -120,12 +143,12 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getComments() {
+        public final java.lang.Object getComments() {
             return this.comments;
         }
 

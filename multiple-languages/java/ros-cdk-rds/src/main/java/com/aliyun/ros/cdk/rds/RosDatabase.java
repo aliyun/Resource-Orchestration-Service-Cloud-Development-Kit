@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::Database`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDatabase")
 public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCharacterSetName() {
-        return software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCharacterSetName() {
+        return software.amazon.jsii.Kernel.get(this, "characterSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +73,14 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCharacterSetName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "characterSetName", java.util.Objects.requireNonNull(value, "characterSetName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,13 +91,25 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbName() {
-        return software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDbInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceId", java.util.Objects.requireNonNull(value, "dbInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbName() {
+        return software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbName", java.util.Objects.requireNonNull(value, "dbName is required"));
+    }
+
+    /**
+     */
+    public void setDbName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbName", java.util.Objects.requireNonNull(value, "dbName is required"));
     }
 
@@ -105,13 +123,19 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDbDescription() {
-        return software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
+        return software.amazon.jsii.Kernel.get(this, "dbDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbDescription", value);
+    }
+
+    /**
+     */
+    public void setDbDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbDescription", value);
     }
 
@@ -149,12 +173,28 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
             this.props.characterSetName(characterSetName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param characterSetName This parameter is required.
+         */
+        public Builder characterSetName(final com.aliyun.ros.cdk.core.IResolvable characterSetName) {
+            this.props.characterSetName(characterSetName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbInstanceId This parameter is required.
          */
         public Builder dbInstanceId(final java.lang.String dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceId This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
@@ -167,12 +207,28 @@ public class RosDatabase extends com.aliyun.ros.cdk.core.RosResource {
             this.props.dbName(dbName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbName This parameter is required.
+         */
+        public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.props.dbName(dbName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbDescription This parameter is required.
          */
         public Builder dbDescription(final java.lang.String dbDescription) {
+            this.props.dbDescription(dbDescription);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbDescription This parameter is required.
+         */
+        public Builder dbDescription(final com.aliyun.ros.cdk.core.IResolvable dbDescription) {
             this.props.dbDescription(dbDescription);
             return this;
         }

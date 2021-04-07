@@ -9,7 +9,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
     public interface IInstanceProps
     {
         /// <summary>Property backupPolicy: Backup policy.</summary>
-        [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.BackupPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BackupPolicy
         {
@@ -20,9 +20,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
-        [JsiiProperty(name: "capacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Capacity
+        object? Capacity
         {
             get
             {
@@ -34,9 +34,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// Supported values: 2.8, 4.0 and 5.0.
         /// </remarks>
-        [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EngineVersion
+        object? EngineVersion
         {
             get
             {
@@ -45,9 +45,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property evictionPolicy: The eviction policy of cache data storage.</summary>
-        [JsiiProperty(name: "evictionPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "evictionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EvictionPolicy
+        object? EvictionPolicy
         {
             get
             {
@@ -59,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
         /// </remarks>
-        [JsiiProperty(name: "instanceClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceClass
+        object? InstanceClass
         {
             get
             {
@@ -92,9 +92,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceName
+        object? InstanceName
         {
             get
             {
@@ -103,9 +103,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers.</summary>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Password
+        object? Password
         {
             get
             {
@@ -117,9 +117,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// Separate multiple security group IDs with commas (,) and up to 10 can be set.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityGroupId
+        object? SecurityGroupId
         {
             get
             {
@@ -134,9 +134,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// Enable: enables SSL encryption.
         /// Update: updates the SSL certificate.
         /// </remarks>
-        [JsiiProperty(name: "sslEnabled", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SslEnabled
+        object? SslEnabled
         {
             get
             {
@@ -148,9 +148,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITagsProperty[]? Tags
         {
             get
             {
@@ -159,9 +159,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property vpcId: The VPC id to create ecs instance.</summary>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VpcId
+        object? VpcId
         {
             get
             {
@@ -172,7 +172,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <summary>Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.</summary>
         /// <remarks>
         /// If set to:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>true: enables password free.</description>
         /// <description>false: disables password free.</description>
@@ -189,9 +189,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property vSwitchId: The vSwitch Id to create ecs instance.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -200,9 +200,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         }
 
         /// <summary>Property zoneId: The zone id of input region.</summary>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ZoneId
+        object? ZoneId
         {
             get
             {
@@ -220,7 +220,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <summary>Property backupPolicy: Backup policy.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.BackupPolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "backupPolicy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.BackupPolicyProperty\"}]}}", isOptional: true)]
             public object? BackupPolicy
             {
                 get => GetInstanceProperty<object?>();
@@ -228,10 +228,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <summary>Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "capacity", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Capacity
+            [JsiiProperty(name: "capacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Capacity
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property engineVersion: Engine version.</summary>
@@ -239,18 +239,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Supported values: 2.8, 4.0 and 5.0.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "engineVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EngineVersion
+            [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EngineVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property evictionPolicy: The eviction policy of cache data storage.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "evictionPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EvictionPolicy
+            [JsiiProperty(name: "evictionPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EvictionPolicy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceClass: Redis instance type.</summary>
@@ -258,10 +258,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceClass
+            [JsiiProperty(name: "instanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceClass
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceConnection: Instance connection message.</summary>
@@ -282,18 +282,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <summary>Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Password
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityGroupId: The IDs of security groups.</summary>
@@ -301,10 +301,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Separate multiple security group IDs with commas (,) and up to 10 can be set.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property sslEnabled: Modifies the SSL status.</summary>
@@ -315,10 +315,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Update: updates the SSL certificate.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "sslEnabled", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SslEnabled
+            [JsiiProperty(name: "sslEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SslEnabled
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tags to attach to redis.</summary>
@@ -326,24 +326,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-redis.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Redis.RosInstance.ITagsProperty[]?>();
             }
 
             /// <summary>Property vpcId: The VPC id to create ecs instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.</summary>
             /// <remarks>
             /// If set to:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>true: enables password free.</description>
             /// <description>false: disables password free.</description>
@@ -358,18 +358,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
 
             /// <summary>Property vSwitchId: The vSwitch Id to create ecs instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property zoneId: The zone id of input region.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

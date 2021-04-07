@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::CenBandwidthPackageAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociation")
 public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Reso
     /**
      * Create a new `ALIYUN::CEN::CenBandwidthPackageAssociation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CenBandwidthPackageAssociation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenBandwidthPackageAssociationProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Reso
     /**
      * Create a new `ALIYUN::CEN::CenBandwidthPackageAssociation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CenBandwidthPackageAssociation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cen.CenBandwidthPackageAssociationProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Reso
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cen.CenBandwidthPackageAssociation> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Reso
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,19 +83,43 @@ public class CenBandwidthPackageAssociation extends com.aliyun.ros.cdk.core.Reso
         }
 
         /**
+         * Property cenBandwidthPackageId: The ID of the bandwidth package.
+         * <p>
          * @return {@code this}
-         * @param cenBandwidthPackageId This parameter is required.
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The ID of the bandwidth package. This parameter is required.
          */
         public Builder cenBandwidthPackageId(final java.lang.String cenBandwidthPackageId) {
             this.props.cenBandwidthPackageId(cenBandwidthPackageId);
             return this;
         }
+        /**
+         * Property cenBandwidthPackageId: The ID of the bandwidth package.
+         * <p>
+         * @return {@code this}
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The ID of the bandwidth package. This parameter is required.
+         */
+        public Builder cenBandwidthPackageId(final com.aliyun.ros.cdk.core.IResolvable cenBandwidthPackageId) {
+            this.props.cenBandwidthPackageId(cenBandwidthPackageId);
+            return this;
+        }
 
         /**
+         * Property cenId: The ID of the CEN instance.
+         * <p>
          * @return {@code this}
-         * @param cenId This parameter is required.
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
+        /**
+         * Property cenId: The ID of the CEN instance.
+         * <p>
+         * @return {@code this}
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.props.cenId(cenId);
             return this;
         }

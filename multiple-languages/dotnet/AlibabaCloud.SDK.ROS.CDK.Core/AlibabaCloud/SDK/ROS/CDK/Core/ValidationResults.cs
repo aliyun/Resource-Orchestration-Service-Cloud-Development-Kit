@@ -38,7 +38,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<string>(new System.Type[]{}, new object[]{})!;
         }
 
-        /// <summary>Wrap up all validation results into a single tree node&#xD; &#xD; If there are failures in the collection, add a message, otherwise&#xD; return a success.</summary>
+        /// <summary>Wrap up all validation results into a single tree node.</summary>
+        /// <remarks>
+        /// If there are failures in the collection, add a message, otherwise
+        /// return a success.
+        /// </remarks>
         [JsiiMethod(name: "wrap", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.ValidationResult\"}}", parametersJson: "[{\"name\":\"message\",\"type\":{\"primitive\":\"string\"}}]")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.ValidationResult Wrap(string message)
         {

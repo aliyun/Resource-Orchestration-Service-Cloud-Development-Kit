@@ -11,22 +11,22 @@ export interface ClusterProps {
     /**
      * Property clusterName: Cluster name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    readonly clusterName: string;
+    readonly clusterName: string | ros.IResolvable;
 
     /**
      * Property description: Cluster description.
      */
-    readonly description: string;
+    readonly description: string | ros.IResolvable;
 
     /**
      * Property ossBucket: Bucket name in your OSS.
      */
-    readonly ossBucket: string;
+    readonly ossBucket: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * Property order: Order detail. Only one of property Order or OrderId can be specified.
@@ -40,7 +40,7 @@ export interface ClusterProps {
      * Property orderId: Order Id. Only one of property Order or OrderId can be specified.
      * OrderId is suggested.
      */
-    readonly orderId?: string;
+    readonly orderId?: string | ros.IResolvable;
 }
 
 /**
@@ -56,42 +56,42 @@ export class Cluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute EngineVersions: Engine Versions.
      */
-    public readonly attrEngineVersions: any;
+    public readonly attrEngineVersions: ros.IResolvable;
 
     /**
      * Attribute MasterInstanceInfos: Master instance infos.
      */
-    public readonly attrMasterInstanceInfos: any;
+    public readonly attrMasterInstanceInfos: ros.IResolvable;
 
     /**
      * Attribute OrderId: Order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Attribute SecurityGroupId: Security group Id.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
      * Attribute SlaveInstanceInfos: Slave instance infos.
      */
-    public readonly attrSlaveInstanceInfos: any;
+    public readonly attrSlaveInstanceInfos: ros.IResolvable;
 
     /**
      * Attribute State: Cluster status.
      */
-    public readonly attrState: any;
+    public readonly attrState: ros.IResolvable;
 
     /**
      * Attribute VSwitchIds: VSwitch Ids.
      */
-    public readonly attrVSwitchIds: any;
+    public readonly attrVSwitchIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FOAS::Cluster`.

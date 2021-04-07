@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster id
         /// </remarks>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Name: Cluster name
         /// </remarks>
-        [JsiiProperty(name: "attrName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrName
+        [JsiiProperty(name: "attrName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -72,10 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: clusterType: Cluster Type:
         /// gws.s1.standard
         /// </remarks>
-        [JsiiProperty(name: "clusterType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClusterType
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -89,10 +89,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <remarks>
         /// <strong>Property</strong>: vpcId: VPC id
         /// </remarks>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object VpcId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: name: Cluster name
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -111,7 +111,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: policy: Cluster policy
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-gws.RosCluster.PolicyProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-gws.RosCluster.PolicyProperty\"}]}}", isOptional: true)]
         public virtual object? Policy
         {
             get => GetInstanceProperty<object?>();
@@ -122,10 +122,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
         /// <strong>Property</strong>: vSwitchId: VSwitch id
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VSwitchId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IPolicyProperty), fullyQualifiedName: "@alicloud/ros-cdk-gws.RosCluster.PolicyProperty")]
@@ -134,8 +134,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: clipboard: Clipboard
             /// </remarks>
-            [JsiiProperty(name: "clipboard", typeJson: "{\"primitive\":\"string\"}")]
-            string Clipboard
+            [JsiiProperty(name: "clipboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Clipboard
             {
                 get;
             }
@@ -143,8 +143,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: localDrive: Local drive
             /// </remarks>
-            [JsiiProperty(name: "localDrive", typeJson: "{\"primitive\":\"string\"}")]
-            string LocalDrive
+            [JsiiProperty(name: "localDrive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object LocalDrive
             {
                 get;
             }
@@ -152,8 +152,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: usbRedirect: USB redirect
             /// </remarks>
-            [JsiiProperty(name: "usbRedirect", typeJson: "{\"primitive\":\"string\"}")]
-            string UsbRedirect
+            [JsiiProperty(name: "usbRedirect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object UsbRedirect
             {
                 get;
             }
@@ -161,8 +161,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: watermark: Watermark
             /// </remarks>
-            [JsiiProperty(name: "watermark", typeJson: "{\"primitive\":\"string\"}")]
-            string Watermark
+            [JsiiProperty(name: "watermark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Watermark
             {
                 get;
             }
@@ -177,37 +177,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
                 /// <remarks>
                 /// <strong>Property</strong>: clipboard: Clipboard
                 /// </remarks>
-                [JsiiProperty(name: "clipboard", typeJson: "{\"primitive\":\"string\"}")]
-                public string Clipboard
+                [JsiiProperty(name: "clipboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Clipboard
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: localDrive: Local drive
                 /// </remarks>
-                [JsiiProperty(name: "localDrive", typeJson: "{\"primitive\":\"string\"}")]
-                public string LocalDrive
+                [JsiiProperty(name: "localDrive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object LocalDrive
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: usbRedirect: USB redirect
                 /// </remarks>
-                [JsiiProperty(name: "usbRedirect", typeJson: "{\"primitive\":\"string\"}")]
-                public string UsbRedirect
+                [JsiiProperty(name: "usbRedirect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object UsbRedirect
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: watermark: Watermark
                 /// </remarks>
-                [JsiiProperty(name: "watermark", typeJson: "{\"primitive\":\"string\"}")]
-                public string Watermark
+                [JsiiProperty(name: "watermark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Watermark
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -219,8 +219,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: clipboard: Clipboard
             /// </remarks>
-            [JsiiProperty(name: "clipboard", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Clipboard
+            [JsiiProperty(name: "clipboard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Clipboard
             {
                 get;
                 set;
@@ -229,8 +229,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: localDrive: Local drive
             /// </remarks>
-            [JsiiProperty(name: "localDrive", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string LocalDrive
+            [JsiiProperty(name: "localDrive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object LocalDrive
             {
                 get;
                 set;
@@ -239,8 +239,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: usbRedirect: USB redirect
             /// </remarks>
-            [JsiiProperty(name: "usbRedirect", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string UsbRedirect
+            [JsiiProperty(name: "usbRedirect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object UsbRedirect
             {
                 get;
                 set;
@@ -249,8 +249,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gws
             /// <remarks>
             /// <strong>Property</strong>: watermark: Watermark
             /// </remarks>
-            [JsiiProperty(name: "watermark", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Watermark
+            [JsiiProperty(name: "watermark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Watermark
             {
                 get;
                 set;

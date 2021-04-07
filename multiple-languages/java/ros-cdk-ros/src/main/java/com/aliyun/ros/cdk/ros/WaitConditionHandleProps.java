@@ -3,20 +3,32 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitConditionHandle`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.347Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionHandleProps")
 @software.amazon.jsii.Jsii.Proxy(WaitConditionHandleProps.Jsii$Proxy.class)
 public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+     * <p>
+     * If Count takes effect, signals with id &gt; Count will be deleted before update.
+     * The default value is -1, which means no effect.
+     * It is recommended to quote the same value with WaitCondition.Count.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
         return null;
     }
 
     /**
+     * Property mode: If set to Increment, all old signals will be deleted before update.
+     * <p>
+     * In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances.
+     * <p>
+     * If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count.
+     * <p>
+     * Default to Full.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
         return null;
     }
 
@@ -30,12 +42,15 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link WaitConditionHandleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<WaitConditionHandleProps> {
-        private java.lang.Number count;
-        private java.lang.String mode;
+        private java.lang.Object count;
+        private java.lang.Object mode;
 
         /**
          * Sets the value of {@link WaitConditionHandleProps#getCount}
-         * @param count the value to be set.
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         *              If Count takes effect, signals with id &gt; Count will be deleted before update.
+         *              The default value is -1, which means no effect.
+         *              It is recommended to quote the same value with WaitCondition.Count.
          * @return {@code this}
          */
         public Builder count(java.lang.Number count) {
@@ -44,11 +59,44 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link WaitConditionHandleProps#getCount}
+         * @param count Property count: There are 3 preconditions that make Count taking effect: 1.Mode is set to Full. 2.Count >= 0. 3.The id of signal is not specified. If so, it will be a self-increasing integer started from 1. For example, the id of the first signal is 1, the id of the second signal is 2, and so on.
+         *              If Count takes effect, signals with id &gt; Count will be deleted before update.
+         *              The default value is -1, which means no effect.
+         *              It is recommended to quote the same value with WaitCondition.Count.
+         * @return {@code this}
+         */
+        public Builder count(com.aliyun.ros.cdk.core.IResolvable count) {
+            this.count = count;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link WaitConditionHandleProps#getMode}
-         * @param mode the value to be set.
+         * @param mode Property mode: If set to Increment, all old signals will be deleted before update.
+         *             In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances.
+         *             <p>
+         *             If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count.
+         *             <p>
+         *             Default to Full.
          * @return {@code this}
          */
         public Builder mode(java.lang.String mode) {
+            this.mode = mode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link WaitConditionHandleProps#getMode}
+         * @param mode Property mode: If set to Increment, all old signals will be deleted before update.
+         *             In this mode, WaitCondition.Count should reference an incremental value instead of a full value, such as ScalingGroupEnable.ScalingRuleArisExecuteResultNumberOfAddedInstances.
+         *             <p>
+         *             If set to Full, no old signal will be deleted unless Count is set. In this mode, WaitCondition.Count should reference a full value, such as the same value with InstanceGroup.MaxAmount. It is recommended to use this mode with Count.
+         *             <p>
+         *             Default to Full.
+         * @return {@code this}
+         */
+        public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
             this.mode = mode;
             return this;
         }
@@ -69,8 +117,8 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements WaitConditionHandleProps {
-        private final java.lang.Number count;
-        private final java.lang.String mode;
+        private final java.lang.Object count;
+        private final java.lang.Object mode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -78,26 +126,26 @@ public interface WaitConditionHandleProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mode = software.amazon.jsii.Kernel.get(this, "mode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number count, final java.lang.String mode) {
+        protected Jsii$Proxy(final java.lang.Object count, final java.lang.Object mode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.count = count;
             this.mode = mode;
         }
 
         @Override
-        public final java.lang.Number getCount() {
+        public final java.lang.Object getCount() {
             return this.count;
         }
 
         @Override
-        public final java.lang.String getMode() {
+        public final java.lang.Object getMode() {
             return this.mode;
         }
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::LoadBalancerClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerClone")
 public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,19 +44,13 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrLoadBalancerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TagManager getTags() {
-        return software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.TagManager.class));
     }
 
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -69,13 +63,19 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSourceLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "sourceLoadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSourceLoadBalancerId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sourceLoadBalancerId", java.util.Objects.requireNonNull(value, "sourceLoadBalancerId is required"));
+    }
+
+    /**
+     */
+    public void setSourceLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceLoadBalancerId", java.util.Objects.requireNonNull(value, "sourceLoadBalancerId is required"));
     }
 
@@ -99,8 +99,8 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getBackendServersPolicy() {
-        return software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackendServersPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "backendServersPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +111,14 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLoadBalancerName() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setBackendServersPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backendServersPolicy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +129,14 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLoadBalancerName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +147,26 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getTagsPolicy() {
-        return software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    /**
+     */
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTagsPolicy() {
+        return software.amazon.jsii.Kernel.get(this, "tagsPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,13 +177,25 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTagsPolicy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tagsPolicy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setVSwitchId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
+    }
+
+    /**
+     */
+    public void setVSwitchId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchId", value);
     }
     /**
@@ -166,31 +208,31 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getServerId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getWeight();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getServerIp() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerIp() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
             return null;
         }
 
@@ -206,11 +248,11 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<BackendServersProperty> {
-            private java.lang.String serverId;
-            private java.lang.Number weight;
-            private java.lang.String description;
-            private java.lang.String serverIp;
-            private java.lang.String type;
+            private java.lang.Object serverId;
+            private java.lang.Object weight;
+            private java.lang.Object description;
+            private java.lang.Object serverIp;
+            private java.lang.Object type;
 
             /**
              * Sets the value of {@link BackendServersProperty#getServerId}
@@ -219,6 +261,17 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serverId(java.lang.String serverId) {
+                this.serverId = serverId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getServerId}
+             * @param serverId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverId(com.aliyun.ros.cdk.core.IResolvable serverId) {
                 this.serverId = serverId;
                 return this;
             }
@@ -235,12 +288,34 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link BackendServersProperty#getWeight}
+             * @param weight the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BackendServersProperty#getDescription}
              * @param description the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
                 return this;
             }
@@ -257,12 +332,34 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link BackendServersProperty#getServerIp}
+             * @param serverIp the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverIp(com.aliyun.ros.cdk.core.IResolvable serverIp) {
+                this.serverIp = serverIp;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link BackendServersProperty#getType}
              * @param type the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder type(java.lang.String type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackendServersProperty#getType}
+             * @param type the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
                 this.type = type;
                 return this;
             }
@@ -285,11 +382,11 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BackendServersProperty {
-            private final java.lang.String serverId;
-            private final java.lang.Number weight;
-            private final java.lang.String description;
-            private final java.lang.String serverIp;
-            private final java.lang.String type;
+            private final java.lang.Object serverId;
+            private final java.lang.Object weight;
+            private final java.lang.Object description;
+            private final java.lang.Object serverIp;
+            private final java.lang.Object type;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -297,17 +394,17 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverIp = software.amazon.jsii.Kernel.get(this, "serverIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String serverId, final java.lang.Number weight, final java.lang.String description, final java.lang.String serverIp, final java.lang.String type) {
+            protected Jsii$Proxy(final java.lang.Object serverId, final java.lang.Object weight, final java.lang.Object description, final java.lang.Object serverIp, final java.lang.Object type) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.serverId = java.util.Objects.requireNonNull(serverId, "serverId is required");
                 this.weight = java.util.Objects.requireNonNull(weight, "weight is required");
@@ -317,27 +414,27 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getServerId() {
+            public final java.lang.Object getServerId() {
                 return this.serverId;
             }
 
             @Override
-            public final java.lang.Number getWeight() {
+            public final java.lang.Object getWeight() {
                 return this.weight;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
             @Override
-            public final java.lang.String getServerIp() {
+            public final java.lang.Object getServerIp() {
                 return this.serverIp;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
@@ -394,6 +491,174 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosLoadBalancerClone.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            private java.lang.Object key;
+            private java.lang.Object value;
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TagsProperty build() {
+                return new Jsii$Proxy(key, value);
+            }
+        }
+
+        /**
+         * An implementation for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(key, "key is required");
+                this.value = value;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-slb.RosLoadBalancerClone.TagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.slb.RosLoadBalancerClone}.
@@ -429,6 +694,14 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             this.props.sourceLoadBalancerId(sourceLoadBalancerId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param sourceLoadBalancerId This parameter is required.
+         */
+        public Builder sourceLoadBalancerId(final com.aliyun.ros.cdk.core.IResolvable sourceLoadBalancerId) {
+            this.props.sourceLoadBalancerId(sourceLoadBalancerId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -455,12 +728,28 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             this.props.backendServersPolicy(backendServersPolicy);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param backendServersPolicy This parameter is required.
+         */
+        public Builder backendServersPolicy(final com.aliyun.ros.cdk.core.IResolvable backendServersPolicy) {
+            this.props.backendServersPolicy(backendServersPolicy);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param loadBalancerName This parameter is required.
          */
         public Builder loadBalancerName(final java.lang.String loadBalancerName) {
+            this.props.loadBalancerName(loadBalancerName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param loadBalancerName This parameter is required.
+         */
+        public Builder loadBalancerName(final com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
             this.props.loadBalancerName(loadBalancerName);
             return this;
         }
@@ -473,12 +762,20 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param tags This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.slb.RosLoadBalancerClone.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }
@@ -491,12 +788,28 @@ public class RosLoadBalancerClone extends com.aliyun.ros.cdk.core.RosResource {
             this.props.tagsPolicy(tagsPolicy);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param tagsPolicy This parameter is required.
+         */
+        public Builder tagsPolicy(final com.aliyun.ros.cdk.core.IResolvable tagsPolicy) {
+            this.props.tagsPolicy(tagsPolicy);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param vSwitchId This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }

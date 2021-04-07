@@ -3,28 +3,32 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::UserDefineRegion`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.429Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.UserDefineRegionProps")
 @software.amazon.jsii.Jsii.Proxy(UserDefineRegionProps.Jsii$Proxy.class)
 public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property regionName: Logical region (or namespace) name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRegionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRegionName();
 
     /**
+     * Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier").
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRegionTag();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRegionTag();
 
     /**
+     * Property debugEnable: Whether debug is enable.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDebugEnable() {
         return null;
     }
 
     /**
+     * Property description: Logic region (or namespace) description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -38,14 +42,14 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link UserDefineRegionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<UserDefineRegionProps> {
-        private java.lang.String regionName;
-        private java.lang.String regionTag;
+        private java.lang.Object regionName;
+        private java.lang.Object regionTag;
         private java.lang.Object debugEnable;
-        private java.lang.String description;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link UserDefineRegionProps#getRegionName}
-         * @param regionName the value to be set. This parameter is required.
+         * @param regionName Property regionName: Logical region (or namespace) name. This parameter is required.
          * @return {@code this}
          */
         public Builder regionName(java.lang.String regionName) {
@@ -54,8 +58,18 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link UserDefineRegionProps#getRegionName}
+         * @param regionName Property regionName: Logical region (or namespace) name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder regionName(com.aliyun.ros.cdk.core.IResolvable regionName) {
+            this.regionName = regionName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserDefineRegionProps#getRegionTag}
-         * @param regionTag the value to be set. This parameter is required.
+         * @param regionTag Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier"). This parameter is required.
          * @return {@code this}
          */
         public Builder regionTag(java.lang.String regionTag) {
@@ -64,8 +78,18 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link UserDefineRegionProps#getRegionTag}
+         * @param regionTag Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier"). This parameter is required.
+         * @return {@code this}
+         */
+        public Builder regionTag(com.aliyun.ros.cdk.core.IResolvable regionTag) {
+            this.regionTag = regionTag;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserDefineRegionProps#getDebugEnable}
-         * @param debugEnable the value to be set.
+         * @param debugEnable Property debugEnable: Whether debug is enable.
          * @return {@code this}
          */
         public Builder debugEnable(java.lang.Boolean debugEnable) {
@@ -75,7 +99,7 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link UserDefineRegionProps#getDebugEnable}
-         * @param debugEnable the value to be set.
+         * @param debugEnable Property debugEnable: Whether debug is enable.
          * @return {@code this}
          */
         public Builder debugEnable(com.aliyun.ros.cdk.core.IResolvable debugEnable) {
@@ -85,10 +109,20 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link UserDefineRegionProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Logic region (or namespace) description.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link UserDefineRegionProps#getDescription}
+         * @param description Property description: Logic region (or namespace) description.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -109,10 +143,10 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UserDefineRegionProps {
-        private final java.lang.String regionName;
-        private final java.lang.String regionTag;
+        private final java.lang.Object regionName;
+        private final java.lang.Object regionTag;
         private final java.lang.Object debugEnable;
-        private final java.lang.String description;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -120,16 +154,16 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.regionName = software.amazon.jsii.Kernel.get(this, "regionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.regionTag = software.amazon.jsii.Kernel.get(this, "regionTag", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.regionName = software.amazon.jsii.Kernel.get(this, "regionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.regionTag = software.amazon.jsii.Kernel.get(this, "regionTag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.debugEnable = software.amazon.jsii.Kernel.get(this, "debugEnable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String regionName, final java.lang.String regionTag, final java.lang.Object debugEnable, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object regionName, final java.lang.Object regionTag, final java.lang.Object debugEnable, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.regionName = java.util.Objects.requireNonNull(regionName, "regionName is required");
             this.regionTag = java.util.Objects.requireNonNull(regionTag, "regionTag is required");
@@ -138,12 +172,12 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getRegionName() {
+        public final java.lang.Object getRegionName() {
             return this.regionName;
         }
 
         @Override
-        public final java.lang.String getRegionTag() {
+        public final java.lang.Object getRegionTag() {
             return this.regionTag;
         }
 
@@ -153,7 +187,7 @@ public interface UserDefineRegionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

@@ -33,66 +33,66 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Attribute AcceleratorId: The ID of the GA instance to query.</summary>
-        [JsiiProperty(name: "attrAcceleratorId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAcceleratorId
+        [JsiiProperty(name: "attrAcceleratorId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAcceleratorId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AcceleratorName: The Name of the GA instance.</summary>
-        [JsiiProperty(name: "attrAcceleratorName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAcceleratorName
+        [JsiiProperty(name: "attrAcceleratorName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAcceleratorName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AutoPay: The AutoPay of the GA instance.</summary>
-        [JsiiProperty(name: "attrAutoPay", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoPay
+        [JsiiProperty(name: "attrAutoPay", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoPay
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute AutoUseCoupon: The AutoUseCoupon of the GA instance.</summary>
-        [JsiiProperty(name: "attrAutoUseCoupon", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAutoUseCoupon
+        [JsiiProperty(name: "attrAutoUseCoupon", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAutoUseCoupon
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Duration: The Duration of the GA instance.</summary>
-        [JsiiProperty(name: "attrDuration", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDuration
+        [JsiiProperty(name: "attrDuration", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDuration
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute OrderId: The OrderId of the GA instance.</summary>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PaymentType: The Payment Typethe GA instance.</summary>
-        [JsiiProperty(name: "attrPaymentType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPaymentType
+        [JsiiProperty(name: "attrPaymentType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPaymentType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PricingCycle: The PricingCycle of the GA instance.</summary>
-        [JsiiProperty(name: "attrPricingCycle", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPricingCycle
+        [JsiiProperty(name: "attrPricingCycle", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPricingCycle
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Spec: The instance type of the GA instance.</summary>
-        [JsiiProperty(name: "attrSpec", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSpec
+        [JsiiProperty(name: "attrSpec", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSpec
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

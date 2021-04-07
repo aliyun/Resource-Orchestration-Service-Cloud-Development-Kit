@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.</summary>
-        [JsiiProperty(name: "attrBandwidthPackageId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrBandwidthPackageId
+        [JsiiProperty(name: "attrBandwidthPackageId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrBandwidthPackageId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -10,7 +10,7 @@ package com.aliyun.ros.cdk.core;
  * conditions, you can associate them with resources or resource properties in
  * the Resources and Outputs sections of a template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.134Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.308Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IRosConditionExpression")
 @software.amazon.jsii.Jsii.Proxy(IRosConditionExpression.Jsii$Proxy.class)
 public interface IRosConditionExpression extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResolvable {
@@ -25,7 +25,7 @@ public interface IRosConditionExpression extends software.amazon.jsii.JsiiSerial
         }
 
         /**
-         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
+         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
          * <p>
          * If this returns an empty array the stack will not be attached.
          */
@@ -62,7 +62,7 @@ public interface IRosConditionExpression extends software.amazon.jsii.JsiiSerial
     interface Jsii$Default extends IRosConditionExpression, com.aliyun.ros.cdk.core.IResolvable.Jsii$Default {
 
         /**
-         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
+         * The creation stack of this resolvable which will be appended to errors thrown during resolution.
          * <p>
          * If this returns an empty array the stack will not be attached.
          */

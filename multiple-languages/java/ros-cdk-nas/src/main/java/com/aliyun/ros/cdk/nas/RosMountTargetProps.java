@@ -3,38 +3,38 @@ package com.aliyun.ros.cdk.nas;
 /**
  * Properties for defining a `ALIYUN::NAS::MountTarget`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.117Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.754Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.RosMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(RosMountTargetProps.Jsii$Proxy.class)
 public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccessGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFileSystemId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFileSystemId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -48,12 +48,12 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosMountTargetProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMountTargetProps> {
-        private java.lang.String accessGroupName;
-        private java.lang.String fileSystemId;
-        private java.lang.String networkType;
-        private java.lang.String status;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
+        private java.lang.Object accessGroupName;
+        private java.lang.Object fileSystemId;
+        private java.lang.Object networkType;
+        private java.lang.Object status;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosMountTargetProps#getAccessGroupName}
@@ -61,6 +61,16 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
+            this.accessGroupName = accessGroupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getAccessGroupName}
+         * @param accessGroupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
             this.accessGroupName = accessGroupName;
             return this;
         }
@@ -76,11 +86,31 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosMountTargetProps#getFileSystemId}
+         * @param fileSystemId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder fileSystemId(com.aliyun.ros.cdk.core.IResolvable fileSystemId) {
+            this.fileSystemId = fileSystemId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMountTargetProps#getNetworkType}
          * @param networkType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getNetworkType}
+         * @param networkType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.networkType = networkType;
             return this;
         }
@@ -96,6 +126,16 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosMountTargetProps#getStatus}
+         * @param status the value to be set.
+         * @return {@code this}
+         */
+        public Builder status(com.aliyun.ros.cdk.core.IResolvable status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMountTargetProps#getVpcId}
          * @param vpcId the value to be set.
          * @return {@code this}
@@ -106,11 +146,31 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosMountTargetProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMountTargetProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMountTargetProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -131,12 +191,12 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMountTargetProps {
-        private final java.lang.String accessGroupName;
-        private final java.lang.String fileSystemId;
-        private final java.lang.String networkType;
-        private final java.lang.String status;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object accessGroupName;
+        private final java.lang.Object fileSystemId;
+        private final java.lang.Object networkType;
+        private final java.lang.Object status;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -144,18 +204,18 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.fileSystemId = software.amazon.jsii.Kernel.get(this, "fileSystemId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accessGroupName = software.amazon.jsii.Kernel.get(this, "accessGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.fileSystemId = software.amazon.jsii.Kernel.get(this, "fileSystemId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.status = software.amazon.jsii.Kernel.get(this, "status", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accessGroupName, final java.lang.String fileSystemId, final java.lang.String networkType, final java.lang.String status, final java.lang.String vpcId, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object accessGroupName, final java.lang.Object fileSystemId, final java.lang.Object networkType, final java.lang.Object status, final java.lang.Object vpcId, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accessGroupName = java.util.Objects.requireNonNull(accessGroupName, "accessGroupName is required");
             this.fileSystemId = java.util.Objects.requireNonNull(fileSystemId, "fileSystemId is required");
@@ -166,32 +226,32 @@ public interface RosMountTargetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getAccessGroupName() {
+        public final java.lang.Object getAccessGroupName() {
             return this.accessGroupName;
         }
 
         @Override
-        public final java.lang.String getFileSystemId() {
+        public final java.lang.Object getFileSystemId() {
             return this.fileSystemId;
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getStatus() {
+        public final java.lang.Object getStatus() {
             return this.status;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

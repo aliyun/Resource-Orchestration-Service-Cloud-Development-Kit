@@ -3,52 +3,60 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.UserProps")
 @software.amazon.jsii.Jsii.Proxy(UserProps.Jsii$Proxy.class)
 public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property userName: Specifies the user name, containing up to 64 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getUserName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getUserName();
 
     /**
+     * Property comments: Comments of ram user.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComments() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComments() {
         return null;
     }
 
     /**
+     * Property displayName: Display name, up to 128 characters or Chinese characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDisplayName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDisplayName() {
         return null;
     }
 
     /**
+     * Property email: Email of ram user.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEmail() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEmail() {
         return null;
     }
 
     /**
+     * Property groups: A name of a group to which you want to add the user.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroups() {
         return null;
     }
 
     /**
+     * Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoginProfile() {
         return null;
     }
 
     /**
+     * Property mobilePhone: Phone number of ram user.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMobilePhone() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMobilePhone() {
         return null;
     }
 
     /**
+     * Property policies: Describes what actions are allowed on what resources.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicies() {
         return null;
@@ -64,18 +72,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link UserProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<UserProps> {
-        private java.lang.String userName;
-        private java.lang.String comments;
-        private java.lang.String displayName;
-        private java.lang.String email;
+        private java.lang.Object userName;
+        private java.lang.Object comments;
+        private java.lang.Object displayName;
+        private java.lang.Object email;
         private java.lang.Object groups;
         private java.lang.Object loginProfile;
-        private java.lang.String mobilePhone;
+        private java.lang.Object mobilePhone;
         private java.lang.Object policies;
 
         /**
          * Sets the value of {@link UserProps#getUserName}
-         * @param userName the value to be set. This parameter is required.
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
          * @return {@code this}
          */
         public Builder userName(java.lang.String userName) {
@@ -84,8 +92,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link UserProps#getUserName}
+         * @param userName Property userName: Specifies the user name, containing up to 64 characters. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder userName(com.aliyun.ros.cdk.core.IResolvable userName) {
+            this.userName = userName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserProps#getComments}
-         * @param comments the value to be set.
+         * @param comments Property comments: Comments of ram user.
          * @return {@code this}
          */
         public Builder comments(java.lang.String comments) {
@@ -94,8 +112,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link UserProps#getComments}
+         * @param comments Property comments: Comments of ram user.
+         * @return {@code this}
+         */
+        public Builder comments(com.aliyun.ros.cdk.core.IResolvable comments) {
+            this.comments = comments;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserProps#getDisplayName}
-         * @param displayName the value to be set.
+         * @param displayName Property displayName: Display name, up to 128 characters or Chinese characters.
          * @return {@code this}
          */
         public Builder displayName(java.lang.String displayName) {
@@ -104,8 +132,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link UserProps#getDisplayName}
+         * @param displayName Property displayName: Display name, up to 128 characters or Chinese characters.
+         * @return {@code this}
+         */
+        public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserProps#getEmail}
-         * @param email the value to be set.
+         * @param email Property email: Email of ram user.
          * @return {@code this}
          */
         public Builder email(java.lang.String email) {
@@ -114,8 +152,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link UserProps#getEmail}
+         * @param email Property email: Email of ram user.
+         * @return {@code this}
+         */
+        public Builder email(com.aliyun.ros.cdk.core.IResolvable email) {
+            this.email = email;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserProps#getGroups}
-         * @param groups the value to be set.
+         * @param groups Property groups: A name of a group to which you want to add the user.
          * @return {@code this}
          */
         public Builder groups(java.util.List<? extends java.lang.Object> groups) {
@@ -125,7 +173,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getGroups}
-         * @param groups the value to be set.
+         * @param groups Property groups: A name of a group to which you want to add the user.
          * @return {@code this}
          */
         public Builder groups(com.aliyun.ros.cdk.core.IResolvable groups) {
@@ -135,7 +183,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getLoginProfile}
-         * @param loginProfile the value to be set.
+         * @param loginProfile Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
          * @return {@code this}
          */
         public Builder loginProfile(com.aliyun.ros.cdk.core.IResolvable loginProfile) {
@@ -145,7 +193,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getLoginProfile}
-         * @param loginProfile the value to be set.
+         * @param loginProfile Property loginProfile: Creates a login profile for users so that they can access the AliCloud Management Console.
          * @return {@code this}
          */
         public Builder loginProfile(com.aliyun.ros.cdk.ram.RosUser.LoginProfileProperty loginProfile) {
@@ -155,7 +203,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getMobilePhone}
-         * @param mobilePhone the value to be set.
+         * @param mobilePhone Property mobilePhone: Phone number of ram user.
          * @return {@code this}
          */
         public Builder mobilePhone(java.lang.String mobilePhone) {
@@ -164,8 +212,18 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link UserProps#getMobilePhone}
+         * @param mobilePhone Property mobilePhone: Phone number of ram user.
+         * @return {@code this}
+         */
+        public Builder mobilePhone(com.aliyun.ros.cdk.core.IResolvable mobilePhone) {
+            this.mobilePhone = mobilePhone;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link UserProps#getPolicies}
-         * @param policies the value to be set.
+         * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
          */
         public Builder policies(com.aliyun.ros.cdk.core.IResolvable policies) {
@@ -175,7 +233,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link UserProps#getPolicies}
-         * @param policies the value to be set.
+         * @param policies Property policies: Describes what actions are allowed on what resources.
          * @return {@code this}
          */
         public Builder policies(java.util.List<? extends java.lang.Object> policies) {
@@ -199,13 +257,13 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements UserProps {
-        private final java.lang.String userName;
-        private final java.lang.String comments;
-        private final java.lang.String displayName;
-        private final java.lang.String email;
+        private final java.lang.Object userName;
+        private final java.lang.Object comments;
+        private final java.lang.Object displayName;
+        private final java.lang.Object email;
         private final java.lang.Object groups;
         private final java.lang.Object loginProfile;
-        private final java.lang.String mobilePhone;
+        private final java.lang.Object mobilePhone;
         private final java.lang.Object policies;
 
         /**
@@ -214,20 +272,20 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userName = software.amazon.jsii.Kernel.get(this, "userName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.comments = software.amazon.jsii.Kernel.get(this, "comments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groups = software.amazon.jsii.Kernel.get(this, "groups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loginProfile = software.amazon.jsii.Kernel.get(this, "loginProfile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.mobilePhone = software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.mobilePhone = software.amazon.jsii.Kernel.get(this, "mobilePhone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String userName, final java.lang.String comments, final java.lang.String displayName, final java.lang.String email, final java.lang.Object groups, final java.lang.Object loginProfile, final java.lang.String mobilePhone, final java.lang.Object policies) {
+        protected Jsii$Proxy(final java.lang.Object userName, final java.lang.Object comments, final java.lang.Object displayName, final java.lang.Object email, final java.lang.Object groups, final java.lang.Object loginProfile, final java.lang.Object mobilePhone, final java.lang.Object policies) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.userName = java.util.Objects.requireNonNull(userName, "userName is required");
             this.comments = comments;
@@ -240,22 +298,22 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getUserName() {
+        public final java.lang.Object getUserName() {
             return this.userName;
         }
 
         @Override
-        public final java.lang.String getComments() {
+        public final java.lang.Object getComments() {
             return this.comments;
         }
 
         @Override
-        public final java.lang.String getDisplayName() {
+        public final java.lang.Object getDisplayName() {
             return this.displayName;
         }
 
         @Override
-        public final java.lang.String getEmail() {
+        public final java.lang.Object getEmail() {
             return this.email;
         }
 
@@ -270,7 +328,7 @@ public interface UserProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getMobilePhone() {
+        public final java.lang.Object getMobilePhone() {
             return this.mobilePhone;
         }
 

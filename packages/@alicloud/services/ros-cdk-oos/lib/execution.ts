@@ -11,12 +11,12 @@ export interface ExecutionProps {
     /**
      * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
      */
-    readonly templateName: string;
+    readonly templateName: string | ros.IResolvable;
 
     /**
      * Property mode: Execution mode.
      */
-    readonly mode?: string;
+    readonly mode?: string | ros.IResolvable;
 
     /**
      * Property parameters: Parameters for the execution of template.
@@ -26,7 +26,7 @@ export interface ExecutionProps {
     /**
      * Property parentExecutionId: Parent execution ID.
      */
-    readonly parentExecutionId?: string;
+    readonly parentExecutionId?: string | ros.IResolvable;
 
     /**
      * Property resourceOptions: Resource options user by ROS.
@@ -38,12 +38,17 @@ export interface ExecutionProps {
      * - Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.
      * - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
      */
-    readonly safetyCheck?: string;
+    readonly safetyCheck?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tag value and the key mapping, the label of the key number can be up to 20.
+     */
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * Property templateVersion: Version number of template. Default to the latest version.
      */
-    readonly templateVersion?: string;
+    readonly templateVersion?: string | ros.IResolvable;
 }
 
 /**
@@ -59,7 +64,7 @@ export class Execution extends ros.Resource {
     /**
      * Attribute Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
      */
-    public readonly attrCounters: any;
+    public readonly attrCounters: ros.IResolvable;
 
     /**
      * Attribute CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
@@ -67,41 +72,41 @@ You can notify approve to oos execution by adding --data-binary '{"data": {"Noti
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
 You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrCurlCli: any;
+    public readonly attrCurlCli: ros.IResolvable;
 
     /**
      * Attribute ExecutionId: Execution ID.
      */
-    public readonly attrExecutionId: any;
+    public readonly attrExecutionId: ros.IResolvable;
 
     /**
      * Attribute Outputs: Execution output.
      */
-    public readonly attrOutputs: any;
+    public readonly attrOutputs: ros.IResolvable;
 
     /**
      * Attribute PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}' 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrPowerShellCurlCli: any;
+    public readonly attrPowerShellCurlCli: ros.IResolvable;
 
     /**
      * Attribute Status: Execution status.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * Attribute StatusMessage: Execution status information.
      */
-    public readonly attrStatusMessage: any;
+    public readonly attrStatusMessage: ros.IResolvable;
 
     /**
      * Attribute WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
 You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}" 
 For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
      */
-    public readonly attrWindowsCurlCli: any;
+    public readonly attrWindowsCurlCli: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OOS::Execution`.
@@ -121,6 +126,7 @@ For more parameters in data, refer to https://help.aliyun.com/document_detail/12
             mode: props.mode ? props.mode : 'Automatic',
             templateName: props.templateName,
             templateVersion: props.templateVersion,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosExecution;
         this.attrCounters = rosExecution.attrCounters;

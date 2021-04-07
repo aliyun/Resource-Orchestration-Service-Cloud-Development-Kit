@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// <strong>Attribute</strong>: IotInstanceId: IOT instance ID.
         /// </remarks>
-        [JsiiProperty(name: "attrIotInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIotInstanceId
+        [JsiiProperty(name: "attrIotInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIotInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ProductKey: The globally unique identifier of the product issued by IoT Platform.
         /// </remarks>
-        [JsiiProperty(name: "attrProductKey", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrProductKey
+        [JsiiProperty(name: "attrProductKey", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrProductKey
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -83,10 +83,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// the topological relationships with sub-devices, and synchronize the topological relationships
         /// to IoT Platform.
         /// </remarks>
-        [JsiiProperty(name: "nodeType", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double NodeType
+        [JsiiProperty(name: "nodeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object NodeType
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -95,10 +95,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// contain Chinese characters, English letters, digits, and underscores (_).
         /// Note A product name must be unique in an account.
         /// </remarks>
-        [JsiiProperty(name: "productName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ProductName
+        [JsiiProperty(name: "productName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ProductName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -110,10 +110,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Edition).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "aliyunCommodityCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AliyunCommodityCode
+        [JsiiProperty(name: "aliyunCommodityCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AliyunCommodityCode
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -127,10 +127,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If this parameter is passed, the default value is secret.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "authType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AuthType
+        [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AuthType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -139,10 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// Call ListThingTemplates, view of things platform predefined category information from the returned results, get the value of CategoryKey.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "categoryKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? CategoryKey
+        [JsiiProperty(name: "categoryKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? CategoryKey
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -154,10 +154,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// 1: Alink JSON.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dataFormat", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? DataFormat
+        [JsiiProperty(name: "dataFormat", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DataFormat
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -166,10 +166,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -195,10 +195,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? IotInstanceId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -208,10 +208,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If you do not LoRaWAN network credentials, visit the network management platform to create things together.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "joinPermissionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? JoinPermissionId
+        [JsiiProperty(name: "joinPermissionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? JoinPermissionId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -227,10 +227,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// The default value is WIFI.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NetType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -246,10 +246,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// zigbee: ZigBee.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "protocolType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ProtocolType
+        [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ProtocolType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -272,10 +272,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If this parameter is passed, the product will be classified as a default resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ResourceGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

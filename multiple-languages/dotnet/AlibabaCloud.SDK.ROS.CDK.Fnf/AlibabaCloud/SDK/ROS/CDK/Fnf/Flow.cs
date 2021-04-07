@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         }
 
         /// <summary>Attribute CreatedTime: Flow creation time.</summary>
-        [JsiiProperty(name: "attrCreatedTime", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCreatedTime
+        [JsiiProperty(name: "attrCreatedTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCreatedTime
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Id: The unique ID of the flow.</summary>
-        [JsiiProperty(name: "attrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrId
+        [JsiiProperty(name: "attrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LastModifiedTime: The most recently modified time of the flow.</summary>
-        [JsiiProperty(name: "attrLastModifiedTime", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLastModifiedTime
+        [JsiiProperty(name: "attrLastModifiedTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLastModifiedTime
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Name: The name of the flow created.</summary>
-        [JsiiProperty(name: "attrName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrName
+        [JsiiProperty(name: "attrName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

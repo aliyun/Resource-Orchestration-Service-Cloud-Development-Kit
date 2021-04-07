@@ -33,34 +33,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         }
 
         /// <summary>Attribute ClusterId: Cluster Id.</summary>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute EcsInfo: A data structure describing the number and specifications of ECS for various components of the cluster.</summary>
         /// <remarks>
         /// You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2, "InstanceType": "ecs.n1.large"}, "Compute": {"Count": 8, "InstanceType": "ecs.n1.large"}, "Login": {"Count": 1, "InstanceType": "ecs.n1.large"}}
         /// </remarks>
-        [JsiiProperty(name: "attrEcsInfo", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEcsInfo
+        [JsiiProperty(name: "attrEcsInfo", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEcsInfo
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Name: Cluster name.</summary>
-        [JsiiProperty(name: "attrName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrName
+        [JsiiProperty(name: "attrName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SecurityGroupId: Security group ID.</summary>
-        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSecurityGroupId
+        [JsiiProperty(name: "attrSecurityGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSecurityGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

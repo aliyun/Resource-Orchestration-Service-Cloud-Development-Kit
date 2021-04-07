@@ -3,110 +3,110 @@ package com.aliyun.ros.cdk.dbs;
 /**
  * Properties for defining a `ALIYUN::DBS::RestoreTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.402Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.055Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RosRestoreTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RosRestoreTaskProps.Jsii$Proxy.class)
 public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBackupPlanId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBackupPlanId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestinationEndpointInstanceType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestinationEndpointInstanceType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRestoreTaskName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRestoreTaskName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBackupGatewayId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupGatewayId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBackupSetId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupSetId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointDatabaseName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointDatabaseName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointIp() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointOracleSid() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointOracleSid() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointPassword() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDestinationEndpointPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointPort() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointRegion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointRegion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestinationEndpointUserName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointUserName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDuplicateConflict() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuplicateConflict() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestoreDir() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreDir() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestoreHome() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreHome() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestoreObjects() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreObjects() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRestoreTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTime() {
         return null;
     }
 
@@ -126,24 +126,24 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosRestoreTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRestoreTaskProps> {
-        private java.lang.String backupPlanId;
-        private java.lang.String destinationEndpointInstanceType;
-        private java.lang.String restoreTaskName;
-        private java.lang.Number backupGatewayId;
-        private java.lang.String backupSetId;
-        private java.lang.String destinationEndpointDatabaseName;
-        private java.lang.String destinationEndpointInstanceId;
-        private java.lang.String destinationEndpointIp;
-        private java.lang.String destinationEndpointOracleSid;
-        private java.lang.String destinationEndpointPassword;
-        private java.lang.Number destinationEndpointPort;
-        private java.lang.String destinationEndpointRegion;
-        private java.lang.String destinationEndpointUserName;
-        private java.lang.String duplicateConflict;
-        private java.lang.String restoreDir;
-        private java.lang.String restoreHome;
-        private java.lang.String restoreObjects;
-        private java.lang.Number restoreTime;
+        private java.lang.Object backupPlanId;
+        private java.lang.Object destinationEndpointInstanceType;
+        private java.lang.Object restoreTaskName;
+        private java.lang.Object backupGatewayId;
+        private java.lang.Object backupSetId;
+        private java.lang.Object destinationEndpointDatabaseName;
+        private java.lang.Object destinationEndpointInstanceId;
+        private java.lang.Object destinationEndpointIp;
+        private java.lang.Object destinationEndpointOracleSid;
+        private java.lang.Object destinationEndpointPassword;
+        private java.lang.Object destinationEndpointPort;
+        private java.lang.Object destinationEndpointRegion;
+        private java.lang.Object destinationEndpointUserName;
+        private java.lang.Object duplicateConflict;
+        private java.lang.Object restoreDir;
+        private java.lang.Object restoreHome;
+        private java.lang.Object restoreObjects;
+        private java.lang.Object restoreTime;
         private java.lang.Object startTask;
 
         /**
@@ -152,6 +152,16 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder backupPlanId(java.lang.String backupPlanId) {
+            this.backupPlanId = backupPlanId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getBackupPlanId}
+         * @param backupPlanId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder backupPlanId(com.aliyun.ros.cdk.core.IResolvable backupPlanId) {
             this.backupPlanId = backupPlanId;
             return this;
         }
@@ -167,11 +177,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointInstanceType}
+         * @param destinationEndpointInstanceType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointInstanceType(com.aliyun.ros.cdk.core.IResolvable destinationEndpointInstanceType) {
+            this.destinationEndpointInstanceType = destinationEndpointInstanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getRestoreTaskName}
          * @param restoreTaskName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder restoreTaskName(java.lang.String restoreTaskName) {
+            this.restoreTaskName = restoreTaskName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getRestoreTaskName}
+         * @param restoreTaskName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder restoreTaskName(com.aliyun.ros.cdk.core.IResolvable restoreTaskName) {
             this.restoreTaskName = restoreTaskName;
             return this;
         }
@@ -187,11 +217,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getBackupGatewayId}
+         * @param backupGatewayId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupGatewayId(com.aliyun.ros.cdk.core.IResolvable backupGatewayId) {
+            this.backupGatewayId = backupGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getBackupSetId}
          * @param backupSetId the value to be set.
          * @return {@code this}
          */
         public Builder backupSetId(java.lang.String backupSetId) {
+            this.backupSetId = backupSetId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getBackupSetId}
+         * @param backupSetId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupSetId(com.aliyun.ros.cdk.core.IResolvable backupSetId) {
             this.backupSetId = backupSetId;
             return this;
         }
@@ -207,11 +257,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointDatabaseName}
+         * @param destinationEndpointDatabaseName the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointDatabaseName(com.aliyun.ros.cdk.core.IResolvable destinationEndpointDatabaseName) {
+            this.destinationEndpointDatabaseName = destinationEndpointDatabaseName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointInstanceId}
          * @param destinationEndpointInstanceId the value to be set.
          * @return {@code this}
          */
         public Builder destinationEndpointInstanceId(java.lang.String destinationEndpointInstanceId) {
+            this.destinationEndpointInstanceId = destinationEndpointInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointInstanceId}
+         * @param destinationEndpointInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointInstanceId(com.aliyun.ros.cdk.core.IResolvable destinationEndpointInstanceId) {
             this.destinationEndpointInstanceId = destinationEndpointInstanceId;
             return this;
         }
@@ -227,11 +297,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointIp}
+         * @param destinationEndpointIp the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointIp(com.aliyun.ros.cdk.core.IResolvable destinationEndpointIp) {
+            this.destinationEndpointIp = destinationEndpointIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointOracleSid}
          * @param destinationEndpointOracleSid the value to be set.
          * @return {@code this}
          */
         public Builder destinationEndpointOracleSid(java.lang.String destinationEndpointOracleSid) {
+            this.destinationEndpointOracleSid = destinationEndpointOracleSid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointOracleSid}
+         * @param destinationEndpointOracleSid the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointOracleSid(com.aliyun.ros.cdk.core.IResolvable destinationEndpointOracleSid) {
             this.destinationEndpointOracleSid = destinationEndpointOracleSid;
             return this;
         }
@@ -247,11 +337,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointPassword}
+         * @param destinationEndpointPassword the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointPassword(com.aliyun.ros.cdk.core.IResolvable destinationEndpointPassword) {
+            this.destinationEndpointPassword = destinationEndpointPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointPort}
          * @param destinationEndpointPort the value to be set.
          * @return {@code this}
          */
         public Builder destinationEndpointPort(java.lang.Number destinationEndpointPort) {
+            this.destinationEndpointPort = destinationEndpointPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointPort}
+         * @param destinationEndpointPort the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointPort(com.aliyun.ros.cdk.core.IResolvable destinationEndpointPort) {
             this.destinationEndpointPort = destinationEndpointPort;
             return this;
         }
@@ -267,11 +377,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointRegion}
+         * @param destinationEndpointRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointRegion(com.aliyun.ros.cdk.core.IResolvable destinationEndpointRegion) {
+            this.destinationEndpointRegion = destinationEndpointRegion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointUserName}
          * @param destinationEndpointUserName the value to be set.
          * @return {@code this}
          */
         public Builder destinationEndpointUserName(java.lang.String destinationEndpointUserName) {
+            this.destinationEndpointUserName = destinationEndpointUserName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getDestinationEndpointUserName}
+         * @param destinationEndpointUserName the value to be set.
+         * @return {@code this}
+         */
+        public Builder destinationEndpointUserName(com.aliyun.ros.cdk.core.IResolvable destinationEndpointUserName) {
             this.destinationEndpointUserName = destinationEndpointUserName;
             return this;
         }
@@ -287,11 +417,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getDuplicateConflict}
+         * @param duplicateConflict the value to be set.
+         * @return {@code this}
+         */
+        public Builder duplicateConflict(com.aliyun.ros.cdk.core.IResolvable duplicateConflict) {
+            this.duplicateConflict = duplicateConflict;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getRestoreDir}
          * @param restoreDir the value to be set.
          * @return {@code this}
          */
         public Builder restoreDir(java.lang.String restoreDir) {
+            this.restoreDir = restoreDir;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getRestoreDir}
+         * @param restoreDir the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreDir(com.aliyun.ros.cdk.core.IResolvable restoreDir) {
             this.restoreDir = restoreDir;
             return this;
         }
@@ -307,6 +457,16 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getRestoreHome}
+         * @param restoreHome the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreHome(com.aliyun.ros.cdk.core.IResolvable restoreHome) {
+            this.restoreHome = restoreHome;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getRestoreObjects}
          * @param restoreObjects the value to be set.
          * @return {@code this}
@@ -317,11 +477,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosRestoreTaskProps#getRestoreObjects}
+         * @param restoreObjects the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreObjects(com.aliyun.ros.cdk.core.IResolvable restoreObjects) {
+            this.restoreObjects = restoreObjects;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRestoreTaskProps#getRestoreTime}
          * @param restoreTime the value to be set.
          * @return {@code this}
          */
         public Builder restoreTime(java.lang.Number restoreTime) {
+            this.restoreTime = restoreTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRestoreTaskProps#getRestoreTime}
+         * @param restoreTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreTime(com.aliyun.ros.cdk.core.IResolvable restoreTime) {
             this.restoreTime = restoreTime;
             return this;
         }
@@ -362,24 +542,24 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRestoreTaskProps {
-        private final java.lang.String backupPlanId;
-        private final java.lang.String destinationEndpointInstanceType;
-        private final java.lang.String restoreTaskName;
-        private final java.lang.Number backupGatewayId;
-        private final java.lang.String backupSetId;
-        private final java.lang.String destinationEndpointDatabaseName;
-        private final java.lang.String destinationEndpointInstanceId;
-        private final java.lang.String destinationEndpointIp;
-        private final java.lang.String destinationEndpointOracleSid;
-        private final java.lang.String destinationEndpointPassword;
-        private final java.lang.Number destinationEndpointPort;
-        private final java.lang.String destinationEndpointRegion;
-        private final java.lang.String destinationEndpointUserName;
-        private final java.lang.String duplicateConflict;
-        private final java.lang.String restoreDir;
-        private final java.lang.String restoreHome;
-        private final java.lang.String restoreObjects;
-        private final java.lang.Number restoreTime;
+        private final java.lang.Object backupPlanId;
+        private final java.lang.Object destinationEndpointInstanceType;
+        private final java.lang.Object restoreTaskName;
+        private final java.lang.Object backupGatewayId;
+        private final java.lang.Object backupSetId;
+        private final java.lang.Object destinationEndpointDatabaseName;
+        private final java.lang.Object destinationEndpointInstanceId;
+        private final java.lang.Object destinationEndpointIp;
+        private final java.lang.Object destinationEndpointOracleSid;
+        private final java.lang.Object destinationEndpointPassword;
+        private final java.lang.Object destinationEndpointPort;
+        private final java.lang.Object destinationEndpointRegion;
+        private final java.lang.Object destinationEndpointUserName;
+        private final java.lang.Object duplicateConflict;
+        private final java.lang.Object restoreDir;
+        private final java.lang.Object restoreHome;
+        private final java.lang.Object restoreObjects;
+        private final java.lang.Object restoreTime;
         private final java.lang.Object startTask;
 
         /**
@@ -388,31 +568,31 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.backupPlanId = software.amazon.jsii.Kernel.get(this, "backupPlanId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointInstanceType = software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreTaskName = software.amazon.jsii.Kernel.get(this, "restoreTaskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.backupGatewayId = software.amazon.jsii.Kernel.get(this, "backupGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.backupSetId = software.amazon.jsii.Kernel.get(this, "backupSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointDatabaseName = software.amazon.jsii.Kernel.get(this, "destinationEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointInstanceId = software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointIp = software.amazon.jsii.Kernel.get(this, "destinationEndpointIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointOracleSid = software.amazon.jsii.Kernel.get(this, "destinationEndpointOracleSid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointPassword = software.amazon.jsii.Kernel.get(this, "destinationEndpointPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointPort = software.amazon.jsii.Kernel.get(this, "destinationEndpointPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.destinationEndpointRegion = software.amazon.jsii.Kernel.get(this, "destinationEndpointRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destinationEndpointUserName = software.amazon.jsii.Kernel.get(this, "destinationEndpointUserName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duplicateConflict = software.amazon.jsii.Kernel.get(this, "duplicateConflict", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreDir = software.amazon.jsii.Kernel.get(this, "restoreDir", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreHome = software.amazon.jsii.Kernel.get(this, "restoreHome", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreObjects = software.amazon.jsii.Kernel.get(this, "restoreObjects", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.backupPlanId = software.amazon.jsii.Kernel.get(this, "backupPlanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointInstanceType = software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreTaskName = software.amazon.jsii.Kernel.get(this, "restoreTaskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupGatewayId = software.amazon.jsii.Kernel.get(this, "backupGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupSetId = software.amazon.jsii.Kernel.get(this, "backupSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointDatabaseName = software.amazon.jsii.Kernel.get(this, "destinationEndpointDatabaseName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointInstanceId = software.amazon.jsii.Kernel.get(this, "destinationEndpointInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointIp = software.amazon.jsii.Kernel.get(this, "destinationEndpointIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointOracleSid = software.amazon.jsii.Kernel.get(this, "destinationEndpointOracleSid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointPassword = software.amazon.jsii.Kernel.get(this, "destinationEndpointPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointPort = software.amazon.jsii.Kernel.get(this, "destinationEndpointPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointRegion = software.amazon.jsii.Kernel.get(this, "destinationEndpointRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destinationEndpointUserName = software.amazon.jsii.Kernel.get(this, "destinationEndpointUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duplicateConflict = software.amazon.jsii.Kernel.get(this, "duplicateConflict", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreDir = software.amazon.jsii.Kernel.get(this, "restoreDir", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreHome = software.amazon.jsii.Kernel.get(this, "restoreHome", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreObjects = software.amazon.jsii.Kernel.get(this, "restoreObjects", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startTask = software.amazon.jsii.Kernel.get(this, "startTask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String backupPlanId, final java.lang.String destinationEndpointInstanceType, final java.lang.String restoreTaskName, final java.lang.Number backupGatewayId, final java.lang.String backupSetId, final java.lang.String destinationEndpointDatabaseName, final java.lang.String destinationEndpointInstanceId, final java.lang.String destinationEndpointIp, final java.lang.String destinationEndpointOracleSid, final java.lang.String destinationEndpointPassword, final java.lang.Number destinationEndpointPort, final java.lang.String destinationEndpointRegion, final java.lang.String destinationEndpointUserName, final java.lang.String duplicateConflict, final java.lang.String restoreDir, final java.lang.String restoreHome, final java.lang.String restoreObjects, final java.lang.Number restoreTime, final java.lang.Object startTask) {
+        protected Jsii$Proxy(final java.lang.Object backupPlanId, final java.lang.Object destinationEndpointInstanceType, final java.lang.Object restoreTaskName, final java.lang.Object backupGatewayId, final java.lang.Object backupSetId, final java.lang.Object destinationEndpointDatabaseName, final java.lang.Object destinationEndpointInstanceId, final java.lang.Object destinationEndpointIp, final java.lang.Object destinationEndpointOracleSid, final java.lang.Object destinationEndpointPassword, final java.lang.Object destinationEndpointPort, final java.lang.Object destinationEndpointRegion, final java.lang.Object destinationEndpointUserName, final java.lang.Object duplicateConflict, final java.lang.Object restoreDir, final java.lang.Object restoreHome, final java.lang.Object restoreObjects, final java.lang.Object restoreTime, final java.lang.Object startTask) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backupPlanId = java.util.Objects.requireNonNull(backupPlanId, "backupPlanId is required");
             this.destinationEndpointInstanceType = java.util.Objects.requireNonNull(destinationEndpointInstanceType, "destinationEndpointInstanceType is required");
@@ -436,92 +616,92 @@ public interface RosRestoreTaskProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getBackupPlanId() {
+        public final java.lang.Object getBackupPlanId() {
             return this.backupPlanId;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointInstanceType() {
+        public final java.lang.Object getDestinationEndpointInstanceType() {
             return this.destinationEndpointInstanceType;
         }
 
         @Override
-        public final java.lang.String getRestoreTaskName() {
+        public final java.lang.Object getRestoreTaskName() {
             return this.restoreTaskName;
         }
 
         @Override
-        public final java.lang.Number getBackupGatewayId() {
+        public final java.lang.Object getBackupGatewayId() {
             return this.backupGatewayId;
         }
 
         @Override
-        public final java.lang.String getBackupSetId() {
+        public final java.lang.Object getBackupSetId() {
             return this.backupSetId;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointDatabaseName() {
+        public final java.lang.Object getDestinationEndpointDatabaseName() {
             return this.destinationEndpointDatabaseName;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointInstanceId() {
+        public final java.lang.Object getDestinationEndpointInstanceId() {
             return this.destinationEndpointInstanceId;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointIp() {
+        public final java.lang.Object getDestinationEndpointIp() {
             return this.destinationEndpointIp;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointOracleSid() {
+        public final java.lang.Object getDestinationEndpointOracleSid() {
             return this.destinationEndpointOracleSid;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointPassword() {
+        public final java.lang.Object getDestinationEndpointPassword() {
             return this.destinationEndpointPassword;
         }
 
         @Override
-        public final java.lang.Number getDestinationEndpointPort() {
+        public final java.lang.Object getDestinationEndpointPort() {
             return this.destinationEndpointPort;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointRegion() {
+        public final java.lang.Object getDestinationEndpointRegion() {
             return this.destinationEndpointRegion;
         }
 
         @Override
-        public final java.lang.String getDestinationEndpointUserName() {
+        public final java.lang.Object getDestinationEndpointUserName() {
             return this.destinationEndpointUserName;
         }
 
         @Override
-        public final java.lang.String getDuplicateConflict() {
+        public final java.lang.Object getDuplicateConflict() {
             return this.duplicateConflict;
         }
 
         @Override
-        public final java.lang.String getRestoreDir() {
+        public final java.lang.Object getRestoreDir() {
             return this.restoreDir;
         }
 
         @Override
-        public final java.lang.String getRestoreHome() {
+        public final java.lang.Object getRestoreHome() {
             return this.restoreHome;
         }
 
         @Override
-        public final java.lang.String getRestoreObjects() {
+        public final java.lang.Object getRestoreObjects() {
             return this.restoreObjects;
         }
 
         @Override
-        public final java.lang.Number getRestoreTime() {
+        public final java.lang.Object getRestoreTime() {
             return this.restoreTime;
         }
 

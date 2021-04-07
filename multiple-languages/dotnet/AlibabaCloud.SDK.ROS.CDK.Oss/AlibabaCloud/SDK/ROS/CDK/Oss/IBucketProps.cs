@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
     public interface IBucketProps
     {
         /// <summary>Property bucketName: bucket name.</summary>
-        [JsiiProperty(name: "bucketName", typeJson: "{\"primitive\":\"string\"}")]
-        string BucketName
+        [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object BucketName
         {
             get;
         }
 
         /// <summary>Property accessControl: The access control list.</summary>
-        [JsiiProperty(name: "accessControl", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accessControl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccessControl
+        object? AccessControl
         {
             get
             {
@@ -27,7 +27,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         }
 
         /// <summary>Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.</summary>
-        [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? CorsConfiguration
         {
@@ -110,9 +110,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <remarks>
         /// Default is "Standard".
         /// </remarks>
-        [JsiiProperty(name: "storageClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? StorageClass
+        object? StorageClass
         {
             get
             {
@@ -121,9 +121,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         }
 
         /// <summary>Property tags: Bucket tags in k-v pairs format.</summary>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        System.Collections.Generic.IDictionary<string, object>? Tags
         {
             get
             {
@@ -151,23 +151,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             }
 
             /// <summary>Property bucketName: bucket name.</summary>
-            [JsiiProperty(name: "bucketName", typeJson: "{\"primitive\":\"string\"}")]
-            public string BucketName
+            [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object BucketName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accessControl: The access control list.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "accessControl", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccessControl
+            [JsiiProperty(name: "accessControl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccessControl
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"}]}}", isOptional: true)]
             public object? CorsConfiguration
             {
                 get => GetInstanceProperty<object?>();
@@ -229,18 +229,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
             /// Default is "Standard".
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "storageClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? StorageClass
+            [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? StorageClass
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Bucket tags in k-v pairs format.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, object>? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
             }
 
             /// <summary>Property websiteConfiguration: The properties of website config.</summary>

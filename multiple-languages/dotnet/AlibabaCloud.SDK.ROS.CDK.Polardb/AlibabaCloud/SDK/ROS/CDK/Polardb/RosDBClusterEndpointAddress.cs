@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Attribute</strong>: Address: The details of the endpoint address.
         /// </remarks>
-        [JsiiProperty(name: "attrAddress", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAddress
+        [JsiiProperty(name: "attrAddress", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAddress
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ConnectionString: The connection string of the endpoint address.
         /// </remarks>
-        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConnectionString
+        [JsiiProperty(name: "attrConnectionString", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConnectionString
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,20 +71,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbClusterId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: dbEndpointId: The ID of the cluster connection point.
         /// </remarks>
-        [JsiiProperty(name: "dbEndpointId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DbEndpointId
+        [JsiiProperty(name: "dbEndpointId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbEndpointId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -101,24 +101,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// The length is 6~30 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ConnectionStringPrefix
+        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ConnectionStringPrefix
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: netType: The network type of the connection string. 
+        /// <strong>Property</strong>: netType: The network type of the connection string.
         /// If set to Public, ROS will create, modify and delete Public address for you.
         /// If set to Private, ROS will only modify Private address for you.
         /// Default to Public.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? NetType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -3,68 +3,101 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.210Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property bandwidth: The bandwidth in Mbps of the bandwidth package.
+     * <p>
+     * The bandwidth cannot be less than 2 Mbps.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getBandwidth();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
     /**
+     * Property geographicRegionAId: The other area A to connect.
+     * <p>
+     * Valid value: China | North-America | Asia-Pacific | Europe | Australia
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGeographicRegionAId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGeographicRegionAId();
 
     /**
+     * Property geographicRegionBId: The other area B to connect.
+     * <p>
+     * Valid value: China | North-America | Asia-Pacific | Europe | Australia
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGeographicRegionBId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGeographicRegionBId();
 
     /**
+     * Property autoPay: Whether to automatically pay the bill.
+     * <p>
+     * Valid value:
+     * true
+     * false (Default)
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property autoRenew: Indicates whether automatic renewal is enabled.
+     * <p>
+     * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
+     * Property autoRenewDuration: Duration of each automatic renewals.
+     * <p>
+     * It takes effect when AutoRenew is true.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewDuration() {
         return null;
     }
 
     /**
+     * Property bandwidthPackageChargeType: The billing method.
+     * <p>
+     * Valid value: PREPAY, POSTPAY (Default)
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBandwidthPackageChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageChargeType() {
         return null;
     }
 
     /**
+     * Property description: The description of the bandwidth package.
+     * <p>
+     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property name: The name of the bandwidth package.
+     * <p>
+     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property period: The purchase period.
+     * <p>
+     * The default value is 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property pricingCycle: The pricing cycle.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
@@ -78,21 +111,22 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link CenBandwidthPackageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenBandwidthPackageProps> {
-        private java.lang.Number bandwidth;
-        private java.lang.String geographicRegionAId;
-        private java.lang.String geographicRegionBId;
+        private java.lang.Object bandwidth;
+        private java.lang.Object geographicRegionAId;
+        private java.lang.Object geographicRegionBId;
         private java.lang.Object autoPay;
         private java.lang.Object autoRenew;
-        private java.lang.Number autoRenewDuration;
-        private java.lang.String bandwidthPackageChargeType;
-        private java.lang.String description;
-        private java.lang.String name;
-        private java.lang.Number period;
-        private java.lang.String pricingCycle;
+        private java.lang.Object autoRenewDuration;
+        private java.lang.Object bandwidthPackageChargeType;
+        private java.lang.Object description;
+        private java.lang.Object name;
+        private java.lang.Object period;
+        private java.lang.Object pricingCycle;
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
-         * @param bandwidth the value to be set. This parameter is required.
+         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
+         *                  The bandwidth cannot be less than 2 Mbps.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -101,8 +135,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
+         *                  The bandwidth cannot be less than 2 Mbps.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getGeographicRegionAId}
-         * @param geographicRegionAId the value to be set. This parameter is required.
+         * @param geographicRegionAId Property geographicRegionAId: The other area A to connect. This parameter is required.
+         *                            Valid value: China | North-America | Asia-Pacific | Europe | Australia
          * @return {@code this}
          */
         public Builder geographicRegionAId(java.lang.String geographicRegionAId) {
@@ -111,8 +157,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getGeographicRegionAId}
+         * @param geographicRegionAId Property geographicRegionAId: The other area A to connect. This parameter is required.
+         *                            Valid value: China | North-America | Asia-Pacific | Europe | Australia
+         * @return {@code this}
+         */
+        public Builder geographicRegionAId(com.aliyun.ros.cdk.core.IResolvable geographicRegionAId) {
+            this.geographicRegionAId = geographicRegionAId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getGeographicRegionBId}
-         * @param geographicRegionBId the value to be set. This parameter is required.
+         * @param geographicRegionBId Property geographicRegionBId: The other area B to connect. This parameter is required.
+         *                            Valid value: China | North-America | Asia-Pacific | Europe | Australia
          * @return {@code this}
          */
         public Builder geographicRegionBId(java.lang.String geographicRegionBId) {
@@ -121,8 +179,22 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getGeographicRegionBId}
+         * @param geographicRegionBId Property geographicRegionBId: The other area B to connect. This parameter is required.
+         *                            Valid value: China | North-America | Asia-Pacific | Europe | Australia
+         * @return {@code this}
+         */
+        public Builder geographicRegionBId(com.aliyun.ros.cdk.core.IResolvable geographicRegionBId) {
+            this.geographicRegionBId = geographicRegionBId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Whether to automatically pay the bill.
+         *                Valid value:
+         *                true
+         *                false (Default)
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -132,7 +204,10 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Whether to automatically pay the bill.
+         *                Valid value:
+         *                true
+         *                false (Default)
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -142,7 +217,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled.
+         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -152,7 +228,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoRenew}
-         * @param autoRenew the value to be set.
+         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled.
+         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -162,7 +239,8 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoRenewDuration}
-         * @param autoRenewDuration the value to be set.
+         * @param autoRenewDuration Property autoRenewDuration: Duration of each automatic renewals.
+         *                          It takes effect when AutoRenew is true.
          * @return {@code this}
          */
         public Builder autoRenewDuration(java.lang.Number autoRenewDuration) {
@@ -171,8 +249,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getAutoRenewDuration}
+         * @param autoRenewDuration Property autoRenewDuration: Duration of each automatic renewals.
+         *                          It takes effect when AutoRenew is true.
+         * @return {@code this}
+         */
+        public Builder autoRenewDuration(com.aliyun.ros.cdk.core.IResolvable autoRenewDuration) {
+            this.autoRenewDuration = autoRenewDuration;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidthPackageChargeType}
-         * @param bandwidthPackageChargeType the value to be set.
+         * @param bandwidthPackageChargeType Property bandwidthPackageChargeType: The billing method.
+         *                                   Valid value: PREPAY, POSTPAY (Default)
          * @return {@code this}
          */
         public Builder bandwidthPackageChargeType(java.lang.String bandwidthPackageChargeType) {
@@ -181,8 +271,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getBandwidthPackageChargeType}
+         * @param bandwidthPackageChargeType Property bandwidthPackageChargeType: The billing method.
+         *                                   Valid value: PREPAY, POSTPAY (Default)
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageChargeType(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageChargeType) {
+            this.bandwidthPackageChargeType = bandwidthPackageChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the bandwidth package.
+         *                    The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -191,8 +293,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getDescription}
+         * @param description Property description: The description of the bandwidth package.
+         *                    The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: The name of the bandwidth package.
+         *             The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -201,8 +315,20 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getName}
+         * @param name Property name: The name of the bandwidth package.
+         *             The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: The purchase period.
+         *               The default value is 1.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -211,11 +337,32 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageProps#getPeriod}
+         * @param period Property period: The purchase period.
+         *               The default value is 1.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: The pricing cycle.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenBandwidthPackageProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: The pricing cycle.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.pricingCycle = pricingCycle;
             return this;
         }
@@ -236,17 +383,17 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CenBandwidthPackageProps {
-        private final java.lang.Number bandwidth;
-        private final java.lang.String geographicRegionAId;
-        private final java.lang.String geographicRegionBId;
+        private final java.lang.Object bandwidth;
+        private final java.lang.Object geographicRegionAId;
+        private final java.lang.Object geographicRegionBId;
         private final java.lang.Object autoPay;
         private final java.lang.Object autoRenew;
-        private final java.lang.Number autoRenewDuration;
-        private final java.lang.String bandwidthPackageChargeType;
-        private final java.lang.String description;
-        private final java.lang.String name;
-        private final java.lang.Number period;
-        private final java.lang.String pricingCycle;
+        private final java.lang.Object autoRenewDuration;
+        private final java.lang.Object bandwidthPackageChargeType;
+        private final java.lang.Object description;
+        private final java.lang.Object name;
+        private final java.lang.Object period;
+        private final java.lang.Object pricingCycle;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -254,23 +401,23 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.geographicRegionAId = software.amazon.jsii.Kernel.get(this, "geographicRegionAId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.geographicRegionBId = software.amazon.jsii.Kernel.get(this, "geographicRegionBId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.geographicRegionAId = software.amazon.jsii.Kernel.get(this, "geographicRegionAId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.geographicRegionBId = software.amazon.jsii.Kernel.get(this, "geographicRegionBId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.autoRenewDuration = software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.bandwidthPackageChargeType = software.amazon.jsii.Kernel.get(this, "bandwidthPackageChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.autoRenewDuration = software.amazon.jsii.Kernel.get(this, "autoRenewDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthPackageChargeType = software.amazon.jsii.Kernel.get(this, "bandwidthPackageChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number bandwidth, final java.lang.String geographicRegionAId, final java.lang.String geographicRegionBId, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Number autoRenewDuration, final java.lang.String bandwidthPackageChargeType, final java.lang.String description, final java.lang.String name, final java.lang.Number period, final java.lang.String pricingCycle) {
+        protected Jsii$Proxy(final java.lang.Object bandwidth, final java.lang.Object geographicRegionAId, final java.lang.Object geographicRegionBId, final java.lang.Object autoPay, final java.lang.Object autoRenew, final java.lang.Object autoRenewDuration, final java.lang.Object bandwidthPackageChargeType, final java.lang.Object description, final java.lang.Object name, final java.lang.Object period, final java.lang.Object pricingCycle) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.bandwidth = java.util.Objects.requireNonNull(bandwidth, "bandwidth is required");
             this.geographicRegionAId = java.util.Objects.requireNonNull(geographicRegionAId, "geographicRegionAId is required");
@@ -286,17 +433,17 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.Number getBandwidth() {
+        public final java.lang.Object getBandwidth() {
             return this.bandwidth;
         }
 
         @Override
-        public final java.lang.String getGeographicRegionAId() {
+        public final java.lang.Object getGeographicRegionAId() {
             return this.geographicRegionAId;
         }
 
         @Override
-        public final java.lang.String getGeographicRegionBId() {
+        public final java.lang.Object getGeographicRegionBId() {
             return this.geographicRegionBId;
         }
 
@@ -311,32 +458,32 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.Number getAutoRenewDuration() {
+        public final java.lang.Object getAutoRenewDuration() {
             return this.autoRenewDuration;
         }
 
         @Override
-        public final java.lang.String getBandwidthPackageChargeType() {
+        public final java.lang.Object getBandwidthPackageChargeType() {
             return this.bandwidthPackageChargeType;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 

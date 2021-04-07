@@ -3,46 +3,54 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AutoProvisioningGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.276Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAutoProvisioningGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosAutoProvisioningGroupProps.Jsii$Proxy.class)
 public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLaunchTemplateId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTotalTargetCapacity();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTotalTargetCapacity();
-
-    /**
-     */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoProvisioningGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoProvisioningGroupName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoProvisioningGroupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoProvisioningGroupType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDefaultTargetCapacityType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCheckExecutionStatus() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultTargetCapacityType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getExcessCapacityTerminationPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getExcessCapacityTerminationPolicy() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchConfiguration() {
         return null;
     }
 
@@ -54,49 +62,55 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaxSpotPrice() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayAsYouGoAllocationStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxSpotPrice() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayAsYouGoTargetCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayAsYouGoAllocationStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotAllocationStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayAsYouGoTargetCapacity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotInstanceInterruptionBehavior() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotAllocationStrategy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSpotInstancePoolsToUseCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstanceInterruptionBehavior() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotTargetCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInstancePoolsToUseCount() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotTargetCapacity() {
         return null;
     }
 
@@ -114,13 +128,13 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getValidFrom() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getValidFrom() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getValidUntil() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getValidUntil() {
         return null;
     }
 
@@ -134,34 +148,36 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
      * A builder for {@link RosAutoProvisioningGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAutoProvisioningGroupProps> {
-        private java.lang.String launchTemplateId;
-        private java.lang.String totalTargetCapacity;
-        private java.lang.String autoProvisioningGroupName;
-        private java.lang.String autoProvisioningGroupType;
-        private java.lang.String defaultTargetCapacityType;
-        private java.lang.String description;
-        private java.lang.String excessCapacityTerminationPolicy;
+        private java.lang.Object totalTargetCapacity;
+        private java.lang.Object autoProvisioningGroupName;
+        private java.lang.Object autoProvisioningGroupType;
+        private java.lang.Object checkExecutionStatus;
+        private java.lang.Object defaultTargetCapacityType;
+        private java.lang.Object description;
+        private java.lang.Object excessCapacityTerminationPolicy;
+        private java.lang.Object launchConfiguration;
         private java.lang.Object launchTemplateConfig;
-        private java.lang.String launchTemplateVersion;
-        private java.lang.Number maxSpotPrice;
-        private java.lang.String payAsYouGoAllocationStrategy;
-        private java.lang.String payAsYouGoTargetCapacity;
-        private java.lang.String spotAllocationStrategy;
-        private java.lang.String spotInstanceInterruptionBehavior;
-        private java.lang.Number spotInstancePoolsToUseCount;
-        private java.lang.String spotTargetCapacity;
+        private java.lang.Object launchTemplateId;
+        private java.lang.Object launchTemplateVersion;
+        private java.lang.Object maxSpotPrice;
+        private java.lang.Object payAsYouGoAllocationStrategy;
+        private java.lang.Object payAsYouGoTargetCapacity;
+        private java.lang.Object spotAllocationStrategy;
+        private java.lang.Object spotInstanceInterruptionBehavior;
+        private java.lang.Object spotInstancePoolsToUseCount;
+        private java.lang.Object spotTargetCapacity;
         private java.lang.Object terminateInstances;
         private java.lang.Object terminateInstancesWithExpiration;
-        private java.lang.String validFrom;
-        private java.lang.String validUntil;
+        private java.lang.Object validFrom;
+        private java.lang.Object validUntil;
 
         /**
-         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchTemplateId}
-         * @param launchTemplateId the value to be set. This parameter is required.
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getTotalTargetCapacity}
+         * @param totalTargetCapacity the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder launchTemplateId(java.lang.String launchTemplateId) {
-            this.launchTemplateId = launchTemplateId;
+        public Builder totalTargetCapacity(java.lang.String totalTargetCapacity) {
+            this.totalTargetCapacity = totalTargetCapacity;
             return this;
         }
 
@@ -170,7 +186,7 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
          * @param totalTargetCapacity the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder totalTargetCapacity(java.lang.String totalTargetCapacity) {
+        public Builder totalTargetCapacity(com.aliyun.ros.cdk.core.IResolvable totalTargetCapacity) {
             this.totalTargetCapacity = totalTargetCapacity;
             return this;
         }
@@ -186,6 +202,16 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getAutoProvisioningGroupName}
+         * @param autoProvisioningGroupName the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoProvisioningGroupName(com.aliyun.ros.cdk.core.IResolvable autoProvisioningGroupName) {
+            this.autoProvisioningGroupName = autoProvisioningGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getAutoProvisioningGroupType}
          * @param autoProvisioningGroupType the value to be set.
          * @return {@code this}
@@ -196,11 +222,51 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getAutoProvisioningGroupType}
+         * @param autoProvisioningGroupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoProvisioningGroupType(com.aliyun.ros.cdk.core.IResolvable autoProvisioningGroupType) {
+            this.autoProvisioningGroupType = autoProvisioningGroupType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getCheckExecutionStatus}
+         * @param checkExecutionStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder checkExecutionStatus(java.lang.Boolean checkExecutionStatus) {
+            this.checkExecutionStatus = checkExecutionStatus;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getCheckExecutionStatus}
+         * @param checkExecutionStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder checkExecutionStatus(com.aliyun.ros.cdk.core.IResolvable checkExecutionStatus) {
+            this.checkExecutionStatus = checkExecutionStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getDefaultTargetCapacityType}
          * @param defaultTargetCapacityType the value to be set.
          * @return {@code this}
          */
         public Builder defaultTargetCapacityType(java.lang.String defaultTargetCapacityType) {
+            this.defaultTargetCapacityType = defaultTargetCapacityType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getDefaultTargetCapacityType}
+         * @param defaultTargetCapacityType the value to be set.
+         * @return {@code this}
+         */
+        public Builder defaultTargetCapacityType(com.aliyun.ros.cdk.core.IResolvable defaultTargetCapacityType) {
             this.defaultTargetCapacityType = defaultTargetCapacityType;
             return this;
         }
@@ -216,12 +282,52 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getExcessCapacityTerminationPolicy}
          * @param excessCapacityTerminationPolicy the value to be set.
          * @return {@code this}
          */
         public Builder excessCapacityTerminationPolicy(java.lang.String excessCapacityTerminationPolicy) {
             this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getExcessCapacityTerminationPolicy}
+         * @param excessCapacityTerminationPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder excessCapacityTerminationPolicy(com.aliyun.ros.cdk.core.IResolvable excessCapacityTerminationPolicy) {
+            this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchConfiguration}
+         * @param launchConfiguration the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchConfiguration(com.aliyun.ros.cdk.core.IResolvable launchConfiguration) {
+            this.launchConfiguration = launchConfiguration;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchConfiguration}
+         * @param launchConfiguration the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchConfiguration(com.aliyun.ros.cdk.ecs.RosAutoProvisioningGroup.LaunchConfigurationProperty launchConfiguration) {
+            this.launchConfiguration = launchConfiguration;
             return this;
         }
 
@@ -246,11 +352,41 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchTemplateId}
+         * @param launchTemplateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateId(java.lang.String launchTemplateId) {
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchTemplateId}
+         * @param launchTemplateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateId(com.aliyun.ros.cdk.core.IResolvable launchTemplateId) {
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchTemplateVersion}
          * @param launchTemplateVersion the value to be set.
          * @return {@code this}
          */
         public Builder launchTemplateVersion(java.lang.String launchTemplateVersion) {
+            this.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getLaunchTemplateVersion}
+         * @param launchTemplateVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder launchTemplateVersion(com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
             this.launchTemplateVersion = launchTemplateVersion;
             return this;
         }
@@ -266,11 +402,31 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getMaxSpotPrice}
+         * @param maxSpotPrice the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxSpotPrice(com.aliyun.ros.cdk.core.IResolvable maxSpotPrice) {
+            this.maxSpotPrice = maxSpotPrice;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getPayAsYouGoAllocationStrategy}
          * @param payAsYouGoAllocationStrategy the value to be set.
          * @return {@code this}
          */
         public Builder payAsYouGoAllocationStrategy(java.lang.String payAsYouGoAllocationStrategy) {
+            this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getPayAsYouGoAllocationStrategy}
+         * @param payAsYouGoAllocationStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder payAsYouGoAllocationStrategy(com.aliyun.ros.cdk.core.IResolvable payAsYouGoAllocationStrategy) {
             this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
             return this;
         }
@@ -286,11 +442,31 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getPayAsYouGoTargetCapacity}
+         * @param payAsYouGoTargetCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder payAsYouGoTargetCapacity(com.aliyun.ros.cdk.core.IResolvable payAsYouGoTargetCapacity) {
+            this.payAsYouGoTargetCapacity = payAsYouGoTargetCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotAllocationStrategy}
          * @param spotAllocationStrategy the value to be set.
          * @return {@code this}
          */
         public Builder spotAllocationStrategy(java.lang.String spotAllocationStrategy) {
+            this.spotAllocationStrategy = spotAllocationStrategy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotAllocationStrategy}
+         * @param spotAllocationStrategy the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotAllocationStrategy(com.aliyun.ros.cdk.core.IResolvable spotAllocationStrategy) {
             this.spotAllocationStrategy = spotAllocationStrategy;
             return this;
         }
@@ -306,6 +482,16 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotInstanceInterruptionBehavior}
+         * @param spotInstanceInterruptionBehavior the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstanceInterruptionBehavior(com.aliyun.ros.cdk.core.IResolvable spotInstanceInterruptionBehavior) {
+            this.spotInstanceInterruptionBehavior = spotInstanceInterruptionBehavior;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotInstancePoolsToUseCount}
          * @param spotInstancePoolsToUseCount the value to be set.
          * @return {@code this}
@@ -316,11 +502,31 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotInstancePoolsToUseCount}
+         * @param spotInstancePoolsToUseCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotInstancePoolsToUseCount(com.aliyun.ros.cdk.core.IResolvable spotInstancePoolsToUseCount) {
+            this.spotInstancePoolsToUseCount = spotInstancePoolsToUseCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotTargetCapacity}
          * @param spotTargetCapacity the value to be set.
          * @return {@code this}
          */
         public Builder spotTargetCapacity(java.lang.String spotTargetCapacity) {
+            this.spotTargetCapacity = spotTargetCapacity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getSpotTargetCapacity}
+         * @param spotTargetCapacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder spotTargetCapacity(com.aliyun.ros.cdk.core.IResolvable spotTargetCapacity) {
             this.spotTargetCapacity = spotTargetCapacity;
             return this;
         }
@@ -376,11 +582,31 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getValidFrom}
+         * @param validFrom the value to be set.
+         * @return {@code this}
+         */
+        public Builder validFrom(com.aliyun.ros.cdk.core.IResolvable validFrom) {
+            this.validFrom = validFrom;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAutoProvisioningGroupProps#getValidUntil}
          * @param validUntil the value to be set.
          * @return {@code this}
          */
         public Builder validUntil(java.lang.String validUntil) {
+            this.validUntil = validUntil;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAutoProvisioningGroupProps#getValidUntil}
+         * @param validUntil the value to be set.
+         * @return {@code this}
+         */
+        public Builder validUntil(com.aliyun.ros.cdk.core.IResolvable validUntil) {
             this.validUntil = validUntil;
             return this;
         }
@@ -392,7 +618,7 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
          */
         @Override
         public RosAutoProvisioningGroupProps build() {
-            return new Jsii$Proxy(launchTemplateId, totalTargetCapacity, autoProvisioningGroupName, autoProvisioningGroupType, defaultTargetCapacityType, description, excessCapacityTerminationPolicy, launchTemplateConfig, launchTemplateVersion, maxSpotPrice, payAsYouGoAllocationStrategy, payAsYouGoTargetCapacity, spotAllocationStrategy, spotInstanceInterruptionBehavior, spotInstancePoolsToUseCount, spotTargetCapacity, terminateInstances, terminateInstancesWithExpiration, validFrom, validUntil);
+            return new Jsii$Proxy(totalTargetCapacity, autoProvisioningGroupName, autoProvisioningGroupType, checkExecutionStatus, defaultTargetCapacityType, description, excessCapacityTerminationPolicy, launchConfiguration, launchTemplateConfig, launchTemplateId, launchTemplateVersion, maxSpotPrice, payAsYouGoAllocationStrategy, payAsYouGoTargetCapacity, spotAllocationStrategy, spotInstanceInterruptionBehavior, spotInstancePoolsToUseCount, spotTargetCapacity, terminateInstances, terminateInstancesWithExpiration, validFrom, validUntil);
         }
     }
 
@@ -401,26 +627,28 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAutoProvisioningGroupProps {
-        private final java.lang.String launchTemplateId;
-        private final java.lang.String totalTargetCapacity;
-        private final java.lang.String autoProvisioningGroupName;
-        private final java.lang.String autoProvisioningGroupType;
-        private final java.lang.String defaultTargetCapacityType;
-        private final java.lang.String description;
-        private final java.lang.String excessCapacityTerminationPolicy;
+        private final java.lang.Object totalTargetCapacity;
+        private final java.lang.Object autoProvisioningGroupName;
+        private final java.lang.Object autoProvisioningGroupType;
+        private final java.lang.Object checkExecutionStatus;
+        private final java.lang.Object defaultTargetCapacityType;
+        private final java.lang.Object description;
+        private final java.lang.Object excessCapacityTerminationPolicy;
+        private final java.lang.Object launchConfiguration;
         private final java.lang.Object launchTemplateConfig;
-        private final java.lang.String launchTemplateVersion;
-        private final java.lang.Number maxSpotPrice;
-        private final java.lang.String payAsYouGoAllocationStrategy;
-        private final java.lang.String payAsYouGoTargetCapacity;
-        private final java.lang.String spotAllocationStrategy;
-        private final java.lang.String spotInstanceInterruptionBehavior;
-        private final java.lang.Number spotInstancePoolsToUseCount;
-        private final java.lang.String spotTargetCapacity;
+        private final java.lang.Object launchTemplateId;
+        private final java.lang.Object launchTemplateVersion;
+        private final java.lang.Object maxSpotPrice;
+        private final java.lang.Object payAsYouGoAllocationStrategy;
+        private final java.lang.Object payAsYouGoTargetCapacity;
+        private final java.lang.Object spotAllocationStrategy;
+        private final java.lang.Object spotInstanceInterruptionBehavior;
+        private final java.lang.Object spotInstancePoolsToUseCount;
+        private final java.lang.Object spotTargetCapacity;
         private final java.lang.Object terminateInstances;
         private final java.lang.Object terminateInstancesWithExpiration;
-        private final java.lang.String validFrom;
-        private final java.lang.String validUntil;
+        private final java.lang.Object validFrom;
+        private final java.lang.Object validUntil;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -428,41 +656,45 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.totalTargetCapacity = software.amazon.jsii.Kernel.get(this, "totalTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoProvisioningGroupName = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoProvisioningGroupType = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.defaultTargetCapacityType = software.amazon.jsii.Kernel.get(this, "defaultTargetCapacityType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.excessCapacityTerminationPolicy = software.amazon.jsii.Kernel.get(this, "excessCapacityTerminationPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.totalTargetCapacity = software.amazon.jsii.Kernel.get(this, "totalTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoProvisioningGroupName = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoProvisioningGroupType = software.amazon.jsii.Kernel.get(this, "autoProvisioningGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.checkExecutionStatus = software.amazon.jsii.Kernel.get(this, "checkExecutionStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.defaultTargetCapacityType = software.amazon.jsii.Kernel.get(this, "defaultTargetCapacityType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.excessCapacityTerminationPolicy = software.amazon.jsii.Kernel.get(this, "excessCapacityTerminationPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchConfiguration = software.amazon.jsii.Kernel.get(this, "launchConfiguration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.launchTemplateConfig = software.amazon.jsii.Kernel.get(this, "launchTemplateConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maxSpotPrice = software.amazon.jsii.Kernel.get(this, "maxSpotPrice", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.payAsYouGoAllocationStrategy = software.amazon.jsii.Kernel.get(this, "payAsYouGoAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payAsYouGoTargetCapacity = software.amazon.jsii.Kernel.get(this, "payAsYouGoTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotAllocationStrategy = software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotInstanceInterruptionBehavior = software.amazon.jsii.Kernel.get(this, "spotInstanceInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotInstancePoolsToUseCount = software.amazon.jsii.Kernel.get(this, "spotInstancePoolsToUseCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.spotTargetCapacity = software.amazon.jsii.Kernel.get(this, "spotTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxSpotPrice = software.amazon.jsii.Kernel.get(this, "maxSpotPrice", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payAsYouGoAllocationStrategy = software.amazon.jsii.Kernel.get(this, "payAsYouGoAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payAsYouGoTargetCapacity = software.amazon.jsii.Kernel.get(this, "payAsYouGoTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotAllocationStrategy = software.amazon.jsii.Kernel.get(this, "spotAllocationStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotInstanceInterruptionBehavior = software.amazon.jsii.Kernel.get(this, "spotInstanceInterruptionBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotInstancePoolsToUseCount = software.amazon.jsii.Kernel.get(this, "spotInstancePoolsToUseCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotTargetCapacity = software.amazon.jsii.Kernel.get(this, "spotTargetCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminateInstances = software.amazon.jsii.Kernel.get(this, "terminateInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.terminateInstancesWithExpiration = software.amazon.jsii.Kernel.get(this, "terminateInstancesWithExpiration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.validFrom = software.amazon.jsii.Kernel.get(this, "validFrom", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.validUntil = software.amazon.jsii.Kernel.get(this, "validUntil", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.validFrom = software.amazon.jsii.Kernel.get(this, "validFrom", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.validUntil = software.amazon.jsii.Kernel.get(this, "validUntil", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String launchTemplateId, final java.lang.String totalTargetCapacity, final java.lang.String autoProvisioningGroupName, final java.lang.String autoProvisioningGroupType, final java.lang.String defaultTargetCapacityType, final java.lang.String description, final java.lang.String excessCapacityTerminationPolicy, final java.lang.Object launchTemplateConfig, final java.lang.String launchTemplateVersion, final java.lang.Number maxSpotPrice, final java.lang.String payAsYouGoAllocationStrategy, final java.lang.String payAsYouGoTargetCapacity, final java.lang.String spotAllocationStrategy, final java.lang.String spotInstanceInterruptionBehavior, final java.lang.Number spotInstancePoolsToUseCount, final java.lang.String spotTargetCapacity, final java.lang.Object terminateInstances, final java.lang.Object terminateInstancesWithExpiration, final java.lang.String validFrom, final java.lang.String validUntil) {
+        protected Jsii$Proxy(final java.lang.Object totalTargetCapacity, final java.lang.Object autoProvisioningGroupName, final java.lang.Object autoProvisioningGroupType, final java.lang.Object checkExecutionStatus, final java.lang.Object defaultTargetCapacityType, final java.lang.Object description, final java.lang.Object excessCapacityTerminationPolicy, final java.lang.Object launchConfiguration, final java.lang.Object launchTemplateConfig, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateVersion, final java.lang.Object maxSpotPrice, final java.lang.Object payAsYouGoAllocationStrategy, final java.lang.Object payAsYouGoTargetCapacity, final java.lang.Object spotAllocationStrategy, final java.lang.Object spotInstanceInterruptionBehavior, final java.lang.Object spotInstancePoolsToUseCount, final java.lang.Object spotTargetCapacity, final java.lang.Object terminateInstances, final java.lang.Object terminateInstancesWithExpiration, final java.lang.Object validFrom, final java.lang.Object validUntil) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.launchTemplateId = java.util.Objects.requireNonNull(launchTemplateId, "launchTemplateId is required");
             this.totalTargetCapacity = java.util.Objects.requireNonNull(totalTargetCapacity, "totalTargetCapacity is required");
             this.autoProvisioningGroupName = autoProvisioningGroupName;
             this.autoProvisioningGroupType = autoProvisioningGroupType;
+            this.checkExecutionStatus = checkExecutionStatus;
             this.defaultTargetCapacityType = defaultTargetCapacityType;
             this.description = description;
             this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy;
+            this.launchConfiguration = launchConfiguration;
             this.launchTemplateConfig = launchTemplateConfig;
+            this.launchTemplateId = launchTemplateId;
             this.launchTemplateVersion = launchTemplateVersion;
             this.maxSpotPrice = maxSpotPrice;
             this.payAsYouGoAllocationStrategy = payAsYouGoAllocationStrategy;
@@ -478,38 +710,43 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateId() {
-            return this.launchTemplateId;
-        }
-
-        @Override
-        public final java.lang.String getTotalTargetCapacity() {
+        public final java.lang.Object getTotalTargetCapacity() {
             return this.totalTargetCapacity;
         }
 
         @Override
-        public final java.lang.String getAutoProvisioningGroupName() {
+        public final java.lang.Object getAutoProvisioningGroupName() {
             return this.autoProvisioningGroupName;
         }
 
         @Override
-        public final java.lang.String getAutoProvisioningGroupType() {
+        public final java.lang.Object getAutoProvisioningGroupType() {
             return this.autoProvisioningGroupType;
         }
 
         @Override
-        public final java.lang.String getDefaultTargetCapacityType() {
+        public final java.lang.Object getCheckExecutionStatus() {
+            return this.checkExecutionStatus;
+        }
+
+        @Override
+        public final java.lang.Object getDefaultTargetCapacityType() {
             return this.defaultTargetCapacityType;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getExcessCapacityTerminationPolicy() {
+        public final java.lang.Object getExcessCapacityTerminationPolicy() {
             return this.excessCapacityTerminationPolicy;
+        }
+
+        @Override
+        public final java.lang.Object getLaunchConfiguration() {
+            return this.launchConfiguration;
         }
 
         @Override
@@ -518,42 +755,47 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateVersion() {
+        public final java.lang.Object getLaunchTemplateId() {
+            return this.launchTemplateId;
+        }
+
+        @Override
+        public final java.lang.Object getLaunchTemplateVersion() {
             return this.launchTemplateVersion;
         }
 
         @Override
-        public final java.lang.Number getMaxSpotPrice() {
+        public final java.lang.Object getMaxSpotPrice() {
             return this.maxSpotPrice;
         }
 
         @Override
-        public final java.lang.String getPayAsYouGoAllocationStrategy() {
+        public final java.lang.Object getPayAsYouGoAllocationStrategy() {
             return this.payAsYouGoAllocationStrategy;
         }
 
         @Override
-        public final java.lang.String getPayAsYouGoTargetCapacity() {
+        public final java.lang.Object getPayAsYouGoTargetCapacity() {
             return this.payAsYouGoTargetCapacity;
         }
 
         @Override
-        public final java.lang.String getSpotAllocationStrategy() {
+        public final java.lang.Object getSpotAllocationStrategy() {
             return this.spotAllocationStrategy;
         }
 
         @Override
-        public final java.lang.String getSpotInstanceInterruptionBehavior() {
+        public final java.lang.Object getSpotInstanceInterruptionBehavior() {
             return this.spotInstanceInterruptionBehavior;
         }
 
         @Override
-        public final java.lang.Number getSpotInstancePoolsToUseCount() {
+        public final java.lang.Object getSpotInstancePoolsToUseCount() {
             return this.spotInstancePoolsToUseCount;
         }
 
         @Override
-        public final java.lang.String getSpotTargetCapacity() {
+        public final java.lang.Object getSpotTargetCapacity() {
             return this.spotTargetCapacity;
         }
 
@@ -568,12 +810,12 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getValidFrom() {
+        public final java.lang.Object getValidFrom() {
             return this.validFrom;
         }
 
         @Override
-        public final java.lang.String getValidUntil() {
+        public final java.lang.Object getValidUntil() {
             return this.validUntil;
         }
 
@@ -583,13 +825,15 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("launchTemplateId", om.valueToTree(this.getLaunchTemplateId()));
             data.set("totalTargetCapacity", om.valueToTree(this.getTotalTargetCapacity()));
             if (this.getAutoProvisioningGroupName() != null) {
                 data.set("autoProvisioningGroupName", om.valueToTree(this.getAutoProvisioningGroupName()));
             }
             if (this.getAutoProvisioningGroupType() != null) {
                 data.set("autoProvisioningGroupType", om.valueToTree(this.getAutoProvisioningGroupType()));
+            }
+            if (this.getCheckExecutionStatus() != null) {
+                data.set("checkExecutionStatus", om.valueToTree(this.getCheckExecutionStatus()));
             }
             if (this.getDefaultTargetCapacityType() != null) {
                 data.set("defaultTargetCapacityType", om.valueToTree(this.getDefaultTargetCapacityType()));
@@ -600,8 +844,14 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
             if (this.getExcessCapacityTerminationPolicy() != null) {
                 data.set("excessCapacityTerminationPolicy", om.valueToTree(this.getExcessCapacityTerminationPolicy()));
             }
+            if (this.getLaunchConfiguration() != null) {
+                data.set("launchConfiguration", om.valueToTree(this.getLaunchConfiguration()));
+            }
             if (this.getLaunchTemplateConfig() != null) {
                 data.set("launchTemplateConfig", om.valueToTree(this.getLaunchTemplateConfig()));
+            }
+            if (this.getLaunchTemplateId() != null) {
+                data.set("launchTemplateId", om.valueToTree(this.getLaunchTemplateId()));
             }
             if (this.getLaunchTemplateVersion() != null) {
                 data.set("launchTemplateVersion", om.valueToTree(this.getLaunchTemplateVersion()));
@@ -657,14 +907,16 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
 
             RosAutoProvisioningGroupProps.Jsii$Proxy that = (RosAutoProvisioningGroupProps.Jsii$Proxy) o;
 
-            if (!launchTemplateId.equals(that.launchTemplateId)) return false;
             if (!totalTargetCapacity.equals(that.totalTargetCapacity)) return false;
             if (this.autoProvisioningGroupName != null ? !this.autoProvisioningGroupName.equals(that.autoProvisioningGroupName) : that.autoProvisioningGroupName != null) return false;
             if (this.autoProvisioningGroupType != null ? !this.autoProvisioningGroupType.equals(that.autoProvisioningGroupType) : that.autoProvisioningGroupType != null) return false;
+            if (this.checkExecutionStatus != null ? !this.checkExecutionStatus.equals(that.checkExecutionStatus) : that.checkExecutionStatus != null) return false;
             if (this.defaultTargetCapacityType != null ? !this.defaultTargetCapacityType.equals(that.defaultTargetCapacityType) : that.defaultTargetCapacityType != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.excessCapacityTerminationPolicy != null ? !this.excessCapacityTerminationPolicy.equals(that.excessCapacityTerminationPolicy) : that.excessCapacityTerminationPolicy != null) return false;
+            if (this.launchConfiguration != null ? !this.launchConfiguration.equals(that.launchConfiguration) : that.launchConfiguration != null) return false;
             if (this.launchTemplateConfig != null ? !this.launchTemplateConfig.equals(that.launchTemplateConfig) : that.launchTemplateConfig != null) return false;
+            if (this.launchTemplateId != null ? !this.launchTemplateId.equals(that.launchTemplateId) : that.launchTemplateId != null) return false;
             if (this.launchTemplateVersion != null ? !this.launchTemplateVersion.equals(that.launchTemplateVersion) : that.launchTemplateVersion != null) return false;
             if (this.maxSpotPrice != null ? !this.maxSpotPrice.equals(that.maxSpotPrice) : that.maxSpotPrice != null) return false;
             if (this.payAsYouGoAllocationStrategy != null ? !this.payAsYouGoAllocationStrategy.equals(that.payAsYouGoAllocationStrategy) : that.payAsYouGoAllocationStrategy != null) return false;
@@ -681,14 +933,16 @@ public interface RosAutoProvisioningGroupProps extends software.amazon.jsii.Jsii
 
         @Override
         public final int hashCode() {
-            int result = this.launchTemplateId.hashCode();
-            result = 31 * result + (this.totalTargetCapacity.hashCode());
+            int result = this.totalTargetCapacity.hashCode();
             result = 31 * result + (this.autoProvisioningGroupName != null ? this.autoProvisioningGroupName.hashCode() : 0);
             result = 31 * result + (this.autoProvisioningGroupType != null ? this.autoProvisioningGroupType.hashCode() : 0);
+            result = 31 * result + (this.checkExecutionStatus != null ? this.checkExecutionStatus.hashCode() : 0);
             result = 31 * result + (this.defaultTargetCapacityType != null ? this.defaultTargetCapacityType.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.excessCapacityTerminationPolicy != null ? this.excessCapacityTerminationPolicy.hashCode() : 0);
+            result = 31 * result + (this.launchConfiguration != null ? this.launchConfiguration.hashCode() : 0);
             result = 31 * result + (this.launchTemplateConfig != null ? this.launchTemplateConfig.hashCode() : 0);
+            result = 31 * result + (this.launchTemplateId != null ? this.launchTemplateId.hashCode() : 0);
             result = 31 * result + (this.launchTemplateVersion != null ? this.launchTemplateVersion.hashCode() : 0);
             result = 31 * result + (this.maxSpotPrice != null ? this.maxSpotPrice.hashCode() : 0);
             result = 31 * result + (this.payAsYouGoAllocationStrategy != null ? this.payAsYouGoAllocationStrategy.hashCode() : 0);

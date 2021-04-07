@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <description><c>PhysicalName.GENERATE_IF_NEEDED</c> is a marker that indicates that a physical will only be generated
         /// by the CDK if it is needed for cross-environment references. Otherwise, it will be allocated.</description>
         /// </list>
-        /// 
+        ///
         /// <strong>Default</strong>: - The physical name will be allocated at deployment time
         /// </remarks>
         [JsiiOptional]

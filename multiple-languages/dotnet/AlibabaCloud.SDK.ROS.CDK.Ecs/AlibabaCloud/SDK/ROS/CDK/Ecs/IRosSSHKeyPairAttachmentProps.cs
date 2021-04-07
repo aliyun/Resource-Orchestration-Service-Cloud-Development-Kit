@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: keyPairName: SSH key pair name.
         /// </remarks>
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}")]
-        string KeyPairName
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object KeyPairName
         {
             get;
         }
@@ -46,10 +46,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// <remarks>
             /// <strong>Property</strong>: keyPairName: SSH key pair name.
             /// </remarks>
-            [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}")]
-            public string KeyPairName
+            [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object KeyPairName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

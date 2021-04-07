@@ -16,7 +16,7 @@ export interface IpSetsProps {
     /**
      * Property acceleratorId: The ID of the GA instance.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 }
 
 /**
@@ -32,17 +32,17 @@ export class IpSets extends ros.Resource {
     /**
      * Attribute AccelerateRegionIds: The ID list of the accelerate region.
      */
-    public readonly attrAccelerateRegionIds: any;
+    public readonly attrAccelerateRegionIds: ros.IResolvable;
 
     /**
      * Attribute IpSetIds: The ID list of the ip set.
      */
-    public readonly attrIpSetIds: any;
+    public readonly attrIpSetIds: ros.IResolvable;
 
     /**
      * Attribute IpVersions: The IP version list of the accelerate region.
      */
-    public readonly attrIpVersions: any;
+    public readonly attrIpVersions: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::IpSets`.

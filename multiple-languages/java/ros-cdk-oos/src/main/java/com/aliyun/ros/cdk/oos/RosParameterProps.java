@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Properties for defining a `ALIYUN::OOS::Parameter`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.133Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.762Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosParameterProps")
 @software.amazon.jsii.Jsii.Proxy(RosParameterProps.Jsii$Proxy.class)
 public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getValue();
+    @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConstraints() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConstraints() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -42,11 +42,11 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link RosParameterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosParameterProps> {
-        private java.lang.String name;
-        private java.lang.String type;
-        private java.lang.String value;
-        private java.lang.String constraints;
-        private java.lang.String description;
+        private java.lang.Object name;
+        private java.lang.Object type;
+        private java.lang.Object value;
+        private java.lang.Object constraints;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link RosParameterProps#getName}
@@ -54,6 +54,16 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -69,11 +79,31 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getType}
+         * @param type the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getValue}
          * @param value the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder value(java.lang.String value) {
+            this.value = value;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getValue}
+         * @param value the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
             this.value = value;
             return this;
         }
@@ -89,11 +119,31 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosParameterProps#getConstraints}
+         * @param constraints the value to be set.
+         * @return {@code this}
+         */
+        public Builder constraints(com.aliyun.ros.cdk.core.IResolvable constraints) {
+            this.constraints = constraints;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosParameterProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosParameterProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -114,11 +164,11 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosParameterProps {
-        private final java.lang.String name;
-        private final java.lang.String type;
-        private final java.lang.String value;
-        private final java.lang.String constraints;
-        private final java.lang.String description;
+        private final java.lang.Object name;
+        private final java.lang.Object type;
+        private final java.lang.Object value;
+        private final java.lang.Object constraints;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +176,17 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.constraints = software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.constraints = software.amazon.jsii.Kernel.get(this, "constraints", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.String type, final java.lang.String value, final java.lang.String constraints, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object type, final java.lang.Object value, final java.lang.Object constraints, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -146,27 +196,27 @@ public interface RosParameterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 
         @Override
-        public final java.lang.String getValue() {
+        public final java.lang.Object getValue() {
             return this.value;
         }
 
         @Override
-        public final java.lang.String getConstraints() {
+        public final java.lang.Object getConstraints() {
             return this.constraints;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

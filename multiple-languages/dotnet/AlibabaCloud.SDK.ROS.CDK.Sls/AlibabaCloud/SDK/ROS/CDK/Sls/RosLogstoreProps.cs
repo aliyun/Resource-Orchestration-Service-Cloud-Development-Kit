@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "logstoreName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LogstoreName
+        [JsiiProperty(name: "logstoreName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LogstoreName
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ProjectName
         {
             get;
             set;
@@ -77,8 +77,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-64.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? MaxSplitShard
+        [JsiiProperty(name: "maxSplitShard", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MaxSplitShard
         {
             get;
             set;
@@ -102,8 +102,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-100, default to 2.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? ShardCount
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ShardCount
         {
             get;
             set;
@@ -114,8 +114,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// Allowed Values: 1-3600, default to 30.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Ttl
+        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Ttl
         {
             get;
             set;

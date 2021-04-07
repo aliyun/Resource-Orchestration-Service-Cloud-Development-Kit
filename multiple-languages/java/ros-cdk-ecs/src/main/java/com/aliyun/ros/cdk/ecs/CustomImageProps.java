@@ -3,60 +3,82 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::CustomImage`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.533Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CustomImageProps")
 @software.amazon.jsii.Jsii.Proxy(CustomImageProps.Jsii$Proxy.class)
 public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property architecture: After specifying the data disk snapshot as the mirrored system disk, you need to determine the system architecture of the system disk through Architecture.
+     * <p>
+     * Ranges:
+     * I386
+     * X86_64 (default)
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getArchitecture() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getArchitecture() {
         return null;
     }
 
     /**
+     * Property description: The description of the image.
+     * <p>
+     * It can be [0, 256] letters in length.
+     * It cannot begin with http:// or https://.
+     * Default value: null.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property diskDeviceMapping:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskDeviceMapping() {
         return null;
     }
 
     /**
+     * Property imageName: Image name.
+     * <p>
+     * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
+     * Cannot begin with http:// or https://.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageName() {
         return null;
     }
 
     /**
+     * Property instanceId: Instance ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
     /**
+     * Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPlatform() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPlatform() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property snapshotId: The snapshot ID.
+     * <p>
+     * A custom image is created from the specified snapshot.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
         return null;
     }
 
     /**
+     * Property tag:.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTag() {
         return null;
@@ -72,19 +94,22 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link CustomImageProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CustomImageProps> {
-        private java.lang.String architecture;
-        private java.lang.String description;
+        private java.lang.Object architecture;
+        private java.lang.Object description;
         private java.lang.Object diskDeviceMapping;
-        private java.lang.String imageName;
-        private java.lang.String instanceId;
-        private java.lang.String platform;
-        private java.lang.String resourceGroupId;
-        private java.lang.String snapshotId;
+        private java.lang.Object imageName;
+        private java.lang.Object instanceId;
+        private java.lang.Object platform;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object snapshotId;
         private java.lang.Object tag;
 
         /**
          * Sets the value of {@link CustomImageProps#getArchitecture}
-         * @param architecture the value to be set.
+         * @param architecture Property architecture: After specifying the data disk snapshot as the mirrored system disk, you need to determine the system architecture of the system disk through Architecture.
+         *                     Ranges:
+         *                     I386
+         *                     X86_64 (default)
          * @return {@code this}
          */
         public Builder architecture(java.lang.String architecture) {
@@ -93,8 +118,24 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getArchitecture}
+         * @param architecture Property architecture: After specifying the data disk snapshot as the mirrored system disk, you need to determine the system architecture of the system disk through Architecture.
+         *                     Ranges:
+         *                     I386
+         *                     X86_64 (default)
+         * @return {@code this}
+         */
+        public Builder architecture(com.aliyun.ros.cdk.core.IResolvable architecture) {
+            this.architecture = architecture;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the image.
+         *                    It can be [0, 256] letters in length.
+         *                    It cannot begin with http:// or https://.
+         *                    Default value: null.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -103,8 +144,21 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getDescription}
+         * @param description Property description: The description of the image.
+         *                    It can be [0, 256] letters in length.
+         *                    It cannot begin with http:// or https://.
+         *                    Default value: null.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getDiskDeviceMapping}
-         * @param diskDeviceMapping the value to be set.
+         * @param diskDeviceMapping Property diskDeviceMapping:.
          * @return {@code this}
          */
         public Builder diskDeviceMapping(com.aliyun.ros.cdk.core.IResolvable diskDeviceMapping) {
@@ -114,7 +168,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getDiskDeviceMapping}
-         * @param diskDeviceMapping the value to be set.
+         * @param diskDeviceMapping Property diskDeviceMapping:.
          * @return {@code this}
          */
         public Builder diskDeviceMapping(java.util.List<? extends java.lang.Object> diskDeviceMapping) {
@@ -124,7 +178,9 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getImageName}
-         * @param imageName the value to be set.
+         * @param imageName Property imageName: Image name.
+         *                  Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
+         *                  Cannot begin with http:// or https://.
          * @return {@code this}
          */
         public Builder imageName(java.lang.String imageName) {
@@ -133,8 +189,20 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getImageName}
+         * @param imageName Property imageName: Image name.
+         *                  Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
+         *                  Cannot begin with http:// or https://.
+         * @return {@code this}
+         */
+        public Builder imageName(com.aliyun.ros.cdk.core.IResolvable imageName) {
+            this.imageName = imageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getInstanceId}
-         * @param instanceId the value to be set.
+         * @param instanceId Property instanceId: Instance ID.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -143,8 +211,18 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getInstanceId}
+         * @param instanceId Property instanceId: Instance ID.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getPlatform}
-         * @param platform the value to be set.
+         * @param platform Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
          * @return {@code this}
          */
         public Builder platform(java.lang.String platform) {
@@ -153,8 +231,18 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getPlatform}
+         * @param platform Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
+         * @return {@code this}
+         */
+        public Builder platform(com.aliyun.ros.cdk.core.IResolvable platform) {
+            this.platform = platform;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -163,8 +251,19 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The enterprise resource group ID where the custom image is located.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getSnapshotId}
-         * @param snapshotId the value to be set.
+         * @param snapshotId Property snapshotId: The snapshot ID.
+         *                   A custom image is created from the specified snapshot.
          * @return {@code this}
          */
         public Builder snapshotId(java.lang.String snapshotId) {
@@ -173,8 +272,19 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link CustomImageProps#getSnapshotId}
+         * @param snapshotId Property snapshotId: The snapshot ID.
+         *                   A custom image is created from the specified snapshot.
+         * @return {@code this}
+         */
+        public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
+            this.snapshotId = snapshotId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CustomImageProps#getTag}
-         * @param tag the value to be set.
+         * @param tag Property tag:.
          * @return {@code this}
          */
         public Builder tag(com.aliyun.ros.cdk.core.IResolvable tag) {
@@ -184,7 +294,7 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CustomImageProps#getTag}
-         * @param tag the value to be set.
+         * @param tag Property tag:.
          * @return {@code this}
          */
         public Builder tag(java.util.List<? extends java.lang.Object> tag) {
@@ -208,14 +318,14 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CustomImageProps {
-        private final java.lang.String architecture;
-        private final java.lang.String description;
+        private final java.lang.Object architecture;
+        private final java.lang.Object description;
         private final java.lang.Object diskDeviceMapping;
-        private final java.lang.String imageName;
-        private final java.lang.String instanceId;
-        private final java.lang.String platform;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String snapshotId;
+        private final java.lang.Object imageName;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object platform;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object snapshotId;
         private final java.lang.Object tag;
 
         /**
@@ -224,21 +334,21 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.architecture = software.amazon.jsii.Kernel.get(this, "architecture", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskDeviceMapping = software.amazon.jsii.Kernel.get(this, "diskDeviceMapping", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.imageName = software.amazon.jsii.Kernel.get(this, "imageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.platform = software.amazon.jsii.Kernel.get(this, "platform", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tag = software.amazon.jsii.Kernel.get(this, "tag", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String architecture, final java.lang.String description, final java.lang.Object diskDeviceMapping, final java.lang.String imageName, final java.lang.String instanceId, final java.lang.String platform, final java.lang.String resourceGroupId, final java.lang.String snapshotId, final java.lang.Object tag) {
+        protected Jsii$Proxy(final java.lang.Object architecture, final java.lang.Object description, final java.lang.Object diskDeviceMapping, final java.lang.Object imageName, final java.lang.Object instanceId, final java.lang.Object platform, final java.lang.Object resourceGroupId, final java.lang.Object snapshotId, final java.lang.Object tag) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.architecture = architecture;
             this.description = description;
@@ -252,12 +362,12 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getArchitecture() {
+        public final java.lang.Object getArchitecture() {
             return this.architecture;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -267,27 +377,27 @@ public interface CustomImageProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getImageName() {
+        public final java.lang.Object getImageName() {
             return this.imageName;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getPlatform() {
+        public final java.lang.Object getPlatform() {
             return this.platform;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getSnapshotId() {
+        public final java.lang.Object getSnapshotId() {
             return this.snapshotId;
         }
 

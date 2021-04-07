@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.093Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.GroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.GroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute GroupId: The id of the created Group resource.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute SubDomain: The sub domain assigned to the Group by the system.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSubDomain() {
-        return software.amazon.jsii.Kernel.get(this, "attrSubDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSubDomain() {
+        return software.amazon.jsii.Kernel.get(this, "attrSubDomain", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Tags: Tags of app.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTags() {
-        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTags() {
+        return software.amazon.jsii.Kernel.get(this, "attrTags", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.Group> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,47 +104,159 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
          * @return {@code this}
-         * @param groupName This parameter is required.
+         * @param groupName Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
             this.props.groupName(groupName);
             return this;
         }
+        /**
+         * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
 
         /**
+         * Property description: Description of the Group, less than 180 characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description of the Group, less than 180 characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description of the Group, less than 180 characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description of the Group, less than 180 characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property instanceId: API gateway instance ID.
+         * <p>
+         * For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: API gateway instance ID. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: API gateway instance ID.
+         * <p>
+         * For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: API gateway instance ID. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property internetEnable: Enable or disable internet subdomain.
+         * <p>
+         * True for enable.
+         * <p>
          * @return {@code this}
-         * @param passthroughHeaders This parameter is required.
+         * @param internetEnable Property internetEnable: Enable or disable internet subdomain. This parameter is required.
+         */
+        public Builder internetEnable(final java.lang.Boolean internetEnable) {
+            this.props.internetEnable(internetEnable);
+            return this;
+        }
+        /**
+         * Property internetEnable: Enable or disable internet subdomain.
+         * <p>
+         * True for enable.
+         * <p>
+         * @return {@code this}
+         * @param internetEnable Property internetEnable: Enable or disable internet subdomain. This parameter is required.
+         */
+        public Builder internetEnable(final com.aliyun.ros.cdk.core.IResolvable internetEnable) {
+            this.props.internetEnable(internetEnable);
+            return this;
+        }
+
+        /**
+         * Property passthroughHeaders: Pass through headers setting.
+         * <p>
+         * values:
+         * host: pass through host headers
+         * <p>
+         * @return {@code this}
+         * @param passthroughHeaders Property passthroughHeaders: Pass through headers setting. This parameter is required.
          */
         public Builder passthroughHeaders(final java.lang.String passthroughHeaders) {
             this.props.passthroughHeaders(passthroughHeaders);
             return this;
         }
+        /**
+         * Property passthroughHeaders: Pass through headers setting.
+         * <p>
+         * values:
+         * host: pass through host headers
+         * <p>
+         * @return {@code this}
+         * @param passthroughHeaders Property passthroughHeaders: Pass through headers setting. This parameter is required.
+         */
+        public Builder passthroughHeaders(final com.aliyun.ros.cdk.core.IResolvable passthroughHeaders) {
+            this.props.passthroughHeaders(passthroughHeaders);
+            return this;
+        }
 
         /**
+         * Property tags: Tags to attach to group.
+         * <p>
+         * Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tags to attach to group. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.apigateway.RosGroup.TagsProperty> tags) {
             this.props.tags(tags);
+            return this;
+        }
+
+        /**
+         * Property vpcIntranetEnable: Enable or disable VPC intranet subdomain.
+         * <p>
+         * True for enable.
+         * <p>
+         * @return {@code this}
+         * @param vpcIntranetEnable Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. This parameter is required.
+         */
+        public Builder vpcIntranetEnable(final java.lang.Boolean vpcIntranetEnable) {
+            this.props.vpcIntranetEnable(vpcIntranetEnable);
+            return this;
+        }
+        /**
+         * Property vpcIntranetEnable: Enable or disable VPC intranet subdomain.
+         * <p>
+         * True for enable.
+         * <p>
+         * @return {@code this}
+         * @param vpcIntranetEnable Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. This parameter is required.
+         */
+        public Builder vpcIntranetEnable(final com.aliyun.ros.cdk.core.IResolvable vpcIntranetEnable) {
+            this.props.vpcIntranetEnable(vpcIntranetEnable);
             return this;
         }
 

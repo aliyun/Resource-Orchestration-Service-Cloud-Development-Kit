@@ -16,22 +16,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Property groupId: The id of group.</summary>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupId
         {
             get;
         }
 
         /// <summary>Property signatureId: The id of the Signature.</summary>
-        [JsiiProperty(name: "signatureId", typeJson: "{\"primitive\":\"string\"}")]
-        string SignatureId
+        [JsiiProperty(name: "signatureId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SignatureId
         {
             get;
         }
 
         /// <summary>Property stageName: Bind signature in this stage.</summary>
-        [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}")]
-        string StageName
+        [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object StageName
         {
             get;
         }
@@ -52,24 +52,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <summary>Property groupId: The id of group.</summary>
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property signatureId: The id of the Signature.</summary>
-            [JsiiProperty(name: "signatureId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SignatureId
+            [JsiiProperty(name: "signatureId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SignatureId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property stageName: Bind signature in this stage.</summary>
-            [JsiiProperty(name: "stageName", typeJson: "{\"primitive\":\"string\"}")]
-            public string StageName
+            [JsiiProperty(name: "stageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object StageName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

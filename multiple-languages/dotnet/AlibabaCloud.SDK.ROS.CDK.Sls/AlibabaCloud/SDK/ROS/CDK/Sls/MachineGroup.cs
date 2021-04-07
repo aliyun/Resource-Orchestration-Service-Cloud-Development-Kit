@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Attribute GroupName: GroupName of SLS.</summary>
-        [JsiiProperty(name: "attrGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupName
+        [JsiiProperty(name: "attrGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ProjectName: ProjectName of SLS.</summary>
-        [JsiiProperty(name: "attrProjectName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrProjectName
+        [JsiiProperty(name: "attrProjectName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrProjectName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
         /// </remarks>
-        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double BandwidthLimit
+        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object BandwidthLimit
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cenId: The ID of the CEN instance.
         /// </remarks>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenId
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: localRegionId: The ID of the local region.
         /// </remarks>
-        [JsiiProperty(name: "localRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LocalRegionId
+        [JsiiProperty(name: "localRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LocalRegionId
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: oppositeRegionId: The ID of the other interconnected region.
         /// </remarks>
-        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string OppositeRegionId
+        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object OppositeRegionId
         {
             get;
             set;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.656Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInvocation")
 public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInvokeId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCommandId() {
-        return software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCommandId() {
+        return software.amazon.jsii.Kernel.get(this, "commandId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCommandId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "commandId", java.util.Objects.requireNonNull(value, "commandId is required"));
+    }
+
+    /**
+     */
+    public void setCommandId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "commandId", java.util.Objects.requireNonNull(value, "commandId is required"));
     }
 
@@ -93,13 +99,19 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getFrequency() {
-        return software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getFrequency() {
+        return software.amazon.jsii.Kernel.get(this, "frequency", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setFrequency(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "frequency", value);
+    }
+
+    /**
+     */
+    public void setFrequency(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "frequency", value);
     }
 
@@ -173,6 +185,14 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
             this.props.commandId(commandId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param commandId This parameter is required.
+         */
+        public Builder commandId(final com.aliyun.ros.cdk.core.IResolvable commandId) {
+            this.props.commandId(commandId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -196,6 +216,14 @@ public class RosInvocation extends com.aliyun.ros.cdk.core.RosResource {
          * @param frequency This parameter is required.
          */
         public Builder frequency(final java.lang.String frequency) {
+            this.props.frequency(frequency);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param frequency This parameter is required.
+         */
+        public Builder frequency(final com.aliyun.ros.cdk.core.IResolvable frequency) {
             this.props.frequency(frequency);
             return this;
         }

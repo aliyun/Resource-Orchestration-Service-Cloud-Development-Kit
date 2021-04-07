@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.592Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.272Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignPrivateIpAddressesProps")
 @software.amazon.jsii.Jsii.Proxy(RosAssignPrivateIpAddressesProps.Jsii$Proxy.class)
 public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
      */
@@ -20,7 +20,7 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSecondaryPrivateIpAddressCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryPrivateIpAddressCount() {
         return null;
     }
 
@@ -34,9 +34,9 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
      * A builder for {@link RosAssignPrivateIpAddressesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAssignPrivateIpAddressesProps> {
-        private java.lang.String networkInterfaceId;
+        private java.lang.Object networkInterfaceId;
         private java.lang.Object privateIpAddresses;
-        private java.lang.Number secondaryPrivateIpAddressCount;
+        private java.lang.Object secondaryPrivateIpAddressCount;
 
         /**
          * Sets the value of {@link RosAssignPrivateIpAddressesProps#getNetworkInterfaceId}
@@ -44,6 +44,16 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
          * @return {@code this}
          */
         public Builder networkInterfaceId(java.lang.String networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAssignPrivateIpAddressesProps#getNetworkInterfaceId}
+         * @param networkInterfaceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.networkInterfaceId = networkInterfaceId;
             return this;
         }
@@ -79,6 +89,16 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosAssignPrivateIpAddressesProps#getSecondaryPrivateIpAddressCount}
+         * @param secondaryPrivateIpAddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder secondaryPrivateIpAddressCount(com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
+            this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAssignPrivateIpAddressesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -94,9 +114,9 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAssignPrivateIpAddressesProps {
-        private final java.lang.String networkInterfaceId;
+        private final java.lang.Object networkInterfaceId;
         private final java.lang.Object privateIpAddresses;
-        private final java.lang.Number secondaryPrivateIpAddressCount;
+        private final java.lang.Object secondaryPrivateIpAddressCount;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,15 +124,15 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String networkInterfaceId, final java.lang.Object privateIpAddresses, final java.lang.Number secondaryPrivateIpAddressCount) {
+        protected Jsii$Proxy(final java.lang.Object networkInterfaceId, final java.lang.Object privateIpAddresses, final java.lang.Object secondaryPrivateIpAddressCount) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
             this.privateIpAddresses = privateIpAddresses;
@@ -120,7 +140,7 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.String getNetworkInterfaceId() {
+        public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
         }
 
@@ -130,7 +150,7 @@ public interface RosAssignPrivateIpAddressesProps extends software.amazon.jsii.J
         }
 
         @Override
-        public final java.lang.Number getSecondaryPrivateIpAddressCount() {
+        public final java.lang.Object getSecondaryPrivateIpAddressCount() {
             return this.secondaryPrivateIpAddressCount;
         }
 

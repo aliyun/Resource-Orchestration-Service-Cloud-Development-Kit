@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// <strong>Attribute</strong>: ConsumerGroupID: Consumer group ID
         /// </remarks>
-        [JsiiProperty(name: "attrConsumerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConsumerGroupId
+        [JsiiProperty(name: "attrConsumerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConsumerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ConsumerGroupName: Consumer group name
         /// </remarks>
-        [JsiiProperty(name: "attrConsumerGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConsumerGroupName
+        [JsiiProperty(name: "attrConsumerGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConsumerGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: SubscriptionInstanceId: Subscription instance ID
         /// </remarks>
-        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionInstanceId
+        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,30 +80,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// <strong>Property</strong>: consumerGroupName: Consumer group name.
         /// </remarks>
-        [JsiiProperty(name: "consumerGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ConsumerGroupName
+        [JsiiProperty(name: "consumerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ConsumerGroupName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: consumerGroupPassword: Password of consumer group.
         /// </remarks>
-        [JsiiProperty(name: "consumerGroupPassword", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ConsumerGroupPassword
+        [JsiiProperty(name: "consumerGroupPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ConsumerGroupPassword
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: consumerGroupUserName: User name of consumer group.
         /// </remarks>
-        [JsiiProperty(name: "consumerGroupUserName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ConsumerGroupUserName
+        [JsiiProperty(name: "consumerGroupUserName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ConsumerGroupUserName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -117,10 +117,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         /// <remarks>
         /// <strong>Property</strong>: subscriptionInstanceId: Subscription instance ID.
         /// </remarks>
-        [JsiiProperty(name: "subscriptionInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SubscriptionInstanceId
+        [JsiiProperty(name: "subscriptionInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SubscriptionInstanceId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

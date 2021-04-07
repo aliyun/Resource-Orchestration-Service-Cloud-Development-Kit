@@ -47,20 +47,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Attribute</strong>: DomainExtensionId: The ID of the created domain name extension.
         /// </remarks>
-        [JsiiProperty(name: "attrDomainExtensionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainExtensionId
+        [JsiiProperty(name: "attrDomainExtensionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainExtensionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
         /// 1-65535
         /// </remarks>
-        [JsiiProperty(name: "attrListenerPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerPort
+        [JsiiProperty(name: "attrListenerPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -72,10 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: domain: The domain name.
         /// </remarks>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Domain
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -90,30 +90,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
         /// 1-65535
         /// </remarks>
-        [JsiiProperty(name: "listenerPort", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double ListenerPort
+        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ListenerPort
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The ID of Server Load Balancer instance.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LoadBalancerId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: serverCertificateId: The ID of the certificate corresponding to the domain name.
         /// </remarks>
-        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ServerCertificateId
+        [JsiiProperty(name: "serverCertificateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ServerCertificateId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

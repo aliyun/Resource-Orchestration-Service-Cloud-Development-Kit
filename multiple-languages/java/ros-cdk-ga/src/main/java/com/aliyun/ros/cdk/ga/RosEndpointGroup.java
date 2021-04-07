@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * A ROS template type:  `ALIYUN::GA::EndpointGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.593Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosEndpointGroup")
 public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEndpointGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrEndpointGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEndpointGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrEndpointGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId() {
-        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId() {
+        return software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAcceleratorId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "acceleratorId", java.util.Objects.requireNonNull(value, "acceleratorId is required"));
+    }
+
+    /**
+     */
+    public void setAcceleratorId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "acceleratorId", java.util.Objects.requireNonNull(value, "acceleratorId is required"));
     }
 
@@ -93,8 +99,8 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getEndpointGroupRegion() {
-        return software.amazon.jsii.Kernel.get(this, "endpointGroupRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getEndpointGroupRegion() {
+        return software.amazon.jsii.Kernel.get(this, "endpointGroupRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +111,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getListenerId() {
-        return software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEndpointGroupRegion(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointGroupRegion", java.util.Objects.requireNonNull(value, "endpointGroupRegion is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getListenerId() {
+        return software.amazon.jsii.Kernel.get(this, "listenerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setListenerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "listenerId", java.util.Objects.requireNonNull(value, "listenerId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +147,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getHealthCheckIntervalSeconds() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckIntervalSeconds() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckIntervalSeconds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckPath() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHealthCheckIntervalSeconds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckIntervalSeconds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckPath() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckPath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,8 +183,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getHealthCheckPort() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setHealthCheckPath(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckPath", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckPort() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -165,8 +201,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHealthCheckPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckPort", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -177,8 +219,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHealthCheckProtocol(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckProtocol", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -189,8 +237,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getThresholdCount() {
-        return software.amazon.jsii.Kernel.get(this, "thresholdCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getThresholdCount() {
+        return software.amazon.jsii.Kernel.get(this, "thresholdCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -201,13 +255,25 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTrafficPercentage() {
-        return software.amazon.jsii.Kernel.get(this, "trafficPercentage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setThresholdCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "thresholdCount", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTrafficPercentage() {
+        return software.amazon.jsii.Kernel.get(this, "trafficPercentage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTrafficPercentage(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "trafficPercentage", value);
+    }
+
+    /**
+     */
+    public void setTrafficPercentage(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "trafficPercentage", value);
     }
     /**
@@ -220,17 +286,17 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getEndpoint();
+        @org.jetbrains.annotations.NotNull java.lang.Object getEndpoint();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getType();
+        @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getWeight();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
         /**
          * @return a {@link Builder} of {@link EndpointConfigurationsProperty}
@@ -244,9 +310,9 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EndpointConfigurationsProperty> {
-            private java.lang.String endpoint;
-            private java.lang.String type;
-            private java.lang.Number weight;
+            private java.lang.Object endpoint;
+            private java.lang.Object type;
+            private java.lang.Object weight;
 
             /**
              * Sets the value of {@link EndpointConfigurationsProperty#getEndpoint}
@@ -255,6 +321,17 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder endpoint(java.lang.String endpoint) {
+                this.endpoint = endpoint;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getEndpoint}
+             * @param endpoint the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder endpoint(com.aliyun.ros.cdk.core.IResolvable endpoint) {
                 this.endpoint = endpoint;
                 return this;
             }
@@ -271,12 +348,34 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getType}
+             * @param type the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
+                this.type = type;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EndpointConfigurationsProperty#getWeight}
              * @param weight the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder weight(java.lang.Number weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigurationsProperty#getWeight}
+             * @param weight the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
                 this.weight = weight;
                 return this;
             }
@@ -299,9 +398,9 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EndpointConfigurationsProperty {
-            private final java.lang.String endpoint;
-            private final java.lang.String type;
-            private final java.lang.Number weight;
+            private final java.lang.Object endpoint;
+            private final java.lang.Object type;
+            private final java.lang.Object weight;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -309,15 +408,15 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.endpoint = software.amazon.jsii.Kernel.get(this, "endpoint", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String endpoint, final java.lang.String type, final java.lang.Number weight) {
+            protected Jsii$Proxy(final java.lang.Object endpoint, final java.lang.Object type, final java.lang.Object weight) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.endpoint = java.util.Objects.requireNonNull(endpoint, "endpoint is required");
                 this.type = java.util.Objects.requireNonNull(type, "type is required");
@@ -325,17 +424,17 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getEndpoint() {
+            public final java.lang.Object getEndpoint() {
                 return this.endpoint;
             }
 
             @Override
-            public final java.lang.String getType() {
+            public final java.lang.Object getType() {
                 return this.type;
             }
 
             @Override
-            public final java.lang.Number getWeight() {
+            public final java.lang.Object getWeight() {
                 return this.weight;
             }
 
@@ -415,6 +514,14 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.acceleratorId(acceleratorId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param acceleratorId This parameter is required.
+         */
+        public Builder acceleratorId(final com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.props.acceleratorId(acceleratorId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -441,12 +548,28 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.endpointGroupRegion(endpointGroupRegion);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param endpointGroupRegion This parameter is required.
+         */
+        public Builder endpointGroupRegion(final com.aliyun.ros.cdk.core.IResolvable endpointGroupRegion) {
+            this.props.endpointGroupRegion(endpointGroupRegion);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param listenerId This parameter is required.
          */
         public Builder listenerId(final java.lang.String listenerId) {
+            this.props.listenerId(listenerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param listenerId This parameter is required.
+         */
+        public Builder listenerId(final com.aliyun.ros.cdk.core.IResolvable listenerId) {
             this.props.listenerId(listenerId);
             return this;
         }
@@ -459,12 +582,28 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param healthCheckIntervalSeconds This parameter is required.
          */
         public Builder healthCheckIntervalSeconds(final java.lang.Number healthCheckIntervalSeconds) {
+            this.props.healthCheckIntervalSeconds(healthCheckIntervalSeconds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckIntervalSeconds This parameter is required.
+         */
+        public Builder healthCheckIntervalSeconds(final com.aliyun.ros.cdk.core.IResolvable healthCheckIntervalSeconds) {
             this.props.healthCheckIntervalSeconds(healthCheckIntervalSeconds);
             return this;
         }
@@ -477,12 +616,28 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.healthCheckPath(healthCheckPath);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param healthCheckPath This parameter is required.
+         */
+        public Builder healthCheckPath(final com.aliyun.ros.cdk.core.IResolvable healthCheckPath) {
+            this.props.healthCheckPath(healthCheckPath);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param healthCheckPort This parameter is required.
          */
         public Builder healthCheckPort(final java.lang.Number healthCheckPort) {
+            this.props.healthCheckPort(healthCheckPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckPort This parameter is required.
+         */
+        public Builder healthCheckPort(final com.aliyun.ros.cdk.core.IResolvable healthCheckPort) {
             this.props.healthCheckPort(healthCheckPort);
             return this;
         }
@@ -495,12 +650,28 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.healthCheckProtocol(healthCheckProtocol);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param healthCheckProtocol This parameter is required.
+         */
+        public Builder healthCheckProtocol(final com.aliyun.ros.cdk.core.IResolvable healthCheckProtocol) {
+            this.props.healthCheckProtocol(healthCheckProtocol);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
+            this.props.name(name);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
             return this;
         }
@@ -513,12 +684,28 @@ public class RosEndpointGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.thresholdCount(thresholdCount);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param thresholdCount This parameter is required.
+         */
+        public Builder thresholdCount(final com.aliyun.ros.cdk.core.IResolvable thresholdCount) {
+            this.props.thresholdCount(thresholdCount);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param trafficPercentage This parameter is required.
          */
         public Builder trafficPercentage(final java.lang.Number trafficPercentage) {
+            this.props.trafficPercentage(trafficPercentage);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param trafficPercentage This parameter is required.
+         */
+        public Builder trafficPercentage(final com.aliyun.ros.cdk.core.IResolvable trafficPercentage) {
             this.props.trafficPercentage(trafficPercentage);
             return this;
         }

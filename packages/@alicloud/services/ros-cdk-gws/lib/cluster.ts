@@ -12,17 +12,17 @@ export interface ClusterProps {
      * Property clusterType: Cluster Type:
      * gws.s1.standard
      */
-    readonly clusterType: string;
+    readonly clusterType: string | ros.IResolvable;
 
     /**
      * Property vpcId: VPC id
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * Property name: Cluster name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property policy: Cluster policy
@@ -32,7 +32,7 @@ export interface ClusterProps {
     /**
      * Property vSwitchId: VSwitch id
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -48,12 +48,12 @@ export class Cluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster id
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute Name: Cluster name
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GWS::Cluster`.

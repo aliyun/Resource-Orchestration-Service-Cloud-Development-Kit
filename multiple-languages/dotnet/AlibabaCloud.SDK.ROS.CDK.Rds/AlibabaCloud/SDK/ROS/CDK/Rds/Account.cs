@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         }
 
         /// <summary>Attribute AccountName: Account name.</summary>
-        [JsiiProperty(name: "attrAccountName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccountName
+        [JsiiProperty(name: "attrAccountName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccountName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -16,7 +16,7 @@ export interface SSHKeyPairAttachmentProps {
     /**
      * Property keyPairName: SSH key pair name.
      */
-    readonly keyPairName: string;
+    readonly keyPairName: string | ros.IResolvable;
 }
 
 /**

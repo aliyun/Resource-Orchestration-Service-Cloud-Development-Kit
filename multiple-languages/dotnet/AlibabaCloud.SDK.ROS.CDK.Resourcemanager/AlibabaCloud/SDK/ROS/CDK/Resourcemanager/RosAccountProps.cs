@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <remarks>
         /// <strong>Property</strong>: displayName: Member name
         /// </remarks>
-        [JsiiProperty(name: "displayName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DisplayName
+        [JsiiProperty(name: "displayName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DisplayName
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <strong>Property</strong>: folderId: The ID of the parent folder
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "folderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? FolderId
+        [JsiiProperty(name: "folderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? FolderId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <strong>Property</strong>: payerAccountId:
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "payerAccountId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PayerAccountId
+        [JsiiProperty(name: "payerAccountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PayerAccountId
         {
             get;
             set;

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS template type:  `ALIYUN::CR::InstanceEndpointAclPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.967Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy")
 public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEntry() {
-        return software.amazon.jsii.Kernel.get(this, "attrEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEntry() {
+        return software.amazon.jsii.Kernel.get(this, "attrEntry", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getEntry() {
-        return software.amazon.jsii.Kernel.get(this, "entry", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getEntry() {
+        return software.amazon.jsii.Kernel.get(this, "entry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "entry", java.util.Objects.requireNonNull(value, "entry is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getComment() {
-        return software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", java.util.Objects.requireNonNull(value, "instanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getComment() {
+        return software.amazon.jsii.Kernel.get(this, "comment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEndpointType() {
-        return software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setComment(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "comment", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
+        return software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +135,14 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getModuleName() {
-        return software.amazon.jsii.Kernel.get(this, "moduleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEndpointType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "endpointType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getModuleName() {
+        return software.amazon.jsii.Kernel.get(this, "moduleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,13 +153,25 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setModuleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "moduleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRegionId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "regionId", value);
+    }
+
+    /**
+     */
+    public void setRegionId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "regionId", value);
     }
 
@@ -173,12 +209,28 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
             this.props.entry(entry);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param entry This parameter is required.
+         */
+        public Builder entry(final com.aliyun.ros.cdk.core.IResolvable entry) {
+            this.props.entry(entry);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceId This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
@@ -191,12 +243,28 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
             this.props.comment(comment);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param comment This parameter is required.
+         */
+        public Builder comment(final com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.props.comment(comment);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param endpointType This parameter is required.
          */
         public Builder endpointType(final java.lang.String endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointType This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
             this.props.endpointType(endpointType);
             return this;
         }
@@ -209,12 +277,28 @@ public class RosInstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.RosRes
             this.props.moduleName(moduleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param moduleName This parameter is required.
+         */
+        public Builder moduleName(final com.aliyun.ros.cdk.core.IResolvable moduleName) {
+            this.props.moduleName(moduleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param regionId This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param regionId This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
             return this;
         }

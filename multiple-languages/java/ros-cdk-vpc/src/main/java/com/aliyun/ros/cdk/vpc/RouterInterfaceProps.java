@@ -3,118 +3,167 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::RouterInterface`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.225Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RouterInterfaceProps.Jsii$Proxy.class)
 public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property role: RouterInterface role.
+     * <p>
+     * Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRole();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRole();
 
     /**
+     * Property routerId: The router ID to create RouterInterface.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouterId();
 
     /**
+     * Property accessPointId: Access point ID.
+     * <p>
+     * If 'RouterType' is specified as 'VBR', the value is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccessPointId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessPointId() {
         return null;
     }
 
     /**
+     * Property autoPay: Indicates whether automatic payment is enabled.
+     * <p>
+     * Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
     }
 
     /**
+     * Property description: Custom description of the RouterInterface, [2, 256] characters.
+     * <p>
+     * Don't fill or empty, the default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+     * <p>
+     * It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckSourceIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckSourceIp() {
         return null;
     }
 
     /**
+     * Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+     * <p>
+     * It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckTargetIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckTargetIp() {
         return null;
     }
 
     /**
+     * Property instanceChargeType: The billing method of the router interface.
+     * <p>
+     * Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
+     * Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
+     * Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface.
+     * <p>
+     * If 'OppositeRouterType' is specified as 'VBR', the value is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeAccessPointId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeAccessPointId() {
         return null;
     }
 
     /**
+     * Property oppositeInterfaceId: The ID of the peer router interface.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceId() {
         return null;
     }
 
     /**
+     * Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
+     * <p>
+     * The default value is current user Id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeInterfaceOwnerId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeInterfaceOwnerId() {
         return null;
     }
 
     /**
+     * Property oppositeRegionId: The region where the connection peer RouterInterface locates.
+     * <p>
+     * The default value is region where stack is created.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRegionId() {
         return null;
     }
 
     /**
+     * Property oppositeRouterId: The router ID of the connection peer RouterInterface.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterId() {
         return null;
     }
 
     /**
+     * Property oppositeRouterType: Router type of the connection peer router.
+     * <p>
+     * Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOppositeRouterType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOppositeRouterType() {
         return null;
     }
 
     /**
+     * Property period: Prepaid time period.
+     * <p>
+     * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
+     * Property pricingCycle: Unit of the payment cycle.
+     * <p>
+     * It could be Month (default) or Year.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property routerType: Router type.
+     * <p>
+     * Now support 'VRouter|VBR'
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRouterType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouterType() {
         return null;
     }
 
     /**
+     * Property spec: RouterInterface specification.
+     * <p>
+     * If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpec() {
         return null;
     }
 
@@ -128,29 +177,30 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RouterInterfaceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouterInterfaceProps> {
-        private java.lang.String role;
-        private java.lang.String routerId;
-        private java.lang.String accessPointId;
+        private java.lang.Object role;
+        private java.lang.Object routerId;
+        private java.lang.Object accessPointId;
         private java.lang.Object autoPay;
-        private java.lang.String description;
-        private java.lang.String healthCheckSourceIp;
-        private java.lang.String healthCheckTargetIp;
-        private java.lang.String instanceChargeType;
-        private java.lang.String name;
-        private java.lang.String oppositeAccessPointId;
-        private java.lang.String oppositeInterfaceId;
-        private java.lang.String oppositeInterfaceOwnerId;
-        private java.lang.String oppositeRegionId;
-        private java.lang.String oppositeRouterId;
-        private java.lang.String oppositeRouterType;
-        private java.lang.Number period;
-        private java.lang.String pricingCycle;
-        private java.lang.String routerType;
-        private java.lang.String spec;
+        private java.lang.Object description;
+        private java.lang.Object healthCheckSourceIp;
+        private java.lang.Object healthCheckTargetIp;
+        private java.lang.Object instanceChargeType;
+        private java.lang.Object name;
+        private java.lang.Object oppositeAccessPointId;
+        private java.lang.Object oppositeInterfaceId;
+        private java.lang.Object oppositeInterfaceOwnerId;
+        private java.lang.Object oppositeRegionId;
+        private java.lang.Object oppositeRouterId;
+        private java.lang.Object oppositeRouterType;
+        private java.lang.Object period;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object routerType;
+        private java.lang.Object spec;
 
         /**
          * Sets the value of {@link RouterInterfaceProps#getRole}
-         * @param role the value to be set. This parameter is required.
+         * @param role Property role: RouterInterface role. This parameter is required.
+         *             Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
          * @return {@code this}
          */
         public Builder role(java.lang.String role) {
@@ -159,8 +209,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getRole}
+         * @param role Property role: RouterInterface role. This parameter is required.
+         *             Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
+         * @return {@code this}
+         */
+        public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
+            this.role = role;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getRouterId}
-         * @param routerId the value to be set. This parameter is required.
+         * @param routerId Property routerId: The router ID to create RouterInterface. This parameter is required.
          * @return {@code this}
          */
         public Builder routerId(java.lang.String routerId) {
@@ -169,8 +230,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getRouterId}
+         * @param routerId Property routerId: The router ID to create RouterInterface. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routerId(com.aliyun.ros.cdk.core.IResolvable routerId) {
+            this.routerId = routerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getAccessPointId}
-         * @param accessPointId the value to be set.
+         * @param accessPointId Property accessPointId: Access point ID.
+         *                      If 'RouterType' is specified as 'VBR', the value is required.
          * @return {@code this}
          */
         public Builder accessPointId(java.lang.String accessPointId) {
@@ -179,8 +251,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getAccessPointId}
+         * @param accessPointId Property accessPointId: Access point ID.
+         *                      If 'RouterType' is specified as 'VBR', the value is required.
+         * @return {@code this}
+         */
+        public Builder accessPointId(com.aliyun.ros.cdk.core.IResolvable accessPointId) {
+            this.accessPointId = accessPointId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         *                Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -190,7 +274,8 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link RouterInterfaceProps#getAutoPay}
-         * @param autoPay the value to be set.
+         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         *                Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -200,7 +285,8 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link RouterInterfaceProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Custom description of the RouterInterface, [2, 256] characters.
+         *                    Don't fill or empty, the default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -209,8 +295,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getDescription}
+         * @param description Property description: Custom description of the RouterInterface, [2, 256] characters.
+         *                    Don't fill or empty, the default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getHealthCheckSourceIp}
-         * @param healthCheckSourceIp the value to be set.
+         * @param healthCheckSourceIp Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+         *                            It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
          * @return {@code this}
          */
         public Builder healthCheckSourceIp(java.lang.String healthCheckSourceIp) {
@@ -219,8 +317,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getHealthCheckSourceIp}
+         * @param healthCheckSourceIp Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+         *                            It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
+         * @return {@code this}
+         */
+        public Builder healthCheckSourceIp(com.aliyun.ros.cdk.core.IResolvable healthCheckSourceIp) {
+            this.healthCheckSourceIp = healthCheckSourceIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getHealthCheckTargetIp}
-         * @param healthCheckTargetIp the value to be set.
+         * @param healthCheckTargetIp Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+         *                            It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
          * @return {@code this}
          */
         public Builder healthCheckTargetIp(java.lang.String healthCheckTargetIp) {
@@ -229,8 +339,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getHealthCheckTargetIp}
+         * @param healthCheckTargetIp Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
+         *                            It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
+         * @return {@code this}
+         */
+        public Builder healthCheckTargetIp(com.aliyun.ros.cdk.core.IResolvable healthCheckTargetIp) {
+            this.healthCheckTargetIp = healthCheckTargetIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getInstanceChargeType}
-         * @param instanceChargeType the value to be set.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the router interface.
+         *                           Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -239,8 +361,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getInstanceChargeType}
+         * @param instanceChargeType Property instanceChargeType: The billing method of the router interface.
+         *                           Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
+         * @return {@code this}
+         */
+        public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
+            this.instanceChargeType = instanceChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getName}
-         * @param name the value to be set.
+         * @param name Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -249,8 +382,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getName}
+         * @param name Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeAccessPointId}
-         * @param oppositeAccessPointId the value to be set.
+         * @param oppositeAccessPointId Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface.
+         *                              If 'OppositeRouterType' is specified as 'VBR', the value is required.
          * @return {@code this}
          */
         public Builder oppositeAccessPointId(java.lang.String oppositeAccessPointId) {
@@ -259,8 +403,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeAccessPointId}
+         * @param oppositeAccessPointId Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface.
+         *                              If 'OppositeRouterType' is specified as 'VBR', the value is required.
+         * @return {@code this}
+         */
+        public Builder oppositeAccessPointId(com.aliyun.ros.cdk.core.IResolvable oppositeAccessPointId) {
+            this.oppositeAccessPointId = oppositeAccessPointId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeInterfaceId}
-         * @param oppositeInterfaceId the value to be set.
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The ID of the peer router interface.
          * @return {@code this}
          */
         public Builder oppositeInterfaceId(java.lang.String oppositeInterfaceId) {
@@ -269,8 +424,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeInterfaceId}
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The ID of the peer router interface.
+         * @return {@code this}
+         */
+        public Builder oppositeInterfaceId(com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.oppositeInterfaceId = oppositeInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeInterfaceOwnerId}
-         * @param oppositeInterfaceOwnerId the value to be set.
+         * @param oppositeInterfaceOwnerId Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
+         *                                 The default value is current user Id.
          * @return {@code this}
          */
         public Builder oppositeInterfaceOwnerId(java.lang.String oppositeInterfaceOwnerId) {
@@ -279,8 +445,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeInterfaceOwnerId}
+         * @param oppositeInterfaceOwnerId Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
+         *                                 The default value is current user Id.
+         * @return {@code this}
+         */
+        public Builder oppositeInterfaceOwnerId(com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceOwnerId) {
+            this.oppositeInterfaceOwnerId = oppositeInterfaceOwnerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeRegionId}
-         * @param oppositeRegionId the value to be set.
+         * @param oppositeRegionId Property oppositeRegionId: The region where the connection peer RouterInterface locates.
+         *                         The default value is region where stack is created.
          * @return {@code this}
          */
         public Builder oppositeRegionId(java.lang.String oppositeRegionId) {
@@ -289,8 +467,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeRegionId}
+         * @param oppositeRegionId Property oppositeRegionId: The region where the connection peer RouterInterface locates.
+         *                         The default value is region where stack is created.
+         * @return {@code this}
+         */
+        public Builder oppositeRegionId(com.aliyun.ros.cdk.core.IResolvable oppositeRegionId) {
+            this.oppositeRegionId = oppositeRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeRouterId}
-         * @param oppositeRouterId the value to be set.
+         * @param oppositeRouterId Property oppositeRouterId: The router ID of the connection peer RouterInterface.
          * @return {@code this}
          */
         public Builder oppositeRouterId(java.lang.String oppositeRouterId) {
@@ -299,8 +488,19 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeRouterId}
+         * @param oppositeRouterId Property oppositeRouterId: The router ID of the connection peer RouterInterface.
+         * @return {@code this}
+         */
+        public Builder oppositeRouterId(com.aliyun.ros.cdk.core.IResolvable oppositeRouterId) {
+            this.oppositeRouterId = oppositeRouterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getOppositeRouterType}
-         * @param oppositeRouterType the value to be set.
+         * @param oppositeRouterType Property oppositeRouterType: Router type of the connection peer router.
+         *                           Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
          * @return {@code this}
          */
         public Builder oppositeRouterType(java.lang.String oppositeRouterType) {
@@ -309,8 +509,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getOppositeRouterType}
+         * @param oppositeRouterType Property oppositeRouterType: Router type of the connection peer router.
+         *                           Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
+         * @return {@code this}
+         */
+        public Builder oppositeRouterType(com.aliyun.ros.cdk.core.IResolvable oppositeRouterType) {
+            this.oppositeRouterType = oppositeRouterType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getPeriod}
-         * @param period the value to be set.
+         * @param period Property period: Prepaid time period.
+         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -319,8 +531,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getPeriod}
+         * @param period Property period: Prepaid time period.
+         *               It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: Unit of the payment cycle.
+         *                     It could be Month (default) or Year.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -329,8 +553,20 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: Unit of the payment cycle.
+         *                     It could be Month (default) or Year.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getRouterType}
-         * @param routerType the value to be set.
+         * @param routerType Property routerType: Router type.
+         *                   Now support 'VRouter|VBR'
          * @return {@code this}
          */
         public Builder routerType(java.lang.String routerType) {
@@ -339,11 +575,34 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RouterInterfaceProps#getRouterType}
+         * @param routerType Property routerType: Router type.
+         *                   Now support 'VRouter|VBR'
+         * @return {@code this}
+         */
+        public Builder routerType(com.aliyun.ros.cdk.core.IResolvable routerType) {
+            this.routerType = routerType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouterInterfaceProps#getSpec}
-         * @param spec the value to be set.
+         * @param spec Property spec: RouterInterface specification.
+         *             If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
          * @return {@code this}
          */
         public Builder spec(java.lang.String spec) {
+            this.spec = spec;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouterInterfaceProps#getSpec}
+         * @param spec Property spec: RouterInterface specification.
+         *             If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+         * @return {@code this}
+         */
+        public Builder spec(com.aliyun.ros.cdk.core.IResolvable spec) {
             this.spec = spec;
             return this;
         }
@@ -364,25 +623,25 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouterInterfaceProps {
-        private final java.lang.String role;
-        private final java.lang.String routerId;
-        private final java.lang.String accessPointId;
+        private final java.lang.Object role;
+        private final java.lang.Object routerId;
+        private final java.lang.Object accessPointId;
         private final java.lang.Object autoPay;
-        private final java.lang.String description;
-        private final java.lang.String healthCheckSourceIp;
-        private final java.lang.String healthCheckTargetIp;
-        private final java.lang.String instanceChargeType;
-        private final java.lang.String name;
-        private final java.lang.String oppositeAccessPointId;
-        private final java.lang.String oppositeInterfaceId;
-        private final java.lang.String oppositeInterfaceOwnerId;
-        private final java.lang.String oppositeRegionId;
-        private final java.lang.String oppositeRouterId;
-        private final java.lang.String oppositeRouterType;
-        private final java.lang.Number period;
-        private final java.lang.String pricingCycle;
-        private final java.lang.String routerType;
-        private final java.lang.String spec;
+        private final java.lang.Object description;
+        private final java.lang.Object healthCheckSourceIp;
+        private final java.lang.Object healthCheckTargetIp;
+        private final java.lang.Object instanceChargeType;
+        private final java.lang.Object name;
+        private final java.lang.Object oppositeAccessPointId;
+        private final java.lang.Object oppositeInterfaceId;
+        private final java.lang.Object oppositeInterfaceOwnerId;
+        private final java.lang.Object oppositeRegionId;
+        private final java.lang.Object oppositeRouterId;
+        private final java.lang.Object oppositeRouterType;
+        private final java.lang.Object period;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object routerType;
+        private final java.lang.Object spec;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -390,31 +649,31 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accessPointId = software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessPointId = software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckSourceIp = software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckTargetIp = software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeAccessPointId = software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeInterfaceOwnerId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRouterId = software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.oppositeRouterType = software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckSourceIp = software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckTargetIp = software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeAccessPointId = software.amazon.jsii.Kernel.get(this, "oppositeAccessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeInterfaceOwnerId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRegionId = software.amazon.jsii.Kernel.get(this, "oppositeRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRouterId = software.amazon.jsii.Kernel.get(this, "oppositeRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.oppositeRouterType = software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String role, final java.lang.String routerId, final java.lang.String accessPointId, final java.lang.Object autoPay, final java.lang.String description, final java.lang.String healthCheckSourceIp, final java.lang.String healthCheckTargetIp, final java.lang.String instanceChargeType, final java.lang.String name, final java.lang.String oppositeAccessPointId, final java.lang.String oppositeInterfaceId, final java.lang.String oppositeInterfaceOwnerId, final java.lang.String oppositeRegionId, final java.lang.String oppositeRouterId, final java.lang.String oppositeRouterType, final java.lang.Number period, final java.lang.String pricingCycle, final java.lang.String routerType, final java.lang.String spec) {
+        protected Jsii$Proxy(final java.lang.Object role, final java.lang.Object routerId, final java.lang.Object accessPointId, final java.lang.Object autoPay, final java.lang.Object description, final java.lang.Object healthCheckSourceIp, final java.lang.Object healthCheckTargetIp, final java.lang.Object instanceChargeType, final java.lang.Object name, final java.lang.Object oppositeAccessPointId, final java.lang.Object oppositeInterfaceId, final java.lang.Object oppositeInterfaceOwnerId, final java.lang.Object oppositeRegionId, final java.lang.Object oppositeRouterId, final java.lang.Object oppositeRouterType, final java.lang.Object period, final java.lang.Object pricingCycle, final java.lang.Object routerType, final java.lang.Object spec) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.role = java.util.Objects.requireNonNull(role, "role is required");
             this.routerId = java.util.Objects.requireNonNull(routerId, "routerId is required");
@@ -438,17 +697,17 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getRole() {
+        public final java.lang.Object getRole() {
             return this.role;
         }
 
         @Override
-        public final java.lang.String getRouterId() {
+        public final java.lang.Object getRouterId() {
             return this.routerId;
         }
 
         @Override
-        public final java.lang.String getAccessPointId() {
+        public final java.lang.Object getAccessPointId() {
             return this.accessPointId;
         }
 
@@ -458,77 +717,77 @@ public interface RouterInterfaceProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getHealthCheckSourceIp() {
+        public final java.lang.Object getHealthCheckSourceIp() {
             return this.healthCheckSourceIp;
         }
 
         @Override
-        public final java.lang.String getHealthCheckTargetIp() {
+        public final java.lang.Object getHealthCheckTargetIp() {
             return this.healthCheckTargetIp;
         }
 
         @Override
-        public final java.lang.String getInstanceChargeType() {
+        public final java.lang.Object getInstanceChargeType() {
             return this.instanceChargeType;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getOppositeAccessPointId() {
+        public final java.lang.Object getOppositeAccessPointId() {
             return this.oppositeAccessPointId;
         }
 
         @Override
-        public final java.lang.String getOppositeInterfaceId() {
+        public final java.lang.Object getOppositeInterfaceId() {
             return this.oppositeInterfaceId;
         }
 
         @Override
-        public final java.lang.String getOppositeInterfaceOwnerId() {
+        public final java.lang.Object getOppositeInterfaceOwnerId() {
             return this.oppositeInterfaceOwnerId;
         }
 
         @Override
-        public final java.lang.String getOppositeRegionId() {
+        public final java.lang.Object getOppositeRegionId() {
             return this.oppositeRegionId;
         }
 
         @Override
-        public final java.lang.String getOppositeRouterId() {
+        public final java.lang.Object getOppositeRouterId() {
             return this.oppositeRouterId;
         }
 
         @Override
-        public final java.lang.String getOppositeRouterType() {
+        public final java.lang.Object getOppositeRouterType() {
             return this.oppositeRouterType;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.String getRouterType() {
+        public final java.lang.Object getRouterType() {
             return this.routerType;
         }
 
         @Override
-        public final java.lang.String getSpec() {
+        public final java.lang.Object getSpec() {
             return this.spec;
         }
 

@@ -33,7 +33,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<bool>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.TagManager), new System.Type[]{typeof(object)}, new object[]{construct})!;
         }
 
-        /// <summary>Determine if the aspect applies here&#xD; &#xD; Looks at the include and exclude resourceTypeName arrays to determine if&#xD; the aspect applies here.</summary>
+        /// <summary>Determine if the aspect applies here.</summary>
+        /// <remarks>
+        /// Looks at the include and exclude resourceTypeName arrays to determine if
+        /// the aspect applies here
+        /// </remarks>
         [JsiiMethod(name: "applyTagAspectHere", returnsJson: "{\"type\":{\"primitive\":\"boolean\"}}", parametersJson: "[{\"name\":\"include\",\"optional\":true,\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}},{\"name\":\"exclude\",\"optional\":true,\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}}]")]
         public virtual bool ApplyTagAspectHere(string[]? include = null, string[]? exclude = null)
         {
@@ -70,9 +74,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             InvokeInstanceVoidMethod(new System.Type[]{typeof(string), typeof(string), typeof(double), typeof(bool)}, new object?[]{key, @value, priority, applyToLaunchedInstances});
         }
 
-        /// <summary>The property name for tag values&#xD; &#xD; Normally this is `tags` but some resources choose a different name.</summary>
+        /// <summary>The property name for tag values.</summary>
         /// <remarks>
-        /// Cognito
+        /// Normally this is <c>tags</c> but some resources choose a different name. Cognito
         /// UserPool uses UserPoolTags
         /// </remarks>
         [JsiiProperty(name: "tagPropertyName", typeJson: "{\"primitive\":\"string\"}")]

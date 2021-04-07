@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS resource type:  `ALIYUN::SAG::GrantCcnToCen`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.047Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.GrantCcnToCen")
 public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAG::GrantCcnToCen`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public GrantCcnToCen(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sag.GrantCcnToCenProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SAG::GrantCcnToCen`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public GrantCcnToCen(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.sag.GrantCcnToCenProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CcnInstanceId: The ID of the CCN instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCcnInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCcnInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCcnInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCcnInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute CenInstanceId: The ID of the CEN instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.sag.GrantCcnToCen> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,28 +97,64 @@ public class GrantCcnToCen extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ccnInstanceId: The ID of the CCN instance.
+         * <p>
          * @return {@code this}
-         * @param ccnInstanceId This parameter is required.
+         * @param ccnInstanceId Property ccnInstanceId: The ID of the CCN instance. This parameter is required.
          */
         public Builder ccnInstanceId(final java.lang.String ccnInstanceId) {
             this.props.ccnInstanceId(ccnInstanceId);
             return this;
         }
+        /**
+         * Property ccnInstanceId: The ID of the CCN instance.
+         * <p>
+         * @return {@code this}
+         * @param ccnInstanceId Property ccnInstanceId: The ID of the CCN instance. This parameter is required.
+         */
+        public Builder ccnInstanceId(final com.aliyun.ros.cdk.core.IResolvable ccnInstanceId) {
+            this.props.ccnInstanceId(ccnInstanceId);
+            return this;
+        }
 
         /**
+         * Property cenInstanceId: The ID of the CEN instance.
+         * <p>
          * @return {@code this}
-         * @param cenInstanceId This parameter is required.
+         * @param cenInstanceId Property cenInstanceId: The ID of the CEN instance. This parameter is required.
          */
         public Builder cenInstanceId(final java.lang.String cenInstanceId) {
             this.props.cenInstanceId(cenInstanceId);
             return this;
         }
+        /**
+         * Property cenInstanceId: The ID of the CEN instance.
+         * <p>
+         * @return {@code this}
+         * @param cenInstanceId Property cenInstanceId: The ID of the CEN instance. This parameter is required.
+         */
+        public Builder cenInstanceId(final com.aliyun.ros.cdk.core.IResolvable cenInstanceId) {
+            this.props.cenInstanceId(cenInstanceId);
+            return this;
+        }
 
         /**
+         * Property cenUid: The ID of the account to which the CEN instance belongs.
+         * <p>
          * @return {@code this}
-         * @param cenUid This parameter is required.
+         * @param cenUid Property cenUid: The ID of the account to which the CEN instance belongs. This parameter is required.
          */
         public Builder cenUid(final java.lang.String cenUid) {
+            this.props.cenUid(cenUid);
+            return this;
+        }
+        /**
+         * Property cenUid: The ID of the account to which the CEN instance belongs.
+         * <p>
+         * @return {@code this}
+         * @param cenUid Property cenUid: The ID of the account to which the CEN instance belongs. This parameter is required.
+         */
+        public Builder cenUid(final com.aliyun.ros.cdk.core.IResolvable cenUid) {
             this.props.cenUid(cenUid);
             return this;
         }

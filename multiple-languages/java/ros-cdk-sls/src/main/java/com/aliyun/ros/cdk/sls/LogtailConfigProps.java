@@ -3,30 +3,116 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::LogtailConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.402Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.105Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogtailConfigProps")
 @software.amazon.jsii.Jsii.Proxy(LogtailConfigProps.Jsii$Proxy.class)
 public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property logstoreName: Logstore name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName();
 
     /**
+     * Property logtailConfigName: Logtail config name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogtailConfigName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogtailConfigName();
 
     /**
+     * Property projectName: Project name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
+     * Property cloneFrom: Clone logtail config data from existing logtail config.
+     * <p>
+     * Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCloneFrom() {
         return null;
     }
 
     /**
+     * Property rawConfigData: The format is the same as the response of SLS API GetConfig.
+     * <p>
+     * Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
+     * configName, outputType, outputDetail in data will be ignored.For example:
+     * {
+     * "configName": "test-logtail-config",
+     * "createTime": 1574843554,
+     * "inputDetail": {
+     * "acceptNoEnoughKeys": false,
+     * "adjustTimezone": false,
+     * "advanced": {
+     * "force_multiconfig": false
+     * },
+     * "autoExtend": true,
+     * "delayAlarmBytes": 0,
+     * "delaySkipBytes": 0,
+     * "discardNonUtf8": false,
+     * "discardUnmatch": false,
+     * "dockerExcludeEnv": {},
+     * "dockerExcludeLabel": {},
+     * "dockerFile": false,
+     * "dockerIncludeEnv": {},
+     * "dockerIncludeLabel": {},
+     * "enableRawLog": false,
+     * "enableTag": false,
+     * "fileEncoding": "utf8",
+     * "filePattern": "test.log*",
+     * "filterKey": [],
+     * "filterRegex": [],
+     * "key": [
+     * "time",
+     * "logger",
+     * "level",
+     * "request_id",
+     * "user_id",
+     * "region_id",
+     * "content"
+     * ],
+     * "localStorage": true,
+     * "logPath": "/var/log/test",
+     * "logTimezone": "",
+     * "logType": "delimiter_log",
+     * "maxDepth": 100,
+     * "maxSendRate": -1,
+     * "mergeType": "topic",
+     * "preserve": true,
+     * "preserveDepth": 1,
+     * "priority": 0,
+     * "quote": "\u0001",
+     * "sendRateExpire": 0,
+     * "sensitive_keys": [],
+     * "separator": ",,,",
+     * "shardHashKey": [],
+     * "tailExisted": false,
+     * "timeFormat": "",
+     * "timeKey": "",
+     * "topicFormat": "none"
+     * },
+     * "inputType": "file",
+     * "lastModifyTime": 1574843554,
+     * "logSample": "2019-11-27 10:48:23,160,,,MAIN,,,INFO,,,98DCC51D-BE5D-49C7-B3FD-37B2BAEFB296,,,123456789,,,cn-hangzhou,,,this is a simple test.",
+     * "outputDetail": {
+     * "endpoint": "cn-hangzhou-intranet.log.aliyuncs.com",
+     * "logstoreName": "test-logstore",
+     * "region": "cn-hangzhou"
+     * },
+     * "outputType": "LogService"
+     * }
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRawConfigData() {
         return null;
@@ -42,15 +128,18 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link LogtailConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogtailConfigProps> {
-        private java.lang.String logstoreName;
-        private java.lang.String logtailConfigName;
-        private java.lang.String projectName;
+        private java.lang.Object logstoreName;
+        private java.lang.Object logtailConfigName;
+        private java.lang.Object projectName;
         private java.lang.Object cloneFrom;
         private java.lang.Object rawConfigData;
 
         /**
          * Sets the value of {@link LogtailConfigProps#getLogstoreName}
-         * @param logstoreName the value to be set. This parameter is required.
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder logstoreName(java.lang.String logstoreName) {
@@ -59,8 +148,24 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link LogtailConfigProps#getLogstoreName}
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder logstoreName(com.aliyun.ros.cdk.core.IResolvable logstoreName) {
+            this.logstoreName = logstoreName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogtailConfigProps#getLogtailConfigName}
-         * @param logtailConfigName the value to be set. This parameter is required.
+         * @param logtailConfigName Property logtailConfigName: Logtail config name: 1. This parameter is required.
+         *                          Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                          2. Must start and end with lowercase letters and numbers.
+         *                          3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder logtailConfigName(java.lang.String logtailConfigName) {
@@ -69,8 +174,24 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link LogtailConfigProps#getLogtailConfigName}
+         * @param logtailConfigName Property logtailConfigName: Logtail config name: 1. This parameter is required.
+         *                          Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                          2. Must start and end with lowercase letters and numbers.
+         *                          3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder logtailConfigName(com.aliyun.ros.cdk.core.IResolvable logtailConfigName) {
+            this.logtailConfigName = logtailConfigName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogtailConfigProps#getProjectName}
-         * @param projectName the value to be set. This parameter is required.
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
@@ -79,8 +200,22 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link LogtailConfigProps#getProjectName}
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogtailConfigProps#getCloneFrom}
-         * @param cloneFrom the value to be set.
+         * @param cloneFrom Property cloneFrom: Clone logtail config data from existing logtail config.
+         *                  Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
          * @return {@code this}
          */
         public Builder cloneFrom(com.aliyun.ros.cdk.core.IResolvable cloneFrom) {
@@ -90,7 +225,8 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LogtailConfigProps#getCloneFrom}
-         * @param cloneFrom the value to be set.
+         * @param cloneFrom Property cloneFrom: Clone logtail config data from existing logtail config.
+         *                  Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
          * @return {@code this}
          */
         public Builder cloneFrom(com.aliyun.ros.cdk.sls.RosLogtailConfig.CloneFromProperty cloneFrom) {
@@ -100,7 +236,73 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LogtailConfigProps#getRawConfigData}
-         * @param rawConfigData the value to be set.
+         * @param rawConfigData Property rawConfigData: The format is the same as the response of SLS API GetConfig.
+         *                      Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
+         *                      configName, outputType, outputDetail in data will be ignored.For example:
+         *                      {
+         *                      "configName": "test-logtail-config",
+         *                      "createTime": 1574843554,
+         *                      "inputDetail": {
+         *                      "acceptNoEnoughKeys": false,
+         *                      "adjustTimezone": false,
+         *                      "advanced": {
+         *                      "force_multiconfig": false
+         *                      },
+         *                      "autoExtend": true,
+         *                      "delayAlarmBytes": 0,
+         *                      "delaySkipBytes": 0,
+         *                      "discardNonUtf8": false,
+         *                      "discardUnmatch": false,
+         *                      "dockerExcludeEnv": {},
+         *                      "dockerExcludeLabel": {},
+         *                      "dockerFile": false,
+         *                      "dockerIncludeEnv": {},
+         *                      "dockerIncludeLabel": {},
+         *                      "enableRawLog": false,
+         *                      "enableTag": false,
+         *                      "fileEncoding": "utf8",
+         *                      "filePattern": "test.log*",
+         *                      "filterKey": [],
+         *                      "filterRegex": [],
+         *                      "key": [
+         *                      "time",
+         *                      "logger",
+         *                      "level",
+         *                      "request_id",
+         *                      "user_id",
+         *                      "region_id",
+         *                      "content"
+         *                      ],
+         *                      "localStorage": true,
+         *                      "logPath": "/var/log/test",
+         *                      "logTimezone": "",
+         *                      "logType": "delimiter_log",
+         *                      "maxDepth": 100,
+         *                      "maxSendRate": -1,
+         *                      "mergeType": "topic",
+         *                      "preserve": true,
+         *                      "preserveDepth": 1,
+         *                      "priority": 0,
+         *                      "quote": "\u0001",
+         *                      "sendRateExpire": 0,
+         *                      "sensitive_keys": [],
+         *                      "separator": ",,,",
+         *                      "shardHashKey": [],
+         *                      "tailExisted": false,
+         *                      "timeFormat": "",
+         *                      "timeKey": "",
+         *                      "topicFormat": "none"
+         *                      },
+         *                      "inputType": "file",
+         *                      "lastModifyTime": 1574843554,
+         *                      "logSample": "2019-11-27 10:48:23,160,,,MAIN,,,INFO,,,98DCC51D-BE5D-49C7-B3FD-37B2BAEFB296,,,123456789,,,cn-hangzhou,,,this is a simple test.",
+         *                      "outputDetail": {
+         *                      "endpoint": "cn-hangzhou-intranet.log.aliyuncs.com",
+         *                      "logstoreName": "test-logstore",
+         *                      "region": "cn-hangzhou"
+         *                      },
+         *                      "outputType": "LogService"
+         *                      }
          * @return {@code this}
          */
         public Builder rawConfigData(com.aliyun.ros.cdk.core.IResolvable rawConfigData) {
@@ -110,7 +312,73 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link LogtailConfigProps#getRawConfigData}
-         * @param rawConfigData the value to be set.
+         * @param rawConfigData Property rawConfigData: The format is the same as the response of SLS API GetConfig.
+         *                      Either CloneFrom or RawConfigData must be specified. If CloneFrom and RawConfigData are both specified, logtail config data will be merged from both with RawConfigData first.
+         *                      configName, outputType, outputDetail in data will be ignored.For example:
+         *                      {
+         *                      "configName": "test-logtail-config",
+         *                      "createTime": 1574843554,
+         *                      "inputDetail": {
+         *                      "acceptNoEnoughKeys": false,
+         *                      "adjustTimezone": false,
+         *                      "advanced": {
+         *                      "force_multiconfig": false
+         *                      },
+         *                      "autoExtend": true,
+         *                      "delayAlarmBytes": 0,
+         *                      "delaySkipBytes": 0,
+         *                      "discardNonUtf8": false,
+         *                      "discardUnmatch": false,
+         *                      "dockerExcludeEnv": {},
+         *                      "dockerExcludeLabel": {},
+         *                      "dockerFile": false,
+         *                      "dockerIncludeEnv": {},
+         *                      "dockerIncludeLabel": {},
+         *                      "enableRawLog": false,
+         *                      "enableTag": false,
+         *                      "fileEncoding": "utf8",
+         *                      "filePattern": "test.log*",
+         *                      "filterKey": [],
+         *                      "filterRegex": [],
+         *                      "key": [
+         *                      "time",
+         *                      "logger",
+         *                      "level",
+         *                      "request_id",
+         *                      "user_id",
+         *                      "region_id",
+         *                      "content"
+         *                      ],
+         *                      "localStorage": true,
+         *                      "logPath": "/var/log/test",
+         *                      "logTimezone": "",
+         *                      "logType": "delimiter_log",
+         *                      "maxDepth": 100,
+         *                      "maxSendRate": -1,
+         *                      "mergeType": "topic",
+         *                      "preserve": true,
+         *                      "preserveDepth": 1,
+         *                      "priority": 0,
+         *                      "quote": "\u0001",
+         *                      "sendRateExpire": 0,
+         *                      "sensitive_keys": [],
+         *                      "separator": ",,,",
+         *                      "shardHashKey": [],
+         *                      "tailExisted": false,
+         *                      "timeFormat": "",
+         *                      "timeKey": "",
+         *                      "topicFormat": "none"
+         *                      },
+         *                      "inputType": "file",
+         *                      "lastModifyTime": 1574843554,
+         *                      "logSample": "2019-11-27 10:48:23,160,,,MAIN,,,INFO,,,98DCC51D-BE5D-49C7-B3FD-37B2BAEFB296,,,123456789,,,cn-hangzhou,,,this is a simple test.",
+         *                      "outputDetail": {
+         *                      "endpoint": "cn-hangzhou-intranet.log.aliyuncs.com",
+         *                      "logstoreName": "test-logstore",
+         *                      "region": "cn-hangzhou"
+         *                      },
+         *                      "outputType": "LogService"
+         *                      }
          * @return {@code this}
          */
         public Builder rawConfigData(java.util.Map<java.lang.String, ? extends java.lang.Object> rawConfigData) {
@@ -134,9 +402,9 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogtailConfigProps {
-        private final java.lang.String logstoreName;
-        private final java.lang.String logtailConfigName;
-        private final java.lang.String projectName;
+        private final java.lang.Object logstoreName;
+        private final java.lang.Object logtailConfigName;
+        private final java.lang.Object projectName;
         private final java.lang.Object cloneFrom;
         private final java.lang.Object rawConfigData;
 
@@ -146,9 +414,9 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logtailConfigName = software.amazon.jsii.Kernel.get(this, "logtailConfigName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloneFrom = software.amazon.jsii.Kernel.get(this, "cloneFrom", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rawConfigData = software.amazon.jsii.Kernel.get(this, "rawConfigData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -156,7 +424,7 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String logstoreName, final java.lang.String logtailConfigName, final java.lang.String projectName, final java.lang.Object cloneFrom, final java.lang.Object rawConfigData) {
+        protected Jsii$Proxy(final java.lang.Object logstoreName, final java.lang.Object logtailConfigName, final java.lang.Object projectName, final java.lang.Object cloneFrom, final java.lang.Object rawConfigData) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
             this.logtailConfigName = java.util.Objects.requireNonNull(logtailConfigName, "logtailConfigName is required");
@@ -166,17 +434,17 @@ public interface LogtailConfigProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getLogstoreName() {
+        public final java.lang.Object getLogstoreName() {
             return this.logstoreName;
         }
 
         @Override
-        public final java.lang.String getLogtailConfigName() {
+        public final java.lang.Object getLogtailConfigName() {
             return this.logtailConfigName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 

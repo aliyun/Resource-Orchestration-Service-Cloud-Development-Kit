@@ -11,17 +11,17 @@ export interface NetworkInterfacePermissionProps {
     /**
      * Property accountId: the account id
      */
-    readonly accountId: string;
+    readonly accountId: string | ros.IResolvable;
 
     /**
      * Property networkInterfaceId: Network interface id
      */
-    readonly networkInterfaceId: string;
+    readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
      * Property permission: the permission
      */
-    readonly permission: string;
+    readonly permission: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class NetworkInterfacePermission extends ros.Resource {
     /**
      * Attribute NetworkInterfacePermissionId: the network interface permission id
      */
-    public readonly attrNetworkInterfacePermissionId: any;
+    public readonly attrNetworkInterfacePermissionId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::NetworkInterfacePermission`.

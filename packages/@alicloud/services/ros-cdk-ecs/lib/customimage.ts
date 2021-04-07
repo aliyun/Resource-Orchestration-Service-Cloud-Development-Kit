@@ -13,7 +13,7 @@ export interface CustomImageProps {
      * I386
      * X86_64 (default)
      */
-    readonly architecture?: string;
+    readonly architecture?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the image.
@@ -21,7 +21,7 @@ export interface CustomImageProps {
      * It cannot begin with http:// or https://.
      * Default value: null.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property diskDeviceMapping:
@@ -33,27 +33,27 @@ export interface CustomImageProps {
      * Can contain [2, 128] characters in length. Must begin with an English letter or Chinese character. Can contain digits, colons (:), underscores (_), or hyphens (-).
      * Cannot begin with http:// or https://.
      */
-    readonly imageName?: string;
+    readonly imageName?: string | ros.IResolvable;
 
     /**
      * Property instanceId: Instance ID.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property platform: After specifying the data disk snapshot as the mirrored system disk, you need to determine the operating system release of the system disk through Platform.
      */
-    readonly platform?: string;
+    readonly platform?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The enterprise resource group ID where the custom image is located.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property snapshotId: The snapshot ID. A custom image is created from the specified snapshot.
      */
-    readonly snapshotId?: string;
+    readonly snapshotId?: string | ros.IResolvable;
 
     /**
      * Property tag:
@@ -74,7 +74,7 @@ export class CustomImage extends ros.Resource {
     /**
      * Attribute ImageId: Image ID
      */
-    public readonly attrImageId: any;
+    public readonly attrImageId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::CustomImage`.

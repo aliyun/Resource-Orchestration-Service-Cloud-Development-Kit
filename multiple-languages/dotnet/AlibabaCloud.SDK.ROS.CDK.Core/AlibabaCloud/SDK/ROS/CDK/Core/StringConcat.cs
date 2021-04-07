@@ -4,7 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>Converts all fragments to strings and concats those&#xD; &#xD; Drops 'undefined's.</summary>
+    /// <summary>Converts all fragments to strings and concats those.</summary>
+    /// <remarks>
+    /// Drops 'undefined's.
+    /// </remarks>
     [JsiiClass(nativeType: typeof(AlibabaCloud.SDK.ROS.CDK.Core.StringConcat), fullyQualifiedName: "@alicloud/ros-cdk-core.StringConcat")]
     public class StringConcat : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Core.IFragmentConcatenator
     {

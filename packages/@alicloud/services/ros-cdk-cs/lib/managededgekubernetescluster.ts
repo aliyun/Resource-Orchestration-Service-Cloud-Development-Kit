@@ -11,12 +11,17 @@ export interface ManagedEdgeKubernetesClusterProps {
     /**
      * Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property numOfNodes: Number of worker nodes. The range is [0,300]
      */
-    readonly numOfNodes: number;
+    readonly numOfNodes: number | ros.IResolvable;
+
+    /**
+     * Property addons: The add-ons to be installed for the cluster.
+     */
+    readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -27,9 +32,17 @@ export interface ManagedEdgeKubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
+     * Property clusterSpec: The edge managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.standard. The value can be empty. When it is empty, a standard managed cluster will be created.
+     */
+    readonly clusterSpec?: string | ros.IResolvable;
+
+    /**
      * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    readonly containerCidr?: string;
+    readonly containerCidr?: string | ros.IResolvable;
 
     /**
      * Property disableRollback: Whether the failure was rolled back:
@@ -49,27 +62,27 @@ export interface ManagedEdgeKubernetesClusterProps {
     /**
      * Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    readonly keyPair?: string;
+    readonly keyPair?: string | ros.IResolvable;
 
     /**
      * Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    readonly loginPassword?: string;
+    readonly loginPassword?: string | ros.IResolvable;
 
     /**
      * Property profile: Edge cluster ID. The default value is Edge.
      */
-    readonly profile?: string;
+    readonly profile?: string | ros.IResolvable;
 
     /**
      * Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    readonly proxyMode?: string;
+    readonly proxyMode?: string | ros.IResolvable;
 
     /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * Property snatEntry: Whether to configure SNAT for the network.
@@ -84,18 +97,18 @@ export interface ManagedEdgeKubernetesClusterProps {
     /**
      * Property tags: Tag the cluster.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosManagedEdgeKubernetesCluster.TagsProperty[];
 
     /**
      * Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 
     /**
      * Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchIds: The virtual switch ID of the worker node.
@@ -113,24 +126,29 @@ export interface ManagedEdgeKubernetesClusterProps {
     /**
      * Property workerDataDiskCategory: Data disk type.
      */
-    readonly workerDataDiskCategory?: string;
+    readonly workerDataDiskCategory?: string | ros.IResolvable;
 
     /**
      * Property workerDataDiskSize: Data disk size in GiB.
      */
-    readonly workerDataDiskSize?: number;
+    readonly workerDataDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
+     */
+    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property workerSystemDiskCategory: Worker node system disk type. 
      * Default to cloud_efficiency.
      */
-    readonly workerSystemDiskCategory?: string;
+    readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    readonly workerSystemDiskSize?: number;
+    readonly workerSystemDiskSize?: number | ros.IResolvable;
 }
 
 /**
@@ -146,17 +164,17 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
@@ -174,21 +192,24 @@ export class ManagedEdgeKubernetesCluster extends ros.Resource {
             keyPair: props.keyPair,
             vSwitchIds: props.vSwitchIds,
             timeoutMins: props.timeoutMins ? props.timeoutMins : 60,
-            workerSystemDiskSize: props.workerSystemDiskSize ? props.workerSystemDiskSize : 120,
+            addons: props.addons,
+            clusterSpec: props.clusterSpec,
             workerSystemDiskCategory: props.workerSystemDiskCategory ? props.workerSystemDiskCategory : 'cloud_efficiency',
+            workerSystemDiskSize: props.workerSystemDiskSize ? props.workerSystemDiskSize : 120,
             profile: props.profile ? props.profile : 'Edge',
             name: props.name,
             workerDataDisk: props.workerDataDisk ? props.workerDataDisk : false,
             vpcId: props.vpcId,
             workerDataDiskSize: props.workerDataDiskSize,
-            numOfNodes: props.numOfNodes,
             cloudMonitorFlags: props.cloudMonitorFlags ? props.cloudMonitorFlags : false,
+            numOfNodes: props.numOfNodes,
             serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
             workerDataDiskCategory: props.workerDataDiskCategory,
             snatEntry: props.snatEntry ? props.snatEntry : true,
-            tags: ros.tagFactory(props.tags),
             proxyMode: props.proxyMode ? props.proxyMode : 'iptables',
             disableRollback: props.disableRollback ? props.disableRollback : true,
+            tags: props.tags,
+            workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosManagedEdgeKubernetesCluster;

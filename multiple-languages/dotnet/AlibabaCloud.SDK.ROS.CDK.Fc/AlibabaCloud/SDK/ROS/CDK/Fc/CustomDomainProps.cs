@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class CustomDomainProps : AlibabaCloud.SDK.ROS.CDK.Fc.ICustomDomainProps
     {
         /// <summary>Property domainName: domain name.</summary>
-        [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DomainName
+        [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DomainName
         {
             get;
             set;
         }
 
         /// <summary>Property protocol: HTTP or HTTP,HTTPS.</summary>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Protocol
         {
             get;
             set;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property apiVersion: api version.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "apiVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ApiVersion
+        [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ApiVersion
         {
             get;
             set;

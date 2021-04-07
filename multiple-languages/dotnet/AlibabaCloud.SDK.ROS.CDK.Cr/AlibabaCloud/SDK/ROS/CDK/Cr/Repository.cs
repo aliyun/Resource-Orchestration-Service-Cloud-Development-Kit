@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cr
         }
 
         /// <summary>Attribute RepoId: The repo id.</summary>
-        [JsiiProperty(name: "attrRepoId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRepoId
+        [JsiiProperty(name: "attrRepoId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRepoId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

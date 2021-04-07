@@ -3,56 +3,73 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.807Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.TableProps")
 @software.amazon.jsii.Jsii.Proxy(TableProps.Jsii$Proxy.class)
 public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property instanceName: The name of the OTS instance in which table will locate.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
+     * Property primaryKey: It describes the attribute value of primary key.
+     * <p>
+     * The number of primary_key should not be less than one and not be more than four.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPrimaryKey();
 
     /**
+     * Property tableName: The table name of the OTS instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTableName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTableName();
 
     /**
+     * Property columns: Attribute column for table store.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getColumns() {
         return null;
     }
 
     /**
+     * Property deviationCellVersionInSec: Maximum version deviation.
+     * <p>
+     * The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDeviationCellVersionInSec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeviationCellVersionInSec() {
         return null;
     }
 
     /**
+     * Property maxVersions: The maximum number of versions stored in this table.
+     * <p>
+     * The valid value is 1-2147483647. Default to 1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaxVersions() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxVersions() {
         return null;
     }
 
     /**
+     * Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReservedThroughput() {
         return null;
     }
 
     /**
+     * Property secondaryIndices: The secondary indices of the table.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryIndices() {
         return null;
     }
 
     /**
+     * Property timeToLive: The retention time of data stored in this table (unit: second).
+     * <p>
+     * The value maximum is 2147483647 and -1 means never expired. Default to -1.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeToLive() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeToLive() {
         return null;
     }
 
@@ -66,19 +83,19 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TableProps> {
-        private java.lang.String instanceName;
+        private java.lang.Object instanceName;
         private java.lang.Object primaryKey;
-        private java.lang.String tableName;
+        private java.lang.Object tableName;
         private java.lang.Object columns;
-        private java.lang.Number deviationCellVersionInSec;
-        private java.lang.Number maxVersions;
+        private java.lang.Object deviationCellVersionInSec;
+        private java.lang.Object maxVersions;
         private java.lang.Object reservedThroughput;
         private java.lang.Object secondaryIndices;
-        private java.lang.Number timeToLive;
+        private java.lang.Object timeToLive;
 
         /**
          * Sets the value of {@link TableProps#getInstanceName}
-         * @param instanceName the value to be set. This parameter is required.
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -87,8 +104,19 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TableProps#getInstanceName}
+         * @param instanceName Property instanceName: The name of the OTS instance in which table will locate. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TableProps#getPrimaryKey}
-         * @param primaryKey the value to be set. This parameter is required.
+         * @param primaryKey Property primaryKey: It describes the attribute value of primary key. This parameter is required.
+         *                   The number of primary_key should not be less than one and not be more than four.
          * @return {@code this}
          */
         public Builder primaryKey(com.aliyun.ros.cdk.core.IResolvable primaryKey) {
@@ -98,7 +126,8 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getPrimaryKey}
-         * @param primaryKey the value to be set. This parameter is required.
+         * @param primaryKey Property primaryKey: It describes the attribute value of primary key. This parameter is required.
+         *                   The number of primary_key should not be less than one and not be more than four.
          * @return {@code this}
          */
         public Builder primaryKey(java.util.List<? extends java.lang.Object> primaryKey) {
@@ -108,7 +137,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getTableName}
-         * @param tableName the value to be set. This parameter is required.
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
          * @return {@code this}
          */
         public Builder tableName(java.lang.String tableName) {
@@ -117,8 +146,18 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TableProps#getTableName}
+         * @param tableName Property tableName: The table name of the OTS instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
+            this.tableName = tableName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TableProps#getColumns}
-         * @param columns the value to be set.
+         * @param columns Property columns: Attribute column for table store.
          * @return {@code this}
          */
         public Builder columns(com.aliyun.ros.cdk.core.IResolvable columns) {
@@ -128,7 +167,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getColumns}
-         * @param columns the value to be set.
+         * @param columns Property columns: Attribute column for table store.
          * @return {@code this}
          */
         public Builder columns(java.util.List<? extends java.lang.Object> columns) {
@@ -138,7 +177,8 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getDeviationCellVersionInSec}
-         * @param deviationCellVersionInSec the value to be set.
+         * @param deviationCellVersionInSec Property deviationCellVersionInSec: Maximum version deviation.
+         *                                  The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
          * @return {@code this}
          */
         public Builder deviationCellVersionInSec(java.lang.Number deviationCellVersionInSec) {
@@ -147,8 +187,20 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TableProps#getDeviationCellVersionInSec}
+         * @param deviationCellVersionInSec Property deviationCellVersionInSec: Maximum version deviation.
+         *                                  The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
+         * @return {@code this}
+         */
+        public Builder deviationCellVersionInSec(com.aliyun.ros.cdk.core.IResolvable deviationCellVersionInSec) {
+            this.deviationCellVersionInSec = deviationCellVersionInSec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TableProps#getMaxVersions}
-         * @param maxVersions the value to be set.
+         * @param maxVersions Property maxVersions: The maximum number of versions stored in this table.
+         *                    The valid value is 1-2147483647. Default to 1.
          * @return {@code this}
          */
         public Builder maxVersions(java.lang.Number maxVersions) {
@@ -157,8 +209,19 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TableProps#getMaxVersions}
+         * @param maxVersions Property maxVersions: The maximum number of versions stored in this table.
+         *                    The valid value is 1-2147483647. Default to 1.
+         * @return {@code this}
+         */
+        public Builder maxVersions(com.aliyun.ros.cdk.core.IResolvable maxVersions) {
+            this.maxVersions = maxVersions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TableProps#getReservedThroughput}
-         * @param reservedThroughput the value to be set.
+         * @param reservedThroughput Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
          * @return {@code this}
          */
         public Builder reservedThroughput(com.aliyun.ros.cdk.core.IResolvable reservedThroughput) {
@@ -168,7 +231,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getReservedThroughput}
-         * @param reservedThroughput the value to be set.
+         * @param reservedThroughput Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
          * @return {@code this}
          */
         public Builder reservedThroughput(com.aliyun.ros.cdk.ots.RosTable.ReservedThroughputProperty reservedThroughput) {
@@ -178,7 +241,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getSecondaryIndices}
-         * @param secondaryIndices the value to be set.
+         * @param secondaryIndices Property secondaryIndices: The secondary indices of the table.
          * @return {@code this}
          */
         public Builder secondaryIndices(com.aliyun.ros.cdk.core.IResolvable secondaryIndices) {
@@ -188,7 +251,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getSecondaryIndices}
-         * @param secondaryIndices the value to be set.
+         * @param secondaryIndices Property secondaryIndices: The secondary indices of the table.
          * @return {@code this}
          */
         public Builder secondaryIndices(java.util.List<? extends java.lang.Object> secondaryIndices) {
@@ -198,10 +261,22 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link TableProps#getTimeToLive}
-         * @param timeToLive the value to be set.
+         * @param timeToLive Property timeToLive: The retention time of data stored in this table (unit: second).
+         *                   The value maximum is 2147483647 and -1 means never expired. Default to -1.
          * @return {@code this}
          */
         public Builder timeToLive(java.lang.Number timeToLive) {
+            this.timeToLive = timeToLive;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TableProps#getTimeToLive}
+         * @param timeToLive Property timeToLive: The retention time of data stored in this table (unit: second).
+         *                   The value maximum is 2147483647 and -1 means never expired. Default to -1.
+         * @return {@code this}
+         */
+        public Builder timeToLive(com.aliyun.ros.cdk.core.IResolvable timeToLive) {
             this.timeToLive = timeToLive;
             return this;
         }
@@ -222,15 +297,15 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TableProps {
-        private final java.lang.String instanceName;
+        private final java.lang.Object instanceName;
         private final java.lang.Object primaryKey;
-        private final java.lang.String tableName;
+        private final java.lang.Object tableName;
         private final java.lang.Object columns;
-        private final java.lang.Number deviationCellVersionInSec;
-        private final java.lang.Number maxVersions;
+        private final java.lang.Object deviationCellVersionInSec;
+        private final java.lang.Object maxVersions;
         private final java.lang.Object reservedThroughput;
         private final java.lang.Object secondaryIndices;
-        private final java.lang.Number timeToLive;
+        private final java.lang.Object timeToLive;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -238,21 +313,21 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.primaryKey = software.amazon.jsii.Kernel.get(this, "primaryKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.columns = software.amazon.jsii.Kernel.get(this, "columns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.deviationCellVersionInSec = software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.maxVersions = software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.deviationCellVersionInSec = software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxVersions = software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.reservedThroughput = software.amazon.jsii.Kernel.get(this, "reservedThroughput", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryIndices = software.amazon.jsii.Kernel.get(this, "secondaryIndices", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.timeToLive = software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.timeToLive = software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceName, final java.lang.Object primaryKey, final java.lang.String tableName, final java.lang.Object columns, final java.lang.Number deviationCellVersionInSec, final java.lang.Number maxVersions, final java.lang.Object reservedThroughput, final java.lang.Object secondaryIndices, final java.lang.Number timeToLive) {
+        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object primaryKey, final java.lang.Object tableName, final java.lang.Object columns, final java.lang.Object deviationCellVersionInSec, final java.lang.Object maxVersions, final java.lang.Object reservedThroughput, final java.lang.Object secondaryIndices, final java.lang.Object timeToLive) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
             this.primaryKey = java.util.Objects.requireNonNull(primaryKey, "primaryKey is required");
@@ -266,7 +341,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
@@ -276,7 +351,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTableName() {
+        public final java.lang.Object getTableName() {
             return this.tableName;
         }
 
@@ -286,12 +361,12 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getDeviationCellVersionInSec() {
+        public final java.lang.Object getDeviationCellVersionInSec() {
             return this.deviationCellVersionInSec;
         }
 
         @Override
-        public final java.lang.Number getMaxVersions() {
+        public final java.lang.Object getMaxVersions() {
             return this.maxVersions;
         }
 
@@ -306,7 +381,7 @@ public interface TableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getTimeToLive() {
+        public final java.lang.Object getTimeToLive() {
             return this.timeToLive;
         }
 

@@ -3,26 +3,30 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::SignatureBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.132Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.718Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureBindingProps")
 @software.amazon.jsii.Jsii.Proxy(SignatureBindingProps.Jsii$Proxy.class)
 public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property apiIds: APIs to bind with the signature.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getApiIds();
 
     /**
+     * Property groupId: The id of group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property signatureId: The id of the Signature.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSignatureId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSignatureId();
 
     /**
+     * Property stageName: Bind signature in this stage.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
      * @return a {@link Builder} of {@link SignatureBindingProps}
@@ -35,13 +39,13 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
      */
     public static final class Builder implements software.amazon.jsii.Builder<SignatureBindingProps> {
         private java.lang.Object apiIds;
-        private java.lang.String groupId;
-        private java.lang.String signatureId;
-        private java.lang.String stageName;
+        private java.lang.Object groupId;
+        private java.lang.Object signatureId;
+        private java.lang.Object stageName;
 
         /**
          * Sets the value of {@link SignatureBindingProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to bind with the signature. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(java.util.List<? extends java.lang.Object> apiIds) {
@@ -51,7 +55,7 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SignatureBindingProps#getApiIds}
-         * @param apiIds the value to be set. This parameter is required.
+         * @param apiIds Property apiIds: APIs to bind with the signature. This parameter is required.
          * @return {@code this}
          */
         public Builder apiIds(com.aliyun.ros.cdk.core.IResolvable apiIds) {
@@ -61,7 +65,7 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SignatureBindingProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The id of group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -70,8 +74,18 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link SignatureBindingProps#getGroupId}
+         * @param groupId Property groupId: The id of group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SignatureBindingProps#getSignatureId}
-         * @param signatureId the value to be set. This parameter is required.
+         * @param signatureId Property signatureId: The id of the Signature. This parameter is required.
          * @return {@code this}
          */
         public Builder signatureId(java.lang.String signatureId) {
@@ -80,11 +94,31 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link SignatureBindingProps#getSignatureId}
+         * @param signatureId Property signatureId: The id of the Signature. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder signatureId(com.aliyun.ros.cdk.core.IResolvable signatureId) {
+            this.signatureId = signatureId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SignatureBindingProps#getStageName}
-         * @param stageName the value to be set. This parameter is required.
+         * @param stageName Property stageName: Bind signature in this stage. This parameter is required.
          * @return {@code this}
          */
         public Builder stageName(java.lang.String stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SignatureBindingProps#getStageName}
+         * @param stageName Property stageName: Bind signature in this stage. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
             this.stageName = stageName;
             return this;
         }
@@ -106,9 +140,9 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SignatureBindingProps {
         private final java.lang.Object apiIds;
-        private final java.lang.String groupId;
-        private final java.lang.String signatureId;
-        private final java.lang.String stageName;
+        private final java.lang.Object groupId;
+        private final java.lang.Object signatureId;
+        private final java.lang.Object stageName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -117,15 +151,15 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.apiIds = software.amazon.jsii.Kernel.get(this, "apiIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.signatureId = software.amazon.jsii.Kernel.get(this, "signatureId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.signatureId = software.amazon.jsii.Kernel.get(this, "signatureId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.String groupId, final java.lang.String signatureId, final java.lang.String stageName) {
+        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object groupId, final java.lang.Object signatureId, final java.lang.Object stageName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiIds = java.util.Objects.requireNonNull(apiIds, "apiIds is required");
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
@@ -139,17 +173,17 @@ public interface SignatureBindingProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getSignatureId() {
+        public final java.lang.Object getSignatureId() {
             return this.signatureId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 

@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Deployment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.686Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosDeploymentProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeploymentProps.Jsii$Proxy.class)
 public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getApiId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getApiId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHistoryVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHistoryVersion() {
         return null;
     }
 
@@ -42,11 +42,11 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosDeploymentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeploymentProps> {
-        private java.lang.String apiId;
-        private java.lang.String groupId;
-        private java.lang.String stageName;
-        private java.lang.String description;
-        private java.lang.String historyVersion;
+        private java.lang.Object apiId;
+        private java.lang.Object groupId;
+        private java.lang.Object stageName;
+        private java.lang.Object description;
+        private java.lang.Object historyVersion;
 
         /**
          * Sets the value of {@link RosDeploymentProps#getApiId}
@@ -54,6 +54,16 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder apiId(java.lang.String apiId) {
+            this.apiId = apiId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentProps#getApiId}
+         * @param apiId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder apiId(com.aliyun.ros.cdk.core.IResolvable apiId) {
             this.apiId = apiId;
             return this;
         }
@@ -69,11 +79,31 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDeploymentProps#getGroupId}
+         * @param groupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeploymentProps#getStageName}
          * @param stageName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder stageName(java.lang.String stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentProps#getStageName}
+         * @param stageName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
             this.stageName = stageName;
             return this;
         }
@@ -89,11 +119,31 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosDeploymentProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeploymentProps#getHistoryVersion}
          * @param historyVersion the value to be set.
          * @return {@code this}
          */
         public Builder historyVersion(java.lang.String historyVersion) {
+            this.historyVersion = historyVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeploymentProps#getHistoryVersion}
+         * @param historyVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder historyVersion(com.aliyun.ros.cdk.core.IResolvable historyVersion) {
             this.historyVersion = historyVersion;
             return this;
         }
@@ -114,11 +164,11 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeploymentProps {
-        private final java.lang.String apiId;
-        private final java.lang.String groupId;
-        private final java.lang.String stageName;
-        private final java.lang.String description;
-        private final java.lang.String historyVersion;
+        private final java.lang.Object apiId;
+        private final java.lang.Object groupId;
+        private final java.lang.Object stageName;
+        private final java.lang.Object description;
+        private final java.lang.Object historyVersion;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +176,17 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.apiId = software.amazon.jsii.Kernel.get(this, "apiId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.historyVersion = software.amazon.jsii.Kernel.get(this, "historyVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.apiId = software.amazon.jsii.Kernel.get(this, "apiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.historyVersion = software.amazon.jsii.Kernel.get(this, "historyVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String apiId, final java.lang.String groupId, final java.lang.String stageName, final java.lang.String description, final java.lang.String historyVersion) {
+        protected Jsii$Proxy(final java.lang.Object apiId, final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object description, final java.lang.Object historyVersion) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiId = java.util.Objects.requireNonNull(apiId, "apiId is required");
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
@@ -146,27 +196,27 @@ public interface RosDeploymentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getApiId() {
+        public final java.lang.Object getApiId() {
             return this.apiId;
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getHistoryVersion() {
+        public final java.lang.Object getHistoryVersion() {
             return this.historyVersion;
         }
 

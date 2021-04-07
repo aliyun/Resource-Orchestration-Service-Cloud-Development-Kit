@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.189Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterEndpointProps.Jsii$Proxy.class)
 public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoAddNewNodes() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoAddNewNodes() {
         return null;
     }
 
@@ -26,7 +26,7 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEndpointType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
         return null;
     }
 
@@ -38,7 +38,7 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getReadWriteMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReadWriteMode() {
         return null;
     }
 
@@ -52,12 +52,12 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
      * A builder for {@link RosDBClusterEndpointProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBClusterEndpointProps> {
-        private java.lang.String dbClusterId;
-        private java.lang.String autoAddNewNodes;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object autoAddNewNodes;
         private java.lang.Object endpointConfig;
-        private java.lang.String endpointType;
+        private java.lang.Object endpointType;
         private java.lang.Object nodes;
-        private java.lang.String readWriteMode;
+        private java.lang.Object readWriteMode;
 
         /**
          * Sets the value of {@link RosDBClusterEndpointProps#getDbClusterId}
@@ -65,6 +65,16 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterEndpointProps#getDbClusterId}
+         * @param dbClusterId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
             this.dbClusterId = dbClusterId;
             return this;
         }
@@ -80,12 +90,12 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
-         * Sets the value of {@link RosDBClusterEndpointProps#getEndpointConfig}
-         * @param endpointConfig the value to be set.
+         * Sets the value of {@link RosDBClusterEndpointProps#getAutoAddNewNodes}
+         * @param autoAddNewNodes the value to be set.
          * @return {@code this}
          */
-        public Builder endpointConfig(com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
-            this.endpointConfig = endpointConfig;
+        public Builder autoAddNewNodes(com.aliyun.ros.cdk.core.IResolvable autoAddNewNodes) {
+            this.autoAddNewNodes = autoAddNewNodes;
             return this;
         }
 
@@ -100,11 +110,31 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosDBClusterEndpointProps#getEndpointConfig}
+         * @param endpointConfig the value to be set.
+         * @return {@code this}
+         */
+        public Builder endpointConfig(com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
+            this.endpointConfig = endpointConfig;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterEndpointProps#getEndpointType}
          * @param endpointType the value to be set.
          * @return {@code this}
          */
         public Builder endpointType(java.lang.String endpointType) {
+            this.endpointType = endpointType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterEndpointProps#getEndpointType}
+         * @param endpointType the value to be set.
+         * @return {@code this}
+         */
+        public Builder endpointType(com.aliyun.ros.cdk.core.IResolvable endpointType) {
             this.endpointType = endpointType;
             return this;
         }
@@ -140,6 +170,16 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         /**
+         * Sets the value of {@link RosDBClusterEndpointProps#getReadWriteMode}
+         * @param readWriteMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder readWriteMode(com.aliyun.ros.cdk.core.IResolvable readWriteMode) {
+            this.readWriteMode = readWriteMode;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDBClusterEndpointProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -155,12 +195,12 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBClusterEndpointProps {
-        private final java.lang.String dbClusterId;
-        private final java.lang.String autoAddNewNodes;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object autoAddNewNodes;
         private final java.lang.Object endpointConfig;
-        private final java.lang.String endpointType;
+        private final java.lang.Object endpointType;
         private final java.lang.Object nodes;
-        private final java.lang.String readWriteMode;
+        private final java.lang.Object readWriteMode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -168,18 +208,18 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoAddNewNodes = software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoAddNewNodes = software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endpointConfig = software.amazon.jsii.Kernel.get(this, "endpointConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.endpointType = software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nodes = software.amazon.jsii.Kernel.get(this, "nodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.readWriteMode = software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.readWriteMode = software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String dbClusterId, final java.lang.String autoAddNewNodes, final java.lang.Object endpointConfig, final java.lang.String endpointType, final java.lang.Object nodes, final java.lang.String readWriteMode) {
+        protected Jsii$Proxy(final java.lang.Object dbClusterId, final java.lang.Object autoAddNewNodes, final java.lang.Object endpointConfig, final java.lang.Object endpointType, final java.lang.Object nodes, final java.lang.Object readWriteMode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbClusterId = java.util.Objects.requireNonNull(dbClusterId, "dbClusterId is required");
             this.autoAddNewNodes = autoAddNewNodes;
@@ -190,12 +230,12 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getAutoAddNewNodes() {
+        public final java.lang.Object getAutoAddNewNodes() {
             return this.autoAddNewNodes;
         }
 
@@ -205,7 +245,7 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getEndpointType() {
+        public final java.lang.Object getEndpointType() {
             return this.endpointType;
         }
 
@@ -215,7 +255,7 @@ public interface RosDBClusterEndpointProps extends software.amazon.jsii.JsiiSeri
         }
 
         @Override
-        public final java.lang.String getReadWriteMode() {
+        public final java.lang.Object getReadWriteMode() {
             return this.readWriteMode;
         }
 

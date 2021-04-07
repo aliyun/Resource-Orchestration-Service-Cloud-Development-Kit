@@ -11,12 +11,12 @@ export interface ApiProps {
     /**
      * Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly apiName: string;
+    readonly apiName: string | ros.IResolvable;
 
     /**
      * Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property requestConfig: The configuration of the request
@@ -26,12 +26,12 @@ export interface ApiProps {
     /**
      * Property resultSample: The sample of the result.
      */
-    readonly resultSample: string;
+    readonly resultSample: string | ros.IResolvable;
 
     /**
      * Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
      */
-    readonly resultType: string;
+    readonly resultType: string | ros.IResolvable;
 
     /**
      * Property serviceConfig: The configuration of the service.
@@ -41,7 +41,7 @@ export interface ApiProps {
     /**
      * Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
      */
-    readonly visibility: string;
+    readonly visibility: string | ros.IResolvable;
 
     /**
      * Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
@@ -50,12 +50,12 @@ export interface ApiProps {
      * HEADER: Allow AppCode header authentication
      * HEADER_QUERY: Allow AppCode header and query authentication
      */
-    readonly appCodeAuthType?: string;
+    readonly appCodeAuthType?: string | ros.IResolvable;
 
     /**
      * Property authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
      */
-    readonly authType?: string;
+    readonly authType?: string | ros.IResolvable;
 
     /**
      * Property constParameters: The const parameters.
@@ -65,7 +65,14 @@ export interface ApiProps {
     /**
      * Property description: Description of the API, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
+     * Set DisableInternet to false, then the call is not restricted. 
+     *
+     */
+    readonly disableInternet?: boolean | ros.IResolvable;
 
     /**
      * Property errorCodeSamples: The Error Code samples.
@@ -75,7 +82,16 @@ export interface ApiProps {
     /**
      * Property failResultSample: The sample of the fail result.
      */
-    readonly failResultSample?: string;
+    readonly failResultSample?: string | ros.IResolvable;
+
+    /**
+     * Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
+     * this is the unique identifier of the request, generally using UUID to identify. 
+     * The API gateway will verify the validity of this parameter after receiving this parameter. 
+     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+     * Set ForceNonceCheck to false, then no check.
+     */
+    readonly forceNonceCheck?: boolean | ros.IResolvable;
 
     /**
      * Property openIdConnectConfig: The configuration of the open id.
@@ -101,6 +117,11 @@ export interface ApiProps {
      * Property systemParameters: The system parameters.
      */
     readonly systemParameters?: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosApi.TagsProperty[];
 }
 
 /**
@@ -116,7 +137,7 @@ export class Api extends ros.Resource {
     /**
      * Attribute ApiId: The id of the API.
      */
-    public readonly attrApiId: any;
+    public readonly attrApiId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Api`.
@@ -132,7 +153,9 @@ export class Api extends ros.Resource {
             requestConfig: props.requestConfig,
             description: props.description,
             resultSample: props.resultSample,
+            disableInternet: props.disableInternet,
             apiName: props.apiName,
+            forceNonceCheck: props.forceNonceCheck,
             resultType: props.resultType ? props.resultType : 'JSON',
             failResultSample: props.failResultSample,
             errorCodeSamples: props.errorCodeSamples,
@@ -147,6 +170,7 @@ export class Api extends ros.Resource {
             visibility: props.visibility,
             serviceParameters: props.serviceParameters,
             authType: props.authType,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApi;
         this.attrApiId = rosApi.attrApiId;

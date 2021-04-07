@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// The template must be in the JSON or YAML format. Maximum size: 64 KB.
         /// </remarks>
-        [JsiiProperty(name: "content", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Content
+        [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Content
         {
             get;
             set;
@@ -25,8 +25,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// The template name can be up to 200 characters in length. The name can contain letters, digits, hyphens (-), and underscores (_). It cannot start with ALIYUN, ACS, ALIBABA, or ALICLOUD.
         /// </remarks>
-        [JsiiProperty(name: "templateName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TemplateName
+        [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TemplateName
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
         /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public System.Collections.Generic.IDictionary<string, object>[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        public System.Collections.Generic.IDictionary<string, object>? Tags
         {
             get;
             set;

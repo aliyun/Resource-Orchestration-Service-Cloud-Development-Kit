@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.870Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRule")
 public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleAri() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleAri", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleAri() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleAri", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAdjustmentType() {
-        return software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setScalingGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingGroupId", java.util.Objects.requireNonNull(value, "scalingGroupId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentType() {
+        return software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getAdjustmentValue() {
-        return software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setAdjustmentType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "adjustmentType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentValue() {
+        return software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,13 +117,25 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getCooldown() {
-        return software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setAdjustmentValue(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "adjustmentValue", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCooldown() {
+        return software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCooldown(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "cooldown", value);
+    }
+
+    /**
+     */
+    public void setCooldown(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cooldown", value);
     }
 
@@ -135,8 +159,8 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getEstimatedInstanceWarmup() {
-        return software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEstimatedInstanceWarmup() {
+        return software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +171,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInitialMaxSize() {
-        return software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setEstimatedInstanceWarmup(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "estimatedInstanceWarmup", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInitialMaxSize() {
+        return software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +189,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMetricName() {
-        return software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInitialMaxSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "initialMaxSize", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMetricName() {
+        return software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +207,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getMinAdjustmentMagnitude() {
-        return software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMetricName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "metricName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMinAdjustmentMagnitude() {
+        return software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +225,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPredictiveScalingMode() {
-        return software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setMinAdjustmentMagnitude(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minAdjustmentMagnitude", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveScalingMode() {
+        return software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +243,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveTaskBufferTime() {
-        return software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPredictiveScalingMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "predictiveScalingMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveTaskBufferTime() {
+        return software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +261,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPredictiveValueBehavior() {
-        return software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPredictiveTaskBufferTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "predictiveTaskBufferTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBehavior() {
+        return software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,8 +279,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveValueBuffer() {
-        return software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPredictiveValueBehavior(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "predictiveValueBehavior", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBuffer() {
+        return software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -231,8 +297,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleName() {
-        return software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPredictiveValueBuffer(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "predictiveValueBuffer", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleName() {
+        return software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -243,13 +315,25 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleType() {
-        return software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setScalingRuleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingRuleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleType() {
+        return software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setScalingRuleType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "scalingRuleType", value);
+    }
+
+    /**
+     */
+    public void setScalingRuleType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "scalingRuleType", value);
     }
 
@@ -273,13 +357,19 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getTargetValue() {
-        return software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTargetValue() {
+        return software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTargetValue(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "targetValue", value);
+    }
+
+    /**
+     */
+    public void setTargetValue(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "targetValue", value);
     }
     /**
@@ -292,21 +382,21 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getMetricIntervalLowerBound() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMetricIntervalLowerBound() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getMetricIntervalUpperBound() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMetricIntervalUpperBound() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.Number getScalingAdjustment() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getScalingAdjustment() {
             return null;
         }
 
@@ -322,9 +412,9 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<StepAdjustmentProperty> {
-            private java.lang.Number metricIntervalLowerBound;
-            private java.lang.Number metricIntervalUpperBound;
-            private java.lang.Number scalingAdjustment;
+            private java.lang.Object metricIntervalLowerBound;
+            private java.lang.Object metricIntervalUpperBound;
+            private java.lang.Object scalingAdjustment;
 
             /**
              * Sets the value of {@link StepAdjustmentProperty#getMetricIntervalLowerBound}
@@ -333,6 +423,17 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder metricIntervalLowerBound(java.lang.Number metricIntervalLowerBound) {
+                this.metricIntervalLowerBound = metricIntervalLowerBound;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link StepAdjustmentProperty#getMetricIntervalLowerBound}
+             * @param metricIntervalLowerBound the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder metricIntervalLowerBound(com.aliyun.ros.cdk.core.IResolvable metricIntervalLowerBound) {
                 this.metricIntervalLowerBound = metricIntervalLowerBound;
                 return this;
             }
@@ -349,12 +450,34 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link StepAdjustmentProperty#getMetricIntervalUpperBound}
+             * @param metricIntervalUpperBound the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder metricIntervalUpperBound(com.aliyun.ros.cdk.core.IResolvable metricIntervalUpperBound) {
+                this.metricIntervalUpperBound = metricIntervalUpperBound;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link StepAdjustmentProperty#getScalingAdjustment}
              * @param scalingAdjustment the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder scalingAdjustment(java.lang.Number scalingAdjustment) {
+                this.scalingAdjustment = scalingAdjustment;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link StepAdjustmentProperty#getScalingAdjustment}
+             * @param scalingAdjustment the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder scalingAdjustment(com.aliyun.ros.cdk.core.IResolvable scalingAdjustment) {
                 this.scalingAdjustment = scalingAdjustment;
                 return this;
             }
@@ -377,9 +500,9 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StepAdjustmentProperty {
-            private final java.lang.Number metricIntervalLowerBound;
-            private final java.lang.Number metricIntervalUpperBound;
-            private final java.lang.Number scalingAdjustment;
+            private final java.lang.Object metricIntervalLowerBound;
+            private final java.lang.Object metricIntervalUpperBound;
+            private final java.lang.Object scalingAdjustment;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -387,15 +510,15 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.metricIntervalLowerBound = software.amazon.jsii.Kernel.get(this, "metricIntervalLowerBound", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.metricIntervalUpperBound = software.amazon.jsii.Kernel.get(this, "metricIntervalUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.scalingAdjustment = software.amazon.jsii.Kernel.get(this, "scalingAdjustment", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+                this.metricIntervalLowerBound = software.amazon.jsii.Kernel.get(this, "metricIntervalLowerBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.metricIntervalUpperBound = software.amazon.jsii.Kernel.get(this, "metricIntervalUpperBound", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.scalingAdjustment = software.amazon.jsii.Kernel.get(this, "scalingAdjustment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Number metricIntervalLowerBound, final java.lang.Number metricIntervalUpperBound, final java.lang.Number scalingAdjustment) {
+            protected Jsii$Proxy(final java.lang.Object metricIntervalLowerBound, final java.lang.Object metricIntervalUpperBound, final java.lang.Object scalingAdjustment) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.metricIntervalLowerBound = metricIntervalLowerBound;
                 this.metricIntervalUpperBound = metricIntervalUpperBound;
@@ -403,17 +526,17 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.Number getMetricIntervalLowerBound() {
+            public final java.lang.Object getMetricIntervalLowerBound() {
                 return this.metricIntervalLowerBound;
             }
 
             @Override
-            public final java.lang.Number getMetricIntervalUpperBound() {
+            public final java.lang.Object getMetricIntervalUpperBound() {
                 return this.metricIntervalUpperBound;
             }
 
             @Override
-            public final java.lang.Number getScalingAdjustment() {
+            public final java.lang.Object getScalingAdjustment() {
                 return this.scalingAdjustment;
             }
 
@@ -499,12 +622,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.scalingGroupId(scalingGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param scalingGroupId This parameter is required.
+         */
+        public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param adjustmentType This parameter is required.
          */
         public Builder adjustmentType(final java.lang.String adjustmentType) {
+            this.props.adjustmentType(adjustmentType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param adjustmentType This parameter is required.
+         */
+        public Builder adjustmentType(final com.aliyun.ros.cdk.core.IResolvable adjustmentType) {
             this.props.adjustmentType(adjustmentType);
             return this;
         }
@@ -517,12 +656,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.adjustmentValue(adjustmentValue);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param adjustmentValue This parameter is required.
+         */
+        public Builder adjustmentValue(final com.aliyun.ros.cdk.core.IResolvable adjustmentValue) {
+            this.props.adjustmentValue(adjustmentValue);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param cooldown This parameter is required.
          */
         public Builder cooldown(final java.lang.Number cooldown) {
+            this.props.cooldown(cooldown);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cooldown This parameter is required.
+         */
+        public Builder cooldown(final com.aliyun.ros.cdk.core.IResolvable cooldown) {
             this.props.cooldown(cooldown);
             return this;
         }
@@ -552,12 +707,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.estimatedInstanceWarmup(estimatedInstanceWarmup);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param estimatedInstanceWarmup This parameter is required.
+         */
+        public Builder estimatedInstanceWarmup(final com.aliyun.ros.cdk.core.IResolvable estimatedInstanceWarmup) {
+            this.props.estimatedInstanceWarmup(estimatedInstanceWarmup);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param initialMaxSize This parameter is required.
          */
         public Builder initialMaxSize(final java.lang.Number initialMaxSize) {
+            this.props.initialMaxSize(initialMaxSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param initialMaxSize This parameter is required.
+         */
+        public Builder initialMaxSize(final com.aliyun.ros.cdk.core.IResolvable initialMaxSize) {
             this.props.initialMaxSize(initialMaxSize);
             return this;
         }
@@ -570,12 +741,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.metricName(metricName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param metricName This parameter is required.
+         */
+        public Builder metricName(final com.aliyun.ros.cdk.core.IResolvable metricName) {
+            this.props.metricName(metricName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param minAdjustmentMagnitude This parameter is required.
          */
         public Builder minAdjustmentMagnitude(final java.lang.Number minAdjustmentMagnitude) {
+            this.props.minAdjustmentMagnitude(minAdjustmentMagnitude);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minAdjustmentMagnitude This parameter is required.
+         */
+        public Builder minAdjustmentMagnitude(final com.aliyun.ros.cdk.core.IResolvable minAdjustmentMagnitude) {
             this.props.minAdjustmentMagnitude(minAdjustmentMagnitude);
             return this;
         }
@@ -588,12 +775,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.predictiveScalingMode(predictiveScalingMode);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param predictiveScalingMode This parameter is required.
+         */
+        public Builder predictiveScalingMode(final com.aliyun.ros.cdk.core.IResolvable predictiveScalingMode) {
+            this.props.predictiveScalingMode(predictiveScalingMode);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param predictiveTaskBufferTime This parameter is required.
          */
         public Builder predictiveTaskBufferTime(final java.lang.Number predictiveTaskBufferTime) {
+            this.props.predictiveTaskBufferTime(predictiveTaskBufferTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param predictiveTaskBufferTime This parameter is required.
+         */
+        public Builder predictiveTaskBufferTime(final com.aliyun.ros.cdk.core.IResolvable predictiveTaskBufferTime) {
             this.props.predictiveTaskBufferTime(predictiveTaskBufferTime);
             return this;
         }
@@ -606,12 +809,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.predictiveValueBehavior(predictiveValueBehavior);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param predictiveValueBehavior This parameter is required.
+         */
+        public Builder predictiveValueBehavior(final com.aliyun.ros.cdk.core.IResolvable predictiveValueBehavior) {
+            this.props.predictiveValueBehavior(predictiveValueBehavior);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param predictiveValueBuffer This parameter is required.
          */
         public Builder predictiveValueBuffer(final java.lang.Number predictiveValueBuffer) {
+            this.props.predictiveValueBuffer(predictiveValueBuffer);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param predictiveValueBuffer This parameter is required.
+         */
+        public Builder predictiveValueBuffer(final com.aliyun.ros.cdk.core.IResolvable predictiveValueBuffer) {
             this.props.predictiveValueBuffer(predictiveValueBuffer);
             return this;
         }
@@ -624,12 +843,28 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
             this.props.scalingRuleName(scalingRuleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param scalingRuleName This parameter is required.
+         */
+        public Builder scalingRuleName(final com.aliyun.ros.cdk.core.IResolvable scalingRuleName) {
+            this.props.scalingRuleName(scalingRuleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param scalingRuleType This parameter is required.
          */
         public Builder scalingRuleType(final java.lang.String scalingRuleType) {
+            this.props.scalingRuleType(scalingRuleType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param scalingRuleType This parameter is required.
+         */
+        public Builder scalingRuleType(final com.aliyun.ros.cdk.core.IResolvable scalingRuleType) {
             this.props.scalingRuleType(scalingRuleType);
             return this;
         }
@@ -656,6 +891,14 @@ public class RosScalingRule extends com.aliyun.ros.cdk.core.RosResource {
          * @param targetValue This parameter is required.
          */
         public Builder targetValue(final java.lang.Number targetValue) {
+            this.props.targetValue(targetValue);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param targetValue This parameter is required.
+         */
+        public Builder targetValue(final com.aliyun.ros.cdk.core.IResolvable targetValue) {
             this.props.targetValue(targetValue);
             return this;
         }

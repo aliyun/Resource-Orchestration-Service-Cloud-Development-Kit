@@ -133,11 +133,58 @@ convert_csharp_project(){
     csharp_dir="$dist_dir/dotnet/"
     for dir in $(ls $csharp_dir); do
         echo "${csharp_dir}${dir}"
-        packaege_name=${dir#*dotnet/}
-        packaege_csproj_path="${csharp_dir}${dir}/${packaege_name}.csproj"
-        python3 $root/tools/convert_csharp_project.py --csproj_file_path=${packaege_csproj_path}
+        package_name=${dir#*dotnet/}
+        package_csproj_path="${csharp_dir}${dir}/${package_name}.csproj"
+        python3 $root/tools/convert_csharp_project.py --csproj_file_path=${package_csproj_path}
     done
+    rm -rf $root/multiple-languages/dotnet
+    cp -rp ${csharp_dir}/ $root/multiple-languages/dotnet
 }
+
+convert_python_project(){
+    root=$PWD
+    dist_dir="$PWD/dist"
+    if [ ! -d "$dist_dir" ]; then
+        echo "directory $dist_dir not found"
+        exit 1
+    fi
+    python_dir="$dist_dir/python/"
+    python_packages="$dist_dir/python/packages"
+    rm -rf  $python_packages
+    mkdir -p $python_packages
+    for py_package in $(find ${python_dir} -name "*.tar.gz"); do
+        tar zxvf ${py_package} -C ${python_packages}
+    done
+    rm -rf $root/multiple-languages/python
+    mv ${python_packages}/ $root/multiple-languages/python
+}
+
+convert_js_project(){
+    root=$PWD
+    dist_dir="$PWD/dist"
+    if [ ! -d "$dist_dir" ]; then
+        echo "directory $dist_dir not found"
+        exit 1
+    fi
+    js_dir="$dist_dir/js/"
+    js_packages="$dist_dir/js/packages"
+    rm -rf  $js_packages
+    mkdir -p $js_packages
+    for js_package in $(find ${js_dir} -name "*.tgz"); do
+        long_package_name=${js_package#*js/}
+        short_package_name=${long_package_name%%.tgz*}
+        mkdir -p ${js_packages}/${short_package_name} && tar zxvf ${js_package} -C ${js_packages}/${short_package_name}  --strip-components 1
+    done
+    rm -rf $root/multiple-languages/js
+    mv ${js_packages}/ $root/multiple-languages/js
+}
+
+
+generate_package_version() {
+  root=$PWD
+  python3 $root/tools/generate_package_version.py
+}
+
 
 jsii_pack() {
     export PATH=$PWD/node_modules/.bin:$PATH
@@ -254,7 +301,17 @@ case "$ACTION" in
     convert-csharp-project)
           convert_csharp_project
     ;;
+    generate-package-version)
+          generate_package_version
+    ;;
+    convert-python-project)
+          convert_python_project
+    ;;
+    convert-js-project)
+          convert_js_project
+    ;;
     *)
         usage
     ;;
 esac
+

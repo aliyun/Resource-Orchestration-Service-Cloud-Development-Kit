@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <summary>Attribute SmartAGId: The ID of the Smart Access Gateway instance.</summary>
-        [JsiiProperty(name: "attrSmartAgId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSmartAgId
+        [JsiiProperty(name: "attrSmartAgId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSmartAgId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

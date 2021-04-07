@@ -3,46 +3,46 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Product`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.639Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosProductProps")
 @software.amazon.jsii.Jsii.Proxy(RosProductProps.Jsii$Proxy.class)
 public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getNodeType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNodeType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAliyunCommodityCode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAliyunCommodityCode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAuthType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuthType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCategoryKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCategoryKey() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDataFormat() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataFormat() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -54,25 +54,25 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getJoinPermissionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getJoinPermissionId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProtocolType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProtocolType() {
         return null;
     }
 
@@ -84,7 +84,7 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -98,20 +98,20 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosProductProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProductProps> {
-        private java.lang.Number nodeType;
-        private java.lang.String productName;
-        private java.lang.String aliyunCommodityCode;
-        private java.lang.String authType;
-        private java.lang.String categoryKey;
-        private java.lang.Number dataFormat;
-        private java.lang.String description;
+        private java.lang.Object nodeType;
+        private java.lang.Object productName;
+        private java.lang.Object aliyunCommodityCode;
+        private java.lang.Object authType;
+        private java.lang.Object categoryKey;
+        private java.lang.Object dataFormat;
+        private java.lang.Object description;
         private java.lang.Object id2;
-        private java.lang.String iotInstanceId;
-        private java.lang.String joinPermissionId;
-        private java.lang.String netType;
-        private java.lang.String protocolType;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object joinPermissionId;
+        private java.lang.Object netType;
+        private java.lang.Object protocolType;
         private java.lang.Object publishAuto;
-        private java.lang.String resourceGroupId;
+        private java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosProductProps#getNodeType}
@@ -119,6 +119,16 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder nodeType(java.lang.Number nodeType) {
+            this.nodeType = nodeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getNodeType}
+         * @param nodeType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder nodeType(com.aliyun.ros.cdk.core.IResolvable nodeType) {
             this.nodeType = nodeType;
             return this;
         }
@@ -134,11 +144,31 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getProductName}
+         * @param productName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder productName(com.aliyun.ros.cdk.core.IResolvable productName) {
+            this.productName = productName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProductProps#getAliyunCommodityCode}
          * @param aliyunCommodityCode the value to be set.
          * @return {@code this}
          */
         public Builder aliyunCommodityCode(java.lang.String aliyunCommodityCode) {
+            this.aliyunCommodityCode = aliyunCommodityCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getAliyunCommodityCode}
+         * @param aliyunCommodityCode the value to be set.
+         * @return {@code this}
+         */
+        public Builder aliyunCommodityCode(com.aliyun.ros.cdk.core.IResolvable aliyunCommodityCode) {
             this.aliyunCommodityCode = aliyunCommodityCode;
             return this;
         }
@@ -154,11 +184,31 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getAuthType}
+         * @param authType the value to be set.
+         * @return {@code this}
+         */
+        public Builder authType(com.aliyun.ros.cdk.core.IResolvable authType) {
+            this.authType = authType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProductProps#getCategoryKey}
          * @param categoryKey the value to be set.
          * @return {@code this}
          */
         public Builder categoryKey(java.lang.String categoryKey) {
+            this.categoryKey = categoryKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getCategoryKey}
+         * @param categoryKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder categoryKey(com.aliyun.ros.cdk.core.IResolvable categoryKey) {
             this.categoryKey = categoryKey;
             return this;
         }
@@ -174,11 +224,31 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getDataFormat}
+         * @param dataFormat the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataFormat(com.aliyun.ros.cdk.core.IResolvable dataFormat) {
+            this.dataFormat = dataFormat;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProductProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -214,11 +284,31 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getIotInstanceId}
+         * @param iotInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProductProps#getJoinPermissionId}
          * @param joinPermissionId the value to be set.
          * @return {@code this}
          */
         public Builder joinPermissionId(java.lang.String joinPermissionId) {
+            this.joinPermissionId = joinPermissionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getJoinPermissionId}
+         * @param joinPermissionId the value to be set.
+         * @return {@code this}
+         */
+        public Builder joinPermissionId(com.aliyun.ros.cdk.core.IResolvable joinPermissionId) {
             this.joinPermissionId = joinPermissionId;
             return this;
         }
@@ -234,11 +324,31 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getNetType}
+         * @param netType the value to be set.
+         * @return {@code this}
+         */
+        public Builder netType(com.aliyun.ros.cdk.core.IResolvable netType) {
+            this.netType = netType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProductProps#getProtocolType}
          * @param protocolType the value to be set.
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
+            this.protocolType = protocolType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProductProps#getProtocolType}
+         * @param protocolType the value to be set.
+         * @return {@code this}
+         */
+        public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.protocolType = protocolType;
             return this;
         }
@@ -274,6 +384,16 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosProductProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosProductProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -289,20 +409,20 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosProductProps {
-        private final java.lang.Number nodeType;
-        private final java.lang.String productName;
-        private final java.lang.String aliyunCommodityCode;
-        private final java.lang.String authType;
-        private final java.lang.String categoryKey;
-        private final java.lang.Number dataFormat;
-        private final java.lang.String description;
+        private final java.lang.Object nodeType;
+        private final java.lang.Object productName;
+        private final java.lang.Object aliyunCommodityCode;
+        private final java.lang.Object authType;
+        private final java.lang.Object categoryKey;
+        private final java.lang.Object dataFormat;
+        private final java.lang.Object description;
         private final java.lang.Object id2;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String joinPermissionId;
-        private final java.lang.String netType;
-        private final java.lang.String protocolType;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object joinPermissionId;
+        private final java.lang.Object netType;
+        private final java.lang.Object protocolType;
         private final java.lang.Object publishAuto;
-        private final java.lang.String resourceGroupId;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -310,26 +430,26 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.nodeType = software.amazon.jsii.Kernel.get(this, "nodeType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.productName = software.amazon.jsii.Kernel.get(this, "productName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.aliyunCommodityCode = software.amazon.jsii.Kernel.get(this, "aliyunCommodityCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.authType = software.amazon.jsii.Kernel.get(this, "authType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.categoryKey = software.amazon.jsii.Kernel.get(this, "categoryKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dataFormat = software.amazon.jsii.Kernel.get(this, "dataFormat", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.nodeType = software.amazon.jsii.Kernel.get(this, "nodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productName = software.amazon.jsii.Kernel.get(this, "productName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.aliyunCommodityCode = software.amazon.jsii.Kernel.get(this, "aliyunCommodityCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.authType = software.amazon.jsii.Kernel.get(this, "authType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.categoryKey = software.amazon.jsii.Kernel.get(this, "categoryKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataFormat = software.amazon.jsii.Kernel.get(this, "dataFormat", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.id2 = software.amazon.jsii.Kernel.get(this, "id2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.joinPermissionId = software.amazon.jsii.Kernel.get(this, "joinPermissionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.joinPermissionId = software.amazon.jsii.Kernel.get(this, "joinPermissionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.netType = software.amazon.jsii.Kernel.get(this, "netType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.protocolType = software.amazon.jsii.Kernel.get(this, "protocolType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.publishAuto = software.amazon.jsii.Kernel.get(this, "publishAuto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number nodeType, final java.lang.String productName, final java.lang.String aliyunCommodityCode, final java.lang.String authType, final java.lang.String categoryKey, final java.lang.Number dataFormat, final java.lang.String description, final java.lang.Object id2, final java.lang.String iotInstanceId, final java.lang.String joinPermissionId, final java.lang.String netType, final java.lang.String protocolType, final java.lang.Object publishAuto, final java.lang.String resourceGroupId) {
+        protected Jsii$Proxy(final java.lang.Object nodeType, final java.lang.Object productName, final java.lang.Object aliyunCommodityCode, final java.lang.Object authType, final java.lang.Object categoryKey, final java.lang.Object dataFormat, final java.lang.Object description, final java.lang.Object id2, final java.lang.Object iotInstanceId, final java.lang.Object joinPermissionId, final java.lang.Object netType, final java.lang.Object protocolType, final java.lang.Object publishAuto, final java.lang.Object resourceGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.nodeType = java.util.Objects.requireNonNull(nodeType, "nodeType is required");
             this.productName = java.util.Objects.requireNonNull(productName, "productName is required");
@@ -348,37 +468,37 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getNodeType() {
+        public final java.lang.Object getNodeType() {
             return this.nodeType;
         }
 
         @Override
-        public final java.lang.String getProductName() {
+        public final java.lang.Object getProductName() {
             return this.productName;
         }
 
         @Override
-        public final java.lang.String getAliyunCommodityCode() {
+        public final java.lang.Object getAliyunCommodityCode() {
             return this.aliyunCommodityCode;
         }
 
         @Override
-        public final java.lang.String getAuthType() {
+        public final java.lang.Object getAuthType() {
             return this.authType;
         }
 
         @Override
-        public final java.lang.String getCategoryKey() {
+        public final java.lang.Object getCategoryKey() {
             return this.categoryKey;
         }
 
         @Override
-        public final java.lang.Number getDataFormat() {
+        public final java.lang.Object getDataFormat() {
             return this.dataFormat;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -388,22 +508,22 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getJoinPermissionId() {
+        public final java.lang.Object getJoinPermissionId() {
             return this.joinPermissionId;
         }
 
         @Override
-        public final java.lang.String getNetType() {
+        public final java.lang.Object getNetType() {
             return this.netType;
         }
 
         @Override
-        public final java.lang.String getProtocolType() {
+        public final java.lang.Object getProtocolType() {
             return this.protocolType;
         }
 
@@ -413,7 +533,7 @@ public interface RosProductProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 

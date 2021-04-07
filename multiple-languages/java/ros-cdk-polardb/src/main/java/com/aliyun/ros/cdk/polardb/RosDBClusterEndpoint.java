@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::DBClusterEndpoint`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosDBClusterEndpoint")
 public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,20 +44,20 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbEndpointId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbEndpointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbEndpointId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbEndpointId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -67,13 +67,19 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbClusterId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
+    }
+
+    /**
+     */
+    public void setDbClusterId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
     }
 
@@ -87,13 +93,19 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAutoAddNewNodes() {
-        return software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoAddNewNodes() {
+        return software.amazon.jsii.Kernel.get(this, "autoAddNewNodes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAutoAddNewNodes(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "autoAddNewNodes", value);
+    }
+
+    /**
+     */
+    public void setAutoAddNewNodes(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "autoAddNewNodes", value);
     }
 
@@ -105,25 +117,31 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public void setEndpointConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty value) {
-        software.amazon.jsii.Kernel.set(this, "endpointConfig", value);
-    }
-
-    /**
-     */
     public void setEndpointConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "endpointConfig", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEndpointType() {
-        return software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEndpointConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty value) {
+        software.amazon.jsii.Kernel.set(this, "endpointConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
+        return software.amazon.jsii.Kernel.get(this, "endpointType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setEndpointType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "endpointType", value);
+    }
+
+    /**
+     */
+    public void setEndpointType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "endpointType", value);
     }
 
@@ -147,13 +165,19 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getReadWriteMode() {
-        return software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getReadWriteMode() {
+        return software.amazon.jsii.Kernel.get(this, "readWriteMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setReadWriteMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "readWriteMode", value);
+    }
+
+    /**
+     */
+    public void setReadWriteMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "readWriteMode", value);
     }
     /**
@@ -166,7 +190,7 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getConsistLevel() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConsistLevel() {
             return null;
         }
 
@@ -182,7 +206,7 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EndpointConfigProperty> {
-            private java.lang.String consistLevel;
+            private java.lang.Object consistLevel;
 
             /**
              * Sets the value of {@link EndpointConfigProperty#getConsistLevel}
@@ -191,6 +215,17 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder consistLevel(java.lang.String consistLevel) {
+                this.consistLevel = consistLevel;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EndpointConfigProperty#getConsistLevel}
+             * @param consistLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder consistLevel(com.aliyun.ros.cdk.core.IResolvable consistLevel) {
                 this.consistLevel = consistLevel;
                 return this;
             }
@@ -213,7 +248,7 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EndpointConfigProperty {
-            private final java.lang.String consistLevel;
+            private final java.lang.Object consistLevel;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -221,19 +256,19 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.consistLevel = software.amazon.jsii.Kernel.get(this, "consistLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.consistLevel = software.amazon.jsii.Kernel.get(this, "consistLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String consistLevel) {
+            protected Jsii$Proxy(final java.lang.Object consistLevel) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.consistLevel = consistLevel;
             }
 
             @Override
-            public final java.lang.String getConsistLevel() {
+            public final java.lang.Object getConsistLevel() {
                 return this.consistLevel;
             }
 
@@ -309,6 +344,14 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbClusterId This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -318,12 +361,20 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
             this.props.autoAddNewNodes(autoAddNewNodes);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param autoAddNewNodes This parameter is required.
+         */
+        public Builder autoAddNewNodes(final com.aliyun.ros.cdk.core.IResolvable autoAddNewNodes) {
+            this.props.autoAddNewNodes(autoAddNewNodes);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param endpointConfig This parameter is required.
          */
-        public Builder endpointConfig(final com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
+        public Builder endpointConfig(final com.aliyun.ros.cdk.core.IResolvable endpointConfig) {
             this.props.endpointConfig(endpointConfig);
             return this;
         }
@@ -331,7 +382,7 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param endpointConfig This parameter is required.
          */
-        public Builder endpointConfig(final com.aliyun.ros.cdk.core.IResolvable endpointConfig) {
+        public Builder endpointConfig(final com.aliyun.ros.cdk.polardb.RosDBClusterEndpoint.EndpointConfigProperty endpointConfig) {
             this.props.endpointConfig(endpointConfig);
             return this;
         }
@@ -341,6 +392,14 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          * @param endpointType This parameter is required.
          */
         public Builder endpointType(final java.lang.String endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param endpointType This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
             this.props.endpointType(endpointType);
             return this;
         }
@@ -367,6 +426,14 @@ public class RosDBClusterEndpoint extends com.aliyun.ros.cdk.core.RosResource {
          * @param readWriteMode This parameter is required.
          */
         public Builder readWriteMode(final java.lang.String readWriteMode) {
+            this.props.readWriteMode(readWriteMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param readWriteMode This parameter is required.
+         */
+        public Builder readWriteMode(final com.aliyun.ros.cdk.core.IResolvable readWriteMode) {
             this.props.readWriteMode(readWriteMode);
             return this;
         }

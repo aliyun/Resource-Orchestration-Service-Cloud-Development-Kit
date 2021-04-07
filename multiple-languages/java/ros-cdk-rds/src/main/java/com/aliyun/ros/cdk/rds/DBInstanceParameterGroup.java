@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::DBInstanceParameterGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.910Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceParameterGroup")
 public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBInstanceParameterGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceParameterGroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceParameterGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBInstanceParameterGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceParameterGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.rds.DBInstanceParameterGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,25 +83,41 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbInstanceId: Database InstanceId to update properties.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceId This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Database InstanceId to update properties. This parameter is required.
          */
         public Builder dbInstanceId(final java.lang.String dbInstanceId) {
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
+        /**
+         * Property dbInstanceId: Database InstanceId to update properties.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceId Property dbInstanceId: Database InstanceId to update properties. This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
 
         /**
+         * Property parameters: Parameters to update for selected database instance.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: Parameters to update for selected database instance. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
         /**
+         * Property parameters: Parameters to update for selected database instance.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: Parameters to update for selected database instance. This parameter is required.
          */
         public Builder parameters(final java.util.List<? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
@@ -101,10 +125,22 @@ public class DBInstanceParameterGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property forcerestart: whether restart database instance.
+         * <p>
          * @return {@code this}
-         * @param forcerestart This parameter is required.
+         * @param forcerestart Property forcerestart: whether restart database instance. This parameter is required.
          */
         public Builder forcerestart(final java.lang.String forcerestart) {
+            this.props.forcerestart(forcerestart);
+            return this;
+        }
+        /**
+         * Property forcerestart: whether restart database instance.
+         * <p>
+         * @return {@code this}
+         * @param forcerestart Property forcerestart: whether restart database instance. This parameter is required.
+         */
+        public Builder forcerestart(final com.aliyun.ros.cdk.core.IResolvable forcerestart) {
             this.props.forcerestart(forcerestart);
             return this;
         }

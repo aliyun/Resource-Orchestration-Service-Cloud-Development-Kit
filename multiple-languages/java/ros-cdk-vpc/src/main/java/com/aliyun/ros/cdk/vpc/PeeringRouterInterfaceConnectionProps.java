@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.451Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PeeringRouterInterfaceConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(PeeringRouterInterfaceConnectionProps.Jsii$Proxy.class)
 public interface PeeringRouterInterfaceConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOppositeInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOppositeInterfaceId();
 
     /**
+     * Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouterInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouterInterfaceId();
 
     /**
      * @return a {@link Builder} of {@link PeeringRouterInterfaceConnectionProps}
@@ -26,12 +28,12 @@ public interface PeeringRouterInterfaceConnectionProps extends software.amazon.j
      * A builder for {@link PeeringRouterInterfaceConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<PeeringRouterInterfaceConnectionProps> {
-        private java.lang.String oppositeInterfaceId;
-        private java.lang.String routerInterfaceId;
+        private java.lang.Object oppositeInterfaceId;
+        private java.lang.Object routerInterfaceId;
 
         /**
          * Sets the value of {@link PeeringRouterInterfaceConnectionProps#getOppositeInterfaceId}
-         * @param oppositeInterfaceId the value to be set. This parameter is required.
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface. This parameter is required.
          * @return {@code this}
          */
         public Builder oppositeInterfaceId(java.lang.String oppositeInterfaceId) {
@@ -40,11 +42,31 @@ public interface PeeringRouterInterfaceConnectionProps extends software.amazon.j
         }
 
         /**
+         * Sets the value of {@link PeeringRouterInterfaceConnectionProps#getOppositeInterfaceId}
+         * @param oppositeInterfaceId Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder oppositeInterfaceId(com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.oppositeInterfaceId = oppositeInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PeeringRouterInterfaceConnectionProps#getRouterInterfaceId}
-         * @param routerInterfaceId the value to be set. This parameter is required.
+         * @param routerInterfaceId Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface. This parameter is required.
          * @return {@code this}
          */
         public Builder routerInterfaceId(java.lang.String routerInterfaceId) {
+            this.routerInterfaceId = routerInterfaceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PeeringRouterInterfaceConnectionProps#getRouterInterfaceId}
+         * @param routerInterfaceId Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routerInterfaceId(com.aliyun.ros.cdk.core.IResolvable routerInterfaceId) {
             this.routerInterfaceId = routerInterfaceId;
             return this;
         }
@@ -65,8 +87,8 @@ public interface PeeringRouterInterfaceConnectionProps extends software.amazon.j
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements PeeringRouterInterfaceConnectionProps {
-        private final java.lang.String oppositeInterfaceId;
-        private final java.lang.String routerInterfaceId;
+        private final java.lang.Object oppositeInterfaceId;
+        private final java.lang.Object routerInterfaceId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface PeeringRouterInterfaceConnectionProps extends software.amazon.j
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routerInterfaceId = software.amazon.jsii.Kernel.get(this, "routerInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.oppositeInterfaceId = software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routerInterfaceId = software.amazon.jsii.Kernel.get(this, "routerInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String oppositeInterfaceId, final java.lang.String routerInterfaceId) {
+        protected Jsii$Proxy(final java.lang.Object oppositeInterfaceId, final java.lang.Object routerInterfaceId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.oppositeInterfaceId = java.util.Objects.requireNonNull(oppositeInterfaceId, "oppositeInterfaceId is required");
             this.routerInterfaceId = java.util.Objects.requireNonNull(routerInterfaceId, "routerInterfaceId is required");
         }
 
         @Override
-        public final java.lang.String getOppositeInterfaceId() {
+        public final java.lang.Object getOppositeInterfaceId() {
             return this.oppositeInterfaceId;
         }
 
         @Override
-        public final java.lang.String getRouterInterfaceId() {
+        public final java.lang.Object getRouterInterfaceId() {
             return this.routerInterfaceId;
         }
 

@@ -9,22 +9,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
     public interface ISignatureProps
     {
         /// <summary>Property signatureKey: The key of the signature.</summary>
-        [JsiiProperty(name: "signatureKey", typeJson: "{\"primitive\":\"string\"}")]
-        string SignatureKey
+        [JsiiProperty(name: "signatureKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SignatureKey
         {
             get;
         }
 
         /// <summary>Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-        [JsiiProperty(name: "signatureName", typeJson: "{\"primitive\":\"string\"}")]
-        string SignatureName
+        [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SignatureName
         {
             get;
         }
 
         /// <summary>Property signatureSecret: The secret of the signature.</summary>
-        [JsiiProperty(name: "signatureSecret", typeJson: "{\"primitive\":\"string\"}")]
-        string SignatureSecret
+        [JsiiProperty(name: "signatureSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SignatureSecret
         {
             get;
         }
@@ -38,24 +38,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
 
             /// <summary>Property signatureKey: The key of the signature.</summary>
-            [JsiiProperty(name: "signatureKey", typeJson: "{\"primitive\":\"string\"}")]
-            public string SignatureKey
+            [JsiiProperty(name: "signatureKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SignatureKey
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.</summary>
-            [JsiiProperty(name: "signatureName", typeJson: "{\"primitive\":\"string\"}")]
-            public string SignatureName
+            [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SignatureName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property signatureSecret: The secret of the signature.</summary>
-            [JsiiProperty(name: "signatureSecret", typeJson: "{\"primitive\":\"string\"}")]
-            public string SignatureSecret
+            [JsiiProperty(name: "signatureSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SignatureSecret
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

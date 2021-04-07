@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <summary>Attribute AccessRuleId: Rule serial number.</summary>
-        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAccessRuleId
+        [JsiiProperty(name: "attrAccessRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAccessRuleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,186 +3,244 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::LaunchTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.LaunchTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(LaunchTemplateProps.Jsii$Proxy.class)
 public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property launchTemplateName: The name of launch template.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLaunchTemplateName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLaunchTemplateName();
 
     /**
+     * Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time.
+     * <p>
+     * format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAutoReleaseTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
         return null;
     }
 
     /**
+     * Property description: Description of the instance, [2, 256] characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property diskMappings: Disk mappings to attach to instance.
+     * <p>
+     * Max support 16 disks.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskMappings() {
         return null;
     }
 
     /**
+     * Property hostName: Host name of created ecs instance.
+     * <p>
+     * at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHostName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHostName() {
         return null;
     }
 
     /**
+     * Property imageId: Image ID to create ecs instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
     }
 
     /**
+     * Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
+     * Property instanceType: Ecs instance supported instance type, make sure it should be correct.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
     }
 
     /**
+     * Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
+     * Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second).
+     * <p>
+     * The range is [1,200].
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
         return null;
     }
 
     /**
+     * Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second).
+     * <p>
+     * Range is [0,200].While the property is not 0, public ip will be assigned for instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
     /**
+     * Property ioOptimized: The 'optimized' instance can provide better IO performance.
+     * <p>
+     * Support 'none' and 'optimized' only.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIoOptimized() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
         return null;
     }
 
     /**
+     * Property keyPairName: SSH key pair name.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
         return null;
     }
 
     /**
+     * Property networkInterfaces: Elastic network interfaces to be attached to instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaces() {
         return null;
     }
 
     /**
+     * Property networkType: Instance network type.
+     * <p>
+     * Support 'vpc' and 'classic'
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkType() {
         return null;
     }
 
     /**
+     * Property ramRoleName: Instance RAM role name.
+     * <p>
+     * The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
         return null;
     }
 
     /**
+     * Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive".
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityEnhancementStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityEnhancementStrategy() {
         return null;
     }
 
     /**
+     * Property securityGroupId: Security group to create ecs instance.
+     * <p>
+     * For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
+     * Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+     * <p>
+     * Three decimals is allowed at most.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotPriceLimit() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
         return null;
     }
 
     /**
+     * Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+     * <p>
+     * Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
         return null;
     }
 
     /**
+     * Property systemDiskCategory: Category of system disk.
+     * <p>
+     * support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
         return null;
     }
 
     /**
+     * Property systemDiskDescription: Description of created system disk.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
         return null;
     }
 
     /**
+     * Property systemDiskDiskName: Name of created system disk.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDiskName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDiskName() {
         return null;
     }
 
     /**
+     * Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB.
+     * <p>
+     * If you specify with your own image, make sure the system disk size bigger than image size.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSystemDiskSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance, security group, disk and network interface.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property templateTags: Template tags to attach to launch template.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateTags() {
         return null;
     }
 
     /**
+     * Property userData: User data to pass to instance.
+     * <p>
+     * [1, 16KB] characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getUserData() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
     }
 
     /**
+     * Property versionDescription: Description for version 1 of launch template.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVersionDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVersionDescription() {
         return null;
     }
 
     /**
+     * Property vSwitchId: The vSwitch Id to create ecs instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
+     * Property zoneId: Current zone to create the instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -196,40 +254,40 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link LaunchTemplateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LaunchTemplateProps> {
-        private java.lang.String launchTemplateName;
-        private java.lang.String autoReleaseTime;
-        private java.lang.String description;
+        private java.lang.Object launchTemplateName;
+        private java.lang.Object autoReleaseTime;
+        private java.lang.Object description;
         private java.lang.Object diskMappings;
-        private java.lang.String hostName;
-        private java.lang.String imageId;
-        private java.lang.String instanceName;
-        private java.lang.String instanceType;
-        private java.lang.String internetChargeType;
-        private java.lang.Number internetMaxBandwidthIn;
-        private java.lang.Number internetMaxBandwidthOut;
-        private java.lang.String ioOptimized;
-        private java.lang.String keyPairName;
+        private java.lang.Object hostName;
+        private java.lang.Object imageId;
+        private java.lang.Object instanceName;
+        private java.lang.Object instanceType;
+        private java.lang.Object internetChargeType;
+        private java.lang.Object internetMaxBandwidthIn;
+        private java.lang.Object internetMaxBandwidthOut;
+        private java.lang.Object ioOptimized;
+        private java.lang.Object keyPairName;
         private java.lang.Object networkInterfaces;
-        private java.lang.String networkType;
-        private java.lang.String ramRoleName;
-        private java.lang.String securityEnhancementStrategy;
-        private java.lang.String securityGroupId;
-        private java.lang.String spotPriceLimit;
-        private java.lang.String spotStrategy;
-        private java.lang.String systemDiskCategory;
-        private java.lang.String systemDiskDescription;
-        private java.lang.String systemDiskDiskName;
-        private java.lang.Number systemDiskSize;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object networkType;
+        private java.lang.Object ramRoleName;
+        private java.lang.Object securityEnhancementStrategy;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object spotPriceLimit;
+        private java.lang.Object spotStrategy;
+        private java.lang.Object systemDiskCategory;
+        private java.lang.Object systemDiskDescription;
+        private java.lang.Object systemDiskDiskName;
+        private java.lang.Object systemDiskSize;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
         private java.lang.Object templateTags;
-        private java.lang.String userData;
-        private java.lang.String versionDescription;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object userData;
+        private java.lang.Object versionDescription;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getLaunchTemplateName}
-         * @param launchTemplateName the value to be set. This parameter is required.
+         * @param launchTemplateName Property launchTemplateName: The name of launch template. This parameter is required.
          * @return {@code this}
          */
         public Builder launchTemplateName(java.lang.String launchTemplateName) {
@@ -238,8 +296,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getLaunchTemplateName}
+         * @param launchTemplateName Property launchTemplateName: The name of launch template. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder launchTemplateName(com.aliyun.ros.cdk.core.IResolvable launchTemplateName) {
+            this.launchTemplateName = launchTemplateName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getAutoReleaseTime}
-         * @param autoReleaseTime the value to be set.
+         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time.
+         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
          * @return {@code this}
          */
         public Builder autoReleaseTime(java.lang.String autoReleaseTime) {
@@ -248,8 +317,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getAutoReleaseTime}
+         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created instance, Follow ISO8601 standard using UTC time.
+         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * @return {@code this}
+         */
+        public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
+            this.autoReleaseTime = autoReleaseTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the instance, [2, 256] characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -258,8 +338,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getDescription}
+         * @param description Property description: Description of the instance, [2, 256] characters.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getDiskMappings}
-         * @param diskMappings the value to be set.
+         * @param diskMappings Property diskMappings: Disk mappings to attach to instance.
+         *                     Max support 16 disks.
          * @return {@code this}
          */
         public Builder diskMappings(com.aliyun.ros.cdk.core.IResolvable diskMappings) {
@@ -269,7 +360,8 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getDiskMappings}
-         * @param diskMappings the value to be set.
+         * @param diskMappings Property diskMappings: Disk mappings to attach to instance.
+         *                     Max support 16 disks.
          * @return {@code this}
          */
         public Builder diskMappings(java.util.List<? extends java.lang.Object> diskMappings) {
@@ -279,7 +371,8 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getHostName}
-         * @param hostName the value to be set.
+         * @param hostName Property hostName: Host name of created ecs instance.
+         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
          * @return {@code this}
          */
         public Builder hostName(java.lang.String hostName) {
@@ -288,8 +381,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getHostName}
+         * @param hostName Property hostName: Host name of created ecs instance.
+         *                 at least 2 characters, and '.' '-' Is not the first and last characters as hostname, not continuous use. Windows platform can be up to 15 characters, allowing letters (without limiting case), numbers and '-', and does not support the number of points, not all is digital ('.').Other (Linux, etc.) platform up to 30 characters, allowing support number multiple points for the period between the points, each permit letters (without limiting case), numbers and '-' components.
+         * @return {@code this}
+         */
+        public Builder hostName(com.aliyun.ros.cdk.core.IResolvable hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getImageId}
-         * @param imageId the value to be set.
+         * @param imageId Property imageId: Image ID to create ecs instance.
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -298,8 +402,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getImageId}
+         * @param imageId Property imageId: Image ID to create ecs instance.
+         * @return {@code this}
+         */
+        public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
+            this.imageId = imageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getInstanceName}
-         * @param instanceName the value to be set.
+         * @param instanceName Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -308,8 +422,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getInstanceName}
+         * @param instanceName Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getInstanceType}
-         * @param instanceType the value to be set.
+         * @param instanceType Property instanceType: Ecs instance supported instance type, make sure it should be correct.
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
@@ -318,8 +442,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getInstanceType}
+         * @param instanceType Property instanceType: Ecs instance supported instance type, make sure it should be correct.
+         * @return {@code this}
+         */
+        public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.instanceType = instanceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getInternetChargeType}
-         * @param internetChargeType the value to be set.
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -328,8 +462,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getInternetChargeType}
+         * @param internetChargeType Property internetChargeType: Instance internet access charge type.Support 'PayByBandwidth' and 'PayByTraffic' only.
+         * @return {@code this}
+         */
+        public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getInternetMaxBandwidthIn}
-         * @param internetMaxBandwidthIn the value to be set.
+         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second).
+         *                               The range is [1,200].
          * @return {@code this}
          */
         public Builder internetMaxBandwidthIn(java.lang.Number internetMaxBandwidthIn) {
@@ -338,8 +483,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getInternetMaxBandwidthIn}
+         * @param internetMaxBandwidthIn Property internetMaxBandwidthIn: Max internet in bandwidth in Mbps(Mega bit per second).
+         *                               The range is [1,200].
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthIn(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
+            this.internetMaxBandwidthIn = internetMaxBandwidthIn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut the value to be set.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second).
+         *                                Range is [0,200].While the property is not 0, public ip will be assigned for instance.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
@@ -348,8 +505,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getInternetMaxBandwidthOut}
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Max internet out bandwidth in Mbps(Mega bit per second).
+         *                                Range is [0,200].While the property is not 0, public ip will be assigned for instance.
+         * @return {@code this}
+         */
+        public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+            this.internetMaxBandwidthOut = internetMaxBandwidthOut;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getIoOptimized}
-         * @param ioOptimized the value to be set.
+         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         *                    Support 'none' and 'optimized' only.
          * @return {@code this}
          */
         public Builder ioOptimized(java.lang.String ioOptimized) {
@@ -358,8 +527,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getIoOptimized}
+         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
+         *                    Support 'none' and 'optimized' only.
+         * @return {@code this}
+         */
+        public Builder ioOptimized(com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
+            this.ioOptimized = ioOptimized;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getKeyPairName}
-         * @param keyPairName the value to be set.
+         * @param keyPairName Property keyPairName: SSH key pair name.
          * @return {@code this}
          */
         public Builder keyPairName(java.lang.String keyPairName) {
@@ -368,8 +548,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getKeyPairName}
+         * @param keyPairName Property keyPairName: SSH key pair name.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getNetworkInterfaces}
-         * @param networkInterfaces the value to be set.
+         * @param networkInterfaces Property networkInterfaces: Elastic network interfaces to be attached to instance.
          * @return {@code this}
          */
         public Builder networkInterfaces(com.aliyun.ros.cdk.core.IResolvable networkInterfaces) {
@@ -379,7 +569,7 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getNetworkInterfaces}
-         * @param networkInterfaces the value to be set.
+         * @param networkInterfaces Property networkInterfaces: Elastic network interfaces to be attached to instance.
          * @return {@code this}
          */
         public Builder networkInterfaces(java.util.List<? extends java.lang.Object> networkInterfaces) {
@@ -389,7 +579,8 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getNetworkType}
-         * @param networkType the value to be set.
+         * @param networkType Property networkType: Instance network type.
+         *                    Support 'vpc' and 'classic'
          * @return {@code this}
          */
         public Builder networkType(java.lang.String networkType) {
@@ -398,8 +589,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getNetworkType}
+         * @param networkType Property networkType: Instance network type.
+         *                    Support 'vpc' and 'classic'
+         * @return {@code this}
+         */
+        public Builder networkType(com.aliyun.ros.cdk.core.IResolvable networkType) {
+            this.networkType = networkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getRamRoleName}
-         * @param ramRoleName the value to be set.
+         * @param ramRoleName Property ramRoleName: Instance RAM role name.
+         *                    The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
          * @return {@code this}
          */
         public Builder ramRoleName(java.lang.String ramRoleName) {
@@ -408,8 +611,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getRamRoleName}
+         * @param ramRoleName Property ramRoleName: Instance RAM role name.
+         *                    The name is provided and maintained by Resource Access Management (RAM) and can be queried using ListRoles. For more information, see RAM API CreateRole and ListRoles.
+         * @return {@code this}
+         */
+        public Builder ramRoleName(com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.ramRoleName = ramRoleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSecurityEnhancementStrategy}
-         * @param securityEnhancementStrategy the value to be set.
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive".
          * @return {@code this}
          */
         public Builder securityEnhancementStrategy(java.lang.String securityEnhancementStrategy) {
@@ -418,8 +632,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSecurityEnhancementStrategy}
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Activate or deactivate security enhancement,Value range: "Active" and "Deactive".
+         * @return {@code this}
+         */
+        public Builder securityEnhancementStrategy(com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
+            this.securityEnhancementStrategy = securityEnhancementStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set.
+         * @param securityGroupId Property securityGroupId: Security group to create ecs instance.
+         *                        For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
@@ -428,8 +653,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: Security group to create ecs instance.
+         *                        For classic instance need the security group not belong to VPC, for VPC instance, please make sure the security group belong to specified VPC.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSpotPriceLimit}
-         * @param spotPriceLimit the value to be set.
+         * @param spotPriceLimit Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+         *                       Three decimals is allowed at most.
          * @return {@code this}
          */
         public Builder spotPriceLimit(java.lang.String spotPriceLimit) {
@@ -438,8 +675,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSpotPriceLimit}
+         * @param spotPriceLimit Property spotPriceLimit: The hourly price threshold of a instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+         *                       Three decimals is allowed at most.
+         * @return {@code this}
+         */
+        public Builder spotPriceLimit(com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
+            this.spotPriceLimit = spotPriceLimit;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSpotStrategy}
-         * @param spotStrategy the value to be set.
+         * @param spotStrategy Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+         *                     Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "
          * @return {@code this}
          */
         public Builder spotStrategy(java.lang.String spotStrategy) {
@@ -448,8 +697,20 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSpotStrategy}
+         * @param spotStrategy Property spotStrategy: The spot strategy of a Pay-As-You-Go instance, and it takes effect only when parameter InstanceChargeType is PostPaid.
+         *                     Value range: "NoSpot: A regular Pay-As-You-Go instance", "SpotWithPriceLimit: A price threshold for a spot instance, ""SpotAsPriceGo: A price that is based on the highest Pay-As-You-Go instance. "
+         * @return {@code this}
+         */
+        public Builder spotStrategy(com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
+            this.spotStrategy = spotStrategy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSystemDiskCategory}
-         * @param systemDiskCategory the value to be set.
+         * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
+         *                           support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
          * @return {@code this}
          */
         public Builder systemDiskCategory(java.lang.String systemDiskCategory) {
@@ -458,8 +719,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSystemDiskCategory}
+         * @param systemDiskCategory Property systemDiskCategory: Category of system disk.
+         *                           support cloud|cloud_efficiency|cloud_ssd|cloud_essd|ephemeral_ssd
+         * @return {@code this}
+         */
+        public Builder systemDiskCategory(com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
+            this.systemDiskCategory = systemDiskCategory;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSystemDiskDescription}
-         * @param systemDiskDescription the value to be set.
+         * @param systemDiskDescription Property systemDiskDescription: Description of created system disk.
          * @return {@code this}
          */
         public Builder systemDiskDescription(java.lang.String systemDiskDescription) {
@@ -468,8 +740,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSystemDiskDescription}
+         * @param systemDiskDescription Property systemDiskDescription: Description of created system disk.
+         * @return {@code this}
+         */
+        public Builder systemDiskDescription(com.aliyun.ros.cdk.core.IResolvable systemDiskDescription) {
+            this.systemDiskDescription = systemDiskDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSystemDiskDiskName}
-         * @param systemDiskDiskName the value to be set.
+         * @param systemDiskDiskName Property systemDiskDiskName: Name of created system disk.
          * @return {@code this}
          */
         public Builder systemDiskDiskName(java.lang.String systemDiskDiskName) {
@@ -478,8 +760,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSystemDiskDiskName}
+         * @param systemDiskDiskName Property systemDiskDiskName: Name of created system disk.
+         * @return {@code this}
+         */
+        public Builder systemDiskDiskName(com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
+            this.systemDiskDiskName = systemDiskDiskName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getSystemDiskSize}
-         * @param systemDiskSize the value to be set.
+         * @param systemDiskSize Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB.
+         *                       If you specify with your own image, make sure the system disk size bigger than image size.
          * @return {@code this}
          */
         public Builder systemDiskSize(java.lang.Number systemDiskSize) {
@@ -488,19 +781,30 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getSystemDiskSize}
+         * @param systemDiskSize Property systemDiskSize: Disk size of the system disk, range from 20 to 500 GB.
+         *                       If you specify with your own image, make sure the system disk size bigger than image size.
+         * @return {@code this}
+         */
+        public Builder systemDiskSize(com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
+            this.systemDiskSize = systemDiskSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to instance, security group, disk and network interface.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getTemplateTags}
-         * @param templateTags the value to be set.
+         * @param templateTags Property templateTags: Template tags to attach to launch template.
          * @return {@code this}
          */
         public Builder templateTags(com.aliyun.ros.cdk.core.IResolvable templateTags) {
@@ -510,7 +814,7 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getTemplateTags}
-         * @param templateTags the value to be set.
+         * @param templateTags Property templateTags: Template tags to attach to launch template.
          * @return {@code this}
          */
         public Builder templateTags(java.util.List<? extends java.lang.Object> templateTags) {
@@ -520,7 +824,8 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link LaunchTemplateProps#getUserData}
-         * @param userData the value to be set.
+         * @param userData Property userData: User data to pass to instance.
+         *                 [1, 16KB] characters.
          * @return {@code this}
          */
         public Builder userData(java.lang.String userData) {
@@ -529,8 +834,19 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getUserData}
+         * @param userData Property userData: User data to pass to instance.
+         *                 [1, 16KB] characters.
+         * @return {@code this}
+         */
+        public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
+            this.userData = userData;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getVersionDescription}
-         * @param versionDescription the value to be set.
+         * @param versionDescription Property versionDescription: Description for version 1 of launch template.
          * @return {@code this}
          */
         public Builder versionDescription(java.lang.String versionDescription) {
@@ -539,8 +855,18 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getVersionDescription}
+         * @param versionDescription Property versionDescription: Description for version 1 of launch template.
+         * @return {@code this}
+         */
+        public Builder versionDescription(com.aliyun.ros.cdk.core.IResolvable versionDescription) {
+            this.versionDescription = versionDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -549,11 +875,31 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link LaunchTemplateProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LaunchTemplateProps#getZoneId}
-         * @param zoneId the value to be set.
+         * @param zoneId Property zoneId: Current zone to create the instance.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LaunchTemplateProps#getZoneId}
+         * @param zoneId Property zoneId: Current zone to create the instance.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -574,36 +920,36 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LaunchTemplateProps {
-        private final java.lang.String launchTemplateName;
-        private final java.lang.String autoReleaseTime;
-        private final java.lang.String description;
+        private final java.lang.Object launchTemplateName;
+        private final java.lang.Object autoReleaseTime;
+        private final java.lang.Object description;
         private final java.lang.Object diskMappings;
-        private final java.lang.String hostName;
-        private final java.lang.String imageId;
-        private final java.lang.String instanceName;
-        private final java.lang.String instanceType;
-        private final java.lang.String internetChargeType;
-        private final java.lang.Number internetMaxBandwidthIn;
-        private final java.lang.Number internetMaxBandwidthOut;
-        private final java.lang.String ioOptimized;
-        private final java.lang.String keyPairName;
+        private final java.lang.Object hostName;
+        private final java.lang.Object imageId;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object instanceType;
+        private final java.lang.Object internetChargeType;
+        private final java.lang.Object internetMaxBandwidthIn;
+        private final java.lang.Object internetMaxBandwidthOut;
+        private final java.lang.Object ioOptimized;
+        private final java.lang.Object keyPairName;
         private final java.lang.Object networkInterfaces;
-        private final java.lang.String networkType;
-        private final java.lang.String ramRoleName;
-        private final java.lang.String securityEnhancementStrategy;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String spotPriceLimit;
-        private final java.lang.String spotStrategy;
-        private final java.lang.String systemDiskCategory;
-        private final java.lang.String systemDiskDescription;
-        private final java.lang.String systemDiskDiskName;
-        private final java.lang.Number systemDiskSize;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object networkType;
+        private final java.lang.Object ramRoleName;
+        private final java.lang.Object securityEnhancementStrategy;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object spotPriceLimit;
+        private final java.lang.Object spotStrategy;
+        private final java.lang.Object systemDiskCategory;
+        private final java.lang.Object systemDiskDescription;
+        private final java.lang.Object systemDiskDiskName;
+        private final java.lang.Object systemDiskSize;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags;
         private final java.lang.Object templateTags;
-        private final java.lang.String userData;
-        private final java.lang.String versionDescription;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object userData;
+        private final java.lang.Object versionDescription;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -611,43 +957,43 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.launchTemplateName = software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoReleaseTime = software.amazon.jsii.Kernel.get(this, "autoReleaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskMappings = software.amazon.jsii.Kernel.get(this, "diskMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.hostName = software.amazon.jsii.Kernel.get(this, "hostName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageId = software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthIn = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetMaxBandwidthOut = software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ioOptimized = software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaces = software.amazon.jsii.Kernel.get(this, "networkInterfaces", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ramRoleName = software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityEnhancementStrategy = software.amazon.jsii.Kernel.get(this, "securityEnhancementStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotPriceLimit = software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.spotStrategy = software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskCategory = software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDescription = software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskDiskName = software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.systemDiskSize = software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty.class)));
             this.templateTags = software.amazon.jsii.Kernel.get(this, "templateTags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.versionDescription = software.amazon.jsii.Kernel.get(this, "versionDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.userData = software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.versionDescription = software.amazon.jsii.Kernel.get(this, "versionDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String launchTemplateName, final java.lang.String autoReleaseTime, final java.lang.String description, final java.lang.Object diskMappings, final java.lang.String hostName, final java.lang.String imageId, final java.lang.String instanceName, final java.lang.String instanceType, final java.lang.String internetChargeType, final java.lang.Number internetMaxBandwidthIn, final java.lang.Number internetMaxBandwidthOut, final java.lang.String ioOptimized, final java.lang.String keyPairName, final java.lang.Object networkInterfaces, final java.lang.String networkType, final java.lang.String ramRoleName, final java.lang.String securityEnhancementStrategy, final java.lang.String securityGroupId, final java.lang.String spotPriceLimit, final java.lang.String spotStrategy, final java.lang.String systemDiskCategory, final java.lang.String systemDiskDescription, final java.lang.String systemDiskDiskName, final java.lang.Number systemDiskSize, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.Object templateTags, final java.lang.String userData, final java.lang.String versionDescription, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object launchTemplateName, final java.lang.Object autoReleaseTime, final java.lang.Object description, final java.lang.Object diskMappings, final java.lang.Object hostName, final java.lang.Object imageId, final java.lang.Object instanceName, final java.lang.Object instanceType, final java.lang.Object internetChargeType, final java.lang.Object internetMaxBandwidthIn, final java.lang.Object internetMaxBandwidthOut, final java.lang.Object ioOptimized, final java.lang.Object keyPairName, final java.lang.Object networkInterfaces, final java.lang.Object networkType, final java.lang.Object ramRoleName, final java.lang.Object securityEnhancementStrategy, final java.lang.Object securityGroupId, final java.lang.Object spotPriceLimit, final java.lang.Object spotStrategy, final java.lang.Object systemDiskCategory, final java.lang.Object systemDiskDescription, final java.lang.Object systemDiskDiskName, final java.lang.Object systemDiskSize, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> tags, final java.lang.Object templateTags, final java.lang.Object userData, final java.lang.Object versionDescription, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.launchTemplateName = java.util.Objects.requireNonNull(launchTemplateName, "launchTemplateName is required");
             this.autoReleaseTime = autoReleaseTime;
@@ -673,7 +1019,7 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
             this.systemDiskDescription = systemDiskDescription;
             this.systemDiskDiskName = systemDiskDiskName;
             this.systemDiskSize = systemDiskSize;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty>)tags;
             this.templateTags = templateTags;
             this.userData = userData;
             this.versionDescription = versionDescription;
@@ -682,17 +1028,17 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateName() {
+        public final java.lang.Object getLaunchTemplateName() {
             return this.launchTemplateName;
         }
 
         @Override
-        public final java.lang.String getAutoReleaseTime() {
+        public final java.lang.Object getAutoReleaseTime() {
             return this.autoReleaseTime;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -702,47 +1048,47 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getHostName() {
+        public final java.lang.Object getHostName() {
             return this.hostName;
         }
 
         @Override
-        public final java.lang.String getImageId() {
+        public final java.lang.Object getImageId() {
             return this.imageId;
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getInstanceType() {
+        public final java.lang.Object getInstanceType() {
             return this.instanceType;
         }
 
         @Override
-        public final java.lang.String getInternetChargeType() {
+        public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthIn() {
+        public final java.lang.Object getInternetMaxBandwidthIn() {
             return this.internetMaxBandwidthIn;
         }
 
         @Override
-        public final java.lang.Number getInternetMaxBandwidthOut() {
+        public final java.lang.Object getInternetMaxBandwidthOut() {
             return this.internetMaxBandwidthOut;
         }
 
         @Override
-        public final java.lang.String getIoOptimized() {
+        public final java.lang.Object getIoOptimized() {
             return this.ioOptimized;
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 
@@ -752,57 +1098,57 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getNetworkType() {
+        public final java.lang.Object getNetworkType() {
             return this.networkType;
         }
 
         @Override
-        public final java.lang.String getRamRoleName() {
+        public final java.lang.Object getRamRoleName() {
             return this.ramRoleName;
         }
 
         @Override
-        public final java.lang.String getSecurityEnhancementStrategy() {
+        public final java.lang.Object getSecurityEnhancementStrategy() {
             return this.securityEnhancementStrategy;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSpotPriceLimit() {
+        public final java.lang.Object getSpotPriceLimit() {
             return this.spotPriceLimit;
         }
 
         @Override
-        public final java.lang.String getSpotStrategy() {
+        public final java.lang.Object getSpotStrategy() {
             return this.spotStrategy;
         }
 
         @Override
-        public final java.lang.String getSystemDiskCategory() {
+        public final java.lang.Object getSystemDiskCategory() {
             return this.systemDiskCategory;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDescription() {
+        public final java.lang.Object getSystemDiskDescription() {
             return this.systemDiskDescription;
         }
 
         @Override
-        public final java.lang.String getSystemDiskDiskName() {
+        public final java.lang.Object getSystemDiskDiskName() {
             return this.systemDiskDiskName;
         }
 
         @Override
-        public final java.lang.Number getSystemDiskSize() {
+        public final java.lang.Object getSystemDiskSize() {
             return this.systemDiskSize;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosLaunchTemplate.TagsProperty> getTags() {
             return this.tags;
         }
 
@@ -812,22 +1158,22 @@ public interface LaunchTemplateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getUserData() {
+        public final java.lang.Object getUserData() {
             return this.userData;
         }
 
         @Override
-        public final java.lang.String getVersionDescription() {
+        public final java.lang.Object getVersionDescription() {
             return this.versionDescription;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

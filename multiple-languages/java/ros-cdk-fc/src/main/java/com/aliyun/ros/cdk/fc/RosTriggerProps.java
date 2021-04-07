@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Trigger`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.957Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosTriggerProps")
 @software.amazon.jsii.Jsii.Proxy(RosTriggerProps.Jsii$Proxy.class)
 public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFunctionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
      */
@@ -22,27 +22,27 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTriggerName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTriggerName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTriggerType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTriggerType();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInvocationRole() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInvocationRole() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getQualifier() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQualifier() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSourceArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceArn() {
         return null;
     }
 
@@ -56,14 +56,14 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTriggerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTriggerProps> {
-        private java.lang.String functionName;
-        private java.lang.String serviceName;
+        private java.lang.Object functionName;
+        private java.lang.Object serviceName;
         private java.lang.Object triggerConfig;
-        private java.lang.String triggerName;
-        private java.lang.String triggerType;
-        private java.lang.String invocationRole;
-        private java.lang.String qualifier;
-        private java.lang.String sourceArn;
+        private java.lang.Object triggerName;
+        private java.lang.Object triggerType;
+        private java.lang.Object invocationRole;
+        private java.lang.Object qualifier;
+        private java.lang.Object sourceArn;
 
         /**
          * Sets the value of {@link RosTriggerProps#getFunctionName}
@@ -76,11 +76,31 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTriggerProps#getFunctionName}
+         * @param functionName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
+            this.functionName = functionName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTriggerProps#getServiceName}
          * @param serviceName the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTriggerProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.serviceName = serviceName;
             return this;
         }
@@ -116,11 +136,31 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTriggerProps#getTriggerName}
+         * @param triggerName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder triggerName(com.aliyun.ros.cdk.core.IResolvable triggerName) {
+            this.triggerName = triggerName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTriggerProps#getTriggerType}
          * @param triggerType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder triggerType(java.lang.String triggerType) {
+            this.triggerType = triggerType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTriggerProps#getTriggerType}
+         * @param triggerType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder triggerType(com.aliyun.ros.cdk.core.IResolvable triggerType) {
             this.triggerType = triggerType;
             return this;
         }
@@ -136,6 +176,16 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTriggerProps#getInvocationRole}
+         * @param invocationRole the value to be set.
+         * @return {@code this}
+         */
+        public Builder invocationRole(com.aliyun.ros.cdk.core.IResolvable invocationRole) {
+            this.invocationRole = invocationRole;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTriggerProps#getQualifier}
          * @param qualifier the value to be set.
          * @return {@code this}
@@ -146,11 +196,31 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTriggerProps#getQualifier}
+         * @param qualifier the value to be set.
+         * @return {@code this}
+         */
+        public Builder qualifier(com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.qualifier = qualifier;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTriggerProps#getSourceArn}
          * @param sourceArn the value to be set.
          * @return {@code this}
          */
         public Builder sourceArn(java.lang.String sourceArn) {
+            this.sourceArn = sourceArn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTriggerProps#getSourceArn}
+         * @param sourceArn the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceArn(com.aliyun.ros.cdk.core.IResolvable sourceArn) {
             this.sourceArn = sourceArn;
             return this;
         }
@@ -171,14 +241,14 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTriggerProps {
-        private final java.lang.String functionName;
-        private final java.lang.String serviceName;
+        private final java.lang.Object functionName;
+        private final java.lang.Object serviceName;
         private final java.lang.Object triggerConfig;
-        private final java.lang.String triggerName;
-        private final java.lang.String triggerType;
-        private final java.lang.String invocationRole;
-        private final java.lang.String qualifier;
-        private final java.lang.String sourceArn;
+        private final java.lang.Object triggerName;
+        private final java.lang.Object triggerType;
+        private final java.lang.Object invocationRole;
+        private final java.lang.Object qualifier;
+        private final java.lang.Object sourceArn;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -186,20 +256,20 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.triggerConfig = software.amazon.jsii.Kernel.get(this, "triggerConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.triggerName = software.amazon.jsii.Kernel.get(this, "triggerName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.triggerType = software.amazon.jsii.Kernel.get(this, "triggerType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.invocationRole = software.amazon.jsii.Kernel.get(this, "invocationRole", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceArn = software.amazon.jsii.Kernel.get(this, "sourceArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.triggerName = software.amazon.jsii.Kernel.get(this, "triggerName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.triggerType = software.amazon.jsii.Kernel.get(this, "triggerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.invocationRole = software.amazon.jsii.Kernel.get(this, "invocationRole", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceArn = software.amazon.jsii.Kernel.get(this, "sourceArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String serviceName, final java.lang.Object triggerConfig, final java.lang.String triggerName, final java.lang.String triggerType, final java.lang.String invocationRole, final java.lang.String qualifier, final java.lang.String sourceArn) {
+        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object serviceName, final java.lang.Object triggerConfig, final java.lang.Object triggerName, final java.lang.Object triggerType, final java.lang.Object invocationRole, final java.lang.Object qualifier, final java.lang.Object sourceArn) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
             this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
@@ -212,12 +282,12 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getFunctionName() {
+        public final java.lang.Object getFunctionName() {
             return this.functionName;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
@@ -227,27 +297,27 @@ public interface RosTriggerProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTriggerName() {
+        public final java.lang.Object getTriggerName() {
             return this.triggerName;
         }
 
         @Override
-        public final java.lang.String getTriggerType() {
+        public final java.lang.Object getTriggerType() {
             return this.triggerType;
         }
 
         @Override
-        public final java.lang.String getInvocationRole() {
+        public final java.lang.Object getInvocationRole() {
             return this.invocationRole;
         }
 
         @Override
-        public final java.lang.String getQualifier() {
+        public final java.lang.Object getQualifier() {
             return this.qualifier;
         }
 
         @Override
-        public final java.lang.String getSourceArn() {
+        public final java.lang.Object getSourceArn() {
             return this.sourceArn;
         }
 

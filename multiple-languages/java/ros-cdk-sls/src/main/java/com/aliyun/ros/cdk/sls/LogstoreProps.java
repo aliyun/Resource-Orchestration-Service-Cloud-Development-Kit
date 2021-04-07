@@ -3,58 +3,91 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Properties for defining a `ALIYUN::SLS::Logstore`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.401Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.LogstoreProps")
 @software.amazon.jsii.Jsii.Proxy(LogstoreProps.Jsii$Proxy.class)
 public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property logstoreName: Logstore name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLogstoreName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLogstoreName();
 
     /**
+     * Property projectName: Project name: 1.
+     * <p>
+     * Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+     * 2. Must start and end with lowercase letters and numbers.
+     * 3. The name length is 3-63 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProjectName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
     /**
+     * Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
+     * <p>
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAppendMeta() {
         return null;
     }
 
     /**
+     * Property autoSplit: Whether to automatically split the shard.
+     * <p>
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSplit() {
         return null;
     }
 
     /**
+     * Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+     * <p>
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableTracking() {
         return null;
     }
 
     /**
+     * Property maxSplitShard: The maximum number of shards when splitting automatically.
+     * <p>
+     * Must be specified if AutoSplit is set to true.
+     * Allowed Values: 1-64.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaxSplitShard() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxSplitShard() {
         return null;
     }
 
     /**
+     * Property preserveStorage: Whether to keep the log permanently.
+     * <p>
+     * If set to true, TTL will be ignored.
+     * Default to false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPreserveStorage() {
         return null;
     }
 
     /**
+     * Property shardCount: The number of Shards.
+     * <p>
+     * Allowed Values: 1-100, default to 2.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getShardCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getShardCount() {
         return null;
     }
 
     /**
+     * Property ttl: The lifecycle of log in the logstore in days.
+     * <p>
+     * Allowed Values: 1-3600, default to 30.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTtl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTtl() {
         return null;
     }
 
@@ -68,19 +101,22 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link LogstoreProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<LogstoreProps> {
-        private java.lang.String logstoreName;
-        private java.lang.String projectName;
+        private java.lang.Object logstoreName;
+        private java.lang.Object projectName;
         private java.lang.Object appendMeta;
         private java.lang.Object autoSplit;
         private java.lang.Object enableTracking;
-        private java.lang.Number maxSplitShard;
+        private java.lang.Object maxSplitShard;
         private java.lang.Object preserveStorage;
-        private java.lang.Number shardCount;
-        private java.lang.Number ttl;
+        private java.lang.Object shardCount;
+        private java.lang.Object ttl;
 
         /**
          * Sets the value of {@link LogstoreProps#getLogstoreName}
-         * @param logstoreName the value to be set. This parameter is required.
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder logstoreName(java.lang.String logstoreName) {
@@ -89,8 +125,24 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getLogstoreName}
+         * @param logstoreName Property logstoreName: Logstore name: 1. This parameter is required.
+         *                     Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                     2. Must start and end with lowercase letters and numbers.
+         *                     3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder logstoreName(com.aliyun.ros.cdk.core.IResolvable logstoreName) {
+            this.logstoreName = logstoreName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getProjectName}
-         * @param projectName the value to be set. This parameter is required.
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
@@ -99,8 +151,22 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getProjectName}
+         * @param projectName Property projectName: Project name: 1. This parameter is required.
+         *                    Only supports lowercase letters, numbers, hyphens (-) and underscores (_).
+         *                    2. Must start and end with lowercase letters and numbers.
+         *                    3. The name length is 3-63 characters.
+         * @return {@code this}
+         */
+        public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
+            this.projectName = projectName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getAppendMeta}
-         * @param appendMeta the value to be set.
+         * @param appendMeta Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
+         *                   Default to false.
          * @return {@code this}
          */
         public Builder appendMeta(java.lang.Boolean appendMeta) {
@@ -110,7 +176,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getAppendMeta}
-         * @param appendMeta the value to be set.
+         * @param appendMeta Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
+         *                   Default to false.
          * @return {@code this}
          */
         public Builder appendMeta(com.aliyun.ros.cdk.core.IResolvable appendMeta) {
@@ -120,7 +187,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getAutoSplit}
-         * @param autoSplit the value to be set.
+         * @param autoSplit Property autoSplit: Whether to automatically split the shard.
+         *                  Default to false.
          * @return {@code this}
          */
         public Builder autoSplit(java.lang.Boolean autoSplit) {
@@ -130,7 +198,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getAutoSplit}
-         * @param autoSplit the value to be set.
+         * @param autoSplit Property autoSplit: Whether to automatically split the shard.
+         *                  Default to false.
          * @return {@code this}
          */
         public Builder autoSplit(com.aliyun.ros.cdk.core.IResolvable autoSplit) {
@@ -140,7 +209,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getEnableTracking}
-         * @param enableTracking the value to be set.
+         * @param enableTracking Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+         *                       Default to false.
          * @return {@code this}
          */
         public Builder enableTracking(java.lang.Boolean enableTracking) {
@@ -150,7 +220,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getEnableTracking}
-         * @param enableTracking the value to be set.
+         * @param enableTracking Property enableTracking: Whether to enable WebTracking, which supports fast capture of various browsers and iOS/Android/APP access information.
+         *                       Default to false.
          * @return {@code this}
          */
         public Builder enableTracking(com.aliyun.ros.cdk.core.IResolvable enableTracking) {
@@ -160,7 +231,9 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getMaxSplitShard}
-         * @param maxSplitShard the value to be set.
+         * @param maxSplitShard Property maxSplitShard: The maximum number of shards when splitting automatically.
+         *                      Must be specified if AutoSplit is set to true.
+         *                      Allowed Values: 1-64.
          * @return {@code this}
          */
         public Builder maxSplitShard(java.lang.Number maxSplitShard) {
@@ -169,8 +242,22 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getMaxSplitShard}
+         * @param maxSplitShard Property maxSplitShard: The maximum number of shards when splitting automatically.
+         *                      Must be specified if AutoSplit is set to true.
+         *                      Allowed Values: 1-64.
+         * @return {@code this}
+         */
+        public Builder maxSplitShard(com.aliyun.ros.cdk.core.IResolvable maxSplitShard) {
+            this.maxSplitShard = maxSplitShard;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getPreserveStorage}
-         * @param preserveStorage the value to be set.
+         * @param preserveStorage Property preserveStorage: Whether to keep the log permanently.
+         *                        If set to true, TTL will be ignored.
+         *                        Default to false.
          * @return {@code this}
          */
         public Builder preserveStorage(java.lang.Boolean preserveStorage) {
@@ -180,7 +267,9 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getPreserveStorage}
-         * @param preserveStorage the value to be set.
+         * @param preserveStorage Property preserveStorage: Whether to keep the log permanently.
+         *                        If set to true, TTL will be ignored.
+         *                        Default to false.
          * @return {@code this}
          */
         public Builder preserveStorage(com.aliyun.ros.cdk.core.IResolvable preserveStorage) {
@@ -190,7 +279,8 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link LogstoreProps#getShardCount}
-         * @param shardCount the value to be set.
+         * @param shardCount Property shardCount: The number of Shards.
+         *                   Allowed Values: 1-100, default to 2.
          * @return {@code this}
          */
         public Builder shardCount(java.lang.Number shardCount) {
@@ -199,11 +289,34 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link LogstoreProps#getShardCount}
+         * @param shardCount Property shardCount: The number of Shards.
+         *                   Allowed Values: 1-100, default to 2.
+         * @return {@code this}
+         */
+        public Builder shardCount(com.aliyun.ros.cdk.core.IResolvable shardCount) {
+            this.shardCount = shardCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link LogstoreProps#getTtl}
-         * @param ttl the value to be set.
+         * @param ttl Property ttl: The lifecycle of log in the logstore in days.
+         *            Allowed Values: 1-3600, default to 30.
          * @return {@code this}
          */
         public Builder ttl(java.lang.Number ttl) {
+            this.ttl = ttl;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link LogstoreProps#getTtl}
+         * @param ttl Property ttl: The lifecycle of log in the logstore in days.
+         *            Allowed Values: 1-3600, default to 30.
+         * @return {@code this}
+         */
+        public Builder ttl(com.aliyun.ros.cdk.core.IResolvable ttl) {
             this.ttl = ttl;
             return this;
         }
@@ -224,15 +337,15 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements LogstoreProps {
-        private final java.lang.String logstoreName;
-        private final java.lang.String projectName;
+        private final java.lang.Object logstoreName;
+        private final java.lang.Object projectName;
         private final java.lang.Object appendMeta;
         private final java.lang.Object autoSplit;
         private final java.lang.Object enableTracking;
-        private final java.lang.Number maxSplitShard;
+        private final java.lang.Object maxSplitShard;
         private final java.lang.Object preserveStorage;
-        private final java.lang.Number shardCount;
-        private final java.lang.Number ttl;
+        private final java.lang.Object shardCount;
+        private final java.lang.Object ttl;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -240,21 +353,21 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.logstoreName = software.amazon.jsii.Kernel.get(this, "logstoreName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.projectName = software.amazon.jsii.Kernel.get(this, "projectName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.appendMeta = software.amazon.jsii.Kernel.get(this, "appendMeta", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoSplit = software.amazon.jsii.Kernel.get(this, "autoSplit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableTracking = software.amazon.jsii.Kernel.get(this, "enableTracking", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.maxSplitShard = software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maxSplitShard = software.amazon.jsii.Kernel.get(this, "maxSplitShard", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preserveStorage = software.amazon.jsii.Kernel.get(this, "preserveStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.shardCount = software.amazon.jsii.Kernel.get(this, "shardCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ttl = software.amazon.jsii.Kernel.get(this, "ttl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String logstoreName, final java.lang.String projectName, final java.lang.Object appendMeta, final java.lang.Object autoSplit, final java.lang.Object enableTracking, final java.lang.Number maxSplitShard, final java.lang.Object preserveStorage, final java.lang.Number shardCount, final java.lang.Number ttl) {
+        protected Jsii$Proxy(final java.lang.Object logstoreName, final java.lang.Object projectName, final java.lang.Object appendMeta, final java.lang.Object autoSplit, final java.lang.Object enableTracking, final java.lang.Object maxSplitShard, final java.lang.Object preserveStorage, final java.lang.Object shardCount, final java.lang.Object ttl) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.logstoreName = java.util.Objects.requireNonNull(logstoreName, "logstoreName is required");
             this.projectName = java.util.Objects.requireNonNull(projectName, "projectName is required");
@@ -268,12 +381,12 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getLogstoreName() {
+        public final java.lang.Object getLogstoreName() {
             return this.logstoreName;
         }
 
         @Override
-        public final java.lang.String getProjectName() {
+        public final java.lang.Object getProjectName() {
             return this.projectName;
         }
 
@@ -293,7 +406,7 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getMaxSplitShard() {
+        public final java.lang.Object getMaxSplitShard() {
             return this.maxSplitShard;
         }
 
@@ -303,12 +416,12 @@ public interface LogstoreProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getShardCount() {
+        public final java.lang.Object getShardCount() {
             return this.shardCount;
         }
 
         @Override
-        public final java.lang.Number getTtl() {
+        public final java.lang.Object getTtl() {
             return this.ttl;
         }
 

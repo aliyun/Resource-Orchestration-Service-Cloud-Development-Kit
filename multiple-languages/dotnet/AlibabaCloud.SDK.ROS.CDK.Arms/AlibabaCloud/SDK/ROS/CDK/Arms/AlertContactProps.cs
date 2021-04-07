@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
     public class AlertContactProps : AlibabaCloud.SDK.ROS.CDK.Arms.IAlertContactProps
     {
         /// <summary>Property contactName: The name of the alert contact that you want to create.</summary>
-        [JsiiProperty(name: "contactName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ContactName
+        [JsiiProperty(name: "contactName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ContactName
         {
             get;
             set;
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         /// <summary>Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dingRobotWebhookUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DingRobotWebhookUrl
+        [JsiiProperty(name: "dingRobotWebhookUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DingRobotWebhookUrl
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         /// <summary>Property email: The email address of the contact.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "email", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Email
+        [JsiiProperty(name: "email", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Email
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         /// <summary>Property phoneNum: The phone number of the contact.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "phoneNum", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? PhoneNum
+        [JsiiProperty(name: "phoneNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? PhoneNum
         {
             get;
             set;
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         /// <summary>Property proxyUserId: Internal parameters.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "proxyUserId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ProxyUserId
+        [JsiiProperty(name: "proxyUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ProxyUserId
         {
             get;
             set;
@@ -59,8 +59,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// Default to region of stack.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RegionId
         {
             get;
             set;

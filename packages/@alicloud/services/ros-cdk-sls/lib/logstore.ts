@@ -14,7 +14,7 @@ export interface LogstoreProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly logstoreName: string;
+    readonly logstoreName: string | ros.IResolvable;
 
     /**
      * Property projectName: Project name:
@@ -22,7 +22,7 @@ export interface LogstoreProps {
      * 2. Must start and end with lowercase letters and numbers.
      * 3. The name length is 3-63 characters.
      */
-    readonly projectName: string;
+    readonly projectName: string | ros.IResolvable;
 
     /**
      * Property appendMeta: Whether to add client external network IP and log arrival time after receiving the log.
@@ -46,7 +46,7 @@ export interface LogstoreProps {
      * Property maxSplitShard: The maximum number of shards when splitting automatically. Must be specified if AutoSplit is set to true.
      * Allowed Values: 1-64.
      */
-    readonly maxSplitShard?: number;
+    readonly maxSplitShard?: number | ros.IResolvable;
 
     /**
      * Property preserveStorage: Whether to keep the log permanently.
@@ -59,13 +59,13 @@ export interface LogstoreProps {
      * Property shardCount: The number of Shards.
      * Allowed Values: 1-100, default to 2.
      */
-    readonly shardCount?: number;
+    readonly shardCount?: number | ros.IResolvable;
 
     /**
      * Property ttl: The lifecycle of log in the logstore in days.
      * Allowed Values: 1-3600, default to 30.
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -81,7 +81,7 @@ export class Logstore extends ros.Resource {
     /**
      * Attribute LogstoreName: Logstore name.
      */
-    public readonly attrLogstoreName: any;
+    public readonly attrLogstoreName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::Logstore`.

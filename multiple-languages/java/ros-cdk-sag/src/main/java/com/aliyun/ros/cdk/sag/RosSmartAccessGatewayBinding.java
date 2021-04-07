@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * A ROS template type:  `ALIYUN::SAG::SmartAccessGatewayBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.362Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.050Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.RosSmartAccessGatewayBinding")
 public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSmartAgId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSmartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSmartAgId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSmartAgId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCcnId() {
-        return software.amazon.jsii.Kernel.get(this, "ccnId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCcnId() {
+        return software.amazon.jsii.Kernel.get(this, "ccnId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCcnId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ccnId", java.util.Objects.requireNonNull(value, "ccnId is required"));
+    }
+
+    /**
+     */
+    public void setCcnId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ccnId", java.util.Objects.requireNonNull(value, "ccnId is required"));
     }
 
@@ -75,13 +81,19 @@ public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosRes
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSmartAgId() {
-        return software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSmartAgId() {
+        return software.amazon.jsii.Kernel.get(this, "smartAgId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSmartAgId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "smartAgId", java.util.Objects.requireNonNull(value, "smartAgId is required"));
+    }
+
+    /**
+     */
+    public void setSmartAgId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "smartAgId", java.util.Objects.requireNonNull(value, "smartAgId is required"));
     }
 
@@ -119,12 +131,28 @@ public class RosSmartAccessGatewayBinding extends com.aliyun.ros.cdk.core.RosRes
             this.props.ccnId(ccnId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ccnId This parameter is required.
+         */
+        public Builder ccnId(final com.aliyun.ros.cdk.core.IResolvable ccnId) {
+            this.props.ccnId(ccnId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param smartAgId This parameter is required.
          */
         public Builder smartAgId(final java.lang.String smartAgId) {
+            this.props.smartAgId(smartAgId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param smartAgId This parameter is required.
+         */
+        public Builder smartAgId(final com.aliyun.ros.cdk.core.IResolvable smartAgId) {
             this.props.smartAgId(smartAgId);
             return this;
         }

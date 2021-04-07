@@ -11,12 +11,12 @@ export interface AliasProps {
     /**
      * Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
      */
-    readonly aliasName: string;
+    readonly aliasName: string | ros.IResolvable;
 
     /**
      * Property keyId: Globally unique identifier of the CMK.
      */
-    readonly keyId: string;
+    readonly keyId: string | ros.IResolvable;
 }
 
 /**

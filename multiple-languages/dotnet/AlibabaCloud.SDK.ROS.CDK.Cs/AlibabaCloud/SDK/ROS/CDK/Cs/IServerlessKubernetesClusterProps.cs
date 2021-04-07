@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -44,9 +44,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
-        [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? KubernetesVersion
+        object? KubernetesVersion
         {
             get
             {
@@ -80,9 +80,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityGroupId
+        object? SecurityGroupId
         {
             get
             {
@@ -94,9 +94,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
         /// </remarks>
-        [JsiiProperty(name: "serviceCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ServiceCidr
+        object? ServiceCidr
         {
             get
             {
@@ -105,9 +105,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property tags: Tag the cluster.</summary>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosServerlessKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Cs.RosServerlessKubernetesCluster.ITagsProperty[]? Tags
         {
             get
             {
@@ -120,9 +120,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
         /// VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
         /// </remarks>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VpcId
+        object? VpcId
         {
             get
             {
@@ -131,9 +131,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -157,9 +157,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property zoneId: The zone ID.</summary>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ZoneId
+        object? ZoneId
         {
             get
             {
@@ -179,10 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <remarks>
             /// The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property addons: The add-ons to be installed for the cluster.</summary>
@@ -206,10 +206,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? KubernetesVersion
+            [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KubernetesVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property natGateway: Whether to create a NAT gateway.</summary>
@@ -233,10 +233,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.</summary>
@@ -244,18 +244,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ServiceCidr
+            [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceCidr
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tag the cluster.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosServerlessKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Cs.RosServerlessKubernetesCluster.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.RosServerlessKubernetesCluster.ITagsProperty[]?>();
             }
 
             /// <summary>Property vpcId: VPC ID.</summary>
@@ -264,18 +264,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchIds: The IDs of VSwitches.</summary>
@@ -292,10 +292,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property zoneId: The zone ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

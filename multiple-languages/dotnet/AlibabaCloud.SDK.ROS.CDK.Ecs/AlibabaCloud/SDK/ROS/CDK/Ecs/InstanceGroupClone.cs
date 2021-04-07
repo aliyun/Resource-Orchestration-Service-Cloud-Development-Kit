@@ -33,58 +33,58 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute HostNames: Host names of created instance.</summary>
-        [JsiiProperty(name: "attrHostNames", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHostNames
+        [JsiiProperty(name: "attrHostNames", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHostNames
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InnerIps: Inner IP address list of the specified instance.</summary>
         /// <remarks>
         /// Only for classical instance.
         /// </remarks>
-        [JsiiProperty(name: "attrInnerIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInnerIps
+        [JsiiProperty(name: "attrInnerIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInnerIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceIds: The instance id list of created ecs instance.</summary>
-        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceIds
+        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute OrderId: The order id list of created instance.</summary>
-        [JsiiProperty(name: "attrOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOrderId
+        [JsiiProperty(name: "attrOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PrivateIps: Private IP address list of created ecs instance.</summary>
         /// <remarks>
         /// Only for VPC instance.
         /// </remarks>
-        [JsiiProperty(name: "attrPrivateIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPrivateIps
+        [JsiiProperty(name: "attrPrivateIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPrivateIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PublicIps: Public IP address list of created ecs instance.</summary>
-        [JsiiProperty(name: "attrPublicIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPublicIps
+        [JsiiProperty(name: "attrPublicIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPublicIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ZoneIds: Zone id of created instance.</summary>
-        [JsiiProperty(name: "attrZoneIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrZoneIds
+        [JsiiProperty(name: "attrZoneIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

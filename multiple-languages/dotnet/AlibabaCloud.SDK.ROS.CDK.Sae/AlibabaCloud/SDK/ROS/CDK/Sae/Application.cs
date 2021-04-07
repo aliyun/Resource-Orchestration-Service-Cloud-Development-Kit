@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <summary>Attribute AppId: Creating successful application ID.</summary>
-        [JsiiProperty(name: "attrAppId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppId
+        [JsiiProperty(name: "attrAppId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ChangeOrderId: Return to release a single ID, used to query task execution status.</summary>
-        [JsiiProperty(name: "attrChangeOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrChangeOrderId
+        [JsiiProperty(name: "attrChangeOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChangeOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

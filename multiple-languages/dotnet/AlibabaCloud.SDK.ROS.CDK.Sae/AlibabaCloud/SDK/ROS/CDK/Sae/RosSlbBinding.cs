@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Attribute</strong>: AppId: Successful application deployment target ID
         /// </remarks>
-        [JsiiProperty(name: "attrAppId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppId
+        [JsiiProperty(name: "attrAppId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ChangeOrderId: Return to release a single ID, used to query task execution status.
         /// </remarks>
-        [JsiiProperty(name: "attrChangeOrderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrChangeOrderId
+        [JsiiProperty(name: "attrChangeOrderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrChangeOrderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <remarks>
         /// <strong>Property</strong>: appId: Successful application deployment target ID
         /// </remarks>
-        [JsiiProperty(name: "appId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AppId
+        [JsiiProperty(name: "appId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AppId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -89,10 +89,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: internet: Binding public SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Internet
+        [JsiiProperty(name: "internet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Internet
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: internetSlbId: Use SLB purchased specified, currently only supports non-shared examples
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? InternetSlbId
+        [JsiiProperty(name: "internetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InternetSlbId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -111,10 +111,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: intranet: Bind private SLB. For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "intranet", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Intranet
+        [JsiiProperty(name: "intranet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Intranet
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -122,10 +122,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// <strong>Property</strong>: intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? IntranetSlbId
+        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? IntranetSlbId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

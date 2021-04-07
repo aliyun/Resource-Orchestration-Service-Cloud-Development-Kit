@@ -33,20 +33,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <summary>Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.</summary>
-        [JsiiProperty(name: "attrCname", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCname
+        [JsiiProperty(name: "attrCname", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCname
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DomainName: The CDN domain name.</summary>
         /// <remarks>
         /// Wildcard domain names that start with periods (.) are supported. For example, .a.com.
         /// </remarks>
-        [JsiiProperty(name: "attrDomainName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainName
+        [JsiiProperty(name: "attrDomainName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,24 +3,24 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Properties for defining a `ALIYUN::ResourceManager::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.996Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosAccountProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccountProps.Jsii$Proxy.class)
 public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDisplayName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDisplayName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getFolderId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPayerAccountId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPayerAccountId() {
         return null;
     }
 
@@ -34,9 +34,9 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosAccountProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccountProps> {
-        private java.lang.String displayName;
-        private java.lang.String folderId;
-        private java.lang.String payerAccountId;
+        private java.lang.Object displayName;
+        private java.lang.Object folderId;
+        private java.lang.Object payerAccountId;
 
         /**
          * Sets the value of {@link RosAccountProps#getDisplayName}
@@ -44,6 +44,16 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder displayName(java.lang.String displayName) {
+            this.displayName = displayName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getDisplayName}
+         * @param displayName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
             this.displayName = displayName;
             return this;
         }
@@ -59,11 +69,31 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosAccountProps#getFolderId}
+         * @param folderId the value to be set.
+         * @return {@code this}
+         */
+        public Builder folderId(com.aliyun.ros.cdk.core.IResolvable folderId) {
+            this.folderId = folderId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAccountProps#getPayerAccountId}
          * @param payerAccountId the value to be set.
          * @return {@code this}
          */
         public Builder payerAccountId(java.lang.String payerAccountId) {
+            this.payerAccountId = payerAccountId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccountProps#getPayerAccountId}
+         * @param payerAccountId the value to be set.
+         * @return {@code this}
+         */
+        public Builder payerAccountId(com.aliyun.ros.cdk.core.IResolvable payerAccountId) {
             this.payerAccountId = payerAccountId;
             return this;
         }
@@ -84,9 +114,9 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccountProps {
-        private final java.lang.String displayName;
-        private final java.lang.String folderId;
-        private final java.lang.String payerAccountId;
+        private final java.lang.Object displayName;
+        private final java.lang.Object folderId;
+        private final java.lang.Object payerAccountId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -94,15 +124,15 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.folderId = software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.payerAccountId = software.amazon.jsii.Kernel.get(this, "payerAccountId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.folderId = software.amazon.jsii.Kernel.get(this, "folderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payerAccountId = software.amazon.jsii.Kernel.get(this, "payerAccountId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String displayName, final java.lang.String folderId, final java.lang.String payerAccountId) {
+        protected Jsii$Proxy(final java.lang.Object displayName, final java.lang.Object folderId, final java.lang.Object payerAccountId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.displayName = java.util.Objects.requireNonNull(displayName, "displayName is required");
             this.folderId = folderId;
@@ -110,17 +140,17 @@ public interface RosAccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDisplayName() {
+        public final java.lang.Object getDisplayName() {
             return this.displayName;
         }
 
         @Override
-        public final java.lang.String getFolderId() {
+        public final java.lang.Object getFolderId() {
             return this.folderId;
         }
 
         @Override
-        public final java.lang.String getPayerAccountId() {
+        public final java.lang.Object getPayerAccountId() {
             return this.payerAccountId;
         }
 

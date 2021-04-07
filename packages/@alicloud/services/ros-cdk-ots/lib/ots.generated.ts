@@ -10,27 +10,27 @@ export interface RosInstanceProps {
     /**
      * @Property instanceName: The name of the instance.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type, the default is SSD.
      */
-    readonly clusterType?: string;
+    readonly clusterType?: string | ros.IResolvable;
 
     /**
      * @Property description: Instance description.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property network: Instance network type, default is NORMAL.
      */
-    readonly network?: string;
+    readonly network?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosInstance.TagsProperty[];
 }
 
 /**
@@ -80,7 +80,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
             max: 5,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -102,7 +102,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       ClusterType: ros.stringToRosTemplate(properties.clusterType),
       Description: ros.stringToRosTemplate(properties.description),
       Network: ros.stringToRosTemplate(properties.network),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -123,22 +123,22 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute InstanceName: Instance name
      */
-    public readonly attrInstanceName: any;
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * @Attribute PrivateEndpoint: Private endpoint
      */
-    public readonly attrPrivateEndpoint: any;
+    public readonly attrPrivateEndpoint: ros.IResolvable;
 
     /**
      * @Attribute PublicEndpoint: Public endpoint
      */
-    public readonly attrPublicEndpoint: any;
+    public readonly attrPublicEndpoint: ros.IResolvable;
 
     /**
      * @Attribute VpcEndpoint: Vpc endpoint
      */
-    public readonly attrVpcEndpoint: any;
+    public readonly attrVpcEndpoint: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -146,27 +146,27 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property instanceName: The name of the instance.
      */
-    public instanceName: string;
+    public instanceName: string | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type, the default is SSD.
      */
-    public clusterType: string | undefined;
+    public clusterType: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Instance description.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property network: Instance network type, default is NORMAL.
      */
-    public network: string | undefined;
+    public network: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to instance. Max support 5 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::OTS::Instance`.
@@ -177,17 +177,17 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrInstanceName = ros.Token.asString(this.getAtt('InstanceName'));
-        this.attrPrivateEndpoint = ros.Token.asString(this.getAtt('PrivateEndpoint'));
-        this.attrPublicEndpoint = ros.Token.asString(this.getAtt('PublicEndpoint'));
-        this.attrVpcEndpoint = ros.Token.asString(this.getAtt('VpcEndpoint'));
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrPrivateEndpoint = this.getAtt('PrivateEndpoint');
+        this.attrPublicEndpoint = this.getAtt('PublicEndpoint');
+        this.attrVpcEndpoint = this.getAtt('VpcEndpoint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
         this.clusterType = props.clusterType;
         this.description = props.description;
         this.network = props.network;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::OTS::Instance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -197,12 +197,60 @@ export class RosInstance extends ros.RosResource {
             clusterType: this.clusterType,
             description: this.description,
             network: this.network,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::Instance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::Instance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -213,22 +261,22 @@ export interface RosSearchIndexProps {
     /**
      * @Property fieldSchemas: list of field_schema.
      */
-    readonly fieldSchemas: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly fieldSchemas: Array<RosSearchIndex.FieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property indexName: The index name.
      */
-    readonly indexName: string;
+    readonly indexName: string | ros.IResolvable;
 
     /**
      * @Property instanceName: The name of the OTS instance in which table will locate.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * @Property tableName: The table name of the OTS instance.
      */
-    readonly tableName: string;
+    readonly tableName: string | ros.IResolvable;
 
     /**
      * @Property indexSetting: Index settings
@@ -272,7 +320,7 @@ function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
     errors.collect(ros.propertyValidator('fieldSchemas', ros.requiredValidator)(properties.fieldSchemas));
-    errors.collect(ros.propertyValidator('fieldSchemas', ros.listValidator(ros.validateAny))(properties.fieldSchemas));
+    errors.collect(ros.propertyValidator('fieldSchemas', ros.listValidator(RosSearchIndex_FieldSchemasPropertyValidator))(properties.fieldSchemas));
     errors.collect(ros.propertyValidator('indexSort', RosSearchIndex_IndexSortPropertyValidator)(properties.indexSort));
     errors.collect(ros.propertyValidator('indexSetting', RosSearchIndex_IndexSettingPropertyValidator)(properties.indexSetting));
     return errors.wrap('supplied properties not correct for "RosSearchIndexProps"');
@@ -292,7 +340,7 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
         RosSearchIndexPropsValidator(properties).assertSuccess();
     }
     return {
-      FieldSchemas: ros.listMapper(ros.objectToRosTemplate)(properties.fieldSchemas),
+      FieldSchemas: ros.listMapper(rosSearchIndexFieldSchemasPropertyToRosTemplate)(properties.fieldSchemas),
       IndexName: ros.stringToRosTemplate(properties.indexName),
       InstanceName: ros.stringToRosTemplate(properties.instanceName),
       TableName: ros.stringToRosTemplate(properties.tableName),
@@ -318,7 +366,7 @@ export class RosSearchIndex extends ros.RosResource {
     /**
      * @Attribute IndexName: Index name.
      */
-    public readonly attrIndexName: any;
+    public readonly attrIndexName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -326,22 +374,22 @@ export class RosSearchIndex extends ros.RosResource {
     /**
      * @Property fieldSchemas: list of field_schema.
      */
-    public fieldSchemas: Array<any | ros.IResolvable> | ros.IResolvable;
+    public fieldSchemas: Array<RosSearchIndex.FieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property indexName: The index name.
      */
-    public indexName: string;
+    public indexName: string | ros.IResolvable;
 
     /**
      * @Property instanceName: The name of the OTS instance in which table will locate.
      */
-    public instanceName: string;
+    public instanceName: string | ros.IResolvable;
 
     /**
      * @Property tableName: The table name of the OTS instance.
      */
-    public tableName: string;
+    public tableName: string | ros.IResolvable;
 
     /**
      * @Property indexSetting: Index settings
@@ -364,7 +412,7 @@ export class RosSearchIndex extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSearchIndexProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSearchIndex.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrIndexName = ros.Token.asString(this.getAtt('IndexName'));
+        this.attrIndexName = this.getAtt('IndexName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.fieldSchemas = props.fieldSchemas;
@@ -395,19 +443,113 @@ export namespace RosSearchIndex {
     /**
      * @stability external
      */
+    export interface FieldSchemasProperty {
+        /**
+         * @Property isArray: This parameter specifies whether the column is an array. 
+     * A value of true indicates that the column is an array. Data written to the column must be a JSON array. 
+     * Example: ["a","b","c"]. You do not need to explicitly specify this parameter for NESTED columns because they are arrays.
+         */
+        readonly isArray?: boolean | ros.IResolvable;
+        /**
+         * @Property enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
+         */
+        readonly enableSortAndAgg?: boolean | ros.IResolvable;
+        /**
+         * @Property store: This parameter specifies whether to store the values of the field in the search index. 
+     * A value of true indicates that you can read the values of the field directly from the search index without the need to query the table. 
+     * This configuration optimizes query performance.
+         */
+        readonly store?: boolean | ros.IResolvable;
+        /**
+         * @Property index: This parameter specifies whether to index the column. 
+     * The default is true, which means to build an inverted index or a spatial index for the column; if it is set to false, the column will not be indexed.
+         */
+        readonly index?: boolean | ros.IResolvable;
+        /**
+         * @Property analyzer: This parameter specifies the tokenizer. 
+     * You can specify this parameter if the column is a TEXT column. Type: AnalyzerType.
+         */
+        readonly analyzer?: string | ros.IResolvable;
+        /**
+         * @Property subFieldSchemas: This parameter specifies the list of field schemas for subfields. 
+     * If the column is a NESTED column, you must specify this parameter to configure the index types of subcolumns in the NESTED column.
+         */
+        readonly subFieldSchemas?: Array<RosSearchIndex.SubFieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property fieldName: This parameter specifies the name of the field (column) to index. 
+     * The field can be a primary key column or an attribute column.
+         */
+        readonly fieldName: string | ros.IResolvable;
+        /**
+         * @Property fieldType: This parameter specifies the type of the field. Type: FieldType. 
+     * For more information, see the description of field types for a search index.
+         */
+        readonly fieldType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `FieldSchemasProperty`
+ *
+ * @param properties - the TypeScript properties of a `FieldSchemasProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSearchIndex_FieldSchemasPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isArray', ros.validateBoolean)(properties.isArray));
+    errors.collect(ros.propertyValidator('enableSortAndAgg', ros.validateBoolean)(properties.enableSortAndAgg));
+    errors.collect(ros.propertyValidator('store', ros.validateBoolean)(properties.store));
+    errors.collect(ros.propertyValidator('index', ros.validateBoolean)(properties.index));
+    errors.collect(ros.propertyValidator('analyzer', ros.validateString)(properties.analyzer));
+    errors.collect(ros.propertyValidator('subFieldSchemas', ros.listValidator(RosSearchIndex_SubFieldSchemasPropertyValidator))(properties.subFieldSchemas));
+    errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
+    errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
+    errors.collect(ros.propertyValidator('fieldType', ros.requiredValidator)(properties.fieldType));
+    errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
+    return errors.wrap('supplied properties not correct for "FieldSchemasProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::SearchIndex.FieldSchemas` resource
+ *
+ * @param properties - the TypeScript properties of a `FieldSchemasProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::SearchIndex.FieldSchemas` resource.
+ */
+// @ts-ignore TS6133
+function rosSearchIndexFieldSchemasPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSearchIndex_FieldSchemasPropertyValidator(properties).assertSuccess();
+    return {
+      IsArray: ros.booleanToRosTemplate(properties.isArray),
+      EnableSortAndAgg: ros.booleanToRosTemplate(properties.enableSortAndAgg),
+      Store: ros.booleanToRosTemplate(properties.store),
+      Index: ros.booleanToRosTemplate(properties.index),
+      Analyzer: ros.stringToRosTemplate(properties.analyzer),
+      SubFieldSchemas: ros.listMapper(rosSearchIndexSubFieldSchemasPropertyToRosTemplate)(properties.subFieldSchemas),
+      FieldName: ros.stringToRosTemplate(properties.fieldName),
+      FieldType: ros.stringToRosTemplate(properties.fieldType),
+    };
+}
+
+export namespace RosSearchIndex {
+    /**
+     * @stability external
+     */
     export interface FieldSortProperty {
         /**
          * @Property sortMode: Sorting method when there are multiple values in the field.
          */
-        readonly sortMode?: string;
+        readonly sortMode?: string | ros.IResolvable;
         /**
          * @Property sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
          */
-        readonly sortOrder?: string;
+        readonly sortOrder?: string | ros.IResolvable;
         /**
          * @Property fieldName: Sorted field name.
          */
-        readonly fieldName: string;
+        readonly fieldName: string | ros.IResolvable;
     }
 }
 /**
@@ -457,15 +599,15 @@ export namespace RosSearchIndex {
         /**
          * @Property sortMode: Sorting method when there are multiple values in the field.
          */
-        readonly sortMode?: string;
+        readonly sortMode?: string | ros.IResolvable;
         /**
          * @Property sortOrder: The sort order can be sorted in ascending or descending order
          */
-        readonly sortOrder?: string;
+        readonly sortOrder?: string | ros.IResolvable;
         /**
          * @Property fieldName: Sorted field name.
          */
-        readonly fieldName: string;
+        readonly fieldName: string | ros.IResolvable;
     }
 }
 /**
@@ -602,7 +744,7 @@ export namespace RosSearchIndex {
         /**
          * @Property sortOrder: The sort order can be sorted in ascending or descending order, the default is ascending(SortOrder.ASC).
          */
-        readonly sortOrder?: string;
+        readonly sortOrder?: string | ros.IResolvable;
     }
 }
 /**
@@ -643,7 +785,7 @@ export namespace RosSearchIndex {
         /**
          * @Property sortOrder: The sort order can be sorted in ascending or descending order
          */
-        readonly sortOrder?: string;
+        readonly sortOrder?: string | ros.IResolvable;
     }
 }
 /**
@@ -738,6 +880,93 @@ function rosSearchIndexSortersPropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosSearchIndex {
+    /**
+     * @stability external
+     */
+    export interface SubFieldSchemasProperty {
+        /**
+         * @Property isArray: This parameter specifies whether the column is an array. 
+     * A value of true indicates that the column is an array. Data written to the column must be a JSON array. 
+     * Example: ["a","b","c"]. You do not need to explicitly specify this parameter for NESTED columns because they are arrays.
+         */
+        readonly isArray?: boolean | ros.IResolvable;
+        /**
+         * @Property enableSortAndAgg: This parameter specifies whether to enable sorting and aggregation for the column.
+         */
+        readonly enableSortAndAgg?: boolean | ros.IResolvable;
+        /**
+         * @Property store: This parameter specifies whether to store the values of the field in the search index. 
+     * A value of true indicates that you can read the values of the field directly from the search index without the need to query the table. 
+     * This configuration optimizes query performance.
+         */
+        readonly store?: boolean | ros.IResolvable;
+        /**
+         * @Property index: This parameter specifies whether to index the column. 
+     * The default is true, which means to build an inverted index or a spatial index for the column; if it is set to false, the column will not be indexed.
+         */
+        readonly index?: boolean | ros.IResolvable;
+        /**
+         * @Property analyzer: This parameter specifies the tokenizer. 
+     * You can specify this parameter if the column is a TEXT column. Type: AnalyzerType.
+         */
+        readonly analyzer?: string | ros.IResolvable;
+        /**
+         * @Property fieldName: This parameter specifies the name of the field (column) to index. 
+     * The field can be a primary key column or an attribute column.
+         */
+        readonly fieldName: string | ros.IResolvable;
+        /**
+         * @Property fieldType: This parameter specifies the type of the field. Type: FieldType. 
+     * For more information, see the description of field types for a search index.
+         */
+        readonly fieldType: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SubFieldSchemasProperty`
+ *
+ * @param properties - the TypeScript properties of a `SubFieldSchemasProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSearchIndex_SubFieldSchemasPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('isArray', ros.validateBoolean)(properties.isArray));
+    errors.collect(ros.propertyValidator('enableSortAndAgg', ros.validateBoolean)(properties.enableSortAndAgg));
+    errors.collect(ros.propertyValidator('store', ros.validateBoolean)(properties.store));
+    errors.collect(ros.propertyValidator('index', ros.validateBoolean)(properties.index));
+    errors.collect(ros.propertyValidator('analyzer', ros.validateString)(properties.analyzer));
+    errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
+    errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
+    errors.collect(ros.propertyValidator('fieldType', ros.requiredValidator)(properties.fieldType));
+    errors.collect(ros.propertyValidator('fieldType', ros.validateString)(properties.fieldType));
+    return errors.wrap('supplied properties not correct for "SubFieldSchemasProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OTS::SearchIndex.SubFieldSchemas` resource
+ *
+ * @param properties - the TypeScript properties of a `SubFieldSchemasProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OTS::SearchIndex.SubFieldSchemas` resource.
+ */
+// @ts-ignore TS6133
+function rosSearchIndexSubFieldSchemasPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSearchIndex_SubFieldSchemasPropertyValidator(properties).assertSuccess();
+    return {
+      IsArray: ros.booleanToRosTemplate(properties.isArray),
+      EnableSortAndAgg: ros.booleanToRosTemplate(properties.enableSortAndAgg),
+      Store: ros.booleanToRosTemplate(properties.store),
+      Index: ros.booleanToRosTemplate(properties.index),
+      Analyzer: ros.stringToRosTemplate(properties.analyzer),
+      FieldName: ros.stringToRosTemplate(properties.fieldName),
+      FieldType: ros.stringToRosTemplate(properties.fieldType),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::OTS::Table`
  */
@@ -746,7 +975,7 @@ export interface RosTableProps {
     /**
      * @Property instanceName: The name of the OTS instance in which table will locate.
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * @Property primaryKey: It describes the attribute value of primary key. The number of primary_key should not be less than one and not be more than four.
@@ -756,7 +985,7 @@ export interface RosTableProps {
     /**
      * @Property tableName: The table name of the OTS instance.
      */
-    readonly tableName: string;
+    readonly tableName: string | ros.IResolvable;
 
     /**
      * @Property columns: Attribute column for table store.
@@ -766,12 +995,12 @@ export interface RosTableProps {
     /**
      * @Property deviationCellVersionInSec: Maximum version deviation. The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
      */
-    readonly deviationCellVersionInSec?: number;
+    readonly deviationCellVersionInSec?: number | ros.IResolvable;
 
     /**
      * @Property maxVersions: The maximum number of versions stored in this table. The valid value is 1-2147483647. Default to 1.
      */
-    readonly maxVersions?: number;
+    readonly maxVersions?: number | ros.IResolvable;
 
     /**
      * @Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
@@ -786,7 +1015,7 @@ export interface RosTableProps {
     /**
      * @Property timeToLive: The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired. Default to -1.
      */
-    readonly timeToLive?: number;
+    readonly timeToLive?: number | ros.IResolvable;
 }
 
 /**
@@ -897,7 +1126,7 @@ export class RosTable extends ros.RosResource {
     /**
      * @Attribute TableName: Table name
      */
-    public readonly attrTableName: any;
+    public readonly attrTableName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -905,7 +1134,7 @@ export class RosTable extends ros.RosResource {
     /**
      * @Property instanceName: The name of the OTS instance in which table will locate.
      */
-    public instanceName: string;
+    public instanceName: string | ros.IResolvable;
 
     /**
      * @Property primaryKey: It describes the attribute value of primary key. The number of primary_key should not be less than one and not be more than four.
@@ -915,7 +1144,7 @@ export class RosTable extends ros.RosResource {
     /**
      * @Property tableName: The table name of the OTS instance.
      */
-    public tableName: string;
+    public tableName: string | ros.IResolvable;
 
     /**
      * @Property columns: Attribute column for table store.
@@ -925,12 +1154,12 @@ export class RosTable extends ros.RosResource {
     /**
      * @Property deviationCellVersionInSec: Maximum version deviation. The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
      */
-    public deviationCellVersionInSec: number | undefined;
+    public deviationCellVersionInSec: number | ros.IResolvable | undefined;
 
     /**
      * @Property maxVersions: The maximum number of versions stored in this table. The valid value is 1-2147483647. Default to 1.
      */
-    public maxVersions: number | undefined;
+    public maxVersions: number | ros.IResolvable | undefined;
 
     /**
      * @Property reservedThroughput: The initial reserved read/write throughput setting of the table to be created, the reserved read throughput and reserved write throughput of any table cannot exceed 5000.
@@ -945,7 +1174,7 @@ export class RosTable extends ros.RosResource {
     /**
      * @Property timeToLive: The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired. Default to -1.
      */
-    public timeToLive: number | undefined;
+    public timeToLive: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::OTS::Table`.
@@ -956,7 +1185,7 @@ export class RosTable extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTableProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTable.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrTableName = ros.Token.asString(this.getAtt('TableName'));
+        this.attrTableName = this.getAtt('TableName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
@@ -997,11 +1226,11 @@ export namespace RosTable {
         /**
          * @Property type: The type of the column.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property name: The column name of the column.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -1058,11 +1287,11 @@ export namespace RosTable {
         /**
          * @Property type: Type for primary key. Only INTEGER, STRING or BINARY is allowed.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property name: Name for primary key.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -1119,11 +1348,11 @@ export namespace RosTable {
         /**
          * @Property read: The read service capability unit consumed by this operation or the reserved read throughput of the table. Default to 0.
          */
-        readonly read: number;
+        readonly read: number | ros.IResolvable;
         /**
          * @Property write: The write service capability unit consumed by this operation or the reserved write throughput of the table. Default to 0.
          */
-        readonly write: number;
+        readonly write: number | ros.IResolvable;
     }
 }
 /**
@@ -1182,19 +1411,19 @@ export namespace RosTable {
         /**
          * @Property indexName: The index name.
          */
-        readonly indexName: string;
+        readonly indexName: string | ros.IResolvable;
         /**
          * @Property columns: The columns of the index.
          */
-        readonly columns: string[];
+        readonly columns: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property primaryKeys: The primary keys of the index.
          */
-        readonly primaryKeys: string[];
+        readonly primaryKeys: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property indexType: The index type
          */
-        readonly indexType?: string;
+        readonly indexType?: string | ros.IResolvable;
     }
 }
 /**
@@ -1250,7 +1479,7 @@ export interface RosVpcBinderProps {
     /**
      * @Property instanceName: Instance name
      */
-    readonly instanceName: string;
+    readonly instanceName: string | ros.IResolvable;
 
     /**
      * @Property vpcs: Vpc binding configuration.
@@ -1318,12 +1547,12 @@ export class RosVpcBinder extends ros.RosResource {
     /**
      * @Attribute Domains: The domain names used to access the OTS instance in the VPC.
      */
-    public readonly attrDomains: any;
+    public readonly attrDomains: ros.IResolvable;
 
     /**
      * @Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.
      */
-    public readonly attrEndpoints: any;
+    public readonly attrEndpoints: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1331,7 +1560,7 @@ export class RosVpcBinder extends ros.RosResource {
     /**
      * @Property instanceName: Instance name
      */
-    public instanceName: string;
+    public instanceName: string | ros.IResolvable;
 
     /**
      * @Property vpcs: Vpc binding configuration.
@@ -1347,8 +1576,8 @@ export class RosVpcBinder extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpcBinderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpcBinder.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDomains = ros.Token.asString(this.getAtt('Domains'));
-        this.attrEndpoints = ros.Token.asString(this.getAtt('Endpoints'));
+        this.attrDomains = this.getAtt('Domains');
+        this.attrEndpoints = this.getAtt('Endpoints');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceName = props.instanceName;
@@ -1375,22 +1604,22 @@ export namespace RosVpcBinder {
         /**
          * @Property vpcId: Vpc Id.
          */
-        readonly vpcId: string;
+        readonly vpcId: string | ros.IResolvable;
         /**
          * @Property instanceVpcName: Custom name, need to be unique under the OTS instance.
          */
-        readonly instanceVpcName: string;
+        readonly instanceVpcName: string | ros.IResolvable;
         /**
          * @Property network: Instance network type. The values are as follows:
      * 1, the NORMAL instance does not limit the source of the request. (Defaults)
      * 2. A VPC instance only allows requests from all VPCs it is bound to.
      * 3, VPC_CONSOLE instance only allows requests from the console and all VPCs it is bound to
          */
-        readonly network: string;
+        readonly network: string | ros.IResolvable;
         /**
          * @Property virtualSwitchId: vSwitch Id.
          */
-        readonly virtualSwitchId: string;
+        readonly virtualSwitchId: string | ros.IResolvable;
     }
 }
 /**

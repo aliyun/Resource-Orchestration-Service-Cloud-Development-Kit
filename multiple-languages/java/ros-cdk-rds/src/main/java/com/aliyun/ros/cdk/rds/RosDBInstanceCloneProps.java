@@ -3,22 +3,18 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Properties for defining a `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.263Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosDBInstanceCloneProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBInstanceCloneProps.Jsii$Proxy.class)
 public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getDbInstanceStorage();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.String getPayType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPayType();
 
     /**
      */
@@ -28,55 +24,61 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBackupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBackupRetentionPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupRetentionPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getBackupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCategory() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringPrefix() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringPrefix() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getConnectionStringType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionStringType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceClass() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceClass() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstanceStorageType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorage() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceStorageType() {
         return null;
     }
 
@@ -88,61 +90,61 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbNames() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbNames() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDedicatedHostGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceNetworkType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceNetworkType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMaintainTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaintainTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUsername() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUsername() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUserPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUserPassword() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMasterUserType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMasterUserType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPeriod() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPeriodType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPort() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
         return null;
     }
 
@@ -154,49 +156,55 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPreferredBackupTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPreferredBackupTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPrivateIpAddress() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestoreTable() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTable() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRestoreTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityIpList() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSqlCollectorStatus() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlaveZoneIds() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSslSetting() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSqlCollectorStatus() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSslSetting() {
         return null;
     }
 
@@ -208,31 +216,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.Map<java.lang.String, java.lang.Object> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeoutInMinutes() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutInMinutes() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -246,45 +254,46 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosDBInstanceCloneProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDBInstanceCloneProps> {
-        private java.lang.String dbInstanceId;
-        private java.lang.Number dbInstanceStorage;
-        private java.lang.String payType;
+        private java.lang.Object dbInstanceId;
+        private java.lang.Object payType;
         private java.lang.Object allocatePublicConnection;
-        private java.lang.String backupId;
-        private java.lang.Number backupRetentionPeriod;
-        private java.lang.String backupType;
-        private java.lang.String category;
-        private java.lang.String connectionStringPrefix;
-        private java.lang.String connectionStringType;
-        private java.lang.String dbInstanceClass;
-        private java.lang.String dbInstanceDescription;
-        private java.lang.String dbInstanceStorageType;
+        private java.lang.Object backupId;
+        private java.lang.Object backupRetentionPeriod;
+        private java.lang.Object backupType;
+        private java.lang.Object category;
+        private java.lang.Object connectionStringPrefix;
+        private java.lang.Object connectionStringType;
+        private java.lang.Object dbInstanceClass;
+        private java.lang.Object dbInstanceDescription;
+        private java.lang.Object dbInstanceStorage;
+        private java.lang.Object dbInstanceStorageType;
         private java.lang.Object dbMappings;
-        private java.lang.String dbNames;
-        private java.lang.String dedicatedHostGroupId;
-        private java.lang.String instanceNetworkType;
-        private java.lang.String maintainTime;
-        private java.lang.String masterUsername;
-        private java.lang.String masterUserPassword;
-        private java.lang.String masterUserType;
-        private java.lang.Number period;
-        private java.lang.String periodType;
-        private java.lang.Number port;
+        private java.lang.Object dbNames;
+        private java.lang.Object dedicatedHostGroupId;
+        private java.lang.Object instanceNetworkType;
+        private java.lang.Object maintainTime;
+        private java.lang.Object masterUsername;
+        private java.lang.Object masterUserPassword;
+        private java.lang.Object masterUserType;
+        private java.lang.Object period;
+        private java.lang.Object periodType;
+        private java.lang.Object port;
         private java.lang.Object preferredBackupPeriod;
-        private java.lang.String preferredBackupTime;
-        private java.lang.String privateIpAddress;
-        private java.lang.String restoreTable;
-        private java.lang.String restoreTime;
-        private java.lang.String securityGroupId;
-        private java.lang.String securityIpList;
-        private java.lang.String sqlCollectorStatus;
-        private java.lang.String sslSetting;
+        private java.lang.Object preferredBackupTime;
+        private java.lang.Object privateIpAddress;
+        private java.lang.Object restoreTable;
+        private java.lang.Object restoreTime;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object securityIpList;
+        private java.lang.Object slaveZoneIds;
+        private java.lang.Object sqlCollectorStatus;
+        private java.lang.Object sslSetting;
         private java.lang.Object tableMeta;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.Number timeoutInMinutes;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.util.Map<java.lang.String, java.lang.Object> tags;
+        private java.lang.Object timeoutInMinutes;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceId}
@@ -297,12 +306,12 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
-         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceStorage}
-         * @param dbInstanceStorage the value to be set. This parameter is required.
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceId}
+         * @param dbInstanceId the value to be set. This parameter is required.
          * @return {@code this}
          */
-        public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
-            this.dbInstanceStorage = dbInstanceStorage;
+        public Builder dbInstanceId(com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.dbInstanceId = dbInstanceId;
             return this;
         }
 
@@ -312,6 +321,16 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
+            this.payType = payType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPayType}
+         * @param payType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {
             this.payType = payType;
             return this;
         }
@@ -347,11 +366,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getBackupId}
+         * @param backupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupId(com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.backupId = backupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getBackupRetentionPeriod}
          * @param backupRetentionPeriod the value to be set.
          * @return {@code this}
          */
         public Builder backupRetentionPeriod(java.lang.Number backupRetentionPeriod) {
+            this.backupRetentionPeriod = backupRetentionPeriod;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getBackupRetentionPeriod}
+         * @param backupRetentionPeriod the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
             this.backupRetentionPeriod = backupRetentionPeriod;
             return this;
         }
@@ -367,11 +406,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getBackupType}
+         * @param backupType the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupType(com.aliyun.ros.cdk.core.IResolvable backupType) {
+            this.backupType = backupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getCategory}
          * @param category the value to be set.
          * @return {@code this}
          */
         public Builder category(java.lang.String category) {
+            this.category = category;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getCategory}
+         * @param category the value to be set.
+         * @return {@code this}
+         */
+        public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
             this.category = category;
             return this;
         }
@@ -387,11 +446,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getConnectionStringPrefix}
+         * @param connectionStringPrefix the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionStringPrefix(com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
+            this.connectionStringPrefix = connectionStringPrefix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getConnectionStringType}
          * @param connectionStringType the value to be set.
          * @return {@code this}
          */
         public Builder connectionStringType(java.lang.String connectionStringType) {
+            this.connectionStringType = connectionStringType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getConnectionStringType}
+         * @param connectionStringType the value to be set.
+         * @return {@code this}
+         */
+        public Builder connectionStringType(com.aliyun.ros.cdk.core.IResolvable connectionStringType) {
             this.connectionStringType = connectionStringType;
             return this;
         }
@@ -407,6 +486,16 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceClass}
+         * @param dbInstanceClass the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceClass(com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.dbInstanceClass = dbInstanceClass;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceDescription}
          * @param dbInstanceDescription the value to be set.
          * @return {@code this}
@@ -417,11 +506,51 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceDescription}
+         * @param dbInstanceDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
+            this.dbInstanceDescription = dbInstanceDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceStorage}
+         * @param dbInstanceStorage the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorage(java.lang.Number dbInstanceStorage) {
+            this.dbInstanceStorage = dbInstanceStorage;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceStorage}
+         * @param dbInstanceStorage the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorage(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
+            this.dbInstanceStorage = dbInstanceStorage;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceStorageType}
          * @param dbInstanceStorageType the value to be set.
          * @return {@code this}
          */
         public Builder dbInstanceStorageType(java.lang.String dbInstanceStorageType) {
+            this.dbInstanceStorageType = dbInstanceStorageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbInstanceStorageType}
+         * @param dbInstanceStorageType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceStorageType(com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
             this.dbInstanceStorageType = dbInstanceStorageType;
             return this;
         }
@@ -457,11 +586,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDbNames}
+         * @param dbNames the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbNames(com.aliyun.ros.cdk.core.IResolvable dbNames) {
+            this.dbNames = dbNames;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getDedicatedHostGroupId}
          * @param dedicatedHostGroupId the value to be set.
          * @return {@code this}
          */
         public Builder dedicatedHostGroupId(java.lang.String dedicatedHostGroupId) {
+            this.dedicatedHostGroupId = dedicatedHostGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getDedicatedHostGroupId}
+         * @param dedicatedHostGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder dedicatedHostGroupId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
             this.dedicatedHostGroupId = dedicatedHostGroupId;
             return this;
         }
@@ -477,11 +626,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getInstanceNetworkType}
+         * @param instanceNetworkType the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceNetworkType(com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.instanceNetworkType = instanceNetworkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getMaintainTime}
          * @param maintainTime the value to be set.
          * @return {@code this}
          */
         public Builder maintainTime(java.lang.String maintainTime) {
+            this.maintainTime = maintainTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getMaintainTime}
+         * @param maintainTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder maintainTime(com.aliyun.ros.cdk.core.IResolvable maintainTime) {
             this.maintainTime = maintainTime;
             return this;
         }
@@ -497,11 +666,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getMasterUsername}
+         * @param masterUsername the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUsername(com.aliyun.ros.cdk.core.IResolvable masterUsername) {
+            this.masterUsername = masterUsername;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getMasterUserPassword}
          * @param masterUserPassword the value to be set.
          * @return {@code this}
          */
         public Builder masterUserPassword(java.lang.String masterUserPassword) {
+            this.masterUserPassword = masterUserPassword;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getMasterUserPassword}
+         * @param masterUserPassword the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUserPassword(com.aliyun.ros.cdk.core.IResolvable masterUserPassword) {
             this.masterUserPassword = masterUserPassword;
             return this;
         }
@@ -517,11 +706,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getMasterUserType}
+         * @param masterUserType the value to be set.
+         * @return {@code this}
+         */
+        public Builder masterUserType(com.aliyun.ros.cdk.core.IResolvable masterUserType) {
+            this.masterUserType = masterUserType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getPeriod}
          * @param period the value to be set.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
+            this.period = period;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPeriod}
+         * @param period the value to be set.
+         * @return {@code this}
+         */
+        public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
             this.period = period;
             return this;
         }
@@ -537,11 +746,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPeriodType}
+         * @param periodType the value to be set.
+         * @return {@code this}
+         */
+        public Builder periodType(com.aliyun.ros.cdk.core.IResolvable periodType) {
+            this.periodType = periodType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getPort}
          * @param port the value to be set.
          * @return {@code this}
          */
         public Builder port(java.lang.Number port) {
+            this.port = port;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPort}
+         * @param port the value to be set.
+         * @return {@code this}
+         */
+        public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
             this.port = port;
             return this;
         }
@@ -577,11 +806,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPreferredBackupTime}
+         * @param preferredBackupTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder preferredBackupTime(com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
+            this.preferredBackupTime = preferredBackupTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getPrivateIpAddress}
          * @param privateIpAddress the value to be set.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
+            this.privateIpAddress = privateIpAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getPrivateIpAddress}
+         * @param privateIpAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.privateIpAddress = privateIpAddress;
             return this;
         }
@@ -597,11 +846,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getRestoreTable}
+         * @param restoreTable the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreTable(com.aliyun.ros.cdk.core.IResolvable restoreTable) {
+            this.restoreTable = restoreTable;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getRestoreTime}
          * @param restoreTime the value to be set.
          * @return {@code this}
          */
         public Builder restoreTime(java.lang.String restoreTime) {
+            this.restoreTime = restoreTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getRestoreTime}
+         * @param restoreTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreTime(com.aliyun.ros.cdk.core.IResolvable restoreTime) {
             this.restoreTime = restoreTime;
             return this;
         }
@@ -617,12 +886,52 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getSecurityIpList}
          * @param securityIpList the value to be set.
          * @return {@code this}
          */
         public Builder securityIpList(java.lang.String securityIpList) {
             this.securityIpList = securityIpList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSecurityIpList}
+         * @param securityIpList the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {
+            this.securityIpList = securityIpList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSlaveZoneIds}
+         * @param slaveZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder slaveZoneIds(com.aliyun.ros.cdk.core.IResolvable slaveZoneIds) {
+            this.slaveZoneIds = slaveZoneIds;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSlaveZoneIds}
+         * @param slaveZoneIds the value to be set.
+         * @return {@code this}
+         */
+        public Builder slaveZoneIds(java.util.List<? extends java.lang.Object> slaveZoneIds) {
+            this.slaveZoneIds = slaveZoneIds;
             return this;
         }
 
@@ -637,11 +946,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSqlCollectorStatus}
+         * @param sqlCollectorStatus the value to be set.
+         * @return {@code this}
+         */
+        public Builder sqlCollectorStatus(com.aliyun.ros.cdk.core.IResolvable sqlCollectorStatus) {
+            this.sqlCollectorStatus = sqlCollectorStatus;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getSslSetting}
          * @param sslSetting the value to be set.
          * @return {@code this}
          */
         public Builder sslSetting(java.lang.String sslSetting) {
+            this.sslSetting = sslSetting;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getSslSetting}
+         * @param sslSetting the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslSetting(com.aliyun.ros.cdk.core.IResolvable sslSetting) {
             this.sslSetting = sslSetting;
             return this;
         }
@@ -672,8 +1001,8 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             return this;
         }
 
@@ -683,6 +1012,16 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder timeoutInMinutes(java.lang.Number timeoutInMinutes) {
+            this.timeoutInMinutes = timeoutInMinutes;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getTimeoutInMinutes}
+         * @param timeoutInMinutes the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeoutInMinutes(com.aliyun.ros.cdk.core.IResolvable timeoutInMinutes) {
             this.timeoutInMinutes = timeoutInMinutes;
             return this;
         }
@@ -698,11 +1037,31 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBInstanceCloneProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -718,13 +1077,23 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosDBInstanceCloneProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosDBInstanceCloneProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosDBInstanceCloneProps build() {
-            return new Jsii$Proxy(dbInstanceId, dbInstanceStorage, payType, allocatePublicConnection, backupId, backupRetentionPeriod, backupType, category, connectionStringPrefix, connectionStringType, dbInstanceClass, dbInstanceDescription, dbInstanceStorageType, dbMappings, dbNames, dedicatedHostGroupId, instanceNetworkType, maintainTime, masterUsername, masterUserPassword, masterUserType, period, periodType, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, restoreTable, restoreTime, securityGroupId, securityIpList, sqlCollectorStatus, sslSetting, tableMeta, tags, timeoutInMinutes, vpcId, vSwitchId, zoneId);
+            return new Jsii$Proxy(dbInstanceId, payType, allocatePublicConnection, backupId, backupRetentionPeriod, backupType, category, connectionStringPrefix, connectionStringType, dbInstanceClass, dbInstanceDescription, dbInstanceStorage, dbInstanceStorageType, dbMappings, dbNames, dedicatedHostGroupId, instanceNetworkType, maintainTime, masterUsername, masterUserPassword, masterUserType, period, periodType, port, preferredBackupPeriod, preferredBackupTime, privateIpAddress, restoreTable, restoreTime, securityGroupId, securityIpList, slaveZoneIds, sqlCollectorStatus, sslSetting, tableMeta, tags, timeoutInMinutes, vpcId, vSwitchId, zoneId);
         }
     }
 
@@ -733,45 +1102,46 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDBInstanceCloneProps {
-        private final java.lang.String dbInstanceId;
-        private final java.lang.Number dbInstanceStorage;
-        private final java.lang.String payType;
+        private final java.lang.Object dbInstanceId;
+        private final java.lang.Object payType;
         private final java.lang.Object allocatePublicConnection;
-        private final java.lang.String backupId;
-        private final java.lang.Number backupRetentionPeriod;
-        private final java.lang.String backupType;
-        private final java.lang.String category;
-        private final java.lang.String connectionStringPrefix;
-        private final java.lang.String connectionStringType;
-        private final java.lang.String dbInstanceClass;
-        private final java.lang.String dbInstanceDescription;
-        private final java.lang.String dbInstanceStorageType;
+        private final java.lang.Object backupId;
+        private final java.lang.Object backupRetentionPeriod;
+        private final java.lang.Object backupType;
+        private final java.lang.Object category;
+        private final java.lang.Object connectionStringPrefix;
+        private final java.lang.Object connectionStringType;
+        private final java.lang.Object dbInstanceClass;
+        private final java.lang.Object dbInstanceDescription;
+        private final java.lang.Object dbInstanceStorage;
+        private final java.lang.Object dbInstanceStorageType;
         private final java.lang.Object dbMappings;
-        private final java.lang.String dbNames;
-        private final java.lang.String dedicatedHostGroupId;
-        private final java.lang.String instanceNetworkType;
-        private final java.lang.String maintainTime;
-        private final java.lang.String masterUsername;
-        private final java.lang.String masterUserPassword;
-        private final java.lang.String masterUserType;
-        private final java.lang.Number period;
-        private final java.lang.String periodType;
-        private final java.lang.Number port;
+        private final java.lang.Object dbNames;
+        private final java.lang.Object dedicatedHostGroupId;
+        private final java.lang.Object instanceNetworkType;
+        private final java.lang.Object maintainTime;
+        private final java.lang.Object masterUsername;
+        private final java.lang.Object masterUserPassword;
+        private final java.lang.Object masterUserType;
+        private final java.lang.Object period;
+        private final java.lang.Object periodType;
+        private final java.lang.Object port;
         private final java.lang.Object preferredBackupPeriod;
-        private final java.lang.String preferredBackupTime;
-        private final java.lang.String privateIpAddress;
-        private final java.lang.String restoreTable;
-        private final java.lang.String restoreTime;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String securityIpList;
-        private final java.lang.String sqlCollectorStatus;
-        private final java.lang.String sslSetting;
+        private final java.lang.Object preferredBackupTime;
+        private final java.lang.Object privateIpAddress;
+        private final java.lang.Object restoreTable;
+        private final java.lang.Object restoreTime;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object securityIpList;
+        private final java.lang.Object slaveZoneIds;
+        private final java.lang.Object sqlCollectorStatus;
+        private final java.lang.Object sslSetting;
         private final java.lang.Object tableMeta;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.Number timeoutInMinutes;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.util.Map<java.lang.String, java.lang.Object> tags;
+        private final java.lang.Object timeoutInMinutes;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -779,55 +1149,55 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstanceId = software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.allocatePublicConnection = software.amazon.jsii.Kernel.get(this, "allocatePublicConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.backupType = software.amazon.jsii.Kernel.get(this, "backupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.connectionStringType = software.amazon.jsii.Kernel.get(this, "connectionStringType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupType = software.amazon.jsii.Kernel.get(this, "backupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionStringPrefix = software.amazon.jsii.Kernel.get(this, "connectionStringPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.connectionStringType = software.amazon.jsii.Kernel.get(this, "connectionStringType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceStorageType = software.amazon.jsii.Kernel.get(this, "dbInstanceStorageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbMappings = software.amazon.jsii.Kernel.get(this, "dbMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.dbNames = software.amazon.jsii.Kernel.get(this, "dbNames", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUsername = software.amazon.jsii.Kernel.get(this, "masterUsername", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUserPassword = software.amazon.jsii.Kernel.get(this, "masterUserPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.masterUserType = software.amazon.jsii.Kernel.get(this, "masterUserType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.dbNames = software.amazon.jsii.Kernel.get(this, "dbNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dedicatedHostGroupId = software.amazon.jsii.Kernel.get(this, "dedicatedHostGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceNetworkType = software.amazon.jsii.Kernel.get(this, "instanceNetworkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maintainTime = software.amazon.jsii.Kernel.get(this, "maintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUsername = software.amazon.jsii.Kernel.get(this, "masterUsername", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUserPassword = software.amazon.jsii.Kernel.get(this, "masterUserPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.masterUserType = software.amazon.jsii.Kernel.get(this, "masterUserType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.periodType = software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preferredBackupPeriod = software.amazon.jsii.Kernel.get(this, "preferredBackupPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.preferredBackupTime = software.amazon.jsii.Kernel.get(this, "preferredBackupTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreTable = software.amazon.jsii.Kernel.get(this, "restoreTable", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.preferredBackupTime = software.amazon.jsii.Kernel.get(this, "preferredBackupTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreTable = software.amazon.jsii.Kernel.get(this, "restoreTable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slaveZoneIds = software.amazon.jsii.Kernel.get(this, "slaveZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sqlCollectorStatus = software.amazon.jsii.Kernel.get(this, "sqlCollectorStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sslSetting = software.amazon.jsii.Kernel.get(this, "sslSetting", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tableMeta = software.amazon.jsii.Kernel.get(this, "tableMeta", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.timeoutInMinutes = software.amazon.jsii.Kernel.get(this, "timeoutInMinutes", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class)));
+            this.timeoutInMinutes = software.amazon.jsii.Kernel.get(this, "timeoutInMinutes", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String dbInstanceId, final java.lang.Number dbInstanceStorage, final java.lang.String payType, final java.lang.Object allocatePublicConnection, final java.lang.String backupId, final java.lang.Number backupRetentionPeriod, final java.lang.String backupType, final java.lang.String category, final java.lang.String connectionStringPrefix, final java.lang.String connectionStringType, final java.lang.String dbInstanceClass, final java.lang.String dbInstanceDescription, final java.lang.String dbInstanceStorageType, final java.lang.Object dbMappings, final java.lang.String dbNames, final java.lang.String dedicatedHostGroupId, final java.lang.String instanceNetworkType, final java.lang.String maintainTime, final java.lang.String masterUsername, final java.lang.String masterUserPassword, final java.lang.String masterUserType, final java.lang.Number period, final java.lang.String periodType, final java.lang.Number port, final java.lang.Object preferredBackupPeriod, final java.lang.String preferredBackupTime, final java.lang.String privateIpAddress, final java.lang.String restoreTable, final java.lang.String restoreTime, final java.lang.String securityGroupId, final java.lang.String securityIpList, final java.lang.String sqlCollectorStatus, final java.lang.String sslSetting, final java.lang.Object tableMeta, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.Number timeoutInMinutes, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object dbInstanceId, final java.lang.Object payType, final java.lang.Object allocatePublicConnection, final java.lang.Object backupId, final java.lang.Object backupRetentionPeriod, final java.lang.Object backupType, final java.lang.Object category, final java.lang.Object connectionStringPrefix, final java.lang.Object connectionStringType, final java.lang.Object dbInstanceClass, final java.lang.Object dbInstanceDescription, final java.lang.Object dbInstanceStorage, final java.lang.Object dbInstanceStorageType, final java.lang.Object dbMappings, final java.lang.Object dbNames, final java.lang.Object dedicatedHostGroupId, final java.lang.Object instanceNetworkType, final java.lang.Object maintainTime, final java.lang.Object masterUsername, final java.lang.Object masterUserPassword, final java.lang.Object masterUserType, final java.lang.Object period, final java.lang.Object periodType, final java.lang.Object port, final java.lang.Object preferredBackupPeriod, final java.lang.Object preferredBackupTime, final java.lang.Object privateIpAddress, final java.lang.Object restoreTable, final java.lang.Object restoreTime, final java.lang.Object securityGroupId, final java.lang.Object securityIpList, final java.lang.Object slaveZoneIds, final java.lang.Object sqlCollectorStatus, final java.lang.Object sslSetting, final java.lang.Object tableMeta, final java.util.Map<java.lang.String, ? extends java.lang.Object> tags, final java.lang.Object timeoutInMinutes, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dbInstanceId = java.util.Objects.requireNonNull(dbInstanceId, "dbInstanceId is required");
-            this.dbInstanceStorage = java.util.Objects.requireNonNull(dbInstanceStorage, "dbInstanceStorage is required");
             this.payType = java.util.Objects.requireNonNull(payType, "payType is required");
             this.allocatePublicConnection = allocatePublicConnection;
             this.backupId = backupId;
@@ -838,6 +1208,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             this.connectionStringType = connectionStringType;
             this.dbInstanceClass = dbInstanceClass;
             this.dbInstanceDescription = dbInstanceDescription;
+            this.dbInstanceStorage = dbInstanceStorage;
             this.dbInstanceStorageType = dbInstanceStorageType;
             this.dbMappings = dbMappings;
             this.dbNames = dbNames;
@@ -857,10 +1228,11 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             this.restoreTime = restoreTime;
             this.securityGroupId = securityGroupId;
             this.securityIpList = securityIpList;
+            this.slaveZoneIds = slaveZoneIds;
             this.sqlCollectorStatus = sqlCollectorStatus;
             this.sslSetting = sslSetting;
             this.tableMeta = tableMeta;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.Map<java.lang.String, java.lang.Object>)tags;
             this.timeoutInMinutes = timeoutInMinutes;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
@@ -868,17 +1240,12 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getDbInstanceId() {
+        public final java.lang.Object getDbInstanceId() {
             return this.dbInstanceId;
         }
 
         @Override
-        public final java.lang.Number getDbInstanceStorage() {
-            return this.dbInstanceStorage;
-        }
-
-        @Override
-        public final java.lang.String getPayType() {
+        public final java.lang.Object getPayType() {
             return this.payType;
         }
 
@@ -888,47 +1255,52 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getBackupId() {
+        public final java.lang.Object getBackupId() {
             return this.backupId;
         }
 
         @Override
-        public final java.lang.Number getBackupRetentionPeriod() {
+        public final java.lang.Object getBackupRetentionPeriod() {
             return this.backupRetentionPeriod;
         }
 
         @Override
-        public final java.lang.String getBackupType() {
+        public final java.lang.Object getBackupType() {
             return this.backupType;
         }
 
         @Override
-        public final java.lang.String getCategory() {
+        public final java.lang.Object getCategory() {
             return this.category;
         }
 
         @Override
-        public final java.lang.String getConnectionStringPrefix() {
+        public final java.lang.Object getConnectionStringPrefix() {
             return this.connectionStringPrefix;
         }
 
         @Override
-        public final java.lang.String getConnectionStringType() {
+        public final java.lang.Object getConnectionStringType() {
             return this.connectionStringType;
         }
 
         @Override
-        public final java.lang.String getDbInstanceClass() {
+        public final java.lang.Object getDbInstanceClass() {
             return this.dbInstanceClass;
         }
 
         @Override
-        public final java.lang.String getDbInstanceDescription() {
+        public final java.lang.Object getDbInstanceDescription() {
             return this.dbInstanceDescription;
         }
 
         @Override
-        public final java.lang.String getDbInstanceStorageType() {
+        public final java.lang.Object getDbInstanceStorage() {
+            return this.dbInstanceStorage;
+        }
+
+        @Override
+        public final java.lang.Object getDbInstanceStorageType() {
             return this.dbInstanceStorageType;
         }
 
@@ -938,52 +1310,52 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getDbNames() {
+        public final java.lang.Object getDbNames() {
             return this.dbNames;
         }
 
         @Override
-        public final java.lang.String getDedicatedHostGroupId() {
+        public final java.lang.Object getDedicatedHostGroupId() {
             return this.dedicatedHostGroupId;
         }
 
         @Override
-        public final java.lang.String getInstanceNetworkType() {
+        public final java.lang.Object getInstanceNetworkType() {
             return this.instanceNetworkType;
         }
 
         @Override
-        public final java.lang.String getMaintainTime() {
+        public final java.lang.Object getMaintainTime() {
             return this.maintainTime;
         }
 
         @Override
-        public final java.lang.String getMasterUsername() {
+        public final java.lang.Object getMasterUsername() {
             return this.masterUsername;
         }
 
         @Override
-        public final java.lang.String getMasterUserPassword() {
+        public final java.lang.Object getMasterUserPassword() {
             return this.masterUserPassword;
         }
 
         @Override
-        public final java.lang.String getMasterUserType() {
+        public final java.lang.Object getMasterUserType() {
             return this.masterUserType;
         }
 
         @Override
-        public final java.lang.Number getPeriod() {
+        public final java.lang.Object getPeriod() {
             return this.period;
         }
 
         @Override
-        public final java.lang.String getPeriodType() {
+        public final java.lang.Object getPeriodType() {
             return this.periodType;
         }
 
         @Override
-        public final java.lang.Number getPort() {
+        public final java.lang.Object getPort() {
             return this.port;
         }
 
@@ -993,42 +1365,47 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getPreferredBackupTime() {
+        public final java.lang.Object getPreferredBackupTime() {
             return this.preferredBackupTime;
         }
 
         @Override
-        public final java.lang.String getPrivateIpAddress() {
+        public final java.lang.Object getPrivateIpAddress() {
             return this.privateIpAddress;
         }
 
         @Override
-        public final java.lang.String getRestoreTable() {
+        public final java.lang.Object getRestoreTable() {
             return this.restoreTable;
         }
 
         @Override
-        public final java.lang.String getRestoreTime() {
+        public final java.lang.Object getRestoreTime() {
             return this.restoreTime;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSecurityIpList() {
+        public final java.lang.Object getSecurityIpList() {
             return this.securityIpList;
         }
 
         @Override
-        public final java.lang.String getSqlCollectorStatus() {
+        public final java.lang.Object getSlaveZoneIds() {
+            return this.slaveZoneIds;
+        }
+
+        @Override
+        public final java.lang.Object getSqlCollectorStatus() {
             return this.sqlCollectorStatus;
         }
 
         @Override
-        public final java.lang.String getSslSetting() {
+        public final java.lang.Object getSslSetting() {
             return this.sslSetting;
         }
 
@@ -1038,27 +1415,27 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.Map<java.lang.String, java.lang.Object> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.Number getTimeoutInMinutes() {
+        public final java.lang.Object getTimeoutInMinutes() {
             return this.timeoutInMinutes;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 
@@ -1069,7 +1446,6 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("dbInstanceId", om.valueToTree(this.getDbInstanceId()));
-            data.set("dbInstanceStorage", om.valueToTree(this.getDbInstanceStorage()));
             data.set("payType", om.valueToTree(this.getPayType()));
             if (this.getAllocatePublicConnection() != null) {
                 data.set("allocatePublicConnection", om.valueToTree(this.getAllocatePublicConnection()));
@@ -1097,6 +1473,9 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getDbInstanceDescription() != null) {
                 data.set("dbInstanceDescription", om.valueToTree(this.getDbInstanceDescription()));
+            }
+            if (this.getDbInstanceStorage() != null) {
+                data.set("dbInstanceStorage", om.valueToTree(this.getDbInstanceStorage()));
             }
             if (this.getDbInstanceStorageType() != null) {
                 data.set("dbInstanceStorageType", om.valueToTree(this.getDbInstanceStorageType()));
@@ -1155,6 +1534,9 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
+            if (this.getSlaveZoneIds() != null) {
+                data.set("slaveZoneIds", om.valueToTree(this.getSlaveZoneIds()));
+            }
             if (this.getSqlCollectorStatus() != null) {
                 data.set("sqlCollectorStatus", om.valueToTree(this.getSqlCollectorStatus()));
             }
@@ -1198,7 +1580,6 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             RosDBInstanceCloneProps.Jsii$Proxy that = (RosDBInstanceCloneProps.Jsii$Proxy) o;
 
             if (!dbInstanceId.equals(that.dbInstanceId)) return false;
-            if (!dbInstanceStorage.equals(that.dbInstanceStorage)) return false;
             if (!payType.equals(that.payType)) return false;
             if (this.allocatePublicConnection != null ? !this.allocatePublicConnection.equals(that.allocatePublicConnection) : that.allocatePublicConnection != null) return false;
             if (this.backupId != null ? !this.backupId.equals(that.backupId) : that.backupId != null) return false;
@@ -1209,6 +1590,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.connectionStringType != null ? !this.connectionStringType.equals(that.connectionStringType) : that.connectionStringType != null) return false;
             if (this.dbInstanceClass != null ? !this.dbInstanceClass.equals(that.dbInstanceClass) : that.dbInstanceClass != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
+            if (this.dbInstanceStorage != null ? !this.dbInstanceStorage.equals(that.dbInstanceStorage) : that.dbInstanceStorage != null) return false;
             if (this.dbInstanceStorageType != null ? !this.dbInstanceStorageType.equals(that.dbInstanceStorageType) : that.dbInstanceStorageType != null) return false;
             if (this.dbMappings != null ? !this.dbMappings.equals(that.dbMappings) : that.dbMappings != null) return false;
             if (this.dbNames != null ? !this.dbNames.equals(that.dbNames) : that.dbNames != null) return false;
@@ -1228,6 +1610,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             if (this.restoreTime != null ? !this.restoreTime.equals(that.restoreTime) : that.restoreTime != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.slaveZoneIds != null ? !this.slaveZoneIds.equals(that.slaveZoneIds) : that.slaveZoneIds != null) return false;
             if (this.sqlCollectorStatus != null ? !this.sqlCollectorStatus.equals(that.sqlCollectorStatus) : that.sqlCollectorStatus != null) return false;
             if (this.sslSetting != null ? !this.sslSetting.equals(that.sslSetting) : that.sslSetting != null) return false;
             if (this.tableMeta != null ? !this.tableMeta.equals(that.tableMeta) : that.tableMeta != null) return false;
@@ -1241,7 +1624,6 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final int hashCode() {
             int result = this.dbInstanceId.hashCode();
-            result = 31 * result + (this.dbInstanceStorage.hashCode());
             result = 31 * result + (this.payType.hashCode());
             result = 31 * result + (this.allocatePublicConnection != null ? this.allocatePublicConnection.hashCode() : 0);
             result = 31 * result + (this.backupId != null ? this.backupId.hashCode() : 0);
@@ -1252,6 +1634,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.connectionStringType != null ? this.connectionStringType.hashCode() : 0);
             result = 31 * result + (this.dbInstanceClass != null ? this.dbInstanceClass.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
+            result = 31 * result + (this.dbInstanceStorage != null ? this.dbInstanceStorage.hashCode() : 0);
             result = 31 * result + (this.dbInstanceStorageType != null ? this.dbInstanceStorageType.hashCode() : 0);
             result = 31 * result + (this.dbMappings != null ? this.dbMappings.hashCode() : 0);
             result = 31 * result + (this.dbNames != null ? this.dbNames.hashCode() : 0);
@@ -1271,6 +1654,7 @@ public interface RosDBInstanceCloneProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.restoreTime != null ? this.restoreTime.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.slaveZoneIds != null ? this.slaveZoneIds.hashCode() : 0);
             result = 31 * result + (this.sqlCollectorStatus != null ? this.sqlCollectorStatus.hashCode() : 0);
             result = 31 * result + (this.sslSetting != null ? this.sslSetting.hashCode() : 0);
             result = 31 * result + (this.tableMeta != null ? this.tableMeta.hashCode() : 0);

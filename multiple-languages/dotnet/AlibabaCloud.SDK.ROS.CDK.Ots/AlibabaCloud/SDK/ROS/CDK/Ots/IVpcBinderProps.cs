@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
     public interface IVpcBinderProps
     {
         /// <summary>Property instanceName: Instance name.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceName
         {
             get;
         }
@@ -31,10 +31,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
 
             /// <summary>Property instanceName: Instance name.</summary>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vpcs: Vpc binding configuration.</summary>

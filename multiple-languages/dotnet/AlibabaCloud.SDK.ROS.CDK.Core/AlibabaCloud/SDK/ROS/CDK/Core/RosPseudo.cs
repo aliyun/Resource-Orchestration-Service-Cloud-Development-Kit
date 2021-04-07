@@ -28,10 +28,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosPseudo))!;
         }
 
-        [JsiiProperty(name: "noValue", typeJson: "{\"primitive\":\"string\"}")]
-        public static string NoValue
+        [JsiiProperty(name: "index", typeJson: "{\"primitive\":\"number\"}")]
+        public static double Index
         {
-            get => GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosPseudo))!;
+            get => GetStaticProperty<double>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosPseudo))!;
+        }
+
+        [JsiiProperty(name: "noValue", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public static AlibabaCloud.SDK.ROS.CDK.Core.IResolvable NoValue
+        {
+            get => GetStaticProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.RosPseudo))!;
         }
 
         [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]

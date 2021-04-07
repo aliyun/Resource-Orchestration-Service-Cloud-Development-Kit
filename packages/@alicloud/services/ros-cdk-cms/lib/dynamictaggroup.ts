@@ -11,12 +11,12 @@ export interface DynamicTagGroupProps {
     /**
      * Property contactGroupList: Alarm contacts.
      */
-    readonly contactGroupList: string[];
+    readonly contactGroupList: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property tagKey: Tag key.
      */
-    readonly tagKey: string;
+    readonly tagKey: string | ros.IResolvable;
 
     /**
      * Property enableInstallAgent: Whether to enable initial installation monitoring plug, not installed by default. Values are:
@@ -44,13 +44,13 @@ export interface DynamicTagGroupProps {
      * or: the relationship or the
      * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
      */
-    readonly matchExpressFilterRelation?: string;
+    readonly matchExpressFilterRelation?: string | ros.IResolvable;
 
     /**
      * Property templateIdList: Alarm template ID list.
      * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
      */
-    readonly templateIdList?: string[];
+    readonly templateIdList?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -66,12 +66,12 @@ export class DynamicTagGroup extends ros.Resource {
     /**
      * Attribute DynamicTagRuleId: Dynamic tag rule ID.
      */
-    public readonly attrDynamicTagRuleId: any;
+    public readonly attrDynamicTagRuleId: ros.IResolvable;
 
     /**
      * Attribute TagKey: Tag key.
      */
-    public readonly attrTagKey: any;
+    public readonly attrTagKey: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::DynamicTagGroup`.

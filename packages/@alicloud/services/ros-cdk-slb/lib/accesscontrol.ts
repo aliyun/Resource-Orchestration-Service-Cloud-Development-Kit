@@ -11,7 +11,7 @@ export interface AccessControlProps {
     /**
      * Property aclName: The name of the access control list.
      */
-    readonly aclName: string;
+    readonly aclName: string | ros.IResolvable;
 
     /**
      * Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
@@ -21,7 +21,12 @@ export interface AccessControlProps {
     /**
      * Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
      */
-    readonly addressIpVersion?: string;
+    readonly addressIpVersion?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosAccessControl.TagsProperty[];
 }
 
 /**
@@ -37,7 +42,7 @@ export class AccessControl extends ros.Resource {
     /**
      * Attribute AclId: The ID of the access control list.
      */
-    public readonly attrAclId: any;
+    public readonly attrAclId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::AccessControl`.
@@ -53,6 +58,7 @@ export class AccessControl extends ros.Resource {
             aclEntrys: props.aclEntrys,
             addressIpVersion: props.addressIpVersion,
             aclName: props.aclName,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccessControl;
         this.attrAclId = rosAccessControl.attrAclId;

@@ -13,9 +13,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// start with a letter and cannot start with http:// or https://. It can contain letters,
         /// digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
-        [JsiiProperty(name: "deploymentSetName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "deploymentSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DeploymentSetName
+        object? DeploymentSetName
         {
             get
             {
@@ -27,9 +27,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: description: The description of the deployment set. It must be 2 to 256 characters in length. It
         /// cannot start with http:// or https://.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -44,9 +44,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// KeepStopped: keeps the instances shut down and restarts them after the deployment
         /// set is replenished.
         /// </remarks>
-        [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? OnUnableToRedeployFailedInstance
+        object? OnUnableToRedeployFailedInstance
         {
             get
             {
@@ -68,10 +68,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// digits, colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "deploymentSetName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DeploymentSetName
+            [JsiiProperty(name: "deploymentSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeploymentSetName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// cannot start with http:// or https://.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// set is replenished.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? OnUnableToRedeployFailedInstance
+            [JsiiProperty(name: "onUnableToRedeployFailedInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? OnUnableToRedeployFailedInstance
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute TaskId: The ID of the site monitoring task.</summary>
-        [JsiiProperty(name: "attrTaskId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTaskId
+        [JsiiProperty(name: "attrTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTaskId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.076Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.650Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.CustomDomain")
 public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::CustomDomain`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CustomDomain(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.CustomDomainProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::CustomDomain`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CustomDomain(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.CustomDomainProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CertificateId: The id of the certificate.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCertificateId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCertificateId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCertificateId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.CustomDomain> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,46 +90,106 @@ public class CustomDomain extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property domainName: Custom domain name.
+         * <p>
          * @return {@code this}
-         * @param domainName This parameter is required.
+         * @param domainName Property domainName: Custom domain name. This parameter is required.
          */
         public Builder domainName(final java.lang.String domainName) {
             this.props.domainName(domainName);
             return this;
         }
+        /**
+         * Property domainName: Custom domain name.
+         * <p>
+         * @return {@code this}
+         * @param domainName Property domainName: Custom domain name. This parameter is required.
+         */
+        public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
+            this.props.domainName(domainName);
+            return this;
+        }
 
         /**
+         * Property groupId: The id of the Group.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The id of the Group.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property certificateBody: SSL certificate body.
+         * <p>
          * @return {@code this}
-         * @param certificateBody This parameter is required.
+         * @param certificateBody Property certificateBody: SSL certificate body. This parameter is required.
          */
         public Builder certificateBody(final java.lang.String certificateBody) {
             this.props.certificateBody(certificateBody);
             return this;
         }
+        /**
+         * Property certificateBody: SSL certificate body.
+         * <p>
+         * @return {@code this}
+         * @param certificateBody Property certificateBody: SSL certificate body. This parameter is required.
+         */
+        public Builder certificateBody(final com.aliyun.ros.cdk.core.IResolvable certificateBody) {
+            this.props.certificateBody(certificateBody);
+            return this;
+        }
 
         /**
+         * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
          * @return {@code this}
-         * @param certificateName This parameter is required.
+         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder certificateName(final java.lang.String certificateName) {
             this.props.certificateName(certificateName);
             return this;
         }
+        /**
+         * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
+         * @return {@code this}
+         * @param certificateName Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         */
+        public Builder certificateName(final com.aliyun.ros.cdk.core.IResolvable certificateName) {
+            this.props.certificateName(certificateName);
+            return this;
+        }
 
         /**
+         * Property certificatePrivateKey: SSL certificate key.
+         * <p>
          * @return {@code this}
-         * @param certificatePrivateKey This parameter is required.
+         * @param certificatePrivateKey Property certificatePrivateKey: SSL certificate key. This parameter is required.
          */
         public Builder certificatePrivateKey(final java.lang.String certificatePrivateKey) {
+            this.props.certificatePrivateKey(certificatePrivateKey);
+            return this;
+        }
+        /**
+         * Property certificatePrivateKey: SSL certificate key.
+         * <p>
+         * @return {@code this}
+         * @param certificatePrivateKey Property certificatePrivateKey: SSL certificate key. This parameter is required.
+         */
+        public Builder certificatePrivateKey(final com.aliyun.ros.cdk.core.IResolvable certificatePrivateKey) {
             this.props.certificatePrivateKey(certificatePrivateKey);
             return this;
         }

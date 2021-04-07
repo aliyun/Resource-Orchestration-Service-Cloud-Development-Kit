@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.356Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosRoute")
 public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDestinationCidrBlock() {
-        return software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock() {
+        return software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -60,14 +60,20 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setDestinationCidrBlock(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "destinationCidrBlock", java.util.Objects.requireNonNull(value, "destinationCidrBlock is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -75,8 +81,8 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRouteId() {
-        return software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRouteId() {
+        return software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRouteTableId() {
-        return software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRouteId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routeId", java.util.Objects.requireNonNull(value, "routeId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRouteTableId() {
+        return software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNextHopId() {
-        return software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRouteTableId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "routeTableId", java.util.Objects.requireNonNull(value, "routeTableId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNextHopId() {
+        return software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNextHopId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "nextHopId", value);
+    }
+
+    /**
+     */
+    public void setNextHopId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "nextHopId", value);
     }
 
@@ -129,13 +153,19 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getNextHopType() {
-        return software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNextHopType() {
+        return software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setNextHopType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "nextHopType", value);
+    }
+
+    /**
+     */
+    public void setNextHopType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "nextHopType", value);
     }
     /**
@@ -148,12 +178,12 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getNextHopId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getNextHopId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNextHopType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopType() {
             return null;
         }
 
@@ -169,8 +199,8 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<NextHopListProperty> {
-            private java.lang.String nextHopId;
-            private java.lang.String nextHopType;
+            private java.lang.Object nextHopId;
+            private java.lang.Object nextHopType;
 
             /**
              * Sets the value of {@link NextHopListProperty#getNextHopId}
@@ -184,12 +214,34 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link NextHopListProperty#getNextHopId}
+             * @param nextHopId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nextHopId(com.aliyun.ros.cdk.core.IResolvable nextHopId) {
+                this.nextHopId = nextHopId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link NextHopListProperty#getNextHopType}
              * @param nextHopType the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder nextHopType(java.lang.String nextHopType) {
+                this.nextHopType = nextHopType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link NextHopListProperty#getNextHopType}
+             * @param nextHopType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nextHopType(com.aliyun.ros.cdk.core.IResolvable nextHopType) {
                 this.nextHopType = nextHopType;
                 return this;
             }
@@ -212,8 +264,8 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements NextHopListProperty {
-            private final java.lang.String nextHopId;
-            private final java.lang.String nextHopType;
+            private final java.lang.Object nextHopId;
+            private final java.lang.Object nextHopType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -221,26 +273,26 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.nextHopType = software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.nextHopType = software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String nextHopId, final java.lang.String nextHopType) {
+            protected Jsii$Proxy(final java.lang.Object nextHopId, final java.lang.Object nextHopType) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.nextHopId = java.util.Objects.requireNonNull(nextHopId, "nextHopId is required");
                 this.nextHopType = nextHopType;
             }
 
             @Override
-            public final java.lang.String getNextHopId() {
+            public final java.lang.Object getNextHopId() {
                 return this.nextHopId;
             }
 
             @Override
-            public final java.lang.String getNextHopType() {
+            public final java.lang.Object getNextHopType() {
                 return this.nextHopType;
             }
 
@@ -319,12 +371,28 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
             this.props.destinationCidrBlock(destinationCidrBlock);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param destinationCidrBlock This parameter is required.
+         */
+        public Builder destinationCidrBlock(final com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
+            this.props.destinationCidrBlock(destinationCidrBlock);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param routeId This parameter is required.
          */
         public Builder routeId(final java.lang.String routeId) {
+            this.props.routeId(routeId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param routeId This parameter is required.
+         */
+        public Builder routeId(final com.aliyun.ros.cdk.core.IResolvable routeId) {
             this.props.routeId(routeId);
             return this;
         }
@@ -337,12 +405,28 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
             this.props.routeTableId(routeTableId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param routeTableId This parameter is required.
+         */
+        public Builder routeTableId(final com.aliyun.ros.cdk.core.IResolvable routeTableId) {
+            this.props.routeTableId(routeTableId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param nextHopId This parameter is required.
          */
         public Builder nextHopId(final java.lang.String nextHopId) {
+            this.props.nextHopId(nextHopId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nextHopId This parameter is required.
+         */
+        public Builder nextHopId(final com.aliyun.ros.cdk.core.IResolvable nextHopId) {
             this.props.nextHopId(nextHopId);
             return this;
         }
@@ -369,6 +453,14 @@ public class RosRoute extends com.aliyun.ros.cdk.core.RosResource {
          * @param nextHopType This parameter is required.
          */
         public Builder nextHopType(final java.lang.String nextHopType) {
+            this.props.nextHopType(nextHopType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param nextHopType This parameter is required.
+         */
+        public Builder nextHopType(final com.aliyun.ros.cdk.core.IResolvable nextHopType) {
             this.props.nextHopType(nextHopType);
             return this;
         }

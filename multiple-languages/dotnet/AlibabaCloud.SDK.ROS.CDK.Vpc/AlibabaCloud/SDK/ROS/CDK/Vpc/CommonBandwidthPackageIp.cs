@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute AllocationIds: All eip allocation ids of common bandwidth package.</summary>
-        [JsiiProperty(name: "attrAllocationIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAllocationIds
+        [JsiiProperty(name: "attrAllocationIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAllocationIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute IpAddresses: All eip addresses of common bandwidth package.</summary>
-        [JsiiProperty(name: "attrIpAddresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpAddresses
+        [JsiiProperty(name: "attrIpAddresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpAddresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

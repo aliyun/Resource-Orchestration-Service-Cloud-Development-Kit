@@ -11,7 +11,7 @@ export interface MetricRuleTemplateProps {
     /**
      * Property name: The name of the alert template.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property alertTemplates: Valid values of N: 0 to 200.
@@ -21,19 +21,19 @@ export interface MetricRuleTemplateProps {
     /**
      * Property description: The description of the alert template.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property restVersion: The version of the alert template. Call DescribeMetricRuleTemplateList or DescribeMetricRuleTemplateAttribute
      * to obtain information about the alert templates. The combination of version and ID
      * uniquely identifies an alert template.
      */
-    readonly restVersion?: number;
+    readonly restVersion?: number | ros.IResolvable;
 
     /**
      * Property templateId: The ID of the alert template.
      */
-    readonly templateId?: number;
+    readonly templateId?: number | ros.IResolvable;
 }
 
 /**
@@ -49,7 +49,7 @@ export class MetricRuleTemplate extends ros.Resource {
     /**
      * Attribute Id: Alarm template ID.
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::MetricRuleTemplate`.

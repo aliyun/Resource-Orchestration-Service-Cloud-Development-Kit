@@ -3,46 +3,55 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::ManagedPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.854Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.ManagedPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedPolicyProps.Jsii$Proxy.class)
 public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property policyName: Specifies the authorization policy name, containing up to 128 characters.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPolicyName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName();
 
     /**
+     * Property description: Specifies the authorization policy description, containing up to 1024 characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property groups: The names of groups to attach to this policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroups() {
         return null;
     }
 
     /**
+     * Property policyDocument: A policy document that describes what actions are allowed on which resources.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyDocument() {
         return null;
     }
 
     /**
+     * Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources.
+     * <p>
+     * If it is specified, PolicyDocument will be ignored.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolicyDocumentUnchecked() {
         return null;
     }
 
     /**
+     * Property roles: The names of roles to attach to this policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRoles() {
         return null;
     }
 
     /**
+     * Property users: The names of users to attach to this policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsers() {
         return null;
@@ -58,8 +67,8 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ManagedPolicyProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ManagedPolicyProps> {
-        private java.lang.String policyName;
-        private java.lang.String description;
+        private java.lang.Object policyName;
+        private java.lang.Object description;
         private java.lang.Object groups;
         private java.lang.Object policyDocument;
         private java.lang.Object policyDocumentUnchecked;
@@ -68,7 +77,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getPolicyName}
-         * @param policyName the value to be set. This parameter is required.
+         * @param policyName Property policyName: Specifies the authorization policy name, containing up to 128 characters. This parameter is required.
          * @return {@code this}
          */
         public Builder policyName(java.lang.String policyName) {
@@ -77,8 +86,18 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ManagedPolicyProps#getPolicyName}
+         * @param policyName Property policyName: Specifies the authorization policy name, containing up to 128 characters. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder policyName(com.aliyun.ros.cdk.core.IResolvable policyName) {
+            this.policyName = policyName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedPolicyProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Specifies the authorization policy description, containing up to 1024 characters.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -87,8 +106,18 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ManagedPolicyProps#getDescription}
+         * @param description Property description: Specifies the authorization policy description, containing up to 1024 characters.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ManagedPolicyProps#getGroups}
-         * @param groups the value to be set.
+         * @param groups Property groups: The names of groups to attach to this policy.
          * @return {@code this}
          */
         public Builder groups(java.util.List<? extends java.lang.Object> groups) {
@@ -98,7 +127,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getGroups}
-         * @param groups the value to be set.
+         * @param groups Property groups: The names of groups to attach to this policy.
          * @return {@code this}
          */
         public Builder groups(com.aliyun.ros.cdk.core.IResolvable groups) {
@@ -108,7 +137,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getPolicyDocument}
-         * @param policyDocument the value to be set.
+         * @param policyDocument Property policyDocument: A policy document that describes what actions are allowed on which resources.
          * @return {@code this}
          */
         public Builder policyDocument(com.aliyun.ros.cdk.core.IResolvable policyDocument) {
@@ -118,7 +147,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getPolicyDocument}
-         * @param policyDocument the value to be set.
+         * @param policyDocument Property policyDocument: A policy document that describes what actions are allowed on which resources.
          * @return {@code this}
          */
         public Builder policyDocument(com.aliyun.ros.cdk.ram.RosManagedPolicy.PolicyDocumentProperty policyDocument) {
@@ -128,7 +157,8 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getPolicyDocumentUnchecked}
-         * @param policyDocumentUnchecked the value to be set.
+         * @param policyDocumentUnchecked Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources.
+         *                                If it is specified, PolicyDocument will be ignored.
          * @return {@code this}
          */
         public Builder policyDocumentUnchecked(com.aliyun.ros.cdk.core.IResolvable policyDocumentUnchecked) {
@@ -138,7 +168,8 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getPolicyDocumentUnchecked}
-         * @param policyDocumentUnchecked the value to be set.
+         * @param policyDocumentUnchecked Property policyDocumentUnchecked: A policy document that describes what actions are allowed on which resources.
+         *                                If it is specified, PolicyDocument will be ignored.
          * @return {@code this}
          */
         public Builder policyDocumentUnchecked(java.util.Map<java.lang.String, ? extends java.lang.Object> policyDocumentUnchecked) {
@@ -148,7 +179,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getRoles}
-         * @param roles the value to be set.
+         * @param roles Property roles: The names of roles to attach to this policy.
          * @return {@code this}
          */
         public Builder roles(java.util.List<? extends java.lang.Object> roles) {
@@ -158,7 +189,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getRoles}
-         * @param roles the value to be set.
+         * @param roles Property roles: The names of roles to attach to this policy.
          * @return {@code this}
          */
         public Builder roles(com.aliyun.ros.cdk.core.IResolvable roles) {
@@ -168,7 +199,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getUsers}
-         * @param users the value to be set.
+         * @param users Property users: The names of users to attach to this policy.
          * @return {@code this}
          */
         public Builder users(java.util.List<? extends java.lang.Object> users) {
@@ -178,7 +209,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ManagedPolicyProps#getUsers}
-         * @param users the value to be set.
+         * @param users Property users: The names of users to attach to this policy.
          * @return {@code this}
          */
         public Builder users(com.aliyun.ros.cdk.core.IResolvable users) {
@@ -202,8 +233,8 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ManagedPolicyProps {
-        private final java.lang.String policyName;
-        private final java.lang.String description;
+        private final java.lang.Object policyName;
+        private final java.lang.Object description;
         private final java.lang.Object groups;
         private final java.lang.Object policyDocument;
         private final java.lang.Object policyDocumentUnchecked;
@@ -216,8 +247,8 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.policyName = software.amazon.jsii.Kernel.get(this, "policyName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groups = software.amazon.jsii.Kernel.get(this, "groups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocument = software.amazon.jsii.Kernel.get(this, "policyDocument", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyDocumentUnchecked = software.amazon.jsii.Kernel.get(this, "policyDocumentUnchecked", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -228,7 +259,7 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String policyName, final java.lang.String description, final java.lang.Object groups, final java.lang.Object policyDocument, final java.lang.Object policyDocumentUnchecked, final java.lang.Object roles, final java.lang.Object users) {
+        protected Jsii$Proxy(final java.lang.Object policyName, final java.lang.Object description, final java.lang.Object groups, final java.lang.Object policyDocument, final java.lang.Object policyDocumentUnchecked, final java.lang.Object roles, final java.lang.Object users) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.policyName = java.util.Objects.requireNonNull(policyName, "policyName is required");
             this.description = description;
@@ -240,12 +271,12 @@ public interface ManagedPolicyProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getPolicyName() {
+        public final java.lang.Object getPolicyName() {
             return this.policyName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

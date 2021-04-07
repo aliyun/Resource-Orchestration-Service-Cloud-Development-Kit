@@ -11,13 +11,13 @@ export interface RosUisProps {
      * @Property description: Description of the instance.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the instance.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -85,27 +85,27 @@ export class RosUis extends ros.RosResource {
     /**
      * @Attribute ClientInfoDB: The client info DB.
      */
-    public readonly attrClientInfoDb: any;
+    public readonly attrClientInfoDb: ros.IResolvable;
 
     /**
      * @Attribute ClientInfoDBAccount: The client info DB account.
      */
-    public readonly attrClientInfoDbAccount: any;
+    public readonly attrClientInfoDbAccount: ros.IResolvable;
 
     /**
      * @Attribute ClientInfoDBPassword: The client info DB password.
      */
-    public readonly attrClientInfoDbPassword: any;
+    public readonly attrClientInfoDbPassword: ros.IResolvable;
 
     /**
      * @Attribute SslClientCertUrl: The ssl client cert url.
      */
-    public readonly attrSslClientCertUrl: any;
+    public readonly attrSslClientCertUrl: ros.IResolvable;
 
     /**
      * @Attribute UisId: The ID of the instance.
      */
-    public readonly attrUisId: any;
+    public readonly attrUisId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -114,13 +114,13 @@ export class RosUis extends ros.RosResource {
      * @Property description: Description of the instance.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the instance.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::UIS::Uis`.
@@ -131,11 +131,11 @@ export class RosUis extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUisProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUis.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClientInfoDb = ros.Token.asString(this.getAtt('ClientInfoDB'));
-        this.attrClientInfoDbAccount = ros.Token.asString(this.getAtt('ClientInfoDBAccount'));
-        this.attrClientInfoDbPassword = ros.Token.asString(this.getAtt('ClientInfoDBPassword'));
-        this.attrSslClientCertUrl = ros.Token.asString(this.getAtt('SslClientCertUrl'));
-        this.attrUisId = ros.Token.asString(this.getAtt('UisId'));
+        this.attrClientInfoDb = this.getAtt('ClientInfoDB');
+        this.attrClientInfoDbAccount = this.getAtt('ClientInfoDBAccount');
+        this.attrClientInfoDbPassword = this.getAtt('ClientInfoDBPassword');
+        this.attrSslClientCertUrl = this.getAtt('SslClientCertUrl');
+        this.attrUisId = this.getAtt('UisId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
@@ -162,17 +162,17 @@ export interface RosUisConnectionProps {
     /**
      * @Property uisNodeId: Node instance ID.
      */
-    readonly uisNodeId: string;
+    readonly uisNodeId: string | ros.IResolvable;
 
     /**
      * @Property uisProtocol: The protocol name used by the software and server. The default value is SSLVPN.
      */
-    readonly uisProtocol: string;
+    readonly uisProtocol: string | ros.IResolvable;
 
     /**
      * @Property description: A description of the tunnel connection.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property greConfig: The config for GRE. Item can be overwritten, but removed.
@@ -182,7 +182,7 @@ export interface RosUisConnectionProps {
     /**
      * @Property name: The name of the tunnel connection.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property sslConfig: The config for SSLVPN.
@@ -257,7 +257,7 @@ export class RosUisConnection extends ros.RosResource {
     /**
      * @Attribute UisConnectionId: ID of the VPN server. This ID does not distinguish between protocols.
      */
-    public readonly attrUisConnectionId: any;
+    public readonly attrUisConnectionId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -265,17 +265,17 @@ export class RosUisConnection extends ros.RosResource {
     /**
      * @Property uisNodeId: Node instance ID.
      */
-    public uisNodeId: string;
+    public uisNodeId: string | ros.IResolvable;
 
     /**
      * @Property uisProtocol: The protocol name used by the software and server. The default value is SSLVPN.
      */
-    public uisProtocol: string;
+    public uisProtocol: string | ros.IResolvable;
 
     /**
      * @Property description: A description of the tunnel connection.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property greConfig: The config for GRE. Item can be overwritten, but removed.
@@ -285,7 +285,7 @@ export class RosUisConnection extends ros.RosResource {
     /**
      * @Property name: The name of the tunnel connection.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslConfig: The config for SSLVPN.
@@ -301,7 +301,7 @@ export class RosUisConnection extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUisConnectionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUisConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrUisConnectionId = ros.Token.asString(this.getAtt('UisConnectionId'));
+        this.attrUisConnectionId = this.getAtt('UisConnectionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.uisNodeId = props.uisNodeId;
@@ -336,23 +336,23 @@ export namespace RosUisConnection {
         /**
          * @Property customerTunnelIp: The GRE Tunnel IP for Customer.
          */
-        readonly customerTunnelIp: string;
+        readonly customerTunnelIp: string | ros.IResolvable;
         /**
          * @Property localTunnelIp: The GRE Tunnel IP for UisNode.
          */
-        readonly localTunnelIp: string;
+        readonly localTunnelIp: string | ros.IResolvable;
         /**
          * @Property localIp: UisNode IP.
          */
-        readonly localIp: string;
+        readonly localIp: string | ros.IResolvable;
         /**
          * @Property customerIp: The customer's public IP.
          */
-        readonly customerIp: string;
+        readonly customerIp: string | ros.IResolvable;
         /**
          * @Property customerSubnet: The CIDR of customer's GRE private network.
          */
-        readonly customerSubnet: string;
+        readonly customerSubnet: string | ros.IResolvable;
     }
 }
 /**
@@ -406,15 +406,15 @@ export namespace RosUisConnection {
         /**
          * @Property port: The port used by the SSL-VPN server. The default value is 1194. The port range us 1025-10000, and avoid the following well-known ports [22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500]
          */
-        readonly port: number;
+        readonly port: number | ros.IResolvable;
         /**
          * @Property cipher: The encryption algorithm used by SSL-VPN. Value: AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none.
          */
-        readonly cipher: string;
+        readonly cipher: string | ros.IResolvable;
         /**
          * @Property protocol: The protocol used by the SSL-VPN server. Value: UDP (default) | TCP
          */
-        readonly protocol: string;
+        readonly protocol: string | ros.IResolvable;
     }
 }
 /**
@@ -481,33 +481,33 @@ export interface RosUisNodeProps {
     /**
      * @Property ipAddrsNum: The number of IPs available at the boarding point. The default is 2, the maximum is 10, if you need more quota, please submit the work order.
      */
-    readonly ipAddrsNum: number;
+    readonly ipAddrsNum: number | ros.IResolvable;
 
     /**
      * @Property uisId: The instance ID to which the boarding point belongs.
      */
-    readonly uisId: string;
+    readonly uisId: string | ros.IResolvable;
 
     /**
      * @Property uisNodeAreaId: Specifies the territory ID of the node. You can query the supported territories through the DescribeRegions interface.
      */
-    readonly uisNodeAreaId: string;
+    readonly uisNodeAreaId: string | ros.IResolvable;
 
     /**
      * @Property uisNodeBandwidth: Specify the bandwidth bandwidth value for this pick-up point, even if the Internet bandwidth.
      * If you do not specify a bandwidth, the default value is 20Mbps.
      */
-    readonly uisNodeBandwidth: number;
+    readonly uisNodeBandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: Description of the instance of the boarding point.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the instance of the boarding point.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -587,17 +587,17 @@ export class RosUisNode extends ros.RosResource {
     /**
      * @Attribute UisNodeActiveIps: The node active IP list.
      */
-    public readonly attrUisNodeActiveIps: any;
+    public readonly attrUisNodeActiveIps: ros.IResolvable;
 
     /**
      * @Attribute UisNodeId: The node ID of the instance.
      */
-    public readonly attrUisNodeId: any;
+    public readonly attrUisNodeId: ros.IResolvable;
 
     /**
      * @Attribute UisNodeIps: The node IP list.
      */
-    public readonly attrUisNodeIps: any;
+    public readonly attrUisNodeIps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -605,33 +605,33 @@ export class RosUisNode extends ros.RosResource {
     /**
      * @Property ipAddrsNum: The number of IPs available at the boarding point. The default is 2, the maximum is 10, if you need more quota, please submit the work order.
      */
-    public ipAddrsNum: number;
+    public ipAddrsNum: number | ros.IResolvable;
 
     /**
      * @Property uisId: The instance ID to which the boarding point belongs.
      */
-    public uisId: string;
+    public uisId: string | ros.IResolvable;
 
     /**
      * @Property uisNodeAreaId: Specifies the territory ID of the node. You can query the supported territories through the DescribeRegions interface.
      */
-    public uisNodeAreaId: string;
+    public uisNodeAreaId: string | ros.IResolvable;
 
     /**
      * @Property uisNodeBandwidth: Specify the bandwidth bandwidth value for this pick-up point, even if the Internet bandwidth.
      * If you do not specify a bandwidth, the default value is 20Mbps.
      */
-    public uisNodeBandwidth: number;
+    public uisNodeBandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: Description of the instance of the boarding point.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the instance of the boarding point.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::UIS::UisNode`.
@@ -642,9 +642,9 @@ export class RosUisNode extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUisNodeProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUisNode.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrUisNodeActiveIps = ros.Token.asString(this.getAtt('UisNodeActiveIps'));
-        this.attrUisNodeId = ros.Token.asString(this.getAtt('UisNodeId'));
-        this.attrUisNodeIps = ros.Token.asString(this.getAtt('UisNodeIps'));
+        this.attrUisNodeActiveIps = this.getAtt('UisNodeActiveIps');
+        this.attrUisNodeId = this.getAtt('UisNodeId');
+        this.attrUisNodeIps = this.getAtt('UisNodeIps');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipAddrsNum = props.ipAddrsNum;

@@ -10,19 +10,19 @@ export interface RosZoneProps {
     /**
      * @Property zoneName: Zone name
      */
-    readonly zoneName: string;
+    readonly zoneName: string | ros.IResolvable;
 
     /**
      * @Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
      */
-    readonly proxyPattern?: string;
+    readonly proxyPattern?: string | ros.IResolvable;
 
     /**
      * @Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
-    readonly remark?: string;
+    readonly remark?: string | ros.IResolvable;
 }
 
 /**
@@ -98,7 +98,12 @@ export class RosZone extends ros.RosResource {
     /**
      * @Attribute ZoneId: Zone ID
      */
-    public readonly attrZoneId: any;
+    public readonly attrZoneId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneName: Zone name
+     */
+    public readonly attrZoneName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -106,19 +111,19 @@ export class RosZone extends ros.RosResource {
     /**
      * @Property zoneName: Zone name
      */
-    public zoneName: string;
+    public zoneName: string | ros.IResolvable;
 
     /**
      * @Property proxyPattern: ZONE: completely hijack the entire zone.
      * RECORD: Incomplete hijacking, recursive resolution agent.
      * Default to ZONE.
      */
-    public proxyPattern: string | undefined;
+    public proxyPattern: string | ros.IResolvable | undefined;
 
     /**
      * @Property remark: 50 characters at most. It can only contain numbers, Chinese, English and special characters: "_-,.，。".
      */
-    public remark: string | undefined;
+    public remark: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
@@ -129,7 +134,8 @@ export class RosZone extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZone.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrZoneId = ros.Token.asString(this.getAtt('ZoneId'));
+        this.attrZoneId = this.getAtt('ZoneId');
+        this.attrZoneName = this.getAtt('ZoneName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.zoneName = props.zoneName;
@@ -158,37 +164,37 @@ export interface RosZoneRecordProps {
     /**
      * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    readonly rr: string;
+    readonly rr: string | ros.IResolvable;
 
     /**
      * @Property status: Allowed values: [ENABLE, DISABLE]
      */
-    readonly status: string;
+    readonly status: string | ros.IResolvable;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * @Property value: Record value
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * @Property zoneId: Zone Id
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property priority: MX record priority, value range [1,10]. Default to 10.
+     * @Property priority: MX record priority, value range [1,99]. Default to 10.
      */
-    readonly priority?: number;
+    readonly priority?: number | ros.IResolvable;
 
     /**
      * @Property ttl: Survival time, default is 60
      */
-    readonly ttl?: number;
+    readonly ttl?: number | ros.IResolvable;
 }
 
 /**
@@ -215,7 +221,7 @@ function RosZoneRecordPropsValidator(properties: any): ros.ValidationResult {
     if(properties.type && (typeof properties.type) !== 'object') {
         errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
           data: properties.type,
-          allowedValues: ["A","CNAME","MX","PTR","TXT"],
+          allowedValues: ["A","AAAA","CNAME","TXT","MX","PTR","SRV"],
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
@@ -225,7 +231,7 @@ function RosZoneRecordPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('priority', ros.validateRange)({
             data: properties.priority,
             min: 1,
-            max: 10,
+            max: 99,
           }));
     }
     errors.collect(ros.propertyValidator('priority', ros.validateNumber)(properties.priority));
@@ -274,9 +280,19 @@ export class RosZoneRecord extends ros.RosResource {
      */
 
     /**
+     * @Attribute Record: Record data.
+     */
+    public readonly attrRecord: ros.IResolvable;
+
+    /**
      * @Attribute RecordId: Parsing record Id
      */
-    public readonly attrRecordId: any;
+    public readonly attrRecordId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone ID.
+     */
+    public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -284,37 +300,37 @@ export class RosZoneRecord extends ros.RosResource {
     /**
      * @Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
      */
-    public rr: string;
+    public rr: string | ros.IResolvable;
 
     /**
      * @Property status: Allowed values: [ENABLE, DISABLE]
      */
-    public status: string;
+    public status: string | ros.IResolvable;
 
     /**
-     * @Property type: Analyze record type, currently only supports A, CNAME, TXT, MX, PTR
+     * @Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
      */
-    public type: string;
+    public type: string | ros.IResolvable;
 
     /**
      * @Property value: Record value
      */
-    public value: string;
+    public value: string | ros.IResolvable;
 
     /**
      * @Property zoneId: Zone Id
      */
-    public zoneId: string;
+    public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property priority: MX record priority, value range [1,10]. Default to 10.
+     * @Property priority: MX record priority, value range [1,99]. Default to 10.
      */
-    public priority: number | undefined;
+    public priority: number | ros.IResolvable | undefined;
 
     /**
      * @Property ttl: Survival time, default is 60
      */
-    public ttl: number | undefined;
+    public ttl: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneRecord`.
@@ -325,7 +341,9 @@ export class RosZoneRecord extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneRecordProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZoneRecord.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRecordId = ros.Token.asString(this.getAtt('RecordId'));
+        this.attrRecord = this.getAtt('Record');
+        this.attrRecordId = this.getAtt('RecordId');
+        this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.rr = props.rr;
@@ -367,7 +385,7 @@ export interface RosZoneVpcBinderProps {
     /**
      * @Property zoneId: Zone Id
      */
-    readonly zoneId: string;
+    readonly zoneId: string | ros.IResolvable;
 }
 
 /**
@@ -427,6 +445,16 @@ export class RosZoneVpcBinder extends ros.RosResource {
      * containing the properties of this ROS resource.
      */
 
+    /**
+     * @Attribute Vpcs: Vpc list
+     */
+    public readonly attrVpcs: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: Zone Id
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
     public enableResourcePropertyConstraint: boolean;
 
 
@@ -438,7 +466,7 @@ export class RosZoneVpcBinder extends ros.RosResource {
     /**
      * @Property zoneId: Zone Id
      */
-    public zoneId: string;
+    public zoneId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::PVTZ::ZoneVpcBinder`.
@@ -449,6 +477,8 @@ export class RosZoneVpcBinder extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosZoneVpcBinderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosZoneVpcBinder.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrVpcs = this.getAtt('Vpcs');
+        this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcs = props.vpcs;
@@ -475,11 +505,11 @@ export namespace RosZoneVpcBinder {
         /**
          * @Property vpcId: Vpcs attribute, vpc Id
          */
-        readonly vpcId: string;
+        readonly vpcId: string | ros.IResolvable;
         /**
          * @Property regionId: Vpcs attribute, region Id
          */
-        readonly regionId: string;
+        readonly regionId: string | ros.IResolvable;
     }
 }
 /**

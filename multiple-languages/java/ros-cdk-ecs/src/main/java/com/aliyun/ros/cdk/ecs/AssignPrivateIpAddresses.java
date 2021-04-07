@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::AssignPrivateIpAddresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddresses")
 public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AssignPrivateIpAddresses(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::AssignPrivateIpAddresses`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AssignPrivateIpAddresses(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.AssignPrivateIpAddressesProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute NetworkInterfaceId: The ID of the ENI.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNetworkInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNetworkInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrNetworkInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PrivateIpAddresses: Assigned private ip addresses.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateIpAddresses() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrivateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateIpAddresses() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateIpAddresses", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.AssignPrivateIpAddresses> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,25 +97,53 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property networkInterfaceId: The ID of the ENI.
+         * <p>
          * @return {@code this}
-         * @param networkInterfaceId This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the ENI. This parameter is required.
          */
         public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
+        /**
+         * Property networkInterfaceId: The ID of the ENI.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the ENI. This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
 
         /**
+         * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
+         * <p>
+         * Valid values of number of private ip addresses:
+         * When the ENI is in the Available state: 1 to 10.
+         * When the ENI is in the InUse state: limited by the instance type.
+         * For more information, see Instance type families.
+         * You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
+         * <p>
          * @return {@code this}
-         * @param privateIpAddresses This parameter is required.
+         * @param privateIpAddresses Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. This parameter is required.
          */
         public Builder privateIpAddresses(final java.util.List<? extends java.lang.Object> privateIpAddresses) {
             this.props.privateIpAddresses(privateIpAddresses);
             return this;
         }
         /**
+         * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
+         * <p>
+         * Valid values of number of private ip addresses:
+         * When the ENI is in the Available state: 1 to 10.
+         * When the ENI is in the InUse state: limited by the instance type.
+         * For more information, see Instance type families.
+         * You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
+         * <p>
          * @return {@code this}
-         * @param privateIpAddresses This parameter is required.
+         * @param privateIpAddresses Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI. This parameter is required.
          */
         public Builder privateIpAddresses(final com.aliyun.ros.cdk.core.IResolvable privateIpAddresses) {
             this.props.privateIpAddresses(privateIpAddresses);
@@ -113,10 +151,22 @@ public class AssignPrivateIpAddresses extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * <p>
          * @return {@code this}
-         * @param secondaryPrivateIpAddressCount This parameter is required.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance. This parameter is required.
          */
         public Builder secondaryPrivateIpAddressCount(final java.lang.Number secondaryPrivateIpAddressCount) {
+            this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
+            return this;
+        }
+        /**
+         * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * <p>
+         * @return {@code this}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance. This parameter is required.
+         */
+        public Builder secondaryPrivateIpAddressCount(final com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
             this.props.secondaryPrivateIpAddressCount(secondaryPrivateIpAddressCount);
             return this;
         }

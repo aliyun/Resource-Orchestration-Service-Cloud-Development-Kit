@@ -3,36 +3,36 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosSlbBindingProps")
 @software.amazon.jsii.Jsii.Proxy(RosSlbBindingProps.Jsii$Proxy.class)
 public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAppId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAppId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternet() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternet() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInternetSlbId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInternetSlbId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIntranet() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIntranet() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIntranetSlbId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIntranetSlbId() {
         return null;
     }
 
@@ -46,11 +46,11 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosSlbBindingProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSlbBindingProps> {
-        private java.lang.String appId;
-        private java.lang.String internet;
-        private java.lang.String internetSlbId;
-        private java.lang.String intranet;
-        private java.lang.String intranetSlbId;
+        private java.lang.Object appId;
+        private java.lang.Object internet;
+        private java.lang.Object internetSlbId;
+        private java.lang.Object intranet;
+        private java.lang.Object intranetSlbId;
 
         /**
          * Sets the value of {@link RosSlbBindingProps#getAppId}
@@ -58,6 +58,16 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder appId(java.lang.String appId) {
+            this.appId = appId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSlbBindingProps#getAppId}
+         * @param appId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder appId(com.aliyun.ros.cdk.core.IResolvable appId) {
             this.appId = appId;
             return this;
         }
@@ -73,11 +83,31 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosSlbBindingProps#getInternet}
+         * @param internet the value to be set.
+         * @return {@code this}
+         */
+        public Builder internet(com.aliyun.ros.cdk.core.IResolvable internet) {
+            this.internet = internet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSlbBindingProps#getInternetSlbId}
          * @param internetSlbId the value to be set.
          * @return {@code this}
          */
         public Builder internetSlbId(java.lang.String internetSlbId) {
+            this.internetSlbId = internetSlbId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSlbBindingProps#getInternetSlbId}
+         * @param internetSlbId the value to be set.
+         * @return {@code this}
+         */
+        public Builder internetSlbId(com.aliyun.ros.cdk.core.IResolvable internetSlbId) {
             this.internetSlbId = internetSlbId;
             return this;
         }
@@ -93,11 +123,31 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosSlbBindingProps#getIntranet}
+         * @param intranet the value to be set.
+         * @return {@code this}
+         */
+        public Builder intranet(com.aliyun.ros.cdk.core.IResolvable intranet) {
+            this.intranet = intranet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSlbBindingProps#getIntranetSlbId}
          * @param intranetSlbId the value to be set.
          * @return {@code this}
          */
         public Builder intranetSlbId(java.lang.String intranetSlbId) {
+            this.intranetSlbId = intranetSlbId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSlbBindingProps#getIntranetSlbId}
+         * @param intranetSlbId the value to be set.
+         * @return {@code this}
+         */
+        public Builder intranetSlbId(com.aliyun.ros.cdk.core.IResolvable intranetSlbId) {
             this.intranetSlbId = intranetSlbId;
             return this;
         }
@@ -118,11 +168,11 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSlbBindingProps {
-        private final java.lang.String appId;
-        private final java.lang.String internet;
-        private final java.lang.String internetSlbId;
-        private final java.lang.String intranet;
-        private final java.lang.String intranetSlbId;
+        private final java.lang.Object appId;
+        private final java.lang.Object internet;
+        private final java.lang.Object internetSlbId;
+        private final java.lang.Object intranet;
+        private final java.lang.Object intranetSlbId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -130,17 +180,17 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.appId = software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internet = software.amazon.jsii.Kernel.get(this, "internet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internetSlbId = software.amazon.jsii.Kernel.get(this, "internetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.intranet = software.amazon.jsii.Kernel.get(this, "intranet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.intranetSlbId = software.amazon.jsii.Kernel.get(this, "intranetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.appId = software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internet = software.amazon.jsii.Kernel.get(this, "internet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internetSlbId = software.amazon.jsii.Kernel.get(this, "internetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.intranet = software.amazon.jsii.Kernel.get(this, "intranet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.intranetSlbId = software.amazon.jsii.Kernel.get(this, "intranetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String appId, final java.lang.String internet, final java.lang.String internetSlbId, final java.lang.String intranet, final java.lang.String intranetSlbId) {
+        protected Jsii$Proxy(final java.lang.Object appId, final java.lang.Object internet, final java.lang.Object internetSlbId, final java.lang.Object intranet, final java.lang.Object intranetSlbId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.appId = java.util.Objects.requireNonNull(appId, "appId is required");
             this.internet = internet;
@@ -150,27 +200,27 @@ public interface RosSlbBindingProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getAppId() {
+        public final java.lang.Object getAppId() {
             return this.appId;
         }
 
         @Override
-        public final java.lang.String getInternet() {
+        public final java.lang.Object getInternet() {
             return this.internet;
         }
 
         @Override
-        public final java.lang.String getInternetSlbId() {
+        public final java.lang.Object getInternetSlbId() {
             return this.internetSlbId;
         }
 
         @Override
-        public final java.lang.String getIntranet() {
+        public final java.lang.Object getIntranet() {
             return this.intranet;
         }
 
         @Override
-        public final java.lang.String getIntranetSlbId() {
+        public final java.lang.Object getIntranetSlbId() {
             return this.intranetSlbId;
         }
 

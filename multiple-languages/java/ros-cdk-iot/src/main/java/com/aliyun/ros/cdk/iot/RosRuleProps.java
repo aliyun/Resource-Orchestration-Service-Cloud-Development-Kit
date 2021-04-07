@@ -3,66 +3,78 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.042Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.642Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRuleProps.Jsii$Proxy.class)
 public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDataType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDataType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProductKey() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProductKey() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRuleDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRuleAction() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSelect() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRuleDesc() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getShortTopic() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSelect() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTopicType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getShortTopic() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWhere() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getStartRule() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTopicType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWhere() {
         return null;
     }
 
@@ -76,16 +88,18 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRuleProps> {
-        private java.lang.String name;
-        private java.lang.String dataType;
-        private java.lang.String iotInstanceId;
-        private java.lang.String productKey;
-        private java.lang.String resourceGroupId;
-        private java.lang.String ruleDesc;
-        private java.lang.String select;
-        private java.lang.String shortTopic;
-        private java.lang.Number topicType;
-        private java.lang.String where;
+        private java.lang.Object name;
+        private java.lang.Object dataType;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object productKey;
+        private java.lang.Object resourceGroupId;
+        private java.lang.Object ruleAction;
+        private java.lang.Object ruleDesc;
+        private java.lang.Object select;
+        private java.lang.Object shortTopic;
+        private java.lang.Object startRule;
+        private java.lang.Object topicType;
+        private java.lang.Object where;
 
         /**
          * Sets the value of {@link RosRuleProps#getName}
@@ -93,6 +107,16 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -108,11 +132,31 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getDataType}
+         * @param dataType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dataType(com.aliyun.ros.cdk.core.IResolvable dataType) {
+            this.dataType = dataType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRuleProps#getIotInstanceId}
          * @param iotInstanceId the value to be set.
          * @return {@code this}
          */
         public Builder iotInstanceId(java.lang.String iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getIotInstanceId}
+         * @param iotInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
             this.iotInstanceId = iotInstanceId;
             return this;
         }
@@ -128,6 +172,16 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getProductKey}
+         * @param productKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder productKey(com.aliyun.ros.cdk.core.IResolvable productKey) {
+            this.productKey = productKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRuleProps#getResourceGroupId}
          * @param resourceGroupId the value to be set.
          * @return {@code this}
@@ -138,11 +192,51 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getRuleAction}
+         * @param ruleAction the value to be set.
+         * @return {@code this}
+         */
+        public Builder ruleAction(com.aliyun.ros.cdk.core.IResolvable ruleAction) {
+            this.ruleAction = ruleAction;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getRuleAction}
+         * @param ruleAction the value to be set.
+         * @return {@code this}
+         */
+        public Builder ruleAction(java.util.List<? extends java.lang.Object> ruleAction) {
+            this.ruleAction = ruleAction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRuleProps#getRuleDesc}
          * @param ruleDesc the value to be set.
          * @return {@code this}
          */
         public Builder ruleDesc(java.lang.String ruleDesc) {
+            this.ruleDesc = ruleDesc;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getRuleDesc}
+         * @param ruleDesc the value to be set.
+         * @return {@code this}
+         */
+        public Builder ruleDesc(com.aliyun.ros.cdk.core.IResolvable ruleDesc) {
             this.ruleDesc = ruleDesc;
             return this;
         }
@@ -158,6 +252,16 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getSelect}
+         * @param select the value to be set.
+         * @return {@code this}
+         */
+        public Builder select(com.aliyun.ros.cdk.core.IResolvable select) {
+            this.select = select;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRuleProps#getShortTopic}
          * @param shortTopic the value to be set.
          * @return {@code this}
@@ -168,11 +272,51 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getShortTopic}
+         * @param shortTopic the value to be set.
+         * @return {@code this}
+         */
+        public Builder shortTopic(com.aliyun.ros.cdk.core.IResolvable shortTopic) {
+            this.shortTopic = shortTopic;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getStartRule}
+         * @param startRule the value to be set.
+         * @return {@code this}
+         */
+        public Builder startRule(java.lang.Boolean startRule) {
+            this.startRule = startRule;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getStartRule}
+         * @param startRule the value to be set.
+         * @return {@code this}
+         */
+        public Builder startRule(com.aliyun.ros.cdk.core.IResolvable startRule) {
+            this.startRule = startRule;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRuleProps#getTopicType}
          * @param topicType the value to be set.
          * @return {@code this}
          */
         public Builder topicType(java.lang.Number topicType) {
+            this.topicType = topicType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRuleProps#getTopicType}
+         * @param topicType the value to be set.
+         * @return {@code this}
+         */
+        public Builder topicType(com.aliyun.ros.cdk.core.IResolvable topicType) {
             this.topicType = topicType;
             return this;
         }
@@ -188,13 +332,23 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRuleProps#getWhere}
+         * @param where the value to be set.
+         * @return {@code this}
+         */
+        public Builder where(com.aliyun.ros.cdk.core.IResolvable where) {
+            this.where = where;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosRuleProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosRuleProps build() {
-            return new Jsii$Proxy(name, dataType, iotInstanceId, productKey, resourceGroupId, ruleDesc, select, shortTopic, topicType, where);
+            return new Jsii$Proxy(name, dataType, iotInstanceId, productKey, resourceGroupId, ruleAction, ruleDesc, select, shortTopic, startRule, topicType, where);
         }
     }
 
@@ -203,16 +357,18 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRuleProps {
-        private final java.lang.String name;
-        private final java.lang.String dataType;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String productKey;
-        private final java.lang.String resourceGroupId;
-        private final java.lang.String ruleDesc;
-        private final java.lang.String select;
-        private final java.lang.String shortTopic;
-        private final java.lang.Number topicType;
-        private final java.lang.String where;
+        private final java.lang.Object name;
+        private final java.lang.Object dataType;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object productKey;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object ruleAction;
+        private final java.lang.Object ruleDesc;
+        private final java.lang.Object select;
+        private final java.lang.Object shortTopic;
+        private final java.lang.Object startRule;
+        private final java.lang.Object topicType;
+        private final java.lang.Object where;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -220,82 +376,96 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dataType = software.amazon.jsii.Kernel.get(this, "dataType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ruleDesc = software.amazon.jsii.Kernel.get(this, "ruleDesc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.select = software.amazon.jsii.Kernel.get(this, "select", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.shortTopic = software.amazon.jsii.Kernel.get(this, "shortTopic", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.topicType = software.amazon.jsii.Kernel.get(this, "topicType", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.where = software.amazon.jsii.Kernel.get(this, "where", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dataType = software.amazon.jsii.Kernel.get(this, "dataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ruleAction = software.amazon.jsii.Kernel.get(this, "ruleAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ruleDesc = software.amazon.jsii.Kernel.get(this, "ruleDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.select = software.amazon.jsii.Kernel.get(this, "select", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.shortTopic = software.amazon.jsii.Kernel.get(this, "shortTopic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.startRule = software.amazon.jsii.Kernel.get(this, "startRule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.topicType = software.amazon.jsii.Kernel.get(this, "topicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.where = software.amazon.jsii.Kernel.get(this, "where", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.String dataType, final java.lang.String iotInstanceId, final java.lang.String productKey, final java.lang.String resourceGroupId, final java.lang.String ruleDesc, final java.lang.String select, final java.lang.String shortTopic, final java.lang.Number topicType, final java.lang.String where) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object dataType, final java.lang.Object iotInstanceId, final java.lang.Object productKey, final java.lang.Object resourceGroupId, final java.lang.Object ruleAction, final java.lang.Object ruleDesc, final java.lang.Object select, final java.lang.Object shortTopic, final java.lang.Object startRule, final java.lang.Object topicType, final java.lang.Object where) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.dataType = dataType;
             this.iotInstanceId = iotInstanceId;
             this.productKey = productKey;
             this.resourceGroupId = resourceGroupId;
+            this.ruleAction = ruleAction;
             this.ruleDesc = ruleDesc;
             this.select = select;
             this.shortTopic = shortTopic;
+            this.startRule = startRule;
             this.topicType = topicType;
             this.where = where;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getDataType() {
+        public final java.lang.Object getDataType() {
             return this.dataType;
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getProductKey() {
+        public final java.lang.Object getProductKey() {
             return this.productKey;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
         @Override
-        public final java.lang.String getRuleDesc() {
+        public final java.lang.Object getRuleAction() {
+            return this.ruleAction;
+        }
+
+        @Override
+        public final java.lang.Object getRuleDesc() {
             return this.ruleDesc;
         }
 
         @Override
-        public final java.lang.String getSelect() {
+        public final java.lang.Object getSelect() {
             return this.select;
         }
 
         @Override
-        public final java.lang.String getShortTopic() {
+        public final java.lang.Object getShortTopic() {
             return this.shortTopic;
         }
 
         @Override
-        public final java.lang.Number getTopicType() {
+        public final java.lang.Object getStartRule() {
+            return this.startRule;
+        }
+
+        @Override
+        public final java.lang.Object getTopicType() {
             return this.topicType;
         }
 
         @Override
-        public final java.lang.String getWhere() {
+        public final java.lang.Object getWhere() {
             return this.where;
         }
 
@@ -318,6 +488,9 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
+            if (this.getRuleAction() != null) {
+                data.set("ruleAction", om.valueToTree(this.getRuleAction()));
+            }
             if (this.getRuleDesc() != null) {
                 data.set("ruleDesc", om.valueToTree(this.getRuleDesc()));
             }
@@ -326,6 +499,9 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getShortTopic() != null) {
                 data.set("shortTopic", om.valueToTree(this.getShortTopic()));
+            }
+            if (this.getStartRule() != null) {
+                data.set("startRule", om.valueToTree(this.getStartRule()));
             }
             if (this.getTopicType() != null) {
                 data.set("topicType", om.valueToTree(this.getTopicType()));
@@ -356,9 +532,11 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.iotInstanceId != null ? !this.iotInstanceId.equals(that.iotInstanceId) : that.iotInstanceId != null) return false;
             if (this.productKey != null ? !this.productKey.equals(that.productKey) : that.productKey != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.ruleAction != null ? !this.ruleAction.equals(that.ruleAction) : that.ruleAction != null) return false;
             if (this.ruleDesc != null ? !this.ruleDesc.equals(that.ruleDesc) : that.ruleDesc != null) return false;
             if (this.select != null ? !this.select.equals(that.select) : that.select != null) return false;
             if (this.shortTopic != null ? !this.shortTopic.equals(that.shortTopic) : that.shortTopic != null) return false;
+            if (this.startRule != null ? !this.startRule.equals(that.startRule) : that.startRule != null) return false;
             if (this.topicType != null ? !this.topicType.equals(that.topicType) : that.topicType != null) return false;
             return this.where != null ? this.where.equals(that.where) : that.where == null;
         }
@@ -370,9 +548,11 @@ public interface RosRuleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.iotInstanceId != null ? this.iotInstanceId.hashCode() : 0);
             result = 31 * result + (this.productKey != null ? this.productKey.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.ruleAction != null ? this.ruleAction.hashCode() : 0);
             result = 31 * result + (this.ruleDesc != null ? this.ruleDesc.hashCode() : 0);
             result = 31 * result + (this.select != null ? this.select.hashCode() : 0);
             result = 31 * result + (this.shortTopic != null ? this.shortTopic.hashCode() : 0);
+            result = 31 * result + (this.startRule != null ? this.startRule.hashCode() : 0);
             result = 31 * result + (this.topicType != null ? this.topicType.hashCode() : 0);
             result = 31 * result + (this.where != null ? this.where.hashCode() : 0);
             return result;

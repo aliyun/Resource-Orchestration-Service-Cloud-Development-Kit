@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Properties for defining a `ALIYUN::VPC::VpnConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.498Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.202Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnConnectionProps.Jsii$Proxy.class)
 public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCustomerGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCustomerGatewayId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLocalSubnet();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRemoteSubnet();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRemoteSubnet();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpnGatewayId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpnGatewayId();
 
     /**
      */
@@ -50,7 +50,7 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -64,15 +64,15 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosVpnConnectionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpnConnectionProps> {
-        private java.lang.String customerGatewayId;
-        private java.lang.String localSubnet;
-        private java.lang.String remoteSubnet;
-        private java.lang.String vpnGatewayId;
+        private java.lang.Object customerGatewayId;
+        private java.lang.Object localSubnet;
+        private java.lang.Object remoteSubnet;
+        private java.lang.Object vpnGatewayId;
         private java.lang.Object effectImmediately;
         private java.lang.Object healthCheckConfig;
         private java.lang.Object ikeConfig;
         private java.lang.Object ipsecConfig;
-        private java.lang.String name;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link RosVpnConnectionProps#getCustomerGatewayId}
@@ -80,6 +80,16 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder customerGatewayId(java.lang.String customerGatewayId) {
+            this.customerGatewayId = customerGatewayId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnConnectionProps#getCustomerGatewayId}
+         * @param customerGatewayId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder customerGatewayId(com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
             this.customerGatewayId = customerGatewayId;
             return this;
         }
@@ -95,6 +105,16 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosVpnConnectionProps#getLocalSubnet}
+         * @param localSubnet the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder localSubnet(com.aliyun.ros.cdk.core.IResolvable localSubnet) {
+            this.localSubnet = localSubnet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpnConnectionProps#getRemoteSubnet}
          * @param remoteSubnet the value to be set. This parameter is required.
          * @return {@code this}
@@ -105,11 +125,31 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosVpnConnectionProps#getRemoteSubnet}
+         * @param remoteSubnet the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder remoteSubnet(com.aliyun.ros.cdk.core.IResolvable remoteSubnet) {
+            this.remoteSubnet = remoteSubnet;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpnConnectionProps#getVpnGatewayId}
          * @param vpnGatewayId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder vpnGatewayId(java.lang.String vpnGatewayId) {
+            this.vpnGatewayId = vpnGatewayId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnConnectionProps#getVpnGatewayId}
+         * @param vpnGatewayId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpnGatewayId(com.aliyun.ros.cdk.core.IResolvable vpnGatewayId) {
             this.vpnGatewayId = vpnGatewayId;
             return this;
         }
@@ -205,6 +245,16 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosVpnConnectionProps#getName}
+         * @param name the value to be set.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpnConnectionProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -220,15 +270,15 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVpnConnectionProps {
-        private final java.lang.String customerGatewayId;
-        private final java.lang.String localSubnet;
-        private final java.lang.String remoteSubnet;
-        private final java.lang.String vpnGatewayId;
+        private final java.lang.Object customerGatewayId;
+        private final java.lang.Object localSubnet;
+        private final java.lang.Object remoteSubnet;
+        private final java.lang.Object vpnGatewayId;
         private final java.lang.Object effectImmediately;
         private final java.lang.Object healthCheckConfig;
         private final java.lang.Object ikeConfig;
         private final java.lang.Object ipsecConfig;
-        private final java.lang.String name;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -236,21 +286,21 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.remoteSubnet = software.amazon.jsii.Kernel.get(this, "remoteSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.remoteSubnet = software.amazon.jsii.Kernel.get(this, "remoteSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpnGatewayId = software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectImmediately = software.amazon.jsii.Kernel.get(this, "effectImmediately", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ikeConfig = software.amazon.jsii.Kernel.get(this, "ikeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipsecConfig = software.amazon.jsii.Kernel.get(this, "ipsecConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String customerGatewayId, final java.lang.String localSubnet, final java.lang.String remoteSubnet, final java.lang.String vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object healthCheckConfig, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object customerGatewayId, final java.lang.Object localSubnet, final java.lang.Object remoteSubnet, final java.lang.Object vpnGatewayId, final java.lang.Object effectImmediately, final java.lang.Object healthCheckConfig, final java.lang.Object ikeConfig, final java.lang.Object ipsecConfig, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.customerGatewayId = java.util.Objects.requireNonNull(customerGatewayId, "customerGatewayId is required");
             this.localSubnet = java.util.Objects.requireNonNull(localSubnet, "localSubnet is required");
@@ -264,22 +314,22 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getCustomerGatewayId() {
+        public final java.lang.Object getCustomerGatewayId() {
             return this.customerGatewayId;
         }
 
         @Override
-        public final java.lang.String getLocalSubnet() {
+        public final java.lang.Object getLocalSubnet() {
             return this.localSubnet;
         }
 
         @Override
-        public final java.lang.String getRemoteSubnet() {
+        public final java.lang.Object getRemoteSubnet() {
             return this.remoteSubnet;
         }
 
         @Override
-        public final java.lang.String getVpnGatewayId() {
+        public final java.lang.Object getVpnGatewayId() {
             return this.vpnGatewayId;
         }
 
@@ -304,7 +354,7 @@ public interface RosVpnConnectionProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

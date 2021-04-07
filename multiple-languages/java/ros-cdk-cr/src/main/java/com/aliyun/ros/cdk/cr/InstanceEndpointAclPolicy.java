@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * A ROS resource type:  `ALIYUN::CR::InstanceEndpointAclPolicy`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.950Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.InstanceEndpointAclPolicy")
 public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public InstanceEndpointAclPolicy(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicyProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
     /**
      * Create a new `ALIYUN::CR::InstanceEndpointAclPolicy`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public InstanceEndpointAclPolicy(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicyProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,15 +49,17 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
     }
 
     /**
+     * Attribute Entry: The IP address range that is allowed to access the instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEntry() {
-        return software.amazon.jsii.Kernel.get(this, "attrEntry", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEntry() {
+        return software.amazon.jsii.Kernel.get(this, "attrEntry", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceId: The ID of the instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -58,8 +68,8 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicy> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -67,8 +77,8 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -87,55 +97,137 @@ public class InstanceEndpointAclPolicy extends com.aliyun.ros.cdk.core.Resource 
         }
 
         /**
+         * Property entry: The IP address range that is allowed to access the instance.
+         * <p>
          * @return {@code this}
-         * @param entry This parameter is required.
+         * @param entry Property entry: The IP address range that is allowed to access the instance. This parameter is required.
          */
         public Builder entry(final java.lang.String entry) {
             this.props.entry(entry);
             return this;
         }
+        /**
+         * Property entry: The IP address range that is allowed to access the instance.
+         * <p>
+         * @return {@code this}
+         * @param entry Property entry: The IP address range that is allowed to access the instance. This parameter is required.
+         */
+        public Builder entry(final com.aliyun.ros.cdk.core.IResolvable entry) {
+            this.props.entry(entry);
+            return this;
+        }
 
         /**
+         * Property instanceId: The ID of the instance.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: The ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property comment: The description of the entry.
+         * <p>
          * @return {@code this}
-         * @param comment This parameter is required.
+         * @param comment Property comment: The description of the entry. This parameter is required.
          */
         public Builder comment(final java.lang.String comment) {
             this.props.comment(comment);
             return this;
         }
+        /**
+         * Property comment: The description of the entry.
+         * <p>
+         * @return {@code this}
+         * @param comment Property comment: The description of the entry. This parameter is required.
+         */
+        public Builder comment(final com.aliyun.ros.cdk.core.IResolvable comment) {
+            this.props.comment(comment);
+            return this;
+        }
 
         /**
+         * Property endpointType: The type of the endpoint.
+         * <p>
          * @return {@code this}
-         * @param endpointType This parameter is required.
+         * @param endpointType Property endpointType: The type of the endpoint. This parameter is required.
          */
         public Builder endpointType(final java.lang.String endpointType) {
             this.props.endpointType(endpointType);
             return this;
         }
+        /**
+         * Property endpointType: The type of the endpoint.
+         * <p>
+         * @return {@code this}
+         * @param endpointType Property endpointType: The type of the endpoint. This parameter is required.
+         */
+        public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
+            this.props.endpointType(endpointType);
+            return this;
+        }
 
         /**
+         * Property moduleName: The name of the module in the instance for which a whitelist is configured.
+         * <p>
+         * Valid
+         * values: Registry and Chart.
+         * <p>
          * @return {@code this}
-         * @param moduleName This parameter is required.
+         * @param moduleName Property moduleName: The name of the module in the instance for which a whitelist is configured. This parameter is required.
          */
         public Builder moduleName(final java.lang.String moduleName) {
             this.props.moduleName(moduleName);
             return this;
         }
+        /**
+         * Property moduleName: The name of the module in the instance for which a whitelist is configured.
+         * <p>
+         * Valid
+         * values: Registry and Chart.
+         * <p>
+         * @return {@code this}
+         * @param moduleName Property moduleName: The name of the module in the instance for which a whitelist is configured. This parameter is required.
+         */
+        public Builder moduleName(final com.aliyun.ros.cdk.core.IResolvable moduleName) {
+            this.props.moduleName(moduleName);
+            return this;
+        }
 
         /**
+         * Property regionId: Region ID of instance.
+         * <p>
+         * Default is current region.
+         * <p>
          * @return {@code this}
-         * @param regionId This parameter is required.
+         * @param regionId Property regionId: Region ID of instance. This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
+        /**
+         * Property regionId: Region ID of instance.
+         * <p>
+         * Default is current region.
+         * <p>
+         * @return {@code this}
+         * @param regionId Property regionId: Region ID of instance. This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
             return this;
         }

@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: groupId: The ID of the application group.
         /// </remarks>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"number\"}")]
-        double GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupId
         {
             get;
         }
@@ -37,10 +37,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: groupId: The ID of the application group.
             /// </remarks>
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"number\"}")]
-            public double GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupId
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>

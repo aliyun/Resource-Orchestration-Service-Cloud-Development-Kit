@@ -47,95 +47,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// <strong>Attribute</strong>: Counters: Task statistics: FailedTasks, SuccessTasks, TotalTasks.
         /// </remarks>
-        [JsiiProperty(name: "attrCounters", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCounters
+        [JsiiProperty(name: "attrCounters", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCounters
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: CurlCli: Convenience attribute, provides curl CLI command prefix, which can be used to notify oos execution instead of OOS API NotifyExecution.
-        /// You can notify approve to oos execution by adding --data-binary '{"data": {"NotifyType": "Approve"}}' 
+        /// You can notify approve to oos execution by adding --data-binary '{"data": {"NotifyType": "Approve"}}'
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.
         /// You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCurlCli
+        [JsiiProperty(name: "attrCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ExecutionId: Execution ID.
         /// </remarks>
-        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrExecutionId
+        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExecutionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Outputs: Execution output.
         /// </remarks>
-        [JsiiProperty(name: "attrOutputs", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrOutputs
+        [JsiiProperty(name: "attrOutputs", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrOutputs
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: PowerShellCurlCli: Convenience attribute, provides curl CLI command prefix for PowerShell, which can be used to notify oos execution instead of OOS API NotifyExecution.
-        /// You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}' 
+        /// You can notify approve to oos execution by adding -Body '{"data": {"NotifyType": "Approve"}}'
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPowerShellCurlCli
+        [JsiiProperty(name: "attrPowerShellCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPowerShellCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Status: Execution status.
         /// </remarks>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: StatusMessage: Execution status information.
         /// </remarks>
-        [JsiiProperty(name: "attrStatusMessage", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatusMessage
+        [JsiiProperty(name: "attrStatusMessage", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatusMessage
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: WindowsCurlCli: Convenience attribute, provides curl CLI command prefix for Windows, which can be used to notify oos execution instead of OOS API NotifyExecution.
-        /// You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}" 
+        /// You can notify approve to oos execution by adding --data-binary "{\"data\": {\"NotifyType\": \"Approve\"}}"
         /// For more parameters in data, refer to https://help.aliyun.com/document_detail/120777.html.You can also notify execution via ROS API SignalResource. API parameters Status and UniqueId are ignored. Use API parameter Data to pass data.
         /// </remarks>
-        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrWindowsCurlCli
+        [JsiiProperty(name: "attrWindowsCurlCli", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrWindowsCurlCli
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties
         {
             get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>>()!;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: tags: Tag value and the key mapping, the label of the key number can be up to 20.
-        /// </remarks>
-        [JsiiProperty(name: "tags", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.TagManager\"}")]
-        public virtual AlibabaCloud.SDK.ROS.CDK.Core.TagManager Tags
-        {
-            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.TagManager>()!;
         }
 
         [JsiiProperty(name: "enableResourcePropertyConstraint", typeJson: "{\"primitive\":\"boolean\"}")]
@@ -148,10 +139,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// <strong>Property</strong>: templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
         /// </remarks>
-        [JsiiProperty(name: "templateName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TemplateName
+        [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TemplateName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -159,10 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <strong>Property</strong>: mode: Execution mode.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Mode
+        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Mode
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -181,10 +172,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <strong>Property</strong>: parentExecutionId: Parent execution ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "parentExecutionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? ParentExecutionId
+        [JsiiProperty(name: "parentExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ParentExecutionId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -205,10 +196,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// - ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "safetyCheck", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SafetyCheck
+        [JsiiProperty(name: "safetyCheck", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SafetyCheck
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
+            set => SetInstanceProperty(value);
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tag value and the key mapping, the label of the key number can be up to 20.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+        public virtual System.Collections.Generic.IDictionary<string, object>? Tags
+        {
+            get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
             set => SetInstanceProperty(value);
         }
 
@@ -216,10 +218,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <strong>Property</strong>: templateVersion: Version number of template. Default to the latest version.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "templateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? TemplateVersion
+        [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TemplateVersion
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IResourceOptionsProperty), fullyQualifiedName: "@alicloud/ros-cdk-oos.RosExecution.ResourceOptionsProperty")]
@@ -274,9 +276,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// <remarks>
             /// <strong>Property</strong>: timeout: Timeout seconds before the completion of execution. Default to 1800.
             /// </remarks>
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Timeout
+            object? Timeout
             {
                 get
                 {
@@ -332,10 +334,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
                 /// <strong>Property</strong>: timeout: Timeout seconds before the completion of execution. Default to 1800.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Timeout
+                [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Timeout
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -386,8 +388,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// <strong>Property</strong>: timeout: Timeout seconds before the completion of execution. Default to 1800.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "timeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Timeout
+            [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Timeout
             {
                 get;
                 set;

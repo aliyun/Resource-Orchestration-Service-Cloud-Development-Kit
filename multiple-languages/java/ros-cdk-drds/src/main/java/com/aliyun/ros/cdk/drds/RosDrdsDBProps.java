@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.drds;
 /**
  * Properties for defining a `ALIYUN::DRDS::DrdsDB`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.460Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.RosDrdsDBProps")
 @software.amazon.jsii.Jsii.Proxy(RosDrdsDBProps.Jsii$Proxy.class)
 public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDrdsInstanceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDrdsInstanceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountName() {
         return null;
     }
 
@@ -26,19 +26,19 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbInstType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEncode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncode() {
         return null;
     }
 
@@ -50,19 +50,19 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getRdsInstance() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRdsInstance() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getType() {
         return null;
     }
 
@@ -76,16 +76,16 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDrdsDBProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDrdsDBProps> {
-        private java.lang.String drdsInstanceId;
-        private java.lang.String accountName;
+        private java.lang.Object drdsInstanceId;
+        private java.lang.Object accountName;
         private java.lang.Object dbInstanceIsCreating;
-        private java.lang.String dbInstType;
-        private java.lang.String dbName;
-        private java.lang.String encode;
+        private java.lang.Object dbInstType;
+        private java.lang.Object dbName;
+        private java.lang.Object encode;
         private java.lang.Object instDbName;
-        private java.lang.String password;
-        private java.util.List<java.lang.String> rdsInstance;
-        private java.lang.String type;
+        private java.lang.Object password;
+        private java.lang.Object rdsInstance;
+        private java.lang.Object type;
 
         /**
          * Sets the value of {@link RosDrdsDBProps#getDrdsInstanceId}
@@ -98,11 +98,31 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDrdsDBProps#getDrdsInstanceId}
+         * @param drdsInstanceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder drdsInstanceId(com.aliyun.ros.cdk.core.IResolvable drdsInstanceId) {
+            this.drdsInstanceId = drdsInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsDBProps#getAccountName}
          * @param accountName the value to be set.
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsDBProps#getAccountName}
+         * @param accountName the value to be set.
+         * @return {@code this}
+         */
+        public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
             this.accountName = accountName;
             return this;
         }
@@ -138,6 +158,16 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDrdsDBProps#getDbInstType}
+         * @param dbInstType the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstType(com.aliyun.ros.cdk.core.IResolvable dbInstType) {
+            this.dbInstType = dbInstType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsDBProps#getDbName}
          * @param dbName the value to be set.
          * @return {@code this}
@@ -148,11 +178,31 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDrdsDBProps#getDbName}
+         * @param dbName the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsDBProps#getEncode}
          * @param encode the value to be set.
          * @return {@code this}
          */
         public Builder encode(java.lang.String encode) {
+            this.encode = encode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsDBProps#getEncode}
+         * @param encode the value to be set.
+         * @return {@code this}
+         */
+        public Builder encode(com.aliyun.ros.cdk.core.IResolvable encode) {
             this.encode = encode;
             return this;
         }
@@ -188,11 +238,31 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDrdsDBProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDrdsDBProps#getRdsInstance}
          * @param rdsInstance the value to be set.
          * @return {@code this}
          */
-        public Builder rdsInstance(java.util.List<java.lang.String> rdsInstance) {
+        public Builder rdsInstance(com.aliyun.ros.cdk.core.IResolvable rdsInstance) {
+            this.rdsInstance = rdsInstance;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsDBProps#getRdsInstance}
+         * @param rdsInstance the value to be set.
+         * @return {@code this}
+         */
+        public Builder rdsInstance(java.util.List<? extends java.lang.Object> rdsInstance) {
             this.rdsInstance = rdsInstance;
             return this;
         }
@@ -203,6 +273,16 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
+            this.type = type;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDrdsDBProps#getType}
+         * @param type the value to be set.
+         * @return {@code this}
+         */
+        public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
             this.type = type;
             return this;
         }
@@ -223,16 +303,16 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDrdsDBProps {
-        private final java.lang.String drdsInstanceId;
-        private final java.lang.String accountName;
+        private final java.lang.Object drdsInstanceId;
+        private final java.lang.Object accountName;
         private final java.lang.Object dbInstanceIsCreating;
-        private final java.lang.String dbInstType;
-        private final java.lang.String dbName;
-        private final java.lang.String encode;
+        private final java.lang.Object dbInstType;
+        private final java.lang.Object dbName;
+        private final java.lang.Object encode;
         private final java.lang.Object instDbName;
-        private final java.lang.String password;
-        private final java.util.List<java.lang.String> rdsInstance;
-        private final java.lang.String type;
+        private final java.lang.Object password;
+        private final java.lang.Object rdsInstance;
+        private final java.lang.Object type;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -240,22 +320,22 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.drdsInstanceId = software.amazon.jsii.Kernel.get(this, "drdsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.drdsInstanceId = software.amazon.jsii.Kernel.get(this, "drdsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceIsCreating = software.amazon.jsii.Kernel.get(this, "dbInstanceIsCreating", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.dbInstType = software.amazon.jsii.Kernel.get(this, "dbInstType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.encode = software.amazon.jsii.Kernel.get(this, "encode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.dbInstType = software.amazon.jsii.Kernel.get(this, "dbInstType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encode = software.amazon.jsii.Kernel.get(this, "encode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instDbName = software.amazon.jsii.Kernel.get(this, "instDbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.rdsInstance = software.amazon.jsii.Kernel.get(this, "rdsInstance", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class)));
-            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.rdsInstance = software.amazon.jsii.Kernel.get(this, "rdsInstance", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.type = software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String drdsInstanceId, final java.lang.String accountName, final java.lang.Object dbInstanceIsCreating, final java.lang.String dbInstType, final java.lang.String dbName, final java.lang.String encode, final java.lang.Object instDbName, final java.lang.String password, final java.util.List<java.lang.String> rdsInstance, final java.lang.String type) {
+        protected Jsii$Proxy(final java.lang.Object drdsInstanceId, final java.lang.Object accountName, final java.lang.Object dbInstanceIsCreating, final java.lang.Object dbInstType, final java.lang.Object dbName, final java.lang.Object encode, final java.lang.Object instDbName, final java.lang.Object password, final java.lang.Object rdsInstance, final java.lang.Object type) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.drdsInstanceId = java.util.Objects.requireNonNull(drdsInstanceId, "drdsInstanceId is required");
             this.accountName = accountName;
@@ -270,12 +350,12 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDrdsInstanceId() {
+        public final java.lang.Object getDrdsInstanceId() {
             return this.drdsInstanceId;
         }
 
         @Override
-        public final java.lang.String getAccountName() {
+        public final java.lang.Object getAccountName() {
             return this.accountName;
         }
 
@@ -285,17 +365,17 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDbInstType() {
+        public final java.lang.Object getDbInstType() {
             return this.dbInstType;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 
         @Override
-        public final java.lang.String getEncode() {
+        public final java.lang.Object getEncode() {
             return this.encode;
         }
 
@@ -305,17 +385,17 @@ public interface RosDrdsDBProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
         @Override
-        public final java.util.List<java.lang.String> getRdsInstance() {
+        public final java.lang.Object getRdsInstance() {
             return this.rdsInstance;
         }
 
         @Override
-        public final java.lang.String getType() {
+        public final java.lang.Object getType() {
             return this.type;
         }
 

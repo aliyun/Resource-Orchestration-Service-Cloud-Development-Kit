@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
     public class UserProps : AlibabaCloud.SDK.ROS.CDK.Dms.IUserProps
     {
         /// <summary>Property uid: UserAliYunUid.</summary>
-        [JsiiProperty(name: "uid", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Uid
+        [JsiiProperty(name: "uid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Uid
         {
             get;
             set;
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property mobile: UserMobile.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "mobile", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Mobile
+        [JsiiProperty(name: "mobile", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Mobile
         {
             get;
             set;
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property roleNames: UserRole.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "roleNames", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? RoleNames
+        [JsiiProperty(name: "roleNames", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? RoleNames
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property status: UserStatus.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Status
+        [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Status
         {
             get;
             set;
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property tid:.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Tid
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Tid
         {
             get;
             set;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property userName: UserNickName.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? UserName
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UserName
         {
             get;
             set;

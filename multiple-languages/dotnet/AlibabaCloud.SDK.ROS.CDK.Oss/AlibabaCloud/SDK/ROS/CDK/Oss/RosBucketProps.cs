@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <remarks>
         /// <strong>Property</strong>: bucketName: bucket name.
         /// </remarks>
-        [JsiiProperty(name: "bucketName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string BucketName
+        [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object BucketName
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <strong>Property</strong>: accessControl: The access control list.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "accessControl", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AccessControl
+        [JsiiProperty(name: "accessControl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AccessControl
         {
             get;
             set;
@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <strong>Property</strong>: corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        [JsiiProperty(name: "corsConfiguration", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oss.RosBucket.CORSConfigurationProperty\"}]}}", isOptional: true, isOverride: true)]
         public object? CorsConfiguration
         {
             get;
@@ -112,8 +112,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <strong>Property</strong>: storageClass: Specifies the storage class of the bucket. Default is "Standard".
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "storageClass", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? StorageClass
+        [JsiiProperty(name: "storageClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? StorageClass
         {
             get;
             set;
@@ -123,8 +123,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oss
         /// <strong>Property</strong>: tags: Bucket tags in k-v pairs format.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true, isOverride: true)]
+        public System.Collections.Generic.IDictionary<string, object>? Tags
         {
             get;
             set;

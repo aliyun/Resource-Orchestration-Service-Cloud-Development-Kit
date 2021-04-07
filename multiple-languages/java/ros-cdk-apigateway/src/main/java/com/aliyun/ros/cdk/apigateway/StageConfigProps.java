@@ -3,20 +3,23 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::StageConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.142Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.719Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.StageConfigProps")
 @software.amazon.jsii.Jsii.Proxy(StageConfigProps.Jsii$Proxy.class)
 public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupId: The id of the Group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property stageName: The name of the Stage.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
+     * Property variables: Variables in the stage, key-value pairs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVariables();
 
@@ -30,13 +33,13 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link StageConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<StageConfigProps> {
-        private java.lang.String groupId;
-        private java.lang.String stageName;
+        private java.lang.Object groupId;
+        private java.lang.Object stageName;
         private java.lang.Object variables;
 
         /**
          * Sets the value of {@link StageConfigProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -45,8 +48,18 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link StageConfigProps#getGroupId}
+         * @param groupId Property groupId: The id of the Group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StageConfigProps#getStageName}
-         * @param stageName the value to be set. This parameter is required.
+         * @param stageName Property stageName: The name of the Stage. This parameter is required.
          * @return {@code this}
          */
         public Builder stageName(java.lang.String stageName) {
@@ -55,8 +68,18 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link StageConfigProps#getStageName}
+         * @param stageName Property stageName: The name of the Stage. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StageConfigProps#getVariables}
-         * @param variables the value to be set. This parameter is required.
+         * @param variables Property variables: Variables in the stage, key-value pairs. This parameter is required.
          * @return {@code this}
          */
         public Builder variables(com.aliyun.ros.cdk.core.IResolvable variables) {
@@ -66,7 +89,7 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link StageConfigProps#getVariables}
-         * @param variables the value to be set. This parameter is required.
+         * @param variables Property variables: Variables in the stage, key-value pairs. This parameter is required.
          * @return {@code this}
          */
         public Builder variables(java.util.Map<java.lang.String, ? extends java.lang.Object> variables) {
@@ -90,8 +113,8 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StageConfigProps {
-        private final java.lang.String groupId;
-        private final java.lang.String stageName;
+        private final java.lang.Object groupId;
+        private final java.lang.Object stageName;
         private final java.lang.Object variables;
 
         /**
@@ -100,15 +123,15 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.variables = software.amazon.jsii.Kernel.get(this, "variables", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupId, final java.lang.String stageName, final java.lang.Object variables) {
+        protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object variables) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
             this.stageName = java.util.Objects.requireNonNull(stageName, "stageName is required");
@@ -116,12 +139,12 @@ public interface StageConfigProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 

@@ -3,56 +3,72 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.400Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupProps.Jsii$Proxy.class)
 public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property description: Description of the security group, [2, 256] characters.
+     * <p>
+     * Do not fill or empty, the default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
     /**
+     * Property securityGroupEgress: egress rules for the security group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupEgress() {
         return null;
     }
 
     /**
+     * Property securityGroupIngress: Ingress rules for the security group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIngress() {
         return null;
     }
 
     /**
+     * Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupName() {
         return null;
     }
 
     /**
+     * Property securityGroupType: The type of the security group.
+     * <p>
+     * Valid values:
+     * normal: basic security group
+     * enterprise: advanced security group
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupType() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vpcId: Physical ID of the VPC.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
@@ -66,18 +82,19 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link SecurityGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupProps> {
-        private java.lang.String description;
-        private java.lang.String resourceGroupId;
+        private java.lang.Object description;
+        private java.lang.Object resourceGroupId;
         private java.lang.Object securityGroupEgress;
         private java.lang.Object securityGroupIngress;
-        private java.lang.String securityGroupName;
-        private java.lang.String securityGroupType;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private java.lang.String vpcId;
+        private java.lang.Object securityGroupName;
+        private java.lang.Object securityGroupType;
+        private java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags;
+        private java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link SecurityGroupProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the security group, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -86,8 +103,19 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link SecurityGroupProps#getDescription}
+         * @param description Property description: Description of the security group, [2, 256] characters.
+         *                    Do not fill or empty, the default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupProps#getResourceGroupId}
-         * @param resourceGroupId the value to be set.
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -96,8 +124,18 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link SecurityGroupProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group id.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupEgress}
-         * @param securityGroupEgress the value to be set.
+         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group.
          * @return {@code this}
          */
         public Builder securityGroupEgress(com.aliyun.ros.cdk.core.IResolvable securityGroupEgress) {
@@ -107,7 +145,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupEgress}
-         * @param securityGroupEgress the value to be set.
+         * @param securityGroupEgress Property securityGroupEgress: egress rules for the security group.
          * @return {@code this}
          */
         public Builder securityGroupEgress(java.util.List<? extends java.lang.Object> securityGroupEgress) {
@@ -117,7 +155,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupIngress}
-         * @param securityGroupIngress the value to be set.
+         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group.
          * @return {@code this}
          */
         public Builder securityGroupIngress(com.aliyun.ros.cdk.core.IResolvable securityGroupIngress) {
@@ -127,7 +165,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupIngress}
-         * @param securityGroupIngress the value to be set.
+         * @param securityGroupIngress Property securityGroupIngress: Ingress rules for the security group.
          * @return {@code this}
          */
         public Builder securityGroupIngress(java.util.List<? extends java.lang.Object> securityGroupIngress) {
@@ -137,7 +175,7 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupName}
-         * @param securityGroupName the value to be set.
+         * @param securityGroupName Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * @return {@code this}
          */
         public Builder securityGroupName(java.lang.String securityGroupName) {
@@ -146,8 +184,21 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link SecurityGroupProps#getSecurityGroupName}
+         * @param securityGroupName Property securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
+         * @return {@code this}
+         */
+        public Builder securityGroupName(com.aliyun.ros.cdk.core.IResolvable securityGroupName) {
+            this.securityGroupName = securityGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupProps#getSecurityGroupType}
-         * @param securityGroupType the value to be set.
+         * @param securityGroupType Property securityGroupType: The type of the security group.
+         *                          Valid values:
+         *                          normal: basic security group
+         *                          enterprise: advanced security group
          * @return {@code this}
          */
         public Builder securityGroupType(java.lang.String securityGroupType) {
@@ -156,22 +207,46 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link SecurityGroupProps#getSecurityGroupType}
+         * @param securityGroupType Property securityGroupType: The type of the security group.
+         *                          Valid values:
+         *                          normal: basic security group
+         *                          enterprise: advanced security group
+         * @return {@code this}
+         */
+        public Builder securityGroupType(com.aliyun.ros.cdk.core.IResolvable securityGroupType) {
+            this.securityGroupType = securityGroupType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty>)tags;
             return this;
         }
 
         /**
          * Sets the value of {@link SecurityGroupProps#getVpcId}
-         * @param vpcId the value to be set.
+         * @param vpcId Property vpcId: Physical ID of the VPC.
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecurityGroupProps#getVpcId}
+         * @param vpcId Property vpcId: Physical ID of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -192,14 +267,14 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupProps {
-        private final java.lang.String description;
-        private final java.lang.String resourceGroupId;
+        private final java.lang.Object description;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object securityGroupEgress;
         private final java.lang.Object securityGroupIngress;
-        private final java.lang.String securityGroupName;
-        private final java.lang.String securityGroupType;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
-        private final java.lang.String vpcId;
+        private final java.lang.Object securityGroupName;
+        private final java.lang.Object securityGroupType;
+        private final java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -207,21 +282,21 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupEgress = software.amazon.jsii.Kernel.get(this, "securityGroupEgress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupIngress = software.amazon.jsii.Kernel.get(this, "securityGroupIngress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.securityGroupName = software.amazon.jsii.Kernel.get(this, "securityGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupType = software.amazon.jsii.Kernel.get(this, "securityGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String description, final java.lang.String resourceGroupId, final java.lang.Object securityGroupEgress, final java.lang.Object securityGroupIngress, final java.lang.String securityGroupName, final java.lang.String securityGroupType, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.String vpcId) {
+        protected Jsii$Proxy(final java.lang.Object description, final java.lang.Object resourceGroupId, final java.lang.Object securityGroupEgress, final java.lang.Object securityGroupIngress, final java.lang.Object securityGroupName, final java.lang.Object securityGroupType, final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> tags, final java.lang.Object vpcId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.description = description;
             this.resourceGroupId = resourceGroupId;
@@ -229,17 +304,17 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
             this.securityGroupIngress = securityGroupIngress;
             this.securityGroupName = securityGroupName;
             this.securityGroupType = securityGroupType;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty>)tags;
             this.vpcId = vpcId;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getResourceGroupId() {
+        public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
         }
 
@@ -254,22 +329,22 @@ public interface SecurityGroupProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getSecurityGroupName() {
+        public final java.lang.Object getSecurityGroupName() {
             return this.securityGroupName;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupType() {
+        public final java.lang.Object getSecurityGroupType() {
             return this.securityGroupType;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.ecs.RosSecurityGroup.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 

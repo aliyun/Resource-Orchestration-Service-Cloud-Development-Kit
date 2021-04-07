@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
     public class VServerGroupProps : AlibabaCloud.SDK.ROS.CDK.Slb.IVServerGroupProps
     {
         /// <summary>Property loadBalancerId: The id of load balancer.</summary>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LoadBalancerId
         {
             get;
             set;
         }
 
         /// <summary>Property vServerGroupName: Display name of the VServerGroup.</summary>
-        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VServerGroupName
+        [JsiiProperty(name: "vServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VServerGroupName
         {
             get;
             set;

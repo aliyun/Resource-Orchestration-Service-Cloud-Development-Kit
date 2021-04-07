@@ -8,7 +8,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
     [JsiiInterface(nativeType: typeof(IDefaultStackSynthesizerProps), fullyQualifiedName: "@alicloud/ros-cdk-core.DefaultStackSynthesizerProps")]
     public interface IDefaultStackSynthesizerProps
     {
-        /// <summary>Qualifier to disambiguate multiple environments in the same account&#xD; &#xD; You can use this and leave the other naming properties empty if you have deployed&#xD; the bootstrap environment with standard names but only differnet qualifiers.</summary>
+        /// <summary>Qualifier to disambiguate multiple environments in the same account.</summary>
+        /// <remarks>
+        /// You can use this and leave the other naming properties empty if you have deployed
+        /// the bootstrap environment with standard names but only differnet qualifiers.
+        /// </remarks>
         [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         string? Qualifier
@@ -27,7 +31,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             {
             }
 
-            /// <summary>Qualifier to disambiguate multiple environments in the same account&#xD; &#xD; You can use this and leave the other naming properties empty if you have deployed&#xD; the bootstrap environment with standard names but only differnet qualifiers.</summary>
+            /// <summary>Qualifier to disambiguate multiple environments in the same account.</summary>
+            /// <remarks>
+            /// You can use this and leave the other naming properties empty if you have deployed
+            /// the bootstrap environment with standard names but only differnet qualifiers.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
             public string? Qualifier

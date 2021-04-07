@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: characterSetName: The character set of the database. For more information, see Character sets.
         /// </remarks>
-        [JsiiProperty(name: "characterSetName", typeJson: "{\"primitive\":\"string\"}")]
-        string CharacterSetName
+        [JsiiProperty(name: "characterSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CharacterSetName
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
         /// </remarks>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbClusterId
         {
             get;
         }
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// (-), and underscores (_).
         /// It must end with a letter or a digit. It can be up to 64 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-        string DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbName
         {
             get;
         }
@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// <remarks>
         /// <strong>Property</strong>: accountName: The name of the database account to be used.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountName
+        object? AccountName
         {
             get
             {
@@ -59,9 +59,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// DDLOnly: runs only data definition language (DDL) statements.
         /// Default value: ReadWrite.
         /// </remarks>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountPrivilege
+        object? AccountPrivilege
         {
             get
             {
@@ -74,9 +74,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// It cannot start with http:// or https://.
         /// It must be 2 to 256 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "dbDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "dbDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DbDescription
+        object? DbDescription
         {
             get
             {
@@ -95,19 +95,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// <remarks>
             /// <strong>Property</strong>: characterSetName: The character set of the database. For more information, see Character sets.
             /// </remarks>
-            [JsiiProperty(name: "characterSetName", typeJson: "{\"primitive\":\"string\"}")]
-            public string CharacterSetName
+            [JsiiProperty(name: "characterSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CharacterSetName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
             /// </remarks>
-            [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbClusterId
+            [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -116,20 +116,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// (-), and underscores (_).
             /// It must end with a letter or a digit. It can be up to 64 characters in length.
             /// </remarks>
-            [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbName
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: accountName: The name of the database account to be used.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountName
+            [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -141,10 +141,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// Default value: ReadWrite.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountPrivilege
+            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountPrivilege
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -153,10 +153,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             /// It must be 2 to 256 characters in length.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "dbDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DbDescription
+            [JsiiProperty(name: "dbDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DbDescription
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

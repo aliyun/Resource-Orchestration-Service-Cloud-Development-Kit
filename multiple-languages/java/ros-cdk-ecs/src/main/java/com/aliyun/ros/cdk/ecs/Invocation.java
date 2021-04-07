@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::Invocation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.570Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.232Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Invocation")
 public class Invocation extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::Invocation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Invocation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InvocationProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::Invocation`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Invocation(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.InvocationProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute InvokeId: The id of command execution.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInvokeId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInvokeId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInvokeId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.Invocation> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,25 +90,45 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property commandId: The id of command.
+         * <p>
          * @return {@code this}
-         * @param commandId This parameter is required.
+         * @param commandId Property commandId: The id of command. This parameter is required.
          */
         public Builder commandId(final java.lang.String commandId) {
             this.props.commandId(commandId);
             return this;
         }
+        /**
+         * Property commandId: The id of command.
+         * <p>
+         * @return {@code this}
+         * @param commandId Property commandId: The id of command. This parameter is required.
+         */
+        public Builder commandId(final com.aliyun.ros.cdk.core.IResolvable commandId) {
+            this.props.commandId(commandId);
+            return this;
+        }
 
         /**
+         * Property instanceIds: The instance id list.
+         * <p>
+         * Select up to 50 instances at a time.Instances status must be running.
+         * <p>
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
          */
         public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
         /**
+         * Property instanceIds: The instance id list.
+         * <p>
+         * Select up to 50 instances at a time.Instances status must be running.
+         * <p>
          * @return {@code this}
-         * @param instanceIds This parameter is required.
+         * @param instanceIds Property instanceIds: The instance id list. This parameter is required.
          */
         public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);
@@ -107,25 +136,59 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
+         * <p>
+         * It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
+         * <p>
          * @return {@code this}
-         * @param frequency This parameter is required.
+         * @param frequency Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). This parameter is required.
          */
         public Builder frequency(final java.lang.String frequency) {
             this.props.frequency(frequency);
             return this;
         }
+        /**
+         * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute).
+         * <p>
+         * It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
+         * <p>
+         * @return {@code this}
+         * @param frequency Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). This parameter is required.
+         */
+        public Builder frequency(final com.aliyun.ros.cdk.core.IResolvable frequency) {
+            this.props.frequency(frequency);
+            return this;
+        }
 
         /**
+         * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         * <p>
+         * Number of custom parameters: 0 to 10.
+         * The key cannot be an empty string. It can be up to 64 characters in length.
+         * The value can be an empty string.
+         * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
         /**
+         * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
+         * <p>
+         * Number of custom parameters: 0 to 10.
+         * The key cannot be an empty string. It can be up to 64 characters in length.
+         * The value can be an empty string.
+         * After the custom parameters and the original script content are Base64 encoded, the total size cannot exceed 16 KB.
+         * The set of custom parameter names must be a subset of the parameter set that is defined when you created the script. You can use an empty string to represent the parameters that are not passed in.
+         * Default value: null, indicating that this parameter is canceled and customer parameters are disabled.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters. This parameter is required.
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
@@ -133,16 +196,24 @@ public class Invocation extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property timed: Whether it is timed execution.
+         * <p>
+         * Default is False.
+         * <p>
          * @return {@code this}
-         * @param timed This parameter is required.
+         * @param timed Property timed: Whether it is timed execution. This parameter is required.
          */
         public Builder timed(final java.lang.Boolean timed) {
             this.props.timed(timed);
             return this;
         }
         /**
+         * Property timed: Whether it is timed execution.
+         * <p>
+         * Default is False.
+         * <p>
          * @return {@code this}
-         * @param timed This parameter is required.
+         * @param timed Property timed: Whether it is timed execution. This parameter is required.
          */
         public Builder timed(final com.aliyun.ros.cdk.core.IResolvable timed) {
             this.props.timed(timed);

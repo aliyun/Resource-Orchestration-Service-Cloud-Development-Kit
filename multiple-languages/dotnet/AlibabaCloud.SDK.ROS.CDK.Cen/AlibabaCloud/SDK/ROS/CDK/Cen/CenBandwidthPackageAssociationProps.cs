@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
     public class CenBandwidthPackageAssociationProps : AlibabaCloud.SDK.ROS.CDK.Cen.ICenBandwidthPackageAssociationProps
     {
         /// <summary>Property cenBandwidthPackageId: The ID of the bandwidth package.</summary>
-        [JsiiProperty(name: "cenBandwidthPackageId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenBandwidthPackageId
+        [JsiiProperty(name: "cenBandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenBandwidthPackageId
         {
             get;
             set;
         }
 
         /// <summary>Property cenId: The ID of the CEN instance.</summary>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenId
         {
             get;
             set;

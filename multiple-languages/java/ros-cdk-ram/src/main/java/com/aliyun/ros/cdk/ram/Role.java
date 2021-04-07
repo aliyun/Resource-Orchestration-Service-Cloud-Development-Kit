@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::Role`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.855Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.Role")
 public class Role extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::Role`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Role(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.RoleProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::Role`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Role(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.RoleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Arn: Name of alicloud resource.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
-        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RoleId: Id of ram role.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRoleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRoleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRoleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRoleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RoleName: Name of ram role.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "attrRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "attrRoleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.Role> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,60 +104,110 @@ public class Role extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+         * <p>
          * @return {@code this}
-         * @param assumeRolePolicyDocument This parameter is required.
-         */
-        public Builder assumeRolePolicyDocument(final com.aliyun.ros.cdk.ram.RosRole.AssumeRolePolicyDocumentProperty assumeRolePolicyDocument) {
-            this.props.assumeRolePolicyDocument(assumeRolePolicyDocument);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param assumeRolePolicyDocument This parameter is required.
+         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role. This parameter is required.
          */
         public Builder assumeRolePolicyDocument(final com.aliyun.ros.cdk.core.IResolvable assumeRolePolicyDocument) {
             this.props.assumeRolePolicyDocument(assumeRolePolicyDocument);
             return this;
         }
+        /**
+         * Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+         * <p>
+         * @return {@code this}
+         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role. This parameter is required.
+         */
+        public Builder assumeRolePolicyDocument(final com.aliyun.ros.cdk.ram.RosRole.AssumeRolePolicyDocumentProperty assumeRolePolicyDocument) {
+            this.props.assumeRolePolicyDocument(assumeRolePolicyDocument);
+            return this;
+        }
 
         /**
+         * Property roleName: Specifies the role name, containing up to 64 characters.
+         * <p>
          * @return {@code this}
-         * @param roleName This parameter is required.
+         * @param roleName Property roleName: Specifies the role name, containing up to 64 characters. This parameter is required.
          */
         public Builder roleName(final java.lang.String roleName) {
             this.props.roleName(roleName);
             return this;
         }
+        /**
+         * Property roleName: Specifies the role name, containing up to 64 characters.
+         * <p>
+         * @return {@code this}
+         * @param roleName Property roleName: Specifies the role name, containing up to 64 characters. This parameter is required.
+         */
+        public Builder roleName(final com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.props.roleName(roleName);
+            return this;
+        }
 
         /**
+         * Property description: Remark information, up to 1024 characters or Chinese characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Remark information, up to 1024 characters or Chinese characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Remark information, up to 1024 characters or Chinese characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Remark information, up to 1024 characters or Chinese characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property maxSessionDuration: The maximum session duration of the RAM role.
+         * <p>
+         * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
+         * The default value is used if the parameter is not specified.
+         * <p>
          * @return {@code this}
-         * @param maxSessionDuration This parameter is required.
+         * @param maxSessionDuration Property maxSessionDuration: The maximum session duration of the RAM role. This parameter is required.
          */
         public Builder maxSessionDuration(final java.lang.Number maxSessionDuration) {
             this.props.maxSessionDuration(maxSessionDuration);
             return this;
         }
+        /**
+         * Property maxSessionDuration: The maximum session duration of the RAM role.
+         * <p>
+         * Valid values: 3600 to 43200. Unit: seconds. Default value: 3600.
+         * The default value is used if the parameter is not specified.
+         * <p>
+         * @return {@code this}
+         * @param maxSessionDuration Property maxSessionDuration: The maximum session duration of the RAM role. This parameter is required.
+         */
+        public Builder maxSessionDuration(final com.aliyun.ros.cdk.core.IResolvable maxSessionDuration) {
+            this.props.maxSessionDuration(maxSessionDuration);
+            return this;
+        }
 
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final com.aliyun.ros.cdk.core.IResolvable policies) {
             this.props.policies(policies);
             return this;
         }
         /**
+         * Property policies: Describes what actions are allowed on what resources.
+         * <p>
          * @return {@code this}
-         * @param policies This parameter is required.
+         * @param policies Property policies: Describes what actions are allowed on what resources. This parameter is required.
          */
         public Builder policies(final java.util.List<? extends java.lang.Object> policies) {
             this.props.policies(policies);

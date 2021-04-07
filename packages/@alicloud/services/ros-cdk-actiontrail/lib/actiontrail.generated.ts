@@ -10,37 +10,37 @@ export interface RosTrailProps {
     /**
      * @Property name: The name of the trail to be created, which must be unique for an account.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
      */
-    readonly ossBucketName: string;
+    readonly ossBucketName: string | ros.IResolvable;
 
     /**
      * @Property roleName: The RAM role in ActionTrail permitted by the user.
      */
-    readonly roleName: string;
+    readonly roleName: string | ros.IResolvable;
 
     /**
      * @Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
      */
-    readonly eventRw?: string;
+    readonly eventRw?: string | ros.IResolvable;
 
     /**
      * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
      */
-    readonly ossKeyPrefix?: string;
+    readonly ossKeyPrefix?: string | ros.IResolvable;
 
     /**
      * @Property slsProjectArn: The unique ARN of the Log Service project.
      */
-    readonly slsProjectArn?: string;
+    readonly slsProjectArn?: string | ros.IResolvable;
 
     /**
      * @Property slsWriteRoleArn: The unique ARN of the Log Service role.
      */
-    readonly slsWriteRoleArn?: string;
+    readonly slsWriteRoleArn?: string | ros.IResolvable;
 }
 
 /**
@@ -113,7 +113,7 @@ export class RosTrail extends ros.RosResource {
     /**
      * @Attribute Name: The name of the trail to be created, which must be unique for an account.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -121,37 +121,37 @@ export class RosTrail extends ros.RosResource {
     /**
      * @Property name: The name of the trail to be created, which must be unique for an account.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property ossBucketName: The OSS bucket to which the trail delivers logs. Ensure that this is an existing OSS bucket.
      */
-    public ossBucketName: string;
+    public ossBucketName: string | ros.IResolvable;
 
     /**
      * @Property roleName: The RAM role in ActionTrail permitted by the user.
      */
-    public roleName: string;
+    public roleName: string | ros.IResolvable;
 
     /**
      * @Property eventRw: Indicates whether the event is a read or a write event. Valid values: Read, Write, and All. Default value: Write.
      */
-    public eventRw: string | undefined;
+    public eventRw: string | ros.IResolvable | undefined;
 
     /**
      * @Property ossKeyPrefix: The prefix of the specified OSS bucket name. This parameter can be left empty.
      */
-    public ossKeyPrefix: string | undefined;
+    public ossKeyPrefix: string | ros.IResolvable | undefined;
 
     /**
      * @Property slsProjectArn: The unique ARN of the Log Service project.
      */
-    public slsProjectArn: string | undefined;
+    public slsProjectArn: string | ros.IResolvable | undefined;
 
     /**
      * @Property slsWriteRoleArn: The unique ARN of the Log Service role.
      */
-    public slsWriteRoleArn: string | undefined;
+    public slsWriteRoleArn: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::Trail`.
@@ -162,7 +162,7 @@ export class RosTrail extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTrailProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTrail.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -204,7 +204,7 @@ export interface RosTrailLoggingProps {
     /**
      * @Property name: The name of the trail to be enabled.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -260,27 +260,27 @@ export class RosTrailLogging extends ros.RosResource {
     /**
      * @Attribute IsLogging: Indicates whether the trail is logging API invocations.
      */
-    public readonly attrIsLogging: any;
+    public readonly attrIsLogging: ros.IResolvable;
 
     /**
      * @Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.
      */
-    public readonly attrLatestDeliveryError: any;
+    public readonly attrLatestDeliveryError: ros.IResolvable;
 
     /**
      * @Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.
      */
-    public readonly attrLatestDeliveryTime: any;
+    public readonly attrLatestDeliveryTime: ros.IResolvable;
 
     /**
      * @Attribute StartLoggingTime: The most recent date and time when the user enables the trail.
      */
-    public readonly attrStartLoggingTime: any;
+    public readonly attrStartLoggingTime: ros.IResolvable;
 
     /**
      * @Attribute StopLoggingTime: The most recent date and time when the user disables the trail.
      */
-    public readonly attrStopLoggingTime: any;
+    public readonly attrStopLoggingTime: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -293,7 +293,7 @@ export class RosTrailLogging extends ros.RosResource {
     /**
      * @Property name: The name of the trail to be enabled.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ACTIONTRAIL::TrailLogging`.
@@ -304,11 +304,11 @@ export class RosTrailLogging extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTrailLoggingProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTrailLogging.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrIsLogging = ros.Token.asString(this.getAtt('IsLogging'));
-        this.attrLatestDeliveryError = ros.Token.asString(this.getAtt('LatestDeliveryError'));
-        this.attrLatestDeliveryTime = ros.Token.asString(this.getAtt('LatestDeliveryTime'));
-        this.attrStartLoggingTime = ros.Token.asString(this.getAtt('StartLoggingTime'));
-        this.attrStopLoggingTime = ros.Token.asString(this.getAtt('StopLoggingTime'));
+        this.attrIsLogging = this.getAtt('IsLogging');
+        this.attrLatestDeliveryError = this.getAtt('LatestDeliveryError');
+        this.attrLatestDeliveryTime = this.getAtt('LatestDeliveryTime');
+        this.attrStartLoggingTime = this.getAtt('StartLoggingTime');
+        this.attrStopLoggingTime = this.getAtt('StopLoggingTime');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.enable = props.enable;

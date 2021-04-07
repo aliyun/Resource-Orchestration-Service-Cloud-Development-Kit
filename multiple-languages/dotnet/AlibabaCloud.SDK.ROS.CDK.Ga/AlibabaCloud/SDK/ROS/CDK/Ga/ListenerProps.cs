@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     public class ListenerProps : AlibabaCloud.SDK.ROS.CDK.Ga.IListenerProps
     {
         /// <summary>Property acceleratorId: The ID of the Global Accelerator instance to which the listener will be added.</summary>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AcceleratorId
         {
             get;
             set;
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// tcp: TCP protocol
         /// udp: UDP protocol
         /// </remarks>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Protocol
         {
             get;
             set;
@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// a specific source (client) IP address are always routed to the same endpoint.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "clientAffinity", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ClientAffinity
+        [JsiiProperty(name: "clientAffinity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ClientAffinity
         {
             get;
             set;
@@ -57,8 +57,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property description: The description of the listener.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -70,8 +70,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// (_), and hyphens (-). It must start with a letter or Chinese character.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;

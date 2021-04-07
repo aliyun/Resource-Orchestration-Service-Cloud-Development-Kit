@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Acm
     public class NamespaceProps : AlibabaCloud.SDK.ROS.CDK.Acm.INamespaceProps
     {
         /// <summary>Property name: Namespace name.</summary>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;

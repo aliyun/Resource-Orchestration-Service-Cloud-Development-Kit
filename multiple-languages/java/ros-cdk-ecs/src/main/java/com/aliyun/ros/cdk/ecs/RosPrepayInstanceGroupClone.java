@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::PrepayInstanceGroupClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.670Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.351Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone")
 public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,61 +44,55 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHostNames() {
-        return software.amazon.jsii.Kernel.get(this, "attrHostNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHostNames() {
+        return software.amazon.jsii.Kernel.get(this, "attrHostNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInnerIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrInnerIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInnerIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrInnerIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrPrivateIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPrivateIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrPrivateIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRelatedOrderIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRelatedOrderIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrRelatedOrderIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrZoneIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrZoneIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
     protected @org.jetbrains.annotations.NotNull java.util.Map<java.lang.String, java.lang.Object> getRosProperties() {
         return java.util.Collections.unmodifiableMap(software.amazon.jsii.Kernel.get(this, "rosProperties", software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.TagManager getTags() {
-        return software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.TagManager.class));
     }
 
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
@@ -111,8 +105,8 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getMaxAmount() {
-        return software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getMaxAmount() {
+        return software.amazon.jsii.Kernel.get(this, "maxAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +117,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getMinAmount() {
-        return software.amazon.jsii.Kernel.get(this, "minAmount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMaxAmount(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "maxAmount", java.util.Objects.requireNonNull(value, "maxAmount is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getMinAmount() {
+        return software.amazon.jsii.Kernel.get(this, "minAmount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +135,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setMinAmount(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "minAmount", java.util.Objects.requireNonNull(value, "minAmount is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +153,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getPeriodType() {
-        return software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriod(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "period", java.util.Objects.requireNonNull(value, "period is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPeriodType() {
+        return software.amazon.jsii.Kernel.get(this, "periodType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +171,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSourceInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriodType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "periodType", java.util.Objects.requireNonNull(value, "periodType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSourceInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "sourceInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +189,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAutoRenew() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSourceInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sourceInstanceId", java.util.Objects.requireNonNull(value, "sourceInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +207,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getAutoRenewPeriod() {
-        return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setAutoRenew(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenew", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
+        return software.amazon.jsii.Kernel.get(this, "autoRenewPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +225,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetId() {
-        return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAutoRenewPeriod(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoRenewPeriod", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
+        return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,13 +243,25 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDeploymentSetId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescription(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "description", value);
     }
 
@@ -255,8 +303,8 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHpcClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -267,8 +315,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getImageId() {
-        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHpcClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hpcClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -279,8 +333,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -291,8 +351,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInstanceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
+        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -303,8 +369,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
+        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -315,8 +387,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
-        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternetMaxBandwidthOut(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthOut", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -327,8 +405,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateId() {
-        return software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateId() {
+        return software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -339,8 +423,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateName() {
-        return software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLaunchTemplateId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "launchTemplateId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateName() {
+        return software.amazon.jsii.Kernel.get(this, "launchTemplateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -351,8 +441,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateVersion() {
-        return software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLaunchTemplateName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "launchTemplateName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
+        return software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -363,13 +459,25 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
-        return software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLaunchTemplateVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "launchTemplateVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
+        return software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setPassword(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "password", value);
+    }
+
+    /**
+     */
+    public void setPassword(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "password", value);
     }
 
@@ -393,8 +501,8 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getPeriodUnit() {
-        return software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
+        return software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -405,8 +513,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPeriodUnit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "periodUnit", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -417,13 +531,25 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRamRoleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ramRoleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
     }
 
@@ -447,8 +573,8 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskAutoSnapshotPolicyId() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -459,8 +585,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskAutoSnapshotPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskAutoSnapshotPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -471,8 +603,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDescription() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskCategory(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskCategory", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDescription() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -483,8 +621,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskDiskName() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskDiskName() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskDiskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -495,13 +639,37 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskDiskName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskDiskName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone.TagsProperty> getTags() {
+        return java.util.Optional.ofNullable((java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone.TagsProperty>)(software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone.TagsProperty.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    }
+
+    /**
+     */
+    public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone.TagsProperty> value) {
+        software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
     }
     /**
@@ -514,68 +682,68 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSize();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSize();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getAutoSnapshotPolicyId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getCategory() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDevice() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDevice() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDiskName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDiskName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEncrypted() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getKmsKeyId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPerformanceLevel() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
             return null;
         }
 
@@ -591,16 +759,16 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.String size;
-            private java.lang.String autoSnapshotPolicyId;
-            private java.lang.String category;
-            private java.lang.String description;
-            private java.lang.String device;
-            private java.lang.String diskName;
-            private java.lang.String encrypted;
-            private java.lang.String kmsKeyId;
-            private java.lang.String performanceLevel;
-            private java.lang.String snapshotId;
+            private java.lang.Object size;
+            private java.lang.Object autoSnapshotPolicyId;
+            private java.lang.Object category;
+            private java.lang.Object description;
+            private java.lang.Object device;
+            private java.lang.Object diskName;
+            private java.lang.Object encrypted;
+            private java.lang.Object kmsKeyId;
+            private java.lang.Object performanceLevel;
+            private java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
@@ -609,6 +777,17 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder size(java.lang.String size) {
+                this.size = size;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getSize}
+             * @param size the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
                 this.size = size;
                 return this;
             }
@@ -625,12 +804,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getAutoSnapshotPolicyId}
+             * @param autoSnapshotPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
+                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getCategory}
              * @param category the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder category(java.lang.String category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getCategory}
+             * @param category the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
                 this.category = category;
                 return this;
             }
@@ -647,12 +848,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getDevice}
              * @param device the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder device(java.lang.String device) {
+                this.device = device;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getDevice}
+             * @param device the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder device(com.aliyun.ros.cdk.core.IResolvable device) {
                 this.device = device;
                 return this;
             }
@@ -669,12 +892,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getDiskName}
+             * @param diskName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskName(com.aliyun.ros.cdk.core.IResolvable diskName) {
+                this.diskName = diskName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getEncrypted}
              * @param encrypted the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder encrypted(java.lang.String encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
                 this.encrypted = encrypted;
                 return this;
             }
@@ -691,6 +936,17 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getKmsKeyId}
+             * @param kmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
+                this.kmsKeyId = kmsKeyId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getPerformanceLevel}
              * @param performanceLevel the value to be set.
              * @return {@code this}
@@ -702,12 +958,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getSnapshotId}
              * @param snapshotId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder snapshotId(java.lang.String snapshotId) {
+                this.snapshotId = snapshotId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getSnapshotId}
+             * @param snapshotId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
                 this.snapshotId = snapshotId;
                 return this;
             }
@@ -730,16 +1008,16 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskMappingsProperty {
-            private final java.lang.String size;
-            private final java.lang.String autoSnapshotPolicyId;
-            private final java.lang.String category;
-            private final java.lang.String description;
-            private final java.lang.String device;
-            private final java.lang.String diskName;
-            private final java.lang.String encrypted;
-            private final java.lang.String kmsKeyId;
-            private final java.lang.String performanceLevel;
-            private final java.lang.String snapshotId;
+            private final java.lang.Object size;
+            private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object category;
+            private final java.lang.Object description;
+            private final java.lang.Object device;
+            private final java.lang.Object diskName;
+            private final java.lang.Object encrypted;
+            private final java.lang.Object kmsKeyId;
+            private final java.lang.Object performanceLevel;
+            private final java.lang.Object snapshotId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -747,22 +1025,22 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String size, final java.lang.String autoSnapshotPolicyId, final java.lang.String category, final java.lang.String description, final java.lang.String device, final java.lang.String diskName, final java.lang.String encrypted, final java.lang.String kmsKeyId, final java.lang.String performanceLevel, final java.lang.String snapshotId) {
+            protected Jsii$Proxy(final java.lang.Object size, final java.lang.Object autoSnapshotPolicyId, final java.lang.Object category, final java.lang.Object description, final java.lang.Object device, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object snapshotId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.size = java.util.Objects.requireNonNull(size, "size is required");
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
@@ -777,52 +1055,52 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
-            public final java.lang.String getSize() {
+            public final java.lang.Object getSize() {
                 return this.size;
             }
 
             @Override
-            public final java.lang.String getAutoSnapshotPolicyId() {
+            public final java.lang.Object getAutoSnapshotPolicyId() {
                 return this.autoSnapshotPolicyId;
             }
 
             @Override
-            public final java.lang.String getCategory() {
+            public final java.lang.Object getCategory() {
                 return this.category;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
             @Override
-            public final java.lang.String getDevice() {
+            public final java.lang.Object getDevice() {
                 return this.device;
             }
 
             @Override
-            public final java.lang.String getDiskName() {
+            public final java.lang.Object getDiskName() {
                 return this.diskName;
             }
 
             @Override
-            public final java.lang.String getEncrypted() {
+            public final java.lang.Object getEncrypted() {
                 return this.encrypted;
             }
 
             @Override
-            public final java.lang.String getKmsKeyId() {
+            public final java.lang.Object getKmsKeyId() {
                 return this.kmsKeyId;
             }
 
             @Override
-            public final java.lang.String getPerformanceLevel() {
+            public final java.lang.Object getPerformanceLevel() {
                 return this.performanceLevel;
             }
 
             @Override
-            public final java.lang.String getSnapshotId() {
+            public final java.lang.Object getSnapshotId() {
                 return this.snapshotId;
             }
 
@@ -916,31 +1194,31 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSecurityGroupId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getNetworkInterfaceName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPrimaryIpAddress() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPrimaryIpAddress() {
             return null;
         }
 
@@ -956,11 +1234,11 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<EniMappingsProperty> {
-            private java.lang.String securityGroupId;
-            private java.lang.String vSwitchId;
-            private java.lang.String description;
-            private java.lang.String networkInterfaceName;
-            private java.lang.String primaryIpAddress;
+            private java.lang.Object securityGroupId;
+            private java.lang.Object vSwitchId;
+            private java.lang.Object description;
+            private java.lang.Object networkInterfaceName;
+            private java.lang.Object primaryIpAddress;
 
             /**
              * Sets the value of {@link EniMappingsProperty#getSecurityGroupId}
@@ -969,6 +1247,17 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder securityGroupId(java.lang.String securityGroupId) {
+                this.securityGroupId = securityGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getSecurityGroupId}
+             * @param securityGroupId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
                 this.securityGroupId = securityGroupId;
                 return this;
             }
@@ -985,12 +1274,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link EniMappingsProperty#getVSwitchId}
+             * @param vSwitchId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+                this.vSwitchId = vSwitchId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EniMappingsProperty#getDescription}
              * @param description the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
                 return this;
             }
@@ -1007,12 +1318,34 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link EniMappingsProperty#getNetworkInterfaceName}
+             * @param networkInterfaceName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder networkInterfaceName(com.aliyun.ros.cdk.core.IResolvable networkInterfaceName) {
+                this.networkInterfaceName = networkInterfaceName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link EniMappingsProperty#getPrimaryIpAddress}
              * @param primaryIpAddress the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder primaryIpAddress(java.lang.String primaryIpAddress) {
+                this.primaryIpAddress = primaryIpAddress;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EniMappingsProperty#getPrimaryIpAddress}
+             * @param primaryIpAddress the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder primaryIpAddress(com.aliyun.ros.cdk.core.IResolvable primaryIpAddress) {
                 this.primaryIpAddress = primaryIpAddress;
                 return this;
             }
@@ -1035,11 +1368,11 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EniMappingsProperty {
-            private final java.lang.String securityGroupId;
-            private final java.lang.String vSwitchId;
-            private final java.lang.String description;
-            private final java.lang.String networkInterfaceName;
-            private final java.lang.String primaryIpAddress;
+            private final java.lang.Object securityGroupId;
+            private final java.lang.Object vSwitchId;
+            private final java.lang.Object description;
+            private final java.lang.Object networkInterfaceName;
+            private final java.lang.Object primaryIpAddress;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1047,17 +1380,17 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.networkInterfaceName = software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.networkInterfaceName = software.amazon.jsii.Kernel.get(this, "networkInterfaceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.primaryIpAddress = software.amazon.jsii.Kernel.get(this, "primaryIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String securityGroupId, final java.lang.String vSwitchId, final java.lang.String description, final java.lang.String networkInterfaceName, final java.lang.String primaryIpAddress) {
+            protected Jsii$Proxy(final java.lang.Object securityGroupId, final java.lang.Object vSwitchId, final java.lang.Object description, final java.lang.Object networkInterfaceName, final java.lang.Object primaryIpAddress) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.securityGroupId = java.util.Objects.requireNonNull(securityGroupId, "securityGroupId is required");
                 this.vSwitchId = java.util.Objects.requireNonNull(vSwitchId, "vSwitchId is required");
@@ -1067,27 +1400,27 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
-            public final java.lang.String getSecurityGroupId() {
+            public final java.lang.Object getSecurityGroupId() {
                 return this.securityGroupId;
             }
 
             @Override
-            public final java.lang.String getVSwitchId() {
+            public final java.lang.Object getVSwitchId() {
                 return this.vSwitchId;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
             @Override
-            public final java.lang.String getNetworkInterfaceName() {
+            public final java.lang.Object getNetworkInterfaceName() {
                 return this.networkInterfaceName;
             }
 
             @Override
-            public final java.lang.String getPrimaryIpAddress() {
+            public final java.lang.Object getPrimaryIpAddress() {
                 return this.primaryIpAddress;
             }
 
@@ -1144,6 +1477,174 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             }
         }
     }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone.TagsProperty")
+    @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface TagsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<TagsProperty> {
+            private java.lang.Object key;
+            private java.lang.Object value;
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(java.lang.String key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagsProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link TagsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public TagsProperty build() {
+                return new Jsii$Proxy(key, value);
+            }
+        }
+
+        /**
+         * An implementation for {@link TagsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagsProperty {
+            private final java.lang.Object key;
+            private final java.lang.Object value;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.key = java.util.Objects.requireNonNull(key, "key is required");
+                this.value = value;
+            }
+
+            @Override
+            public final java.lang.Object getKey() {
+                return this.key;
+            }
+
+            @Override
+            public final java.lang.Object getValue() {
+                return this.value;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("key", om.valueToTree(this.getKey()));
+                if (this.getValue() != null) {
+                    data.set("value", om.valueToTree(this.getValue()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ecs.RosPrepayInstanceGroupClone.TagsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                TagsProperty.Jsii$Proxy that = (TagsProperty.Jsii$Proxy) o;
+
+                if (!key.equals(that.key)) return false;
+                return this.value != null ? this.value.equals(that.value) : that.value == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.key.hashCode();
+                result = 31 * result + (this.value != null ? this.value.hashCode() : 0);
+                return result;
+            }
+        }
+    }
 
     /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone}.
@@ -1179,12 +1680,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.maxAmount(maxAmount);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param maxAmount This parameter is required.
+         */
+        public Builder maxAmount(final com.aliyun.ros.cdk.core.IResolvable maxAmount) {
+            this.props.maxAmount(maxAmount);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param minAmount This parameter is required.
          */
         public Builder minAmount(final java.lang.Number minAmount) {
+            this.props.minAmount(minAmount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param minAmount This parameter is required.
+         */
+        public Builder minAmount(final com.aliyun.ros.cdk.core.IResolvable minAmount) {
             this.props.minAmount(minAmount);
             return this;
         }
@@ -1197,12 +1714,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.period(period);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param period This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param periodType This parameter is required.
          */
         public Builder periodType(final java.lang.String periodType) {
+            this.props.periodType(periodType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param periodType This parameter is required.
+         */
+        public Builder periodType(final com.aliyun.ros.cdk.core.IResolvable periodType) {
             this.props.periodType(periodType);
             return this;
         }
@@ -1215,12 +1748,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.sourceInstanceId(sourceInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param sourceInstanceId This parameter is required.
+         */
+        public Builder sourceInstanceId(final com.aliyun.ros.cdk.core.IResolvable sourceInstanceId) {
+            this.props.sourceInstanceId(sourceInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param autoRenew This parameter is required.
          */
         public Builder autoRenew(final java.lang.String autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoRenew This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
@@ -1233,6 +1782,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.autoRenewPeriod(autoRenewPeriod);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param autoRenewPeriod This parameter is required.
+         */
+        public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
+            this.props.autoRenewPeriod(autoRenewPeriod);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1242,12 +1799,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.deploymentSetId(deploymentSetId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param deploymentSetId This parameter is required.
+         */
+        public Builder deploymentSetId(final com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
+            this.props.deploymentSetId(deploymentSetId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props.description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
             return this;
         }
@@ -1294,12 +1867,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.hpcClusterId(hpcClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param hpcClusterId This parameter is required.
+         */
+        public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
+            this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param imageId This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageId This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
             return this;
         }
@@ -1312,12 +1901,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceName This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param internetMaxBandwidthIn This parameter is required.
          */
         public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
+            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param internetMaxBandwidthIn This parameter is required.
+         */
+        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
             this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
             return this;
         }
@@ -1330,12 +1935,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param internetMaxBandwidthOut This parameter is required.
+         */
+        public Builder internetMaxBandwidthOut(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+            this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param keyPairName This parameter is required.
          */
         public Builder keyPairName(final java.lang.String keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
             return this;
         }
@@ -1348,12 +1969,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.launchTemplateId(launchTemplateId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param launchTemplateId This parameter is required.
+         */
+        public Builder launchTemplateId(final com.aliyun.ros.cdk.core.IResolvable launchTemplateId) {
+            this.props.launchTemplateId(launchTemplateId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param launchTemplateName This parameter is required.
          */
         public Builder launchTemplateName(final java.lang.String launchTemplateName) {
+            this.props.launchTemplateName(launchTemplateName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param launchTemplateName This parameter is required.
+         */
+        public Builder launchTemplateName(final com.aliyun.ros.cdk.core.IResolvable launchTemplateName) {
             this.props.launchTemplateName(launchTemplateName);
             return this;
         }
@@ -1366,12 +2003,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.launchTemplateVersion(launchTemplateVersion);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param launchTemplateVersion This parameter is required.
+         */
+        public Builder launchTemplateVersion(final com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
+            this.props.launchTemplateVersion(launchTemplateVersion);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param password This parameter is required.
          */
         public Builder password(final java.lang.String password) {
+            this.props.password(password);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param password This parameter is required.
+         */
+        public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
             return this;
         }
@@ -1401,6 +2054,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.periodUnit(periodUnit);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param periodUnit This parameter is required.
+         */
+        public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
+            this.props.periodUnit(periodUnit);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1410,12 +2071,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.ramRoleName(ramRoleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ramRoleName This parameter is required.
+         */
+        public Builder ramRoleName(final com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param securityGroupId This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
@@ -1445,12 +2122,28 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.systemDiskAutoSnapshotPolicyId(systemDiskAutoSnapshotPolicyId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param systemDiskAutoSnapshotPolicyId This parameter is required.
+         */
+        public Builder systemDiskAutoSnapshotPolicyId(final com.aliyun.ros.cdk.core.IResolvable systemDiskAutoSnapshotPolicyId) {
+            this.props.systemDiskAutoSnapshotPolicyId(systemDiskAutoSnapshotPolicyId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param systemDiskCategory This parameter is required.
          */
         public Builder systemDiskCategory(final java.lang.String systemDiskCategory) {
+            this.props.systemDiskCategory(systemDiskCategory);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskCategory This parameter is required.
+         */
+        public Builder systemDiskCategory(final com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
             this.props.systemDiskCategory(systemDiskCategory);
             return this;
         }
@@ -1463,6 +2156,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.systemDiskDescription(systemDiskDescription);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param systemDiskDescription This parameter is required.
+         */
+        public Builder systemDiskDescription(final com.aliyun.ros.cdk.core.IResolvable systemDiskDescription) {
+            this.props.systemDiskDescription(systemDiskDescription);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1472,12 +2173,20 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
             this.props.systemDiskDiskName(systemDiskDiskName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param systemDiskDiskName This parameter is required.
+         */
+        public Builder systemDiskDiskName(final com.aliyun.ros.cdk.core.IResolvable systemDiskDiskName) {
+            this.props.systemDiskDiskName(systemDiskDiskName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param tags This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.ecs.RosPrepayInstanceGroupClone.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }
@@ -1487,6 +2196,14 @@ public class RosPrepayInstanceGroupClone extends com.aliyun.ros.cdk.core.RosReso
          * @param zoneId This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneId This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }

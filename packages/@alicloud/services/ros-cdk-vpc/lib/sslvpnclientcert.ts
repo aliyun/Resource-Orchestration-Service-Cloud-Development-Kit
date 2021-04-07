@@ -11,13 +11,13 @@ export interface SslVpnClientCertProps {
     /**
      * Property sslVpnServerId: ID of the SSL-VPN server.
      */
-    readonly sslVpnServerId: string;
+    readonly sslVpnServerId: string | ros.IResolvable;
 
     /**
      * Property name: The name of the client certificate.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -33,7 +33,7 @@ export class SslVpnClientCert extends ros.Resource {
     /**
      * Attribute SslVpnClientCertId: The ID of the client certificate.
      */
-    public readonly attrSslVpnClientCertId: any;
+    public readonly attrSslVpnClientCertId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::SslVpnClientCert`.

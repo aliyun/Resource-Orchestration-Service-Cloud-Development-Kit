@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public class FunctionInvokerProps : AlibabaCloud.SDK.ROS.CDK.Fc.IFunctionInvokerProps
     {
         /// <summary>Property functionName: Function name.</summary>
-        [JsiiProperty(name: "functionName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string FunctionName
+        [JsiiProperty(name: "functionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object FunctionName
         {
             get;
             set;
         }
 
         /// <summary>Property serviceName: Service name.</summary>
-        [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ServiceName
+        [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ServiceName
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value. If the value needs to be binary, encode it via base64 before passing to this property.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "event", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Event
+        [JsiiProperty(name: "event", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Event
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
         /// The change of the property leads to the invoke of the function.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "executeVersion", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? ExecuteVersion
+        [JsiiProperty(name: "executeVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ExecuteVersion
         {
             get;
             set;
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property qualifier: service version, can be versionId or aliasName.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "qualifier", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Qualifier
+        [JsiiProperty(name: "qualifier", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Qualifier
         {
             get;
             set;
@@ -83,8 +83,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
 
         /// <summary>Property serviceRegionId: Which region service belongs to.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "serviceRegionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ServiceRegionId
+        [JsiiProperty(name: "serviceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ServiceRegionId
         {
             get;
             set;

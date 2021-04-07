@@ -46,8 +46,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Assembly.Schema
             set;
         }
 
-        /// <summary>The VPC ID to that the private zone must be associated with&#xD; &#xD; If you provide VPC ID and privateZone is false, this will return no results&#xD; and raise an error.</summary>
+        /// <summary>The VPC ID to that the private zone must be associated with.</summary>
         /// <remarks>
+        /// If you provide VPC ID and privateZone is false, this will return no results
+        /// and raise an error.
+        ///
         /// <strong>Default</strong>: - Required if privateZone=true
         /// </remarks>
         [JsiiOptional]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::DynamicTagGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.254Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.924Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosDynamicTagGroup")
 public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDynamicTagRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDynamicTagRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDynamicTagRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDynamicTagRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTagKey() {
-        return software.amazon.jsii.Kernel.get(this, "attrTagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTagKey() {
+        return software.amazon.jsii.Kernel.get(this, "attrTagKey", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getContactGroupList() {
-        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getContactGroupList() {
+        return software.amazon.jsii.Kernel.get(this, "contactGroupList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setContactGroupList(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> value) {
+    public void setContactGroupList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "contactGroupList", java.util.Objects.requireNonNull(value, "contactGroupList is required"));
+    }
+
+    /**
+     */
+    public void setContactGroupList(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "contactGroupList", java.util.Objects.requireNonNull(value, "contactGroupList is required"));
     }
 
@@ -81,13 +87,19 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getTagKey() {
-        return software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTagKey() {
+        return software.amazon.jsii.Kernel.get(this, "tagKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setTagKey(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tagKey", java.util.Objects.requireNonNull(value, "tagKey is required"));
+    }
+
+    /**
+     */
+    public void setTagKey(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "tagKey", java.util.Objects.requireNonNull(value, "tagKey is required"));
     }
 
@@ -147,8 +159,8 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMatchExpressFilterRelation() {
-        return software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMatchExpressFilterRelation() {
+        return software.amazon.jsii.Kernel.get(this, "matchExpressFilterRelation", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,13 +171,25 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getTemplateIdList() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setMatchExpressFilterRelation(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "matchExpressFilterRelation", value);
     }
 
     /**
      */
-    public void setTemplateIdList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTemplateIdList() {
+        return software.amazon.jsii.Kernel.get(this, "templateIdList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTemplateIdList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "templateIdList", value);
+    }
+
+    /**
+     */
+    public void setTemplateIdList(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "templateIdList", value);
     }
     /**
@@ -178,12 +202,12 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getTagValue();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTagValue();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getTagValueMatchFunction();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTagValueMatchFunction();
 
         /**
          * @return a {@link Builder} of {@link MatchExpressProperty}
@@ -197,8 +221,8 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MatchExpressProperty> {
-            private java.lang.String tagValue;
-            private java.lang.String tagValueMatchFunction;
+            private java.lang.Object tagValue;
+            private java.lang.Object tagValueMatchFunction;
 
             /**
              * Sets the value of {@link MatchExpressProperty#getTagValue}
@@ -212,12 +236,34 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link MatchExpressProperty#getTagValue}
+             * @param tagValue the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tagValue(com.aliyun.ros.cdk.core.IResolvable tagValue) {
+                this.tagValue = tagValue;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MatchExpressProperty#getTagValueMatchFunction}
              * @param tagValueMatchFunction the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder tagValueMatchFunction(java.lang.String tagValueMatchFunction) {
+                this.tagValueMatchFunction = tagValueMatchFunction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MatchExpressProperty#getTagValueMatchFunction}
+             * @param tagValueMatchFunction the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tagValueMatchFunction(com.aliyun.ros.cdk.core.IResolvable tagValueMatchFunction) {
                 this.tagValueMatchFunction = tagValueMatchFunction;
                 return this;
             }
@@ -240,8 +286,8 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MatchExpressProperty {
-            private final java.lang.String tagValue;
-            private final java.lang.String tagValueMatchFunction;
+            private final java.lang.Object tagValue;
+            private final java.lang.Object tagValueMatchFunction;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -249,26 +295,26 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.tagValue = software.amazon.jsii.Kernel.get(this, "tagValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.tagValueMatchFunction = software.amazon.jsii.Kernel.get(this, "tagValueMatchFunction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.tagValue = software.amazon.jsii.Kernel.get(this, "tagValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tagValueMatchFunction = software.amazon.jsii.Kernel.get(this, "tagValueMatchFunction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String tagValue, final java.lang.String tagValueMatchFunction) {
+            protected Jsii$Proxy(final java.lang.Object tagValue, final java.lang.Object tagValueMatchFunction) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.tagValue = java.util.Objects.requireNonNull(tagValue, "tagValue is required");
                 this.tagValueMatchFunction = java.util.Objects.requireNonNull(tagValueMatchFunction, "tagValueMatchFunction is required");
             }
 
             @Override
-            public final java.lang.String getTagValue() {
+            public final java.lang.Object getTagValue() {
                 return this.tagValue;
             }
 
             @Override
-            public final java.lang.String getTagValueMatchFunction() {
+            public final java.lang.Object getTagValueMatchFunction() {
                 return this.tagValueMatchFunction;
             }
 
@@ -341,7 +387,15 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param contactGroupList This parameter is required.
          */
-        public Builder contactGroupList(final java.util.List<java.lang.String> contactGroupList) {
+        public Builder contactGroupList(final com.aliyun.ros.cdk.core.IResolvable contactGroupList) {
+            this.props.contactGroupList(contactGroupList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param contactGroupList This parameter is required.
+         */
+        public Builder contactGroupList(final java.util.List<? extends java.lang.Object> contactGroupList) {
             this.props.contactGroupList(contactGroupList);
             return this;
         }
@@ -351,6 +405,14 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
          * @param tagKey This parameter is required.
          */
         public Builder tagKey(final java.lang.String tagKey) {
+            this.props.tagKey(tagKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tagKey This parameter is required.
+         */
+        public Builder tagKey(final com.aliyun.ros.cdk.core.IResolvable tagKey) {
             this.props.tagKey(tagKey);
             return this;
         }
@@ -414,12 +476,28 @@ public class RosDynamicTagGroup extends com.aliyun.ros.cdk.core.RosResource {
             this.props.matchExpressFilterRelation(matchExpressFilterRelation);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param matchExpressFilterRelation This parameter is required.
+         */
+        public Builder matchExpressFilterRelation(final com.aliyun.ros.cdk.core.IResolvable matchExpressFilterRelation) {
+            this.props.matchExpressFilterRelation(matchExpressFilterRelation);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param templateIdList This parameter is required.
          */
-        public Builder templateIdList(final java.util.List<java.lang.String> templateIdList) {
+        public Builder templateIdList(final com.aliyun.ros.cdk.core.IResolvable templateIdList) {
+            this.props.templateIdList(templateIdList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param templateIdList This parameter is required.
+         */
+        public Builder templateIdList(final java.util.List<? extends java.lang.Object> templateIdList) {
             this.props.templateIdList(templateIdList);
             return this;
         }

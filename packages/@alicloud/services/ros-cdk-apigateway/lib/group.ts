@@ -11,28 +11,38 @@ export interface GroupProps {
     /**
      * Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * Property description: Description of the Group, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property instanceId: API gateway instance ID. For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * Property internetEnable: Enable or disable internet subdomain. True for enable.
+     */
+    readonly internetEnable?: boolean | ros.IResolvable;
 
     /**
      * Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
-    readonly passthroughHeaders?: string;
+    readonly passthroughHeaders?: string | ros.IResolvable;
 
     /**
      * Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosGroup.TagsProperty[];
+
+    /**
+     * Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
+     */
+    readonly vpcIntranetEnable?: boolean | ros.IResolvable;
 }
 
 /**
@@ -48,17 +58,17 @@ export class Group extends ros.Resource {
     /**
      * Attribute GroupId: The id of the created Group resource
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * Attribute SubDomain: The sub domain assigned to the Group by the system
      */
-    public readonly attrSubDomain: any;
+    public readonly attrSubDomain: ros.IResolvable;
 
     /**
      * Attribute Tags: Tags of app
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Group`.
@@ -72,9 +82,11 @@ export class Group extends ros.Resource {
 
         const rosGroup = new RosGroup(this, id,  {
             groupName: props.groupName,
+            internetEnable: props.internetEnable,
             description: props.description,
             instanceId: props.instanceId,
-            tags: ros.tagFactory(props.tags),
+            vpcIntranetEnable: props.vpcIntranetEnable,
+            tags: props.tags,
             passthroughHeaders: props.passthroughHeaders,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosGroup;

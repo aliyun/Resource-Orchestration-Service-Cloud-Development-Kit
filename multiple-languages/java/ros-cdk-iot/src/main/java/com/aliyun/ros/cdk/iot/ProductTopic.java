@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS resource type:  `ALIYUN::IOT::ProductTopic`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.ProductTopic")
 public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::IOT::ProductTopic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ProductTopic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.iot.ProductTopicProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::IOT::ProductTopic`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ProductTopic(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.iot.ProductTopicProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute TopicId: Topic ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTopicId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTopicId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTopicId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTopicId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.iot.ProductTopic> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,46 +90,130 @@ public class ProductTopic extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property operation: Operation permissions of devices on the topic category.
+         * <p>
+         * Value options:
+         * SUB: Subscribe. Devices can subscribe to the topics of this category.
+         * PUB: Publish. Devices can publish messages using the topics of this category.
+         * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
+         * <p>
          * @return {@code this}
-         * @param operation This parameter is required.
+         * @param operation Property operation: Operation permissions of devices on the topic category. This parameter is required.
          */
         public Builder operation(final java.lang.String operation) {
             this.props.operation(operation);
             return this;
         }
+        /**
+         * Property operation: Operation permissions of devices on the topic category.
+         * <p>
+         * Value options:
+         * SUB: Subscribe. Devices can subscribe to the topics of this category.
+         * PUB: Publish. Devices can publish messages using the topics of this category.
+         * ALL: Subscribe and publish. Devices can subscribe to and publish messages to the topics of this category.
+         * <p>
+         * @return {@code this}
+         * @param operation Property operation: Operation permissions of devices on the topic category. This parameter is required.
+         */
+        public Builder operation(final com.aliyun.ros.cdk.core.IResolvable operation) {
+            this.props.operation(operation);
+            return this;
+        }
 
         /**
+         * Property productKey: The unique identifier of the product for which you want to create a topic category.
+         * <p>
          * @return {@code this}
-         * @param productKey This parameter is required.
+         * @param productKey Property productKey: The unique identifier of the product for which you want to create a topic category. This parameter is required.
          */
         public Builder productKey(final java.lang.String productKey) {
             this.props.productKey(productKey);
             return this;
         }
+        /**
+         * Property productKey: The unique identifier of the product for which you want to create a topic category.
+         * <p>
+         * @return {@code this}
+         * @param productKey Property productKey: The unique identifier of the product for which you want to create a topic category. This parameter is required.
+         */
+        public Builder productKey(final com.aliyun.ros.cdk.core.IResolvable productKey) {
+            this.props.productKey(productKey);
+            return this;
+        }
 
         /**
+         * Property topicShortName: The custom category hierarchy in the topic category.
+         * <p>
+         * By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+         * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
+         * <p>
          * @return {@code this}
-         * @param topicShortName This parameter is required.
+         * @param topicShortName Property topicShortName: The custom category hierarchy in the topic category. This parameter is required.
          */
         public Builder topicShortName(final java.lang.String topicShortName) {
             this.props.topicShortName(topicShortName);
             return this;
         }
+        /**
+         * Property topicShortName: The custom category hierarchy in the topic category.
+         * <p>
+         * By default, a topic category contains two system defined category hierarchies: productKey and ${deviceName}. Forward slashes (/) are used to delimit the topic hierarchies. The format of a topic category is productKey/${deviceName}/topicShortName.
+         * Note The name of each category hierarchy can contain English letters, digits, and underscores (_), and cannot be empty.
+         * <p>
+         * @return {@code this}
+         * @param topicShortName Property topicShortName: The custom category hierarchy in the topic category. This parameter is required.
+         */
+        public Builder topicShortName(final com.aliyun.ros.cdk.core.IResolvable topicShortName) {
+            this.props.topicShortName(topicShortName);
+            return this;
+        }
 
         /**
+         * Property desc: The description of the topic category.
+         * <p>
+         * You can enter a description with up to 100 characters.
+         * <p>
          * @return {@code this}
-         * @param desc This parameter is required.
+         * @param desc Property desc: The description of the topic category. This parameter is required.
          */
         public Builder desc(final java.lang.String desc) {
             this.props.desc(desc);
             return this;
         }
+        /**
+         * Property desc: The description of the topic category.
+         * <p>
+         * You can enter a description with up to 100 characters.
+         * <p>
+         * @return {@code this}
+         * @param desc Property desc: The description of the topic category. This parameter is required.
+         */
+        public Builder desc(final com.aliyun.ros.cdk.core.IResolvable desc) {
+            this.props.desc(desc);
+            return this;
+        }
 
         /**
+         * Property iotInstanceId: Instance ID you purchased.
+         * <p>
+         * Public instances do not need pass this property.
+         * <p>
          * @return {@code this}
-         * @param iotInstanceId This parameter is required.
+         * @param iotInstanceId Property iotInstanceId: Instance ID you purchased. This parameter is required.
          */
         public Builder iotInstanceId(final java.lang.String iotInstanceId) {
+            this.props.iotInstanceId(iotInstanceId);
+            return this;
+        }
+        /**
+         * Property iotInstanceId: Instance ID you purchased.
+         * <p>
+         * Public instances do not need pass this property.
+         * <p>
+         * @return {@code this}
+         * @param iotInstanceId Property iotInstanceId: Instance ID you purchased. This parameter is required.
+         */
+        public Builder iotInstanceId(final com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
             this.props.iotInstanceId(iotInstanceId);
             return this;
         }

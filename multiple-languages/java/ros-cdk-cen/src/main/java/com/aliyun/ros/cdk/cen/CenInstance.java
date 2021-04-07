@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS resource type:  `ALIYUN::CEN::CenInstance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.210Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstance")
 public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public CenInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cen.CenInstanceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public CenInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cen.CenInstanceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CEN::CenInstance`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public CenInstance(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -52,9 +64,10 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute CenId: The ID of the request.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCenId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCenId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -63,8 +76,8 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cen.CenInstance> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -72,8 +85,8 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -91,20 +104,65 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: The description of the instance.
+         * <p>
+         * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of the instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
+        /**
+         * Property description: The description of the instance.
+         * <p>
+         * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of the instance. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props().description(description);
+            return this;
+        }
 
         /**
+         * Property name: The name of the instance.
+         * <p>
+         * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the instance. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props().name(name);
+            return this;
+        }
+        /**
+         * Property name: The name of the instance.
+         * <p>
+         * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the instance. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props().name(name);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to instance.
+         * <p>
+         * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to instance. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.cen.RosCenInstance.TagsProperty> tags) {
+            this.props().tags(tags);
             return this;
         }
 

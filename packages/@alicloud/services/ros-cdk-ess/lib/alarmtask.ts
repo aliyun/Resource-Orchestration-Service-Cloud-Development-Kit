@@ -11,32 +11,32 @@ export interface AlarmTaskProps {
     /**
      * Property alarmAction: Alarm Actions
      */
-    readonly alarmAction: string[];
+    readonly alarmAction: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property metricName: Metric Name
      */
-    readonly metricName: string;
+    readonly metricName: string | ros.IResolvable;
 
     /**
      * Property scalingGroupId: The ID of the scaling group.
      */
-    readonly scalingGroupId: string;
+    readonly scalingGroupId: string | ros.IResolvable;
 
     /**
      * Property threshold: Threshold
      */
-    readonly threshold: number;
+    readonly threshold: number | ros.IResolvable;
 
     /**
      * Property comparisonOperator: Comparison Operator
      */
-    readonly comparisonOperator?: string;
+    readonly comparisonOperator?: string | ros.IResolvable;
 
     /**
      * Property description: Description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property dimensions: Dimensions
@@ -46,32 +46,32 @@ export interface AlarmTaskProps {
     /**
      * Property evaluationCount: Evaluation Count
      */
-    readonly evaluationCount?: number;
+    readonly evaluationCount?: number | ros.IResolvable;
 
     /**
      * Property groupId: Group Id
      */
-    readonly groupId?: number;
+    readonly groupId?: number | ros.IResolvable;
 
     /**
      * Property metricType: Metric Type
      */
-    readonly metricType?: string;
+    readonly metricType?: string | ros.IResolvable;
 
     /**
      * Property name: Name
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property period: Period
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property statistics: Statistics
      */
-    readonly statistics?: string;
+    readonly statistics?: string | ros.IResolvable;
 }
 
 /**
@@ -87,7 +87,7 @@ export class AlarmTask extends ros.Resource {
     /**
      * Attribute AlarmTaskId: The alarm task ID
      */
-    public readonly attrAlarmTaskId: any;
+    public readonly attrAlarmTaskId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ESS::AlarmTask`.

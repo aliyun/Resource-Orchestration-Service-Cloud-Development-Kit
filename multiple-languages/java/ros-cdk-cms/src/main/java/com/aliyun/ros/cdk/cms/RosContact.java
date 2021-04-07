@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS template type:  `ALIYUN::CMS::Contact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.252Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.922Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContact")
 public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactName() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactName() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -73,8 +73,8 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getContactName() {
-        return software.amazon.jsii.Kernel.get(this, "contactName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getContactName() {
+        return software.amazon.jsii.Kernel.get(this, "contactName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,13 +85,25 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDescribe() {
-        return software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setContactName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "contactName", java.util.Objects.requireNonNull(value, "contactName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDescribe() {
+        return software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDescribe(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "describe", java.util.Objects.requireNonNull(value, "describe is required"));
+    }
+
+    /**
+     */
+    public void setDescribe(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "describe", java.util.Objects.requireNonNull(value, "describe is required"));
     }
 
@@ -112,28 +124,28 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getAliIm() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAliIm() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDingWebHook() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDingWebHook() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getMail() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMail() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSms() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSms() {
             return null;
         }
 
@@ -149,10 +161,10 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<ChannelsProperty> {
-            private java.lang.String aliIm;
-            private java.lang.String dingWebHook;
-            private java.lang.String mail;
-            private java.lang.String sms;
+            private java.lang.Object aliIm;
+            private java.lang.Object dingWebHook;
+            private java.lang.Object mail;
+            private java.lang.Object sms;
 
             /**
              * Sets the value of {@link ChannelsProperty#getAliIm}
@@ -161,6 +173,17 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder aliIm(java.lang.String aliIm) {
+                this.aliIm = aliIm;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ChannelsProperty#getAliIm}
+             * @param aliIm the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder aliIm(com.aliyun.ros.cdk.core.IResolvable aliIm) {
                 this.aliIm = aliIm;
                 return this;
             }
@@ -177,6 +200,17 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ChannelsProperty#getDingWebHook}
+             * @param dingWebHook the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder dingWebHook(com.aliyun.ros.cdk.core.IResolvable dingWebHook) {
+                this.dingWebHook = dingWebHook;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ChannelsProperty#getMail}
              * @param mail the value to be set.
              * @return {@code this}
@@ -188,12 +222,34 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ChannelsProperty#getMail}
+             * @param mail the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder mail(com.aliyun.ros.cdk.core.IResolvable mail) {
+                this.mail = mail;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link ChannelsProperty#getSms}
              * @param sms the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder sms(java.lang.String sms) {
+                this.sms = sms;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ChannelsProperty#getSms}
+             * @param sms the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sms(com.aliyun.ros.cdk.core.IResolvable sms) {
                 this.sms = sms;
                 return this;
             }
@@ -216,10 +272,10 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ChannelsProperty {
-            private final java.lang.String aliIm;
-            private final java.lang.String dingWebHook;
-            private final java.lang.String mail;
-            private final java.lang.String sms;
+            private final java.lang.Object aliIm;
+            private final java.lang.Object dingWebHook;
+            private final java.lang.Object mail;
+            private final java.lang.Object sms;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -227,16 +283,16 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.aliIm = software.amazon.jsii.Kernel.get(this, "aliIm", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.dingWebHook = software.amazon.jsii.Kernel.get(this, "dingWebHook", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.mail = software.amazon.jsii.Kernel.get(this, "mail", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.sms = software.amazon.jsii.Kernel.get(this, "sms", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.aliIm = software.amazon.jsii.Kernel.get(this, "aliIm", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.dingWebHook = software.amazon.jsii.Kernel.get(this, "dingWebHook", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.mail = software.amazon.jsii.Kernel.get(this, "mail", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.sms = software.amazon.jsii.Kernel.get(this, "sms", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String aliIm, final java.lang.String dingWebHook, final java.lang.String mail, final java.lang.String sms) {
+            protected Jsii$Proxy(final java.lang.Object aliIm, final java.lang.Object dingWebHook, final java.lang.Object mail, final java.lang.Object sms) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.aliIm = aliIm;
                 this.dingWebHook = dingWebHook;
@@ -245,22 +301,22 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getAliIm() {
+            public final java.lang.Object getAliIm() {
                 return this.aliIm;
             }
 
             @Override
-            public final java.lang.String getDingWebHook() {
+            public final java.lang.Object getDingWebHook() {
                 return this.dingWebHook;
             }
 
             @Override
-            public final java.lang.String getMail() {
+            public final java.lang.Object getMail() {
                 return this.mail;
             }
 
             @Override
-            public final java.lang.String getSms() {
+            public final java.lang.Object getSms() {
                 return this.sms;
             }
 
@@ -368,12 +424,28 @@ public class RosContact extends com.aliyun.ros.cdk.core.RosResource {
             this.props.contactName(contactName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param contactName This parameter is required.
+         */
+        public Builder contactName(final com.aliyun.ros.cdk.core.IResolvable contactName) {
+            this.props.contactName(contactName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param describe This parameter is required.
          */
         public Builder describe(final java.lang.String describe) {
+            this.props.describe(describe);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param describe This parameter is required.
+         */
+        public Builder describe(final com.aliyun.ros.cdk.core.IResolvable describe) {
             this.props.describe(describe);
             return this;
         }

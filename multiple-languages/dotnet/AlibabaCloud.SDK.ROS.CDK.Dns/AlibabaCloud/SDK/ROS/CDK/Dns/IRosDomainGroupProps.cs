@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// <strong>Property</strong>: groupName: Domain name group name
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupName
         {
             get;
         }
@@ -28,10 +28,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             /// <remarks>
             /// <strong>Property</strong>: groupName: Domain name group name
             /// </remarks>
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

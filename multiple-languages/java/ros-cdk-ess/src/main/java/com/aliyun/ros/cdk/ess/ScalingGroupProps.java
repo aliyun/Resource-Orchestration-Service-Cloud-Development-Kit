@@ -3,116 +3,182 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.509Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingGroupProps.Jsii$Proxy.class)
 public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property maxSize: Maximum number of ECS instances in the scaling group.
+     * <p>
+     * Value range: [0, 1000].
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMaxSize();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMaxSize();
 
     /**
+     * Property minSize: Minimum number of ECS instances in the scaling group.
+     * <p>
+     * Value range: [0, 1000].
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMinSize();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMinSize();
 
     /**
+     * Property dbInstanceIds: ID list of an RDS instance.
+     * <p>
+     * A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceIds() {
         return null;
     }
 
     /**
+     * Property defaultCooldown: Default cool-down time (in seconds) of the scaling group.
+     * <p>
+     * Value range: [0, 86400].
+     * The default value is 300s.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDefaultCooldown() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDefaultCooldown() {
         return null;
     }
 
     /**
+     * Property desiredCapacity: The expected number of ECS instances in a scaling group.
+     * <p>
+     * The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDesiredCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDesiredCapacity() {
         return null;
     }
 
     /**
+     * Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
+     * <p>
+     * Default to False.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGroupDeletionProtection() {
         return null;
     }
 
     /**
+     * Property healthCheckType: The health check type.
+     * <p>
+     * Allow values is "ECS" and "NONE", default to "ECS".
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckType() {
         return null;
     }
 
     /**
+     * Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
     }
 
     /**
+     * Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateId() {
         return null;
     }
 
     /**
+     * Property launchTemplateVersion: The version of the instance launch template.
+     * <p>
+     * Valid values:
+     * A fixed template version numbe.
+     * Default: The default template version is always used.
+     * Latest: The latest template version is always used.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLaunchTemplateVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchTemplateVersion() {
         return null;
     }
 
     /**
+     * Property loadBalancerIds: ID list of a Server Load Balancer instance.
+     * <p>
+     * A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerIds() {
         return null;
     }
 
     /**
+     * Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+     * <p>
+     * Allow value:
+     * <p>
+     * <ol>
+     * <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
+     * <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+     * </ol>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMultiAzPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMultiAzPolicy() {
         return null;
     }
 
     /**
+     * Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNotificationConfigurations() {
         return null;
     }
 
     /**
+     * Property protectedInstances: ECS instances of protected mode in the scaling group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtectedInstances() {
         return null;
     }
 
     /**
+     * Property removalPolicys: Policy for removing ECS instances from the scaling group.
+     * <p>
+     * Optional values:
+     * OldestInstance: removes the first ECS instance attached to the scaling group.
+     * NewestInstance: removes the first ECS instance attached to the scaling group.
+     * OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+     * Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRemovalPolicys() {
         return null;
     }
 
     /**
+     * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+     * <p>
+     * The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+     * If this parameter is not specified, the default value is ScalingGroupId.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingGroupName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingGroupName() {
         return null;
     }
 
     /**
+     * Property standbyInstances: ECS instances of standby mode in the scaling group.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyInstances() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to instance.
+     * <p>
+     * Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
+        return null;
+    }
+
+    /**
+     * Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 5], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 5, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchIds() {
         return null;
@@ -128,29 +194,31 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link ScalingGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScalingGroupProps> {
-        private java.lang.Number maxSize;
-        private java.lang.Number minSize;
+        private java.lang.Object maxSize;
+        private java.lang.Object minSize;
         private java.lang.Object dbInstanceIds;
-        private java.lang.Number defaultCooldown;
-        private java.lang.Number desiredCapacity;
+        private java.lang.Object defaultCooldown;
+        private java.lang.Object desiredCapacity;
         private java.lang.Object groupDeletionProtection;
-        private java.lang.String healthCheckType;
-        private java.lang.String instanceId;
-        private java.lang.String launchTemplateId;
-        private java.lang.String launchTemplateVersion;
+        private java.lang.Object healthCheckType;
+        private java.lang.Object instanceId;
+        private java.lang.Object launchTemplateId;
+        private java.lang.Object launchTemplateVersion;
         private java.lang.Object loadBalancerIds;
-        private java.lang.String multiAzPolicy;
+        private java.lang.Object multiAzPolicy;
         private java.lang.Object notificationConfigurations;
         private java.lang.Object protectedInstances;
         private java.lang.Object removalPolicys;
-        private java.lang.String scalingGroupName;
+        private java.lang.Object scalingGroupName;
         private java.lang.Object standbyInstances;
-        private java.lang.String vSwitchId;
+        private java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
+        private java.lang.Object vSwitchId;
         private java.lang.Object vSwitchIds;
 
         /**
          * Sets the value of {@link ScalingGroupProps#getMaxSize}
-         * @param maxSize the value to be set. This parameter is required.
+         * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
+         *                Value range: [0, 1000].
          * @return {@code this}
          */
         public Builder maxSize(java.lang.Number maxSize) {
@@ -159,8 +227,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getMaxSize}
+         * @param maxSize Property maxSize: Maximum number of ECS instances in the scaling group. This parameter is required.
+         *                Value range: [0, 1000].
+         * @return {@code this}
+         */
+        public Builder maxSize(com.aliyun.ros.cdk.core.IResolvable maxSize) {
+            this.maxSize = maxSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getMinSize}
-         * @param minSize the value to be set. This parameter is required.
+         * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
+         *                Value range: [0, 1000].
          * @return {@code this}
          */
         public Builder minSize(java.lang.Number minSize) {
@@ -169,8 +249,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getMinSize}
+         * @param minSize Property minSize: Minimum number of ECS instances in the scaling group. This parameter is required.
+         *                Value range: [0, 1000].
+         * @return {@code this}
+         */
+        public Builder minSize(com.aliyun.ros.cdk.core.IResolvable minSize) {
+            this.minSize = minSize;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getDbInstanceIds}
-         * @param dbInstanceIds the value to be set.
+         * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance.
+         *                      A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
          * @return {@code this}
          */
         public Builder dbInstanceIds(java.util.List<? extends java.lang.Object> dbInstanceIds) {
@@ -180,7 +272,8 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getDbInstanceIds}
-         * @param dbInstanceIds the value to be set.
+         * @param dbInstanceIds Property dbInstanceIds: ID list of an RDS instance.
+         *                      A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
          * @return {@code this}
          */
         public Builder dbInstanceIds(com.aliyun.ros.cdk.core.IResolvable dbInstanceIds) {
@@ -190,7 +283,9 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getDefaultCooldown}
-         * @param defaultCooldown the value to be set.
+         * @param defaultCooldown Property defaultCooldown: Default cool-down time (in seconds) of the scaling group.
+         *                        Value range: [0, 86400].
+         *                        The default value is 300s.
          * @return {@code this}
          */
         public Builder defaultCooldown(java.lang.Number defaultCooldown) {
@@ -199,8 +294,21 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getDefaultCooldown}
+         * @param defaultCooldown Property defaultCooldown: Default cool-down time (in seconds) of the scaling group.
+         *                        Value range: [0, 86400].
+         *                        The default value is 300s.
+         * @return {@code this}
+         */
+        public Builder defaultCooldown(com.aliyun.ros.cdk.core.IResolvable defaultCooldown) {
+            this.defaultCooldown = defaultCooldown;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getDesiredCapacity}
-         * @param desiredCapacity the value to be set.
+         * @param desiredCapacity Property desiredCapacity: The expected number of ECS instances in a scaling group.
+         *                        The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
          * @return {@code this}
          */
         public Builder desiredCapacity(java.lang.Number desiredCapacity) {
@@ -209,8 +317,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getDesiredCapacity}
+         * @param desiredCapacity Property desiredCapacity: The expected number of ECS instances in a scaling group.
+         *                        The scaling group automatically keeps the number of ECS instances as expected. The number of ECS instances cannot be greater than the value of MaxSize and cannot be less than the value of MinSize.
+         * @return {@code this}
+         */
+        public Builder desiredCapacity(com.aliyun.ros.cdk.core.IResolvable desiredCapacity) {
+            this.desiredCapacity = desiredCapacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getGroupDeletionProtection}
-         * @param groupDeletionProtection the value to be set.
+         * @param groupDeletionProtection Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
+         *                                Default to False.
          * @return {@code this}
          */
         public Builder groupDeletionProtection(java.lang.Boolean groupDeletionProtection) {
@@ -220,7 +340,8 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getGroupDeletionProtection}
-         * @param groupDeletionProtection the value to be set.
+         * @param groupDeletionProtection Property groupDeletionProtection: Whether to enable deletion protection for scaling group.
+         *                                Default to False.
          * @return {@code this}
          */
         public Builder groupDeletionProtection(com.aliyun.ros.cdk.core.IResolvable groupDeletionProtection) {
@@ -230,7 +351,8 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getHealthCheckType}
-         * @param healthCheckType the value to be set.
+         * @param healthCheckType Property healthCheckType: The health check type.
+         *                        Allow values is "ECS" and "NONE", default to "ECS".
          * @return {@code this}
          */
         public Builder healthCheckType(java.lang.String healthCheckType) {
@@ -239,8 +361,19 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getHealthCheckType}
+         * @param healthCheckType Property healthCheckType: The health check type.
+         *                        Allow values is "ECS" and "NONE", default to "ECS".
+         * @return {@code this}
+         */
+        public Builder healthCheckType(com.aliyun.ros.cdk.core.IResolvable healthCheckType) {
+            this.healthCheckType = healthCheckType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getInstanceId}
-         * @param instanceId the value to be set.
+         * @param instanceId Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -249,8 +382,18 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getInstanceId}
+         * @param instanceId Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getLaunchTemplateId}
-         * @param launchTemplateId the value to be set.
+         * @param launchTemplateId Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
          * @return {@code this}
          */
         public Builder launchTemplateId(java.lang.String launchTemplateId) {
@@ -259,8 +402,22 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getLaunchTemplateId}
+         * @param launchTemplateId Property launchTemplateId: The ID of the instance launch template from which the scaling group obtains launch configurations.
+         * @return {@code this}
+         */
+        public Builder launchTemplateId(com.aliyun.ros.cdk.core.IResolvable launchTemplateId) {
+            this.launchTemplateId = launchTemplateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getLaunchTemplateVersion}
-         * @param launchTemplateVersion the value to be set.
+         * @param launchTemplateVersion Property launchTemplateVersion: The version of the instance launch template.
+         *                              Valid values:
+         *                              A fixed template version numbe.
+         *                              Default: The default template version is always used.
+         *                              Latest: The latest template version is always used.
          * @return {@code this}
          */
         public Builder launchTemplateVersion(java.lang.String launchTemplateVersion) {
@@ -269,8 +426,23 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getLaunchTemplateVersion}
+         * @param launchTemplateVersion Property launchTemplateVersion: The version of the instance launch template.
+         *                              Valid values:
+         *                              A fixed template version numbe.
+         *                              Default: The default template version is always used.
+         *                              Latest: The latest template version is always used.
+         * @return {@code this}
+         */
+        public Builder launchTemplateVersion(com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
+            this.launchTemplateVersion = launchTemplateVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getLoadBalancerIds}
-         * @param loadBalancerIds the value to be set.
+         * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance.
+         *                        A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
          * @return {@code this}
          */
         public Builder loadBalancerIds(java.util.List<? extends java.lang.Object> loadBalancerIds) {
@@ -280,7 +452,8 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getLoadBalancerIds}
-         * @param loadBalancerIds the value to be set.
+         * @param loadBalancerIds Property loadBalancerIds: ID list of a Server Load Balancer instance.
+         *                        A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
          * @return {@code this}
          */
         public Builder loadBalancerIds(com.aliyun.ros.cdk.core.IResolvable loadBalancerIds) {
@@ -290,7 +463,13 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getMultiAzPolicy}
-         * @param multiAzPolicy the value to be set.
+         * @param multiAzPolicy Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+         *                      Allow value:
+         *                      <p>
+         *                      <ol>
+         *                      <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
+         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         *                      </ol>
          * @return {@code this}
          */
         public Builder multiAzPolicy(java.lang.String multiAzPolicy) {
@@ -299,8 +478,24 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getMultiAzPolicy}
+         * @param multiAzPolicy Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+         *                      Allow value:
+         *                      <p>
+         *                      <ol>
+         *                      <li>PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.</li>
+         *                      <li>BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.</li>
+         *                      </ol>
+         * @return {@code this}
+         */
+        public Builder multiAzPolicy(com.aliyun.ros.cdk.core.IResolvable multiAzPolicy) {
+            this.multiAzPolicy = multiAzPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getNotificationConfigurations}
-         * @param notificationConfigurations the value to be set.
+         * @param notificationConfigurations Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
          * @return {@code this}
          */
         public Builder notificationConfigurations(com.aliyun.ros.cdk.core.IResolvable notificationConfigurations) {
@@ -310,7 +505,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getNotificationConfigurations}
-         * @param notificationConfigurations the value to be set.
+         * @param notificationConfigurations Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
          * @return {@code this}
          */
         public Builder notificationConfigurations(java.util.List<? extends java.lang.Object> notificationConfigurations) {
@@ -320,7 +515,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getProtectedInstances}
-         * @param protectedInstances the value to be set.
+         * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group.
          * @return {@code this}
          */
         public Builder protectedInstances(java.util.List<? extends java.lang.Object> protectedInstances) {
@@ -330,7 +525,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getProtectedInstances}
-         * @param protectedInstances the value to be set.
+         * @param protectedInstances Property protectedInstances: ECS instances of protected mode in the scaling group.
          * @return {@code this}
          */
         public Builder protectedInstances(com.aliyun.ros.cdk.core.IResolvable protectedInstances) {
@@ -340,7 +535,12 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
-         * @param removalPolicys the value to be set.
+         * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
+         *                       Optional values:
+         *                       OldestInstance: removes the first ECS instance attached to the scaling group.
+         *                       NewestInstance: removes the first ECS instance attached to the scaling group.
+         *                       OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+         *                       Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
          * @return {@code this}
          */
         public Builder removalPolicys(java.util.List<? extends java.lang.Object> removalPolicys) {
@@ -350,7 +550,12 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getRemovalPolicys}
-         * @param removalPolicys the value to be set.
+         * @param removalPolicys Property removalPolicys: Policy for removing ECS instances from the scaling group.
+         *                       Optional values:
+         *                       OldestInstance: removes the first ECS instance attached to the scaling group.
+         *                       NewestInstance: removes the first ECS instance attached to the scaling group.
+         *                       OldestScalingConfiguration: removes the ECS instance with the oldest scaling configuration.
+         *                       Default values: OldestScalingConfiguration and OldestInstance. You can enter up to two removal policies.
          * @return {@code this}
          */
         public Builder removalPolicys(com.aliyun.ros.cdk.core.IResolvable removalPolicys) {
@@ -360,7 +565,9 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getScalingGroupName}
-         * @param scalingGroupName the value to be set.
+         * @param scalingGroupName Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+         *                         The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+         *                         If this parameter is not specified, the default value is ScalingGroupId.
          * @return {@code this}
          */
         public Builder scalingGroupName(java.lang.String scalingGroupName) {
@@ -369,8 +576,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getScalingGroupName}
+         * @param scalingGroupName Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+         *                         The name must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
+         *                         If this parameter is not specified, the default value is ScalingGroupId.
+         * @return {@code this}
+         */
+        public Builder scalingGroupName(com.aliyun.ros.cdk.core.IResolvable scalingGroupName) {
+            this.scalingGroupName = scalingGroupName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getStandbyInstances}
-         * @param standbyInstances the value to be set.
+         * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group.
          * @return {@code this}
          */
         public Builder standbyInstances(java.util.List<? extends java.lang.Object> standbyInstances) {
@@ -380,7 +599,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getStandbyInstances}
-         * @param standbyInstances the value to be set.
+         * @param standbyInstances Property standbyInstances: ECS instances of standby mode in the scaling group.
          * @return {@code this}
          */
         public Builder standbyInstances(com.aliyun.ros.cdk.core.IResolvable standbyInstances) {
@@ -389,8 +608,20 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getTags}
+         * @param tags Property tags: Tags to attach to instance.
+         *             Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getVSwitchId}
-         * @param vSwitchId the value to be set.
+         * @param vSwitchId Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -399,8 +630,18 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link ScalingGroupProps#getVSwitchId}
+         * @param vSwitchId Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScalingGroupProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
+         * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 5], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 5, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
          * @return {@code this}
          */
         public Builder vSwitchIds(java.util.List<? extends java.lang.Object> vSwitchIds) {
@@ -410,7 +651,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link ScalingGroupProps#getVSwitchIds}
-         * @param vSwitchIds the value to be set.
+         * @param vSwitchIds Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 5], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 5, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
          * @return {@code this}
          */
         public Builder vSwitchIds(com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
@@ -425,7 +666,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         @Override
         public ScalingGroupProps build() {
-            return new Jsii$Proxy(maxSize, minSize, dbInstanceIds, defaultCooldown, desiredCapacity, groupDeletionProtection, healthCheckType, instanceId, launchTemplateId, launchTemplateVersion, loadBalancerIds, multiAzPolicy, notificationConfigurations, protectedInstances, removalPolicys, scalingGroupName, standbyInstances, vSwitchId, vSwitchIds);
+            return new Jsii$Proxy(maxSize, minSize, dbInstanceIds, defaultCooldown, desiredCapacity, groupDeletionProtection, healthCheckType, instanceId, launchTemplateId, launchTemplateVersion, loadBalancerIds, multiAzPolicy, notificationConfigurations, protectedInstances, removalPolicys, scalingGroupName, standbyInstances, tags, vSwitchId, vSwitchIds);
         }
     }
 
@@ -434,24 +675,25 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScalingGroupProps {
-        private final java.lang.Number maxSize;
-        private final java.lang.Number minSize;
+        private final java.lang.Object maxSize;
+        private final java.lang.Object minSize;
         private final java.lang.Object dbInstanceIds;
-        private final java.lang.Number defaultCooldown;
-        private final java.lang.Number desiredCapacity;
+        private final java.lang.Object defaultCooldown;
+        private final java.lang.Object desiredCapacity;
         private final java.lang.Object groupDeletionProtection;
-        private final java.lang.String healthCheckType;
-        private final java.lang.String instanceId;
-        private final java.lang.String launchTemplateId;
-        private final java.lang.String launchTemplateVersion;
+        private final java.lang.Object healthCheckType;
+        private final java.lang.Object instanceId;
+        private final java.lang.Object launchTemplateId;
+        private final java.lang.Object launchTemplateVersion;
         private final java.lang.Object loadBalancerIds;
-        private final java.lang.String multiAzPolicy;
+        private final java.lang.Object multiAzPolicy;
         private final java.lang.Object notificationConfigurations;
         private final java.lang.Object protectedInstances;
         private final java.lang.Object removalPolicys;
-        private final java.lang.String scalingGroupName;
+        private final java.lang.Object scalingGroupName;
         private final java.lang.Object standbyInstances;
-        private final java.lang.String vSwitchId;
+        private final java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags;
+        private final java.lang.Object vSwitchId;
         private final java.lang.Object vSwitchIds;
 
         /**
@@ -460,31 +702,33 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.maxSize = software.amazon.jsii.Kernel.get(this, "maxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minSize = software.amazon.jsii.Kernel.get(this, "minSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceIds = software.amazon.jsii.Kernel.get(this, "dbInstanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.defaultCooldown = software.amazon.jsii.Kernel.get(this, "defaultCooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.desiredCapacity = software.amazon.jsii.Kernel.get(this, "desiredCapacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupDeletionProtection = software.amazon.jsii.Kernel.get(this, "groupDeletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.healthCheckType = software.amazon.jsii.Kernel.get(this, "healthCheckType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateId = software.amazon.jsii.Kernel.get(this, "launchTemplateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchTemplateVersion = software.amazon.jsii.Kernel.get(this, "launchTemplateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerIds = software.amazon.jsii.Kernel.get(this, "loadBalancerIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.multiAzPolicy = software.amazon.jsii.Kernel.get(this, "multiAzPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.notificationConfigurations = software.amazon.jsii.Kernel.get(this, "notificationConfigurations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectedInstances = software.amazon.jsii.Kernel.get(this, "protectedInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.removalPolicys = software.amazon.jsii.Kernel.get(this, "removalPolicys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.scalingGroupName = software.amazon.jsii.Kernel.get(this, "scalingGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.standbyInstances = software.amazon.jsii.Kernel.get(this, "standbyInstances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty.class)));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number maxSize, final java.lang.Number minSize, final java.lang.Object dbInstanceIds, final java.lang.Number defaultCooldown, final java.lang.Number desiredCapacity, final java.lang.Object groupDeletionProtection, final java.lang.String healthCheckType, final java.lang.String instanceId, final java.lang.String launchTemplateId, final java.lang.String launchTemplateVersion, final java.lang.Object loadBalancerIds, final java.lang.String multiAzPolicy, final java.lang.Object notificationConfigurations, final java.lang.Object protectedInstances, final java.lang.Object removalPolicys, final java.lang.String scalingGroupName, final java.lang.Object standbyInstances, final java.lang.String vSwitchId, final java.lang.Object vSwitchIds) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object maxSize, final java.lang.Object minSize, final java.lang.Object dbInstanceIds, final java.lang.Object defaultCooldown, final java.lang.Object desiredCapacity, final java.lang.Object groupDeletionProtection, final java.lang.Object healthCheckType, final java.lang.Object instanceId, final java.lang.Object launchTemplateId, final java.lang.Object launchTemplateVersion, final java.lang.Object loadBalancerIds, final java.lang.Object multiAzPolicy, final java.lang.Object notificationConfigurations, final java.lang.Object protectedInstances, final java.lang.Object removalPolicys, final java.lang.Object scalingGroupName, final java.lang.Object standbyInstances, final java.util.List<? extends com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> tags, final java.lang.Object vSwitchId, final java.lang.Object vSwitchIds) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.maxSize = java.util.Objects.requireNonNull(maxSize, "maxSize is required");
             this.minSize = java.util.Objects.requireNonNull(minSize, "minSize is required");
@@ -503,17 +747,18 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             this.removalPolicys = removalPolicys;
             this.scalingGroupName = scalingGroupName;
             this.standbyInstances = standbyInstances;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty>)tags;
             this.vSwitchId = vSwitchId;
             this.vSwitchIds = vSwitchIds;
         }
 
         @Override
-        public final java.lang.Number getMaxSize() {
+        public final java.lang.Object getMaxSize() {
             return this.maxSize;
         }
 
         @Override
-        public final java.lang.Number getMinSize() {
+        public final java.lang.Object getMinSize() {
             return this.minSize;
         }
 
@@ -523,12 +768,12 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.Number getDefaultCooldown() {
+        public final java.lang.Object getDefaultCooldown() {
             return this.defaultCooldown;
         }
 
         @Override
-        public final java.lang.Number getDesiredCapacity() {
+        public final java.lang.Object getDesiredCapacity() {
             return this.desiredCapacity;
         }
 
@@ -538,22 +783,22 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getHealthCheckType() {
+        public final java.lang.Object getHealthCheckType() {
             return this.healthCheckType;
         }
 
         @Override
-        public final java.lang.String getInstanceId() {
+        public final java.lang.Object getInstanceId() {
             return this.instanceId;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateId() {
+        public final java.lang.Object getLaunchTemplateId() {
             return this.launchTemplateId;
         }
 
         @Override
-        public final java.lang.String getLaunchTemplateVersion() {
+        public final java.lang.Object getLaunchTemplateVersion() {
             return this.launchTemplateVersion;
         }
 
@@ -563,7 +808,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getMultiAzPolicy() {
+        public final java.lang.Object getMultiAzPolicy() {
             return this.multiAzPolicy;
         }
 
@@ -583,7 +828,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getScalingGroupName() {
+        public final java.lang.Object getScalingGroupName() {
             return this.scalingGroupName;
         }
 
@@ -593,7 +838,12 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.util.List<com.aliyun.ros.cdk.ess.RosScalingGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
@@ -655,6 +905,9 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             if (this.getStandbyInstances() != null) {
                 data.set("standbyInstances", om.valueToTree(this.getStandbyInstances()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getVSwitchId() != null) {
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
@@ -696,6 +949,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             if (this.removalPolicys != null ? !this.removalPolicys.equals(that.removalPolicys) : that.removalPolicys != null) return false;
             if (this.scalingGroupName != null ? !this.scalingGroupName.equals(that.scalingGroupName) : that.scalingGroupName != null) return false;
             if (this.standbyInstances != null ? !this.standbyInstances.equals(that.standbyInstances) : that.standbyInstances != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
             return this.vSwitchIds != null ? this.vSwitchIds.equals(that.vSwitchIds) : that.vSwitchIds == null;
         }
@@ -719,6 +973,7 @@ public interface ScalingGroupProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.removalPolicys != null ? this.removalPolicys.hashCode() : 0);
             result = 31 * result + (this.scalingGroupName != null ? this.scalingGroupName.hashCode() : 0);
             result = 31 * result + (this.standbyInstances != null ? this.standbyInstances.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
             result = 31 * result + (this.vSwitchIds != null ? this.vSwitchIds.hashCode() : 0);
             return result;

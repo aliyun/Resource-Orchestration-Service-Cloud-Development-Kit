@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Attribute SynchronizationJobId: Synchronization instance ID.</summary>
-        [JsiiProperty(name: "attrSynchronizationJobId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSynchronizationJobId
+        [JsiiProperty(name: "attrSynchronizationJobId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSynchronizationJobId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

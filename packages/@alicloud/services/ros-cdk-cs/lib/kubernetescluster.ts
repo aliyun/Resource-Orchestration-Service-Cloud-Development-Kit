@@ -22,17 +22,17 @@ export interface KubernetesClusterProps {
     /**
      * Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property vpcId: VPC ID.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
      */
-    readonly workerInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property workerVSwitchIds: The virtual switch ID of the worker node.
@@ -58,12 +58,12 @@ export interface KubernetesClusterProps {
     /**
      * Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    readonly containerCidr?: string;
+    readonly containerCidr?: string | ros.IResolvable;
 
     /**
-     * Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
+     * Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
-    readonly cpuPolicy?: string;
+    readonly cpuPolicy?: string | ros.IResolvable;
 
     /**
      * Property disableRollback: Whether the failure was rolled back:
@@ -83,17 +83,17 @@ export interface KubernetesClusterProps {
     /**
      * Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    readonly keyPair?: string;
+    readonly keyPair?: string | ros.IResolvable;
 
     /**
-     * Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    readonly kubernetesVersion?: string;
+    readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
      * Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    readonly loginPassword?: string;
+    readonly loginPassword?: string | ros.IResolvable;
 
     /**
      * Property masterAutoRenew: Whether the master node automatically renews. It takes effect when the value of MasterInstanceChargeType is PrePaid. The optional values are:
@@ -109,12 +109,12 @@ export interface KubernetesClusterProps {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    readonly masterAutoRenewPeriod?: number;
+    readonly masterAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * Property masterCount: Number of master instances. The value can be 3 or 5. The default value is 3.
      */
-    readonly masterCount?: number;
+    readonly masterCount?: number | ros.IResolvable;
 
     /**
      * Property masterDataDisk: Whether the master node mounts data disks can be selected as:
@@ -134,7 +134,7 @@ export interface KubernetesClusterProps {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    readonly masterInstanceChargeType?: string;
+    readonly masterInstanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property masterPeriod: The duration of the annual subscription and monthly subscription. It takes effect when the master_instance_charge_type value is PrePaid and is a required value. The value range is:
@@ -142,7 +142,7 @@ export interface KubernetesClusterProps {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    readonly masterPeriod?: number;
+    readonly masterPeriod?: number | ros.IResolvable;
 
     /**
      * Property masterPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -150,48 +150,48 @@ export interface KubernetesClusterProps {
      * Month: time in months
      * Default to Month
      */
-    readonly masterPeriodUnit?: string;
+    readonly masterPeriodUnit?: string | ros.IResolvable;
 
     /**
-     * Property masterSystemDiskCategory: Master disk system disk type. The value range is:
+     * Property masterSystemDiskCategory: Master disk system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
-     * Default to cloud_ssd.
+     * cloud_essd: ESSD cloud diskDefault to cloud_ssd.
      */
-    readonly masterSystemDiskCategory?: string;
+    readonly masterSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * Property masterSystemDiskSize: Master disk system disk size in GiB.
      * Default to 120.
      */
-    readonly masterSystemDiskSize?: number;
+    readonly masterSystemDiskSize?: number | ros.IResolvable;
 
     /**
      * Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
-    readonly nodePortRange?: string;
+    readonly nodePortRange?: string | ros.IResolvable;
 
     /**
      * Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
-    readonly numOfNodes?: number;
+    readonly numOfNodes?: number | ros.IResolvable;
 
     /**
      * Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    readonly proxyMode?: string;
+    readonly proxyMode?: string | ros.IResolvable;
 
     /**
      * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * Property snatEntry: Whether to configure SNAT for the network.
@@ -213,17 +213,17 @@ export interface KubernetesClusterProps {
     /**
      * Property tags: Tag the cluster.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosKubernetesCluster.TagsProperty[];
 
     /**
      * Property taint: It is used to mark nodes with taints. It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
      */
-    readonly taint?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly taint?: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
      * Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 
     /**
      * Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
@@ -239,7 +239,7 @@ export interface KubernetesClusterProps {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    readonly workerAutoRenewPeriod?: number;
+    readonly workerAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -260,7 +260,7 @@ export interface KubernetesClusterProps {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    readonly workerInstanceChargeType?: string;
+    readonly workerInstanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
@@ -268,7 +268,7 @@ export interface KubernetesClusterProps {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    readonly workerPeriod?: number;
+    readonly workerPeriod?: number | ros.IResolvable;
 
     /**
      * Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -276,7 +276,7 @@ export interface KubernetesClusterProps {
      * Month: time in months
      * Default to Month.
      */
-    readonly workerPeriodUnit?: string;
+    readonly workerPeriodUnit?: string | ros.IResolvable;
 
     /**
      * Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -284,13 +284,13 @@ export interface KubernetesClusterProps {
      * cloud_ssd: SSD cloud disk
      * Default to cloud_efficiency.
      */
-    readonly workerSystemDiskCategory?: string;
+    readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    readonly workerSystemDiskSize?: number;
+    readonly workerSystemDiskSize?: number | ros.IResolvable;
 }
 
 /**
@@ -306,17 +306,17 @@ export class KubernetesCluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CS::KubernetesCluster`.
@@ -348,15 +348,15 @@ export class KubernetesCluster extends ros.Resource {
             serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
             workerAutoRenew: props.workerAutoRenew ? props.workerAutoRenew : true,
             proxyMode: props.proxyMode ? props.proxyMode : 'iptables',
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             disableRollback: props.disableRollback ? props.disableRollback : true,
             workerInstanceTypes: props.workerInstanceTypes,
             loginPassword: props.loginPassword,
             masterPeriod: props.masterPeriod ? props.masterPeriod : 1,
-            kubernetesVersion: props.kubernetesVersion ? props.kubernetesVersion : '1.14.8-aliyun.1',
+            kubernetesVersion: props.kubernetesVersion,
             masterInstanceChargeType: props.masterInstanceChargeType ? props.masterInstanceChargeType : 'PostPaid',
             containerCidr: props.containerCidr ? props.containerCidr : '172.16.0.0/16',
-            cpuPolicy: props.cpuPolicy ? props.cpuPolicy : 'none',
+            cpuPolicy: props.cpuPolicy,
             workerInstanceChargeType: props.workerInstanceChargeType ? props.workerInstanceChargeType : 'PostPaid',
             keyPair: props.keyPair,
             masterInstanceTypes: props.masterInstanceTypes,

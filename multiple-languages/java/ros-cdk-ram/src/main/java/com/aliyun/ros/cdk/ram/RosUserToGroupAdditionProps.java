@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Properties for defining a `ALIYUN::RAM::UserToGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosUserToGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(RosUserToGroupAdditionProps.Jsii$Proxy.class)
 public interface RosUserToGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      */
@@ -26,7 +26,7 @@ public interface RosUserToGroupAdditionProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link RosUserToGroupAdditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosUserToGroupAdditionProps> {
-        private java.lang.String groupName;
+        private java.lang.Object groupName;
         private java.lang.Object users;
 
         /**
@@ -35,6 +35,16 @@ public interface RosUserToGroupAdditionProps extends software.amazon.jsii.JsiiSe
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosUserToGroupAdditionProps#getGroupName}
+         * @param groupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.groupName = groupName;
             return this;
         }
@@ -75,7 +85,7 @@ public interface RosUserToGroupAdditionProps extends software.amazon.jsii.JsiiSe
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosUserToGroupAdditionProps {
-        private final java.lang.String groupName;
+        private final java.lang.Object groupName;
         private final java.lang.Object users;
 
         /**
@@ -84,21 +94,21 @@ public interface RosUserToGroupAdditionProps extends software.amazon.jsii.JsiiSe
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.users = software.amazon.jsii.Kernel.get(this, "users", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName, final java.lang.Object users) {
+        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object users) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
             this.users = java.util.Objects.requireNonNull(users, "users is required");
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 

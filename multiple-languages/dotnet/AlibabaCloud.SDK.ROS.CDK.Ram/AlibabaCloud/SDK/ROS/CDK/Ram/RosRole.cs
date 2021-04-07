@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Attribute</strong>: Arn: Name of alicloud resource.
         /// </remarks>
-        [JsiiProperty(name: "attrArn", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArn
+        [JsiiProperty(name: "attrArn", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArn
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: RoleId: Id of ram role.
         /// </remarks>
-        [JsiiProperty(name: "attrRoleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRoleId
+        [JsiiProperty(name: "attrRoleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRoleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: RoleName: Name of ram role.
         /// </remarks>
-        [JsiiProperty(name: "attrRoleName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRoleName
+        [JsiiProperty(name: "attrRoleName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRoleName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,7 +80,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Property</strong>: assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
         /// </remarks>
-        [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "assumeRolePolicyDocument", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ram.RosRole.AssumeRolePolicyDocumentProperty\"}]}}")]
         public virtual object AssumeRolePolicyDocument
         {
             get => GetInstanceProperty<object>()!;
@@ -97,10 +97,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <remarks>
         /// <strong>Property</strong>: roleName: Specifies the role name, containing up to 64 characters.
         /// </remarks>
-        [JsiiProperty(name: "roleName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string RoleName
+        [JsiiProperty(name: "roleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object RoleName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -108,10 +108,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// <strong>Property</strong>: description: Remark information, up to 1024 characters or Chinese characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -121,10 +121,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         /// The default value is used if the parameter is not specified.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? MaxSessionDuration
+        [JsiiProperty(name: "maxSessionDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MaxSessionDuration
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -153,8 +153,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
-            string Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Version
             {
                 get;
             }
@@ -178,10 +178,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 /// <remarks>
                 /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
                 /// </remarks>
-                [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}")]
-                public string Version
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Version
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -203,8 +203,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Version
             {
                 get;
                 set;
@@ -953,8 +953,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyName: Specifies the authorization policy name, containing up to 128 characters.
             /// </remarks>
-            [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-            string PolicyName
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object PolicyName
             {
                 get;
             }
@@ -962,9 +962,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: description: Specifies the authorization policy description, containing up to 1024 characters.
             /// </remarks>
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Description
+            object? Description
             {
                 get
                 {
@@ -991,20 +991,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 /// <remarks>
                 /// <strong>Property</strong>: policyName: Specifies the authorization policy name, containing up to 128 characters.
                 /// </remarks>
-                [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}")]
-                public string PolicyName
+                [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object PolicyName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: description: Specifies the authorization policy description, containing up to 1024 characters.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Description
+                [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Description
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1026,8 +1026,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: policyName: Specifies the authorization policy name, containing up to 128 characters.
             /// </remarks>
-            [JsiiProperty(name: "policyName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string PolicyName
+            [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object PolicyName
             {
                 get;
                 set;
@@ -1037,8 +1037,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: description: Specifies the authorization policy description, containing up to 1024 characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Description
             {
                 get;
                 set;
@@ -1063,9 +1063,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
-            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Version
+            object? Version
             {
                 get
                 {
@@ -1094,10 +1094,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Version
+                [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Version
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1119,8 +1119,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: version: You can use versions to track changes to a managed policy.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "version", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Version
+            [JsiiProperty(name: "version", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Version
             {
                 get;
                 set;
@@ -1274,9 +1274,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <remarks>
             /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
             /// </remarks>
-            [JsiiProperty(name: "effect", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Effect
+            object? Effect
             {
                 get
                 {
@@ -1328,10 +1328,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
                 /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "effect", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Effect
+                [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Effect
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -1374,8 +1374,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             /// <strong>Property</strong>: effect: What the effect will be when the user requests access-either allow or deny.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "effect", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Effect
+            [JsiiProperty(name: "effect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Effect
             {
                 get;
                 set;

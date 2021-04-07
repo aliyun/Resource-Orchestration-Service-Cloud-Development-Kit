@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         }
 
         /// <summary>Attribute TopicId: Topic ID.</summary>
-        [JsiiProperty(name: "attrTopicId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopicId
+        [JsiiProperty(name: "attrTopicId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

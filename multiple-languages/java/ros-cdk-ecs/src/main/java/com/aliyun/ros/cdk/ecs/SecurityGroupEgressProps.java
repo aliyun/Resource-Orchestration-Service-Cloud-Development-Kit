@@ -3,70 +3,94 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SecurityGroupEgress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.398Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupEgressProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupEgressProps.Jsii$Proxy.class)
 public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property ipProtocol: Ip protocol for in rule.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getIpProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
 
     /**
+     * Property portRange: Ip protocol relative port range.
+     * <p>
+     * For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPortRange();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPortRange();
 
     /**
+     * Property description: Description of the security group rule, [1, 512] characters.
+     * <p>
+     * The default is empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property destCidrIp: Dest CIDR Ip Address range.
+     * <p>
+     * Only IPV4 supported.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestCidrIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestCidrIp() {
         return null;
     }
 
     /**
+     * Property destGroupId: Dest Group Id.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupId() {
         return null;
     }
 
     /**
+     * Property destGroupOwnerId: Dest Group Owner Account ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDestGroupOwnerId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDestGroupOwnerId() {
         return null;
     }
 
     /**
+     * Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
+     * <p>
+     * Supports IP address ranges in CIDR format and IPv6 format.
+     * Note Only VPC type IP addresses are supported.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIpv6DestCidrIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6DestCidrIp() {
         return null;
     }
 
     /**
+     * Property nicType: Network type, could be 'internet' or 'intranet'.
+     * <p>
+     * Default value is internet.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNicType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNicType() {
         return null;
     }
 
     /**
+     * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access).
+     * <p>
+     * Default value is accept.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
         return null;
     }
 
     /**
+     * Property priority: Authorization policies priority range[1, 100].
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPriority() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
     }
 
     /**
+     * Property securityGroupId: Id of the security group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
@@ -80,21 +104,21 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
      * A builder for {@link SecurityGroupEgressProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<SecurityGroupEgressProps> {
-        private java.lang.String ipProtocol;
-        private java.lang.String portRange;
-        private java.lang.String description;
-        private java.lang.String destCidrIp;
-        private java.lang.String destGroupId;
-        private java.lang.String destGroupOwnerId;
-        private java.lang.String ipv6DestCidrIp;
-        private java.lang.String nicType;
-        private java.lang.String policy;
-        private java.lang.Number priority;
-        private java.lang.String securityGroupId;
+        private java.lang.Object ipProtocol;
+        private java.lang.Object portRange;
+        private java.lang.Object description;
+        private java.lang.Object destCidrIp;
+        private java.lang.Object destGroupId;
+        private java.lang.Object destGroupOwnerId;
+        private java.lang.Object ipv6DestCidrIp;
+        private java.lang.Object nicType;
+        private java.lang.Object policy;
+        private java.lang.Object priority;
+        private java.lang.Object securityGroupId;
 
         /**
          * Sets the value of {@link SecurityGroupEgressProps#getIpProtocol}
-         * @param ipProtocol the value to be set. This parameter is required.
+         * @param ipProtocol Property ipProtocol: Ip protocol for in rule. This parameter is required.
          * @return {@code this}
          */
         public Builder ipProtocol(java.lang.String ipProtocol) {
@@ -103,8 +127,19 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getIpProtocol}
+         * @param ipProtocol Property ipProtocol: Ip protocol for in rule. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipProtocol(com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
+            this.ipProtocol = ipProtocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getPortRange}
-         * @param portRange the value to be set. This parameter is required.
+         * @param portRange Property portRange: Ip protocol relative port range. This parameter is required.
+         *                  For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
          * @return {@code this}
          */
         public Builder portRange(java.lang.String portRange) {
@@ -113,8 +148,20 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getPortRange}
+         * @param portRange Property portRange: Ip protocol relative port range. This parameter is required.
+         *                  For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         * @return {@code this}
+         */
+        public Builder portRange(com.aliyun.ros.cdk.core.IResolvable portRange) {
+            this.portRange = portRange;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the security group rule, [1, 512] characters.
+         *                    The default is empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -123,8 +170,20 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getDescription}
+         * @param description Property description: Description of the security group rule, [1, 512] characters.
+         *                    The default is empty.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestCidrIp}
-         * @param destCidrIp the value to be set.
+         * @param destCidrIp Property destCidrIp: Dest CIDR Ip Address range.
+         *                   Only IPV4 supported.
          * @return {@code this}
          */
         public Builder destCidrIp(java.lang.String destCidrIp) {
@@ -133,8 +192,19 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getDestCidrIp}
+         * @param destCidrIp Property destCidrIp: Dest CIDR Ip Address range.
+         *                   Only IPV4 supported.
+         * @return {@code this}
+         */
+        public Builder destCidrIp(com.aliyun.ros.cdk.core.IResolvable destCidrIp) {
+            this.destCidrIp = destCidrIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupId}
-         * @param destGroupId the value to be set.
+         * @param destGroupId Property destGroupId: Dest Group Id.
          * @return {@code this}
          */
         public Builder destGroupId(java.lang.String destGroupId) {
@@ -143,8 +213,18 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getDestGroupId}
+         * @param destGroupId Property destGroupId: Dest Group Id.
+         * @return {@code this}
+         */
+        public Builder destGroupId(com.aliyun.ros.cdk.core.IResolvable destGroupId) {
+            this.destGroupId = destGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getDestGroupOwnerId}
-         * @param destGroupOwnerId the value to be set.
+         * @param destGroupOwnerId Property destGroupOwnerId: Dest Group Owner Account ID.
          * @return {@code this}
          */
         public Builder destGroupOwnerId(java.lang.String destGroupOwnerId) {
@@ -153,8 +233,20 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getDestGroupOwnerId}
+         * @param destGroupOwnerId Property destGroupOwnerId: Dest Group Owner Account ID.
+         * @return {@code this}
+         */
+        public Builder destGroupOwnerId(com.aliyun.ros.cdk.core.IResolvable destGroupOwnerId) {
+            this.destGroupOwnerId = destGroupOwnerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getIpv6DestCidrIp}
-         * @param ipv6DestCidrIp the value to be set.
+         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
+         *                       Supports IP address ranges in CIDR format and IPv6 format.
+         *                       Note Only VPC type IP addresses are supported.
          * @return {@code this}
          */
         public Builder ipv6DestCidrIp(java.lang.String ipv6DestCidrIp) {
@@ -163,8 +255,21 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getIpv6DestCidrIp}
+         * @param ipv6DestCidrIp Property ipv6DestCidrIp: Destination IPv6 CIDR address segment.
+         *                       Supports IP address ranges in CIDR format and IPv6 format.
+         *                       Note Only VPC type IP addresses are supported.
+         * @return {@code this}
+         */
+        public Builder ipv6DestCidrIp(com.aliyun.ros.cdk.core.IResolvable ipv6DestCidrIp) {
+            this.ipv6DestCidrIp = ipv6DestCidrIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getNicType}
-         * @param nicType the value to be set.
+         * @param nicType Property nicType: Network type, could be 'internet' or 'intranet'.
+         *                Default value is internet.
          * @return {@code this}
          */
         public Builder nicType(java.lang.String nicType) {
@@ -173,8 +278,20 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getNicType}
+         * @param nicType Property nicType: Network type, could be 'internet' or 'intranet'.
+         *                Default value is internet.
+         * @return {@code this}
+         */
+        public Builder nicType(com.aliyun.ros.cdk.core.IResolvable nicType) {
+            this.nicType = nicType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getPolicy}
-         * @param policy the value to be set.
+         * @param policy Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access).
+         *               Default value is accept.
          * @return {@code this}
          */
         public Builder policy(java.lang.String policy) {
@@ -183,8 +300,19 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getPolicy}
+         * @param policy Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access).
+         *               Default value is accept.
+         * @return {@code this}
+         */
+        public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getPriority}
-         * @param priority the value to be set.
+         * @param priority Property priority: Authorization policies priority range[1, 100].
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -193,11 +321,31 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         /**
+         * Sets the value of {@link SecurityGroupEgressProps#getPriority}
+         * @param priority Property priority: Authorization policies priority range[1, 100].
+         * @return {@code this}
+         */
+        public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.priority = priority;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecurityGroupEgressProps#getSecurityGroupId}
-         * @param securityGroupId the value to be set.
+         * @param securityGroupId Property securityGroupId: Id of the security group.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecurityGroupEgressProps#getSecurityGroupId}
+         * @param securityGroupId Property securityGroupId: Id of the security group.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
             return this;
         }
@@ -218,17 +366,17 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SecurityGroupEgressProps {
-        private final java.lang.String ipProtocol;
-        private final java.lang.String portRange;
-        private final java.lang.String description;
-        private final java.lang.String destCidrIp;
-        private final java.lang.String destGroupId;
-        private final java.lang.String destGroupOwnerId;
-        private final java.lang.String ipv6DestCidrIp;
-        private final java.lang.String nicType;
-        private final java.lang.String policy;
-        private final java.lang.Number priority;
-        private final java.lang.String securityGroupId;
+        private final java.lang.Object ipProtocol;
+        private final java.lang.Object portRange;
+        private final java.lang.Object description;
+        private final java.lang.Object destCidrIp;
+        private final java.lang.Object destGroupId;
+        private final java.lang.Object destGroupOwnerId;
+        private final java.lang.Object ipv6DestCidrIp;
+        private final java.lang.Object nicType;
+        private final java.lang.Object policy;
+        private final java.lang.Object priority;
+        private final java.lang.Object securityGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -236,23 +384,23 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destGroupId = software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.destGroupOwnerId = software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.portRange = software.amazon.jsii.Kernel.get(this, "portRange", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destCidrIp = software.amazon.jsii.Kernel.get(this, "destCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destGroupId = software.amazon.jsii.Kernel.get(this, "destGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.destGroupOwnerId = software.amazon.jsii.Kernel.get(this, "destGroupOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6DestCidrIp = software.amazon.jsii.Kernel.get(this, "ipv6DestCidrIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nicType = software.amazon.jsii.Kernel.get(this, "nicType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.priority = software.amazon.jsii.Kernel.get(this, "priority", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ipProtocol, final java.lang.String portRange, final java.lang.String description, final java.lang.String destCidrIp, final java.lang.String destGroupId, final java.lang.String destGroupOwnerId, final java.lang.String ipv6DestCidrIp, final java.lang.String nicType, final java.lang.String policy, final java.lang.Number priority, final java.lang.String securityGroupId) {
+        protected Jsii$Proxy(final java.lang.Object ipProtocol, final java.lang.Object portRange, final java.lang.Object description, final java.lang.Object destCidrIp, final java.lang.Object destGroupId, final java.lang.Object destGroupOwnerId, final java.lang.Object ipv6DestCidrIp, final java.lang.Object nicType, final java.lang.Object policy, final java.lang.Object priority, final java.lang.Object securityGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ipProtocol = java.util.Objects.requireNonNull(ipProtocol, "ipProtocol is required");
             this.portRange = java.util.Objects.requireNonNull(portRange, "portRange is required");
@@ -268,57 +416,57 @@ public interface SecurityGroupEgressProps extends software.amazon.jsii.JsiiSeria
         }
 
         @Override
-        public final java.lang.String getIpProtocol() {
+        public final java.lang.Object getIpProtocol() {
             return this.ipProtocol;
         }
 
         @Override
-        public final java.lang.String getPortRange() {
+        public final java.lang.Object getPortRange() {
             return this.portRange;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getDestCidrIp() {
+        public final java.lang.Object getDestCidrIp() {
             return this.destCidrIp;
         }
 
         @Override
-        public final java.lang.String getDestGroupId() {
+        public final java.lang.Object getDestGroupId() {
             return this.destGroupId;
         }
 
         @Override
-        public final java.lang.String getDestGroupOwnerId() {
+        public final java.lang.Object getDestGroupOwnerId() {
             return this.destGroupOwnerId;
         }
 
         @Override
-        public final java.lang.String getIpv6DestCidrIp() {
+        public final java.lang.Object getIpv6DestCidrIp() {
             return this.ipv6DestCidrIp;
         }
 
         @Override
-        public final java.lang.String getNicType() {
+        public final java.lang.Object getNicType() {
             return this.nicType;
         }
 
         @Override
-        public final java.lang.String getPolicy() {
+        public final java.lang.Object getPolicy() {
             return this.policy;
         }
 
         @Override
-        public final java.lang.Number getPriority() {
+        public final java.lang.Object getPriority() {
             return this.priority;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 

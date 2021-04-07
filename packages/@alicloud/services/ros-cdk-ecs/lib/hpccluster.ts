@@ -13,13 +13,13 @@ export interface HpcClusterProps {
      * start with a letter but cannot start with http:// or https://. It can contain letters,
      * digits, colons (:), underscores (_), and hyphens (-).
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property description: The description of the HPC cluster. The description must be 2 to 256 characters in
      * length. It cannot start with http:// or https://. Default value: empty string.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -35,12 +35,12 @@ export class HpcCluster extends ros.Resource {
     /**
      * Attribute HpcClusterId: The ID of the HPC cluster.
      */
-    public readonly attrHpcClusterId: any;
+    public readonly attrHpcClusterId: ros.IResolvable;
 
     /**
      * Attribute Name: The name of the HPC cluster.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::HpcCluster`.

@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         }
 
         /// <summary>Attribute MasterAccountId: The ID of the master account.</summary>
-        [JsiiProperty(name: "attrMasterAccountId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterAccountId
+        [JsiiProperty(name: "attrMasterAccountId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterAccountId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MasterAccountName: The name of the master account.</summary>
-        [JsiiProperty(name: "attrMasterAccountName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterAccountName
+        [JsiiProperty(name: "attrMasterAccountName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterAccountName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ResourceDirectoryId: The ID of the resource directory.</summary>
-        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrResourceDirectoryId
+        [JsiiProperty(name: "attrResourceDirectoryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceDirectoryId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute RootFolderId: The ID of the root folder.</summary>
-        [JsiiProperty(name: "attrRootFolderId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRootFolderId
+        [JsiiProperty(name: "attrRootFolderId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRootFolderId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

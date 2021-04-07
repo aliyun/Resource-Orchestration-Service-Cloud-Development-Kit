@@ -1,6 +1,6 @@
 package com.aliyun.ros.cdk.core;
 
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.135Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.309Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.IRosResourceOptions")
 @software.amazon.jsii.Jsii.Proxy(IRosResourceOptions.Jsii$Proxy.class)
 public interface IRosResourceOptions extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,20 @@ public interface IRosResourceOptions extends software.amazon.jsii.JsiiSerializab
     @software.amazon.jsii.Optional
     default void setCondition(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosCondition value) {
         throw new UnsupportedOperationException("'void " + getClass().getCanonicalName() + "#setCondition(@org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosCondition)' is not implemented!");
+    }
+
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
+        return null;
+    }
+
+    @software.amazon.jsii.Optional
+    default void setCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        throw new UnsupportedOperationException("'void " + getClass().getCanonicalName() + "#setCount(@org.jetbrains.annotations.Nullable java.lang.Number)' is not implemented!");
+    }
+
+    @software.amazon.jsii.Optional
+    default void setCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        throw new UnsupportedOperationException("'void " + getClass().getCanonicalName() + "#setCount(@org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable)' is not implemented!");
     }
 
     /**
@@ -114,6 +128,21 @@ public interface IRosResourceOptions extends software.amazon.jsii.JsiiSerializab
             software.amazon.jsii.Kernel.set(this, "condition", value);
         }
 
+        @Override
+        public final @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
+            return software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        @Override
+        public final void setCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+            software.amazon.jsii.Kernel.set(this, "count", value);
+        }
+
+        @Override
+        public final void setCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+            software.amazon.jsii.Kernel.set(this, "count", value);
+        }
+
         /**
          * With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted.
          * <p>
@@ -199,6 +228,21 @@ public interface IRosResourceOptions extends software.amazon.jsii.JsiiSerializab
         @Override
         default void setCondition(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.RosCondition value) {
             software.amazon.jsii.Kernel.set(this, "condition", value);
+        }
+
+        @Override
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
+            return software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        @Override
+        default void setCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+            software.amazon.jsii.Kernel.set(this, "count", value);
+        }
+
+        @Override
+        default void setCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+            software.amazon.jsii.Kernel.set(this, "count", value);
         }
 
         /**

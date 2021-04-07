@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         }
 
         /// <summary>Attribute Domains: The domain names used to access the OTS instance in the VPC.</summary>
-        [JsiiProperty(name: "attrDomains", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomains
+        [JsiiProperty(name: "attrDomains", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomains
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Endpoints: Private network addresses used to access the OTS instance in the VPC.</summary>
-        [JsiiProperty(name: "attrEndpoints", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEndpoints
+        [JsiiProperty(name: "attrEndpoints", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndpoints
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

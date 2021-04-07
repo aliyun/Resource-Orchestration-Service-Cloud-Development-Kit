@@ -3,58 +3,88 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::Service`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.562Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.ServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceProps.Jsii$Proxy.class)
 public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property serviceName: Service name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
+     * Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.
+     * <p>
+     * Default value is false.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
         return null;
     }
 
     /**
+     * Property description: Service description.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property internetAccess: Set it to true to enable Internet access.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetAccess() {
         return null;
     }
 
     /**
+     * Property logConfig: Log configuration.
+     * <p>
+     * Function Compute pushes function execution logs to the configured log store.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLogConfig() {
         return null;
     }
 
     /**
+     * Property nasConfig: NAS configuration.
+     * <p>
+     * Function Compute uses a specified NAS configured on the service.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNasConfig() {
         return null;
     }
 
     /**
+     * Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
+     * <p>
+     * The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRole() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRole() {
         return null;
     }
 
     /**
+     * Property tags: Tags to attach to service.
+     * <p>
+     * Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> getTags() {
         return null;
     }
 
     /**
+     * Property tracingConfig: The Tracing Analysis configuration.
+     * <p>
+     * After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTracingConfig() {
+        return null;
+    }
+
+    /**
+     * Property vpcConfig: VPC configuration.
+     * <p>
+     * Function Compute uses the config to setup ENI in the specific VPC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcConfig() {
         return null;
@@ -70,19 +100,20 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link ServiceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ServiceProps> {
-        private java.lang.String serviceName;
+        private java.lang.Object serviceName;
         private java.lang.Object deletionForce;
-        private java.lang.String description;
+        private java.lang.Object description;
         private java.lang.Object internetAccess;
         private java.lang.Object logConfig;
         private java.lang.Object nasConfig;
-        private java.lang.String role;
-        private java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private java.lang.Object role;
+        private java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
+        private java.lang.Object tracingConfig;
         private java.lang.Object vpcConfig;
 
         /**
          * Sets the value of {@link ServiceProps#getServiceName}
-         * @param serviceName the value to be set. This parameter is required.
+         * @param serviceName Property serviceName: Service name. This parameter is required.
          * @return {@code this}
          */
         public Builder serviceName(java.lang.String serviceName) {
@@ -91,8 +122,19 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ServiceProps#getServiceName}
+         * @param serviceName Property serviceName: Service name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(java.lang.Boolean deletionForce) {
@@ -102,7 +144,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getDeletionForce}
-         * @param deletionForce the value to be set.
+         * @param deletionForce Property deletionForce: Whether force delete the service without waiting for network interfaces to be cleaned up if VpcConfig is specified.
+         *                      Default value is false.
          * @return {@code this}
          */
         public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
@@ -112,7 +155,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Service description.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -121,8 +164,18 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ServiceProps#getDescription}
+         * @param description Property description: Service description.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceProps#getInternetAccess}
-         * @param internetAccess the value to be set.
+         * @param internetAccess Property internetAccess: Set it to true to enable Internet access.
          * @return {@code this}
          */
         public Builder internetAccess(java.lang.Boolean internetAccess) {
@@ -132,7 +185,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getInternetAccess}
-         * @param internetAccess the value to be set.
+         * @param internetAccess Property internetAccess: Set it to true to enable Internet access.
          * @return {@code this}
          */
         public Builder internetAccess(com.aliyun.ros.cdk.core.IResolvable internetAccess) {
@@ -142,7 +195,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getLogConfig}
-         * @param logConfig the value to be set.
+         * @param logConfig Property logConfig: Log configuration.
+         *                  Function Compute pushes function execution logs to the configured log store.
          * @return {@code this}
          */
         public Builder logConfig(com.aliyun.ros.cdk.core.IResolvable logConfig) {
@@ -152,7 +206,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getLogConfig}
-         * @param logConfig the value to be set.
+         * @param logConfig Property logConfig: Log configuration.
+         *                  Function Compute pushes function execution logs to the configured log store.
          * @return {@code this}
          */
         public Builder logConfig(com.aliyun.ros.cdk.fc.RosService.LogConfigProperty logConfig) {
@@ -162,7 +217,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getNasConfig}
-         * @param nasConfig the value to be set.
+         * @param nasConfig Property nasConfig: NAS configuration.
+         *                  Function Compute uses a specified NAS configured on the service.
          * @return {@code this}
          */
         public Builder nasConfig(com.aliyun.ros.cdk.core.IResolvable nasConfig) {
@@ -172,7 +228,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getNasConfig}
-         * @param nasConfig the value to be set.
+         * @param nasConfig Property nasConfig: NAS configuration.
+         *                  Function Compute uses a specified NAS configured on the service.
          * @return {@code this}
          */
         public Builder nasConfig(com.aliyun.ros.cdk.fc.RosService.NasConfigProperty nasConfig) {
@@ -182,7 +239,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getRole}
-         * @param role the value to be set.
+         * @param role Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
+         *             The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
          * @return {@code this}
          */
         public Builder role(java.lang.String role) {
@@ -191,19 +249,54 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link ServiceProps#getRole}
+         * @param role Property role: The role grants Function Compute the permission to access user’s cloud resources, such as pushing logs to user’s log store.
+         *             The temporary STS token generated from this role can be retrieved from function context and used to access cloud resources.
+         * @return {@code this}
+         */
+        public Builder role(com.aliyun.ros.cdk.core.IResolvable role) {
+            this.role = role;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ServiceProps#getTags}
-         * @param tags the value to be set.
+         * @param tags Property tags: Tags to attach to service.
+         *             Max support 20 tags to add during create service. Each tag with two properties Key and Value, and Key is required.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceProps#getTracingConfig}
+         * @param tracingConfig Property tracingConfig: The Tracing Analysis configuration.
+         *                      After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+         * @return {@code this}
+         */
+        public Builder tracingConfig(com.aliyun.ros.cdk.core.IResolvable tracingConfig) {
+            this.tracingConfig = tracingConfig;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ServiceProps#getTracingConfig}
+         * @param tracingConfig Property tracingConfig: The Tracing Analysis configuration.
+         *                      After Function Compute integrates with Tracing Analysis, you can record the stay time of a request in Function Compute, view the cold start time for a function, and record the execution time of a function.
+         * @return {@code this}
+         */
+        public Builder tracingConfig(com.aliyun.ros.cdk.fc.RosService.TracingConfigProperty tracingConfig) {
+            this.tracingConfig = tracingConfig;
             return this;
         }
 
         /**
          * Sets the value of {@link ServiceProps#getVpcConfig}
-         * @param vpcConfig the value to be set.
+         * @param vpcConfig Property vpcConfig: VPC configuration.
+         *                  Function Compute uses the config to setup ENI in the specific VPC.
          * @return {@code this}
          */
         public Builder vpcConfig(com.aliyun.ros.cdk.core.IResolvable vpcConfig) {
@@ -213,7 +306,8 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ServiceProps#getVpcConfig}
-         * @param vpcConfig the value to be set.
+         * @param vpcConfig Property vpcConfig: VPC configuration.
+         *                  Function Compute uses the config to setup ENI in the specific VPC.
          * @return {@code this}
          */
         public Builder vpcConfig(com.aliyun.ros.cdk.fc.RosService.VpcConfigProperty vpcConfig) {
@@ -228,7 +322,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public ServiceProps build() {
-            return new Jsii$Proxy(serviceName, deletionForce, description, internetAccess, logConfig, nasConfig, role, tags, vpcConfig);
+            return new Jsii$Proxy(serviceName, deletionForce, description, internetAccess, logConfig, nasConfig, role, tags, tracingConfig, vpcConfig);
         }
     }
 
@@ -237,14 +331,15 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServiceProps {
-        private final java.lang.String serviceName;
+        private final java.lang.Object serviceName;
         private final java.lang.Object deletionForce;
-        private final java.lang.String description;
+        private final java.lang.Object description;
         private final java.lang.Object internetAccess;
         private final java.lang.Object logConfig;
         private final java.lang.Object nasConfig;
-        private final java.lang.String role;
-        private final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> tags;
+        private final java.lang.Object role;
+        private final java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags;
+        private final java.lang.Object tracingConfig;
         private final java.lang.Object vpcConfig;
 
         /**
@@ -253,14 +348,15 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetAccess = software.amazon.jsii.Kernel.get(this, "internetAccess", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.logConfig = software.amazon.jsii.Kernel.get(this, "logConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nasConfig = software.amazon.jsii.Kernel.get(this, "nasConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.mapOf(software.amazon.jsii.NativeType.forClass(java.lang.Object.class))));
+            this.role = software.amazon.jsii.Kernel.get(this, "role", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.fc.RosService.TagsProperty.class)));
+            this.tracingConfig = software.amazon.jsii.Kernel.get(this, "tracingConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcConfig = software.amazon.jsii.Kernel.get(this, "vpcConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -268,7 +364,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.String serviceName, final java.lang.Object deletionForce, final java.lang.String description, final java.lang.Object internetAccess, final java.lang.Object logConfig, final java.lang.Object nasConfig, final java.lang.String role, final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags, final java.lang.Object vpcConfig) {
+        protected Jsii$Proxy(final java.lang.Object serviceName, final java.lang.Object deletionForce, final java.lang.Object description, final java.lang.Object internetAccess, final java.lang.Object logConfig, final java.lang.Object nasConfig, final java.lang.Object role, final java.util.List<? extends com.aliyun.ros.cdk.fc.RosService.TagsProperty> tags, final java.lang.Object tracingConfig, final java.lang.Object vpcConfig) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.serviceName = java.util.Objects.requireNonNull(serviceName, "serviceName is required");
             this.deletionForce = deletionForce;
@@ -277,12 +373,13 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             this.logConfig = logConfig;
             this.nasConfig = nasConfig;
             this.role = role;
-            this.tags = (java.util.List<java.util.Map<java.lang.String, java.lang.Object>>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty>)tags;
+            this.tracingConfig = tracingConfig;
             this.vpcConfig = vpcConfig;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
@@ -292,7 +389,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
@@ -312,13 +409,18 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getRole() {
+        public final java.lang.Object getRole() {
             return this.role;
         }
 
         @Override
-        public final java.util.List<java.util.Map<java.lang.String, java.lang.Object>> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.fc.RosService.TagsProperty> getTags() {
             return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTracingConfig() {
+            return this.tracingConfig;
         }
 
         @Override
@@ -354,6 +456,9 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
+            if (this.getTracingConfig() != null) {
+                data.set("tracingConfig", om.valueToTree(this.getTracingConfig()));
+            }
             if (this.getVpcConfig() != null) {
                 data.set("vpcConfig", om.valueToTree(this.getVpcConfig()));
             }
@@ -383,6 +488,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             if (this.nasConfig != null ? !this.nasConfig.equals(that.nasConfig) : that.nasConfig != null) return false;
             if (this.role != null ? !this.role.equals(that.role) : that.role != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
+            if (this.tracingConfig != null ? !this.tracingConfig.equals(that.tracingConfig) : that.tracingConfig != null) return false;
             return this.vpcConfig != null ? this.vpcConfig.equals(that.vpcConfig) : that.vpcConfig == null;
         }
 
@@ -396,6 +502,7 @@ public interface ServiceProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.nasConfig != null ? this.nasConfig.hashCode() : 0);
             result = 31 * result + (this.role != null ? this.role.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
+            result = 31 * result + (this.tracingConfig != null ? this.tracingConfig.hashCode() : 0);
             result = 31 * result + (this.vpcConfig != null ? this.vpcConfig.hashCode() : 0);
             return result;
         }

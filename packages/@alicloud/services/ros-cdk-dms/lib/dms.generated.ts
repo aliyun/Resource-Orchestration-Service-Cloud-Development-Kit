@@ -10,12 +10,12 @@ export interface RosInstanceProps {
     /**
      * @Property databasePassword: The logon password of the database instance.
      */
-    readonly databasePassword: string;
+    readonly databasePassword: string | ros.IResolvable;
 
     /**
      * @Property databaseUser: The logon username of the database instance.
      */
-    readonly databaseUser: string;
+    readonly databaseUser: string | ros.IResolvable;
 
     /**
      * @Property dbaUid: The Alibaba Cloud unique ID (UID) of the database administrator (DBA) of the database
@@ -23,30 +23,30 @@ export interface RosInstanceProps {
      * Note To query the UID, log on to the DMS Enterprise console and choose System Management
      * > User Management.
      */
-    readonly dbaUid: number;
+    readonly dbaUid: number | ros.IResolvable;
 
     /**
      * @Property envType: The type of the environment to which the database instance belongs. Valid values:
      * product: the production environment.
      * dev: the test environment.
      */
-    readonly envType: string;
+    readonly envType: string | ros.IResolvable;
 
     /**
      * @Property exportTimeout: The timeout period for exporting the database instance. Unit: seconds.
      */
-    readonly exportTimeout: number;
+    readonly exportTimeout: number | ros.IResolvable;
 
     /**
      * @Property host: The endpoint of the database instance.
      */
-    readonly host: string;
+    readonly host: string | ros.IResolvable;
 
     /**
      * @Property instanceAlias: The alias of the database instance. The alias helps you quickly find the required
      * instance.
      */
-    readonly instanceAlias: string;
+    readonly instanceAlias: string | ros.IResolvable;
 
     /**
      * @Property instanceSource: The source of the database instance. Valid values:
@@ -56,29 +56,29 @@ export interface RosInstanceProps {
      * VPC_IDC: an on-premises database built in an Internet data center (IDC) in Virtual Private
      * Cloud (VPC).
      */
-    readonly instanceSource: string;
+    readonly instanceSource: string | ros.IResolvable;
 
     /**
      * @Property instanceType: The type of the database instance. Valid values: MySQL, SQLServer, PostgreSQL, Oracle, DRDS, OceanBase, Mongo, Redis
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 
     /**
      * @Property networkType: The network type of the database instance. Valid values:
      * CLASSIC
      * VPC
      */
-    readonly networkType: string;
+    readonly networkType: string | ros.IResolvable;
 
     /**
      * @Property port: The connection port of the database instance.
      */
-    readonly port: number;
+    readonly port: number | ros.IResolvable;
 
     /**
      * @Property queryTimeout: The timeout period for querying the database instance. Unit: seconds.
      */
-    readonly queryTimeout: number;
+    readonly queryTimeout: number | ros.IResolvable;
 
     /**
      * @Property safeRule: The security rule of the database instance. Enter the name of the security rule for
@@ -87,7 +87,7 @@ export interface RosInstanceProps {
      * System Management > Security Rules. The security rule appears in the security rule
      * list.
      */
-    readonly safeRule: string;
+    readonly safeRule: string | ros.IResolvable;
 
     /**
      * @Property tid: The ID of the tenant.
@@ -95,12 +95,12 @@ export interface RosInstanceProps {
      * > Instance Management or System Management > User Management. The ID of the tenant
      * appears in the Service Specification section.
      */
-    readonly tid: number;
+    readonly tid: number | ros.IResolvable;
 
     /**
      * @Property dataLinkName: The name of the data link for cross-database query.
      */
-    readonly dataLinkName?: string;
+    readonly dataLinkName?: string | ros.IResolvable;
 
     /**
      * @Property ddlOnline: [Important] Specifies whether to enable the online data description language (DDL)
@@ -109,25 +109,25 @@ export interface RosInstanceProps {
      * 1: The native online DDL service prevails.
      * 2: Data change without table locking provided by DMS prevails.
      */
-    readonly ddlOnline?: number;
+    readonly ddlOnline?: number | ros.IResolvable;
 
     /**
      * @Property ecsInstanceId: The ID of the ECS instance to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN.
      */
-    readonly ecsInstanceId?: string;
+    readonly ecsInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property ecsRegion: The region where the database instance resides.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN or VPC_IDC.
      */
-    readonly ecsRegion?: string;
+    readonly ecsRegion?: string | ros.IResolvable;
 
     /**
      * @Property sid: The system ID (SID) of the database instance.
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
-    readonly sid?: string;
+    readonly sid?: string | ros.IResolvable;
 
     /**
      * @Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid
@@ -135,13 +135,13 @@ export interface RosInstanceProps {
      * 0: disabled
      * 1: enabled
      */
-    readonly useDsql?: number;
+    readonly useDsql?: number | ros.IResolvable;
 
     /**
      * @Property vpcId: The ID of the VPC to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -265,17 +265,17 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute Host: The endpoint of the database instance.
      */
-    public readonly attrHost: any;
+    public readonly attrHost: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: The ID of the database instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * @Attribute Port: The connection port of the database instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -283,12 +283,12 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property databasePassword: The logon password of the database instance.
      */
-    public databasePassword: string;
+    public databasePassword: string | ros.IResolvable;
 
     /**
      * @Property databaseUser: The logon username of the database instance.
      */
-    public databaseUser: string;
+    public databaseUser: string | ros.IResolvable;
 
     /**
      * @Property dbaUid: The Alibaba Cloud unique ID (UID) of the database administrator (DBA) of the database
@@ -296,30 +296,30 @@ export class RosInstance extends ros.RosResource {
      * Note To query the UID, log on to the DMS Enterprise console and choose System Management
      * > User Management.
      */
-    public dbaUid: number;
+    public dbaUid: number | ros.IResolvable;
 
     /**
      * @Property envType: The type of the environment to which the database instance belongs. Valid values:
      * product: the production environment.
      * dev: the test environment.
      */
-    public envType: string;
+    public envType: string | ros.IResolvable;
 
     /**
      * @Property exportTimeout: The timeout period for exporting the database instance. Unit: seconds.
      */
-    public exportTimeout: number;
+    public exportTimeout: number | ros.IResolvable;
 
     /**
      * @Property host: The endpoint of the database instance.
      */
-    public host: string;
+    public host: string | ros.IResolvable;
 
     /**
      * @Property instanceAlias: The alias of the database instance. The alias helps you quickly find the required
      * instance.
      */
-    public instanceAlias: string;
+    public instanceAlias: string | ros.IResolvable;
 
     /**
      * @Property instanceSource: The source of the database instance. Valid values:
@@ -329,29 +329,29 @@ export class RosInstance extends ros.RosResource {
      * VPC_IDC: an on-premises database built in an Internet data center (IDC) in Virtual Private
      * Cloud (VPC).
      */
-    public instanceSource: string;
+    public instanceSource: string | ros.IResolvable;
 
     /**
      * @Property instanceType: The type of the database instance. Valid values: MySQL, SQLServer, PostgreSQL, Oracle, DRDS, OceanBase, Mongo, Redis
      */
-    public instanceType: string;
+    public instanceType: string | ros.IResolvable;
 
     /**
      * @Property networkType: The network type of the database instance. Valid values:
      * CLASSIC
      * VPC
      */
-    public networkType: string;
+    public networkType: string | ros.IResolvable;
 
     /**
      * @Property port: The connection port of the database instance.
      */
-    public port: number;
+    public port: number | ros.IResolvable;
 
     /**
      * @Property queryTimeout: The timeout period for querying the database instance. Unit: seconds.
      */
-    public queryTimeout: number;
+    public queryTimeout: number | ros.IResolvable;
 
     /**
      * @Property safeRule: The security rule of the database instance. Enter the name of the security rule for
@@ -360,7 +360,7 @@ export class RosInstance extends ros.RosResource {
      * System Management > Security Rules. The security rule appears in the security rule
      * list.
      */
-    public safeRule: string;
+    public safeRule: string | ros.IResolvable;
 
     /**
      * @Property tid: The ID of the tenant.
@@ -368,12 +368,12 @@ export class RosInstance extends ros.RosResource {
      * > Instance Management or System Management > User Management. The ID of the tenant
      * appears in the Service Specification section.
      */
-    public tid: number;
+    public tid: number | ros.IResolvable;
 
     /**
      * @Property dataLinkName: The name of the data link for cross-database query.
      */
-    public dataLinkName: string | undefined;
+    public dataLinkName: string | ros.IResolvable | undefined;
 
     /**
      * @Property ddlOnline: [Important] Specifies whether to enable the online data description language (DDL)
@@ -382,25 +382,25 @@ export class RosInstance extends ros.RosResource {
      * 1: The native online DDL service prevails.
      * 2: Data change without table locking provided by DMS prevails.
      */
-    public ddlOnline: number | undefined;
+    public ddlOnline: number | ros.IResolvable | undefined;
 
     /**
      * @Property ecsInstanceId: The ID of the ECS instance to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN.
      */
-    public ecsInstanceId: string | undefined;
+    public ecsInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property ecsRegion: The region where the database instance resides.
      * Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN or VPC_IDC.
      */
-    public ecsRegion: string | undefined;
+    public ecsRegion: string | ros.IResolvable | undefined;
 
     /**
      * @Property sid: The system ID (SID) of the database instance.
      * Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
      */
-    public sid: string | undefined;
+    public sid: string | ros.IResolvable | undefined;
 
     /**
      * @Property useDsql: Specifies whether to enable cross-database query for the database instance. Valid
@@ -408,13 +408,13 @@ export class RosInstance extends ros.RosResource {
      * 0: disabled
      * 1: enabled
      */
-    public useDsql: number | undefined;
+    public useDsql: number | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: The ID of the VPC to which the database instance belongs.
      * Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::DMS::Instance`.
@@ -425,9 +425,9 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrHost = ros.Token.asString(this.getAtt('Host'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
+        this.attrHost = this.getAtt('Host');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.databasePassword = props.databasePassword;
@@ -492,32 +492,32 @@ export interface RosUserProps {
     /**
      * @Property uid: UserAliYunUid
      */
-    readonly uid: string;
+    readonly uid: string | ros.IResolvable;
 
     /**
      * @Property mobile: UserMobile
      */
-    readonly mobile?: string;
+    readonly mobile?: string | ros.IResolvable;
 
     /**
      * @Property roleNames: UserRole
      */
-    readonly roleNames?: string[];
+    readonly roleNames?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property status: UserStatus
      */
-    readonly status?: string;
+    readonly status?: string | ros.IResolvable;
 
     /**
      * @Property tid:
      */
-    readonly tid?: string;
+    readonly tid?: string | ros.IResolvable;
 
     /**
      * @Property userName: UserNickName
      */
-    readonly userName?: string;
+    readonly userName?: string | ros.IResolvable;
 }
 
 /**
@@ -580,37 +580,37 @@ export class RosUser extends ros.RosResource {
     /**
      * @Attribute Mobile: UserMobile
      */
-    public readonly attrMobile: any;
+    public readonly attrMobile: ros.IResolvable;
 
     /**
      * @Attribute ParentUid: ParentAliYunUid
      */
-    public readonly attrParentUid: any;
+    public readonly attrParentUid: ros.IResolvable;
 
     /**
      * @Attribute RoleIds: UserRoleId
      */
-    public readonly attrRoleIds: any;
+    public readonly attrRoleIds: ros.IResolvable;
 
     /**
      * @Attribute RoleNames: UserRole
      */
-    public readonly attrRoleNames: any;
+    public readonly attrRoleNames: ros.IResolvable;
 
     /**
      * @Attribute Uid: UserAliYunUid
      */
-    public readonly attrUid: any;
+    public readonly attrUid: ros.IResolvable;
 
     /**
      * @Attribute UserId: UserId
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     /**
      * @Attribute UserName: UserNickName
      */
-    public readonly attrUserName: any;
+    public readonly attrUserName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -618,32 +618,32 @@ export class RosUser extends ros.RosResource {
     /**
      * @Property uid: UserAliYunUid
      */
-    public uid: string;
+    public uid: string | ros.IResolvable;
 
     /**
      * @Property mobile: UserMobile
      */
-    public mobile: string | undefined;
+    public mobile: string | ros.IResolvable | undefined;
 
     /**
      * @Property roleNames: UserRole
      */
-    public roleNames: string[] | undefined;
+    public roleNames: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property status: UserStatus
      */
-    public status: string | undefined;
+    public status: string | ros.IResolvable | undefined;
 
     /**
      * @Property tid:
      */
-    public tid: string | undefined;
+    public tid: string | ros.IResolvable | undefined;
 
     /**
      * @Property userName: UserNickName
      */
-    public userName: string | undefined;
+    public userName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::DMS::User`.
@@ -654,13 +654,13 @@ export class RosUser extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUserProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUser.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMobile = ros.Token.asString(this.getAtt('Mobile'));
-        this.attrParentUid = ros.Token.asString(this.getAtt('ParentUid'));
-        this.attrRoleIds = ros.Token.asString(this.getAtt('RoleIds'));
-        this.attrRoleNames = ros.Token.asString(this.getAtt('RoleNames'));
-        this.attrUid = ros.Token.asString(this.getAtt('Uid'));
-        this.attrUserId = ros.Token.asString(this.getAtt('UserId'));
-        this.attrUserName = ros.Token.asString(this.getAtt('UserName'));
+        this.attrMobile = this.getAtt('Mobile');
+        this.attrParentUid = this.getAtt('ParentUid');
+        this.attrRoleIds = this.getAtt('RoleIds');
+        this.attrRoleNames = this.getAtt('RoleNames');
+        this.attrUid = this.getAtt('Uid');
+        this.attrUserId = this.getAtt('UserId');
+        this.attrUserName = this.getAtt('UserName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.uid = props.uid;

@@ -9,22 +9,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
     public interface IAddressBookProps
     {
         /// <summary>Property description: Address book description.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-        string Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Description
         {
             get;
         }
 
         /// <summary>Property groupName: Name Address book.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupName
         {
             get;
         }
 
         /// <summary>Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.</summary>
-        [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupType
+        [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupType
         {
             get;
         }
@@ -36,9 +36,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// When GroupType for the port, the address list to fill in ports or port ranges. For example: 80, 100/200
         /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
         /// </remarks>
-        [JsiiProperty(name: "addressList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "addressList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AddressList
+        object? AddressList
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// Default to cn-hangzhou.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RegionId
+        object? RegionId
         {
             get
             {
@@ -90,9 +90,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
         /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
         /// </remarks>
-        [JsiiProperty(name: "tagRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "tagRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? TagRelation
+        object? TagRelation
         {
             get
             {
@@ -109,24 +109,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
 
             /// <summary>Property description: Address book description.</summary>
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-            public string Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Description
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property groupName: Name Address book.</summary>
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.</summary>
-            [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupType
+            [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property addressList: Address list of the address book, between multiple addresses separated by commas.</summary>
@@ -137,10 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "addressList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AddressList
+            [JsiiProperty(name: "addressList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AddressList
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property autoAddTagEcs: Whether to automatically add new ECS public network IP matching tags to the address book.</summary>
@@ -159,10 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// Default to cn-hangzhou.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RegionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tagList:.</summary>
@@ -179,10 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tagRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? TagRelation
+            [JsiiProperty(name: "tagRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TagRelation
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

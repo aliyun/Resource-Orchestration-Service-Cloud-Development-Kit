@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.366Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.BackendServerToVServerGroupAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(BackendServerToVServerGroupAdditionProps.Jsii$Proxy.class)
 public interface BackendServerToVServerGroupAdditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBackendServers();
 
     /**
+     * Property vServerGroupId: The ID of virtual server group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVServerGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVServerGroupId();
 
     /**
      * @return a {@link Builder} of {@link BackendServerToVServerGroupAdditionProps}
@@ -27,11 +29,11 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
      */
     public static final class Builder implements software.amazon.jsii.Builder<BackendServerToVServerGroupAdditionProps> {
         private java.lang.Object backendServers;
-        private java.lang.String vServerGroupId;
+        private java.lang.Object vServerGroupId;
 
         /**
          * Sets the value of {@link BackendServerToVServerGroupAdditionProps#getBackendServers}
-         * @param backendServers the value to be set. This parameter is required.
+         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't. This parameter is required.
          * @return {@code this}
          */
         public Builder backendServers(com.aliyun.ros.cdk.core.IResolvable backendServers) {
@@ -41,7 +43,7 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
 
         /**
          * Sets the value of {@link BackendServerToVServerGroupAdditionProps#getBackendServers}
-         * @param backendServers the value to be set. This parameter is required.
+         * @param backendServers Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't. This parameter is required.
          * @return {@code this}
          */
         public Builder backendServers(java.util.List<? extends java.lang.Object> backendServers) {
@@ -51,10 +53,20 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
 
         /**
          * Sets the value of {@link BackendServerToVServerGroupAdditionProps#getVServerGroupId}
-         * @param vServerGroupId the value to be set. This parameter is required.
+         * @param vServerGroupId Property vServerGroupId: The ID of virtual server group. This parameter is required.
          * @return {@code this}
          */
         public Builder vServerGroupId(java.lang.String vServerGroupId) {
+            this.vServerGroupId = vServerGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BackendServerToVServerGroupAdditionProps#getVServerGroupId}
+         * @param vServerGroupId Property vServerGroupId: The ID of virtual server group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vServerGroupId(com.aliyun.ros.cdk.core.IResolvable vServerGroupId) {
             this.vServerGroupId = vServerGroupId;
             return this;
         }
@@ -76,7 +88,7 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BackendServerToVServerGroupAdditionProps {
         private final java.lang.Object backendServers;
-        private final java.lang.String vServerGroupId;
+        private final java.lang.Object vServerGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +97,13 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.backendServers = software.amazon.jsii.Kernel.get(this, "backendServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vServerGroupId = software.amazon.jsii.Kernel.get(this, "vServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object backendServers, final java.lang.String vServerGroupId) {
+        protected Jsii$Proxy(final java.lang.Object backendServers, final java.lang.Object vServerGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backendServers = java.util.Objects.requireNonNull(backendServers, "backendServers is required");
             this.vServerGroupId = java.util.Objects.requireNonNull(vServerGroupId, "vServerGroupId is required");
@@ -103,7 +115,7 @@ public interface BackendServerToVServerGroupAdditionProps extends software.amazo
         }
 
         @Override
-        public final java.lang.String getVServerGroupId() {
+        public final java.lang.Object getVServerGroupId() {
             return this.vServerGroupId;
         }
 

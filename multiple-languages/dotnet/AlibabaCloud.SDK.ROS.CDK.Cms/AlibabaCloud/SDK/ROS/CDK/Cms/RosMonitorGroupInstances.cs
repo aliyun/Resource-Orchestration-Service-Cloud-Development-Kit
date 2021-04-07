@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Attribute</strong>: GroupId: The ID of the application group.
         /// </remarks>
-        [JsiiProperty(name: "attrGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupId
+        [JsiiProperty(name: "attrGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,10 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: groupId: The ID of the application group.
         /// </remarks>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GroupId
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -126,8 +126,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// SLS (Log Service)
             /// VPN (VPN Gateway )
             /// </remarks>
-            [JsiiProperty(name: "category", typeJson: "{\"primitive\":\"string\"}")]
-            string Category
+            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Category
             {
                 get;
             }
@@ -135,8 +135,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the resource instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object InstanceId
             {
                 get;
             }
@@ -144,8 +144,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: instanceName: The name of the instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-            string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object InstanceName
             {
                 get;
             }
@@ -153,8 +153,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: regionId: The ID of the region where the instance is deployed, such as cn-hangzhou.
             /// </remarks>
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-            string RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object RegionId
             {
                 get;
             }
@@ -204,37 +204,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 /// SLS (Log Service)
                 /// VPN (VPN Gateway )
                 /// </remarks>
-                [JsiiProperty(name: "category", typeJson: "{\"primitive\":\"string\"}")]
-                public string Category
+                [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Category
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: instanceId: The ID of the resource instance.
                 /// </remarks>
-                [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-                public string InstanceId
+                [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object InstanceId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: instanceName: The name of the instance.
                 /// </remarks>
-                [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-                public string InstanceName
+                [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object InstanceName
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: regionId: The ID of the region where the instance is deployed, such as cn-hangzhou.
                 /// </remarks>
-                [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-                public string RegionId
+                [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object RegionId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -281,8 +281,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// SLS (Log Service)
             /// VPN (VPN Gateway )
             /// </remarks>
-            [JsiiProperty(name: "category", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string Category
+            [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Category
             {
                 get;
                 set;
@@ -291,8 +291,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the resource instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object InstanceId
             {
                 get;
                 set;
@@ -301,8 +301,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: instanceName: The name of the instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object InstanceName
             {
                 get;
                 set;
@@ -311,8 +311,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: regionId: The ID of the region where the instance is deployed, such as cn-hangzhou.
             /// </remarks>
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object RegionId
             {
                 get;
                 set;

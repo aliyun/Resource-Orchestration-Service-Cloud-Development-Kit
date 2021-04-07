@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// A group ID ranges from 7 to 64 bytes.
         /// Once a group ID is created, it cannot be edited anymore.
         /// </remarks>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-        string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object GroupId
         {
             get;
         }
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -34,9 +34,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
         /// http: represents the Group ID was created only for the HTTP protocol messaging.
         /// </remarks>
-        [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupType
+        object? GroupType
         {
             get
             {
@@ -47,9 +47,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <remarks>
         /// <strong>Property</strong>: remark: The remarks on the request.
         /// </remarks>
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Remark
+        object? Remark
         {
             get
             {
@@ -71,19 +71,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// A group ID ranges from 7 to 64 bytes.
             /// Once a group ID is created, it cannot be edited anymore.
             /// </remarks>
-            [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string GroupId
+            [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object GroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: instanceId: The ID of the instance.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -92,20 +92,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
             /// http: represents the Group ID was created only for the HTTP protocol messaging.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupType
+            [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: remark: The remarks on the request.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Remark
+            [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Remark
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

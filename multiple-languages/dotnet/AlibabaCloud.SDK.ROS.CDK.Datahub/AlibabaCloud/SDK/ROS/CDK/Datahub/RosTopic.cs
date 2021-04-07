@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// <strong>Attribute</strong>: ProjectName: Project name
         /// </remarks>
-        [JsiiProperty(name: "attrProjectName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrProjectName
+        [JsiiProperty(name: "attrProjectName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrProjectName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: TopicName: Topic name
         /// </remarks>
-        [JsiiProperty(name: "attrTopicName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopicName
+        [JsiiProperty(name: "attrTopicName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// <strong>Property</strong>: comment: The comment of topic.
         /// </remarks>
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Comment
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Comment
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -88,30 +88,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// <strong>Property</strong>: projectName: The name of the project. Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ProjectName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: recordType: Record type. TUPLE: structured data, BLOB: unstructured data.
         /// </remarks>
-        [JsiiProperty(name: "recordType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string RecordType
+        [JsiiProperty(name: "recordType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object RecordType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: topicName: The name of the topic. Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object TopicName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -119,10 +119,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <strong>Property</strong>: lifecycle: Data storage life cycle.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "lifecycle", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Lifecycle
+        [JsiiProperty(name: "lifecycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Lifecycle
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <strong>Property</strong>: recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "recordSchema", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RecordSchema
+        [JsiiProperty(name: "recordSchema", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RecordSchema
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -141,10 +141,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <strong>Property</strong>: shardCount: Initial shard number.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? ShardCount
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? ShardCount
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
     public class UserDefineRegionProps : AlibabaCloud.SDK.ROS.CDK.Edas.IUserDefineRegionProps
     {
         /// <summary>Property regionName: Logical region (or namespace) name.</summary>
-        [JsiiProperty(name: "regionName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RegionName
+        [JsiiProperty(name: "regionName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RegionName
         {
             get;
             set;
         }
 
         /// <summary>Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier").</summary>
-        [JsiiProperty(name: "regionTag", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string RegionTag
+        [JsiiProperty(name: "regionTag", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RegionTag
         {
             get;
             set;
@@ -37,8 +37,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
 
         /// <summary>Property description: Logic region (or namespace) description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;

@@ -10,12 +10,12 @@ export interface RosApiProps {
     /**
      * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly apiName: string;
+    readonly apiName: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property requestConfig: The configuration of the request
@@ -25,12 +25,12 @@ export interface RosApiProps {
     /**
      * @Property resultSample: The sample of the result.
      */
-    readonly resultSample: string;
+    readonly resultSample: string | ros.IResolvable;
 
     /**
      * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
      */
-    readonly resultType: string;
+    readonly resultType: string | ros.IResolvable;
 
     /**
      * @Property serviceConfig: The configuration of the service.
@@ -40,7 +40,7 @@ export interface RosApiProps {
     /**
      * @Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
      */
-    readonly visibility: string;
+    readonly visibility: string | ros.IResolvable;
 
     /**
      * @Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
@@ -49,12 +49,12 @@ export interface RosApiProps {
      * HEADER: Allow AppCode header authentication
      * HEADER_QUERY: Allow AppCode header and query authentication
      */
-    readonly appCodeAuthType?: string;
+    readonly appCodeAuthType?: string | ros.IResolvable;
 
     /**
      * @Property authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
      */
-    readonly authType?: string;
+    readonly authType?: string | ros.IResolvable;
 
     /**
      * @Property constParameters: The const parameters.
@@ -64,7 +64,14 @@ export interface RosApiProps {
     /**
      * @Property description: Description of the API, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
+     * Set DisableInternet to false, then the call is not restricted. 
+     *
+     */
+    readonly disableInternet?: boolean | ros.IResolvable;
 
     /**
      * @Property errorCodeSamples: The Error Code samples.
@@ -74,7 +81,16 @@ export interface RosApiProps {
     /**
      * @Property failResultSample: The sample of the fail result.
      */
-    readonly failResultSample?: string;
+    readonly failResultSample?: string | ros.IResolvable;
+
+    /**
+     * @Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
+     * this is the unique identifier of the request, generally using UUID to identify. 
+     * The API gateway will verify the validity of this parameter after receiving this parameter. 
+     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+     * Set ForceNonceCheck to false, then no check.
+     */
+    readonly forceNonceCheck?: boolean | ros.IResolvable;
 
     /**
      * @Property openIdConnectConfig: The configuration of the open id.
@@ -100,6 +116,11 @@ export interface RosApiProps {
      * @Property systemParameters: The system parameters.
      */
     readonly systemParameters?: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosApi.TagsProperty[];
 }
 
 /**
@@ -117,8 +138,10 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('resultSample', ros.requiredValidator)(properties.resultSample));
     errors.collect(ros.propertyValidator('resultSample', ros.validateString)(properties.resultSample));
+    errors.collect(ros.propertyValidator('disableInternet', ros.validateBoolean)(properties.disableInternet));
     errors.collect(ros.propertyValidator('apiName', ros.requiredValidator)(properties.apiName));
     errors.collect(ros.propertyValidator('apiName', ros.validateString)(properties.apiName));
+    errors.collect(ros.propertyValidator('forceNonceCheck', ros.validateBoolean)(properties.forceNonceCheck));
     errors.collect(ros.propertyValidator('resultType', ros.requiredValidator)(properties.resultType));
     if(properties.resultType && (typeof properties.resultType) !== 'object') {
         errors.collect(ros.propertyValidator('resultType', ros.validateAllowedValues)({
@@ -161,6 +184,14 @@ function RosApiPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('authType', ros.validateString)(properties.authType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApi_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosApiProps"');
 }
 
@@ -189,13 +220,16 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       AuthType: ros.stringToRosTemplate(properties.authType),
       ConstParameters: ros.listMapper(rosApiConstParametersPropertyToRosTemplate)(properties.constParameters),
       Description: ros.stringToRosTemplate(properties.description),
+      DisableInternet: ros.booleanToRosTemplate(properties.disableInternet),
       ErrorCodeSamples: ros.listMapper(rosApiErrorCodeSamplesPropertyToRosTemplate)(properties.errorCodeSamples),
       FailResultSample: ros.stringToRosTemplate(properties.failResultSample),
+      ForceNonceCheck: ros.booleanToRosTemplate(properties.forceNonceCheck),
       OpenIdConnectConfig: rosApiOpenIdConnectConfigPropertyToRosTemplate(properties.openIdConnectConfig),
       RequestParameters: ros.listMapper(rosApiRequestParametersPropertyToRosTemplate)(properties.requestParameters),
       ServiceParameters: ros.listMapper(rosApiServiceParametersPropertyToRosTemplate)(properties.serviceParameters),
       ServiceParametersMap: ros.listMapper(rosApiServiceParametersMapPropertyToRosTemplate)(properties.serviceParametersMap),
       SystemParameters: ros.listMapper(rosApiSystemParametersPropertyToRosTemplate)(properties.systemParameters),
+      Tags: ros.listMapper(rosApiTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -216,7 +250,7 @@ export class RosApi extends ros.RosResource {
     /**
      * @Attribute ApiId: The id of the API.
      */
-    public readonly attrApiId: any;
+    public readonly attrApiId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -224,12 +258,12 @@ export class RosApi extends ros.RosResource {
     /**
      * @Property apiName: The name of the API.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public apiName: string;
+    public apiName: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property requestConfig: The configuration of the request
@@ -239,12 +273,12 @@ export class RosApi extends ros.RosResource {
     /**
      * @Property resultSample: The sample of the result.
      */
-    public resultSample: string;
+    public resultSample: string | ros.IResolvable;
 
     /**
      * @Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH". Default is "JSON".
      */
-    public resultType: string;
+    public resultType: string | ros.IResolvable;
 
     /**
      * @Property serviceConfig: The configuration of the service.
@@ -254,7 +288,7 @@ export class RosApi extends ros.RosResource {
     /**
      * @Property visibility: Whether to make the API public. "PUBLIC" or "PRIVATE".
      */
-    public visibility: string;
+    public visibility: string | ros.IResolvable;
 
     /**
      * @Property appCodeAuthType: When AuthType is APP authentication, the optional values are as follows: If not passed, the default value is DEFAULT:
@@ -263,12 +297,12 @@ export class RosApi extends ros.RosResource {
      * HEADER: Allow AppCode header authentication
      * HEADER_QUERY: Allow AppCode header and query authentication
      */
-    public appCodeAuthType: string | undefined;
+    public appCodeAuthType: string | ros.IResolvable | undefined;
 
     /**
      * @Property authType: Type of authorization of the API . "APP","ANONYMOUS", or "APPOPENID"
      */
-    public authType: string | undefined;
+    public authType: string | ros.IResolvable | undefined;
 
     /**
      * @Property constParameters: The const parameters.
@@ -278,7 +312,14 @@ export class RosApi extends ros.RosResource {
     /**
      * @Property description: Description of the API, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property disableInternet: Set DisableInternet to true, only support intranet to call API. 
+     * Set DisableInternet to false, then the call is not restricted. 
+     *
+     */
+    public disableInternet: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property errorCodeSamples: The Error Code samples.
@@ -288,7 +329,16 @@ export class RosApi extends ros.RosResource {
     /**
      * @Property failResultSample: The sample of the fail result.
      */
-    public failResultSample: string | undefined;
+    public failResultSample: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property forceNonceCheck: Set ForceNonceCheck to true, compulsorily check X-Ca-Nonce when requesting, 
+     * this is the unique identifier of the request, generally using UUID to identify. 
+     * The API gateway will verify the validity of this parameter after receiving this parameter. 
+     * The same value can only be used once within 15 minutes. It can effectively prevent API replay attacks.
+     * Set ForceNonceCheck to false, then no check.
+     */
+    public forceNonceCheck: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property openIdConnectConfig: The configuration of the open id.
@@ -316,6 +366,11 @@ export class RosApi extends ros.RosResource {
     public systemParameters: Array<RosApi.SystemParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosApi.TagsProperty[] | undefined;
+
+    /**
      * Create a new `ALIYUN::ApiGateway::Api`.
      *
      * @param scope - scope in which this resource is defined
@@ -324,7 +379,7 @@ export class RosApi extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosApiProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApi.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrApiId = ros.Token.asString(this.getAtt('ApiId'));
+        this.attrApiId = this.getAtt('ApiId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.apiName = props.apiName;
@@ -338,13 +393,16 @@ export class RosApi extends ros.RosResource {
         this.authType = props.authType;
         this.constParameters = props.constParameters;
         this.description = props.description;
+        this.disableInternet = props.disableInternet;
         this.errorCodeSamples = props.errorCodeSamples;
         this.failResultSample = props.failResultSample;
+        this.forceNonceCheck = props.forceNonceCheck;
         this.openIdConnectConfig = props.openIdConnectConfig;
         this.requestParameters = props.requestParameters;
         this.serviceParameters = props.serviceParameters;
         this.serviceParametersMap = props.serviceParametersMap;
         this.systemParameters = props.systemParameters;
+        this.tags = props.tags;
     }
 
 
@@ -361,13 +419,16 @@ export class RosApi extends ros.RosResource {
             authType: this.authType,
             constParameters: this.constParameters,
             description: this.description,
+            disableInternet: this.disableInternet,
             errorCodeSamples: this.errorCodeSamples,
             failResultSample: this.failResultSample,
+            forceNonceCheck: this.forceNonceCheck,
             openIdConnectConfig: this.openIdConnectConfig,
             requestParameters: this.requestParameters,
             serviceParameters: this.serviceParameters,
             serviceParametersMap: this.serviceParametersMap,
             systemParameters: this.systemParameters,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -383,19 +444,19 @@ export namespace RosApi {
         /**
          * @Property constValue: The value of the parameter.
          */
-        readonly constValue: string;
+        readonly constValue: string | ros.IResolvable;
         /**
          * @Property description: Description of the const parameter, less than 180 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property serviceParameterName: The service parameter name.
          */
-        readonly serviceParameterName: string;
+        readonly serviceParameterName: string | ros.IResolvable;
         /**
          * @Property location: The location of the parameter. Default is HEAD.
          */
-        readonly location: string;
+        readonly location: string | ros.IResolvable;
     }
 }
 /**
@@ -451,15 +512,15 @@ export namespace RosApi {
         /**
          * @Property description: Description of the ERROR, less than 180 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property message: Error message.
          */
-        readonly message: string;
+        readonly message: string | ros.IResolvable;
         /**
          * @Property code: Error code.
          */
-        readonly code: string;
+        readonly code: string | ros.IResolvable;
     }
 }
 /**
@@ -504,25 +565,54 @@ export namespace RosApi {
      */
     export interface FunctionComputeConfigProperty {
         /**
-         * @Property fcRegionId: The region id of function compute.
+         * @Property path: The backend request path must contain the Parameter Path in the backend service parameter within brackets ([]). For example: /getUserInfo/[userId].
          */
-        readonly fcRegionId: string;
+        readonly path?: string | ros.IResolvable;
         /**
          * @Property functionName: The function name of function compute.
          */
-        readonly functionName: string;
+        readonly functionName?: string | ros.IResolvable;
         /**
-         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
+         * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
          */
-        readonly roleArn: string;
-        /**
-         * @Property qualifier: The service alias name.
-         */
-        readonly qualifier?: string;
+        readonly contentTypeValue?: string | ros.IResolvable;
         /**
          * @Property serviceName: The service name of function compute.
          */
-        readonly serviceName: string;
+        readonly serviceName?: string | ros.IResolvable;
+        /**
+         * @Property fcType: Function type. Default: FCEvent.
+     * Valid values: FCEvent, HttpTrigger.
+         */
+        readonly fcType?: string | ros.IResolvable;
+        /**
+         * @Property qualifier: The service alias name.
+         */
+        readonly qualifier?: string | ros.IResolvable;
+        /**
+         * @Property onlyBusinessPath: If set true. The path in the trigger path (for example, /2016-08-15/proxy/xxx/xxx) will not be passed to the backend, and the backend will only receive the customized backend request path.
+         */
+        readonly onlyBusinessPath?: boolean | ros.IResolvable;
+        /**
+         * @Property method: The HTTP method of the function. Default is GET.
+         */
+        readonly method?: string | ros.IResolvable;
+        /**
+         * @Property fcRegionId: The region id of function compute.
+         */
+        readonly fcRegionId?: string | ros.IResolvable;
+        /**
+         * @Property contentTypeCatagory: Specify how to determine ContentType header when using function. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
+         */
+        readonly contentTypeCatagory?: string | ros.IResolvable;
+        /**
+         * @Property roleArn: Ram authorizes the arn of the API gateway access function compute.
+         */
+        readonly roleArn?: string | ros.IResolvable;
+        /**
+         * @Property fcBaseUrl: Trigger path. Starts with http:// or https://
+         */
+        readonly fcBaseUrl?: string | ros.IResolvable;
     }
 }
 /**
@@ -535,15 +625,36 @@ export namespace RosApi {
 function RosApi_FunctionComputeConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('fcRegionId', ros.requiredValidator)(properties.fcRegionId));
-    errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
-    errors.collect(ros.propertyValidator('functionName', ros.requiredValidator)(properties.functionName));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
     errors.collect(ros.propertyValidator('functionName', ros.validateString)(properties.functionName));
-    errors.collect(ros.propertyValidator('roleArn', ros.requiredValidator)(properties.roleArn));
-    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
-    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
-    errors.collect(ros.propertyValidator('serviceName', ros.requiredValidator)(properties.serviceName));
+    errors.collect(ros.propertyValidator('contentTypeValue', ros.validateString)(properties.contentTypeValue));
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
+    if(properties.fcType && (typeof properties.fcType) !== 'object') {
+        errors.collect(ros.propertyValidator('fcType', ros.validateAllowedValues)({
+          data: properties.fcType,
+          allowedValues: ["FCEvent","HttpTrigger"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('fcType', ros.validateString)(properties.fcType));
+    errors.collect(ros.propertyValidator('qualifier', ros.validateString)(properties.qualifier));
+    errors.collect(ros.propertyValidator('onlyBusinessPath', ros.validateBoolean)(properties.onlyBusinessPath));
+    if(properties.method && (typeof properties.method) !== 'object') {
+        errors.collect(ros.propertyValidator('method', ros.validateAllowedValues)({
+          data: properties.method,
+          allowedValues: ["GET","POST","DELETE","PUT","HEAD","PATCH","OPTIONS","ANY"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('method', ros.validateString)(properties.method));
+    errors.collect(ros.propertyValidator('fcRegionId', ros.validateString)(properties.fcRegionId));
+    if(properties.contentTypeCatagory && (typeof properties.contentTypeCatagory) !== 'object') {
+        errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateAllowedValues)({
+          data: properties.contentTypeCatagory,
+          allowedValues: ["DEFAULT","CUSTOM","CLIENT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('contentTypeCatagory', ros.validateString)(properties.contentTypeCatagory));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    errors.collect(ros.propertyValidator('fcBaseUrl', ros.validateString)(properties.fcBaseUrl));
     return errors.wrap('supplied properties not correct for "FunctionComputeConfigProperty"');
 }
 
@@ -559,11 +670,18 @@ function rosApiFunctionComputeConfigPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosApi_FunctionComputeConfigPropertyValidator(properties).assertSuccess();
     return {
-      fcRegionId: ros.stringToRosTemplate(properties.fcRegionId),
-      functionName: ros.stringToRosTemplate(properties.functionName),
-      roleArn: ros.stringToRosTemplate(properties.roleArn),
-      qualifier: ros.stringToRosTemplate(properties.qualifier),
-      serviceName: ros.stringToRosTemplate(properties.serviceName),
+      Path: ros.stringToRosTemplate(properties.path),
+      FunctionName: ros.stringToRosTemplate(properties.functionName),
+      ContentTypeValue: ros.stringToRosTemplate(properties.contentTypeValue),
+      ServiceName: ros.stringToRosTemplate(properties.serviceName),
+      FcType: ros.stringToRosTemplate(properties.fcType),
+      Qualifier: ros.stringToRosTemplate(properties.qualifier),
+      OnlyBusinessPath: ros.booleanToRosTemplate(properties.onlyBusinessPath),
+      Method: ros.stringToRosTemplate(properties.method),
+      FcRegionId: ros.stringToRosTemplate(properties.fcRegionId),
+      ContentTypeCatagory: ros.stringToRosTemplate(properties.contentTypeCatagory),
+      RoleArn: ros.stringToRosTemplate(properties.roleArn),
+      FcBaseUrl: ros.stringToRosTemplate(properties.fcBaseUrl),
     };
 }
 
@@ -575,11 +693,11 @@ export namespace RosApi {
         /**
          * @Property headerValue: Response header value
          */
-        readonly headerValue: string;
+        readonly headerValue: string | ros.IResolvable;
         /**
          * @Property headerName: Response header name
          */
-        readonly headerName: string;
+        readonly headerName: string | ros.IResolvable;
     }
 }
 /**
@@ -624,19 +742,19 @@ export namespace RosApi {
         /**
          * @Property openIdApiType: The type of the open id. "IDTOKEN" or "BUSINESS". If OpenIdApiType is specified as IDTOKEN, PublicKey and PublicKeyId are required. If OpenIdApiType is specified as BUSINESS, IdTokenParamName is required.
          */
-        readonly openIdApiType: string;
+        readonly openIdApiType: string | ros.IResolvable;
         /**
          * @Property publicKey: The public key.
          */
-        readonly publicKey?: string;
+        readonly publicKey?: string | ros.IResolvable;
         /**
          * @Property publicKeyId: The public key id.
          */
-        readonly publicKeyId?: string;
+        readonly publicKeyId?: string | ros.IResolvable;
         /**
          * @Property idTokenParamName: The token's parameter name.
          */
-        readonly idTokenParamName?: string;
+        readonly idTokenParamName?: string | ros.IResolvable;
     }
 }
 /**
@@ -690,27 +808,27 @@ export namespace RosApi {
         /**
          * @Property requestPath: API Path.
          */
-        readonly requestPath: string;
+        readonly requestPath: string | ros.IResolvable;
         /**
          * @Property requestMode: API request mode. "MAPPING" or "PASSTHROUGH". Default is "MAPPING".
          */
-        readonly requestMode: string;
+        readonly requestMode: string | ros.IResolvable;
         /**
          * @Property requestProtocol: The protocol of the request, "HTTP", "HTTPS", or "HTTP,HTTPS", Default is "HTTP".
          */
-        readonly requestProtocol: string;
+        readonly requestProtocol: string | ros.IResolvable;
         /**
          * @Property requestHttpMethod: The HTTP method of the request. Default is GET.
          */
-        readonly requestHttpMethod: string;
+        readonly requestHttpMethod: string | ros.IResolvable;
         /**
          * @Property postBodyDescription: Description of the post body.
          */
-        readonly postBodyDescription?: string;
+        readonly postBodyDescription?: string | ros.IResolvable;
         /**
          * @Property bodyFormat: Describe how data transform to the server, "FORM" for k-v and "STREAM" for bit stream.BodyFormat is required if RequestMode is specified as MAPPING and RequestHttpMethod is POST/PUT/PATCH.
          */
-        readonly bodyFormat?: string;
+        readonly bodyFormat?: string | ros.IResolvable;
     }
 }
 /**
@@ -789,67 +907,67 @@ export namespace RosApi {
         /**
          * @Property regularExpression: The regular expression of the parameter when it is String.
          */
-        readonly regularExpression?: string;
+        readonly regularExpression?: string | ros.IResolvable;
         /**
          * @Property parameterType: The type of the parameter
          */
-        readonly parameterType: string;
+        readonly parameterType: string | ros.IResolvable;
         /**
          * @Property description: Description of the API, less than 180 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property jsonScheme: The json scheme of the parameter when it is String.
          */
-        readonly jsonScheme?: string;
+        readonly jsonScheme?: string | ros.IResolvable;
         /**
          * @Property apiParameterName: The name of the request parameter.
          */
-        readonly apiParameterName: string;
+        readonly apiParameterName: string | ros.IResolvable;
         /**
          * @Property enumValue: Allowed parameter value, split with ',' like "1,2,3,4"
          */
-        readonly enumValue?: string;
+        readonly enumValue?: string | ros.IResolvable;
         /**
          * @Property minLength: The min length of the parameter when it is String.
          */
-        readonly minLength?: number;
+        readonly minLength?: number | ros.IResolvable;
         /**
          * @Property maxValue: The max value of the parameter when it is Int, Long, Float or Double.
          */
-        readonly maxValue?: number;
+        readonly maxValue?: number | ros.IResolvable;
         /**
          * @Property maxLength: The max length of the parameter when it is String.
          */
-        readonly maxLength?: number;
+        readonly maxLength?: number | ros.IResolvable;
         /**
          * @Property demoValue: The demo value of the request parameter.
          */
-        readonly demoValue?: string;
+        readonly demoValue?: string | ros.IResolvable;
         /**
          * @Property defaultValue: The default value of the request parameter.
          */
-        readonly defaultValue?: string;
+        readonly defaultValue?: string | ros.IResolvable;
         /**
          * @Property required: If required. "REQUIRED", "OPTION"
          */
-        readonly required: string;
+        readonly required: string | ros.IResolvable;
         /**
          * @Property docOrder: The order of the doc.
          */
-        readonly docOrder?: number;
+        readonly docOrder?: number | ros.IResolvable;
         /**
          * @Property minValue: The min value of the parameter when it is Int, Long, Float or Double.
          */
-        readonly minValue?: number;
+        readonly minValue?: number | ros.IResolvable;
         /**
          * @Property docShow: Visiablity of the Doc. "PUBLIC" or "PRIVATE"
          */
-        readonly docShow?: string;
+        readonly docShow?: string | ros.IResolvable;
         /**
          * @Property location: The location of the reqest parameter.
          */
-        readonly location: string;
+        readonly location: string | ros.IResolvable;
     }
 }
 /**
@@ -948,7 +1066,7 @@ export namespace RosApi {
         /**
          * @Property serviceAddress: Backend service call address. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServiceAddress corresponds to http://api.a.com:8080.
          */
-        readonly serviceAddress?: string;
+        readonly serviceAddress?: string | ros.IResolvable;
         /**
          * @Property functionComputeConfig: The configuration of the function compute. FunctionComputeConfig is required if ServiceFunctionComputeEnable is TRUE.
          */
@@ -956,11 +1074,11 @@ export namespace RosApi {
         /**
          * @Property mockResult: The returned value when using Mock model.
          */
-        readonly mockResult?: string;
+        readonly mockResult?: string | ros.IResolvable;
         /**
          * @Property contentTypeValue: ContentTypeValue is required if ContentTypeCatagory is DEFAULT or CUSTOM.
          */
-        readonly contentTypeValue?: string;
+        readonly contentTypeValue?: string | ros.IResolvable;
         /**
          * @Property vpcConfig: The configuration of the VPC. VpcConfig is required if ServiceVpcEnable is TRUE.
          */
@@ -968,11 +1086,11 @@ export namespace RosApi {
         /**
          * @Property serviceVpcEnable: Whether to use VPC. "TRUE" or "FALSE". Default is FALSE.
          */
-        readonly serviceVpcEnable?: string;
+        readonly serviceVpcEnable?: string | ros.IResolvable;
         /**
          * @Property mockStatusCode: Status code, returned in the format compatible with HTTP 1.1 response status code and its status
          */
-        readonly mockStatusCode?: number;
+        readonly mockStatusCode?: number | ros.IResolvable;
         /**
          * @Property mockHeaders: Custom Mock response header related information when Mock is enabled.
          */
@@ -980,27 +1098,27 @@ export namespace RosApi {
         /**
          * @Property serviceHttpMethod: The HTTP method to the service. Default is GET.
          */
-        readonly serviceHttpMethod?: string;
+        readonly serviceHttpMethod?: string | ros.IResolvable;
         /**
          * @Property servicePath: Backend service call path. If the complete backend service address is http://api.a.com:8080/object/add?key1=value1&key2=value2, ServicePath corresponds to /object/add.
          */
-        readonly servicePath?: string;
+        readonly servicePath?: string | ros.IResolvable;
         /**
          * @Property mock: Whether to use Mock model. "TRUE" or "FALSE". Default is FALSE.
          */
-        readonly mock?: string;
+        readonly mock?: string | ros.IResolvable;
         /**
          * @Property serviceTimeOut: Time out (ms) when using service.
          */
-        readonly serviceTimeOut?: number;
+        readonly serviceTimeOut?: number | ros.IResolvable;
         /**
          * @Property serviceProtocol: Backend service protocol type, which must be HTTP, HTTPS or FunctionCompute currently.
          */
-        readonly serviceProtocol?: string;
+        readonly serviceProtocol?: string | ros.IResolvable;
         /**
          * @Property contentTypeCatagory: Specify how to determine ContentType header when using service. "DEFAULT" to use API Gateway's default value. "CUSTOM" to use self defined value. "CLIENT" to use client's ContentType header. Default is CLIENT.
          */
-        readonly contentTypeCatagory?: string;
+        readonly contentTypeCatagory?: string | ros.IResolvable;
     }
 }
 /**
@@ -1097,15 +1215,15 @@ export namespace RosApi {
         /**
          * @Property parameterType: The type of the parameter.
          */
-        readonly parameterType: string;
+        readonly parameterType: string | ros.IResolvable;
         /**
          * @Property serviceParameterName: The name of the parameter
          */
-        readonly serviceParameterName: string;
+        readonly serviceParameterName: string | ros.IResolvable;
         /**
          * @Property location: The location of the parameter
          */
-        readonly location: string;
+        readonly location: string | ros.IResolvable;
     }
 }
 /**
@@ -1165,11 +1283,11 @@ export namespace RosApi {
         /**
          * @Property requestParameterName: The corresponding request parameter, system parameter or const parameter.
          */
-        readonly requestParameterName: string;
+        readonly requestParameterName: string | ros.IResolvable;
         /**
          * @Property serviceParameterName: The corresponding service parameter.
          */
-        readonly serviceParameterName: string;
+        readonly serviceParameterName: string | ros.IResolvable;
     }
 }
 /**
@@ -1214,23 +1332,23 @@ export namespace RosApi {
         /**
          * @Property demoValue: The demo value of the system parameter.
          */
-        readonly demoValue?: string;
+        readonly demoValue?: string | ros.IResolvable;
         /**
          * @Property description: Description of the system parameter, less than 180 characters.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property parameterName: The system parameter name.
          */
-        readonly parameterName: string;
+        readonly parameterName: string | ros.IResolvable;
         /**
          * @Property serviceParameterName: The service parameter name.
          */
-        readonly serviceParameterName: string;
+        readonly serviceParameterName: string | ros.IResolvable;
         /**
          * @Property location: The location of the system parameter. Default is HEAD.
          */
-        readonly location: string;
+        readonly location: string | ros.IResolvable;
     }
 }
 /**
@@ -1290,19 +1408,67 @@ export namespace RosApi {
     /**
      * @stability external
      */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApi_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Api.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Api.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosApiTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApi_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosApi {
+    /**
+     * @stability external
+     */
     export interface VpcConfigProperty {
         /**
          * @Property vpcId: The id of the VPC.
          */
-        readonly vpcId: string;
+        readonly vpcId: string | ros.IResolvable;
         /**
          * @Property instanceId: The id of the instance (ECS/SLB).
          */
-        readonly instanceId: string;
+        readonly instanceId: string | ros.IResolvable;
         /**
          * @Property port: The port of the VPC.
          */
-        readonly port: number;
+        readonly port: number | ros.IResolvable;
     }
 }
 /**
@@ -1350,17 +1516,17 @@ export interface RosAppProps {
     /**
      * @Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly appName: string;
+    readonly appName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the App, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to app. Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosApp.TagsProperty[];
 }
 
 /**
@@ -1381,7 +1547,7 @@ function RosAppPropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosApp_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('appName', ros.requiredValidator)(properties.appName));
     errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosAppProps"');
@@ -1403,7 +1569,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
     return {
       AppName: ros.stringToRosTemplate(properties.appName),
       Description: ros.stringToRosTemplate(properties.description),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosAppTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1424,22 +1590,22 @@ export class RosApp extends ros.RosResource {
     /**
      * @Attribute AppId: The id of the created APP
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute AppKey: The key of the APP
      */
-    public readonly attrAppKey: any;
+    public readonly attrAppKey: ros.IResolvable;
 
     /**
      * @Attribute AppSecret: The secret of the APP
      */
-    public readonly attrAppSecret: any;
+    public readonly attrAppSecret: ros.IResolvable;
 
     /**
      * @Attribute Tags: Tags of app
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1447,17 +1613,17 @@ export class RosApp extends ros.RosResource {
     /**
      * @Property appName: The name of the App.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public appName: string;
+    public appName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the App, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to app. Max support 20 tags to add during create app. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosApp.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::App`.
@@ -1468,15 +1634,15 @@ export class RosApp extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAppProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApp.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrAppKey = ros.Token.asString(this.getAtt('AppKey'));
-        this.attrAppSecret = ros.Token.asString(this.getAtt('AppSecret'));
-        this.attrTags = ros.Token.asString(this.getAtt('Tags'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrAppKey = this.getAtt('AppKey');
+        this.attrAppSecret = this.getAtt('AppSecret');
+        this.attrTags = this.getAtt('Tags');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appName = props.appName;
         this.description = props.description;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ApiGateway::App", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -1484,12 +1650,60 @@ export class RosApp extends ros.RosResource {
         return {
             appName: this.appName,
             description: this.description,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAppPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosApp {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApp_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::App.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::App.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosAppTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApp_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1510,17 +1724,17 @@ export interface RosAuthorizationProps {
     /**
      * @Property groupId: The id of the group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Authorize in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the authorization, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -1617,17 +1831,17 @@ export class RosAuthorization extends ros.RosResource {
     /**
      * @Property groupId: The id of the group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Authorize in this stage.
      */
-    public stageName: string;
+    public stageName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the authorization, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Authorization`.
@@ -1670,27 +1884,27 @@ export interface RosCustomDomainProps {
     /**
      * @Property domainName: Custom domain name.
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property certificateBody: SSL certificate body.
      */
-    readonly certificateBody?: string;
+    readonly certificateBody?: string | ros.IResolvable;
 
     /**
      * @Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly certificateName?: string;
+    readonly certificateName?: string | ros.IResolvable;
 
     /**
      * @Property certificatePrivateKey: SSL certificate key.
      */
-    readonly certificatePrivateKey?: string;
+    readonly certificatePrivateKey?: string | ros.IResolvable;
 }
 
 /**
@@ -1752,7 +1966,7 @@ export class RosCustomDomain extends ros.RosResource {
     /**
      * @Attribute CertificateId: The id of the certificate.
      */
-    public readonly attrCertificateId: any;
+    public readonly attrCertificateId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1760,27 +1974,27 @@ export class RosCustomDomain extends ros.RosResource {
     /**
      * @Property domainName: Custom domain name.
      */
-    public domainName: string;
+    public domainName: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property certificateBody: SSL certificate body.
      */
-    public certificateBody: string | undefined;
+    public certificateBody: string | ros.IResolvable | undefined;
 
     /**
      * @Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public certificateName: string | undefined;
+    public certificateName: string | ros.IResolvable | undefined;
 
     /**
      * @Property certificatePrivateKey: SSL certificate key.
      */
-    public certificatePrivateKey: string | undefined;
+    public certificatePrivateKey: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::CustomDomain`.
@@ -1791,7 +2005,7 @@ export class RosCustomDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCustomDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCustomDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCertificateId = ros.Token.asString(this.getAtt('CertificateId'));
+        this.attrCertificateId = this.getAtt('CertificateId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
@@ -1824,27 +2038,27 @@ export interface RosDeploymentProps {
     /**
      * @Property apiId: The id of the API.
      */
-    readonly apiId: string;
+    readonly apiId: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind traffic in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the deployment, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property historyVersion: The history version.
      */
-    readonly historyVersion?: string;
+    readonly historyVersion?: string | ros.IResolvable;
 }
 
 /**
@@ -1916,27 +2130,27 @@ export class RosDeployment extends ros.RosResource {
     /**
      * @Property apiId: The id of the API.
      */
-    public apiId: string;
+    public apiId: string | ros.IResolvable;
 
     /**
      * @Property groupId: The id of the Group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind traffic in this stage.
      */
-    public stageName: string;
+    public stageName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the deployment, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property historyVersion: The history version.
      */
-    public historyVersion: string | undefined;
+    public historyVersion: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Deployment`.
@@ -1979,28 +2193,38 @@ export interface RosGroupProps {
     /**
      * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the Group, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property instanceId: API gateway instance ID. For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property internetEnable: Enable or disable internet subdomain. True for enable.
+     */
+    readonly internetEnable?: boolean | ros.IResolvable;
 
     /**
      * @Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
-    readonly passthroughHeaders?: string;
+    readonly passthroughHeaders?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosGroup.TagsProperty[];
+
+    /**
+     * @Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
+     */
+    readonly vpcIntranetEnable?: boolean | ros.IResolvable;
 }
 
 /**
@@ -2015,8 +2239,10 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('internetEnable', ros.validateBoolean)(properties.internetEnable));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('vpcIntranetEnable', ros.validateBoolean)(properties.vpcIntranetEnable));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -2024,7 +2250,7 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('passthroughHeaders', ros.validateString)(properties.passthroughHeaders));
     return errors.wrap('supplied properties not correct for "RosGroupProps"');
 }
@@ -2046,8 +2272,10 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
       GroupName: ros.stringToRosTemplate(properties.groupName),
       Description: ros.stringToRosTemplate(properties.description),
       InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      InternetEnable: ros.booleanToRosTemplate(properties.internetEnable),
       PassthroughHeaders: ros.stringToRosTemplate(properties.passthroughHeaders),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosGroupTagsPropertyToRosTemplate)(properties.tags),
+      VpcIntranetEnable: ros.booleanToRosTemplate(properties.vpcIntranetEnable),
     };
 }
 
@@ -2068,17 +2296,17 @@ export class RosGroup extends ros.RosResource {
     /**
      * @Attribute GroupId: The id of the created Group resource
      */
-    public readonly attrGroupId: any;
+    public readonly attrGroupId: ros.IResolvable;
 
     /**
      * @Attribute SubDomain: The sub domain assigned to the Group by the system
      */
-    public readonly attrSubDomain: any;
+    public readonly attrSubDomain: ros.IResolvable;
 
     /**
      * @Attribute Tags: Tags of app
      */
-    public readonly attrTags: any;
+    public readonly attrTags: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2086,28 +2314,38 @@ export class RosGroup extends ros.RosResource {
     /**
      * @Property groupName: The name of the Group.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the Group, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceId: API gateway instance ID. For example, "api-shared-vpc-001" means vpc instance, while "api-shared-classic-001" means classic instance.
      */
-    public instanceId: string | undefined;
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetEnable: Enable or disable internet subdomain. True for enable.
+     */
+    public internetEnable: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property passthroughHeaders: Pass through headers setting. values:
      * host: pass through host headers
      */
-    public passthroughHeaders: string | undefined;
+    public passthroughHeaders: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to group. Max support 20 tags to add during create group. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosGroup.TagsProperty[] | undefined;
+
+    /**
+     * @Property vpcIntranetEnable: Enable or disable VPC intranet subdomain. True for enable.
+     */
+    public vpcIntranetEnable: boolean | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Group`.
@@ -2118,16 +2356,18 @@ export class RosGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrGroupId = ros.Token.asString(this.getAtt('GroupId'));
-        this.attrSubDomain = ros.Token.asString(this.getAtt('SubDomain'));
-        this.attrTags = ros.Token.asString(this.getAtt('Tags'));
+        this.attrGroupId = this.getAtt('GroupId');
+        this.attrSubDomain = this.getAtt('SubDomain');
+        this.attrTags = this.getAtt('Tags');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.groupName = props.groupName;
         this.description = props.description;
         this.instanceId = props.instanceId;
+        this.internetEnable = props.internetEnable;
         this.passthroughHeaders = props.passthroughHeaders;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::ApiGateway::Group", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
+        this.vpcIntranetEnable = props.vpcIntranetEnable;
     }
 
 
@@ -2136,12 +2376,322 @@ export class RosGroup extends ros.RosResource {
             groupName: this.groupName,
             description: this.description,
             instanceId: this.instanceId,
+            internetEnable: this.internetEnable,
             passthroughHeaders: this.passthroughHeaders,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
+            vpcIntranetEnable: this.vpcIntranetEnable,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Group.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Group.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::ApiGateway::Instance`
+ */
+export interface RosInstanceProps {
+
+    /**
+     * @Property httpsPolicy: HTTPS security policy. Valid values: HTTPS2_TLS1_0, HTTPS2_TLS1_2, HTTPS1_1_TLS1_0
+     */
+    readonly httpsPolicy: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name
+     */
+    readonly instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceSpec: Instance specification. For example: api.s1.small
+     */
+    readonly instanceSpec: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone to which the instance belongs. For example: cn-beijing-MAZ2(f,g).
+     * Pleas call DescribeZones to get supported zone list.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     */
+    readonly autoPay?: boolean | ros.IResolvable;
+
+    /**
+     * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
+     */
+    readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     */
+    readonly duration?: number | ros.IResolvable;
+
+    /**
+     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     */
+    readonly pricingCycle?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceSpec', ros.requiredValidator)(properties.instanceSpec));
+    errors.collect(ros.propertyValidator('instanceSpec', ros.validateString)(properties.instanceSpec));
+    errors.collect(ros.propertyValidator('httpsPolicy', ros.requiredValidator)(properties.httpsPolicy));
+    errors.collect(ros.propertyValidator('httpsPolicy', ros.validateString)(properties.httpsPolicy));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    if(properties.pricingCycle && (typeof properties.pricingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('pricingCycle', ros.validateAllowedValues)({
+          data: properties.pricingCycle,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PrePaid","PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,4,5,6,7,8,9],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    return errors.wrap('supplied properties not correct for "RosInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ApiGateway::Instance` resource.
+ */
+// @ts-ignore TS6133
+function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      HttpsPolicy: ros.stringToRosTemplate(properties.httpsPolicy),
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceSpec: ros.stringToRosTemplate(properties.instanceSpec),
+      ZoneId: ros.stringToRosTemplate(properties.zoneId),
+      AutoPay: ros.booleanToRosTemplate(properties.autoPay),
+      ChargeType: ros.stringToRosTemplate(properties.chargeType),
+      Duration: ros.numberToRosTemplate(properties.duration),
+      PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::ApiGateway::Instance`
+ */
+export class RosInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ApiGateway::Instance";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute EgressIpv6Enable: Whether enable egress IPV6.
+     */
+    public readonly attrEgressIpv6Enable: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: Instance ID.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceType: Instance type.
+     */
+    public readonly attrInstanceType: ros.IResolvable;
+
+    /**
+     * @Attribute InternetEgressAddress: Internet egress dddress.
+     */
+    public readonly attrInternetEgressAddress: ros.IResolvable;
+
+    /**
+     * @Attribute SupportIpv6: Whether support IPV6.
+     */
+    public readonly attrSupportIpv6: ros.IResolvable;
+
+    /**
+     * @Attribute VpcEgressAddress: VPC network egress address.
+     */
+    public readonly attrVpcEgressAddress: ros.IResolvable;
+
+    /**
+     * @Attribute VpcIntranetEnable: Whether enable VPC intranet.
+     */
+    public readonly attrVpcIntranetEnable: ros.IResolvable;
+
+    /**
+     * @Attribute VpcSlbIntranetEnable: Whether enable VPC SLB intranet.
+     */
+    public readonly attrVpcSlbIntranetEnable: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property httpsPolicy: HTTPS security policy. Valid values: HTTPS2_TLS1_0, HTTPS2_TLS1_2, HTTPS1_1_TLS1_0
+     */
+    public httpsPolicy: string | ros.IResolvable;
+
+    /**
+     * @Property instanceName: Instance name
+     */
+    public instanceName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceSpec: Instance specification. For example: api.s1.small
+     */
+    public instanceSpec: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Zone to which the instance belongs. For example: cn-beijing-MAZ2(f,g).
+     * Pleas call DescribeZones to get supported zone list.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
+     */
+    public autoPay: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property chargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go). Default value: PostPaid.
+     */
+    public chargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     */
+    public duration: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     */
+    public pricingCycle: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::ApiGateway::Instance`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEgressIpv6Enable = this.getAtt('EgressIpv6Enable');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceType = this.getAtt('InstanceType');
+        this.attrInternetEgressAddress = this.getAtt('InternetEgressAddress');
+        this.attrSupportIpv6 = this.getAtt('SupportIpv6');
+        this.attrVpcEgressAddress = this.getAtt('VpcEgressAddress');
+        this.attrVpcIntranetEnable = this.getAtt('VpcIntranetEnable');
+        this.attrVpcSlbIntranetEnable = this.getAtt('VpcSlbIntranetEnable');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.httpsPolicy = props.httpsPolicy;
+        this.instanceName = props.instanceName;
+        this.instanceSpec = props.instanceSpec;
+        this.zoneId = props.zoneId;
+        this.autoPay = props.autoPay;
+        this.chargeType = props.chargeType;
+        this.duration = props.duration;
+        this.pricingCycle = props.pricingCycle;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            httpsPolicy: this.httpsPolicy,
+            instanceName: this.instanceName,
+            instanceSpec: this.instanceSpec,
+            zoneId: this.zoneId,
+            autoPay: this.autoPay,
+            chargeType: this.chargeType,
+            duration: this.duration,
+            pricingCycle: this.pricingCycle,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -2153,12 +2703,12 @@ export interface RosLogConfigProps {
     /**
      * @Property slsLogStore: Logstore name of SLS
      */
-    readonly slsLogStore: string;
+    readonly slsLogStore: string | ros.IResolvable;
 
     /**
      * @Property slsProject: Project name of SLS
      */
-    readonly slsProject: string;
+    readonly slsProject: string | ros.IResolvable;
 }
 
 /**
@@ -2228,12 +2778,12 @@ export class RosLogConfig extends ros.RosResource {
     /**
      * @Attribute SlsLogStore: Logstore name of SLS
      */
-    public readonly attrSlsLogStore: any;
+    public readonly attrSlsLogStore: ros.IResolvable;
 
     /**
      * @Attribute SlsProject: Project name of SLS
      */
-    public readonly attrSlsProject: any;
+    public readonly attrSlsProject: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2241,12 +2791,12 @@ export class RosLogConfig extends ros.RosResource {
     /**
      * @Property slsLogStore: Logstore name of SLS
      */
-    public slsLogStore: string;
+    public slsLogStore: string | ros.IResolvable;
 
     /**
      * @Property slsProject: Project name of SLS
      */
-    public slsProject: string;
+    public slsProject: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::LogConfig`.
@@ -2257,8 +2807,8 @@ export class RosLogConfig extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLogConfigProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLogConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSlsLogStore = ros.Token.asString(this.getAtt('SlsLogStore'));
-        this.attrSlsProject = ros.Token.asString(this.getAtt('SlsProject'));
+        this.attrSlsLogStore = this.getAtt('SlsLogStore');
+        this.attrSlsProject = this.getAtt('SlsProject');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.slsLogStore = props.slsLogStore;
@@ -2285,17 +2835,17 @@ export interface RosSignatureProps {
     /**
      * @Property signatureKey: The key of the signature.
      */
-    readonly signatureKey: string;
+    readonly signatureKey: string | ros.IResolvable;
 
     /**
      * @Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly signatureName: string;
+    readonly signatureName: string | ros.IResolvable;
 
     /**
      * @Property signatureSecret: The secret of the signature.
      */
-    readonly signatureSecret: string;
+    readonly signatureSecret: string | ros.IResolvable;
 }
 
 /**
@@ -2354,7 +2904,7 @@ export class RosSignature extends ros.RosResource {
     /**
      * @Attribute SignatureId: The id of the created signature
      */
-    public readonly attrSignatureId: any;
+    public readonly attrSignatureId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2362,17 +2912,17 @@ export class RosSignature extends ros.RosResource {
     /**
      * @Property signatureKey: The key of the signature.
      */
-    public signatureKey: string;
+    public signatureKey: string | ros.IResolvable;
 
     /**
      * @Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public signatureName: string;
+    public signatureName: string | ros.IResolvable;
 
     /**
      * @Property signatureSecret: The secret of the signature.
      */
-    public signatureSecret: string;
+    public signatureSecret: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::Signature`.
@@ -2383,7 +2933,7 @@ export class RosSignature extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSignatureProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSignature.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSignatureId = ros.Token.asString(this.getAtt('SignatureId'));
+        this.attrSignatureId = this.getAtt('SignatureId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.signatureKey = props.signatureKey;
@@ -2417,17 +2967,17 @@ export interface RosSignatureBindingProps {
     /**
      * @Property groupId: The id of group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property signatureId: The id of the Signature.
      */
-    readonly signatureId: string;
+    readonly signatureId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind signature in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 }
 
 /**
@@ -2510,17 +3060,17 @@ export class RosSignatureBinding extends ros.RosResource {
     /**
      * @Property groupId: The id of group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property signatureId: The id of the Signature.
      */
-    public signatureId: string;
+    public signatureId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind signature in this stage.
      */
-    public stageName: string;
+    public stageName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::SignatureBinding`.
@@ -2561,12 +3111,12 @@ export interface RosStageConfigProps {
     /**
      * @Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: The name of the Stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * @Property variables: Variables in the stage, key-value pairs.
@@ -2639,12 +3189,12 @@ export class RosStageConfig extends ros.RosResource {
     /**
      * @Property groupId: The id of the Group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: The name of the Stage.
      */
-    public stageName: string;
+    public stageName: string | ros.IResolvable;
 
     /**
      * @Property variables: Variables in the stage, key-value pairs.
@@ -2688,27 +3238,27 @@ export interface RosTrafficControlProps {
     /**
      * @Property apiDefault: Default API traffic value.
      */
-    readonly apiDefault: number;
+    readonly apiDefault: number | ros.IResolvable;
 
     /**
      * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly trafficControlName: string;
+    readonly trafficControlName: string | ros.IResolvable;
 
     /**
      * @Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
      */
-    readonly trafficControlUnit: string;
+    readonly trafficControlUnit: string | ros.IResolvable;
 
     /**
      * @Property appDefault: Default APP traffic value.
      */
-    readonly appDefault?: string;
+    readonly appDefault?: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the traffic control, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property special: Special traffic controls.
@@ -2718,7 +3268,7 @@ export interface RosTrafficControlProps {
     /**
      * @Property userDefault: Default user traffic value.
      */
-    readonly userDefault?: string;
+    readonly userDefault?: string | ros.IResolvable;
 }
 
 /**
@@ -2791,7 +3341,7 @@ export class RosTrafficControl extends ros.RosResource {
     /**
      * @Attribute TrafficControlId: The id of the traffic control
      */
-    public readonly attrTrafficControlId: any;
+    public readonly attrTrafficControlId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2799,27 +3349,27 @@ export class RosTrafficControl extends ros.RosResource {
     /**
      * @Property apiDefault: Default API traffic value.
      */
-    public apiDefault: number;
+    public apiDefault: number | ros.IResolvable;
 
     /**
      * @Property trafficControlName: The name of the traffic control.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    public trafficControlName: string;
+    public trafficControlName: string | ros.IResolvable;
 
     /**
      * @Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
      */
-    public trafficControlUnit: string;
+    public trafficControlUnit: string | ros.IResolvable;
 
     /**
      * @Property appDefault: Default APP traffic value.
      */
-    public appDefault: string | undefined;
+    public appDefault: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Description of the traffic control, less than 180 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property special: Special traffic controls.
@@ -2829,7 +3379,7 @@ export class RosTrafficControl extends ros.RosResource {
     /**
      * @Property userDefault: Default user traffic value.
      */
-    public userDefault: string | undefined;
+    public userDefault: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ApiGateway::TrafficControl`.
@@ -2840,7 +3390,7 @@ export class RosTrafficControl extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosTrafficControlProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTrafficControl.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrTrafficControlId = ros.Token.asString(this.getAtt('TrafficControlId'));
+        this.attrTrafficControlId = this.getAtt('TrafficControlId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.apiDefault = props.apiDefault;
@@ -2877,15 +3427,15 @@ export namespace RosTrafficControl {
         /**
          * @Property specialKey: The key of special traffic control.
          */
-        readonly specialKey: string;
+        readonly specialKey: string | ros.IResolvable;
         /**
          * @Property specialType: The type of special traffic control.
          */
-        readonly specialType: string;
+        readonly specialType: string | ros.IResolvable;
         /**
          * @Property trafficValue: The value of special traffic control
          */
-        readonly trafficValue: number;
+        readonly trafficValue: number | ros.IResolvable;
     }
 }
 /**
@@ -2944,17 +3494,17 @@ export interface RosTrafficControlBindingProps {
     /**
      * @Property groupId: The id of group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind traffic in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * @Property trafficControlId: The id of traffic control.
      */
-    readonly trafficControlId: string;
+    readonly trafficControlId: string | ros.IResolvable;
 }
 
 /**
@@ -3037,17 +3587,17 @@ export class RosTrafficControlBinding extends ros.RosResource {
     /**
      * @Property groupId: The id of group.
      */
-    public groupId: string;
+    public groupId: string | ros.IResolvable;
 
     /**
      * @Property stageName: Bind traffic in this stage.
      */
-    public stageName: string;
+    public stageName: string | ros.IResolvable;
 
     /**
      * @Property trafficControlId: The id of traffic control.
      */
-    public trafficControlId: string;
+    public trafficControlId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::TrafficControlBinding`.
@@ -3088,22 +3638,22 @@ export interface RosVpcAccessConfigProps {
     /**
      * @Property instanceId: The id of the instance (ECS/SLB).
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property port: The port of the VPC.
      */
-    readonly port: number;
+    readonly port: number | ros.IResolvable;
 
     /**
      * @Property vpcId: The id of the VPC.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 }
 
 /**
@@ -3175,22 +3725,22 @@ export class RosVpcAccessConfig extends ros.RosResource {
     /**
      * @Property instanceId: The id of the instance (ECS/SLB).
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property port: The port of the VPC.
      */
-    public port: number;
+    public port: number | ros.IResolvable;
 
     /**
      * @Property vpcId: The id of the VPC.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::VpcAccessConfig`.

@@ -16,12 +16,12 @@ export interface ContactProps {
     /**
      * Property contactName: The name of the alarm contact.
      */
-    readonly contactName: string;
+    readonly contactName: string | ros.IResolvable;
 
     /**
      * Property describe: The description of the alert contact.
      */
-    readonly describe: string;
+    readonly describe: string | ros.IResolvable;
 }
 
 /**
@@ -37,7 +37,7 @@ export class Contact extends ros.Resource {
     /**
      * Attribute ContactName: The name of the alarm contact.
      */
-    public readonly attrContactName: any;
+    public readonly attrContactName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CMS::Contact`.

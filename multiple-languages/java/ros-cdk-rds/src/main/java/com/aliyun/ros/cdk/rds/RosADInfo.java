@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS template type:  `ALIYUN::RDS::ADInfo`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.253Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.943Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosADInfo")
 public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAddns() {
-        return software.amazon.jsii.Kernel.get(this, "attrAddns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAddns() {
+        return software.amazon.jsii.Kernel.get(this, "attrAddns", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,8 +61,8 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAdAccountName() {
-        return software.amazon.jsii.Kernel.get(this, "adAccountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAdAccountName() {
+        return software.amazon.jsii.Kernel.get(this, "adAccountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +73,14 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAddns() {
-        return software.amazon.jsii.Kernel.get(this, "addns", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAdAccountName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "adAccountName", java.util.Objects.requireNonNull(value, "adAccountName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAddns() {
+        return software.amazon.jsii.Kernel.get(this, "addns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,8 +91,14 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAdPassword() {
-        return software.amazon.jsii.Kernel.get(this, "adPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAddns(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "addns", java.util.Objects.requireNonNull(value, "addns is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAdPassword() {
+        return software.amazon.jsii.Kernel.get(this, "adPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -97,8 +109,14 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAdServerIpAddress() {
-        return software.amazon.jsii.Kernel.get(this, "adServerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAdPassword(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "adPassword", java.util.Objects.requireNonNull(value, "adPassword is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAdServerIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "adServerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -109,13 +127,25 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAdServerIpAddress(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "adServerIpAddress", java.util.Objects.requireNonNull(value, "adServerIpAddress is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbInstanceId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceId", java.util.Objects.requireNonNull(value, "dbInstanceId is required"));
+    }
+
+    /**
+     */
+    public void setDbInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceId", java.util.Objects.requireNonNull(value, "dbInstanceId is required"));
     }
 
@@ -161,12 +191,28 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
             this.props.adAccountName(adAccountName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param adAccountName This parameter is required.
+         */
+        public Builder adAccountName(final com.aliyun.ros.cdk.core.IResolvable adAccountName) {
+            this.props.adAccountName(adAccountName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param addns This parameter is required.
          */
         public Builder addns(final java.lang.String addns) {
+            this.props.addns(addns);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param addns This parameter is required.
+         */
+        public Builder addns(final com.aliyun.ros.cdk.core.IResolvable addns) {
             this.props.addns(addns);
             return this;
         }
@@ -179,6 +225,14 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
             this.props.adPassword(adPassword);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param adPassword This parameter is required.
+         */
+        public Builder adPassword(final com.aliyun.ros.cdk.core.IResolvable adPassword) {
+            this.props.adPassword(adPassword);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -188,12 +242,28 @@ public class RosADInfo extends com.aliyun.ros.cdk.core.RosResource {
             this.props.adServerIpAddress(adServerIpAddress);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param adServerIpAddress This parameter is required.
+         */
+        public Builder adServerIpAddress(final com.aliyun.ros.cdk.core.IResolvable adServerIpAddress) {
+            this.props.adServerIpAddress(adServerIpAddress);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbInstanceId This parameter is required.
          */
         public Builder dbInstanceId(final java.lang.String dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceId This parameter is required.
+         */
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }

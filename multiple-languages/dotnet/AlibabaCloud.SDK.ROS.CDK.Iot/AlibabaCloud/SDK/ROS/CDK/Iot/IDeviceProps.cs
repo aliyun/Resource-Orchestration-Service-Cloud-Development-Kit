@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
     public interface IDeviceProps
     {
         /// <summary>Property productKey: The identifier of the product to which the device to be registered belongs.</summary>
-        [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}")]
-        string ProductKey
+        [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ProductKey
         {
             get;
         }
@@ -19,9 +19,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// When you create a LoRaWAN devices, this will pass.
         /// </remarks>
-        [JsiiProperty(name: "devEui", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "devEui", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DevEui
+        object? DevEui
         {
             get
             {
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// DeviceName is used with ProductKey to identify a specified device.
         /// Note If you do not specify this parameter, the system will generate a name for the device.
         /// </remarks>
-        [JsiiProperty(name: "deviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "deviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DeviceName
+        object? DeviceName
         {
             get
             {
@@ -51,9 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// instance that you need to buy the incoming instance ID.
         /// </remarks>
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IotInstanceId
+        object? IotInstanceId
         {
             get
             {
@@ -67,9 +67,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// contain Chinese characters, English letters, numbers and underscores (_). A Chinese
         /// character counts as two characters.
         /// </remarks>
-        [JsiiProperty(name: "nickname", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "nickname", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Nickname
+        object? Nickname
         {
             get
             {
@@ -81,9 +81,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// When you create a LoRaWAN devices, this will pass.
         /// </remarks>
-        [JsiiProperty(name: "pinCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "pinCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PinCode
+        object? PinCode
         {
             get
             {
@@ -100,10 +100,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             }
 
             /// <summary>Property productKey: The identifier of the product to which the device to be registered belongs.</summary>
-            [JsiiProperty(name: "productKey", typeJson: "{\"primitive\":\"string\"}")]
-            public string ProductKey
+            [JsiiProperty(name: "productKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ProductKey
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property devEui: DevEUI LoRaWAN equipment.</summary>
@@ -111,10 +111,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// When you create a LoRaWAN devices, this will pass.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "devEui", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DevEui
+            [JsiiProperty(name: "devEui", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DevEui
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property deviceName: The name of the device that you want to register.</summary>
@@ -126,10 +126,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// Note If you do not specify this parameter, the system will generate a name for the device.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "deviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DeviceName
+            [JsiiProperty(name: "deviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeviceName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property iotInstanceId: Public instance does not pass this parameter;</summary>
@@ -137,10 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// instance that you need to buy the incoming instance ID.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IotInstanceId
+            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IotInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property nickname: Add a nickname for the device.</summary>
@@ -150,10 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// character counts as two characters.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nickname", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Nickname
+            [JsiiProperty(name: "nickname", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Nickname
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.</summary>
@@ -161,10 +161,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// When you create a LoRaWAN devices, this will pass.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "pinCode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PinCode
+            [JsiiProperty(name: "pinCode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PinCode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

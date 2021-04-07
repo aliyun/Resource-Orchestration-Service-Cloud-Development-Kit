@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Attribute</strong>: UisNodeActiveIps: The node active IP list.
         /// </remarks>
-        [JsiiProperty(name: "attrUisNodeActiveIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeActiveIps
+        [JsiiProperty(name: "attrUisNodeActiveIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeActiveIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: UisNodeId: The node ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "attrUisNodeId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeId
+        [JsiiProperty(name: "attrUisNodeId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: UisNodeIps: The node IP list.
         /// </remarks>
-        [JsiiProperty(name: "attrUisNodeIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeIps
+        [JsiiProperty(name: "attrUisNodeIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -87,30 +87,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <remarks>
         /// <strong>Property</strong>: ipAddrsNum: The number of IPs available at the boarding point. The default is 2, the maximum is 10, if you need more quota, please submit the work order.
         /// </remarks>
-        [JsiiProperty(name: "ipAddrsNum", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double IpAddrsNum
+        [JsiiProperty(name: "ipAddrsNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object IpAddrsNum
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: uisId: The instance ID to which the boarding point belongs.
         /// </remarks>
-        [JsiiProperty(name: "uisId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string UisId
+        [JsiiProperty(name: "uisId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object UisId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: uisNodeAreaId: Specifies the territory ID of the node. You can query the supported territories through the DescribeRegions interface.
         /// </remarks>
-        [JsiiProperty(name: "uisNodeAreaId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string UisNodeAreaId
+        [JsiiProperty(name: "uisNodeAreaId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object UisNodeAreaId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -118,10 +118,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: uisNodeBandwidth: Specify the bandwidth bandwidth value for this pick-up point, even if the Internet bandwidth.
         /// If you do not specify a bandwidth, the default value is 20Mbps.
         /// </remarks>
-        [JsiiProperty(name: "uisNodeBandwidth", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double UisNodeBandwidth
+        [JsiiProperty(name: "uisNodeBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object UisNodeBandwidth
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -129,10 +129,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: description: Description of the instance of the boarding point.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -140,10 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         /// <strong>Property</strong>: name: The name of the instance of the boarding point.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Name
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

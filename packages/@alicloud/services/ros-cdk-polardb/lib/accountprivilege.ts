@@ -11,7 +11,7 @@ export interface AccountPrivilegeProps {
     /**
      * Property accountName: The name of the database account to be granted access permissions.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -22,19 +22,19 @@ export interface AccountPrivilegeProps {
      * The number of account permissions specified by the AccountPrivilege parameter must be the same as that of database names specified by the DBName parameter. Each account permission must correspond to a database name in sequence.
      * Separate multiple permissions with a comma (,).
      */
-    readonly accountPrivilege: string;
+    readonly accountPrivilege: string | ros.IResolvable;
 
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster to which a database account belongs.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property dbName: The name of the database whose access permissions are to be granted to the database account.
      * You can grant access permissions on one or more databases to the database account.
      * Separate multiple databases with a comma (,).
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 }
 
 /**

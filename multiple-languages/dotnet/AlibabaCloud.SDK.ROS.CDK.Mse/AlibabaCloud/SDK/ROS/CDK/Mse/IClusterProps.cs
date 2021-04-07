@@ -9,44 +9,88 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
     public interface IClusterProps
     {
         /// <summary>Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.</summary>
-        [JsiiProperty(name: "clusterSpecification", typeJson: "{\"primitive\":\"string\"}")]
-        string ClusterSpecification
+        [JsiiProperty(name: "clusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ClusterSpecification
         {
             get;
         }
 
         /// <summary>Property clusterType: cluster type.</summary>
-        [JsiiProperty(name: "clusterType", typeJson: "{\"primitive\":\"string\"}")]
-        string ClusterType
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ClusterType
         {
             get;
         }
 
         /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.</summary>
-        [JsiiProperty(name: "clusterVersion", typeJson: "{\"primitive\":\"string\"}")]
-        string ClusterVersion
+        [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ClusterVersion
         {
             get;
         }
 
         /// <summary>Property instanceCount: instance count.</summary>
-        [JsiiProperty(name: "instanceCount", typeJson: "{\"primitive\":\"number\"}")]
-        double InstanceCount
+        [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceCount
         {
             get;
         }
 
         /// <summary>Property netType: network type, Enum: privatenet,pubnet.</summary>
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}")]
-        string NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NetType
         {
             get;
         }
 
-        /// <summary>Property diskType: disk type.</summary>
-        [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        /// <summary>Property aclEntryList: acl entry list.</summary>
+        [JsiiProperty(name: "aclEntryList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? DiskType
+        object? AclEntryList
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property clusterAliasName: cluster alias name.</summary>
+        [JsiiProperty(name: "clusterAliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ClusterAliasName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property connectionType: network connect type.</summary>
+        [JsiiProperty(name: "connectionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ConnectionType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property diskCapacity:.</summary>
+        [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskCapacity
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property diskType: disk type.</summary>
+        [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DiskType
         {
             get
             {
@@ -55,9 +99,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <summary>Property privateSlbSpecification:.</summary>
-        [JsiiProperty(name: "privateSlbSpecification", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "privateSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PrivateSlbSpecification
+        object? PrivateSlbSpecification
         {
             get
             {
@@ -66,9 +110,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <summary>Property pubNetworkFlow: pub network flow.</summary>
-        [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PubNetworkFlow
+        object? PubNetworkFlow
         {
             get
             {
@@ -77,9 +121,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <summary>Property pubSlbSpecification:.</summary>
-        [JsiiProperty(name: "pubSlbSpecification", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "pubSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PubSlbSpecification
+        object? PubSlbSpecification
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property requestPars:.</summary>
+        [JsiiProperty(name: "requestPars", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RequestPars
         {
             get
             {
@@ -88,9 +143,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <summary>Property vpcId: vpc id.</summary>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VpcId
+        object? VpcId
         {
             get
             {
@@ -99,9 +154,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <summary>Property vSwitchId: switcher Id.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? VSwitchId
+        object? VSwitchId
         {
             get
             {
@@ -118,86 +173,126 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
 
             /// <summary>Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c.</summary>
-            [JsiiProperty(name: "clusterSpecification", typeJson: "{\"primitive\":\"string\"}")]
-            public string ClusterSpecification
+            [JsiiProperty(name: "clusterSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ClusterSpecification
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property clusterType: cluster type.</summary>
-            [JsiiProperty(name: "clusterType", typeJson: "{\"primitive\":\"string\"}")]
-            public string ClusterType
+            [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ClusterType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3.</summary>
-            [JsiiProperty(name: "clusterVersion", typeJson: "{\"primitive\":\"string\"}")]
-            public string ClusterVersion
+            [JsiiProperty(name: "clusterVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ClusterVersion
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceCount: instance count.</summary>
-            [JsiiProperty(name: "instanceCount", typeJson: "{\"primitive\":\"number\"}")]
-            public double InstanceCount
+            [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceCount
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property netType: network type, Enum: privatenet,pubnet.</summary>
-            [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}")]
-            public string NetType
+            [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NetType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property aclEntryList: acl entry list.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "aclEntryList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AclEntryList
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property clusterAliasName: cluster alias name.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "clusterAliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ClusterAliasName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property connectionType: network connect type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "connectionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ConnectionType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property diskCapacity:.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskCapacity
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property diskType: disk type.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DiskType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property privateSlbSpecification:.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "privateSlbSpecification", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PrivateSlbSpecification
+            [JsiiProperty(name: "privateSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PrivateSlbSpecification
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property pubNetworkFlow: pub network flow.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PubNetworkFlow
+            [JsiiProperty(name: "pubNetworkFlow", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PubNetworkFlow
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property pubSlbSpecification:.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "pubSlbSpecification", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PubSlbSpecification
+            [JsiiProperty(name: "pubSlbSpecification", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PubSlbSpecification
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property requestPars:.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "requestPars", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RequestPars
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vpcId: vpc id.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property vSwitchId: switcher Id.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

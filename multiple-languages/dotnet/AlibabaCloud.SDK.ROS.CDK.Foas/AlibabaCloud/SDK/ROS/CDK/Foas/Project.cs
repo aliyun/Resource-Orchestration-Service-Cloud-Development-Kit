@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Foas
         }
 
         /// <summary>Attribute State: Project state.</summary>
-        [JsiiProperty(name: "attrState", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrState
+        [JsiiProperty(name: "attrState", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrState
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

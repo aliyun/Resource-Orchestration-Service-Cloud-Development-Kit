@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::SSHKeyPairAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.694Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.362Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosSSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosSSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getKeyPairName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getKeyPairName();
 
     /**
      * @return a {@link Builder} of {@link RosSSHKeyPairAttachmentProps}
@@ -27,7 +27,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosSSHKeyPairAttachmentProps> {
         private java.lang.Object instanceIds;
-        private java.lang.String keyPairName;
+        private java.lang.Object keyPairName;
 
         /**
          * Sets the value of {@link RosSSHKeyPairAttachmentProps#getInstanceIds}
@@ -60,6 +60,16 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
         }
 
         /**
+         * Sets the value of {@link RosSSHKeyPairAttachmentProps#getKeyPairName}
+         * @param keyPairName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder keyPairName(com.aliyun.ros.cdk.core.IResolvable keyPairName) {
+            this.keyPairName = keyPairName;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosSSHKeyPairAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -76,7 +86,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosSSHKeyPairAttachmentProps {
         private final java.lang.Object instanceIds;
-        private final java.lang.String keyPairName;
+        private final java.lang.Object keyPairName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +95,13 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.instanceIds = software.amazon.jsii.Kernel.get(this, "instanceIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.keyPairName = software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object instanceIds, final java.lang.String keyPairName) {
+        protected Jsii$Proxy(final java.lang.Object instanceIds, final java.lang.Object keyPairName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceIds = java.util.Objects.requireNonNull(instanceIds, "instanceIds is required");
             this.keyPairName = java.util.Objects.requireNonNull(keyPairName, "keyPairName is required");
@@ -103,7 +113,7 @@ public interface RosSSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiS
         }
 
         @Override
-        public final java.lang.String getKeyPairName() {
+        public final java.lang.Object getKeyPairName() {
             return this.keyPairName;
         }
 

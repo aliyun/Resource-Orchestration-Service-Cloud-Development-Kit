@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// 2. Must start and end with lowercase letters and numbers.
         /// 3. The name length is 3-63 characters.
         /// </remarks>
-        [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-        string Project
+        [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Project
         {
             get;
         }
@@ -52,10 +52,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// 2. Must start and end with lowercase letters and numbers.
             /// 3. The name length is 3-63 characters.
             /// </remarks>
-            [JsiiProperty(name: "project", typeJson: "{\"primitive\":\"string\"}")]
-            public string Project
+            [JsiiProperty(name: "project", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Project
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

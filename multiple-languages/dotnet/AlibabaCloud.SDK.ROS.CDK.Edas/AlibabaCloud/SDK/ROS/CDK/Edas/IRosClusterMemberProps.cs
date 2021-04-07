@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: clusterId: Cluster ID to import ECS instance
         /// </remarks>
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ClusterId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: ECS instance ID list to import.
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        object InstanceIds
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: password: Password ECS hosts need to import (ECS settings can continue to use purchased)
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-        string Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Password
         {
             get;
         }
@@ -46,28 +46,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             /// <remarks>
             /// <strong>Property</strong>: clusterId: Cluster ID to import ECS instance
             /// </remarks>
-            [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ClusterId
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: instanceIds: ECS instance ID list to import.
             /// </remarks>
-            [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-            public string[] InstanceIds
+            [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            public object InstanceIds
             {
-                get => GetInstanceProperty<string[]>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: password: Password ECS hosts need to import (ECS settings can continue to use purchased)
             /// </remarks>
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-            public string Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Password
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

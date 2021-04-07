@@ -3,16 +3,18 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MonitorGroupInstances`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupInstancesProps.Jsii$Proxy.class)
 public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property groupId: The ID of the application group.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
+     * Property instances:.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstances();
 
@@ -26,12 +28,12 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link MonitorGroupInstancesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<MonitorGroupInstancesProps> {
-        private java.lang.Number groupId;
+        private java.lang.Object groupId;
         private java.lang.Object instances;
 
         /**
          * Sets the value of {@link MonitorGroupInstancesProps#getGroupId}
-         * @param groupId the value to be set. This parameter is required.
+         * @param groupId Property groupId: The ID of the application group. This parameter is required.
          * @return {@code this}
          */
         public Builder groupId(java.lang.Number groupId) {
@@ -40,8 +42,18 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link MonitorGroupInstancesProps#getGroupId}
+         * @param groupId Property groupId: The ID of the application group. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link MonitorGroupInstancesProps#getInstances}
-         * @param instances the value to be set. This parameter is required.
+         * @param instances Property instances:. This parameter is required.
          * @return {@code this}
          */
         public Builder instances(com.aliyun.ros.cdk.core.IResolvable instances) {
@@ -51,7 +63,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link MonitorGroupInstancesProps#getInstances}
-         * @param instances the value to be set. This parameter is required.
+         * @param instances Property instances:. This parameter is required.
          * @return {@code this}
          */
         public Builder instances(java.util.List<? extends java.lang.Object> instances) {
@@ -75,7 +87,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MonitorGroupInstancesProps {
-        private final java.lang.Number groupId;
+        private final java.lang.Object groupId;
         private final java.lang.Object instances;
 
         /**
@@ -84,21 +96,21 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instances = software.amazon.jsii.Kernel.get(this, "instances", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Number groupId, final java.lang.Object instances) {
+        protected Jsii$Proxy(final java.lang.Object groupId, final java.lang.Object instances) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupId = java.util.Objects.requireNonNull(groupId, "groupId is required");
             this.instances = java.util.Objects.requireNonNull(instances, "instances is required");
         }
 
         @Override
-        public final java.lang.Number getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 

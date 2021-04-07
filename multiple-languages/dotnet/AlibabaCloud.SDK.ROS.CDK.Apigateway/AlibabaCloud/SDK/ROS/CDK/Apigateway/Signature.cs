@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute SignatureId: The id of the created signature.</summary>
-        [JsiiProperty(name: "attrSignatureId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSignatureId
+        [JsiiProperty(name: "attrSignatureId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSignatureId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * A ROS resource type:  `ALIYUN::CMS::EventRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRule")
 public class EventRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::EventRule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public EventRule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.EventRuleProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::CMS::EventRule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public EventRule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.EventRuleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Data: Number of rows affected.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrData() {
-        return software.amazon.jsii.Kernel.get(this, "attrData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrData() {
+        return software.amazon.jsii.Kernel.get(this, "attrData", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cms.EventRule> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,16 +90,20 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+         * <p>
          * @return {@code this}
-         * @param eventPattern This parameter is required.
+         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
          */
         public Builder eventPattern(final com.aliyun.ros.cdk.core.IResolvable eventPattern) {
             this.props.eventPattern(eventPattern);
             return this;
         }
         /**
+         * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+         * <p>
          * @return {@code this}
-         * @param eventPattern This parameter is required.
+         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
          */
         public Builder eventPattern(final java.util.List<? extends java.lang.Object> eventPattern) {
             this.props.eventPattern(eventPattern);
@@ -98,46 +111,122 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ruleName: The name of the alarm rule.
+         * <p>
          * @return {@code this}
-         * @param ruleName This parameter is required.
+         * @param ruleName Property ruleName: The name of the alarm rule. This parameter is required.
          */
         public Builder ruleName(final java.lang.String ruleName) {
             this.props.ruleName(ruleName);
             return this;
         }
+        /**
+         * Property ruleName: The name of the alarm rule.
+         * <p>
+         * @return {@code this}
+         * @param ruleName Property ruleName: The name of the alarm rule. This parameter is required.
+         */
+        public Builder ruleName(final com.aliyun.ros.cdk.core.IResolvable ruleName) {
+            this.props.ruleName(ruleName);
+            return this;
+        }
 
         /**
+         * Property description: The description of the alert rule.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of the alert rule. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: The description of the alert rule.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of the alert rule. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property eventType: The type of the event alert.
+         * <p>
+         * Valid values:
+         * SYSTEM
+         * CUSTOM
+         * <p>
          * @return {@code this}
-         * @param eventType This parameter is required.
+         * @param eventType Property eventType: The type of the event alert. This parameter is required.
          */
         public Builder eventType(final java.lang.String eventType) {
             this.props.eventType(eventType);
             return this;
         }
+        /**
+         * Property eventType: The type of the event alert.
+         * <p>
+         * Valid values:
+         * SYSTEM
+         * CUSTOM
+         * <p>
+         * @return {@code this}
+         * @param eventType Property eventType: The type of the event alert. This parameter is required.
+         */
+        public Builder eventType(final com.aliyun.ros.cdk.core.IResolvable eventType) {
+            this.props.eventType(eventType);
+            return this;
+        }
 
         /**
+         * Property groupId: The ID of the application group.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The ID of the application group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The ID of the application group.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The ID of the application group. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property state: The status of the alert rule.
+         * <p>
+         * Valid values:
+         * ENABLED
+         * DISABLED
+         * <p>
          * @return {@code this}
-         * @param state This parameter is required.
+         * @param state Property state: The status of the alert rule. This parameter is required.
          */
         public Builder state(final java.lang.String state) {
+            this.props.state(state);
+            return this;
+        }
+        /**
+         * Property state: The status of the alert rule.
+         * <p>
+         * Valid values:
+         * ENABLED
+         * DISABLED
+         * <p>
+         * @return {@code this}
+         * @param state Property state: The status of the alert rule. This parameter is required.
+         */
+        public Builder state(final com.aliyun.ros.cdk.core.IResolvable state) {
             this.props.state(state);
             return this;
         }

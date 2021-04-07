@@ -21,17 +21,17 @@ export interface AuthorizationProps {
     /**
      * Property groupId: The id of the group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property stageName: Authorize in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * Property description: Description of the authorization, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**

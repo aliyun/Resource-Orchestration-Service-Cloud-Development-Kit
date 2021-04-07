@@ -3,56 +3,56 @@ package com.aliyun.ros.cdk.sae;
 /**
  * Properties for defining a `ALIYUN::SAE::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.040Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationProps.Jsii$Proxy.class)
 public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAppName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAppName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getCpu();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCpu();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getMemory();
+    @org.jetbrains.annotations.NotNull java.lang.Object getMemory();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNamespaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNamespaceId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getPackageType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getPackageType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getReplicas();
+    @org.jetbrains.annotations.NotNull java.lang.Object getReplicas();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAppDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAppDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCommand() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCommand() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCommandArgs() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCommandArgs() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getCustomHostAlias() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomHostAlias() {
         return null;
     }
 
@@ -64,133 +64,139 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEdasContainerVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEdasContainerVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEnvs() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnvs() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getImageUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getImageUrl() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getJarStartArgs() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getJarStartArgs() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getJarStartOptions() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getJarStartOptions() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getJdk() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getJdk() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLiveness() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLiveness() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMountDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMountDesc() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMountHost() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMountHost() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNasId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNasId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPackageUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPackageUrl() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPackageVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPackageVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPostStart() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPostStart() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPreStop() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPreStop() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getReadiness() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getReadiness() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSlsConfigs() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlsConfigs() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTimezone() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimezone() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWarStartOptions() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getWebContainer() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWarStartOptions() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getWebContainer() {
         return null;
     }
 
@@ -204,39 +210,40 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApplicationProps> {
-        private java.lang.String appName;
-        private java.lang.Number cpu;
-        private java.lang.Number memory;
-        private java.lang.String namespaceId;
-        private java.lang.String packageType;
-        private java.lang.Number replicas;
-        private java.lang.String appDescription;
-        private java.lang.String command;
-        private java.lang.String commandArgs;
-        private java.lang.String customHostAlias;
+        private java.lang.Object appName;
+        private java.lang.Object cpu;
+        private java.lang.Object memory;
+        private java.lang.Object namespaceId;
+        private java.lang.Object packageType;
+        private java.lang.Object replicas;
+        private java.lang.Object appDescription;
+        private java.lang.Object command;
+        private java.lang.Object commandArgs;
+        private java.lang.Object customHostAlias;
         private java.lang.Object deploy;
-        private java.lang.String edasContainerVersion;
-        private java.lang.String envs;
-        private java.lang.String imageUrl;
-        private java.lang.String jarStartArgs;
-        private java.lang.String jarStartOptions;
-        private java.lang.String jdk;
-        private java.lang.String liveness;
-        private java.lang.String mountDesc;
-        private java.lang.String mountHost;
-        private java.lang.String nasId;
-        private java.lang.String packageUrl;
-        private java.lang.String packageVersion;
-        private java.lang.String postStart;
-        private java.lang.String preStop;
-        private java.lang.String readiness;
-        private java.lang.String securityGroupId;
-        private java.lang.String slsConfigs;
-        private java.lang.String timezone;
-        private java.lang.String vpcId;
-        private java.lang.String vSwitchId;
-        private java.lang.String warStartOptions;
-        private java.lang.String webContainer;
+        private java.lang.Object edasContainerVersion;
+        private java.lang.Object envs;
+        private java.lang.Object imageUrl;
+        private java.lang.Object jarStartArgs;
+        private java.lang.Object jarStartOptions;
+        private java.lang.Object jdk;
+        private java.lang.Object liveness;
+        private java.lang.Object mountDesc;
+        private java.lang.Object mountHost;
+        private java.lang.Object nasId;
+        private java.lang.Object packageUrl;
+        private java.lang.Object packageVersion;
+        private java.lang.Object postStart;
+        private java.lang.Object preStop;
+        private java.lang.Object readiness;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object slsConfigs;
+        private java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
+        private java.lang.Object timezone;
+        private java.lang.Object vpcId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object warStartOptions;
+        private java.lang.Object webContainer;
 
         /**
          * Sets the value of {@link RosApplicationProps#getAppName}
@@ -244,6 +251,16 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder appName(java.lang.String appName) {
+            this.appName = appName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getAppName}
+         * @param appName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder appName(com.aliyun.ros.cdk.core.IResolvable appName) {
             this.appName = appName;
             return this;
         }
@@ -259,11 +276,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getCpu}
+         * @param cpu the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
+            this.cpu = cpu;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getMemory}
          * @param memory the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder memory(java.lang.Number memory) {
+            this.memory = memory;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getMemory}
+         * @param memory the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder memory(com.aliyun.ros.cdk.core.IResolvable memory) {
             this.memory = memory;
             return this;
         }
@@ -279,11 +316,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getNamespaceId}
+         * @param namespaceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder namespaceId(com.aliyun.ros.cdk.core.IResolvable namespaceId) {
+            this.namespaceId = namespaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getPackageType}
          * @param packageType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder packageType(java.lang.String packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getPackageType}
+         * @param packageType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder packageType(com.aliyun.ros.cdk.core.IResolvable packageType) {
             this.packageType = packageType;
             return this;
         }
@@ -299,11 +356,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getReplicas}
+         * @param replicas the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder replicas(com.aliyun.ros.cdk.core.IResolvable replicas) {
+            this.replicas = replicas;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getAppDescription}
          * @param appDescription the value to be set.
          * @return {@code this}
          */
         public Builder appDescription(java.lang.String appDescription) {
+            this.appDescription = appDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getAppDescription}
+         * @param appDescription the value to be set.
+         * @return {@code this}
+         */
+        public Builder appDescription(com.aliyun.ros.cdk.core.IResolvable appDescription) {
             this.appDescription = appDescription;
             return this;
         }
@@ -319,6 +396,16 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getCommand}
+         * @param command the value to be set.
+         * @return {@code this}
+         */
+        public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {
+            this.command = command;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getCommandArgs}
          * @param commandArgs the value to be set.
          * @return {@code this}
@@ -329,11 +416,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getCommandArgs}
+         * @param commandArgs the value to be set.
+         * @return {@code this}
+         */
+        public Builder commandArgs(com.aliyun.ros.cdk.core.IResolvable commandArgs) {
+            this.commandArgs = commandArgs;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getCustomHostAlias}
          * @param customHostAlias the value to be set.
          * @return {@code this}
          */
         public Builder customHostAlias(java.lang.String customHostAlias) {
+            this.customHostAlias = customHostAlias;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getCustomHostAlias}
+         * @param customHostAlias the value to be set.
+         * @return {@code this}
+         */
+        public Builder customHostAlias(com.aliyun.ros.cdk.core.IResolvable customHostAlias) {
             this.customHostAlias = customHostAlias;
             return this;
         }
@@ -369,11 +476,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getEdasContainerVersion}
+         * @param edasContainerVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder edasContainerVersion(com.aliyun.ros.cdk.core.IResolvable edasContainerVersion) {
+            this.edasContainerVersion = edasContainerVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getEnvs}
          * @param envs the value to be set.
          * @return {@code this}
          */
         public Builder envs(java.lang.String envs) {
+            this.envs = envs;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getEnvs}
+         * @param envs the value to be set.
+         * @return {@code this}
+         */
+        public Builder envs(com.aliyun.ros.cdk.core.IResolvable envs) {
             this.envs = envs;
             return this;
         }
@@ -389,11 +516,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getImageUrl}
+         * @param imageUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder imageUrl(com.aliyun.ros.cdk.core.IResolvable imageUrl) {
+            this.imageUrl = imageUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getJarStartArgs}
          * @param jarStartArgs the value to be set.
          * @return {@code this}
          */
         public Builder jarStartArgs(java.lang.String jarStartArgs) {
+            this.jarStartArgs = jarStartArgs;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getJarStartArgs}
+         * @param jarStartArgs the value to be set.
+         * @return {@code this}
+         */
+        public Builder jarStartArgs(com.aliyun.ros.cdk.core.IResolvable jarStartArgs) {
             this.jarStartArgs = jarStartArgs;
             return this;
         }
@@ -409,11 +556,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getJarStartOptions}
+         * @param jarStartOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder jarStartOptions(com.aliyun.ros.cdk.core.IResolvable jarStartOptions) {
+            this.jarStartOptions = jarStartOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getJdk}
          * @param jdk the value to be set.
          * @return {@code this}
          */
         public Builder jdk(java.lang.String jdk) {
+            this.jdk = jdk;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getJdk}
+         * @param jdk the value to be set.
+         * @return {@code this}
+         */
+        public Builder jdk(com.aliyun.ros.cdk.core.IResolvable jdk) {
             this.jdk = jdk;
             return this;
         }
@@ -429,11 +596,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getLiveness}
+         * @param liveness the value to be set.
+         * @return {@code this}
+         */
+        public Builder liveness(com.aliyun.ros.cdk.core.IResolvable liveness) {
+            this.liveness = liveness;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getMountDesc}
          * @param mountDesc the value to be set.
          * @return {@code this}
          */
         public Builder mountDesc(java.lang.String mountDesc) {
+            this.mountDesc = mountDesc;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getMountDesc}
+         * @param mountDesc the value to be set.
+         * @return {@code this}
+         */
+        public Builder mountDesc(com.aliyun.ros.cdk.core.IResolvable mountDesc) {
             this.mountDesc = mountDesc;
             return this;
         }
@@ -449,11 +636,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getMountHost}
+         * @param mountHost the value to be set.
+         * @return {@code this}
+         */
+        public Builder mountHost(com.aliyun.ros.cdk.core.IResolvable mountHost) {
+            this.mountHost = mountHost;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getNasId}
          * @param nasId the value to be set.
          * @return {@code this}
          */
         public Builder nasId(java.lang.String nasId) {
+            this.nasId = nasId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getNasId}
+         * @param nasId the value to be set.
+         * @return {@code this}
+         */
+        public Builder nasId(com.aliyun.ros.cdk.core.IResolvable nasId) {
             this.nasId = nasId;
             return this;
         }
@@ -469,11 +676,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getPackageUrl}
+         * @param packageUrl the value to be set.
+         * @return {@code this}
+         */
+        public Builder packageUrl(com.aliyun.ros.cdk.core.IResolvable packageUrl) {
+            this.packageUrl = packageUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getPackageVersion}
          * @param packageVersion the value to be set.
          * @return {@code this}
          */
         public Builder packageVersion(java.lang.String packageVersion) {
+            this.packageVersion = packageVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getPackageVersion}
+         * @param packageVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder packageVersion(com.aliyun.ros.cdk.core.IResolvable packageVersion) {
             this.packageVersion = packageVersion;
             return this;
         }
@@ -489,11 +716,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getPostStart}
+         * @param postStart the value to be set.
+         * @return {@code this}
+         */
+        public Builder postStart(com.aliyun.ros.cdk.core.IResolvable postStart) {
+            this.postStart = postStart;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getPreStop}
          * @param preStop the value to be set.
          * @return {@code this}
          */
         public Builder preStop(java.lang.String preStop) {
+            this.preStop = preStop;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getPreStop}
+         * @param preStop the value to be set.
+         * @return {@code this}
+         */
+        public Builder preStop(com.aliyun.ros.cdk.core.IResolvable preStop) {
             this.preStop = preStop;
             return this;
         }
@@ -509,11 +756,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getReadiness}
+         * @param readiness the value to be set.
+         * @return {@code this}
+         */
+        public Builder readiness(com.aliyun.ros.cdk.core.IResolvable readiness) {
+            this.readiness = readiness;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getSecurityGroupId}
          * @param securityGroupId the value to be set.
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.securityGroupId = securityGroupId;
             return this;
         }
@@ -529,11 +796,42 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getSlsConfigs}
+         * @param slsConfigs the value to be set.
+         * @return {@code this}
+         */
+        public Builder slsConfigs(com.aliyun.ros.cdk.core.IResolvable slsConfigs) {
+            this.slsConfigs = slsConfigs;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getTimezone}
          * @param timezone the value to be set.
          * @return {@code this}
          */
         public Builder timezone(java.lang.String timezone) {
+            this.timezone = timezone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getTimezone}
+         * @param timezone the value to be set.
+         * @return {@code this}
+         */
+        public Builder timezone(com.aliyun.ros.cdk.core.IResolvable timezone) {
             this.timezone = timezone;
             return this;
         }
@@ -549,11 +847,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -569,11 +887,31 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosApplicationProps#getWarStartOptions}
+         * @param warStartOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder warStartOptions(com.aliyun.ros.cdk.core.IResolvable warStartOptions) {
+            this.warStartOptions = warStartOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosApplicationProps#getWebContainer}
          * @param webContainer the value to be set.
          * @return {@code this}
          */
         public Builder webContainer(java.lang.String webContainer) {
+            this.webContainer = webContainer;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationProps#getWebContainer}
+         * @param webContainer the value to be set.
+         * @return {@code this}
+         */
+        public Builder webContainer(com.aliyun.ros.cdk.core.IResolvable webContainer) {
             this.webContainer = webContainer;
             return this;
         }
@@ -585,7 +923,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         @Override
         public RosApplicationProps build() {
-            return new Jsii$Proxy(appName, cpu, memory, namespaceId, packageType, replicas, appDescription, command, commandArgs, customHostAlias, deploy, edasContainerVersion, envs, imageUrl, jarStartArgs, jarStartOptions, jdk, liveness, mountDesc, mountHost, nasId, packageUrl, packageVersion, postStart, preStop, readiness, securityGroupId, slsConfigs, timezone, vpcId, vSwitchId, warStartOptions, webContainer);
+            return new Jsii$Proxy(appName, cpu, memory, namespaceId, packageType, replicas, appDescription, command, commandArgs, customHostAlias, deploy, edasContainerVersion, envs, imageUrl, jarStartArgs, jarStartOptions, jdk, liveness, mountDesc, mountHost, nasId, packageUrl, packageVersion, postStart, preStop, readiness, securityGroupId, slsConfigs, tags, timezone, vpcId, vSwitchId, warStartOptions, webContainer);
         }
     }
 
@@ -594,39 +932,40 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosApplicationProps {
-        private final java.lang.String appName;
-        private final java.lang.Number cpu;
-        private final java.lang.Number memory;
-        private final java.lang.String namespaceId;
-        private final java.lang.String packageType;
-        private final java.lang.Number replicas;
-        private final java.lang.String appDescription;
-        private final java.lang.String command;
-        private final java.lang.String commandArgs;
-        private final java.lang.String customHostAlias;
+        private final java.lang.Object appName;
+        private final java.lang.Object cpu;
+        private final java.lang.Object memory;
+        private final java.lang.Object namespaceId;
+        private final java.lang.Object packageType;
+        private final java.lang.Object replicas;
+        private final java.lang.Object appDescription;
+        private final java.lang.Object command;
+        private final java.lang.Object commandArgs;
+        private final java.lang.Object customHostAlias;
         private final java.lang.Object deploy;
-        private final java.lang.String edasContainerVersion;
-        private final java.lang.String envs;
-        private final java.lang.String imageUrl;
-        private final java.lang.String jarStartArgs;
-        private final java.lang.String jarStartOptions;
-        private final java.lang.String jdk;
-        private final java.lang.String liveness;
-        private final java.lang.String mountDesc;
-        private final java.lang.String mountHost;
-        private final java.lang.String nasId;
-        private final java.lang.String packageUrl;
-        private final java.lang.String packageVersion;
-        private final java.lang.String postStart;
-        private final java.lang.String preStop;
-        private final java.lang.String readiness;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String slsConfigs;
-        private final java.lang.String timezone;
-        private final java.lang.String vpcId;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String warStartOptions;
-        private final java.lang.String webContainer;
+        private final java.lang.Object edasContainerVersion;
+        private final java.lang.Object envs;
+        private final java.lang.Object imageUrl;
+        private final java.lang.Object jarStartArgs;
+        private final java.lang.Object jarStartOptions;
+        private final java.lang.Object jdk;
+        private final java.lang.Object liveness;
+        private final java.lang.Object mountDesc;
+        private final java.lang.Object mountHost;
+        private final java.lang.Object nasId;
+        private final java.lang.Object packageUrl;
+        private final java.lang.Object packageVersion;
+        private final java.lang.Object postStart;
+        private final java.lang.Object preStop;
+        private final java.lang.Object readiness;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object slsConfigs;
+        private final java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags;
+        private final java.lang.Object timezone;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object warStartOptions;
+        private final java.lang.Object webContainer;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -634,45 +973,47 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.replicas = software.amazon.jsii.Kernel.get(this, "replicas", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.appDescription = software.amazon.jsii.Kernel.get(this, "appDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.commandArgs = software.amazon.jsii.Kernel.get(this, "commandArgs", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.customHostAlias = software.amazon.jsii.Kernel.get(this, "customHostAlias", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.appName = software.amazon.jsii.Kernel.get(this, "appName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.memory = software.amazon.jsii.Kernel.get(this, "memory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.namespaceId = software.amazon.jsii.Kernel.get(this, "namespaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.replicas = software.amazon.jsii.Kernel.get(this, "replicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.appDescription = software.amazon.jsii.Kernel.get(this, "appDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.command = software.amazon.jsii.Kernel.get(this, "command", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.commandArgs = software.amazon.jsii.Kernel.get(this, "commandArgs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customHostAlias = software.amazon.jsii.Kernel.get(this, "customHostAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deploy = software.amazon.jsii.Kernel.get(this, "deploy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.edasContainerVersion = software.amazon.jsii.Kernel.get(this, "edasContainerVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.jarStartArgs = software.amazon.jsii.Kernel.get(this, "jarStartArgs", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.jarStartOptions = software.amazon.jsii.Kernel.get(this, "jarStartOptions", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.jdk = software.amazon.jsii.Kernel.get(this, "jdk", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.liveness = software.amazon.jsii.Kernel.get(this, "liveness", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.mountDesc = software.amazon.jsii.Kernel.get(this, "mountDesc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.mountHost = software.amazon.jsii.Kernel.get(this, "mountHost", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.nasId = software.amazon.jsii.Kernel.get(this, "nasId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageUrl = software.amazon.jsii.Kernel.get(this, "packageUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageVersion = software.amazon.jsii.Kernel.get(this, "packageVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.postStart = software.amazon.jsii.Kernel.get(this, "postStart", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.preStop = software.amazon.jsii.Kernel.get(this, "preStop", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.readiness = software.amazon.jsii.Kernel.get(this, "readiness", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slsConfigs = software.amazon.jsii.Kernel.get(this, "slsConfigs", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timezone = software.amazon.jsii.Kernel.get(this, "timezone", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.warStartOptions = software.amazon.jsii.Kernel.get(this, "warStartOptions", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.webContainer = software.amazon.jsii.Kernel.get(this, "webContainer", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.edasContainerVersion = software.amazon.jsii.Kernel.get(this, "edasContainerVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.envs = software.amazon.jsii.Kernel.get(this, "envs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.imageUrl = software.amazon.jsii.Kernel.get(this, "imageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.jarStartArgs = software.amazon.jsii.Kernel.get(this, "jarStartArgs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.jarStartOptions = software.amazon.jsii.Kernel.get(this, "jarStartOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.jdk = software.amazon.jsii.Kernel.get(this, "jdk", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.liveness = software.amazon.jsii.Kernel.get(this, "liveness", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mountDesc = software.amazon.jsii.Kernel.get(this, "mountDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.mountHost = software.amazon.jsii.Kernel.get(this, "mountHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nasId = software.amazon.jsii.Kernel.get(this, "nasId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageUrl = software.amazon.jsii.Kernel.get(this, "packageUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageVersion = software.amazon.jsii.Kernel.get(this, "packageVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.postStart = software.amazon.jsii.Kernel.get(this, "postStart", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.preStop = software.amazon.jsii.Kernel.get(this, "preStop", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.readiness = software.amazon.jsii.Kernel.get(this, "readiness", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slsConfigs = software.amazon.jsii.Kernel.get(this, "slsConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.sae.RosApplication.TagsProperty.class)));
+            this.timezone = software.amazon.jsii.Kernel.get(this, "timezone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.warStartOptions = software.amazon.jsii.Kernel.get(this, "warStartOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.webContainer = software.amazon.jsii.Kernel.get(this, "webContainer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String appName, final java.lang.Number cpu, final java.lang.Number memory, final java.lang.String namespaceId, final java.lang.String packageType, final java.lang.Number replicas, final java.lang.String appDescription, final java.lang.String command, final java.lang.String commandArgs, final java.lang.String customHostAlias, final java.lang.Object deploy, final java.lang.String edasContainerVersion, final java.lang.String envs, final java.lang.String imageUrl, final java.lang.String jarStartArgs, final java.lang.String jarStartOptions, final java.lang.String jdk, final java.lang.String liveness, final java.lang.String mountDesc, final java.lang.String mountHost, final java.lang.String nasId, final java.lang.String packageUrl, final java.lang.String packageVersion, final java.lang.String postStart, final java.lang.String preStop, final java.lang.String readiness, final java.lang.String securityGroupId, final java.lang.String slsConfigs, final java.lang.String timezone, final java.lang.String vpcId, final java.lang.String vSwitchId, final java.lang.String warStartOptions, final java.lang.String webContainer) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object appName, final java.lang.Object cpu, final java.lang.Object memory, final java.lang.Object namespaceId, final java.lang.Object packageType, final java.lang.Object replicas, final java.lang.Object appDescription, final java.lang.Object command, final java.lang.Object commandArgs, final java.lang.Object customHostAlias, final java.lang.Object deploy, final java.lang.Object edasContainerVersion, final java.lang.Object envs, final java.lang.Object imageUrl, final java.lang.Object jarStartArgs, final java.lang.Object jarStartOptions, final java.lang.Object jdk, final java.lang.Object liveness, final java.lang.Object mountDesc, final java.lang.Object mountHost, final java.lang.Object nasId, final java.lang.Object packageUrl, final java.lang.Object packageVersion, final java.lang.Object postStart, final java.lang.Object preStop, final java.lang.Object readiness, final java.lang.Object securityGroupId, final java.lang.Object slsConfigs, final java.util.List<? extends com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> tags, final java.lang.Object timezone, final java.lang.Object vpcId, final java.lang.Object vSwitchId, final java.lang.Object warStartOptions, final java.lang.Object webContainer) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.appName = java.util.Objects.requireNonNull(appName, "appName is required");
             this.cpu = java.util.Objects.requireNonNull(cpu, "cpu is required");
@@ -702,6 +1043,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             this.readiness = readiness;
             this.securityGroupId = securityGroupId;
             this.slsConfigs = slsConfigs;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty>)tags;
             this.timezone = timezone;
             this.vpcId = vpcId;
             this.vSwitchId = vSwitchId;
@@ -710,52 +1052,52 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getAppName() {
+        public final java.lang.Object getAppName() {
             return this.appName;
         }
 
         @Override
-        public final java.lang.Number getCpu() {
+        public final java.lang.Object getCpu() {
             return this.cpu;
         }
 
         @Override
-        public final java.lang.Number getMemory() {
+        public final java.lang.Object getMemory() {
             return this.memory;
         }
 
         @Override
-        public final java.lang.String getNamespaceId() {
+        public final java.lang.Object getNamespaceId() {
             return this.namespaceId;
         }
 
         @Override
-        public final java.lang.String getPackageType() {
+        public final java.lang.Object getPackageType() {
             return this.packageType;
         }
 
         @Override
-        public final java.lang.Number getReplicas() {
+        public final java.lang.Object getReplicas() {
             return this.replicas;
         }
 
         @Override
-        public final java.lang.String getAppDescription() {
+        public final java.lang.Object getAppDescription() {
             return this.appDescription;
         }
 
         @Override
-        public final java.lang.String getCommand() {
+        public final java.lang.Object getCommand() {
             return this.command;
         }
 
         @Override
-        public final java.lang.String getCommandArgs() {
+        public final java.lang.Object getCommandArgs() {
             return this.commandArgs;
         }
 
         @Override
-        public final java.lang.String getCustomHostAlias() {
+        public final java.lang.Object getCustomHostAlias() {
             return this.customHostAlias;
         }
 
@@ -765,112 +1107,117 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getEdasContainerVersion() {
+        public final java.lang.Object getEdasContainerVersion() {
             return this.edasContainerVersion;
         }
 
         @Override
-        public final java.lang.String getEnvs() {
+        public final java.lang.Object getEnvs() {
             return this.envs;
         }
 
         @Override
-        public final java.lang.String getImageUrl() {
+        public final java.lang.Object getImageUrl() {
             return this.imageUrl;
         }
 
         @Override
-        public final java.lang.String getJarStartArgs() {
+        public final java.lang.Object getJarStartArgs() {
             return this.jarStartArgs;
         }
 
         @Override
-        public final java.lang.String getJarStartOptions() {
+        public final java.lang.Object getJarStartOptions() {
             return this.jarStartOptions;
         }
 
         @Override
-        public final java.lang.String getJdk() {
+        public final java.lang.Object getJdk() {
             return this.jdk;
         }
 
         @Override
-        public final java.lang.String getLiveness() {
+        public final java.lang.Object getLiveness() {
             return this.liveness;
         }
 
         @Override
-        public final java.lang.String getMountDesc() {
+        public final java.lang.Object getMountDesc() {
             return this.mountDesc;
         }
 
         @Override
-        public final java.lang.String getMountHost() {
+        public final java.lang.Object getMountHost() {
             return this.mountHost;
         }
 
         @Override
-        public final java.lang.String getNasId() {
+        public final java.lang.Object getNasId() {
             return this.nasId;
         }
 
         @Override
-        public final java.lang.String getPackageUrl() {
+        public final java.lang.Object getPackageUrl() {
             return this.packageUrl;
         }
 
         @Override
-        public final java.lang.String getPackageVersion() {
+        public final java.lang.Object getPackageVersion() {
             return this.packageVersion;
         }
 
         @Override
-        public final java.lang.String getPostStart() {
+        public final java.lang.Object getPostStart() {
             return this.postStart;
         }
 
         @Override
-        public final java.lang.String getPreStop() {
+        public final java.lang.Object getPreStop() {
             return this.preStop;
         }
 
         @Override
-        public final java.lang.String getReadiness() {
+        public final java.lang.Object getReadiness() {
             return this.readiness;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSlsConfigs() {
+        public final java.lang.Object getSlsConfigs() {
             return this.slsConfigs;
         }
 
         @Override
-        public final java.lang.String getTimezone() {
+        public final java.util.List<com.aliyun.ros.cdk.sae.RosApplication.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
+        public final java.lang.Object getTimezone() {
             return this.timezone;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getWarStartOptions() {
+        public final java.lang.Object getWarStartOptions() {
             return this.warStartOptions;
         }
 
         @Override
-        public final java.lang.String getWebContainer() {
+        public final java.lang.Object getWebContainer() {
             return this.webContainer;
         }
 
@@ -952,6 +1299,9 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.getSlsConfigs() != null) {
                 data.set("slsConfigs", om.valueToTree(this.getSlsConfigs()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
             if (this.getTimezone() != null) {
                 data.set("timezone", om.valueToTree(this.getTimezone()));
             }
@@ -1013,6 +1363,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             if (this.readiness != null ? !this.readiness.equals(that.readiness) : that.readiness != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.slsConfigs != null ? !this.slsConfigs.equals(that.slsConfigs) : that.slsConfigs != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.timezone != null ? !this.timezone.equals(that.timezone) : that.timezone != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -1050,6 +1401,7 @@ public interface RosApplicationProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.readiness != null ? this.readiness.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.slsConfigs != null ? this.slsConfigs.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.timezone != null ? this.timezone.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

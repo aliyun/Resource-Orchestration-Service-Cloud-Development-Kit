@@ -50,7 +50,7 @@ export class NestedStack extends Stack {
     this.resource = new RosStack(parentScope, `${id}`, stackProps);
     this._contextualStackName = this.contextualAttribute(
       RosPseudo.stackName,
-      Fn.select(1, Fn.split("/", this.resource.ref))
+      Token.asString(Fn.select(1, Fn.split("/", this.resource.ref))),
     );
     this._contextualStackId = this.contextualAttribute(
       RosPseudo.stackId,

@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         }
 
         /// <summary>Attribute ImageCacheId: The ID of the image cache.</summary>
-        [JsiiProperty(name: "attrImageCacheId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrImageCacheId
+        [JsiiProperty(name: "attrImageCacheId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrImageCacheId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

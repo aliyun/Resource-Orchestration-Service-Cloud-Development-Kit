@@ -33,108 +33,108 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         }
 
         /// <summary>Attribute ClusterType: Cluster type.</summary>
-        [JsiiProperty(name: "attrClusterType", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterType
+        [JsiiProperty(name: "attrClusterType", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterType
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Cname: CNAME assigned by WAF instance.</summary>
-        [JsiiProperty(name: "attrCname", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCname
+        [JsiiProperty(name: "attrCname", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCname
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DomainName: Domain name.</summary>
-        [JsiiProperty(name: "attrDomainName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainName
+        [JsiiProperty(name: "attrDomainName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Http2Port: Http2 port configuration.</summary>
-        [JsiiProperty(name: "attrHttp2Port", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttp2Port
+        [JsiiProperty(name: "attrHttp2Port", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttp2Port
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpPort: Http port configuration.</summary>
-        [JsiiProperty(name: "attrHttpPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpPort
+        [JsiiProperty(name: "attrHttpPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpsPort: Https port configuration.</summary>
-        [JsiiProperty(name: "attrHttpsPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpsPort
+        [JsiiProperty(name: "attrHttpsPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpsPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpsRedirect: Https forced redirect configuration.</summary>
-        [JsiiProperty(name: "attrHttpsRedirect", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpsRedirect
+        [JsiiProperty(name: "attrHttpsRedirect", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpsRedirect
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HttpToUserIp: Http back to source.</summary>
-        [JsiiProperty(name: "attrHttpToUserIp", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHttpToUserIp
+        [JsiiProperty(name: "attrHttpToUserIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHttpToUserIp
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InstanceId: Instance id.</summary>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute IsAccessProduct: Is there a seven-layer agency before WAF.</summary>
-        [JsiiProperty(name: "attrIsAccessProduct", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIsAccessProduct
+        [JsiiProperty(name: "attrIsAccessProduct", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIsAccessProduct
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LoadBalancing: Load balancing configuration.</summary>
-        [JsiiProperty(name: "attrLoadBalancing", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLoadBalancing
+        [JsiiProperty(name: "attrLoadBalancing", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLoadBalancing
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LogHeaders: Domain traffic tagging.</summary>
-        [JsiiProperty(name: "attrLogHeaders", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLogHeaders
+        [JsiiProperty(name: "attrLogHeaders", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogHeaders
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ResourceGroupId: Resource group Id.</summary>
-        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrResourceGroupId
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrResourceGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SourceIps: Back to source IP configuration.</summary>
-        [JsiiProperty(name: "attrSourceIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSourceIps
+        [JsiiProperty(name: "attrSourceIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSourceIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Version: Optimistic lock version.</summary>
-        [JsiiProperty(name: "attrVersion", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVersion
+        [JsiiProperty(name: "attrVersion", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVersion
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

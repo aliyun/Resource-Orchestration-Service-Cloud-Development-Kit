@@ -11,27 +11,27 @@ export interface DeploymentProps {
     /**
      * Property apiId: The id of the API.
      */
-    readonly apiId: string;
+    readonly apiId: string | ros.IResolvable;
 
     /**
      * Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property stageName: Bind traffic in this stage.
      */
-    readonly stageName: string;
+    readonly stageName: string | ros.IResolvable;
 
     /**
      * Property description: Description of the deployment, less than 180 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property historyVersion: The history version.
      */
-    readonly historyVersion?: string;
+    readonly historyVersion?: string | ros.IResolvable;
 }
 
 /**

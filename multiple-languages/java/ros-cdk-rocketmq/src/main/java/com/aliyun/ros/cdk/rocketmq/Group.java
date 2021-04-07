@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq;
 /**
  * A ROS resource type:  `ALIYUN::ROCKETMQ::Group`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.335Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.998Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROCKETMQ::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rocketmq.GroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROCKETMQ::Group`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Group(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rocketmq.GroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,24 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute GroupId: Group ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute GroupType: Group Type.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrGroupType() {
-        return software.amazon.jsii.Kernel.get(this, "attrGroupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrGroupType() {
+        return software.amazon.jsii.Kernel.get(this, "attrGroupType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InstanceId: Instance ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +75,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.rocketmq.Group> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +84,8 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,37 +104,103 @@ public class Group extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupId: The group ID of the consumption cluster.
+         * <p>
+         * When creating a group ID, pay attention to the following aspects:
+         * A group ID starts with"GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+         * A group ID ranges from 7 to 64 bytes.
+         * Once a group ID is created, it cannot be edited anymore.
+         * <p>
          * @return {@code this}
-         * @param groupId This parameter is required.
+         * @param groupId Property groupId: The group ID of the consumption cluster. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
+        /**
+         * Property groupId: The group ID of the consumption cluster.
+         * <p>
+         * When creating a group ID, pay attention to the following aspects:
+         * A group ID starts with"GID_" or "GID-", and contains letters, numbers, hyphens (-), and underscores (_).
+         * A group ID ranges from 7 to 64 bytes.
+         * Once a group ID is created, it cannot be edited anymore.
+         * <p>
+         * @return {@code this}
+         * @param groupId Property groupId: The group ID of the consumption cluster. This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
 
         /**
+         * Property instanceId: The ID of the instance.
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: The ID of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property groupType: Group ID specify the creation of applicable agreements.
+         * <p>
+         * Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
+         * tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
+         * http: represents the Group ID was created only for the HTTP protocol messaging.
+         * <p>
          * @return {@code this}
-         * @param groupType This parameter is required.
+         * @param groupType Property groupType: Group ID specify the creation of applicable agreements. This parameter is required.
          */
         public Builder groupType(final java.lang.String groupType) {
             this.props.groupType(groupType);
             return this;
         }
+        /**
+         * Property groupType: Group ID specify the creation of applicable agreements.
+         * <p>
+         * Group ID TCP protocol and the HTTP protocol can not be shared, the need to create separately. Value as follows:
+         * tcp: Default, indicates Group ID is created only for the TCP protocol messaging.
+         * http: represents the Group ID was created only for the HTTP protocol messaging.
+         * <p>
+         * @return {@code this}
+         * @param groupType Property groupType: Group ID specify the creation of applicable agreements. This parameter is required.
+         */
+        public Builder groupType(final com.aliyun.ros.cdk.core.IResolvable groupType) {
+            this.props.groupType(groupType);
+            return this;
+        }
 
         /**
+         * Property remark: The remarks on the request.
+         * <p>
          * @return {@code this}
-         * @param remark This parameter is required.
+         * @param remark Property remark: The remarks on the request. This parameter is required.
          */
         public Builder remark(final java.lang.String remark) {
+            this.props.remark(remark);
+            return this;
+        }
+        /**
+         * Property remark: The remarks on the request.
+         * <p>
+         * @return {@code this}
+         * @param remark Property remark: The remarks on the request. This parameter is required.
+         */
+        public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
             this.props.remark(remark);
             return this;
         }

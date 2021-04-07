@@ -10,11 +10,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     {
         /// <remarks>
         /// <strong></strong>: " instead of empty
-        /// 
+        ///
         /// <strong>Property</strong>: rr: Host record, if you want to resolve
         /// </remarks>
-        [JsiiProperty(name: "rr", typeJson: "{\"primitive\":\"string\"}")]
-        string Rr
+        [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Rr
         {
             get;
         }
@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: status: Allowed values: [ENABLE, DISABLE]
         /// </remarks>
-        [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}")]
-        string Status
+        [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Status
         {
             get;
         }
@@ -31,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-        string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Type
         {
             get;
         }
@@ -40,8 +40,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: value: Record value
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
-        string Value
+        [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Value
         {
             get;
         }
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: zoneId: Zone Id
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}")]
-        string ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ZoneId
         {
             get;
         }
@@ -58,9 +58,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: priority: MX record priority, value range [1,99]. Default to 10.
         /// </remarks>
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Priority
+        object? Priority
         {
             get
             {
@@ -71,9 +71,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: ttl: Survival time, default is 60
         /// </remarks>
-        [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Ttl
+        object? Ttl
         {
             get
             {
@@ -91,69 +91,69 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 
             /// <remarks>
             /// <strong></strong>: " instead of empty
-            /// 
+            ///
             /// <strong>Property</strong>: rr: Host record, if you want to resolve
             /// </remarks>
-            [JsiiProperty(name: "rr", typeJson: "{\"primitive\":\"string\"}")]
-            public string Rr
+            [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Rr
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: status: Allowed values: [ENABLE, DISABLE]
             /// </remarks>
-            [JsiiProperty(name: "status", typeJson: "{\"primitive\":\"string\"}")]
-            public string Status
+            [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Status
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: value: Record value
             /// </remarks>
-            [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
-            public string Value
+            [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Value
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: zoneId: Zone Id
             /// </remarks>
-            [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ZoneId
+            [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ZoneId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: priority: MX record priority, value range [1,99]. Default to 10.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Priority
+            [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Priority
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: ttl: Survival time, default is 60
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Ttl
+            [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ttl
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

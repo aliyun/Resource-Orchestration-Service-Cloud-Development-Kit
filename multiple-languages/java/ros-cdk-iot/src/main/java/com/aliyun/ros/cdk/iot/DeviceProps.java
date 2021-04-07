@@ -3,42 +3,64 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Device`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.632Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceProps.Jsii$Proxy.class)
 public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property productKey: The identifier of the product to which the device to be registered belongs.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductKey();
 
     /**
+     * Property devEui: DevEUI LoRaWAN equipment.
+     * <p>
+     * When you create a LoRaWAN devices, this will pass.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDevEui() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDevEui() {
         return null;
     }
 
     /**
+     * Property deviceName: The name of the device that you want to register.
+     * <p>
+     * The device name must consist of
+     * 4 to 32 characters, including English letters, digits, and special characters, for
+     * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
+     * DeviceName is used with ProductKey to identify a specified device.
+     * Note If you do not specify this parameter, the system will generate a name for the device.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeviceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeviceName() {
         return null;
     }
 
     /**
+     * Property iotInstanceId: Public instance does not pass this parameter;
+     * <p>
+     * instance that you need to buy the incoming instance ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
+     * Property nickname: Add a nickname for the device.
+     * <p>
+     * A nickname can be 4-64 characters in length, and can
+     * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
+     * character counts as two characters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNickname() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNickname() {
         return null;
     }
 
     /**
+     * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+     * <p>
+     * When you create a LoRaWAN devices, this will pass.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPinCode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPinCode() {
         return null;
     }
 
@@ -52,16 +74,16 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link DeviceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DeviceProps> {
-        private java.lang.String productKey;
-        private java.lang.String devEui;
-        private java.lang.String deviceName;
-        private java.lang.String iotInstanceId;
-        private java.lang.String nickname;
-        private java.lang.String pinCode;
+        private java.lang.Object productKey;
+        private java.lang.Object devEui;
+        private java.lang.Object deviceName;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object nickname;
+        private java.lang.Object pinCode;
 
         /**
          * Sets the value of {@link DeviceProps#getProductKey}
-         * @param productKey the value to be set. This parameter is required.
+         * @param productKey Property productKey: The identifier of the product to which the device to be registered belongs. This parameter is required.
          * @return {@code this}
          */
         public Builder productKey(java.lang.String productKey) {
@@ -70,8 +92,19 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DeviceProps#getProductKey}
+         * @param productKey Property productKey: The identifier of the product to which the device to be registered belongs. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder productKey(com.aliyun.ros.cdk.core.IResolvable productKey) {
+            this.productKey = productKey;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeviceProps#getDevEui}
-         * @param devEui the value to be set.
+         * @param devEui Property devEui: DevEUI LoRaWAN equipment.
+         *               When you create a LoRaWAN devices, this will pass.
          * @return {@code this}
          */
         public Builder devEui(java.lang.String devEui) {
@@ -80,8 +113,24 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DeviceProps#getDevEui}
+         * @param devEui Property devEui: DevEUI LoRaWAN equipment.
+         *               When you create a LoRaWAN devices, this will pass.
+         * @return {@code this}
+         */
+        public Builder devEui(com.aliyun.ros.cdk.core.IResolvable devEui) {
+            this.devEui = devEui;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeviceProps#getDeviceName}
-         * @param deviceName the value to be set.
+         * @param deviceName Property deviceName: The name of the device that you want to register.
+         *                   The device name must consist of
+         *                   4 to 32 characters, including English letters, digits, and special characters, for
+         *                   example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
+         *                   DeviceName is used with ProductKey to identify a specified device.
+         *                   Note If you do not specify this parameter, the system will generate a name for the device.
          * @return {@code this}
          */
         public Builder deviceName(java.lang.String deviceName) {
@@ -90,8 +139,24 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DeviceProps#getDeviceName}
+         * @param deviceName Property deviceName: The name of the device that you want to register.
+         *                   The device name must consist of
+         *                   4 to 32 characters, including English letters, digits, and special characters, for
+         *                   example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
+         *                   DeviceName is used with ProductKey to identify a specified device.
+         *                   Note If you do not specify this parameter, the system will generate a name for the device.
+         * @return {@code this}
+         */
+        public Builder deviceName(com.aliyun.ros.cdk.core.IResolvable deviceName) {
+            this.deviceName = deviceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeviceProps#getIotInstanceId}
-         * @param iotInstanceId the value to be set.
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
+         *                      instance that you need to buy the incoming instance ID.
          * @return {@code this}
          */
         public Builder iotInstanceId(java.lang.String iotInstanceId) {
@@ -100,8 +165,22 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DeviceProps#getIotInstanceId}
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
+         *                      instance that you need to buy the incoming instance ID.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeviceProps#getNickname}
-         * @param nickname the value to be set.
+         * @param nickname Property nickname: Add a nickname for the device.
+         *                 A nickname can be 4-64 characters in length, and can
+         *                 contain Chinese characters, English letters, numbers and underscores (_). A Chinese
+         *                 character counts as two characters.
          * @return {@code this}
          */
         public Builder nickname(java.lang.String nickname) {
@@ -110,11 +189,36 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link DeviceProps#getNickname}
+         * @param nickname Property nickname: Add a nickname for the device.
+         *                 A nickname can be 4-64 characters in length, and can
+         *                 contain Chinese characters, English letters, numbers and underscores (_). A Chinese
+         *                 character counts as two characters.
+         * @return {@code this}
+         */
+        public Builder nickname(com.aliyun.ros.cdk.core.IResolvable nickname) {
+            this.nickname = nickname;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DeviceProps#getPinCode}
-         * @param pinCode the value to be set.
+         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         *                When you create a LoRaWAN devices, this will pass.
          * @return {@code this}
          */
         public Builder pinCode(java.lang.String pinCode) {
+            this.pinCode = pinCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DeviceProps#getPinCode}
+         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         *                When you create a LoRaWAN devices, this will pass.
+         * @return {@code this}
+         */
+        public Builder pinCode(com.aliyun.ros.cdk.core.IResolvable pinCode) {
             this.pinCode = pinCode;
             return this;
         }
@@ -135,12 +239,12 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DeviceProps {
-        private final java.lang.String productKey;
-        private final java.lang.String devEui;
-        private final java.lang.String deviceName;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String nickname;
-        private final java.lang.String pinCode;
+        private final java.lang.Object productKey;
+        private final java.lang.Object devEui;
+        private final java.lang.Object deviceName;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object nickname;
+        private final java.lang.Object pinCode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -148,18 +252,18 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.devEui = software.amazon.jsii.Kernel.get(this, "devEui", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.deviceName = software.amazon.jsii.Kernel.get(this, "deviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.nickname = software.amazon.jsii.Kernel.get(this, "nickname", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pinCode = software.amazon.jsii.Kernel.get(this, "pinCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.devEui = software.amazon.jsii.Kernel.get(this, "devEui", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deviceName = software.amazon.jsii.Kernel.get(this, "deviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nickname = software.amazon.jsii.Kernel.get(this, "nickname", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pinCode = software.amazon.jsii.Kernel.get(this, "pinCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String productKey, final java.lang.String devEui, final java.lang.String deviceName, final java.lang.String iotInstanceId, final java.lang.String nickname, final java.lang.String pinCode) {
+        protected Jsii$Proxy(final java.lang.Object productKey, final java.lang.Object devEui, final java.lang.Object deviceName, final java.lang.Object iotInstanceId, final java.lang.Object nickname, final java.lang.Object pinCode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.productKey = java.util.Objects.requireNonNull(productKey, "productKey is required");
             this.devEui = devEui;
@@ -170,32 +274,32 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getProductKey() {
+        public final java.lang.Object getProductKey() {
             return this.productKey;
         }
 
         @Override
-        public final java.lang.String getDevEui() {
+        public final java.lang.Object getDevEui() {
             return this.devEui;
         }
 
         @Override
-        public final java.lang.String getDeviceName() {
+        public final java.lang.Object getDeviceName() {
             return this.deviceName;
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getNickname() {
+        public final java.lang.Object getNickname() {
             return this.nickname;
         }
 
         @Override
-        public final java.lang.String getPinCode() {
+        public final java.lang.Object getPinCode() {
             return this.pinCode;
         }
 

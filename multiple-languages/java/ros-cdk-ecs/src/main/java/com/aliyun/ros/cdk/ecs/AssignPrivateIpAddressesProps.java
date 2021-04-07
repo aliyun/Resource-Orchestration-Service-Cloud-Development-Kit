@@ -3,24 +3,33 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignPrivateIpAddresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignPrivateIpAddressesProps")
 @software.amazon.jsii.Jsii.Proxy(AssignPrivateIpAddressesProps.Jsii$Proxy.class)
 public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property networkInterfaceId: The ID of the ENI.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
+     * Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
+     * <p>
+     * Valid values of number of private ip addresses:
+     * When the ENI is in the Available state: 1 to 10.
+     * When the ENI is in the InUse state: limited by the instance type.
+     * For more information, see Instance type families.
+     * You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddresses() {
         return null;
     }
 
     /**
+     * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getSecondaryPrivateIpAddressCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryPrivateIpAddressCount() {
         return null;
     }
 
@@ -34,13 +43,13 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
      * A builder for {@link AssignPrivateIpAddressesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AssignPrivateIpAddressesProps> {
-        private java.lang.String networkInterfaceId;
+        private java.lang.Object networkInterfaceId;
         private java.lang.Object privateIpAddresses;
-        private java.lang.Number secondaryPrivateIpAddressCount;
+        private java.lang.Object secondaryPrivateIpAddressCount;
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getNetworkInterfaceId}
-         * @param networkInterfaceId the value to be set. This parameter is required.
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the ENI. This parameter is required.
          * @return {@code this}
          */
         public Builder networkInterfaceId(java.lang.String networkInterfaceId) {
@@ -49,8 +58,23 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
         }
 
         /**
+         * Sets the value of {@link AssignPrivateIpAddressesProps#getNetworkInterfaceId}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the ENI. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getPrivateIpAddresses}
-         * @param privateIpAddresses the value to be set.
+         * @param privateIpAddresses Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
+         *                           Valid values of number of private ip addresses:
+         *                           When the ENI is in the Available state: 1 to 10.
+         *                           When the ENI is in the InUse state: limited by the instance type.
+         *                           For more information, see Instance type families.
+         *                           You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
          * @return {@code this}
          */
         public Builder privateIpAddresses(java.util.List<? extends java.lang.Object> privateIpAddresses) {
@@ -60,7 +84,12 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getPrivateIpAddresses}
-         * @param privateIpAddresses the value to be set.
+         * @param privateIpAddresses Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.
+         *                           Valid values of number of private ip addresses:
+         *                           When the ENI is in the Available state: 1 to 10.
+         *                           When the ENI is in the InUse state: limited by the instance type.
+         *                           For more information, see Instance type families.
+         *                           You must specify either the PrivateIpAddresses parameter or the SecondaryPrivateIpAddressCount parameter to assign secondary private IP addresses.
          * @return {@code this}
          */
         public Builder privateIpAddresses(com.aliyun.ros.cdk.core.IResolvable privateIpAddresses) {
@@ -70,10 +99,20 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link AssignPrivateIpAddressesProps#getSecondaryPrivateIpAddressCount}
-         * @param secondaryPrivateIpAddressCount the value to be set.
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
          * @return {@code this}
          */
         public Builder secondaryPrivateIpAddressCount(java.lang.Number secondaryPrivateIpAddressCount) {
+            this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AssignPrivateIpAddressesProps#getSecondaryPrivateIpAddressCount}
+         * @param secondaryPrivateIpAddressCount Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+         * @return {@code this}
+         */
+        public Builder secondaryPrivateIpAddressCount(com.aliyun.ros.cdk.core.IResolvable secondaryPrivateIpAddressCount) {
             this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
             return this;
         }
@@ -94,9 +133,9 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AssignPrivateIpAddressesProps {
-        private final java.lang.String networkInterfaceId;
+        private final java.lang.Object networkInterfaceId;
         private final java.lang.Object privateIpAddresses;
-        private final java.lang.Number secondaryPrivateIpAddressCount;
+        private final java.lang.Object secondaryPrivateIpAddressCount;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,15 +143,15 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddresses = software.amazon.jsii.Kernel.get(this, "privateIpAddresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.secondaryPrivateIpAddressCount = software.amazon.jsii.Kernel.get(this, "secondaryPrivateIpAddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String networkInterfaceId, final java.lang.Object privateIpAddresses, final java.lang.Number secondaryPrivateIpAddressCount) {
+        protected Jsii$Proxy(final java.lang.Object networkInterfaceId, final java.lang.Object privateIpAddresses, final java.lang.Object secondaryPrivateIpAddressCount) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
             this.privateIpAddresses = privateIpAddresses;
@@ -120,7 +159,7 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.String getNetworkInterfaceId() {
+        public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
         }
 
@@ -130,7 +169,7 @@ public interface AssignPrivateIpAddressesProps extends software.amazon.jsii.Jsii
         }
 
         @Override
-        public final java.lang.Number getSecondaryPrivateIpAddressCount() {
+        public final java.lang.Object getSecondaryPrivateIpAddressCount() {
             return this.secondaryPrivateIpAddressCount;
         }
 

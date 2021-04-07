@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS template type:  `ALIYUN::POLARDB::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.834Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAccountName() {
-        return software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAccountName() {
+        return software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,8 +61,14 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAccountPassword() {
-        return software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAccountName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountName", java.util.Objects.requireNonNull(value, "accountName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAccountPassword() {
+        return software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +79,14 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAccountPassword(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountPassword", java.util.Objects.requireNonNull(value, "accountPassword is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -84,14 +96,20 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setDbClusterId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbClusterId", java.util.Objects.requireNonNull(value, "dbClusterId is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -99,8 +117,8 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAccountDescription() {
-        return software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccountDescription() {
+        return software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAccountPrivilege() {
-        return software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAccountDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
+        return software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +147,14 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getAccountType() {
-        return software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAccountPrivilege(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountPrivilege", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccountType() {
+        return software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,13 +165,25 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDbName() {
-        return software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setAccountType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
+        return software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "dbName", value);
+    }
+
+    /**
+     */
+    public void setDbName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbName", value);
     }
 
@@ -179,12 +221,28 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
             this.props.accountName(accountName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param accountName This parameter is required.
+         */
+        public Builder accountName(final com.aliyun.ros.cdk.core.IResolvable accountName) {
+            this.props.accountName(accountName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param accountPassword This parameter is required.
          */
         public Builder accountPassword(final java.lang.String accountPassword) {
+            this.props.accountPassword(accountPassword);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accountPassword This parameter is required.
+         */
+        public Builder accountPassword(final com.aliyun.ros.cdk.core.IResolvable accountPassword) {
             this.props.accountPassword(accountPassword);
             return this;
         }
@@ -197,12 +255,28 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbClusterId This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param accountDescription This parameter is required.
          */
         public Builder accountDescription(final java.lang.String accountDescription) {
+            this.props.accountDescription(accountDescription);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accountDescription This parameter is required.
+         */
+        public Builder accountDescription(final com.aliyun.ros.cdk.core.IResolvable accountDescription) {
             this.props.accountDescription(accountDescription);
             return this;
         }
@@ -215,6 +289,14 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
             this.props.accountPrivilege(accountPrivilege);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param accountPrivilege This parameter is required.
+         */
+        public Builder accountPrivilege(final com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
+            this.props.accountPrivilege(accountPrivilege);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -224,12 +306,28 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
             this.props.accountType(accountType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param accountType This parameter is required.
+         */
+        public Builder accountType(final com.aliyun.ros.cdk.core.IResolvable accountType) {
+            this.props.accountType(accountType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param dbName This parameter is required.
          */
         public Builder dbName(final java.lang.String dbName) {
+            this.props.dbName(dbName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbName This parameter is required.
+         */
+        public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.props.dbName(dbName);
             return this;
         }

@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Properties for defining a `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.586Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageAcceleratorAdditionProps")
 @software.amazon.jsii.Jsii.Proxy(BandwidthPackageAcceleratorAdditionProps.Jsii$Proxy.class)
 public interface BandwidthPackageAcceleratorAdditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth plan.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAcceleratorId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAcceleratorId();
 
     /**
+     * Property bandwidthPackageId: The ID of the bandwidth package to associate.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getBandwidthPackageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getBandwidthPackageId();
 
     /**
      * @return a {@link Builder} of {@link BandwidthPackageAcceleratorAdditionProps}
@@ -26,12 +28,12 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
      * A builder for {@link BandwidthPackageAcceleratorAdditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<BandwidthPackageAcceleratorAdditionProps> {
-        private java.lang.String acceleratorId;
-        private java.lang.String bandwidthPackageId;
+        private java.lang.Object acceleratorId;
+        private java.lang.Object bandwidthPackageId;
 
         /**
          * Sets the value of {@link BandwidthPackageAcceleratorAdditionProps#getAcceleratorId}
-         * @param acceleratorId the value to be set. This parameter is required.
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth plan. This parameter is required.
          * @return {@code this}
          */
         public Builder acceleratorId(java.lang.String acceleratorId) {
@@ -40,11 +42,31 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
         }
 
         /**
+         * Sets the value of {@link BandwidthPackageAcceleratorAdditionProps#getAcceleratorId}
+         * @param acceleratorId Property acceleratorId: The ID of the Global Accelerator instance with which you want to associate the bandwidth plan. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder acceleratorId(com.aliyun.ros.cdk.core.IResolvable acceleratorId) {
+            this.acceleratorId = acceleratorId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link BandwidthPackageAcceleratorAdditionProps#getBandwidthPackageId}
-         * @param bandwidthPackageId the value to be set. This parameter is required.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the bandwidth package to associate. This parameter is required.
          * @return {@code this}
          */
         public Builder bandwidthPackageId(java.lang.String bandwidthPackageId) {
+            this.bandwidthPackageId = bandwidthPackageId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BandwidthPackageAcceleratorAdditionProps#getBandwidthPackageId}
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the bandwidth package to associate. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder bandwidthPackageId(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
             this.bandwidthPackageId = bandwidthPackageId;
             return this;
         }
@@ -65,8 +87,8 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BandwidthPackageAcceleratorAdditionProps {
-        private final java.lang.String acceleratorId;
-        private final java.lang.String bandwidthPackageId;
+        private final java.lang.Object acceleratorId;
+        private final java.lang.Object bandwidthPackageId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface BandwidthPackageAcceleratorAdditionProps extends software.amazo
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.acceleratorId = software.amazon.jsii.Kernel.get(this, "acceleratorId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidthPackageId = software.amazon.jsii.Kernel.get(this, "bandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String acceleratorId, final java.lang.String bandwidthPackageId) {
+        protected Jsii$Proxy(final java.lang.Object acceleratorId, final java.lang.Object bandwidthPackageId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.acceleratorId = java.util.Objects.requireNonNull(acceleratorId, "acceleratorId is required");
             this.bandwidthPackageId = java.util.Objects.requireNonNull(bandwidthPackageId, "bandwidthPackageId is required");
         }
 
         @Override
-        public final java.lang.String getAcceleratorId() {
+        public final java.lang.Object getAcceleratorId() {
             return this.acceleratorId;
         }
 
         @Override
-        public final java.lang.String getBandwidthPackageId() {
+        public final java.lang.Object getBandwidthPackageId() {
             return this.bandwidthPackageId;
         }
 

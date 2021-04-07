@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute ContactName: The name of the alarm contact.</summary>
-        [JsiiProperty(name: "attrContactName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContactName
+        [JsiiProperty(name: "attrContactName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContactName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

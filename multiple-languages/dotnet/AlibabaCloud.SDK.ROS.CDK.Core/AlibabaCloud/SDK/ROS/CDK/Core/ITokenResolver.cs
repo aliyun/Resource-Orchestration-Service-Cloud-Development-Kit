@@ -11,7 +11,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// <summary>Resolve a tokenized list.</summary>
         [JsiiMethod(name: "resolveList", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"l\",\"type\":{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         object ResolveList(string[] l, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context);
-        /// <summary>Resolve a string with at least one stringified token in it&#xD; &#xD; (May use concatenation).</summary>
+        /// <summary>Resolve a string with at least one stringified token in it.</summary>
+        /// <remarks>
+        /// (May use concatenation)
+        /// </remarks>
         [JsiiMethod(name: "resolveString", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"s\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TokenizedStringFragments\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
         object ResolveString(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments s, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context);
         /// <summary>Resolve a single token.</summary>
@@ -33,7 +36,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
                 return InvokeInstanceMethod<object>(new System.Type[]{typeof(string[]), typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext)}, new object[]{l, context})!;
             }
 
-            /// <summary>Resolve a string with at least one stringified token in it&#xD; &#xD; (May use concatenation).</summary>
+            /// <summary>Resolve a string with at least one stringified token in it.</summary>
+            /// <remarks>
+            /// (May use concatenation)
+            /// </remarks>
             [JsiiMethod(name: "resolveString", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"s\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.TokenizedStringFragments\"}},{\"name\":\"context\",\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IResolveContext\"}}]")]
             public object ResolveString(AlibabaCloud.SDK.ROS.CDK.Core.TokenizedStringFragments s, AlibabaCloud.SDK.ROS.CDK.Core.IResolveContext context)
             {

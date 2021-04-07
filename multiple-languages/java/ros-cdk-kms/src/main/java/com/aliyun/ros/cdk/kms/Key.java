@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS resource type:  `ALIYUN::KMS::Key`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.047Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.668Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::KMS::Key`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      * @param enableResourcePropertyConstraint
      */
     public Key(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.kms.KeyProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::KMS::Key`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props
      */
     public Key(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.kms.KeyProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -43,8 +51,12 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::KMS::Key`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
      */
     public Key(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -52,9 +64,10 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute KeyId: The globally unique identifier for the CMK.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrKeyId() {
-        return software.amazon.jsii.Kernel.get(this, "attrKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrKeyId() {
+        return software.amazon.jsii.Kernel.get(this, "attrKeyId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -63,8 +76,8 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.kms.Key> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -72,8 +85,8 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -91,25 +104,49 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property description: The description of the CMK.
+         * <p>
+         * Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: The description of the CMK. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
+        /**
+         * Property description: The description of the CMK.
+         * <p>
+         * Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: The description of the CMK. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props().description(description);
+            return this;
+        }
 
         /**
+         * Property enable: Specifies whether the key is enabled.
+         * <p>
+         * Defaults to true.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Specifies whether the key is enabled. This parameter is required.
          */
         public Builder enable(final java.lang.Boolean enable) {
             this.props().enable(enable);
             return this;
         }
         /**
+         * Property enable: Specifies whether the key is enabled.
+         * <p>
+         * Defaults to true.
+         * <p>
          * @return {@code this}
-         * @param enable This parameter is required.
+         * @param enable Property enable: Specifies whether the key is enabled. This parameter is required.
          */
         public Builder enable(final com.aliyun.ros.cdk.core.IResolvable enable) {
             this.props().enable(enable);
@@ -117,16 +154,24 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property enableAutomaticRotation: Whether to enable automatic key rotation.
+         * <p>
+         * Valid value: true/false (default)
+         * <p>
          * @return {@code this}
-         * @param enableAutomaticRotation This parameter is required.
+         * @param enableAutomaticRotation Property enableAutomaticRotation: Whether to enable automatic key rotation. This parameter is required.
          */
         public Builder enableAutomaticRotation(final java.lang.Boolean enableAutomaticRotation) {
             this.props().enableAutomaticRotation(enableAutomaticRotation);
             return this;
         }
         /**
+         * Property enableAutomaticRotation: Whether to enable automatic key rotation.
+         * <p>
+         * Valid value: true/false (default)
+         * <p>
          * @return {@code this}
-         * @param enableAutomaticRotation This parameter is required.
+         * @param enableAutomaticRotation Property enableAutomaticRotation: Whether to enable automatic key rotation. This parameter is required.
          */
         public Builder enableAutomaticRotation(final com.aliyun.ros.cdk.core.IResolvable enableAutomaticRotation) {
             this.props().enableAutomaticRotation(enableAutomaticRotation);
@@ -134,46 +179,130 @@ public class Key extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property keySpec: Key type.
+         * <p>
+         * Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+         * <p>
          * @return {@code this}
-         * @param keySpec This parameter is required.
+         * @param keySpec Property keySpec: Key type. This parameter is required.
          */
         public Builder keySpec(final java.lang.String keySpec) {
             this.props().keySpec(keySpec);
             return this;
         }
+        /**
+         * Property keySpec: Key type.
+         * <p>
+         * Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
+         * <p>
+         * @return {@code this}
+         * @param keySpec Property keySpec: Key type. This parameter is required.
+         */
+        public Builder keySpec(final com.aliyun.ros.cdk.core.IResolvable keySpec) {
+            this.props().keySpec(keySpec);
+            return this;
+        }
 
         /**
+         * Property keyUsage: The intended use of the CMK.
+         * <p>
+         * Default value: ENCRYPT/DECRYPT.
+         * <p>
          * @return {@code this}
-         * @param keyUsage This parameter is required.
+         * @param keyUsage Property keyUsage: The intended use of the CMK. This parameter is required.
          */
         public Builder keyUsage(final java.lang.String keyUsage) {
             this.props().keyUsage(keyUsage);
             return this;
         }
+        /**
+         * Property keyUsage: The intended use of the CMK.
+         * <p>
+         * Default value: ENCRYPT/DECRYPT.
+         * <p>
+         * @return {@code this}
+         * @param keyUsage Property keyUsage: The intended use of the CMK. This parameter is required.
+         */
+        public Builder keyUsage(final com.aliyun.ros.cdk.core.IResolvable keyUsage) {
+            this.props().keyUsage(keyUsage);
+            return this;
+        }
 
         /**
+         * Property pendingWindowInDays: The waiting period, specified in number of days.
+         * <p>
+         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+         * <p>
          * @return {@code this}
-         * @param pendingWindowInDays This parameter is required.
+         * @param pendingWindowInDays Property pendingWindowInDays: The waiting period, specified in number of days. This parameter is required.
          */
         public Builder pendingWindowInDays(final java.lang.Number pendingWindowInDays) {
             this.props().pendingWindowInDays(pendingWindowInDays);
             return this;
         }
+        /**
+         * Property pendingWindowInDays: The waiting period, specified in number of days.
+         * <p>
+         * During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
+         * <p>
+         * @return {@code this}
+         * @param pendingWindowInDays Property pendingWindowInDays: The waiting period, specified in number of days. This parameter is required.
+         */
+        public Builder pendingWindowInDays(final com.aliyun.ros.cdk.core.IResolvable pendingWindowInDays) {
+            this.props().pendingWindowInDays(pendingWindowInDays);
+            return this;
+        }
 
         /**
+         * Property protectionLevel: The protection level of the CMK to create.
+         * <p>
+         * Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
+         * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
+         * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+         * <p>
          * @return {@code this}
-         * @param protectionLevel This parameter is required.
+         * @param protectionLevel Property protectionLevel: The protection level of the CMK to create. This parameter is required.
          */
         public Builder protectionLevel(final java.lang.String protectionLevel) {
             this.props().protectionLevel(protectionLevel);
             return this;
         }
+        /**
+         * Property protectionLevel: The protection level of the CMK to create.
+         * <p>
+         * Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
+         * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
+         * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+         * <p>
+         * @return {@code this}
+         * @param protectionLevel Property protectionLevel: The protection level of the CMK to create. This parameter is required.
+         */
+        public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
+            this.props().protectionLevel(protectionLevel);
+            return this;
+        }
 
         /**
+         * Property rotationInterval: The time period for automatic rotation.
+         * <p>
+         * The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+         * <p>
          * @return {@code this}
-         * @param rotationInterval This parameter is required.
+         * @param rotationInterval Property rotationInterval: The time period for automatic rotation. This parameter is required.
          */
         public Builder rotationInterval(final java.lang.String rotationInterval) {
+            this.props().rotationInterval(rotationInterval);
+            return this;
+        }
+        /**
+         * Property rotationInterval: The time period for automatic rotation.
+         * <p>
+         * The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+         * <p>
+         * @return {@code this}
+         * @param rotationInterval Property rotationInterval: The time period for automatic rotation. This parameter is required.
+         */
+        public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
             this.props().rotationInterval(rotationInterval);
             return this;
         }

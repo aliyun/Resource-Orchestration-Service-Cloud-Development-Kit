@@ -10,30 +10,30 @@ export interface RosAclRuleProps {
     /**
      * @Property domain: Domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property rules: Detailed information of precise access control rules, expressed in JSON format strings.
      */
-    readonly rules: string;
+    readonly rules: string | ros.IResolvable;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    readonly region?: string;
+    readonly region?: string | ros.IResolvable;
 
     /**
      * @Property ruleId: Precise access control rule ID
      */
-    readonly ruleId?: number;
+    readonly ruleId?: number | ros.IResolvable;
 }
 
 /**
@@ -105,30 +105,30 @@ export class RosAclRule extends ros.RosResource {
     /**
      * @Property domain: Domain name.
      */
-    public domain: string;
+    public domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property rules: Detailed information of precise access control rules, expressed in JSON format strings.
      */
-    public rules: string;
+    public rules: string | ros.IResolvable;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    public region: string | undefined;
+    public region: string | ros.IResolvable | undefined;
 
     /**
      * @Property ruleId: Precise access control rule ID
      */
-    public ruleId: number | undefined;
+    public ruleId: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::WAF::AclRule`.
@@ -171,62 +171,62 @@ export interface RosDomainProps {
     /**
      * @Property domainName: Domain name
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * @Property instanceId: Instance id
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property isAccessProduct: Is there a seven-layer agency before WAF
      */
-    readonly isAccessProduct: string;
+    readonly isAccessProduct: string | ros.IResolvable;
 
     /**
      * @Property sourceIps: Back to source IP configuration
      */
-    readonly sourceIps: string[];
+    readonly sourceIps: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type
      */
-    readonly clusterType?: string;
+    readonly clusterType?: string | ros.IResolvable;
 
     /**
      * @Property connectionTime: Connection timeout
      */
-    readonly connectionTime?: number;
+    readonly connectionTime?: number | ros.IResolvable;
 
     /**
      * @Property http2Port: Http2 port configuration
      */
-    readonly http2Port?: string[];
+    readonly http2Port?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property httpPort: Http port configuration
      */
-    readonly httpPort?: string[];
+    readonly httpPort?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property httpsPort: Https port configuration
      */
-    readonly httpsPort?: string[];
+    readonly httpsPort?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property httpsRedirect: Https forced redirect configuration
      */
-    readonly httpsRedirect?: string;
+    readonly httpsRedirect?: string | ros.IResolvable;
 
     /**
      * @Property httpToUserIp: Http back to source
      */
-    readonly httpToUserIp?: string;
+    readonly httpToUserIp?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancing: Load balancing configuration
      */
-    readonly loadBalancing?: string;
+    readonly loadBalancing?: string | ros.IResolvable;
 
     /**
      * @Property logHeaders: Domain traffic tagging
@@ -236,17 +236,17 @@ export interface RosDomainProps {
     /**
      * @Property readTime: Read connection timeout period
      */
-    readonly readTime?: number;
+    readonly readTime?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group Id
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property writeTime: Write connection timeout period
      */
-    readonly writeTime?: number;
+    readonly writeTime?: number | ros.IResolvable;
 }
 
 /**
@@ -332,77 +332,77 @@ export class RosDomain extends ros.RosResource {
     /**
      * @Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: any;
+    public readonly attrClusterType: ros.IResolvable;
 
     /**
      * @Attribute Cname: CNAME assigned by WAF instance
      */
-    public readonly attrCname: any;
+    public readonly attrCname: ros.IResolvable;
 
     /**
      * @Attribute DomainName: Domain name
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * @Attribute Http2Port: Http2 port configuration
      */
-    public readonly attrHttp2Port: any;
+    public readonly attrHttp2Port: ros.IResolvable;
 
     /**
      * @Attribute HttpPort: Http port configuration
      */
-    public readonly attrHttpPort: any;
+    public readonly attrHttpPort: ros.IResolvable;
 
     /**
      * @Attribute HttpToUserIp: Http back to source
      */
-    public readonly attrHttpToUserIp: any;
+    public readonly attrHttpToUserIp: ros.IResolvable;
 
     /**
      * @Attribute HttpsPort: Https port configuration
      */
-    public readonly attrHttpsPort: any;
+    public readonly attrHttpsPort: ros.IResolvable;
 
     /**
      * @Attribute HttpsRedirect: Https forced redirect configuration
      */
-    public readonly attrHttpsRedirect: any;
+    public readonly attrHttpsRedirect: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: Instance id
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * @Attribute IsAccessProduct: Is there a seven-layer agency before WAF
      */
-    public readonly attrIsAccessProduct: any;
+    public readonly attrIsAccessProduct: ros.IResolvable;
 
     /**
      * @Attribute LoadBalancing: Load balancing configuration
      */
-    public readonly attrLoadBalancing: any;
+    public readonly attrLoadBalancing: ros.IResolvable;
 
     /**
      * @Attribute LogHeaders: Domain traffic tagging
      */
-    public readonly attrLogHeaders: any;
+    public readonly attrLogHeaders: ros.IResolvable;
 
     /**
      * @Attribute ResourceGroupId: Resource group Id
      */
-    public readonly attrResourceGroupId: any;
+    public readonly attrResourceGroupId: ros.IResolvable;
 
     /**
      * @Attribute SourceIps: Back to source IP configuration
      */
-    public readonly attrSourceIps: any;
+    public readonly attrSourceIps: ros.IResolvable;
 
     /**
      * @Attribute Version: Optimistic lock version
      */
-    public readonly attrVersion: any;
+    public readonly attrVersion: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -410,62 +410,62 @@ export class RosDomain extends ros.RosResource {
     /**
      * @Property domainName: Domain name
      */
-    public domainName: string;
+    public domainName: string | ros.IResolvable;
 
     /**
      * @Property instanceId: Instance id
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property isAccessProduct: Is there a seven-layer agency before WAF
      */
-    public isAccessProduct: string;
+    public isAccessProduct: string | ros.IResolvable;
 
     /**
      * @Property sourceIps: Back to source IP configuration
      */
-    public sourceIps: string[];
+    public sourceIps: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type
      */
-    public clusterType: string | undefined;
+    public clusterType: string | ros.IResolvable | undefined;
 
     /**
      * @Property connectionTime: Connection timeout
      */
-    public connectionTime: number | undefined;
+    public connectionTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property http2Port: Http2 port configuration
      */
-    public http2Port: string[] | undefined;
+    public http2Port: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property httpPort: Http port configuration
      */
-    public httpPort: string[] | undefined;
+    public httpPort: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property httpsPort: Https port configuration
      */
-    public httpsPort: string[] | undefined;
+    public httpsPort: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property httpsRedirect: Https forced redirect configuration
      */
-    public httpsRedirect: string | undefined;
+    public httpsRedirect: string | ros.IResolvable | undefined;
 
     /**
      * @Property httpToUserIp: Http back to source
      */
-    public httpToUserIp: string | undefined;
+    public httpToUserIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancing: Load balancing configuration
      */
-    public loadBalancing: string | undefined;
+    public loadBalancing: string | ros.IResolvable | undefined;
 
     /**
      * @Property logHeaders: Domain traffic tagging
@@ -475,17 +475,17 @@ export class RosDomain extends ros.RosResource {
     /**
      * @Property readTime: Read connection timeout period
      */
-    public readTime: number | undefined;
+    public readTime: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group Id
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property writeTime: Write connection timeout period
      */
-    public writeTime: number | undefined;
+    public writeTime: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::WAF::Domain`.
@@ -496,21 +496,21 @@ export class RosDomain extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomain.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterType = ros.Token.asString(this.getAtt('ClusterType'));
-        this.attrCname = ros.Token.asString(this.getAtt('Cname'));
-        this.attrDomainName = ros.Token.asString(this.getAtt('DomainName'));
-        this.attrHttp2Port = ros.Token.asString(this.getAtt('Http2Port'));
-        this.attrHttpPort = ros.Token.asString(this.getAtt('HttpPort'));
-        this.attrHttpToUserIp = ros.Token.asString(this.getAtt('HttpToUserIp'));
-        this.attrHttpsPort = ros.Token.asString(this.getAtt('HttpsPort'));
-        this.attrHttpsRedirect = ros.Token.asString(this.getAtt('HttpsRedirect'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrIsAccessProduct = ros.Token.asString(this.getAtt('IsAccessProduct'));
-        this.attrLoadBalancing = ros.Token.asString(this.getAtt('LoadBalancing'));
-        this.attrLogHeaders = ros.Token.asString(this.getAtt('LogHeaders'));
-        this.attrResourceGroupId = ros.Token.asString(this.getAtt('ResourceGroupId'));
-        this.attrSourceIps = ros.Token.asString(this.getAtt('SourceIps'));
-        this.attrVersion = ros.Token.asString(this.getAtt('Version'));
+        this.attrClusterType = this.getAtt('ClusterType');
+        this.attrCname = this.getAtt('Cname');
+        this.attrDomainName = this.getAtt('DomainName');
+        this.attrHttp2Port = this.getAtt('Http2Port');
+        this.attrHttpPort = this.getAtt('HttpPort');
+        this.attrHttpToUserIp = this.getAtt('HttpToUserIp');
+        this.attrHttpsPort = this.getAtt('HttpsPort');
+        this.attrHttpsRedirect = this.getAtt('HttpsRedirect');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrIsAccessProduct = this.getAtt('IsAccessProduct');
+        this.attrLoadBalancing = this.getAtt('LoadBalancing');
+        this.attrLogHeaders = this.getAtt('LogHeaders');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSourceIps = this.getAtt('SourceIps');
+        this.attrVersion = this.getAtt('Version');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domainName = props.domainName;
@@ -565,11 +565,11 @@ export namespace RosDomain {
         /**
          * @Property v: The value of the traffic tag of the domain name
          */
-        readonly v?: string;
+        readonly v?: string | ros.IResolvable;
         /**
          * @Property k: The field name of the traffic tag of the domain name
          */
-        readonly k?: string;
+        readonly k?: string | ros.IResolvable;
     }
 }
 /**
@@ -612,20 +612,20 @@ export interface RosDomainConfigProps {
     /**
      * @Property domain: Domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property isAccessProduct: The domain before WAF is configured with seven agents (eg, high defense, CDN, etc.), the value of:
      * 0: none.
      * 1: expressed.
      */
-    readonly isAccessProduct: number;
+    readonly isAccessProduct: number | ros.IResolvable;
 
     /**
      * @Property protocols: The domain supports access protocols, values:
@@ -633,19 +633,19 @@ export interface RosDomainConfigProps {
      * https: support for HTTPS protocol.
      * http, https: supports HTTP, HTTPS protocol.
      */
-    readonly protocols: string;
+    readonly protocols: string | ros.IResolvable;
 
     /**
      * @Property httpPort: HTTP protocol configuration port. When specifying a plurality of HTTP port "," separated. Example values: [80].
      * Configure the HTTP protocol, this parameter is required. The default value is 80. HttpPort HttpsPort with at least two parameters need to fill a request.
      */
-    readonly httpPort?: string;
+    readonly httpPort?: string | ros.IResolvable;
 
     /**
      * @Property httpsPort: HTTPS protocol configuration port. When specifying a plurality HTTPS port, using the "," separated. Example values: [443].
      * Configure the protocol is HTTPS, this parameter is required. The default value is 443. HttpPort HttpsPort with at least two parameters need to fill a request.
      */
-    readonly httpsPort?: string;
+    readonly httpsPort?: string | ros.IResolvable;
 
     /**
      * @Property httpsRedirect: HTTPS is turned forcefully jump the argument:
@@ -653,7 +653,7 @@ export interface RosDomainConfigProps {
      * 1: Turn
      * Description required to complete the request parameters using only HTTPS access protocol. After opening force will show a jump HTTP request is HTTPS, a default jump to 443.
      */
-    readonly httpsRedirect?: number;
+    readonly httpsRedirect?: number | ros.IResolvable;
 
     /**
      * @Property httpToUserIp: Whether to open HTTPS access request is forwarded back to the source station via the HTTP protocol, the value of:
@@ -661,33 +661,33 @@ export interface RosDomainConfigProps {
      * 1: Turn
      * Note If your site does not support HTTPS back to the source, open source HTTP return (default back to the source port is port 80) function key, can be realized by WAF HTTPS access.
      */
-    readonly httpToUserIp?: number;
+    readonly httpToUserIp?: number | ros.IResolvable;
 
     /**
      * @Property loadBalancing: Back to the source load balancing policy values:
      * 0: IP Hash way.
      * 1: represents a polling mode.
      */
-    readonly loadBalancing?: number;
+    readonly loadBalancing?: number | ros.IResolvable;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    readonly region?: string;
+    readonly region?: string | ros.IResolvable;
 
     /**
      * @Property rsType: Back to the source address type the domain name values:
      * 0: back to the source to IP.
      * 1: Indicates the domain name back to the source.
      */
-    readonly rsType?: number;
+    readonly rsType?: number | ros.IResolvable;
 
     /**
      * @Property sourceIps: Source station IP, supports a plurality of specified IP. Example values: [ "1.1.1.1"].
      */
-    readonly sourceIps?: string;
+    readonly sourceIps?: string | ros.IResolvable;
 }
 
 /**
@@ -801,12 +801,12 @@ export class RosDomainConfig extends ros.RosResource {
     /**
      * @Attribute Cname: CNAME assigned by WAF instance.
      */
-    public readonly attrCname: any;
+    public readonly attrCname: ros.IResolvable;
 
     /**
      * @Attribute ProtocolType: agreement type:0: indicates that the HTTP protocol is supported.1: indicates that the HTTPS protocol is supported.2: indicates that both HTTP and HTTPS protocols are supported.
      */
-    public readonly attrProtocolType: any;
+    public readonly attrProtocolType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -814,20 +814,20 @@ export class RosDomainConfig extends ros.RosResource {
     /**
      * @Property domain: Domain name.
      */
-    public domain: string;
+    public domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property isAccessProduct: The domain before WAF is configured with seven agents (eg, high defense, CDN, etc.), the value of:
      * 0: none.
      * 1: expressed.
      */
-    public isAccessProduct: number;
+    public isAccessProduct: number | ros.IResolvable;
 
     /**
      * @Property protocols: The domain supports access protocols, values:
@@ -835,19 +835,19 @@ export class RosDomainConfig extends ros.RosResource {
      * https: support for HTTPS protocol.
      * http, https: supports HTTP, HTTPS protocol.
      */
-    public protocols: string;
+    public protocols: string | ros.IResolvable;
 
     /**
      * @Property httpPort: HTTP protocol configuration port. When specifying a plurality of HTTP port "," separated. Example values: [80].
      * Configure the HTTP protocol, this parameter is required. The default value is 80. HttpPort HttpsPort with at least two parameters need to fill a request.
      */
-    public httpPort: string | undefined;
+    public httpPort: string | ros.IResolvable | undefined;
 
     /**
      * @Property httpsPort: HTTPS protocol configuration port. When specifying a plurality HTTPS port, using the "," separated. Example values: [443].
      * Configure the protocol is HTTPS, this parameter is required. The default value is 443. HttpPort HttpsPort with at least two parameters need to fill a request.
      */
-    public httpsPort: string | undefined;
+    public httpsPort: string | ros.IResolvable | undefined;
 
     /**
      * @Property httpsRedirect: HTTPS is turned forcefully jump the argument:
@@ -855,7 +855,7 @@ export class RosDomainConfig extends ros.RosResource {
      * 1: Turn
      * Description required to complete the request parameters using only HTTPS access protocol. After opening force will show a jump HTTP request is HTTPS, a default jump to 443.
      */
-    public httpsRedirect: number | undefined;
+    public httpsRedirect: number | ros.IResolvable | undefined;
 
     /**
      * @Property httpToUserIp: Whether to open HTTPS access request is forwarded back to the source station via the HTTP protocol, the value of:
@@ -863,33 +863,33 @@ export class RosDomainConfig extends ros.RosResource {
      * 1: Turn
      * Note If your site does not support HTTPS back to the source, open source HTTP return (default back to the source port is port 80) function key, can be realized by WAF HTTPS access.
      */
-    public httpToUserIp: number | undefined;
+    public httpToUserIp: number | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancing: Back to the source load balancing policy values:
      * 0: IP Hash way.
      * 1: represents a polling mode.
      */
-    public loadBalancing: number | undefined;
+    public loadBalancing: number | ros.IResolvable | undefined;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    public region: string | undefined;
+    public region: string | ros.IResolvable | undefined;
 
     /**
      * @Property rsType: Back to the source address type the domain name values:
      * 0: back to the source to IP.
      * 1: Indicates the domain name back to the source.
      */
-    public rsType: number | undefined;
+    public rsType: number | ros.IResolvable | undefined;
 
     /**
      * @Property sourceIps: Source station IP, supports a plurality of specified IP. Example values: [ "1.1.1.1"].
      */
-    public sourceIps: string | undefined;
+    public sourceIps: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::WAF::DomainConfig`.
@@ -900,8 +900,8 @@ export class RosDomainConfig extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainConfigProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomainConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCname = ros.Token.asString(this.getAtt('Cname'));
-        this.attrProtocolType = ros.Token.asString(this.getAtt('ProtocolType'));
+        this.attrCname = this.getAtt('Cname');
+        this.attrProtocolType = this.getAtt('ProtocolType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domain = props.domain;
@@ -948,67 +948,67 @@ export interface RosInstanceProps {
     /**
      * @Property bigScreen:
      */
-    readonly bigScreen: string;
+    readonly bigScreen: string | ros.IResolvable;
 
     /**
      * @Property exclusiveIpPackage:
      */
-    readonly exclusiveIpPackage: string;
+    readonly exclusiveIpPackage: string | ros.IResolvable;
 
     /**
      * @Property extBandwidth:
      */
-    readonly extBandwidth: string;
+    readonly extBandwidth: string | ros.IResolvable;
 
     /**
      * @Property extDomainPackage:
      */
-    readonly extDomainPackage: string;
+    readonly extDomainPackage: string | ros.IResolvable;
 
     /**
      * @Property logStorage:
      */
-    readonly logStorage: string;
+    readonly logStorage: string | ros.IResolvable;
 
     /**
      * @Property logTime:
      */
-    readonly logTime: string;
+    readonly logTime: string | ros.IResolvable;
 
     /**
      * @Property packageCode:
      */
-    readonly packageCode: string;
+    readonly packageCode: string | ros.IResolvable;
 
     /**
      * @Property prefessionalService:
      */
-    readonly prefessionalService: string;
+    readonly prefessionalService: string | ros.IResolvable;
 
     /**
      * @Property subscriptionType: Subscription type of the instance
      */
-    readonly subscriptionType: string;
+    readonly subscriptionType: string | ros.IResolvable;
 
     /**
      * @Property wafLog:
      */
-    readonly wafLog: string;
+    readonly wafLog: string | ros.IResolvable;
 
     /**
      * @Property period:
      */
-    readonly period?: string;
+    readonly period?: string | ros.IResolvable;
 
     /**
      * @Property renewalStatus:
      */
-    readonly renewalStatus?: string;
+    readonly renewalStatus?: string | ros.IResolvable;
 
     /**
      * @Property renewPeriod:
      */
-    readonly renewPeriod?: string;
+    readonly renewPeriod?: string | ros.IResolvable;
 }
 
 /**
@@ -1094,32 +1094,32 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute EndDate: Due date of the instance
      */
-    public readonly attrEndDate: any;
+    public readonly attrEndDate: ros.IResolvable;
 
     /**
      * @Attribute InDebt: Instance is overdue
      */
-    public readonly attrInDebt: any;
+    public readonly attrInDebt: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: Instance ID
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     /**
      * @Attribute RemainDay: Number of available days for WAF Trial version
      */
-    public readonly attrRemainDay: any;
+    public readonly attrRemainDay: ros.IResolvable;
 
     /**
      * @Attribute SubscriptionType: Subscription type of the instance
      */
-    public readonly attrSubscriptionType: any;
+    public readonly attrSubscriptionType: ros.IResolvable;
 
     /**
      * @Attribute Trial: Trial version
      */
-    public readonly attrTrial: any;
+    public readonly attrTrial: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1127,67 +1127,67 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property bigScreen:
      */
-    public bigScreen: string;
+    public bigScreen: string | ros.IResolvable;
 
     /**
      * @Property exclusiveIpPackage:
      */
-    public exclusiveIpPackage: string;
+    public exclusiveIpPackage: string | ros.IResolvable;
 
     /**
      * @Property extBandwidth:
      */
-    public extBandwidth: string;
+    public extBandwidth: string | ros.IResolvable;
 
     /**
      * @Property extDomainPackage:
      */
-    public extDomainPackage: string;
+    public extDomainPackage: string | ros.IResolvable;
 
     /**
      * @Property logStorage:
      */
-    public logStorage: string;
+    public logStorage: string | ros.IResolvable;
 
     /**
      * @Property logTime:
      */
-    public logTime: string;
+    public logTime: string | ros.IResolvable;
 
     /**
      * @Property packageCode:
      */
-    public packageCode: string;
+    public packageCode: string | ros.IResolvable;
 
     /**
      * @Property prefessionalService:
      */
-    public prefessionalService: string;
+    public prefessionalService: string | ros.IResolvable;
 
     /**
      * @Property subscriptionType: Subscription type of the instance
      */
-    public subscriptionType: string;
+    public subscriptionType: string | ros.IResolvable;
 
     /**
      * @Property wafLog:
      */
-    public wafLog: string;
+    public wafLog: string | ros.IResolvable;
 
     /**
      * @Property period:
      */
-    public period: string | undefined;
+    public period: string | ros.IResolvable | undefined;
 
     /**
      * @Property renewalStatus:
      */
-    public renewalStatus: string | undefined;
+    public renewalStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property renewPeriod:
      */
-    public renewPeriod: string | undefined;
+    public renewPeriod: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::WAF::Instance`.
@@ -1198,12 +1198,12 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrEndDate = ros.Token.asString(this.getAtt('EndDate'));
-        this.attrInDebt = ros.Token.asString(this.getAtt('InDebt'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrRemainDay = ros.Token.asString(this.getAtt('RemainDay'));
-        this.attrSubscriptionType = ros.Token.asString(this.getAtt('SubscriptionType'));
-        this.attrTrial = ros.Token.asString(this.getAtt('Trial'));
+        this.attrEndDate = this.getAtt('EndDate');
+        this.attrInDebt = this.getAtt('InDebt');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrRemainDay = this.getAtt('RemainDay');
+        this.attrSubscriptionType = this.getAtt('SubscriptionType');
+        this.attrTrial = this.getAtt('Trial');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bigScreen = props.bigScreen;
@@ -1252,27 +1252,27 @@ export interface RosWafSwitchProps {
     /**
      * @Property domain: Domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property serviceOn: Web attack protection switch, the value of:
      * 0: closed.
      * 1: indicate on.
      */
-    readonly serviceOn: number;
+    readonly serviceOn: number | ros.IResolvable;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    readonly region?: string;
+    readonly region?: string | ros.IResolvable;
 }
 
 /**
@@ -1348,27 +1348,27 @@ export class RosWafSwitch extends ros.RosResource {
     /**
      * @Property domain: Domain name.
      */
-    public domain: string;
+    public domain: string | ros.IResolvable;
 
     /**
      * @Property instanceId: WAF instance ID.
      * Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property serviceOn: Web attack protection switch, the value of:
      * 0: closed.
      * 1: indicate on.
      */
-    public serviceOn: number;
+    public serviceOn: number | ros.IResolvable;
 
     /**
      * @Property region: Examples of areas where the WAF. Value:
      * cn: China mainland (default)
      * cn-hongkong: China HongKong and other overseas
      */
-    public region: string | undefined;
+    public region: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::WAF::WafSwitch`.

@@ -11,19 +11,19 @@ export interface DBClusterEndpointAddressProps {
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property dbEndpointId: The ID of the cluster connection point.
      */
-    readonly dbEndpointId: string;
+    readonly dbEndpointId: string | ros.IResolvable;
 
     /**
      * Property connectionStringPrefix: The prefix of the connection string. The prefix must comply with the following rules:
      * It must start with a letter and consist of lowercase letters, digits, and hyphens(-), cannot end with a dash.
      * The length is 6~30 characters.
      */
-    readonly connectionStringPrefix?: string;
+    readonly connectionStringPrefix?: string | ros.IResolvable;
 
     /**
      * Property netType: The network type of the connection string. 
@@ -31,7 +31,7 @@ export interface DBClusterEndpointAddressProps {
      * If set to Private, ROS will only modify Private address for you.
      * Default to Public.
      */
-    readonly netType?: string;
+    readonly netType?: string | ros.IResolvable;
 }
 
 /**
@@ -47,12 +47,12 @@ export class DBClusterEndpointAddress extends ros.Resource {
     /**
      * Attribute Address: The details of the endpoint address.
      */
-    public readonly attrAddress: any;
+    public readonly attrAddress: ros.IResolvable;
 
     /**
      * Attribute ConnectionString: The connection string of the endpoint address.
      */
-    public readonly attrConnectionString: any;
+    public readonly attrConnectionString: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterEndpointAddress`.

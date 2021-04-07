@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         }
 
         /// <summary>Attribute ActionId: The ID of the rule action.</summary>
-        [JsiiProperty(name: "attrActionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrActionId
+        [JsiiProperty(name: "attrActionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrActionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

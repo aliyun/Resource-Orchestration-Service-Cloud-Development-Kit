@@ -16,24 +16,29 @@ export interface Ipv6InternetBandwidthProps {
      * Medium (Enterprise Edition), the public network bandwidth range from 1 to 1000.
      * Large (Enterprise Edition), the public network bandwidth range 1-2000.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * Property ipv6AddressId: ID of IPv6 address.
      */
-    readonly ipv6AddressId: string;
+    readonly ipv6AddressId: string | ros.IResolvable;
 
     /**
      * Property ipv6GatewayId: ID of IPv6 gateway.
      */
-    readonly ipv6GatewayId: string;
+    readonly ipv6GatewayId: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: IPv6 public network bandwidth billing, value:
      * PayByTraffic: by using the traffic accounting.
      * PayByBandwidth (default): Bandwidth billing.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosIpv6InternetBandwidth.TagsProperty[];
 }
 
 /**
@@ -49,7 +54,7 @@ export class Ipv6InternetBandwidth extends ros.Resource {
     /**
      * Attribute InternetBandwidthId: Purchase of public network bandwidth.
      */
-    public readonly attrInternetBandwidthId: any;
+    public readonly attrInternetBandwidthId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::Ipv6InternetBandwidth`.
@@ -65,6 +70,7 @@ export class Ipv6InternetBandwidth extends ros.Resource {
             bandwidth: props.bandwidth,
             ipv6AddressId: props.ipv6AddressId,
             ipv6GatewayId: props.ipv6GatewayId,
+            tags: props.tags,
             internetChargeType: props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpv6InternetBandwidth;

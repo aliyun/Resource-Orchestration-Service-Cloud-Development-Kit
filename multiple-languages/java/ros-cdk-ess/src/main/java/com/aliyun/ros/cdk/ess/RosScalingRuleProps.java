@@ -3,30 +3,30 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScalingRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.895Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.490Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingRuleProps.Jsii$Proxy.class)
 public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAdjustmentType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentType() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getAdjustmentValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAdjustmentValue() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCooldown() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCooldown() {
         return null;
     }
 
@@ -38,61 +38,61 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getEstimatedInstanceWarmup() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEstimatedInstanceWarmup() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getInitialMaxSize() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInitialMaxSize() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getMetricName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMetricName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMinAdjustmentMagnitude() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMinAdjustmentMagnitude() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPredictiveScalingMode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveScalingMode() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveTaskBufferTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveTaskBufferTime() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPredictiveValueBehavior() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBehavior() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getPredictiveValueBuffer() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPredictiveValueBuffer() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScalingRuleType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScalingRuleType() {
         return null;
     }
 
@@ -104,7 +104,7 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTargetValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTargetValue() {
         return null;
     }
 
@@ -118,23 +118,23 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosScalingRuleProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosScalingRuleProps> {
-        private java.lang.String scalingGroupId;
-        private java.lang.String adjustmentType;
-        private java.lang.Number adjustmentValue;
-        private java.lang.Number cooldown;
+        private java.lang.Object scalingGroupId;
+        private java.lang.Object adjustmentType;
+        private java.lang.Object adjustmentValue;
+        private java.lang.Object cooldown;
         private java.lang.Object disableScaleIn;
-        private java.lang.Number estimatedInstanceWarmup;
-        private java.lang.Number initialMaxSize;
-        private java.lang.String metricName;
-        private java.lang.Number minAdjustmentMagnitude;
-        private java.lang.String predictiveScalingMode;
-        private java.lang.Number predictiveTaskBufferTime;
-        private java.lang.String predictiveValueBehavior;
-        private java.lang.Number predictiveValueBuffer;
-        private java.lang.String scalingRuleName;
-        private java.lang.String scalingRuleType;
+        private java.lang.Object estimatedInstanceWarmup;
+        private java.lang.Object initialMaxSize;
+        private java.lang.Object metricName;
+        private java.lang.Object minAdjustmentMagnitude;
+        private java.lang.Object predictiveScalingMode;
+        private java.lang.Object predictiveTaskBufferTime;
+        private java.lang.Object predictiveValueBehavior;
+        private java.lang.Object predictiveValueBuffer;
+        private java.lang.Object scalingRuleName;
+        private java.lang.Object scalingRuleType;
         private java.lang.Object stepAdjustment;
-        private java.lang.Number targetValue;
+        private java.lang.Object targetValue;
 
         /**
          * Sets the value of {@link RosScalingRuleProps#getScalingGroupId}
@@ -142,6 +142,16 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder scalingGroupId(java.lang.String scalingGroupId) {
+            this.scalingGroupId = scalingGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getScalingGroupId}
+         * @param scalingGroupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder scalingGroupId(com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
             this.scalingGroupId = scalingGroupId;
             return this;
         }
@@ -157,6 +167,16 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getAdjustmentType}
+         * @param adjustmentType the value to be set.
+         * @return {@code this}
+         */
+        public Builder adjustmentType(com.aliyun.ros.cdk.core.IResolvable adjustmentType) {
+            this.adjustmentType = adjustmentType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getAdjustmentValue}
          * @param adjustmentValue the value to be set.
          * @return {@code this}
@@ -167,11 +187,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getAdjustmentValue}
+         * @param adjustmentValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder adjustmentValue(com.aliyun.ros.cdk.core.IResolvable adjustmentValue) {
+            this.adjustmentValue = adjustmentValue;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getCooldown}
          * @param cooldown the value to be set.
          * @return {@code this}
          */
         public Builder cooldown(java.lang.Number cooldown) {
+            this.cooldown = cooldown;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getCooldown}
+         * @param cooldown the value to be set.
+         * @return {@code this}
+         */
+        public Builder cooldown(com.aliyun.ros.cdk.core.IResolvable cooldown) {
             this.cooldown = cooldown;
             return this;
         }
@@ -207,11 +247,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getEstimatedInstanceWarmup}
+         * @param estimatedInstanceWarmup the value to be set.
+         * @return {@code this}
+         */
+        public Builder estimatedInstanceWarmup(com.aliyun.ros.cdk.core.IResolvable estimatedInstanceWarmup) {
+            this.estimatedInstanceWarmup = estimatedInstanceWarmup;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getInitialMaxSize}
          * @param initialMaxSize the value to be set.
          * @return {@code this}
          */
         public Builder initialMaxSize(java.lang.Number initialMaxSize) {
+            this.initialMaxSize = initialMaxSize;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getInitialMaxSize}
+         * @param initialMaxSize the value to be set.
+         * @return {@code this}
+         */
+        public Builder initialMaxSize(com.aliyun.ros.cdk.core.IResolvable initialMaxSize) {
             this.initialMaxSize = initialMaxSize;
             return this;
         }
@@ -227,11 +287,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getMetricName}
+         * @param metricName the value to be set.
+         * @return {@code this}
+         */
+        public Builder metricName(com.aliyun.ros.cdk.core.IResolvable metricName) {
+            this.metricName = metricName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getMinAdjustmentMagnitude}
          * @param minAdjustmentMagnitude the value to be set.
          * @return {@code this}
          */
         public Builder minAdjustmentMagnitude(java.lang.Number minAdjustmentMagnitude) {
+            this.minAdjustmentMagnitude = minAdjustmentMagnitude;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getMinAdjustmentMagnitude}
+         * @param minAdjustmentMagnitude the value to be set.
+         * @return {@code this}
+         */
+        public Builder minAdjustmentMagnitude(com.aliyun.ros.cdk.core.IResolvable minAdjustmentMagnitude) {
             this.minAdjustmentMagnitude = minAdjustmentMagnitude;
             return this;
         }
@@ -247,11 +327,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getPredictiveScalingMode}
+         * @param predictiveScalingMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder predictiveScalingMode(com.aliyun.ros.cdk.core.IResolvable predictiveScalingMode) {
+            this.predictiveScalingMode = predictiveScalingMode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getPredictiveTaskBufferTime}
          * @param predictiveTaskBufferTime the value to be set.
          * @return {@code this}
          */
         public Builder predictiveTaskBufferTime(java.lang.Number predictiveTaskBufferTime) {
+            this.predictiveTaskBufferTime = predictiveTaskBufferTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getPredictiveTaskBufferTime}
+         * @param predictiveTaskBufferTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder predictiveTaskBufferTime(com.aliyun.ros.cdk.core.IResolvable predictiveTaskBufferTime) {
             this.predictiveTaskBufferTime = predictiveTaskBufferTime;
             return this;
         }
@@ -267,11 +367,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getPredictiveValueBehavior}
+         * @param predictiveValueBehavior the value to be set.
+         * @return {@code this}
+         */
+        public Builder predictiveValueBehavior(com.aliyun.ros.cdk.core.IResolvable predictiveValueBehavior) {
+            this.predictiveValueBehavior = predictiveValueBehavior;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getPredictiveValueBuffer}
          * @param predictiveValueBuffer the value to be set.
          * @return {@code this}
          */
         public Builder predictiveValueBuffer(java.lang.Number predictiveValueBuffer) {
+            this.predictiveValueBuffer = predictiveValueBuffer;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getPredictiveValueBuffer}
+         * @param predictiveValueBuffer the value to be set.
+         * @return {@code this}
+         */
+        public Builder predictiveValueBuffer(com.aliyun.ros.cdk.core.IResolvable predictiveValueBuffer) {
             this.predictiveValueBuffer = predictiveValueBuffer;
             return this;
         }
@@ -287,11 +407,31 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getScalingRuleName}
+         * @param scalingRuleName the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingRuleName(com.aliyun.ros.cdk.core.IResolvable scalingRuleName) {
+            this.scalingRuleName = scalingRuleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosScalingRuleProps#getScalingRuleType}
          * @param scalingRuleType the value to be set.
          * @return {@code this}
          */
         public Builder scalingRuleType(java.lang.String scalingRuleType) {
+            this.scalingRuleType = scalingRuleType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosScalingRuleProps#getScalingRuleType}
+         * @param scalingRuleType the value to be set.
+         * @return {@code this}
+         */
+        public Builder scalingRuleType(com.aliyun.ros.cdk.core.IResolvable scalingRuleType) {
             this.scalingRuleType = scalingRuleType;
             return this;
         }
@@ -327,6 +467,16 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosScalingRuleProps#getTargetValue}
+         * @param targetValue the value to be set.
+         * @return {@code this}
+         */
+        public Builder targetValue(com.aliyun.ros.cdk.core.IResolvable targetValue) {
+            this.targetValue = targetValue;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosScalingRuleProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -342,23 +492,23 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosScalingRuleProps {
-        private final java.lang.String scalingGroupId;
-        private final java.lang.String adjustmentType;
-        private final java.lang.Number adjustmentValue;
-        private final java.lang.Number cooldown;
+        private final java.lang.Object scalingGroupId;
+        private final java.lang.Object adjustmentType;
+        private final java.lang.Object adjustmentValue;
+        private final java.lang.Object cooldown;
         private final java.lang.Object disableScaleIn;
-        private final java.lang.Number estimatedInstanceWarmup;
-        private final java.lang.Number initialMaxSize;
-        private final java.lang.String metricName;
-        private final java.lang.Number minAdjustmentMagnitude;
-        private final java.lang.String predictiveScalingMode;
-        private final java.lang.Number predictiveTaskBufferTime;
-        private final java.lang.String predictiveValueBehavior;
-        private final java.lang.Number predictiveValueBuffer;
-        private final java.lang.String scalingRuleName;
-        private final java.lang.String scalingRuleType;
+        private final java.lang.Object estimatedInstanceWarmup;
+        private final java.lang.Object initialMaxSize;
+        private final java.lang.Object metricName;
+        private final java.lang.Object minAdjustmentMagnitude;
+        private final java.lang.Object predictiveScalingMode;
+        private final java.lang.Object predictiveTaskBufferTime;
+        private final java.lang.Object predictiveValueBehavior;
+        private final java.lang.Object predictiveValueBuffer;
+        private final java.lang.Object scalingRuleName;
+        private final java.lang.Object scalingRuleType;
         private final java.lang.Object stepAdjustment;
-        private final java.lang.Number targetValue;
+        private final java.lang.Object targetValue;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -366,29 +516,29 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adjustmentType = software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.adjustmentValue = software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.cooldown = software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.scalingGroupId = software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adjustmentType = software.amazon.jsii.Kernel.get(this, "adjustmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.adjustmentValue = software.amazon.jsii.Kernel.get(this, "adjustmentValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cooldown = software.amazon.jsii.Kernel.get(this, "cooldown", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.disableScaleIn = software.amazon.jsii.Kernel.get(this, "disableScaleIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.estimatedInstanceWarmup = software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.initialMaxSize = software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.minAdjustmentMagnitude = software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.predictiveScalingMode = software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.predictiveTaskBufferTime = software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.predictiveValueBehavior = software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.predictiveValueBuffer = software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.scalingRuleName = software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scalingRuleType = software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.estimatedInstanceWarmup = software.amazon.jsii.Kernel.get(this, "estimatedInstanceWarmup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.initialMaxSize = software.amazon.jsii.Kernel.get(this, "initialMaxSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.minAdjustmentMagnitude = software.amazon.jsii.Kernel.get(this, "minAdjustmentMagnitude", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveScalingMode = software.amazon.jsii.Kernel.get(this, "predictiveScalingMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveTaskBufferTime = software.amazon.jsii.Kernel.get(this, "predictiveTaskBufferTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveValueBehavior = software.amazon.jsii.Kernel.get(this, "predictiveValueBehavior", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.predictiveValueBuffer = software.amazon.jsii.Kernel.get(this, "predictiveValueBuffer", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingRuleName = software.amazon.jsii.Kernel.get(this, "scalingRuleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scalingRuleType = software.amazon.jsii.Kernel.get(this, "scalingRuleType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.stepAdjustment = software.amazon.jsii.Kernel.get(this, "stepAdjustment", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.targetValue = software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.targetValue = software.amazon.jsii.Kernel.get(this, "targetValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String scalingGroupId, final java.lang.String adjustmentType, final java.lang.Number adjustmentValue, final java.lang.Number cooldown, final java.lang.Object disableScaleIn, final java.lang.Number estimatedInstanceWarmup, final java.lang.Number initialMaxSize, final java.lang.String metricName, final java.lang.Number minAdjustmentMagnitude, final java.lang.String predictiveScalingMode, final java.lang.Number predictiveTaskBufferTime, final java.lang.String predictiveValueBehavior, final java.lang.Number predictiveValueBuffer, final java.lang.String scalingRuleName, final java.lang.String scalingRuleType, final java.lang.Object stepAdjustment, final java.lang.Number targetValue) {
+        protected Jsii$Proxy(final java.lang.Object scalingGroupId, final java.lang.Object adjustmentType, final java.lang.Object adjustmentValue, final java.lang.Object cooldown, final java.lang.Object disableScaleIn, final java.lang.Object estimatedInstanceWarmup, final java.lang.Object initialMaxSize, final java.lang.Object metricName, final java.lang.Object minAdjustmentMagnitude, final java.lang.Object predictiveScalingMode, final java.lang.Object predictiveTaskBufferTime, final java.lang.Object predictiveValueBehavior, final java.lang.Object predictiveValueBuffer, final java.lang.Object scalingRuleName, final java.lang.Object scalingRuleType, final java.lang.Object stepAdjustment, final java.lang.Object targetValue) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.scalingGroupId = java.util.Objects.requireNonNull(scalingGroupId, "scalingGroupId is required");
             this.adjustmentType = adjustmentType;
@@ -410,22 +560,22 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getScalingGroupId() {
+        public final java.lang.Object getScalingGroupId() {
             return this.scalingGroupId;
         }
 
         @Override
-        public final java.lang.String getAdjustmentType() {
+        public final java.lang.Object getAdjustmentType() {
             return this.adjustmentType;
         }
 
         @Override
-        public final java.lang.Number getAdjustmentValue() {
+        public final java.lang.Object getAdjustmentValue() {
             return this.adjustmentValue;
         }
 
         @Override
-        public final java.lang.Number getCooldown() {
+        public final java.lang.Object getCooldown() {
             return this.cooldown;
         }
 
@@ -435,52 +585,52 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.Number getEstimatedInstanceWarmup() {
+        public final java.lang.Object getEstimatedInstanceWarmup() {
             return this.estimatedInstanceWarmup;
         }
 
         @Override
-        public final java.lang.Number getInitialMaxSize() {
+        public final java.lang.Object getInitialMaxSize() {
             return this.initialMaxSize;
         }
 
         @Override
-        public final java.lang.String getMetricName() {
+        public final java.lang.Object getMetricName() {
             return this.metricName;
         }
 
         @Override
-        public final java.lang.Number getMinAdjustmentMagnitude() {
+        public final java.lang.Object getMinAdjustmentMagnitude() {
             return this.minAdjustmentMagnitude;
         }
 
         @Override
-        public final java.lang.String getPredictiveScalingMode() {
+        public final java.lang.Object getPredictiveScalingMode() {
             return this.predictiveScalingMode;
         }
 
         @Override
-        public final java.lang.Number getPredictiveTaskBufferTime() {
+        public final java.lang.Object getPredictiveTaskBufferTime() {
             return this.predictiveTaskBufferTime;
         }
 
         @Override
-        public final java.lang.String getPredictiveValueBehavior() {
+        public final java.lang.Object getPredictiveValueBehavior() {
             return this.predictiveValueBehavior;
         }
 
         @Override
-        public final java.lang.Number getPredictiveValueBuffer() {
+        public final java.lang.Object getPredictiveValueBuffer() {
             return this.predictiveValueBuffer;
         }
 
         @Override
-        public final java.lang.String getScalingRuleName() {
+        public final java.lang.Object getScalingRuleName() {
             return this.scalingRuleName;
         }
 
         @Override
-        public final java.lang.String getScalingRuleType() {
+        public final java.lang.Object getScalingRuleType() {
             return this.scalingRuleType;
         }
 
@@ -490,7 +640,7 @@ public interface RosScalingRuleProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.Number getTargetValue() {
+        public final java.lang.Object getTargetValue() {
             return this.targetValue;
         }
 

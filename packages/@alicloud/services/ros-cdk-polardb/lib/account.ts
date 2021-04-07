@@ -13,7 +13,7 @@ export interface AccountProps {
      * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
      * - It can be up to 16 characters in length.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * Property accountPassword: The password of the database account. The password must comply with the following rules:
@@ -21,19 +21,19 @@ export interface AccountProps {
      * - Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).
      * - It must be 8 to 32 characters in length.
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
      */
-    readonly dbClusterId: string;
+    readonly dbClusterId: string | ros.IResolvable;
 
     /**
      * Property accountDescription: The description of the database account. The description must comply with the following rules:
      * - It cannot start with http:// or https://.
      * - It must be 2 to 256 characters in length.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * Property accountPrivilege: The permissions of the database account on the database. Valid values:
@@ -44,7 +44,7 @@ export interface AccountProps {
      * Default value: ReadWrite.
      * Separate multiple permissions with a comma (,).
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * Property accountType: The type of the database account. Valid values:
@@ -54,12 +54,12 @@ export interface AccountProps {
      * Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
      * You can create only one privileged account for an ApsaraDB for POLARDB cluster.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 
     /**
      * Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
      */
-    readonly dbName?: string;
+    readonly dbName?: string | ros.IResolvable;
 }
 
 /**

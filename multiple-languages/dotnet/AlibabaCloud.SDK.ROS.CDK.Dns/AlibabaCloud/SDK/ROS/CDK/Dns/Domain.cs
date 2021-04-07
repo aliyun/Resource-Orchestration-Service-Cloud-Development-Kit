@@ -33,45 +33,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <summary>Attribute DnsServers: The DNS list for the domain name under resolution.</summary>
-        [JsiiProperty(name: "attrDnsServers", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDnsServers
+        [JsiiProperty(name: "attrDnsServers", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDnsServers
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DomainId: Domain ID.</summary>
-        [JsiiProperty(name: "attrDomainId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainId
+        [JsiiProperty(name: "attrDomainId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute DomainName: Domain name.</summary>
-        [JsiiProperty(name: "attrDomainName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainName
+        [JsiiProperty(name: "attrDomainName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute GroupId: Domain name group ID.</summary>
-        [JsiiProperty(name: "attrGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupId
+        [JsiiProperty(name: "attrGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute GroupName: The name of the domain name group.</summary>
-        [JsiiProperty(name: "attrGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupName
+        [JsiiProperty(name: "attrGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute PunyCode: punycode returned only for a Chinese domain name.</summary>
-        [JsiiProperty(name: "attrPunyCode", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPunyCode
+        [JsiiProperty(name: "attrPunyCode", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPunyCode
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

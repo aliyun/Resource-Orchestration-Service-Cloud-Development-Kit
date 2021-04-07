@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public interface IRouteTableAssociationProps
     {
         /// <summary>Property routeTableId: The ID of the route table.</summary>
-        [JsiiProperty(name: "routeTableId", typeJson: "{\"primitive\":\"string\"}")]
-        string RouteTableId
+        [JsiiProperty(name: "routeTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RouteTableId
         {
             get;
         }
 
         /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-        string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VSwitchId
         {
             get;
         }
@@ -31,17 +31,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property routeTableId: The ID of the route table.</summary>
-            [JsiiProperty(name: "routeTableId", typeJson: "{\"primitive\":\"string\"}")]
-            public string RouteTableId
+            [JsiiProperty(name: "routeTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RouteTableId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VSwitchId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

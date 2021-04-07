@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: contactGroupName: The name of the alert contact group that you want to create.
         /// </remarks>
-        [JsiiProperty(name: "contactGroupName", typeJson: "{\"primitive\":\"string\"}")]
-        string ContactGroupName
+        [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ContactGroupName
         {
             get;
         }
@@ -20,7 +20,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: contactIds: The list of alert contact ID.
         /// </remarks>
-        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         object ContactIds
         {
             get;
@@ -29,9 +29,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: proxyUserId: Internal parameters
         /// </remarks>
-        [JsiiProperty(name: "proxyUserId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "proxyUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ProxyUserId
+        object? ProxyUserId
         {
             get
             {
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
         /// <remarks>
         /// <strong>Property</strong>: regionId: Region ID. Default to region of stack.
         /// </remarks>
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RegionId
+        object? RegionId
         {
             get
             {
@@ -63,16 +63,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             /// <remarks>
             /// <strong>Property</strong>: contactGroupName: The name of the alert contact group that you want to create.
             /// </remarks>
-            [JsiiProperty(name: "contactGroupName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ContactGroupName
+            [JsiiProperty(name: "contactGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ContactGroupName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: contactIds: The list of alert contact ID.
             /// </remarks>
-            [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "contactIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
             public object ContactIds
             {
                 get => GetInstanceProperty<object>()!;
@@ -82,20 +82,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
             /// <strong>Property</strong>: proxyUserId: Internal parameters
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyUserId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ProxyUserId
+            [JsiiProperty(name: "proxyUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyUserId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: regionId: Region ID. Default to region of stack.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RegionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

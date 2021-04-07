@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::SslVpnServer`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.494Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSslVpnServer")
 public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSslVpnServerId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSslVpnServerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSslVpnServerId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSslVpnServerId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getClientIpPool() {
-        return software.amazon.jsii.Kernel.get(this, "clientIpPool", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getClientIpPool() {
+        return software.amazon.jsii.Kernel.get(this, "clientIpPool", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setClientIpPool(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "clientIpPool", java.util.Objects.requireNonNull(value, "clientIpPool is required"));
+    }
+
+    /**
+     */
+    public void setClientIpPool(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "clientIpPool", java.util.Objects.requireNonNull(value, "clientIpPool is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLocalSubnet() {
-        return software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLocalSubnet() {
+        return software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getVpnGatewayId() {
-        return software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setLocalSubnet(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "localSubnet", java.util.Objects.requireNonNull(value, "localSubnet is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getVpnGatewayId() {
+        return software.amazon.jsii.Kernel.get(this, "vpnGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getCipher() {
-        return software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVpnGatewayId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpnGatewayId", java.util.Objects.requireNonNull(value, "vpnGatewayId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCipher() {
+        return software.amazon.jsii.Kernel.get(this, "cipher", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCipher(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cipher", value);
+    }
+
+    /**
+     */
+    public void setCipher(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cipher", value);
     }
 
@@ -129,8 +153,8 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getName() {
-        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getPort() {
-        return software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "name", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPort() {
+        return software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,13 +183,25 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getProto() {
-        return software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "port", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProto() {
+        return software.amazon.jsii.Kernel.get(this, "proto", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setProto(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "proto", value);
+    }
+
+    /**
+     */
+    public void setProto(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "proto", value);
     }
 
@@ -197,12 +239,28 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
             this.props.clientIpPool(clientIpPool);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param clientIpPool This parameter is required.
+         */
+        public Builder clientIpPool(final com.aliyun.ros.cdk.core.IResolvable clientIpPool) {
+            this.props.clientIpPool(clientIpPool);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param localSubnet This parameter is required.
          */
         public Builder localSubnet(final java.lang.String localSubnet) {
+            this.props.localSubnet(localSubnet);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param localSubnet This parameter is required.
+         */
+        public Builder localSubnet(final com.aliyun.ros.cdk.core.IResolvable localSubnet) {
             this.props.localSubnet(localSubnet);
             return this;
         }
@@ -215,12 +273,28 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
             this.props.vpnGatewayId(vpnGatewayId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param vpnGatewayId This parameter is required.
+         */
+        public Builder vpnGatewayId(final com.aliyun.ros.cdk.core.IResolvable vpnGatewayId) {
+            this.props.vpnGatewayId(vpnGatewayId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param cipher This parameter is required.
          */
         public Builder cipher(final java.lang.String cipher) {
+            this.props.cipher(cipher);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cipher This parameter is required.
+         */
+        public Builder cipher(final com.aliyun.ros.cdk.core.IResolvable cipher) {
             this.props.cipher(cipher);
             return this;
         }
@@ -250,6 +324,14 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
             this.props.name(name);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param name This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -259,12 +341,28 @@ public class RosSslVpnServer extends com.aliyun.ros.cdk.core.RosResource {
             this.props.port(port);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param port This parameter is required.
+         */
+        public Builder port(final com.aliyun.ros.cdk.core.IResolvable port) {
+            this.props.port(port);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param proto This parameter is required.
          */
         public Builder proto(final java.lang.String proto) {
+            this.props.proto(proto);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param proto This parameter is required.
+         */
+        public Builder proto(final com.aliyun.ros.cdk.core.IResolvable proto) {
             this.props.proto(proto);
             return this;
         }

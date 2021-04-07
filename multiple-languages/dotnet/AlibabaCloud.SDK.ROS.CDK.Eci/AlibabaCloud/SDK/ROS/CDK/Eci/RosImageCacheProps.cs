@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// <strong>Property</strong>: image: The image list to be cached.
         /// </remarks>
-        [JsiiProperty(name: "image", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] Image
+        [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object Image
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// <strong>Property</strong>: imageCacheName: Image cache name.
         /// </remarks>
-        [JsiiProperty(name: "imageCacheName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ImageCacheName
+        [JsiiProperty(name: "imageCacheName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ImageCacheName
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// <strong>Property</strong>: securityGroupId: Security group ID.
         /// </remarks>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SecurityGroupId
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <remarks>
         /// <strong>Property</strong>: vSwitchId: VSwitch ID.
         /// </remarks>
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object VSwitchId
         {
             get;
             set;
@@ -54,8 +54,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <strong>Property</strong>: eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "eipInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EipInstanceId
+        [JsiiProperty(name: "eipInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EipInstanceId
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <strong>Property</strong>: imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "imageRegistryCredential", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? ImageRegistryCredential
+        [JsiiProperty(name: "imageRegistryCredential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? ImageRegistryCredential
         {
             get;
             set;
@@ -76,8 +76,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         /// <strong>Property</strong>: resourceGroupId: Resource group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ResourceGroupId
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ResourceGroupId
         {
             get;
             set;

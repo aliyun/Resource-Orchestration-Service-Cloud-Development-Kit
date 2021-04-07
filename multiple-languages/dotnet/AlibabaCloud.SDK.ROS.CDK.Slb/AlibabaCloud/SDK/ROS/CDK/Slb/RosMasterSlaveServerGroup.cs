@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Attribute</strong>: MasterSlaveServerGroupId: Active/standby server group ID.
         /// </remarks>
-        [JsiiProperty(name: "attrMasterSlaveServerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterSlaveServerGroupId
+        [JsiiProperty(name: "attrMasterSlaveServerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterSlaveServerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,10 +69,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The ID of the Server Load Balancer instance.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object LoadBalancerId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -91,10 +91,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: masterSlaveServerGroupName: The name of the active/standby server group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MasterSlaveServerGroupName
+        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MasterSlaveServerGroupName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IMasterSlaveBackendServersProperty), fullyQualifiedName: "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty")]
@@ -103,8 +103,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: port: The port used by backend server. From 1 to 65535
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}")]
-            double Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Port
             {
                 get;
             }
@@ -112,8 +112,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: serverId: ECS instance ID
             /// </remarks>
-            [JsiiProperty(name: "serverId", typeJson: "{\"primitive\":\"string\"}")]
-            string ServerId
+            [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ServerId
             {
                 get;
             }
@@ -121,8 +121,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
             /// </remarks>
-            [JsiiProperty(name: "weight", typeJson: "{\"primitive\":\"number\"}")]
-            double Weight
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object Weight
             {
                 get;
             }
@@ -130,9 +130,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: serverType: The identity of backend server. Could be "Master" (default) or "Slave"
             /// </remarks>
-            [JsiiProperty(name: "serverType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ServerType
+            object? ServerType
             {
                 get
                 {
@@ -150,38 +150,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
                 /// <remarks>
                 /// <strong>Property</strong>: port: The port used by backend server. From 1 to 65535
                 /// </remarks>
-                [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}")]
-                public double Port
+                [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Port
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: serverId: ECS instance ID
                 /// </remarks>
-                [JsiiProperty(name: "serverId", typeJson: "{\"primitive\":\"string\"}")]
-                public string ServerId
+                [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ServerId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
                 /// </remarks>
-                [JsiiProperty(name: "weight", typeJson: "{\"primitive\":\"number\"}")]
-                public double Weight
+                [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object Weight
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: serverType: The identity of backend server. Could be "Master" (default) or "Slave"
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "serverType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ServerType
+                [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ServerType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -193,8 +193,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: port: The port used by backend server. From 1 to 65535
             /// </remarks>
-            [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double Port
+            [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Port
             {
                 get;
                 set;
@@ -203,8 +203,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: serverId: ECS instance ID
             /// </remarks>
-            [JsiiProperty(name: "serverId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string ServerId
+            [JsiiProperty(name: "serverId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ServerId
             {
                 get;
                 set;
@@ -213,8 +213,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <remarks>
             /// <strong>Property</strong>: weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
             /// </remarks>
-            [JsiiProperty(name: "weight", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double Weight
+            [JsiiProperty(name: "weight", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object Weight
             {
                 get;
                 set;
@@ -224,8 +224,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             /// <strong>Property</strong>: serverType: The identity of backend server. Could be "Master" (default) or "Slave"
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serverType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ServerType
+            [JsiiProperty(name: "serverType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ServerType
             {
                 get;
                 set;

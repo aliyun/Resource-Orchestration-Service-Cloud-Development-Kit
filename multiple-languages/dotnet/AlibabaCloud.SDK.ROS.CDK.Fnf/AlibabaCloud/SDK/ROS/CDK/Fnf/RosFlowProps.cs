@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: definition: The definition of the created flow following the FDL syntax standard.
         /// </remarks>
-        [JsiiProperty(name: "definition", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Definition
+        [JsiiProperty(name: "definition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Definition
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <remarks>
         /// <strong>Property</strong>: name: The name of the flow created. This name is unique under the account.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <strong>Property</strong>: description: Create a description of the flow.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <strong>Property</strong>: requestId: The specified Request ID for this request. If not specified, our system will help you generate a random one.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "requestId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RequestId
+        [JsiiProperty(name: "requestId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RequestId
         {
             get;
             set;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         /// <strong>Property</strong>: roleArn: Optional parameter, the resource descriptor information required for the execution of the flow, used to perform the assume role during FnF execution.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "roleArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? RoleArn
+        [JsiiProperty(name: "roleArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RoleArn
         {
             get;
             set;

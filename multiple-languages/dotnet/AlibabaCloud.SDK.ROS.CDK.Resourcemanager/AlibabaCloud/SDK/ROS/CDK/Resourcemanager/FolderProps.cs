@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
     public class FolderProps : AlibabaCloud.SDK.ROS.CDK.Resourcemanager.IFolderProps
     {
         /// <summary>Property folderName: The name of the folder.</summary>
-        [JsiiProperty(name: "folderName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string FolderName
+        [JsiiProperty(name: "folderName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object FolderName
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// If not set, the system default value will be used
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "parentFolderId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ParentFolderId
+        [JsiiProperty(name: "parentFolderId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ParentFolderId
         {
             get;
             set;

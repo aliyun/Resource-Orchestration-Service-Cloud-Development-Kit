@@ -11,17 +11,17 @@ export interface HandshakeProps {
     /**
      * Property targetEntity: Invited account ID or login email
      */
-    readonly targetEntity: string;
+    readonly targetEntity: string | ros.IResolvable;
 
     /**
      * Property targetType: Type of account being invited. Valid values: Account, Email
      */
-    readonly targetType: string;
+    readonly targetType: string | ros.IResolvable;
 
     /**
      * Property note: Remarks
      */
-    readonly note?: string;
+    readonly note?: string | ros.IResolvable;
 }
 
 /**
@@ -37,37 +37,37 @@ export class Handshake extends ros.Resource {
     /**
      * Attribute HandshakeId: This ID of Resource Manager handshake
      */
-    public readonly attrHandshakeId: any;
+    public readonly attrHandshakeId: ros.IResolvable;
 
     /**
      * Attribute MasterAccountId: Resource account master account ID
      */
-    public readonly attrMasterAccountId: any;
+    public readonly attrMasterAccountId: ros.IResolvable;
 
     /**
      * Attribute MasterAccountName: The name of the main account of the resource directory
      */
-    public readonly attrMasterAccountName: any;
+    public readonly attrMasterAccountName: ros.IResolvable;
 
     /**
      * Attribute Note: Remarks
      */
-    public readonly attrNote: any;
+    public readonly attrNote: ros.IResolvable;
 
     /**
      * Attribute ResourceDirectoryId: Resource directory ID
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * Attribute TargetEntity: Invited account ID or login email
      */
-    public readonly attrTargetEntity: any;
+    public readonly attrTargetEntity: ros.IResolvable;
 
     /**
      * Attribute TargetType: Type of account being invited. Valid values: Account, Email
      */
-    public readonly attrTargetType: any;
+    public readonly attrTargetType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Handshake`.

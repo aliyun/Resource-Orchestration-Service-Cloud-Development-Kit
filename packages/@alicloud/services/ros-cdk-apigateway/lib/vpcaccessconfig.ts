@@ -11,22 +11,22 @@ export interface VpcAccessConfigProps {
     /**
      * Property instanceId: The id of the instance (ECS/SLB).
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * Property name: The name of one VPC access configuration.Need [4, 50] Chinese\English\Number characters "-" or "_",and should start with Chinese/English character.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property port: The port of the VPC.
      */
-    readonly port: number;
+    readonly port: number | ros.IResolvable;
 
     /**
      * Property vpcId: The id of the VPC.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 }
 
 /**

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::SnatEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.491Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.195Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosSnatEntry")
 public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSnatEntryIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrSnatEntryIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSnatEntryIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrSnatEntryIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSnatIp() {
-        return software.amazon.jsii.Kernel.get(this, "snatIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSnatIp() {
+        return software.amazon.jsii.Kernel.get(this, "snatIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSnatTableId() {
-        return software.amazon.jsii.Kernel.get(this, "snatTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSnatIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "snatIp", java.util.Objects.requireNonNull(value, "snatIp is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSnatTableId() {
+        return software.amazon.jsii.Kernel.get(this, "snatTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSnatEntryName() {
-        return software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSnatTableId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "snatTableId", java.util.Objects.requireNonNull(value, "snatTableId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSnatEntryName() {
+        return software.amazon.jsii.Kernel.get(this, "snatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,13 +111,25 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSourceCidr() {
-        return software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSnatEntryName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "snatEntryName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSourceCidr() {
+        return software.amazon.jsii.Kernel.get(this, "sourceCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSourceCidr(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "sourceCidr", value);
+    }
+
+    /**
+     */
+    public void setSourceCidr(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "sourceCidr", value);
     }
 
@@ -161,12 +185,28 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.snatIp(snatIp);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param snatIp This parameter is required.
+         */
+        public Builder snatIp(final com.aliyun.ros.cdk.core.IResolvable snatIp) {
+            this.props.snatIp(snatIp);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param snatTableId This parameter is required.
          */
         public Builder snatTableId(final java.lang.String snatTableId) {
+            this.props.snatTableId(snatTableId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param snatTableId This parameter is required.
+         */
+        public Builder snatTableId(final com.aliyun.ros.cdk.core.IResolvable snatTableId) {
             this.props.snatTableId(snatTableId);
             return this;
         }
@@ -179,12 +219,28 @@ public class RosSnatEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.snatEntryName(snatEntryName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param snatEntryName This parameter is required.
+         */
+        public Builder snatEntryName(final com.aliyun.ros.cdk.core.IResolvable snatEntryName) {
+            this.props.snatEntryName(snatEntryName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param sourceCidr This parameter is required.
          */
         public Builder sourceCidr(final java.lang.String sourceCidr) {
+            this.props.sourceCidr(sourceCidr);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sourceCidr This parameter is required.
+         */
+        public Builder sourceCidr(final com.aliyun.ros.cdk.core.IResolvable sourceCidr) {
             this.props.sourceCidr(sourceCidr);
             return this;
         }

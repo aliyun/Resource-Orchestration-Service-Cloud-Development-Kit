@@ -11,17 +11,17 @@ export interface GrantCcnToCenProps {
     /**
      * Property ccnInstanceId: The ID of the CCN instance.
      */
-    readonly ccnInstanceId: string;
+    readonly ccnInstanceId: string | ros.IResolvable;
 
     /**
      * Property cenInstanceId: The ID of the CEN instance.
      */
-    readonly cenInstanceId: string;
+    readonly cenInstanceId: string | ros.IResolvable;
 
     /**
      * Property cenUid: The ID of the account to which the CEN instance belongs.
      */
-    readonly cenUid: string;
+    readonly cenUid: string | ros.IResolvable;
 }
 
 /**
@@ -37,12 +37,12 @@ export class GrantCcnToCen extends ros.Resource {
     /**
      * Attribute CcnInstanceId: The ID of the CCN instance.
      */
-    public readonly attrCcnInstanceId: any;
+    public readonly attrCcnInstanceId: ros.IResolvable;
 
     /**
      * Attribute CenInstanceId: The ID of the CEN instance.
      */
-    public readonly attrCenInstanceId: any;
+    public readonly attrCenInstanceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SAG::GrantCcnToCen`.

@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
     public class VpcBinderProps : AlibabaCloud.SDK.ROS.CDK.Ots.IVpcBinderProps
     {
         /// <summary>Property instanceName: Instance name.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceName
         {
             get;
             set;

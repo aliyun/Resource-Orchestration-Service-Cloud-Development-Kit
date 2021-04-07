@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: Cluster ID.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterMemberIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterMemberIds
+        [JsiiProperty(name: "attrClusterMemberIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterMemberIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceIds: ECS instance IDs.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceIds
+        [JsiiProperty(name: "attrInstanceIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,10 +80,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: clusterId: Cluster ID to import ECS instance
         /// </remarks>
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -97,20 +97,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// <strong>Property</strong>: instanceIds: ECS instance ID list to import.
         /// </remarks>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        public virtual string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        public virtual object InstanceIds
         {
-            get => GetInstanceProperty<string[]>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: password: Password ECS hosts need to import (ECS settings can continue to use purchased)
         /// </remarks>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Password
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

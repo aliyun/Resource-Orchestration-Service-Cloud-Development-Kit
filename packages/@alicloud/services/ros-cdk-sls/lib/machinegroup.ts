@@ -11,22 +11,22 @@ export interface MachineGroupProps {
     /**
      * Property groupAttribute: Group attribute, default is null. The object value is groupToic and externalName
      */
-    readonly groupAttribute?: string;
+    readonly groupAttribute?: string | ros.IResolvable;
 
     /**
      * Property groupName: Display name of the group name, the Project only. [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly groupName?: string;
+    readonly groupName?: string | ros.IResolvable;
 
     /**
      * Property groupType: MachineGroup type, the value is empty or Armory
      */
-    readonly groupType?: string;
+    readonly groupType?: string | ros.IResolvable;
 
     /**
      * Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'
      */
-    readonly machineIdentifyType?: string;
+    readonly machineIdentifyType?: string | ros.IResolvable;
 
     /**
      * Property machineList: The machine tag, the value is ip or userdefined-id.
@@ -36,7 +36,7 @@ export interface MachineGroupProps {
     /**
      * Property projectName: MachineGroup created in project.
      */
-    readonly projectName?: string;
+    readonly projectName?: string | ros.IResolvable;
 }
 
 /**
@@ -52,12 +52,12 @@ export class MachineGroup extends ros.Resource {
     /**
      * Attribute GroupName: GroupName of SLS.
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * Attribute ProjectName: ProjectName of SLS.
      */
-    public readonly attrProjectName: any;
+    public readonly attrProjectName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLS::MachineGroup`.

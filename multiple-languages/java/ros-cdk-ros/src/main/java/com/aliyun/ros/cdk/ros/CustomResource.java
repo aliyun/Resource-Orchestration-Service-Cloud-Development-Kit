@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::CustomResource`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.CustomResource")
 public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::CustomResource`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public CustomResource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.CustomResourceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::CustomResource`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public CustomResource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.CustomResourceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Outputs: Output data received from service provider.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOutputs() {
-        return software.amazon.jsii.Kernel.get(this, "attrOutputs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOutputs() {
+        return software.amazon.jsii.Kernel.get(this, "attrOutputs", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ros.CustomResource> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,34 +90,137 @@ public class CustomResource extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
+         * <p>
+         * Allowed values:
+         * <p>
+         * <ul>
+         * <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         * <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
+         * <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
+         * <li>HTTP&amp;HTTPS: web[options]:<url>
+         * Two options are supported:
+         * <p>
+         * <ul>
+         * <li>sync: sync HTTP&amp;HTTPS request.</li>
+         * <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
+         * Examples:</li>
+         * <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         * <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
+         * <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
+         * <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
+         * <li>acs:mns:cn-hangzhou:123456789:/topics/test-topic</li>
+         * <li>web:https://abc.com</li>
+         * <li>web[sync]:http://abc.com</li>
+         * <li>web[sync,idempotent]:https://abc.com</li>
+         * </ul></li>
+         * </ul>
+         * <p>
          * @return {@code this}
-         * @param serviceToken This parameter is required.
+         * @param serviceToken Property serviceToken: The service token that was given to the template developer by the service provider to access the service. This parameter is required.
          */
         public Builder serviceToken(final java.lang.String serviceToken) {
             this.props.serviceToken(serviceToken);
             return this;
         }
+        /**
+         * Property serviceToken: The service token that was given to the template developer by the service provider to access the service.
+         * <p>
+         * Allowed values:
+         * <p>
+         * <ul>
+         * <li>Function Compute: acs:fc:&lt;region_id&gt;:&lt;account_id&gt;:services/&lt;service_name&gt;/functions/&lt;function_name&gt;</li>
+         * <li>MNS Queue: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:queues/&lt;queue_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/queues/&lt;queue_name&gt;</li>
+         * <li>MNS Topic: acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:topics/&lt;topic_name&gt; or acs:mns:&lt;region_id&gt;:&lt;account_id&gt;:/topics/&lt;topic_name&gt;</li>
+         * <li>HTTP&amp;HTTPS: web[options]:<url>
+         * Two options are supported:
+         * <p>
+         * <ul>
+         * <li>sync: sync HTTP&amp;HTTPS request.</li>
+         * <li>idempotent: indicates that the Create request is idempotent. Update and Delete requests should be always idempotent.
+         * Examples:</li>
+         * <li>acs:fc:cn-hangzhou:123456789:services/test-service/functions/test-function</li>
+         * <li>acs:mns:cn-hangzhou:123456789:queues/test-queue</li>
+         * <li>acs:mns:cn-hangzhou:123456789:/queues/test-queue</li>
+         * <li>acs:mns:cn-hangzhou:123456789:topics/test-topic</li>
+         * <li>acs:mns:cn-hangzhou:123456789:/topics/test-topic</li>
+         * <li>web:https://abc.com</li>
+         * <li>web[sync]:http://abc.com</li>
+         * <li>web[sync,idempotent]:https://abc.com</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param serviceToken Property serviceToken: The service token that was given to the template developer by the service provider to access the service. This parameter is required.
+         */
+        public Builder serviceToken(final com.aliyun.ros.cdk.core.IResolvable serviceToken) {
+            this.props.serviceToken(serviceToken);
+            return this;
+        }
 
         /**
+         * Property timeout: Timeout seconds before service provider responses.
+         * <p>
+         * It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&amp;HTTPS request.
+         * Timeout seconds are always 10 for sync HTTP&amp;HTTPS request.
+         * <p>
          * @return {@code this}
-         * @param timeout This parameter is required.
+         * @param timeout Property timeout: Timeout seconds before service provider responses. This parameter is required.
          */
         public Builder timeout(final java.lang.Number timeout) {
             this.props.timeout(timeout);
             return this;
         }
+        /**
+         * Property timeout: Timeout seconds before service provider responses.
+         * <p>
+         * It takes effects only if the type of ServiceToken is Function Compute, MNS Queue, MNS Topic or async HTTP&amp;HTTPS request.
+         * Timeout seconds are always 10 for sync HTTP&amp;HTTPS request.
+         * <p>
+         * @return {@code this}
+         * @param timeout Property timeout: Timeout seconds before service provider responses. This parameter is required.
+         */
+        public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.props.timeout(timeout);
+            return this;
+        }
 
         /**
+         * Property httpConfig: Config for HTTP&HTTPS service provider.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider. This parameter is required.
+         */
+        public Builder httpConfig(final com.aliyun.ros.cdk.core.IResolvable httpConfig) {
+            this.props.httpConfig(httpConfig);
+            return this;
+        }
+        /**
+         * Property httpConfig: Config for HTTP&HTTPS service provider.
+         * <p>
+         * @return {@code this}
+         * @param httpConfig Property httpConfig: Config for HTTP&HTTPS service provider. This parameter is required.
+         */
+        public Builder httpConfig(final com.aliyun.ros.cdk.ros.RosCustomResource.HttpConfigProperty httpConfig) {
+            this.props.httpConfig(httpConfig);
+            return this;
+        }
+
+        /**
+         * Property parameters: Parameters to be passed to service provider.
+         * <p>
+         * @return {@code this}
+         * @param parameters Property parameters: Parameters to be passed to service provider. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
         /**
+         * Property parameters: Parameters to be passed to service provider.
+         * <p>
          * @return {@code this}
-         * @param parameters This parameter is required.
+         * @param parameters Property parameters: Parameters to be passed to service provider. This parameter is required.
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);

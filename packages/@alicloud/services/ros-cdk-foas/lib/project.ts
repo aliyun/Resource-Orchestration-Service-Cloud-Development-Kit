@@ -13,32 +13,32 @@ export interface ProjectProps {
      * Exclusive cluster: cell
      * Shared cluster: public
      */
-    readonly deployType: string;
+    readonly deployType: string | ros.IResolvable;
 
     /**
      * Property managerIds: Comma delimited account Id list of managers.
      */
-    readonly managerIds: string;
+    readonly managerIds: string | ros.IResolvable;
 
     /**
      * Property name: Project name. It begins with a letter, and contains only lowercase English letters, numbers, underscores (_), and is limited to 3-64 characters.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property clusterId: Cluster ID.
      */
-    readonly clusterId?: string;
+    readonly clusterId?: string | ros.IResolvable;
 
     /**
      * Property description: Project description.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property orderId: Order Id of Shared cluster.
      */
-    readonly orderId?: string;
+    readonly orderId?: string | ros.IResolvable;
 }
 
 /**
@@ -54,7 +54,7 @@ export class Project extends ros.Resource {
     /**
      * Attribute State: Project state.
      */
-    public readonly attrState: any;
+    public readonly attrState: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FOAS::Project`.

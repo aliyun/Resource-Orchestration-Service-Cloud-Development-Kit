@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Attribute</strong>: AcrId: Access control rule ID.
         /// </remarks>
-        [JsiiProperty(name: "attrAcrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAcrId
+        [JsiiProperty(name: "attrAcrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAcrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,30 +62,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: aclId: Access control ID.
         /// </remarks>
-        [JsiiProperty(name: "aclId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string AclId
+        [JsiiProperty(name: "aclId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AclId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: destCidr: Destination address, CIDR format and IP address range in IPv4 format.
         /// </remarks>
-        [JsiiProperty(name: "destCidr", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DestCidr
+        [JsiiProperty(name: "destCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DestCidr
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: destPortRange: Destination port range, 80/80.
         /// </remarks>
-        [JsiiProperty(name: "destPortRange", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DestPortRange
+        [JsiiProperty(name: "destPortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DestPortRange
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <strong>Property</strong>: direction: Regular direction.
         /// Value: in|out
         /// </remarks>
-        [JsiiProperty(name: "direction", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Direction
+        [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Direction
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -110,40 +110,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <remarks>
         /// <strong>Property</strong>: ipProtocol: Protocol, not case sensitive.
         /// </remarks>
-        [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string IpProtocol
+        [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object IpProtocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: policy: Access: accept|drop
         /// </remarks>
-        [JsiiProperty(name: "policy", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Policy
+        [JsiiProperty(name: "policy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Policy
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: sourceCidr: Source address, CIDR format and IP address range in IPv4 format.
         /// </remarks>
-        [JsiiProperty(name: "sourceCidr", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SourceCidr
+        [JsiiProperty(name: "sourceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SourceCidr
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: sourcePortRange: Source port range, 80/80.
         /// </remarks>
-        [JsiiProperty(name: "sourcePortRange", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SourcePortRange
+        [JsiiProperty(name: "sourcePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SourcePortRange
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -151,10 +151,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// <strong>Property</strong>: description: Rule description information, ranging from 1 to 512 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -163,10 +163,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         /// Default: 1
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Priority
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Priority
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

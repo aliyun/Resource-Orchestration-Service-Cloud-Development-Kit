@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cenId: The ID of the CEN instance.
         /// </remarks>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-        string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceId: The ID of the network to attach.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceId
+        [JsiiProperty(name: "childInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceId
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceRegionId
+        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceRegionId
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceType
+        [JsiiProperty(name: "childInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceType
         {
             get;
         }
@@ -47,9 +47,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceOwnerId: The account ID to which the network belongs.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? ChildInstanceOwnerId
+        object? ChildInstanceOwnerId
         {
             get
             {
@@ -68,47 +68,47 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             /// <remarks>
             /// <strong>Property</strong>: cenId: The ID of the CEN instance.
             /// </remarks>
-            [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenId
+            [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceId: The ID of the network to attach.
             /// </remarks>
-            [JsiiProperty(name: "childInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceId
+            [JsiiProperty(name: "childInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
             /// </remarks>
-            [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceRegionId
+            [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceRegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceType: The type of the network to attach. Support VPC, VBR or CCN.
             /// </remarks>
-            [JsiiProperty(name: "childInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceType
+            [JsiiProperty(name: "childInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceOwnerId: The account ID to which the network belongs.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? ChildInstanceOwnerId
+            [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ChildInstanceOwnerId
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

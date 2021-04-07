@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cenId: The ID of the CEN instance where the route entry is published.
         /// </remarks>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceId: The ID of the attached network (VPC or VBR).
         /// </remarks>
-        [JsiiProperty(name: "childInstanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ChildInstanceId
+        [JsiiProperty(name: "childInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ChildInstanceId
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ChildInstanceRegionId
+        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ChildInstanceRegionId
         {
             get;
             set;
@@ -43,8 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceRouteTableId: The route table of the attached VBR or VPC.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ChildInstanceRouteTableId
+        [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ChildInstanceRouteTableId
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceType: The type of the network, value: VPC VBR
         /// </remarks>
-        [JsiiProperty(name: "childInstanceType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ChildInstanceType
+        [JsiiProperty(name: "childInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ChildInstanceType
         {
             get;
             set;
@@ -63,8 +63,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: destinationCidrBlock: The destination CIDR block of the route entry to publish.
         /// </remarks>
-        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DestinationCidrBlock
+        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DestinationCidrBlock
         {
             get;
             set;

@@ -3,30 +3,30 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::DeviceGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosDeviceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeviceGroupProps.Jsii$Proxy.class)
 public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupDesc() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupDesc() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSuperGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSuperGroupId() {
         return null;
     }
 
@@ -40,10 +40,10 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosDeviceGroupProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeviceGroupProps> {
-        private java.lang.String groupName;
-        private java.lang.String groupDesc;
-        private java.lang.String iotInstanceId;
-        private java.lang.String superGroupId;
+        private java.lang.Object groupName;
+        private java.lang.Object groupDesc;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object superGroupId;
 
         /**
          * Sets the value of {@link RosDeviceGroupProps#getGroupName}
@@ -51,6 +51,16 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
+            this.groupName = groupName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeviceGroupProps#getGroupName}
+         * @param groupName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {
             this.groupName = groupName;
             return this;
         }
@@ -66,6 +76,16 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosDeviceGroupProps#getGroupDesc}
+         * @param groupDesc the value to be set.
+         * @return {@code this}
+         */
+        public Builder groupDesc(com.aliyun.ros.cdk.core.IResolvable groupDesc) {
+            this.groupDesc = groupDesc;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeviceGroupProps#getIotInstanceId}
          * @param iotInstanceId the value to be set.
          * @return {@code this}
@@ -76,11 +96,31 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosDeviceGroupProps#getIotInstanceId}
+         * @param iotInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeviceGroupProps#getSuperGroupId}
          * @param superGroupId the value to be set.
          * @return {@code this}
          */
         public Builder superGroupId(java.lang.String superGroupId) {
+            this.superGroupId = superGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeviceGroupProps#getSuperGroupId}
+         * @param superGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder superGroupId(com.aliyun.ros.cdk.core.IResolvable superGroupId) {
             this.superGroupId = superGroupId;
             return this;
         }
@@ -101,10 +141,10 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeviceGroupProps {
-        private final java.lang.String groupName;
-        private final java.lang.String groupDesc;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String superGroupId;
+        private final java.lang.Object groupName;
+        private final java.lang.Object groupDesc;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object superGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -112,16 +152,16 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupDesc = software.amazon.jsii.Kernel.get(this, "groupDesc", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.superGroupId = software.amazon.jsii.Kernel.get(this, "superGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupName = software.amazon.jsii.Kernel.get(this, "groupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupDesc = software.amazon.jsii.Kernel.get(this, "groupDesc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.superGroupId = software.amazon.jsii.Kernel.get(this, "superGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String groupName, final java.lang.String groupDesc, final java.lang.String iotInstanceId, final java.lang.String superGroupId) {
+        protected Jsii$Proxy(final java.lang.Object groupName, final java.lang.Object groupDesc, final java.lang.Object iotInstanceId, final java.lang.Object superGroupId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.groupName = java.util.Objects.requireNonNull(groupName, "groupName is required");
             this.groupDesc = groupDesc;
@@ -130,22 +170,22 @@ public interface RosDeviceGroupProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getGroupName() {
+        public final java.lang.Object getGroupName() {
             return this.groupName;
         }
 
         @Override
-        public final java.lang.String getGroupDesc() {
+        public final java.lang.Object getGroupDesc() {
             return this.groupDesc;
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getSuperGroupId() {
+        public final java.lang.Object getSuperGroupId() {
             return this.superGroupId;
         }
 

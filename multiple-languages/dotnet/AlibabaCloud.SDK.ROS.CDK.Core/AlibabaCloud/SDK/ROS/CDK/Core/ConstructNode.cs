@@ -51,7 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeStaticMethod<AlibabaCloud.SDK.ROS.CDK.Cxapi.CloudAssembly>(typeof(AlibabaCloud.SDK.ROS.CDK.Core.ConstructNode), new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ConstructNode), typeof(AlibabaCloud.SDK.ROS.CDK.Core.ISynthesisOptions)}, new object?[]{node, options})!;
         }
 
-        /// <summary>Invokes "validate" on all constructs in the tree (depth-first, pre-order) and returns&#xD; the list of all errors.</summary>
+        /// <summary>Invokes "validate" on all constructs in the tree (depth-first, pre-order) and returns the list of all errors.</summary>
         /// <param name="node">The root node.</param>
         /// <remarks>
         /// An empty list indicates that there are no errors.
@@ -129,9 +129,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             return InvokeInstanceMethod<AlibabaCloud.SDK.ROS.CDK.Core.IConstruct[]>(new System.Type[]{typeof(AlibabaCloud.SDK.ROS.CDK.Core.ConstructOrder)}, new object?[]{order})!;
         }
 
-        /// <summary>Return a direct child by id&#xD; &#xD; Throws an error if the child is not found.</summary>
+        /// <summary>Return a direct child by id.</summary>
         /// <param name="id">Identifier of direct child.</param>
         /// <returns>Child with the given id.</returns>
+        /// <remarks>
+        /// Throws an error if the child is not found.
+        /// </remarks>
         [JsiiMethod(name: "findChild", returnsJson: "{\"type\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"}}", parametersJson: "[{\"docs\":{\"summary\":\"Identifier of direct child.\"},\"name\":\"id\",\"type\":{\"primitive\":\"string\"}}]")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IConstruct FindChild(string id)
         {
@@ -215,7 +218,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             get => GetInstanceProperty<string>()!;
         }
 
-        /// <summary>Returns true if this construct or the scopes in which it is defined are&#xD; locked.</summary>
+        /// <summary>Returns true if this construct or the scopes in which it is defined are locked.</summary>
         [JsiiProperty(name: "locked", typeJson: "{\"primitive\":\"boolean\"}")]
         public virtual bool Locked
         {
@@ -250,7 +253,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         }
 
         /// <summary>All parent scopes of this construct.</summary>
-        /// <returns>a list of parent scopes. The last element in the list will always&#xD;be the current construct and the first element will be the root of the&#xD;tree.</returns>
+        /// <returns>a list of parent scopes. The last element in the list will always
+        /// be the current construct and the first element will be the root of the
+        /// tree.</returns>
         [JsiiProperty(name: "scopes", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.IConstruct\"},\"kind\":\"array\"}}")]
         public virtual AlibabaCloud.SDK.ROS.CDK.Core.IConstruct[] Scopes
         {
@@ -284,14 +289,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         /// This is usually the construct that provides the bulk of the underlying functionality.
         /// Useful for modifications of the underlying construct that are not available at the higher levels.
         /// Override the defaultChild property.
-        /// 
+        ///
         /// This should only be used in the cases where the correct
         /// default child is not named 'Resource' or 'Default' as it
         /// should be.
-        /// 
+        ///
         /// If you set this to undefined, the default behavior of finding
         /// the child named 'Resource' or 'Default' will be used.
-        /// 
+        ///
         /// <strong>Throws</strong>: if there is more than one child
         /// </remarks>
         [JsiiOptional]

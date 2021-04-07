@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute ContactGroupName: The name of the alert contact group.</summary>
-        [JsiiProperty(name: "attrContactGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrContactGroupName
+        [JsiiProperty(name: "attrContactGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrContactGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

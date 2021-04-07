@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS template type:  `ALIYUN::ApiGateway::CustomDomain`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.683Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosCustomDomain")
 public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCertificateId() {
-        return software.amazon.jsii.Kernel.get(this, "attrCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrCertificateId() {
+        return software.amazon.jsii.Kernel.get(this, "attrCertificateId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -55,13 +55,19 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDomainName() {
-        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDomainName() {
+        return software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDomainName(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
+    }
+
+    /**
+     */
+    public void setDomainName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "domainName", java.util.Objects.requireNonNull(value, "domainName is required"));
     }
 
@@ -75,8 +81,8 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getCertificateBody() {
-        return software.amazon.jsii.Kernel.get(this, "certificateBody", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "groupId", java.util.Objects.requireNonNull(value, "groupId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCertificateBody() {
+        return software.amazon.jsii.Kernel.get(this, "certificateBody", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getCertificateName() {
-        return software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCertificateBody(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "certificateBody", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCertificateName() {
+        return software.amazon.jsii.Kernel.get(this, "certificateName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,13 +129,25 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getCertificatePrivateKey() {
-        return software.amazon.jsii.Kernel.get(this, "certificatePrivateKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCertificateName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "certificateName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCertificatePrivateKey() {
+        return software.amazon.jsii.Kernel.get(this, "certificatePrivateKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setCertificatePrivateKey(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "certificatePrivateKey", value);
+    }
+
+    /**
+     */
+    public void setCertificatePrivateKey(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "certificatePrivateKey", value);
     }
 
@@ -155,12 +185,28 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.domainName(domainName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param domainName This parameter is required.
+         */
+        public Builder domainName(final com.aliyun.ros.cdk.core.IResolvable domainName) {
+            this.props.domainName(domainName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param groupId This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
+            this.props.groupId(groupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param groupId This parameter is required.
+         */
+        public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
             this.props.groupId(groupId);
             return this;
         }
@@ -173,6 +219,14 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.certificateBody(certificateBody);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param certificateBody This parameter is required.
+         */
+        public Builder certificateBody(final com.aliyun.ros.cdk.core.IResolvable certificateBody) {
+            this.props.certificateBody(certificateBody);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -182,12 +236,28 @@ public class RosCustomDomain extends com.aliyun.ros.cdk.core.RosResource {
             this.props.certificateName(certificateName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param certificateName This parameter is required.
+         */
+        public Builder certificateName(final com.aliyun.ros.cdk.core.IResolvable certificateName) {
+            this.props.certificateName(certificateName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param certificatePrivateKey This parameter is required.
          */
         public Builder certificatePrivateKey(final java.lang.String certificatePrivateKey) {
+            this.props.certificatePrivateKey(certificatePrivateKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param certificatePrivateKey This parameter is required.
+         */
+        public Builder certificatePrivateKey(final com.aliyun.ros.cdk.core.IResolvable certificatePrivateKey) {
             this.props.certificatePrivateKey(certificatePrivateKey);
             return this;
         }

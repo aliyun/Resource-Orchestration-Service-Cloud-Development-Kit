@@ -11,13 +11,13 @@ export interface DeviceProps {
     /**
      * Property productKey: The identifier of the product to which the device to be registered belongs.
      */
-    readonly productKey: string;
+    readonly productKey: string | ros.IResolvable;
 
     /**
      * Property devEui: DevEUI LoRaWAN equipment.
      * When you create a LoRaWAN devices, this will pass.
      */
-    readonly devEui?: string;
+    readonly devEui?: string | ros.IResolvable;
 
     /**
      * Property deviceName: The name of the device that you want to register. The device name must consist of
@@ -26,25 +26,25 @@ export interface DeviceProps {
      * DeviceName is used with ProductKey to identify a specified device.
      * Note If you do not specify this parameter, the system will generate a name for the device.
      */
-    readonly deviceName?: string;
+    readonly deviceName?: string | ros.IResolvable;
 
     /**
      * Property iotInstanceId: Public instance does not pass this parameter; instance that you need to buy the incoming instance ID.
      */
-    readonly iotInstanceId?: string;
+    readonly iotInstanceId?: string | ros.IResolvable;
 
     /**
      * Property nickname: Add a nickname for the device. A nickname can be 4-64 characters in length, and can
      * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
      * character counts as two characters.
      */
-    readonly nickname?: string;
+    readonly nickname?: string | ros.IResolvable;
 
     /**
      * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
      * When you create a LoRaWAN devices, this will pass.
      */
-    readonly pinCode?: string;
+    readonly pinCode?: string | ros.IResolvable;
 }
 
 /**
@@ -60,48 +60,48 @@ export class Device extends ros.Resource {
     /**
      * Attribute DeviceName: Device name.
      */
-    public readonly attrDeviceName: any;
+    public readonly attrDeviceName: ros.IResolvable;
 
     /**
      * Attribute DeviceSecret: Device key.
      */
-    public readonly attrDeviceSecret: any;
+    public readonly attrDeviceSecret: ros.IResolvable;
 
     /**
      * Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
 Description Keep, do not leak.
      */
-    public readonly attrIotId: any;
+    public readonly attrIotId: ros.IResolvable;
 
     /**
      * Attribute IotInstanceId: IOT instance ID.
      */
-    public readonly attrIotInstanceId: any;
+    public readonly attrIotInstanceId: ros.IResolvable;
 
     /**
      * Attribute IpAddress: IP address.
      */
-    public readonly attrIpAddress: any;
+    public readonly attrIpAddress: ros.IResolvable;
 
     /**
      * Attribute NickName: Nick name.
      */
-    public readonly attrNickName: any;
+    public readonly attrNickName: ros.IResolvable;
 
     /**
      * Attribute NodeType: Node type.
      */
-    public readonly attrNodeType: any;
+    public readonly attrNodeType: ros.IResolvable;
 
     /**
      * Attribute ProductKey: Product key.
      */
-    public readonly attrProductKey: any;
+    public readonly attrProductKey: ros.IResolvable;
 
     /**
      * Attribute ProductName: Product name.
      */
-    public readonly attrProductName: any;
+    public readonly attrProductName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::IOT::Device`.

@@ -1,0 +1,32 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AlarmTaskEnable = exports.AlarmTaskEnableProperty = void 0;
+const ros = require("@alicloud/ros-cdk-core");
+const ess_generated_1 = require("./ess.generated");
+Object.defineProperty(exports, "AlarmTaskEnableProperty", { enumerable: true, get: function () { return ess_generated_1.RosAlarmTaskEnable; } });
+/**
+ * A ROS resource type:  `ALIYUN::ESS::AlarmTaskEnable`
+ */
+class AlarmTaskEnable extends ros.Resource {
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource, which will be assigned to ROS resource.
+     */
+    /**
+     * Create a new `ALIYUN::ESS::AlarmTaskEnable`.
+     *
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope, id, props, enableResourcePropertyConstraint = true) {
+        super(scope, id);
+        const rosAlarmTaskEnable = new ess_generated_1.RosAlarmTaskEnable(this, id, {
+            enable: props.enable,
+            alarmTaskId: props.alarmTaskId,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosAlarmTaskEnable;
+    }
+}
+exports.AlarmTaskEnable = AlarmTaskEnable;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYWxhcm10YXNrZW5hYmxlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiYWxhcm10YXNrZW5hYmxlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7OztBQUFBLDhDQUE4QztBQUM5QyxtREFBcUQ7QUFFdEIsd0dBRnRCLGtDQUFrQixPQUUyQjtBQWtCdEQ7O0dBRUc7QUFDSCxNQUFhLGVBQWdCLFNBQVEsR0FBRyxDQUFDLFFBQVE7SUFFN0M7OztPQUdHO0lBRUg7Ozs7OztPQU1HO0lBQ0gsWUFBWSxLQUFvQixFQUFFLEVBQVUsRUFBRSxLQUEyQixFQUFFLG1DQUEyQyxJQUFJO1FBQ3RILEtBQUssQ0FBQyxLQUFLLEVBQUUsRUFBRSxDQUFDLENBQUM7UUFFakIsTUFBTSxrQkFBa0IsR0FBRyxJQUFJLGtDQUFrQixDQUFDLElBQUksRUFBRSxFQUFFLEVBQUc7WUFDekQsTUFBTSxFQUFFLEtBQUssQ0FBQyxNQUFNO1lBQ3BCLFdBQVcsRUFBRSxLQUFLLENBQUMsV0FBVztTQUNqQyxFQUFFLGdDQUFnQyxJQUFJLElBQUksQ0FBQyxLQUFLLENBQUMsZ0NBQWdDLENBQUMsQ0FBQztRQUNwRixJQUFJLENBQUMsUUFBUSxHQUFHLGtCQUFrQixDQUFDO0lBQ3ZDLENBQUM7Q0FDSjtBQXZCRCwwQ0F1QkMiLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgKiBhcyByb3MgZnJvbSAnQGFsaWNsb3VkL3Jvcy1jZGstY29yZSc7XG5pbXBvcnQgeyBSb3NBbGFybVRhc2tFbmFibGUgfSBmcm9tICcuL2Vzcy5nZW5lcmF0ZWQnO1xuLy8gR2VuZXJhdGVkIGZyb20gdGhlIEFsaUNsb3VkIFJPUyBSZXNvdXJjZSBTcGVjaWZpY2F0aW9uXG5leHBvcnQgeyBSb3NBbGFybVRhc2tFbmFibGUgYXMgQWxhcm1UYXNrRW5hYmxlUHJvcGVydHkgfTtcblxuLyoqXG4gKiBQcm9wZXJ0aWVzIGZvciBkZWZpbmluZyBhIGBBTElZVU46OkVTUzo6QWxhcm1UYXNrRW5hYmxlYFxuICovXG5leHBvcnQgaW50ZXJmYWNlIEFsYXJtVGFza0VuYWJsZVByb3BzIHtcblxuICAgIC8qKlxuICAgICAqIFByb3BlcnR5IGFsYXJtVGFza0lkOiBUaGUgaWQgb2YgYWxhcm0gdGFzay5cbiAgICAgKi9cbiAgICByZWFkb25seSBhbGFybVRhc2tJZDogc3RyaW5nIHwgcm9zLklSZXNvbHZhYmxlO1xuXG4gICAgLyoqXG4gICAgICogUHJvcGVydHkgZW5hYmxlOiBFbmFibGUgYWxhcm0gdGFzayBvciBub3RcbiAgICAgKi9cbiAgICByZWFkb25seSBlbmFibGU6IGJvb2xlYW4gfCByb3MuSVJlc29sdmFibGU7XG59XG5cbi8qKlxuICogQSBST1MgcmVzb3VyY2UgdHlwZTogIGBBTElZVU46OkVTUzo6QWxhcm1UYXNrRW5hYmxlYFxuICovXG5leHBvcnQgY2xhc3MgQWxhcm1UYXNrRW5hYmxlIGV4dGVuZHMgcm9zLlJlc291cmNlIHtcblxuICAgIC8qKlxuICAgICAqIEEgZmFjdG9yeSBtZXRob2QgdGhhdCBjcmVhdGVzIGEgbmV3IGluc3RhbmNlIG9mIHRoaXMgY2xhc3MgZnJvbSBhbiBvYmplY3RcbiAgICAgKiBjb250YWluaW5nIHRoZSBwcm9wZXJ0aWVzIG9mIHRoaXMgUk9TIHJlc291cmNlLCB3aGljaCB3aWxsIGJlIGFzc2lnbmVkIHRvIFJPUyByZXNvdXJjZS5cbiAgICAgKi9cblxuICAgIC8qKlxuICAgICAqIENyZWF0ZSBhIG5ldyBgQUxJWVVOOjpFU1M6OkFsYXJtVGFza0VuYWJsZWAuXG4gICAgICpcbiAgICAgKiBQYXJhbSBzY29wZSAtIHNjb3BlIGluIHdoaWNoIHRoaXMgcmVzb3VyY2UgaXMgZGVmaW5lZFxuICAgICAqIFBhcmFtIGlkICAgIC0gc2NvcGVkIGlkIG9mIHRoZSByZXNvdXJjZVxuICAgICAqIFBhcmFtIHByb3BzIC0gcmVzb3VyY2UgcHJvcGVydGllc1xuICAgICAqL1xuICAgIGNvbnN0cnVjdG9yKHNjb3BlOiByb3MuQ29uc3RydWN0LCBpZDogc3RyaW5nLCBwcm9wczogQWxhcm1UYXNrRW5hYmxlUHJvcHMsIGVuYWJsZVJlc291cmNlUHJvcGVydHlDb25zdHJhaW50OmJvb2xlYW4gPSB0cnVlKSB7XG4gICAgICAgIHN1cGVyKHNjb3BlLCBpZCk7XG5cbiAgICAgICAgY29uc3Qgcm9zQWxhcm1UYXNrRW5hYmxlID0gbmV3IFJvc0FsYXJtVGFza0VuYWJsZSh0aGlzLCBpZCwgIHtcbiAgICAgICAgICAgIGVuYWJsZTogcHJvcHMuZW5hYmxlLFxuICAgICAgICAgICAgYWxhcm1UYXNrSWQ6IHByb3BzLmFsYXJtVGFza0lkLFxuICAgICAgICB9LCBlbmFibGVSZXNvdXJjZVByb3BlcnR5Q29uc3RyYWludCAmJiB0aGlzLnN0YWNrLmVuYWJsZVJlc291cmNlUHJvcGVydHlDb25zdHJhaW50KTtcbiAgICAgICAgdGhpcy5yZXNvdXJjZSA9IHJvc0FsYXJtVGFza0VuYWJsZTtcbiAgICB9XG59XG4iXX0=

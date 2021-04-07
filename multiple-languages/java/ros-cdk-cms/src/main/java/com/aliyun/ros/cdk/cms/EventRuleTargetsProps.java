@@ -3,40 +3,46 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRuleTargets`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleTargetsProps.Jsii$Proxy.class)
 public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property ruleName: The name of the alert rule.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRuleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
+     * Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContactParameters() {
         return null;
     }
 
     /**
+     * Property fcParameters: FC configuration.A maximum of 5 parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFcParameters() {
         return null;
     }
 
     /**
+     * Property mnsParameters: MNS configuration.A maximum of 5 parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMnsParameters() {
         return null;
     }
 
     /**
+     * Property slsParameters: SLS configuration.A maximum of 5 parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSlsParameters() {
         return null;
     }
 
     /**
+     * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebhookParameters() {
         return null;
@@ -52,7 +58,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link EventRuleTargetsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<EventRuleTargetsProps> {
-        private java.lang.String ruleName;
+        private java.lang.Object ruleName;
         private java.lang.Object contactParameters;
         private java.lang.Object fcParameters;
         private java.lang.Object mnsParameters;
@@ -61,7 +67,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getRuleName}
-         * @param ruleName the value to be set. This parameter is required.
+         * @param ruleName Property ruleName: The name of the alert rule. This parameter is required.
          * @return {@code this}
          */
         public Builder ruleName(java.lang.String ruleName) {
@@ -70,8 +76,18 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link EventRuleTargetsProps#getRuleName}
+         * @param ruleName Property ruleName: The name of the alert rule. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
+            this.ruleName = ruleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EventRuleTargetsProps#getContactParameters}
-         * @param contactParameters the value to be set.
+         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder contactParameters(com.aliyun.ros.cdk.core.IResolvable contactParameters) {
@@ -81,7 +97,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getContactParameters}
-         * @param contactParameters the value to be set.
+         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder contactParameters(java.util.List<? extends java.lang.Object> contactParameters) {
@@ -91,7 +107,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getFcParameters}
-         * @param fcParameters the value to be set.
+         * @param fcParameters Property fcParameters: FC configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder fcParameters(com.aliyun.ros.cdk.core.IResolvable fcParameters) {
@@ -101,7 +117,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getFcParameters}
-         * @param fcParameters the value to be set.
+         * @param fcParameters Property fcParameters: FC configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder fcParameters(java.util.List<? extends java.lang.Object> fcParameters) {
@@ -111,7 +127,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getMnsParameters}
-         * @param mnsParameters the value to be set.
+         * @param mnsParameters Property mnsParameters: MNS configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder mnsParameters(com.aliyun.ros.cdk.core.IResolvable mnsParameters) {
@@ -121,7 +137,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getMnsParameters}
-         * @param mnsParameters the value to be set.
+         * @param mnsParameters Property mnsParameters: MNS configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder mnsParameters(java.util.List<? extends java.lang.Object> mnsParameters) {
@@ -131,7 +147,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getSlsParameters}
-         * @param slsParameters the value to be set.
+         * @param slsParameters Property slsParameters: SLS configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder slsParameters(com.aliyun.ros.cdk.core.IResolvable slsParameters) {
@@ -141,7 +157,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getSlsParameters}
-         * @param slsParameters the value to be set.
+         * @param slsParameters Property slsParameters: SLS configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder slsParameters(java.util.List<? extends java.lang.Object> slsParameters) {
@@ -151,7 +167,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getWebhookParameters}
-         * @param webhookParameters the value to be set.
+         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder webhookParameters(com.aliyun.ros.cdk.core.IResolvable webhookParameters) {
@@ -161,7 +177,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getWebhookParameters}
-         * @param webhookParameters the value to be set.
+         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
          * @return {@code this}
          */
         public Builder webhookParameters(java.util.List<? extends java.lang.Object> webhookParameters) {
@@ -185,7 +201,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EventRuleTargetsProps {
-        private final java.lang.String ruleName;
+        private final java.lang.Object ruleName;
         private final java.lang.Object contactParameters;
         private final java.lang.Object fcParameters;
         private final java.lang.Object mnsParameters;
@@ -198,7 +214,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.contactParameters = software.amazon.jsii.Kernel.get(this, "contactParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fcParameters = software.amazon.jsii.Kernel.get(this, "fcParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mnsParameters = software.amazon.jsii.Kernel.get(this, "mnsParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -209,7 +225,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String ruleName, final java.lang.Object contactParameters, final java.lang.Object fcParameters, final java.lang.Object mnsParameters, final java.lang.Object slsParameters, final java.lang.Object webhookParameters) {
+        protected Jsii$Proxy(final java.lang.Object ruleName, final java.lang.Object contactParameters, final java.lang.Object fcParameters, final java.lang.Object mnsParameters, final java.lang.Object slsParameters, final java.lang.Object webhookParameters) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
             this.contactParameters = contactParameters;
@@ -220,7 +236,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getRuleName() {
+        public final java.lang.Object getRuleName() {
             return this.ruleName;
         }
 

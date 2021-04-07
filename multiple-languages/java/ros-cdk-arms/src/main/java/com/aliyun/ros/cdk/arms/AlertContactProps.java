@@ -3,46 +3,55 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::AlertContact`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.726Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactProps")
 @software.amazon.jsii.Jsii.Proxy(AlertContactProps.Jsii$Proxy.class)
 public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property contactName: The name of the alert contact that you want to create.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getContactName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getContactName();
 
     /**
+     * Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDingRobotWebhookUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDingRobotWebhookUrl() {
         return null;
     }
 
     /**
+     * Property email: The email address of the contact.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEmail() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEmail() {
         return null;
     }
 
     /**
+     * Property phoneNum: The phone number of the contact.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPhoneNum() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPhoneNum() {
         return null;
     }
 
     /**
+     * Property proxyUserId: Internal parameters.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getProxyUserId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProxyUserId() {
         return null;
     }
 
     /**
+     * Property regionId: Region ID.
+     * <p>
+     * Default to region of stack.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRegionId() {
         return null;
     }
 
     /**
+     * Property systemNoc: Specifies whether to receive system alerts.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemNoc() {
         return null;
@@ -58,17 +67,17 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
      * A builder for {@link AlertContactProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlertContactProps> {
-        private java.lang.String contactName;
-        private java.lang.String dingRobotWebhookUrl;
-        private java.lang.String email;
-        private java.lang.String phoneNum;
-        private java.lang.String proxyUserId;
-        private java.lang.String regionId;
+        private java.lang.Object contactName;
+        private java.lang.Object dingRobotWebhookUrl;
+        private java.lang.Object email;
+        private java.lang.Object phoneNum;
+        private java.lang.Object proxyUserId;
+        private java.lang.Object regionId;
         private java.lang.Object systemNoc;
 
         /**
          * Sets the value of {@link AlertContactProps#getContactName}
-         * @param contactName the value to be set. This parameter is required.
+         * @param contactName Property contactName: The name of the alert contact that you want to create. This parameter is required.
          * @return {@code this}
          */
         public Builder contactName(java.lang.String contactName) {
@@ -77,8 +86,18 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getContactName}
+         * @param contactName Property contactName: The name of the alert contact that you want to create. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder contactName(com.aliyun.ros.cdk.core.IResolvable contactName) {
+            this.contactName = contactName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getDingRobotWebhookUrl}
-         * @param dingRobotWebhookUrl the value to be set.
+         * @param dingRobotWebhookUrl Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
          * @return {@code this}
          */
         public Builder dingRobotWebhookUrl(java.lang.String dingRobotWebhookUrl) {
@@ -87,8 +106,18 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getDingRobotWebhookUrl}
+         * @param dingRobotWebhookUrl Property dingRobotWebhookUrl: The DingTalk Chatbot address of the contact.
+         * @return {@code this}
+         */
+        public Builder dingRobotWebhookUrl(com.aliyun.ros.cdk.core.IResolvable dingRobotWebhookUrl) {
+            this.dingRobotWebhookUrl = dingRobotWebhookUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getEmail}
-         * @param email the value to be set.
+         * @param email Property email: The email address of the contact.
          * @return {@code this}
          */
         public Builder email(java.lang.String email) {
@@ -97,8 +126,18 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getEmail}
+         * @param email Property email: The email address of the contact.
+         * @return {@code this}
+         */
+        public Builder email(com.aliyun.ros.cdk.core.IResolvable email) {
+            this.email = email;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getPhoneNum}
-         * @param phoneNum the value to be set.
+         * @param phoneNum Property phoneNum: The phone number of the contact.
          * @return {@code this}
          */
         public Builder phoneNum(java.lang.String phoneNum) {
@@ -107,8 +146,18 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getPhoneNum}
+         * @param phoneNum Property phoneNum: The phone number of the contact.
+         * @return {@code this}
+         */
+        public Builder phoneNum(com.aliyun.ros.cdk.core.IResolvable phoneNum) {
+            this.phoneNum = phoneNum;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getProxyUserId}
-         * @param proxyUserId the value to be set.
+         * @param proxyUserId Property proxyUserId: Internal parameters.
          * @return {@code this}
          */
         public Builder proxyUserId(java.lang.String proxyUserId) {
@@ -117,8 +166,19 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getProxyUserId}
+         * @param proxyUserId Property proxyUserId: Internal parameters.
+         * @return {@code this}
+         */
+        public Builder proxyUserId(com.aliyun.ros.cdk.core.IResolvable proxyUserId) {
+            this.proxyUserId = proxyUserId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getRegionId}
-         * @param regionId the value to be set.
+         * @param regionId Property regionId: Region ID.
+         *                 Default to region of stack.
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
@@ -127,8 +187,19 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link AlertContactProps#getRegionId}
+         * @param regionId Property regionId: Region ID.
+         *                 Default to region of stack.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlertContactProps#getSystemNoc}
-         * @param systemNoc the value to be set.
+         * @param systemNoc Property systemNoc: Specifies whether to receive system alerts.
          * @return {@code this}
          */
         public Builder systemNoc(java.lang.Boolean systemNoc) {
@@ -138,7 +209,7 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link AlertContactProps#getSystemNoc}
-         * @param systemNoc the value to be set.
+         * @param systemNoc Property systemNoc: Specifies whether to receive system alerts.
          * @return {@code this}
          */
         public Builder systemNoc(com.aliyun.ros.cdk.core.IResolvable systemNoc) {
@@ -162,12 +233,12 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AlertContactProps {
-        private final java.lang.String contactName;
-        private final java.lang.String dingRobotWebhookUrl;
-        private final java.lang.String email;
-        private final java.lang.String phoneNum;
-        private final java.lang.String proxyUserId;
-        private final java.lang.String regionId;
+        private final java.lang.Object contactName;
+        private final java.lang.Object dingRobotWebhookUrl;
+        private final java.lang.Object email;
+        private final java.lang.Object phoneNum;
+        private final java.lang.Object proxyUserId;
+        private final java.lang.Object regionId;
         private final java.lang.Object systemNoc;
 
         /**
@@ -176,19 +247,19 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.contactName = software.amazon.jsii.Kernel.get(this, "contactName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dingRobotWebhookUrl = software.amazon.jsii.Kernel.get(this, "dingRobotWebhookUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.phoneNum = software.amazon.jsii.Kernel.get(this, "phoneNum", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.proxyUserId = software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.contactName = software.amazon.jsii.Kernel.get(this, "contactName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dingRobotWebhookUrl = software.amazon.jsii.Kernel.get(this, "dingRobotWebhookUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.email = software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.phoneNum = software.amazon.jsii.Kernel.get(this, "phoneNum", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.proxyUserId = software.amazon.jsii.Kernel.get(this, "proxyUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.systemNoc = software.amazon.jsii.Kernel.get(this, "systemNoc", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String contactName, final java.lang.String dingRobotWebhookUrl, final java.lang.String email, final java.lang.String phoneNum, final java.lang.String proxyUserId, final java.lang.String regionId, final java.lang.Object systemNoc) {
+        protected Jsii$Proxy(final java.lang.Object contactName, final java.lang.Object dingRobotWebhookUrl, final java.lang.Object email, final java.lang.Object phoneNum, final java.lang.Object proxyUserId, final java.lang.Object regionId, final java.lang.Object systemNoc) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactName = java.util.Objects.requireNonNull(contactName, "contactName is required");
             this.dingRobotWebhookUrl = dingRobotWebhookUrl;
@@ -200,32 +271,32 @@ public interface AlertContactProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
-        public final java.lang.String getContactName() {
+        public final java.lang.Object getContactName() {
             return this.contactName;
         }
 
         @Override
-        public final java.lang.String getDingRobotWebhookUrl() {
+        public final java.lang.Object getDingRobotWebhookUrl() {
             return this.dingRobotWebhookUrl;
         }
 
         @Override
-        public final java.lang.String getEmail() {
+        public final java.lang.Object getEmail() {
             return this.email;
         }
 
         @Override
-        public final java.lang.String getPhoneNum() {
+        public final java.lang.Object getPhoneNum() {
             return this.phoneNum;
         }
 
         @Override
-        public final java.lang.String getProxyUserId() {
+        public final java.lang.Object getProxyUserId() {
             return this.proxyUserId;
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 

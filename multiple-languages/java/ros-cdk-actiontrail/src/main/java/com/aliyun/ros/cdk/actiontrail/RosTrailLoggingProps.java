@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Properties for defining a `ALIYUN::ACTIONTRAIL::TrailLogging`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.055Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.624Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosTrailLoggingProps")
 @software.amazon.jsii.Jsii.Proxy(RosTrailLoggingProps.Jsii$Proxy.class)
 public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,7 +14,7 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      * @return a {@link Builder} of {@link RosTrailLoggingProps}
@@ -27,7 +27,7 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTrailLoggingProps> {
         private java.lang.Object enable;
-        private java.lang.String name;
+        private java.lang.Object name;
 
         /**
          * Sets the value of {@link RosTrailLoggingProps#getEnable}
@@ -60,6 +60,16 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosTrailLoggingProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosTrailLoggingProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -76,7 +86,7 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTrailLoggingProps {
         private final java.lang.Object enable;
-        private final java.lang.String name;
+        private final java.lang.Object name;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -85,13 +95,13 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object enable, final java.lang.String name) {
+        protected Jsii$Proxy(final java.lang.Object enable, final java.lang.Object name) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
             this.name = java.util.Objects.requireNonNull(name, "name is required");
@@ -103,7 +113,7 @@ public interface RosTrailLoggingProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 

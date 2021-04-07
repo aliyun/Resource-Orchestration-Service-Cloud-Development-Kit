@@ -13,19 +13,19 @@ export interface ParameterProps {
      * The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
      * It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property type: The data type of the common parameter. 
      * Valid values: String and StringList.
      */
-    readonly type: string;
+    readonly type: string | ros.IResolvable;
 
     /**
      * Property value: The value of the parameter. 
      * The value must be 1 to 4096 characters in length.
      */
-    readonly value: string;
+    readonly value: string | ros.IResolvable;
 
     /**
      * Property constraints: The constraints of the parameter. 
@@ -35,13 +35,13 @@ export interface ParameterProps {
      * MinLength: The minimum length of the parameter.
      * MaxLength: The maximum length of the parameter.
      */
-    readonly constraints?: string;
+    readonly constraints?: string | ros.IResolvable;
 
     /**
      * Property description: The description of the parameter. 
      * The description must be 1 to 200 characters in length.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -57,12 +57,12 @@ export class Parameter extends ros.Resource {
     /**
      * Attribute Name: The Name of the parameter.
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Attribute Value: The Value of the parameter.
      */
-    public readonly attrValue: any;
+    public readonly attrValue: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OOS::Parameter`.

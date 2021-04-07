@@ -11,17 +11,17 @@ export interface RouterInterfaceProps {
     /**
      * Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
      */
-    readonly role: string;
+    readonly role: string | ros.IResolvable;
 
     /**
      * Property routerId: The router ID to create RouterInterface.
      */
-    readonly routerId: string;
+    readonly routerId: string | ros.IResolvable;
 
     /**
      * Property accessPointId: Access point ID. If 'RouterType' is specified as 'VBR', the value is required.
      */
-    readonly accessPointId?: string;
+    readonly accessPointId?: string | ros.IResolvable;
 
     /**
      * Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
@@ -31,77 +31,77 @@ export interface RouterInterfaceProps {
     /**
      * Property description: Custom description of the RouterInterface, [2, 256] characters. Don't fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    readonly healthCheckSourceIp?: string;
+    readonly healthCheckSourceIp?: string | ros.IResolvable;
 
     /**
      * Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    readonly healthCheckTargetIp?: string;
+    readonly healthCheckTargetIp?: string | ros.IResolvable;
 
     /**
      * Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface. If 'OppositeRouterType' is specified as 'VBR', the value is required.
      */
-    readonly oppositeAccessPointId?: string;
+    readonly oppositeAccessPointId?: string | ros.IResolvable;
 
     /**
      * Property oppositeInterfaceId: The ID of the peer router interface.
      */
-    readonly oppositeInterfaceId?: string;
+    readonly oppositeInterfaceId?: string | ros.IResolvable;
 
     /**
      * Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface. The default value is current user Id.
      */
-    readonly oppositeInterfaceOwnerId?: string;
+    readonly oppositeInterfaceOwnerId?: string | ros.IResolvable;
 
     /**
      * Property oppositeRegionId: The region where the connection peer RouterInterface locates. The default value is region where stack is created.
      */
-    readonly oppositeRegionId?: string;
+    readonly oppositeRegionId?: string | ros.IResolvable;
 
     /**
      * Property oppositeRouterId: The router ID of the connection peer RouterInterface.
      */
-    readonly oppositeRouterId?: string;
+    readonly oppositeRouterId?: string | ros.IResolvable;
 
     /**
      * Property oppositeRouterType: Router type of the connection peer router. Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
      */
-    readonly oppositeRouterType?: string;
+    readonly oppositeRouterType?: string | ros.IResolvable;
 
     /**
      * Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * Property routerType: Router type. Now support 'VRouter|VBR'
      */
-    readonly routerType?: string;
+    readonly routerType?: string | ros.IResolvable;
 
     /**
      * Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
      */
-    readonly spec?: string;
+    readonly spec?: string | ros.IResolvable;
 }
 
 /**
@@ -117,7 +117,7 @@ export class RouterInterface extends ros.Resource {
     /**
      * Attribute RouterInterfaceId: The ID of created RouterInterface.
      */
-    public readonly attrRouterInterfaceId: any;
+    public readonly attrRouterInterfaceId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::RouterInterface`.

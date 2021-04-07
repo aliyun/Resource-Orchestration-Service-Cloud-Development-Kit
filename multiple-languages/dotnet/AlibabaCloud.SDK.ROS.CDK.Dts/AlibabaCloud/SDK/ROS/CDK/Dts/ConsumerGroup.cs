@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <summary>Attribute ConsumerGroupID: Consumer group ID.</summary>
-        [JsiiProperty(name: "attrConsumerGroupId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConsumerGroupId
+        [JsiiProperty(name: "attrConsumerGroupId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConsumerGroupId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ConsumerGroupName: Consumer group name.</summary>
-        [JsiiProperty(name: "attrConsumerGroupName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrConsumerGroupName
+        [JsiiProperty(name: "attrConsumerGroupName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrConsumerGroupName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute SubscriptionInstanceId: Subscription instance ID.</summary>
-        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSubscriptionInstanceId
+        [JsiiProperty(name: "attrSubscriptionInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSubscriptionInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

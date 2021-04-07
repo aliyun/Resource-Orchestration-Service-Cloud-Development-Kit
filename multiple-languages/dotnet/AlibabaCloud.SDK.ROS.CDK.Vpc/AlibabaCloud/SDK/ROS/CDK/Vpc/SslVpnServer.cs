@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute SslVpnServerId: ID of the SSL-VPN server.</summary>
-        [JsiiProperty(name: "attrSslVpnServerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrSslVpnServerId
+        [JsiiProperty(name: "attrSslVpnServerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrSslVpnServerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -47,28 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// <strong>Attribute</strong>: Host: The endpoint of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "attrHost", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHost
+        [JsiiProperty(name: "attrHost", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHost
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: InstanceId: The ID of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInstanceId
+        [JsiiProperty(name: "attrInstanceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInstanceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Port: The connection port of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "attrPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPort
+        [JsiiProperty(name: "attrPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -80,20 +80,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// <strong>Property</strong>: databasePassword: The logon password of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "databasePassword", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DatabasePassword
+        [JsiiProperty(name: "databasePassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DatabasePassword
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: databaseUser: The logon username of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "databaseUser", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DatabaseUser
+        [JsiiProperty(name: "databaseUser", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DatabaseUser
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -103,10 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note To query the UID, log on to the DMS Enterprise console and choose System Management
         /// > User Management.
         /// </remarks>
-        [JsiiProperty(name: "dbaUid", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double DbaUid
+        [JsiiProperty(name: "dbaUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DbaUid
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -122,30 +122,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// product: the production environment.
         /// dev: the test environment.
         /// </remarks>
-        [JsiiProperty(name: "envType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string EnvType
+        [JsiiProperty(name: "envType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object EnvType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: exportTimeout: The timeout period for exporting the database instance. Unit: seconds.
         /// </remarks>
-        [JsiiProperty(name: "exportTimeout", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double ExportTimeout
+        [JsiiProperty(name: "exportTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ExportTimeout
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: host: The endpoint of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "host", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Host
+        [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Host
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -153,10 +153,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: instanceAlias: The alias of the database instance. The alias helps you quickly find the required
         /// instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceAlias", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceAlias
+        [JsiiProperty(name: "instanceAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceAlias
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -168,20 +168,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// VPC_IDC: an on-premises database built in an Internet data center (IDC) in Virtual Private
         /// Cloud (VPC).
         /// </remarks>
-        [JsiiProperty(name: "instanceSource", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceSource
+        [JsiiProperty(name: "instanceSource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceSource
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: instanceType: The type of the database instance. Valid values: MySQL, SQLServer, PostgreSQL, Oracle, DRDS, OceanBase, Mongo, Redis
         /// </remarks>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InstanceType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -190,30 +190,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// CLASSIC
         /// VPC
         /// </remarks>
-        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string NetworkType
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object NetworkType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: port: The connection port of the database instance.
         /// </remarks>
-        [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Port
+        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Port
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: queryTimeout: The timeout period for querying the database instance. Unit: seconds.
         /// </remarks>
-        [JsiiProperty(name: "queryTimeout", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double QueryTimeout
+        [JsiiProperty(name: "queryTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object QueryTimeout
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -224,10 +224,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// System Management > Security Rules. The security rule appears in the security rule
         /// list.
         /// </remarks>
-        [JsiiProperty(name: "safeRule", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string SafeRule
+        [JsiiProperty(name: "safeRule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object SafeRule
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -237,10 +237,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// > Instance Management or System Management > User Management. The ID of the tenant
         /// appears in the Service Specification section.
         /// </remarks>
-        [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"number\"}")]
-        public virtual double Tid
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Tid
         {
-            get => GetInstanceProperty<double>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -248,10 +248,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <strong>Property</strong>: dataLinkName: The name of the data link for cross-database query.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "dataLinkName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DataLinkName
+        [JsiiProperty(name: "dataLinkName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DataLinkName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -263,10 +263,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// 2: Data change without table locking provided by DMS prevails.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ddlOnline", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? DdlOnline
+        [JsiiProperty(name: "ddlOnline", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DdlOnline
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -275,10 +275,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ecsInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EcsInstanceId
+        [JsiiProperty(name: "ecsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EcsInstanceId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -287,10 +287,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN or VPC_IDC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ecsRegion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? EcsRegion
+        [JsiiProperty(name: "ecsRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? EcsRegion
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -299,10 +299,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sid", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Sid
+        [JsiiProperty(name: "sid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Sid
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -313,10 +313,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// 1: enabled
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "useDsql", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? UseDsql
+        [JsiiProperty(name: "useDsql", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UseDsql
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -325,10 +325,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VpcId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

@@ -3,44 +3,57 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Properties for defining a `ALIYUN::ACTIONTRAIL::Trail`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.057Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.628Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.TrailProps")
 @software.amazon.jsii.Jsii.Proxy(TrailProps.Jsii$Proxy.class)
 public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property name: The name of the trail to be created, which must be unique for an account.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
+     * Property ossBucketName: The OSS bucket to which the trail delivers logs.
+     * <p>
+     * Ensure that this is an existing OSS bucket.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getOssBucketName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getOssBucketName();
 
     /**
+     * Property roleName: The RAM role in ActionTrail permitted by the user.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRoleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRoleName();
 
     /**
+     * Property eventRw: Indicates whether the event is a read or a write event.
+     * <p>
+     * Valid values: Read, Write, and All. Default value: Write.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEventRw() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEventRw() {
         return null;
     }
 
     /**
+     * Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+     * <p>
+     * This parameter can be left empty.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getOssKeyPrefix() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getOssKeyPrefix() {
         return null;
     }
 
     /**
+     * Property slsProjectArn: The unique ARN of the Log Service project.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSlsProjectArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlsProjectArn() {
         return null;
     }
 
     /**
+     * Property slsWriteRoleArn: The unique ARN of the Log Service role.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSlsWriteRoleArn() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSlsWriteRoleArn() {
         return null;
     }
 
@@ -54,17 +67,17 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link TrailProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<TrailProps> {
-        private java.lang.String name;
-        private java.lang.String ossBucketName;
-        private java.lang.String roleName;
-        private java.lang.String eventRw;
-        private java.lang.String ossKeyPrefix;
-        private java.lang.String slsProjectArn;
-        private java.lang.String slsWriteRoleArn;
+        private java.lang.Object name;
+        private java.lang.Object ossBucketName;
+        private java.lang.Object roleName;
+        private java.lang.Object eventRw;
+        private java.lang.Object ossKeyPrefix;
+        private java.lang.Object slsProjectArn;
+        private java.lang.Object slsWriteRoleArn;
 
         /**
          * Sets the value of {@link TrailProps#getName}
-         * @param name the value to be set. This parameter is required.
+         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -73,8 +86,19 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getName}
+         * @param name Property name: The name of the trail to be created, which must be unique for an account. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getOssBucketName}
-         * @param ossBucketName the value to be set. This parameter is required.
+         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         *                      Ensure that this is an existing OSS bucket.
          * @return {@code this}
          */
         public Builder ossBucketName(java.lang.String ossBucketName) {
@@ -83,8 +107,19 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getOssBucketName}
+         * @param ossBucketName Property ossBucketName: The OSS bucket to which the trail delivers logs. This parameter is required.
+         *                      Ensure that this is an existing OSS bucket.
+         * @return {@code this}
+         */
+        public Builder ossBucketName(com.aliyun.ros.cdk.core.IResolvable ossBucketName) {
+            this.ossBucketName = ossBucketName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getRoleName}
-         * @param roleName the value to be set. This parameter is required.
+         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
          * @return {@code this}
          */
         public Builder roleName(java.lang.String roleName) {
@@ -93,8 +128,19 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getRoleName}
+         * @param roleName Property roleName: The RAM role in ActionTrail permitted by the user. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder roleName(com.aliyun.ros.cdk.core.IResolvable roleName) {
+            this.roleName = roleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getEventRw}
-         * @param eventRw the value to be set.
+         * @param eventRw Property eventRw: Indicates whether the event is a read or a write event.
+         *                Valid values: Read, Write, and All. Default value: Write.
          * @return {@code this}
          */
         public Builder eventRw(java.lang.String eventRw) {
@@ -103,8 +149,20 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getEventRw}
+         * @param eventRw Property eventRw: Indicates whether the event is a read or a write event.
+         *                Valid values: Read, Write, and All. Default value: Write.
+         * @return {@code this}
+         */
+        public Builder eventRw(com.aliyun.ros.cdk.core.IResolvable eventRw) {
+            this.eventRw = eventRw;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getOssKeyPrefix}
-         * @param ossKeyPrefix the value to be set.
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+         *                     This parameter can be left empty.
          * @return {@code this}
          */
         public Builder ossKeyPrefix(java.lang.String ossKeyPrefix) {
@@ -113,8 +171,19 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getOssKeyPrefix}
+         * @param ossKeyPrefix Property ossKeyPrefix: The prefix of the specified OSS bucket name.
+         *                     This parameter can be left empty.
+         * @return {@code this}
+         */
+        public Builder ossKeyPrefix(com.aliyun.ros.cdk.core.IResolvable ossKeyPrefix) {
+            this.ossKeyPrefix = ossKeyPrefix;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getSlsProjectArn}
-         * @param slsProjectArn the value to be set.
+         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project.
          * @return {@code this}
          */
         public Builder slsProjectArn(java.lang.String slsProjectArn) {
@@ -123,11 +192,31 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link TrailProps#getSlsProjectArn}
+         * @param slsProjectArn Property slsProjectArn: The unique ARN of the Log Service project.
+         * @return {@code this}
+         */
+        public Builder slsProjectArn(com.aliyun.ros.cdk.core.IResolvable slsProjectArn) {
+            this.slsProjectArn = slsProjectArn;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TrailProps#getSlsWriteRoleArn}
-         * @param slsWriteRoleArn the value to be set.
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role.
          * @return {@code this}
          */
         public Builder slsWriteRoleArn(java.lang.String slsWriteRoleArn) {
+            this.slsWriteRoleArn = slsWriteRoleArn;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TrailProps#getSlsWriteRoleArn}
+         * @param slsWriteRoleArn Property slsWriteRoleArn: The unique ARN of the Log Service role.
+         * @return {@code this}
+         */
+        public Builder slsWriteRoleArn(com.aliyun.ros.cdk.core.IResolvable slsWriteRoleArn) {
             this.slsWriteRoleArn = slsWriteRoleArn;
             return this;
         }
@@ -148,13 +237,13 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TrailProps {
-        private final java.lang.String name;
-        private final java.lang.String ossBucketName;
-        private final java.lang.String roleName;
-        private final java.lang.String eventRw;
-        private final java.lang.String ossKeyPrefix;
-        private final java.lang.String slsProjectArn;
-        private final java.lang.String slsWriteRoleArn;
+        private final java.lang.Object name;
+        private final java.lang.Object ossBucketName;
+        private final java.lang.Object roleName;
+        private final java.lang.Object eventRw;
+        private final java.lang.Object ossKeyPrefix;
+        private final java.lang.Object slsProjectArn;
+        private final java.lang.Object slsWriteRoleArn;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -162,19 +251,19 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.eventRw = software.amazon.jsii.Kernel.get(this, "eventRw", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ossKeyPrefix = software.amazon.jsii.Kernel.get(this, "ossKeyPrefix", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slsProjectArn = software.amazon.jsii.Kernel.get(this, "slsProjectArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.slsWriteRoleArn = software.amazon.jsii.Kernel.get(this, "slsWriteRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ossBucketName = software.amazon.jsii.Kernel.get(this, "ossBucketName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.roleName = software.amazon.jsii.Kernel.get(this, "roleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eventRw = software.amazon.jsii.Kernel.get(this, "eventRw", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ossKeyPrefix = software.amazon.jsii.Kernel.get(this, "ossKeyPrefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slsProjectArn = software.amazon.jsii.Kernel.get(this, "slsProjectArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.slsWriteRoleArn = software.amazon.jsii.Kernel.get(this, "slsWriteRoleArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.String ossBucketName, final java.lang.String roleName, final java.lang.String eventRw, final java.lang.String ossKeyPrefix, final java.lang.String slsProjectArn, final java.lang.String slsWriteRoleArn) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object ossBucketName, final java.lang.Object roleName, final java.lang.Object eventRw, final java.lang.Object ossKeyPrefix, final java.lang.Object slsProjectArn, final java.lang.Object slsWriteRoleArn) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.ossBucketName = java.util.Objects.requireNonNull(ossBucketName, "ossBucketName is required");
@@ -186,37 +275,37 @@ public interface TrailProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getOssBucketName() {
+        public final java.lang.Object getOssBucketName() {
             return this.ossBucketName;
         }
 
         @Override
-        public final java.lang.String getRoleName() {
+        public final java.lang.Object getRoleName() {
             return this.roleName;
         }
 
         @Override
-        public final java.lang.String getEventRw() {
+        public final java.lang.Object getEventRw() {
             return this.eventRw;
         }
 
         @Override
-        public final java.lang.String getOssKeyPrefix() {
+        public final java.lang.Object getOssKeyPrefix() {
             return this.ossKeyPrefix;
         }
 
         @Override
-        public final java.lang.String getSlsProjectArn() {
+        public final java.lang.Object getSlsProjectArn() {
             return this.slsProjectArn;
         }
 
         @Override
-        public final java.lang.String getSlsWriteRoleArn() {
+        public final java.lang.Object getSlsWriteRoleArn() {
             return this.slsWriteRoleArn;
         }
 

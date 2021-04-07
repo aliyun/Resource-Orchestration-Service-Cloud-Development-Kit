@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::AccessControl`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.384Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.074Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(RosAccessControlProps.Jsii$Proxy.class)
 public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAclName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAclName();
 
     /**
      */
@@ -20,7 +20,13 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAddressIpVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> getTags() {
         return null;
     }
 
@@ -34,9 +40,10 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosAccessControlProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAccessControlProps> {
-        private java.lang.String aclName;
+        private java.lang.Object aclName;
         private java.lang.Object aclEntrys;
-        private java.lang.String addressIpVersion;
+        private java.lang.Object addressIpVersion;
+        private java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosAccessControlProps#getAclName}
@@ -44,6 +51,16 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
          * @return {@code this}
          */
         public Builder aclName(java.lang.String aclName) {
+            this.aclName = aclName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessControlProps#getAclName}
+         * @param aclName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder aclName(com.aliyun.ros.cdk.core.IResolvable aclName) {
             this.aclName = aclName;
             return this;
         }
@@ -79,13 +96,34 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosAccessControlProps#getAddressIpVersion}
+         * @param addressIpVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
+            this.addressIpVersion = addressIpVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAccessControlProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosAccessControlProps}
          * @throws NullPointerException if any required attribute was not provided
          */
         @Override
         public RosAccessControlProps build() {
-            return new Jsii$Proxy(aclName, aclEntrys, addressIpVersion);
+            return new Jsii$Proxy(aclName, aclEntrys, addressIpVersion, tags);
         }
     }
 
@@ -94,9 +132,10 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAccessControlProps {
-        private final java.lang.String aclName;
+        private final java.lang.Object aclName;
         private final java.lang.Object aclEntrys;
-        private final java.lang.String addressIpVersion;
+        private final java.lang.Object addressIpVersion;
+        private final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -104,23 +143,26 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.aclName = software.amazon.jsii.Kernel.get(this, "aclName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.aclName = software.amazon.jsii.Kernel.get(this, "aclName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.aclEntrys = software.amazon.jsii.Kernel.get(this, "aclEntrys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.addressIpVersion = software.amazon.jsii.Kernel.get(this, "addressIpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String aclName, final java.lang.Object aclEntrys, final java.lang.String addressIpVersion) {
+        @SuppressWarnings("unchecked")
+        protected Jsii$Proxy(final java.lang.Object aclName, final java.lang.Object aclEntrys, final java.lang.Object addressIpVersion, final java.util.List<? extends com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> tags) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.aclName = java.util.Objects.requireNonNull(aclName, "aclName is required");
             this.aclEntrys = aclEntrys;
             this.addressIpVersion = addressIpVersion;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty>)tags;
         }
 
         @Override
-        public final java.lang.String getAclName() {
+        public final java.lang.Object getAclName() {
             return this.aclName;
         }
 
@@ -130,8 +172,13 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getAddressIpVersion() {
+        public final java.lang.Object getAddressIpVersion() {
             return this.addressIpVersion;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.slb.RosAccessControl.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -146,6 +193,9 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getAddressIpVersion() != null) {
                 data.set("addressIpVersion", om.valueToTree(this.getAddressIpVersion()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -167,7 +217,8 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
 
             if (!aclName.equals(that.aclName)) return false;
             if (this.aclEntrys != null ? !this.aclEntrys.equals(that.aclEntrys) : that.aclEntrys != null) return false;
-            return this.addressIpVersion != null ? this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion == null;
+            if (this.addressIpVersion != null ? !this.addressIpVersion.equals(that.addressIpVersion) : that.addressIpVersion != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -175,6 +226,7 @@ public interface RosAccessControlProps extends software.amazon.jsii.JsiiSerializ
             int result = this.aclName.hashCode();
             result = 31 * result + (this.aclEntrys != null ? this.aclEntrys.hashCode() : 0);
             result = 31 * result + (this.addressIpVersion != null ? this.addressIpVersion.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

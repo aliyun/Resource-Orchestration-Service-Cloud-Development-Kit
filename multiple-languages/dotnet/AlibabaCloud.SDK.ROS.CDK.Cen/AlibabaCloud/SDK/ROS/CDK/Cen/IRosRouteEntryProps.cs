@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: cenId: The ID of the CEN instance where the route entry is published.
         /// </remarks>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-        string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object CenId
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceId: The ID of the attached network (VPC or VBR).
         /// </remarks>
-        [JsiiProperty(name: "childInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceId
+        [JsiiProperty(name: "childInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceId
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceRegionId
+        [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceRegionId
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceRouteTableId: The route table of the attached VBR or VPC.
         /// </remarks>
-        [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceRouteTableId
+        [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceRouteTableId
         {
             get;
         }
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: childInstanceType: The type of the network, value: VPC VBR
         /// </remarks>
-        [JsiiProperty(name: "childInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-        string ChildInstanceType
+        [JsiiProperty(name: "childInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ChildInstanceType
         {
             get;
         }
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// <strong>Property</strong>: destinationCidrBlock: The destination CIDR block of the route entry to publish.
         /// </remarks>
-        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"primitive\":\"string\"}")]
-        string DestinationCidrBlock
+        [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DestinationCidrBlock
         {
             get;
         }
@@ -73,55 +73,55 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             /// <remarks>
             /// <strong>Property</strong>: cenId: The ID of the CEN instance where the route entry is published.
             /// </remarks>
-            [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}")]
-            public string CenId
+            [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object CenId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceId: The ID of the attached network (VPC or VBR).
             /// </remarks>
-            [JsiiProperty(name: "childInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceId
+            [JsiiProperty(name: "childInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the attached VBR or VPC is located.
             /// </remarks>
-            [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceRegionId
+            [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceRegionId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceRouteTableId: The route table of the attached VBR or VPC.
             /// </remarks>
-            [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceRouteTableId
+            [JsiiProperty(name: "childInstanceRouteTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceRouteTableId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: childInstanceType: The type of the network, value: VPC VBR
             /// </remarks>
-            [JsiiProperty(name: "childInstanceType", typeJson: "{\"primitive\":\"string\"}")]
-            public string ChildInstanceType
+            [JsiiProperty(name: "childInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ChildInstanceType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: destinationCidrBlock: The destination CIDR block of the route entry to publish.
             /// </remarks>
-            [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"primitive\":\"string\"}")]
-            public string DestinationCidrBlock
+            [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DestinationCidrBlock
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

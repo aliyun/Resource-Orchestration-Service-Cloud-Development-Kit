@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * A ROS resource type:  `ALIYUN::ARMS::AlertContactGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.725Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.AlertContactGroup")
 public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ARMS::AlertContactGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AlertContactGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.AlertContactGroupProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ARMS::AlertContactGroup`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AlertContactGroup(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.arms.AlertContactGroupProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ContactGroupId: The ID of the alert contact group that you created.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrContactGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrContactGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrContactGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrContactGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.arms.AlertContactGroup> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,45 +90,89 @@ public class AlertContactGroup extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property contactGroupName: The name of the alert contact group that you want to create.
+         * <p>
          * @return {@code this}
-         * @param contactGroupName This parameter is required.
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group that you want to create. This parameter is required.
          */
         public Builder contactGroupName(final java.lang.String contactGroupName) {
             this.props.contactGroupName(contactGroupName);
             return this;
         }
-
         /**
+         * Property contactGroupName: The name of the alert contact group that you want to create.
+         * <p>
          * @return {@code this}
-         * @param contactIds This parameter is required.
+         * @param contactGroupName Property contactGroupName: The name of the alert contact group that you want to create. This parameter is required.
          */
-        public Builder contactIds(final java.util.List<? extends java.lang.Number> contactIds) {
-            this.props.contactIds(contactIds);
+        public Builder contactGroupName(final com.aliyun.ros.cdk.core.IResolvable contactGroupName) {
+            this.props.contactGroupName(contactGroupName);
             return this;
         }
+
         /**
+         * Property contactIds: The list of alert contact ID.
+         * <p>
          * @return {@code this}
-         * @param contactIds This parameter is required.
+         * @param contactIds Property contactIds: The list of alert contact ID. This parameter is required.
          */
         public Builder contactIds(final com.aliyun.ros.cdk.core.IResolvable contactIds) {
             this.props.contactIds(contactIds);
             return this;
         }
+        /**
+         * Property contactIds: The list of alert contact ID.
+         * <p>
+         * @return {@code this}
+         * @param contactIds Property contactIds: The list of alert contact ID. This parameter is required.
+         */
+        public Builder contactIds(final java.util.List<? extends java.lang.Object> contactIds) {
+            this.props.contactIds(contactIds);
+            return this;
+        }
 
         /**
+         * Property proxyUserId: Internal parameters.
+         * <p>
          * @return {@code this}
-         * @param proxyUserId This parameter is required.
+         * @param proxyUserId Property proxyUserId: Internal parameters. This parameter is required.
          */
         public Builder proxyUserId(final java.lang.String proxyUserId) {
             this.props.proxyUserId(proxyUserId);
             return this;
         }
+        /**
+         * Property proxyUserId: Internal parameters.
+         * <p>
+         * @return {@code this}
+         * @param proxyUserId Property proxyUserId: Internal parameters. This parameter is required.
+         */
+        public Builder proxyUserId(final com.aliyun.ros.cdk.core.IResolvable proxyUserId) {
+            this.props.proxyUserId(proxyUserId);
+            return this;
+        }
 
         /**
+         * Property regionId: Region ID.
+         * <p>
+         * Default to region of stack.
+         * <p>
          * @return {@code this}
-         * @param regionId This parameter is required.
+         * @param regionId Property regionId: Region ID. This parameter is required.
          */
         public Builder regionId(final java.lang.String regionId) {
+            this.props.regionId(regionId);
+            return this;
+        }
+        /**
+         * Property regionId: Region ID.
+         * <p>
+         * Default to region of stack.
+         * <p>
+         * @return {@code this}
+         * @param regionId Property regionId: Region ID. This parameter is required.
+         */
+        public Builder regionId(final com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.props.regionId(regionId);
             return this;
         }

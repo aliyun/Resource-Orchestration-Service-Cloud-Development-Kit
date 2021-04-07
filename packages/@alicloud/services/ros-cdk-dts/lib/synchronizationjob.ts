@@ -16,7 +16,7 @@ export interface SynchronizationJobProps {
     /**
      * Property destRegion: Region where the synchronization target instance is located.
      */
-    readonly destRegion: string;
+    readonly destRegion: string | ros.IResolvable;
 
     /**
      * Property sourceEndpoint: Migration source configuration
@@ -26,13 +26,13 @@ export interface SynchronizationJobProps {
     /**
      * Property sourceRegion: Region where the synchronization source instance is located.
      */
-    readonly sourceRegion: string;
+    readonly sourceRegion: string | ros.IResolvable;
 
     /**
      * Property synchronizationJobClass: Synchronous instance specifications, which can be:
      * micro, small, medium, large and so on. The default value is: small
      */
-    readonly synchronizationJobClass: string;
+    readonly synchronizationJobClass: string | ros.IResolvable;
 
     /**
      * Property dataInitialization: Whether to perform full data initialization before synchronization. The values include:true: means full data initialization
@@ -44,19 +44,19 @@ export interface SynchronizationJobProps {
     /**
      * Property networkType: When synchronization geographies, the type of data transmission network used. Value include: Internet, Intranet. The default value is: Internet
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * Property payType: Payment type, which include:
      * Postpaid: postpaid type, Prepaid: Prepaid type. Default is Postpaid
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be:
      * Year: Annual, Month: monthly
      */
-    readonly period?: string;
+    readonly period?: string | ros.IResolvable;
 
     /**
      * Property structureInitialization: Whether to initialize the structure object before synchronization. The values include:true: indicates that the structure object is initialized
@@ -73,12 +73,12 @@ export interface SynchronizationJobProps {
     /**
      * Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional
      */
-    readonly topology?: string;
+    readonly topology?: string | ros.IResolvable;
 
     /**
      * Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed
      */
-    readonly usedTime?: number;
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
@@ -94,7 +94,7 @@ export class SynchronizationJob extends ros.Resource {
     /**
      * Attribute SynchronizationJobId: Synchronization instance ID
      */
-    public readonly attrSynchronizationJobId: any;
+    public readonly attrSynchronizationJobId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::DTS::SynchronizationJob`.

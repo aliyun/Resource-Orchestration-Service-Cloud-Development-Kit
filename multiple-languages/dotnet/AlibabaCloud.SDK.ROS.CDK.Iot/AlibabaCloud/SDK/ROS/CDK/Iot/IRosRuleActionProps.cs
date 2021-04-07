@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// for different types of rule actions are different. For more information about required
         /// syntax and examples, see the following tables.
         /// </remarks>
-        [JsiiProperty(name: "configuration", typeJson: "{\"primitive\":\"string\"}")]
-        string Configuration
+        [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Configuration
         {
             get;
         }
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: ruleId: The ID of the rule for which you want to create an action. You can use either of the
         /// following methods to view the rule ID: 1. Log on to the IoT Platform console and choose Rules>Data Forwarding. 2. Call the ListRule operation.
         /// </remarks>
-        [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"number\"}")]
-        double RuleId
+        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RuleId
         {
             get;
         }
@@ -46,8 +46,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// on regions. For more information about the regions and destination cloud services
         /// that are supported by the rule engine, see Regions and zones.
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-        string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Type
         {
             get;
         }
@@ -75,9 +75,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <strong>Property</strong>: iotInstanceId: The ID of the instance. This parameter is not required for public instances. However,
         /// the parameter is required for the instances that you have purchased.
         /// </remarks>
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? IotInstanceId
+        object? IotInstanceId
         {
             get
             {
@@ -98,20 +98,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// for different types of rule actions are different. For more information about required
             /// syntax and examples, see the following tables.
             /// </remarks>
-            [JsiiProperty(name: "configuration", typeJson: "{\"primitive\":\"string\"}")]
-            public string Configuration
+            [JsiiProperty(name: "configuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Configuration
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: ruleId: The ID of the rule for which you want to create an action. You can use either of the
             /// following methods to view the rule ID: 1. Log on to the IoT Platform console and choose Rules>Data Forwarding. 2. Call the ListRule operation.
             /// </remarks>
-            [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"number\"}")]
-            public double RuleId
+            [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RuleId
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -131,10 +131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// on regions. For more information about the regions and destination cloud services
             /// that are supported by the rule engine, see Regions and zones.
             /// </remarks>
-            [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-            public string Type
+            [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Type
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -158,10 +158,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
             /// the parameter is required for the instances that you have purchased.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? IotInstanceId
+            [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IotInstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

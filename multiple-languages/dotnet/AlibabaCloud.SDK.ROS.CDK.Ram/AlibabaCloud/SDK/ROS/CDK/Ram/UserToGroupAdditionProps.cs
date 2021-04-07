@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public class UserToGroupAdditionProps : AlibabaCloud.SDK.ROS.CDK.Ram.IUserToGroupAdditionProps
     {
         /// <summary>Property groupName: Specifies the group name, containing up to 64 characters.</summary>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupName
         {
             get;
             set;

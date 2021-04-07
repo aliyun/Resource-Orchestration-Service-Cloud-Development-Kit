@@ -10,17 +10,17 @@ export interface RosApplicationProps {
     /**
      * @Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters)
      */
-    readonly applicationName: string;
+    readonly applicationName: string | ros.IResolvable;
 
     /**
      * @Property clusterId: Cluster ID of ECS application
      */
-    readonly clusterId: string;
+    readonly clusterId: string | ros.IResolvable;
 
     /**
      * @Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition). When creating HSF application, this parameter must be specified
      */
-    readonly buildPackId?: number;
+    readonly buildPackId?: number | ros.IResolvable;
 
     /**
      * @Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo
@@ -28,33 +28,33 @@ export interface RosApplicationProps {
      * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
      * 1.7.x
      */
-    readonly componentIds?: string;
+    readonly componentIds?: string | ros.IResolvable;
 
     /**
      * @Property description: Descriptive information
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id
      * Interface to obtain).
      */
-    readonly ecuInfo?: string;
+    readonly ecuInfo?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckUrl: Application Health Check URL
      */
-    readonly healthCheckUrl?: string;
+    readonly healthCheckUrl?: string | ros.IResolvable;
 
     /**
      * @Property logicalRegionId: Namespace ID
      */
-    readonly logicalRegionId?: string;
+    readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
      * @Property packageType: Application packet format, possible values: war or jar
      */
-    readonly packageType?: string;
+    readonly packageType?: string | ros.IResolvable;
 }
 
 /**
@@ -137,12 +137,12 @@ export class RosApplication extends ros.RosResource {
     /**
      * @Attribute AppId: Application Id, a unique identifier EDAS application
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute Port: Application port
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -150,17 +150,17 @@ export class RosApplication extends ros.RosResource {
     /**
      * @Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters)
      */
-    public applicationName: string;
+    public applicationName: string | ros.IResolvable;
 
     /**
      * @Property clusterId: Cluster ID of ECS application
      */
-    public clusterId: string;
+    public clusterId: string | ros.IResolvable;
 
     /**
      * @Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition). When creating HSF application, this parameter must be specified
      */
-    public buildPackId: number | undefined;
+    public buildPackId: number | ros.IResolvable | undefined;
 
     /**
      * @Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo
@@ -168,33 +168,33 @@ export class RosApplication extends ros.RosResource {
      * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
      * 1.7.x
      */
-    public componentIds: string | undefined;
+    public componentIds: string | ros.IResolvable | undefined;
 
     /**
      * @Property description: Descriptive information
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id
      * Interface to obtain).
      */
-    public ecuInfo: string | undefined;
+    public ecuInfo: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckUrl: Application Health Check URL
      */
-    public healthCheckUrl: string | undefined;
+    public healthCheckUrl: string | ros.IResolvable | undefined;
 
     /**
      * @Property logicalRegionId: Namespace ID
      */
-    public logicalRegionId: string | undefined;
+    public logicalRegionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property packageType: Application packet format, possible values: war or jar
      */
-    public packageType: string | undefined;
+    public packageType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::EDAS::Application`.
@@ -205,8 +205,8 @@ export class RosApplication extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosApplicationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApplication.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.applicationName = props.applicationName;
@@ -247,32 +247,32 @@ export interface RosClusterProps {
     /**
      * @Property clusterName: Cluster name
      */
-    readonly clusterName: string;
+    readonly clusterName: string | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
      */
-    readonly clusterType: number;
+    readonly clusterType: number | ros.IResolvable;
 
     /**
      * @Property networkMode: Network Type. 1- classic network, 2-VPC
      */
-    readonly networkMode: number;
+    readonly networkMode: number | ros.IResolvable;
 
     /**
      * @Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
      */
-    readonly logicalRegionId?: string;
+    readonly logicalRegionId?: string | ros.IResolvable;
 
     /**
      * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
      */
-    readonly oversoldFactor?: number;
+    readonly oversoldFactor?: number | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -343,22 +343,22 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster ID
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute ClusterName: Cluster name
      */
-    public readonly attrClusterName: any;
+    public readonly attrClusterName: ros.IResolvable;
 
     /**
      * @Attribute ClusterType: Cluster type
      */
-    public readonly attrClusterType: any;
+    public readonly attrClusterType: ros.IResolvable;
 
     /**
      * @Attribute IaasProvider: Provider
      */
-    public readonly attrIaasProvider: any;
+    public readonly attrIaasProvider: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -366,32 +366,32 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property clusterName: Cluster name
      */
-    public clusterName: string;
+    public clusterName: string | ros.IResolvable;
 
     /**
      * @Property clusterType: Cluster type. 1-Swarm cluster, 2-ECS cluster, 3-Kubernetes Cluster
      */
-    public clusterType: number;
+    public clusterType: number | ros.IResolvable;
 
     /**
      * @Property networkMode: Network Type. 1- classic network, 2-VPC
      */
-    public networkMode: number;
+    public networkMode: number | ros.IResolvable;
 
     /**
      * @Property logicalRegionId: Custom namespace RegionId (format: Physical Region: custom namespace identifier)
      */
-    public logicalRegionId: string | undefined;
+    public logicalRegionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oversoldFactor: Docker CPU cluster oversold. Support 2 (1: 2 ratio) / 4 (1: 4) / 8 (1: 8 ratio)
      */
-    public oversoldFactor: number | undefined;
+    public oversoldFactor: number | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: VPC network ID. If network selection VPC, this parameter Required
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::EDAS::Cluster`.
@@ -402,10 +402,10 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrClusterName = ros.Token.asString(this.getAtt('ClusterName'));
-        this.attrClusterType = ros.Token.asString(this.getAtt('ClusterType'));
-        this.attrIaasProvider = ros.Token.asString(this.getAtt('IaasProvider'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrClusterName = this.getAtt('ClusterName');
+        this.attrClusterType = this.getAtt('ClusterType');
+        this.attrIaasProvider = this.getAtt('IaasProvider');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterName = props.clusterName;
@@ -440,17 +440,17 @@ export interface RosClusterMemberProps {
     /**
      * @Property clusterId: Cluster ID to import ECS instance
      */
-    readonly clusterId: string;
+    readonly clusterId: string | ros.IResolvable;
 
     /**
      * @Property instanceIds: ECS instance ID list to import.
      */
-    readonly instanceIds: string[];
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property password: Password ECS hosts need to import (ECS settings can continue to use purchased)
      */
-    readonly password: string;
+    readonly password: string | ros.IResolvable;
 }
 
 /**
@@ -516,17 +516,17 @@ export class RosClusterMember extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute ClusterMemberIds: Cluster member IDs corresponding to the ECS instance IDs.
      */
-    public readonly attrClusterMemberIds: any;
+    public readonly attrClusterMemberIds: ros.IResolvable;
 
     /**
      * @Attribute InstanceIds: ECS instance IDs.
      */
-    public readonly attrInstanceIds: any;
+    public readonly attrInstanceIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -534,17 +534,17 @@ export class RosClusterMember extends ros.RosResource {
     /**
      * @Property clusterId: Cluster ID to import ECS instance
      */
-    public clusterId: string;
+    public clusterId: string | ros.IResolvable;
 
     /**
      * @Property instanceIds: ECS instance ID list to import.
      */
-    public instanceIds: string[];
+    public instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property password: Password ECS hosts need to import (ECS settings can continue to use purchased)
      */
-    public password: string;
+    public password: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::ClusterMember`.
@@ -555,9 +555,9 @@ export class RosClusterMember extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterMemberProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosClusterMember.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrClusterMemberIds = ros.Token.asString(this.getAtt('ClusterMemberIds'));
-        this.attrInstanceIds = ros.Token.asString(this.getAtt('InstanceIds'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrClusterMemberIds = this.getAtt('ClusterMemberIds');
+        this.attrInstanceIds = this.getAtt('InstanceIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterId = props.clusterId;
@@ -586,12 +586,12 @@ export interface RosDeployGroupProps {
     /**
      * @Property appId: Application ID
      */
-    readonly appId: string;
+    readonly appId: string | ros.IResolvable;
 
     /**
      * @Property groupName: Group name, maximum length of 64.
      */
-    readonly groupName: string;
+    readonly groupName: string | ros.IResolvable;
 }
 
 /**
@@ -654,17 +654,17 @@ export class RosDeployGroup extends ros.RosResource {
     /**
      * @Attribute AppId: Application ID
      */
-    public readonly attrAppId: any;
+    public readonly attrAppId: ros.IResolvable;
 
     /**
      * @Attribute GroupName: Deploy group name
      */
-    public readonly attrGroupName: any;
+    public readonly attrGroupName: ros.IResolvable;
 
     /**
      * @Attribute Id: Deploy group ID
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -672,12 +672,12 @@ export class RosDeployGroup extends ros.RosResource {
     /**
      * @Property appId: Application ID
      */
-    public appId: string;
+    public appId: string | ros.IResolvable;
 
     /**
      * @Property groupName: Group name, maximum length of 64.
      */
-    public groupName: string;
+    public groupName: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::EDAS::DeployGroup`.
@@ -688,9 +688,9 @@ export class RosDeployGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDeployGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDeployGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAppId = ros.Token.asString(this.getAtt('AppId'));
-        this.attrGroupName = ros.Token.asString(this.getAtt('GroupName'));
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
+        this.attrAppId = this.getAtt('AppId');
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrId = this.getAtt('Id');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.appId = props.appId;
@@ -717,12 +717,12 @@ export interface RosUserDefineRegionProps {
     /**
      * @Property regionName: Logical region (or namespace) name
      */
-    readonly regionName: string;
+    readonly regionName: string | ros.IResolvable;
 
     /**
      * @Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier")
      */
-    readonly regionTag: string;
+    readonly regionTag: string | ros.IResolvable;
 
     /**
      * @Property debugEnable: Whether debug is enable
@@ -732,7 +732,7 @@ export interface RosUserDefineRegionProps {
     /**
      * @Property description: Logic region (or namespace) description
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 }
 
 /**
@@ -792,27 +792,27 @@ export class RosUserDefineRegion extends ros.RosResource {
     /**
      * @Attribute BelongRegion: Under the physical region ID
      */
-    public readonly attrBelongRegion: any;
+    public readonly attrBelongRegion: ros.IResolvable;
 
     /**
      * @Attribute DebugEnable: Whether debug is enable
      */
-    public readonly attrDebugEnable: any;
+    public readonly attrDebugEnable: ros.IResolvable;
 
     /**
      * @Attribute Id: Resource ID
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * @Attribute RegionName: Region name
      */
-    public readonly attrRegionName: any;
+    public readonly attrRegionName: ros.IResolvable;
 
     /**
      * @Attribute UserId: User account ID
      */
-    public readonly attrUserId: any;
+    public readonly attrUserId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -820,12 +820,12 @@ export class RosUserDefineRegion extends ros.RosResource {
     /**
      * @Property regionName: Logical region (or namespace) name
      */
-    public regionName: string;
+    public regionName: string | ros.IResolvable;
 
     /**
      * @Property regionTag: Logic region (or namespace) ID (format: "physical region ID: logical zone identifier", or "logical zone identifier")
      */
-    public regionTag: string;
+    public regionTag: string | ros.IResolvable;
 
     /**
      * @Property debugEnable: Whether debug is enable
@@ -835,7 +835,7 @@ export class RosUserDefineRegion extends ros.RosResource {
     /**
      * @Property description: Logic region (or namespace) description
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::EDAS::UserDefineRegion`.
@@ -846,11 +846,11 @@ export class RosUserDefineRegion extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosUserDefineRegionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosUserDefineRegion.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrBelongRegion = ros.Token.asString(this.getAtt('BelongRegion'));
-        this.attrDebugEnable = ros.Token.asString(this.getAtt('DebugEnable'));
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
-        this.attrRegionName = ros.Token.asString(this.getAtt('RegionName'));
-        this.attrUserId = ros.Token.asString(this.getAtt('UserId'));
+        this.attrBelongRegion = this.getAtt('BelongRegion');
+        this.attrDebugEnable = this.getAtt('DebugEnable');
+        this.attrId = this.getAtt('Id');
+        this.attrRegionName = this.getAtt('RegionName');
+        this.attrUserId = this.getAtt('UserId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.regionName = props.regionName;

@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::MetricRuleTemplate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.287Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.940Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosMetricRuleTemplateProps.Jsii$Proxy.class)
 public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
@@ -20,19 +20,19 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getRestVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTemplateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateId() {
         return null;
     }
 
@@ -46,11 +46,11 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
      * A builder for {@link RosMetricRuleTemplateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosMetricRuleTemplateProps> {
-        private java.lang.String name;
+        private java.lang.Object name;
         private java.lang.Object alertTemplates;
-        private java.lang.String description;
-        private java.lang.Number restVersion;
-        private java.lang.Number templateId;
+        private java.lang.Object description;
+        private java.lang.Object restVersion;
+        private java.lang.Object templateId;
 
         /**
          * Sets the value of {@link RosMetricRuleTemplateProps#getName}
@@ -58,6 +58,16 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMetricRuleTemplateProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -93,6 +103,16 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosMetricRuleTemplateProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMetricRuleTemplateProps#getRestVersion}
          * @param restVersion the value to be set.
          * @return {@code this}
@@ -103,11 +123,31 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
         }
 
         /**
+         * Sets the value of {@link RosMetricRuleTemplateProps#getRestVersion}
+         * @param restVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder restVersion(com.aliyun.ros.cdk.core.IResolvable restVersion) {
+            this.restVersion = restVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosMetricRuleTemplateProps#getTemplateId}
          * @param templateId the value to be set.
          * @return {@code this}
          */
         public Builder templateId(java.lang.Number templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosMetricRuleTemplateProps#getTemplateId}
+         * @param templateId the value to be set.
+         * @return {@code this}
+         */
+        public Builder templateId(com.aliyun.ros.cdk.core.IResolvable templateId) {
             this.templateId = templateId;
             return this;
         }
@@ -128,11 +168,11 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosMetricRuleTemplateProps {
-        private final java.lang.String name;
+        private final java.lang.Object name;
         private final java.lang.Object alertTemplates;
-        private final java.lang.String description;
-        private final java.lang.Number restVersion;
-        private final java.lang.Number templateId;
+        private final java.lang.Object description;
+        private final java.lang.Object restVersion;
+        private final java.lang.Object templateId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -140,17 +180,17 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.alertTemplates = software.amazon.jsii.Kernel.get(this, "alertTemplates", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.restVersion = software.amazon.jsii.Kernel.get(this, "restVersion", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.templateId = software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restVersion = software.amazon.jsii.Kernel.get(this, "restVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateId = software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String name, final java.lang.Object alertTemplates, final java.lang.String description, final java.lang.Number restVersion, final java.lang.Number templateId) {
+        protected Jsii$Proxy(final java.lang.Object name, final java.lang.Object alertTemplates, final java.lang.Object description, final java.lang.Object restVersion, final java.lang.Object templateId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.name = java.util.Objects.requireNonNull(name, "name is required");
             this.alertTemplates = alertTemplates;
@@ -160,7 +200,7 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -170,17 +210,17 @@ public interface RosMetricRuleTemplateProps extends software.amazon.jsii.JsiiSer
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getRestVersion() {
+        public final java.lang.Object getRestVersion() {
             return this.restVersion;
         }
 
         @Override
-        public final java.lang.Number getTemplateId() {
+        public final java.lang.Object getTemplateId() {
             return this.templateId;
         }
 

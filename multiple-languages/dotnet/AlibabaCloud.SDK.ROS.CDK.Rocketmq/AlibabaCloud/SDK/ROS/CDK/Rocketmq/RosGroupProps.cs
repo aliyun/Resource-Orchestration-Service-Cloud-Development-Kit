@@ -16,8 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// A group ID ranges from 7 to 64 bytes.
         /// Once a group ID is created, it cannot be edited anymore.
         /// </remarks>
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupId
         {
             get;
             set;
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <remarks>
         /// <strong>Property</strong>: instanceId: The ID of the instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceId
         {
             get;
             set;
@@ -39,8 +39,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// http: represents the Group ID was created only for the HTTP protocol messaging.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? GroupType
+        [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? GroupType
         {
             get;
             set;
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
         /// <strong>Property</strong>: remark: The remarks on the request.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "remark", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Remark
+        [JsiiProperty(name: "remark", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Remark
         {
             get;
             set;

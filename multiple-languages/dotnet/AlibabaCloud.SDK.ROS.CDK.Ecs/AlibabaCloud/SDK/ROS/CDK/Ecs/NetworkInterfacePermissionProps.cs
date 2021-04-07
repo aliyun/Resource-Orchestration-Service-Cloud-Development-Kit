@@ -11,24 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public class NetworkInterfacePermissionProps : AlibabaCloud.SDK.ROS.CDK.Ecs.INetworkInterfacePermissionProps
     {
         /// <summary>Property accountId: the account id.</summary>
-        [JsiiProperty(name: "accountId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AccountId
+        [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AccountId
         {
             get;
             set;
         }
 
         /// <summary>Property networkInterfaceId: Network interface id.</summary>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string NetworkInterfaceId
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object NetworkInterfaceId
         {
             get;
             set;
         }
 
         /// <summary>Property permission: the permission.</summary>
-        [JsiiProperty(name: "permission", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Permission
+        [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Permission
         {
             get;
             set;

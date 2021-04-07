@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         }
 
         /// <summary>Attribute ProjectName: Project name.</summary>
-        [JsiiProperty(name: "attrProjectName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrProjectName
+        [JsiiProperty(name: "attrProjectName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrProjectName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

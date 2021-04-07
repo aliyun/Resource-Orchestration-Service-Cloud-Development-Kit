@@ -10,12 +10,12 @@ export interface RosAliasProps {
     /**
      * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
      */
-    readonly aliasName: string;
+    readonly aliasName: string | ros.IResolvable;
 
     /**
      * @Property keyId: Globally unique identifier of the CMK.
      */
-    readonly keyId: string;
+    readonly keyId: string | ros.IResolvable;
 }
 
 /**
@@ -81,12 +81,12 @@ export class RosAlias extends ros.RosResource {
     /**
      * @Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
      */
-    public aliasName: string;
+    public aliasName: string | ros.IResolvable;
 
     /**
      * @Property keyId: Globally unique identifier of the CMK.
      */
-    public keyId: string;
+    public keyId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::KMS::Alias`.
@@ -123,7 +123,7 @@ export interface RosKeyProps {
     /**
      * @Property description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property enable: Specifies whether the key is enabled. Defaults to true.
@@ -138,29 +138,29 @@ export interface RosKeyProps {
     /**
      * @Property keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
      */
-    readonly keySpec?: string;
+    readonly keySpec?: string | ros.IResolvable;
 
     /**
      * @Property keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
      */
-    readonly keyUsage?: string;
+    readonly keyUsage?: string | ros.IResolvable;
 
     /**
      * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
      */
-    readonly pendingWindowInDays?: number;
+    readonly pendingWindowInDays?: number | ros.IResolvable;
 
     /**
      * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
      * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
      * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
      */
-    readonly protectionLevel?: string;
+    readonly protectionLevel?: string | ros.IResolvable;
 
     /**
      * @Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
      */
-    readonly rotationInterval?: string;
+    readonly rotationInterval?: string | ros.IResolvable;
 }
 
 /**
@@ -240,7 +240,7 @@ export class RosKey extends ros.RosResource {
     /**
      * @Attribute KeyId: The globally unique identifier for the CMK.
      */
-    public readonly attrKeyId: any;
+    public readonly attrKeyId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -248,7 +248,7 @@ export class RosKey extends ros.RosResource {
     /**
      * @Property description: The description of the CMK. Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property enable: Specifies whether the key is enabled. Defaults to true.
@@ -263,29 +263,29 @@ export class RosKey extends ros.RosResource {
     /**
      * @Property keySpec: Key type. Valid value: Aliyun_AES_256/Aliyun_SM4/RSA_2048/EC_P256/EC_P256K/EC_SM2
      */
-    public keySpec: string | undefined;
+    public keySpec: string | ros.IResolvable | undefined;
 
     /**
      * @Property keyUsage: The intended use of the CMK. Default value: ENCRYPT/DECRYPT.
      */
-    public keyUsage: string | undefined;
+    public keyUsage: string | ros.IResolvable | undefined;
 
     /**
      * @Property pendingWindowInDays: The waiting period, specified in number of days. During this period, you can cancel the CMK in PendingDeletion status. After the waiting period expires, you cannot cancel the deletion. The value must be between 7 and 30. Default value is 30.
      */
-    public pendingWindowInDays: number | undefined;
+    public pendingWindowInDays: number | ros.IResolvable | undefined;
 
     /**
      * @Property protectionLevel: The protection level of the CMK to create. Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
      * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
      * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
      */
-    public protectionLevel: string | undefined;
+    public protectionLevel: string | ros.IResolvable | undefined;
 
     /**
      * @Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
      */
-    public rotationInterval: string | undefined;
+    public rotationInterval: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::KMS::Key`.
@@ -296,7 +296,7 @@ export class RosKey extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosKeyProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosKey.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrKeyId = ros.Token.asString(this.getAtt('KeyId'));
+        this.attrKeyId = this.getAtt('KeyId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.description = props.description;
@@ -336,23 +336,23 @@ export interface RosSecretProps {
      * @Property secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
      * value and stores it in the initial version.
      */
-    readonly secretData: string;
+    readonly secretData: string | ros.IResolvable;
 
     /**
      * @Property secretName: The name of the secret.
      */
-    readonly secretName: string;
+    readonly secretName: string | ros.IResolvable;
 
     /**
      * @Property versionId: The version number of the initial version. Version numbers are unique in each secret
      * object.
      */
-    readonly versionId: string;
+    readonly versionId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the secret.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
@@ -360,7 +360,7 @@ export interface RosSecretProps {
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
-    readonly encryptionKeyId?: string;
+    readonly encryptionKeyId?: string | ros.IResolvable;
 
     /**
      * @Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -372,19 +372,19 @@ export interface RosSecretProps {
     /**
      * @Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
-    readonly recoveryWindowInDays?: number;
+    readonly recoveryWindowInDays?: number | ros.IResolvable;
 
     /**
      * @Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
-    readonly secretDataType?: string;
+    readonly secretDataType?: string | ros.IResolvable;
 
     /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
-    readonly versionStages?: string[];
+    readonly versionStages?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -468,12 +468,12 @@ export class RosSecret extends ros.RosResource {
     /**
      * @Attribute Arn: The Alibaba Cloud Resource Name (ARN).
      */
-    public readonly attrArn: any;
+    public readonly attrArn: ros.IResolvable;
 
     /**
      * @Attribute SecretName: The name of the secret.
      */
-    public readonly attrSecretName: any;
+    public readonly attrSecretName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -482,23 +482,23 @@ export class RosSecret extends ros.RosResource {
      * @Property secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
      * value and stores it in the initial version.
      */
-    public secretData: string;
+    public secretData: string | ros.IResolvable;
 
     /**
      * @Property secretName: The name of the secret.
      */
-    public secretName: string;
+    public secretName: string | ros.IResolvable;
 
     /**
      * @Property versionId: The version number of the initial version. Version numbers are unique in each secret
      * object.
      */
-    public versionId: string;
+    public versionId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the secret.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
@@ -506,7 +506,7 @@ export class RosSecret extends ros.RosResource {
      * key to encrypt the secret.
      * Note The KMS CMK must be a symmetric key.
      */
-    public encryptionKeyId: string | undefined;
+    public encryptionKeyId: string | ros.IResolvable | undefined;
 
     /**
      * @Property forceDeleteWithoutRecovery: Specifies whether to forcibly delete the secret. If this parameter is set to true, the secret cannot be recovered. Valid values:
@@ -518,19 +518,19 @@ export class RosSecret extends ros.RosResource {
     /**
      * @Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
-    public recoveryWindowInDays: number | undefined;
+    public recoveryWindowInDays: number | ros.IResolvable | undefined;
 
     /**
      * @Property secretDataType: The type of the secret value. Valid values:
      * text (default value)
      * binary
      */
-    public secretDataType: string | undefined;
+    public secretDataType: string | ros.IResolvable | undefined;
 
     /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
-    public versionStages: string[] | undefined;
+    public versionStages: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::KMS::Secret`.
@@ -541,8 +541,8 @@ export class RosSecret extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSecretProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSecret.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrArn = ros.Token.asString(this.getAtt('Arn'));
-        this.attrSecretName = ros.Token.asString(this.getAtt('SecretName'));
+        this.attrArn = this.getAtt('Arn');
+        this.attrSecretName = this.getAtt('SecretName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.secretData = props.secretData;

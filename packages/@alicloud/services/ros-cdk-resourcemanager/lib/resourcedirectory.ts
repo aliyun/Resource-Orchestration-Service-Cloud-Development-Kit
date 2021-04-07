@@ -22,22 +22,22 @@ export class ResourceDirectory extends ros.Resource {
     /**
      * Attribute MasterAccountId: The ID of the master account
      */
-    public readonly attrMasterAccountId: any;
+    public readonly attrMasterAccountId: ros.IResolvable;
 
     /**
      * Attribute MasterAccountName: The name of the master account
      */
-    public readonly attrMasterAccountName: any;
+    public readonly attrMasterAccountName: ros.IResolvable;
 
     /**
      * Attribute ResourceDirectoryId: The ID of the resource directory
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * Attribute RootFolderId: The ID of the root folder
      */
-    public readonly attrRootFolderId: any;
+    public readonly attrRootFolderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ResourceManager::ResourceDirectory`.

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * A ROS template type:  `ALIYUN::SLS::Savedsearch`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.425Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosSavedsearch")
 public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSavedsearchName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSavedsearchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSavedsearchName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSavedsearchName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -81,13 +81,19 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getProject() {
-        return software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getProject() {
+        return software.amazon.jsii.Kernel.get(this, "project", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setProject(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "project", java.util.Objects.requireNonNull(value, "project is required"));
+    }
+
+    /**
+     */
+    public void setProject(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "project", java.util.Objects.requireNonNull(value, "project is required"));
     }
     /**
@@ -100,27 +106,27 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getLogstore();
+        @org.jetbrains.annotations.NotNull java.lang.Object getLogstore();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSavedsearchName();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSavedsearchName();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getSearchQuery();
+        @org.jetbrains.annotations.NotNull java.lang.Object getSearchQuery();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getTopic();
+        @org.jetbrains.annotations.NotNull java.lang.Object getTopic();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDisplayName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDisplayName() {
             return null;
         }
 
@@ -136,11 +142,11 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DetailProperty> {
-            private java.lang.String logstore;
-            private java.lang.String savedsearchName;
-            private java.lang.String searchQuery;
-            private java.lang.String topic;
-            private java.lang.String displayName;
+            private java.lang.Object logstore;
+            private java.lang.Object savedsearchName;
+            private java.lang.Object searchQuery;
+            private java.lang.Object topic;
+            private java.lang.Object displayName;
 
             /**
              * Sets the value of {@link DetailProperty#getLogstore}
@@ -149,6 +155,17 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder logstore(java.lang.String logstore) {
+                this.logstore = logstore;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetailProperty#getLogstore}
+             * @param logstore the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logstore(com.aliyun.ros.cdk.core.IResolvable logstore) {
                 this.logstore = logstore;
                 return this;
             }
@@ -165,12 +182,34 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DetailProperty#getSavedsearchName}
+             * @param savedsearchName the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder savedsearchName(com.aliyun.ros.cdk.core.IResolvable savedsearchName) {
+                this.savedsearchName = savedsearchName;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DetailProperty#getSearchQuery}
              * @param searchQuery the value to be set. This parameter is required.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder searchQuery(java.lang.String searchQuery) {
+                this.searchQuery = searchQuery;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetailProperty#getSearchQuery}
+             * @param searchQuery the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder searchQuery(com.aliyun.ros.cdk.core.IResolvable searchQuery) {
                 this.searchQuery = searchQuery;
                 return this;
             }
@@ -187,12 +226,34 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link DetailProperty#getTopic}
+             * @param topic the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder topic(com.aliyun.ros.cdk.core.IResolvable topic) {
+                this.topic = topic;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DetailProperty#getDisplayName}
              * @param displayName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder displayName(java.lang.String displayName) {
+                this.displayName = displayName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DetailProperty#getDisplayName}
+             * @param displayName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder displayName(com.aliyun.ros.cdk.core.IResolvable displayName) {
                 this.displayName = displayName;
                 return this;
             }
@@ -215,11 +276,11 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DetailProperty {
-            private final java.lang.String logstore;
-            private final java.lang.String savedsearchName;
-            private final java.lang.String searchQuery;
-            private final java.lang.String topic;
-            private final java.lang.String displayName;
+            private final java.lang.Object logstore;
+            private final java.lang.Object savedsearchName;
+            private final java.lang.Object searchQuery;
+            private final java.lang.Object topic;
+            private final java.lang.Object displayName;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -227,17 +288,17 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.logstore = software.amazon.jsii.Kernel.get(this, "logstore", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.savedsearchName = software.amazon.jsii.Kernel.get(this, "savedsearchName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.searchQuery = software.amazon.jsii.Kernel.get(this, "searchQuery", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.logstore = software.amazon.jsii.Kernel.get(this, "logstore", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.savedsearchName = software.amazon.jsii.Kernel.get(this, "savedsearchName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.searchQuery = software.amazon.jsii.Kernel.get(this, "searchQuery", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.topic = software.amazon.jsii.Kernel.get(this, "topic", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String logstore, final java.lang.String savedsearchName, final java.lang.String searchQuery, final java.lang.String topic, final java.lang.String displayName) {
+            protected Jsii$Proxy(final java.lang.Object logstore, final java.lang.Object savedsearchName, final java.lang.Object searchQuery, final java.lang.Object topic, final java.lang.Object displayName) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.logstore = java.util.Objects.requireNonNull(logstore, "logstore is required");
                 this.savedsearchName = java.util.Objects.requireNonNull(savedsearchName, "savedsearchName is required");
@@ -247,27 +308,27 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
-            public final java.lang.String getLogstore() {
+            public final java.lang.Object getLogstore() {
                 return this.logstore;
             }
 
             @Override
-            public final java.lang.String getSavedsearchName() {
+            public final java.lang.Object getSavedsearchName() {
                 return this.savedsearchName;
             }
 
             @Override
-            public final java.lang.String getSearchQuery() {
+            public final java.lang.Object getSearchQuery() {
                 return this.searchQuery;
             }
 
             @Override
-            public final java.lang.String getTopic() {
+            public final java.lang.Object getTopic() {
                 return this.topic;
             }
 
             @Override
-            public final java.lang.String getDisplayName() {
+            public final java.lang.Object getDisplayName() {
                 return this.displayName;
             }
 
@@ -369,6 +430,14 @@ public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
          * @param project This parameter is required.
          */
         public Builder project(final java.lang.String project) {
+            this.props.project(project);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param project This parameter is required.
+         */
+        public Builder project(final com.aliyun.ros.cdk.core.IResolvable project) {
             this.props.project(project);
             return this;
         }

@@ -11,7 +11,7 @@ export interface BackupClientsProps {
     /**
      * Property instanceIds: ID list of instances to install backup client
      */
-    readonly instanceIds: string[];
+    readonly instanceIds: Array<string | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -27,12 +27,12 @@ export class BackupClients extends ros.Resource {
     /**
      * Attribute ClientIds: ID list of clients installed in instances
      */
-    public readonly attrClientIds: any;
+    public readonly attrClientIds: ros.IResolvable;
 
     /**
      * Attribute InstanceIds: ID list of instances to install backup client
      */
-    public readonly attrInstanceIds: any;
+    public readonly attrInstanceIds: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::HBR::BackupClients`.

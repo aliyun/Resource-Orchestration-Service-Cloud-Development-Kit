@@ -3,44 +3,65 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::Stack`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.346Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.023Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.StackProps")
 @software.amazon.jsii.Jsii.Proxy(StackProps.Jsii$Proxy.class)
 public interface StackProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property parameters: The set of parameters passed to this nested stack.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
     }
 
     /**
+     * Property resourceGroupId: Resource group.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     * Property templateBody: Structure containing the template body.
+     * <p>
+     * It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
+     * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateBody() {
         return null;
     }
 
     /**
+     * Property templateId: Template ID of template containing the template body.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTemplateId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateId() {
         return null;
     }
 
     /**
+     * Property templateUrl: Location of file containing the template body.
+     * <p>
+     * The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+     * You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTemplateUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateUrl() {
         return null;
     }
 
     /**
+     * Property templateVersion: Template version of template containing the template body.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getTemplateVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateVersion() {
         return null;
     }
 
     /**
+     * Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update.
+     * <p>
+     * Default to 60 minutes.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeoutMins() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeoutMins() {
         return null;
     }
 
@@ -55,25 +76,16 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<StackProps> {
         private java.lang.Object parameters;
+        private java.lang.Object resourceGroupId;
         private java.lang.Object templateBody;
-        private java.lang.String templateId;
-        private java.lang.String templateUrl;
-        private java.lang.String templateVersion;
-        private java.lang.Number timeoutMins;
+        private java.lang.Object templateId;
+        private java.lang.Object templateUrl;
+        private java.lang.Object templateVersion;
+        private java.lang.Object timeoutMins;
 
         /**
          * Sets the value of {@link StackProps#getParameters}
-         * @param parameters the value to be set.
-         * @return {@code this}
-         */
-        public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
-            this.parameters = parameters;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link StackProps#getParameters}
-         * @param parameters the value to be set.
+         * @param parameters Property parameters: The set of parameters passed to this nested stack.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -82,8 +94,40 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link StackProps#getParameters}
+         * @param parameters Property parameters: The set of parameters passed to this nested stack.
+         * @return {@code this}
+         */
+        public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
+            this.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link StackProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link StackProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: Resource group.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StackProps#getTemplateBody}
-         * @param templateBody the value to be set.
+         * @param templateBody Property templateBody: Structure containing the template body.
+         *                     It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
+         *                     You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
          * @return {@code this}
          */
         public Builder templateBody(com.aliyun.ros.cdk.core.IResolvable templateBody) {
@@ -93,7 +137,9 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link StackProps#getTemplateBody}
-         * @param templateBody the value to be set.
+         * @param templateBody Property templateBody: Structure containing the template body.
+         *                     It is just to facilitate the passing of template. It is raw content.Functions in TemplateBody will not be resolved in parent stack.
+         *                     You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
          * @return {@code this}
          */
         public Builder templateBody(java.util.Map<java.lang.String, ? extends java.lang.Object> templateBody) {
@@ -103,7 +149,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link StackProps#getTemplateId}
-         * @param templateId the value to be set.
+         * @param templateId Property templateId: Template ID of template containing the template body.
          * @return {@code this}
          */
         public Builder templateId(java.lang.String templateId) {
@@ -112,8 +158,20 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link StackProps#getTemplateId}
+         * @param templateId Property templateId: Template ID of template containing the template body.
+         * @return {@code this}
+         */
+        public Builder templateId(com.aliyun.ros.cdk.core.IResolvable templateId) {
+            this.templateId = templateId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StackProps#getTemplateUrl}
-         * @param templateUrl the value to be set.
+         * @param templateUrl Property templateUrl: Location of file containing the template body.
+         *                    The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+         *                    You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
          * @return {@code this}
          */
         public Builder templateUrl(java.lang.String templateUrl) {
@@ -122,8 +180,20 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link StackProps#getTemplateUrl}
+         * @param templateUrl Property templateUrl: Location of file containing the template body.
+         *                    The URL must point to a template (max size: 524288 bytes) that is located in a http web server(http, https), or an Aliyun OSS bucket(Such as oss://ros-template/demo?RegionId=cn-hangzhou, oss://ros-template/demo. RegionId is default to the value of RegionId Parameter of the request.).
+         *                    You must specify either the TemplateBody or the TemplateURL property. If both are specified, TemplateBody will be used.
+         * @return {@code this}
+         */
+        public Builder templateUrl(com.aliyun.ros.cdk.core.IResolvable templateUrl) {
+            this.templateUrl = templateUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StackProps#getTemplateVersion}
-         * @param templateVersion the value to be set.
+         * @param templateVersion Property templateVersion: Template version of template containing the template body.
          * @return {@code this}
          */
         public Builder templateVersion(java.lang.String templateVersion) {
@@ -132,11 +202,33 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link StackProps#getTemplateVersion}
+         * @param templateVersion Property templateVersion: Template version of template containing the template body.
+         * @return {@code this}
+         */
+        public Builder templateVersion(com.aliyun.ros.cdk.core.IResolvable templateVersion) {
+            this.templateVersion = templateVersion;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link StackProps#getTimeoutMins}
-         * @param timeoutMins the value to be set.
+         * @param timeoutMins Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update.
+         *                    Default to 60 minutes.
          * @return {@code this}
          */
         public Builder timeoutMins(java.lang.Number timeoutMins) {
+            this.timeoutMins = timeoutMins;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link StackProps#getTimeoutMins}
+         * @param timeoutMins Property timeoutMins: The length of time, in minutes, to wait for the nested stack creation or update.
+         *                    Default to 60 minutes.
+         * @return {@code this}
+         */
+        public Builder timeoutMins(com.aliyun.ros.cdk.core.IResolvable timeoutMins) {
             this.timeoutMins = timeoutMins;
             return this;
         }
@@ -148,7 +240,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
          */
         @Override
         public StackProps build() {
-            return new Jsii$Proxy(parameters, templateBody, templateId, templateUrl, templateVersion, timeoutMins);
+            return new Jsii$Proxy(parameters, resourceGroupId, templateBody, templateId, templateUrl, templateVersion, timeoutMins);
         }
     }
 
@@ -158,11 +250,12 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements StackProps {
         private final java.lang.Object parameters;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object templateBody;
-        private final java.lang.String templateId;
-        private final java.lang.String templateUrl;
-        private final java.lang.String templateVersion;
-        private final java.lang.Number timeoutMins;
+        private final java.lang.Object templateId;
+        private final java.lang.Object templateUrl;
+        private final java.lang.Object templateVersion;
+        private final java.lang.Object timeoutMins;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -171,19 +264,21 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.templateBody = software.amazon.jsii.Kernel.get(this, "templateBody", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.templateId = software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.templateUrl = software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.templateVersion = software.amazon.jsii.Kernel.get(this, "templateVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.templateId = software.amazon.jsii.Kernel.get(this, "templateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateUrl = software.amazon.jsii.Kernel.get(this, "templateUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.templateVersion = software.amazon.jsii.Kernel.get(this, "templateVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeoutMins = software.amazon.jsii.Kernel.get(this, "timeoutMins", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object parameters, final java.lang.Object templateBody, final java.lang.String templateId, final java.lang.String templateUrl, final java.lang.String templateVersion, final java.lang.Number timeoutMins) {
+        protected Jsii$Proxy(final java.lang.Object parameters, final java.lang.Object resourceGroupId, final java.lang.Object templateBody, final java.lang.Object templateId, final java.lang.Object templateUrl, final java.lang.Object templateVersion, final java.lang.Object timeoutMins) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.parameters = parameters;
+            this.resourceGroupId = resourceGroupId;
             this.templateBody = templateBody;
             this.templateId = templateId;
             this.templateUrl = templateUrl;
@@ -197,27 +292,32 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getTemplateBody() {
             return this.templateBody;
         }
 
         @Override
-        public final java.lang.String getTemplateId() {
+        public final java.lang.Object getTemplateId() {
             return this.templateId;
         }
 
         @Override
-        public final java.lang.String getTemplateUrl() {
+        public final java.lang.Object getTemplateUrl() {
             return this.templateUrl;
         }
 
         @Override
-        public final java.lang.String getTemplateVersion() {
+        public final java.lang.Object getTemplateVersion() {
             return this.templateVersion;
         }
 
         @Override
-        public final java.lang.Number getTimeoutMins() {
+        public final java.lang.Object getTimeoutMins() {
             return this.timeoutMins;
         }
 
@@ -229,6 +329,9 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.getParameters() != null) {
                 data.set("parameters", om.valueToTree(this.getParameters()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
             if (this.getTemplateBody() != null) {
                 data.set("templateBody", om.valueToTree(this.getTemplateBody()));
@@ -264,6 +367,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
             StackProps.Jsii$Proxy that = (StackProps.Jsii$Proxy) o;
 
             if (this.parameters != null ? !this.parameters.equals(that.parameters) : that.parameters != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.templateBody != null ? !this.templateBody.equals(that.templateBody) : that.templateBody != null) return false;
             if (this.templateId != null ? !this.templateId.equals(that.templateId) : that.templateId != null) return false;
             if (this.templateUrl != null ? !this.templateUrl.equals(that.templateUrl) : that.templateUrl != null) return false;
@@ -274,6 +378,7 @@ public interface StackProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.parameters != null ? this.parameters.hashCode() : 0;
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.templateBody != null ? this.templateBody.hashCode() : 0);
             result = 31 * result + (this.templateId != null ? this.templateId.hashCode() : 0);
             result = 31 * result + (this.templateUrl != null ? this.templateUrl.hashCode() : 0);

@@ -10,17 +10,17 @@ export interface RosAccountProps {
     /**
      * @Property displayName: Member name
      */
-    readonly displayName: string;
+    readonly displayName: string | ros.IResolvable;
 
     /**
      * @Property folderId: The ID of the parent folder
      */
-    readonly folderId?: string;
+    readonly folderId?: string | ros.IResolvable;
 
     /**
      * @Property payerAccountId:
      */
-    readonly payerAccountId?: string;
+    readonly payerAccountId?: string | ros.IResolvable;
 }
 
 /**
@@ -77,32 +77,32 @@ export class RosAccount extends ros.RosResource {
     /**
      * @Attribute AccountId: This ID of Resource Manager Account
      */
-    public readonly attrAccountId: any;
+    public readonly attrAccountId: ros.IResolvable;
 
     /**
      * @Attribute DisplayName: Member name
      */
-    public readonly attrDisplayName: any;
+    public readonly attrDisplayName: ros.IResolvable;
 
     /**
      * @Attribute FolderId: The ID of the parent folder
      */
-    public readonly attrFolderId: any;
+    public readonly attrFolderId: ros.IResolvable;
 
     /**
      * @Attribute JoinMethod: Ways for members to join the resource directory. Valid values: invited, created
      */
-    public readonly attrJoinMethod: any;
+    public readonly attrJoinMethod: ros.IResolvable;
 
     /**
      * @Attribute ResourceDirectoryId: Resource directory ID
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * @Attribute Type: Member type. The value of ResourceAccount indicates the resource account
      */
-    public readonly attrType: any;
+    public readonly attrType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -110,17 +110,17 @@ export class RosAccount extends ros.RosResource {
     /**
      * @Property displayName: Member name
      */
-    public displayName: string;
+    public displayName: string | ros.IResolvable;
 
     /**
      * @Property folderId: The ID of the parent folder
      */
-    public folderId: string | undefined;
+    public folderId: string | ros.IResolvable | undefined;
 
     /**
      * @Property payerAccountId:
      */
-    public payerAccountId: string | undefined;
+    public payerAccountId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Account`.
@@ -131,12 +131,12 @@ export class RosAccount extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccountId = ros.Token.asString(this.getAtt('AccountId'));
-        this.attrDisplayName = ros.Token.asString(this.getAtt('DisplayName'));
-        this.attrFolderId = ros.Token.asString(this.getAtt('FolderId'));
-        this.attrJoinMethod = ros.Token.asString(this.getAtt('JoinMethod'));
-        this.attrResourceDirectoryId = ros.Token.asString(this.getAtt('ResourceDirectoryId'));
-        this.attrType = ros.Token.asString(this.getAtt('Type'));
+        this.attrAccountId = this.getAtt('AccountId');
+        this.attrDisplayName = this.getAtt('DisplayName');
+        this.attrFolderId = this.getAtt('FolderId');
+        this.attrJoinMethod = this.getAtt('JoinMethod');
+        this.attrResourceDirectoryId = this.getAtt('ResourceDirectoryId');
+        this.attrType = this.getAtt('Type');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.displayName = props.displayName;
@@ -165,12 +165,12 @@ export interface RosFolderProps {
     /**
      * @Property folderName: The name of the folder
      */
-    readonly folderName: string;
+    readonly folderName: string | ros.IResolvable;
 
     /**
      * @Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    readonly parentFolderId?: string;
+    readonly parentFolderId?: string | ros.IResolvable;
 }
 
 /**
@@ -225,17 +225,17 @@ export class RosFolder extends ros.RosResource {
     /**
      * @Attribute FolderId: The ID of the folder
      */
-    public readonly attrFolderId: any;
+    public readonly attrFolderId: ros.IResolvable;
 
     /**
      * @Attribute FolderName: The name of the folder
      */
-    public readonly attrFolderName: any;
+    public readonly attrFolderName: ros.IResolvable;
 
     /**
      * @Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    public readonly attrParentFolderId: any;
+    public readonly attrParentFolderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -243,12 +243,12 @@ export class RosFolder extends ros.RosResource {
     /**
      * @Property folderName: The name of the folder
      */
-    public folderName: string;
+    public folderName: string | ros.IResolvable;
 
     /**
      * @Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    public parentFolderId: string | undefined;
+    public parentFolderId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Folder`.
@@ -259,9 +259,9 @@ export class RosFolder extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosFolderProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosFolder.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrFolderId = ros.Token.asString(this.getAtt('FolderId'));
-        this.attrFolderName = ros.Token.asString(this.getAtt('FolderName'));
-        this.attrParentFolderId = ros.Token.asString(this.getAtt('ParentFolderId'));
+        this.attrFolderId = this.getAtt('FolderId');
+        this.attrFolderName = this.getAtt('FolderName');
+        this.attrParentFolderId = this.getAtt('ParentFolderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.folderName = props.folderName;
@@ -288,17 +288,17 @@ export interface RosHandshakeProps {
     /**
      * @Property targetEntity: Invited account ID or login email
      */
-    readonly targetEntity: string;
+    readonly targetEntity: string | ros.IResolvable;
 
     /**
      * @Property targetType: Type of account being invited. Valid values: Account, Email
      */
-    readonly targetType: string;
+    readonly targetType: string | ros.IResolvable;
 
     /**
      * @Property note: Remarks
      */
-    readonly note?: string;
+    readonly note?: string | ros.IResolvable;
 }
 
 /**
@@ -356,37 +356,37 @@ export class RosHandshake extends ros.RosResource {
     /**
      * @Attribute HandshakeId: This ID of Resource Manager handshake
      */
-    public readonly attrHandshakeId: any;
+    public readonly attrHandshakeId: ros.IResolvable;
 
     /**
      * @Attribute MasterAccountId: Resource account master account ID
      */
-    public readonly attrMasterAccountId: any;
+    public readonly attrMasterAccountId: ros.IResolvable;
 
     /**
      * @Attribute MasterAccountName: The name of the main account of the resource directory
      */
-    public readonly attrMasterAccountName: any;
+    public readonly attrMasterAccountName: ros.IResolvable;
 
     /**
      * @Attribute Note: Remarks
      */
-    public readonly attrNote: any;
+    public readonly attrNote: ros.IResolvable;
 
     /**
      * @Attribute ResourceDirectoryId: Resource directory ID
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * @Attribute TargetEntity: Invited account ID or login email
      */
-    public readonly attrTargetEntity: any;
+    public readonly attrTargetEntity: ros.IResolvable;
 
     /**
      * @Attribute TargetType: Type of account being invited. Valid values: Account, Email
      */
-    public readonly attrTargetType: any;
+    public readonly attrTargetType: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -394,17 +394,17 @@ export class RosHandshake extends ros.RosResource {
     /**
      * @Property targetEntity: Invited account ID or login email
      */
-    public targetEntity: string;
+    public targetEntity: string | ros.IResolvable;
 
     /**
      * @Property targetType: Type of account being invited. Valid values: Account, Email
      */
-    public targetType: string;
+    public targetType: string | ros.IResolvable;
 
     /**
      * @Property note: Remarks
      */
-    public note: string | undefined;
+    public note: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Handshake`.
@@ -415,13 +415,13 @@ export class RosHandshake extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosHandshakeProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosHandshake.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrHandshakeId = ros.Token.asString(this.getAtt('HandshakeId'));
-        this.attrMasterAccountId = ros.Token.asString(this.getAtt('MasterAccountId'));
-        this.attrMasterAccountName = ros.Token.asString(this.getAtt('MasterAccountName'));
-        this.attrNote = ros.Token.asString(this.getAtt('Note'));
-        this.attrResourceDirectoryId = ros.Token.asString(this.getAtt('ResourceDirectoryId'));
-        this.attrTargetEntity = ros.Token.asString(this.getAtt('TargetEntity'));
-        this.attrTargetType = ros.Token.asString(this.getAtt('TargetType'));
+        this.attrHandshakeId = this.getAtt('HandshakeId');
+        this.attrMasterAccountId = this.getAtt('MasterAccountId');
+        this.attrMasterAccountName = this.getAtt('MasterAccountName');
+        this.attrNote = this.getAtt('Note');
+        this.attrResourceDirectoryId = this.getAtt('ResourceDirectoryId');
+        this.attrTargetEntity = this.getAtt('TargetEntity');
+        this.attrTargetType = this.getAtt('TargetType');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.targetEntity = props.targetEntity;
@@ -495,22 +495,22 @@ export class RosResourceDirectory extends ros.RosResource {
     /**
      * @Attribute MasterAccountId: The ID of the master account
      */
-    public readonly attrMasterAccountId: any;
+    public readonly attrMasterAccountId: ros.IResolvable;
 
     /**
      * @Attribute MasterAccountName: The name of the master account
      */
-    public readonly attrMasterAccountName: any;
+    public readonly attrMasterAccountName: ros.IResolvable;
 
     /**
      * @Attribute ResourceDirectoryId: The ID of the resource directory
      */
-    public readonly attrResourceDirectoryId: any;
+    public readonly attrResourceDirectoryId: ros.IResolvable;
 
     /**
      * @Attribute RootFolderId: The ID of the root folder
      */
-    public readonly attrRootFolderId: any;
+    public readonly attrRootFolderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -524,10 +524,10 @@ export class RosResourceDirectory extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosResourceDirectoryProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosResourceDirectory.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMasterAccountId = ros.Token.asString(this.getAtt('MasterAccountId'));
-        this.attrMasterAccountName = ros.Token.asString(this.getAtt('MasterAccountName'));
-        this.attrResourceDirectoryId = ros.Token.asString(this.getAtt('ResourceDirectoryId'));
-        this.attrRootFolderId = ros.Token.asString(this.getAtt('RootFolderId'));
+        this.attrMasterAccountId = this.getAtt('MasterAccountId');
+        this.attrMasterAccountName = this.getAtt('MasterAccountName');
+        this.attrResourceDirectoryId = this.getAtt('ResourceDirectoryId');
+        this.attrRootFolderId = this.getAtt('RootFolderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
     }
@@ -550,12 +550,12 @@ export interface RosResourceGroupProps {
     /**
      * @Property displayName: The display name of the resource group
      */
-    readonly displayName: string;
+    readonly displayName: string | ros.IResolvable;
 
     /**
      * @Property name: The unique identifier of the resource group
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -611,32 +611,27 @@ export class RosResourceGroup extends ros.RosResource {
     /**
      * @Attribute AccountId: The ID of the Alibaba Cloud account to which the resource group belongs
      */
-    public readonly attrAccountId: any;
-
-    /**
-     * @Attribute CreateDate: The time when the resource group was created
-     */
-    public readonly attrCreateDate: any;
+    public readonly attrAccountId: ros.IResolvable;
 
     /**
      * @Attribute DisplayName: The display name of the resource group
      */
-    public readonly attrDisplayName: any;
+    public readonly attrDisplayName: ros.IResolvable;
 
     /**
      * @Attribute Id: The ID of the resource group
      */
-    public readonly attrId: any;
+    public readonly attrId: ros.IResolvable;
 
     /**
      * @Attribute Name: The unique identifier of the resource group
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * @Attribute RegionStatuses: The status of the resource group in all regions
      */
-    public readonly attrRegionStatuses: any;
+    public readonly attrRegionStatuses: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -644,12 +639,12 @@ export class RosResourceGroup extends ros.RosResource {
     /**
      * @Property displayName: The display name of the resource group
      */
-    public displayName: string;
+    public displayName: string | ros.IResolvable;
 
     /**
      * @Property name: The unique identifier of the resource group
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ResourceManager::ResourceGroup`.
@@ -660,12 +655,11 @@ export class RosResourceGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosResourceGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosResourceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccountId = ros.Token.asString(this.getAtt('AccountId'));
-        this.attrCreateDate = ros.Token.asString(this.getAtt('CreateDate'));
-        this.attrDisplayName = ros.Token.asString(this.getAtt('DisplayName'));
-        this.attrId = ros.Token.asString(this.getAtt('Id'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
-        this.attrRegionStatuses = ros.Token.asString(this.getAtt('RegionStatuses'));
+        this.attrAccountId = this.getAtt('AccountId');
+        this.attrDisplayName = this.getAtt('DisplayName');
+        this.attrId = this.getAtt('Id');
+        this.attrName = this.getAtt('Name');
+        this.attrRegionStatuses = this.getAtt('RegionStatuses');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.displayName = props.displayName;

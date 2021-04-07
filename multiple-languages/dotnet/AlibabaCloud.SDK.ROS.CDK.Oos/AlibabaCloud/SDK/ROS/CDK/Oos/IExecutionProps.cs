@@ -12,16 +12,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
         /// </remarks>
-        [JsiiProperty(name: "templateName", typeJson: "{\"primitive\":\"string\"}")]
-        string TemplateName
+        [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TemplateName
         {
             get;
         }
 
         /// <summary>Property mode: Execution mode.</summary>
-        [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Mode
+        object? Mode
         {
             get
             {
@@ -30,7 +30,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <summary>Property parameters: Parameters for the execution of template.</summary>
-        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Parameters
         {
@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <summary>Property parentExecutionId: Parent execution ID.</summary>
-        [JsiiProperty(name: "parentExecutionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "parentExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ParentExecutionId
+        object? ParentExecutionId
         {
             get
             {
@@ -65,15 +65,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <summary>Property safetyCheck: Security check mode.</summary>
         /// <remarks>
         /// Allowed values:
-        /// 
+        ///
         /// <list type="bullet">
         /// <description>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</description>
         /// <description>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</description>
         /// </list>
         /// </remarks>
-        [JsiiProperty(name: "safetyCheck", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "safetyCheck", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SafetyCheck
+        object? SafetyCheck
         {
             get
             {
@@ -82,9 +82,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        System.Collections.Generic.IDictionary<string, object>? Tags
         {
             get
             {
@@ -96,9 +96,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// <remarks>
         /// Default to the latest version.
         /// </remarks>
-        [JsiiProperty(name: "templateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? TemplateVersion
+        object? TemplateVersion
         {
             get
             {
@@ -118,23 +118,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// <remarks>
             /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters, and can not begin to ALIYUN, ACS, ALIBABA.
             /// </remarks>
-            [JsiiProperty(name: "templateName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TemplateName
+            [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TemplateName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property mode: Execution mode.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "mode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Mode
+            [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Mode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property parameters: Parameters for the execution of template.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Parameters
             {
                 get => GetInstanceProperty<object?>();
@@ -142,10 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
             /// <summary>Property parentExecutionId: Parent execution ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "parentExecutionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ParentExecutionId
+            [JsiiProperty(name: "parentExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ParentExecutionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property resourceOptions: Resource options user by ROS.</summary>
@@ -159,25 +159,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// <summary>Property safetyCheck: Security check mode.</summary>
             /// <remarks>
             /// Allowed values:
-            /// 
+            ///
             /// <list type="bullet">
             /// <description>Skip: This option means that customers understand the risks, you can do anything without confirmation Action, no matter what the level of risk. It takes effect only if Mode is Automatic.</description>
             /// <description>ConfirmEveryHighRiskAction (default): This option would require customers to confirm each Action a high risk. NotifyExecution by calling customer interface to confirm or cancel.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "safetyCheck", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SafetyCheck
+            [JsiiProperty(name: "safetyCheck", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SafetyCheck
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property tags: Tag value and the key mapping, the label of the key number can be up to 20.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}", isOptional: true)]
+            public System.Collections.Generic.IDictionary<string, object>? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>?>();
             }
 
             /// <summary>Property templateVersion: Version number of template.</summary>
@@ -185,10 +185,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             /// Default to the latest version.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "templateVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? TemplateVersion
+            [JsiiProperty(name: "templateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TemplateVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

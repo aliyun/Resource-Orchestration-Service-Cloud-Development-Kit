@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * A ROS resource type:  `ALIYUN::ROS::AutoEnableService`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.341Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableService")
 public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::AutoEnableService`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AutoEnableService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.AutoEnableServiceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ROS::AutoEnableService`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AutoEnableService(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ros.AutoEnableServiceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ros.AutoEnableService> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,10 +83,86 @@ public class AutoEnableService extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property serviceName: Which service to enable.
+         * <p>
+         * Valid values:
+         * AHAS: Application High Availability Service
+         * ARMS: Realtime Monitoring Service
+         * ApiGateway: API Gateway
+         * BatchCompute: Batch Compute
+         * BrainIndustrial: Brain Industrial
+         * CloudStorageGateway: Cloud Storage Gateway
+         * CMS: Cloud Monitor Service
+         * CR: Container Registry
+         * CS: Container Service
+         * DataHub: Data Hub
+         * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         * EMAS: Enterprise Mobile Application Studio
+         * FC: Function Compute
+         * FNF: Serverless Workflow
+         * MaxCompute: MaxComputeNAS: Network Attached Storage
+         * MNS: Message Service (MNS)
+         * HBR: Hybrid Backup Recovery
+         * IMM: Intelligent Media Management
+         * IOT: IoT Platform
+         * KMS: Key Management Service
+         * NLP: Natural Language Processing
+         * OSS: Object Storage Service
+         * OTS: Table Store
+         * PrivateLink: Private Link
+         * PrivateZone: Private Zone
+         * RocketMQ: RocketMQ
+         * SAE: Serverless App Engine
+         * SLS: Log Service
+         * VS: Video Surveillance
+         * Xtrace: Tracing Anlaysis
+         * <p>
          * @return {@code this}
-         * @param serviceName This parameter is required.
+         * @param serviceName Property serviceName: Which service to enable. This parameter is required.
          */
         public Builder serviceName(final java.lang.String serviceName) {
+            this.props.serviceName(serviceName);
+            return this;
+        }
+        /**
+         * Property serviceName: Which service to enable.
+         * <p>
+         * Valid values:
+         * AHAS: Application High Availability Service
+         * ARMS: Realtime Monitoring Service
+         * ApiGateway: API Gateway
+         * BatchCompute: Batch Compute
+         * BrainIndustrial: Brain Industrial
+         * CloudStorageGateway: Cloud Storage Gateway
+         * CMS: Cloud Monitor Service
+         * CR: Container Registry
+         * CS: Container Service
+         * DataHub: Data Hub
+         * DataWorks: DataWorksDCDN: Dynamic Route for CDN
+         * EMAS: Enterprise Mobile Application Studio
+         * FC: Function Compute
+         * FNF: Serverless Workflow
+         * MaxCompute: MaxComputeNAS: Network Attached Storage
+         * MNS: Message Service (MNS)
+         * HBR: Hybrid Backup Recovery
+         * IMM: Intelligent Media Management
+         * IOT: IoT Platform
+         * KMS: Key Management Service
+         * NLP: Natural Language Processing
+         * OSS: Object Storage Service
+         * OTS: Table Store
+         * PrivateLink: Private Link
+         * PrivateZone: Private Zone
+         * RocketMQ: RocketMQ
+         * SAE: Serverless App Engine
+         * SLS: Log Service
+         * VS: Video Surveillance
+         * Xtrace: Tracing Anlaysis
+         * <p>
+         * @return {@code this}
+         * @param serviceName Property serviceName: Which service to enable. This parameter is required.
+         */
+        public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
             return this;
         }

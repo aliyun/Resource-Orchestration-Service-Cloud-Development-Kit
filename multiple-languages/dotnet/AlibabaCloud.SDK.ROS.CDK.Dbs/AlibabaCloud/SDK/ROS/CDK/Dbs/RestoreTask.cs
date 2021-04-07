@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
         }
 
         /// <summary>Attribute RestoreTaskId: The ID of the restoration task.</summary>
-        [JsiiProperty(name: "attrRestoreTaskId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRestoreTaskId
+        [JsiiProperty(name: "attrRestoreTaskId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRestoreTaskId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

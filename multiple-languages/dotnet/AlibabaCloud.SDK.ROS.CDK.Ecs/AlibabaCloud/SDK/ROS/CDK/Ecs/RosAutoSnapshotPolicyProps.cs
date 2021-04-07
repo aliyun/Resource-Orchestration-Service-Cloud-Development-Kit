@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// A maximum of seven time points can be selected.
         /// The format is a list of [1, 2, ..., 7] and the time points are separated by commas (,).
         /// </remarks>
-        [JsiiProperty(name: "repeatWeekdays", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"number\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        [JsiiProperty(name: "repeatWeekdays", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
         public object RepeatWeekdays
         {
             get;
@@ -28,8 +28,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// [1, 65536]: The number of days retained.
         /// Default value: -1.
         /// </remarks>
-        [JsiiProperty(name: "retentionDays", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double RetentionDays
+        [JsiiProperty(name: "retentionDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object RetentionDays
         {
             get;
             set;
@@ -55,8 +55,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// Default value: null.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "autoSnapshotPolicyName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? AutoSnapshotPolicyName
+        [JsiiProperty(name: "autoSnapshotPolicyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? AutoSnapshotPolicyName
         {
             get;
             set;
@@ -66,8 +66,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: diskIds: The disk ID. When you want to apply the automatic snapshot policy to multiple disks, you can set the DiskIds to an array. The format is list of ["d-xxxxxxxxx", "d-yyyyyyyyy", ..., "d-zzzzzzzzz"] and the IDs are separated by commas (,).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "diskIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public string[]? DiskIds
+        [JsiiProperty(name: "diskIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true, isOverride: true)]
+        public object? DiskIds
         {
             get;
             set;
@@ -77,8 +77,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <strong>Property</strong>: tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-core.RosTag\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
-        public AlibabaCloud.SDK.ROS.CDK.Core.IRosTag[]? Tags
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ecs.RosAutoSnapshotPolicy.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true, isOverride: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ecs.RosAutoSnapshotPolicy.ITagsProperty[]? Tags
         {
             get;
             set;

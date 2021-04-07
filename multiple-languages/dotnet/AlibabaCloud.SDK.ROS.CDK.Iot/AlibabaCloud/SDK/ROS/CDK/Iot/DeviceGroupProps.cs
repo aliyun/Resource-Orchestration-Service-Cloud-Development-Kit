@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// <remarks>
         /// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object GroupName
         {
             get;
             set;
@@ -26,8 +26,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// You can enter a description with up to 100 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "groupDesc", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? GroupDesc
+        [JsiiProperty(name: "groupDesc", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? GroupDesc
         {
             get;
             set;
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// instance that you need to buy the incoming instance ID.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IotInstanceId
+        [JsiiProperty(name: "iotInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IotInstanceId
         {
             get;
             set;
@@ -50,8 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
         /// If you want to create a first-level group, do not enter this parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "superGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SuperGroupId
+        [JsiiProperty(name: "superGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SuperGroupId
         {
             get;
             set;

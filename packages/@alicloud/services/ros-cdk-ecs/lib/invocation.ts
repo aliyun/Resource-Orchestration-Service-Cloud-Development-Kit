@@ -11,7 +11,7 @@ export interface InvocationProps {
     /**
      * Property commandId: The id of command.
      */
-    readonly commandId: string;
+    readonly commandId: string | ros.IResolvable;
 
     /**
      * Property instanceIds: The instance id list. Select up to 50 instances at a time.Instances status must be running.
@@ -21,7 +21,7 @@ export interface InvocationProps {
     /**
      * Property frequency: The frequency of timing execution (the shortest frequency is performed every 1 minute). It iss mandatory when Timing is True.The value rule follows the rules of the cron expression.
      */
-    readonly frequency?: string;
+    readonly frequency?: string | ros.IResolvable;
 
     /**
      * Property parameters: The key-value pairs of custom parameters passed in when the script contains custom parameters.
@@ -53,7 +53,7 @@ export class Invocation extends ros.Resource {
     /**
      * Attribute InvokeId: The id of command execution.
      */
-    public readonly attrInvokeId: any;
+    public readonly attrInvokeId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::Invocation`.

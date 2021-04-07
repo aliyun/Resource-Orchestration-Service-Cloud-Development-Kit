@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * A ROS template type:  `ALIYUN::ResourceManager::Folder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.996Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosFolder")
 public class RosFolder extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,20 +44,20 @@ public class RosFolder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrFolderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrFolderName() {
-        return software.amazon.jsii.Kernel.get(this, "attrFolderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrFolderName() {
+        return software.amazon.jsii.Kernel.get(this, "attrFolderName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrParentFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrParentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrParentFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrParentFolderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -75,8 +75,8 @@ public class RosFolder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getFolderName() {
-        return software.amazon.jsii.Kernel.get(this, "folderName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getFolderName() {
+        return software.amazon.jsii.Kernel.get(this, "folderName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,13 +87,25 @@ public class RosFolder extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getParentFolderId() {
-        return software.amazon.jsii.Kernel.get(this, "parentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setFolderName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "folderName", java.util.Objects.requireNonNull(value, "folderName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getParentFolderId() {
+        return software.amazon.jsii.Kernel.get(this, "parentFolderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setParentFolderId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "parentFolderId", value);
+    }
+
+    /**
+     */
+    public void setParentFolderId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "parentFolderId", value);
     }
 
@@ -131,12 +143,28 @@ public class RosFolder extends com.aliyun.ros.cdk.core.RosResource {
             this.props.folderName(folderName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param folderName This parameter is required.
+         */
+        public Builder folderName(final com.aliyun.ros.cdk.core.IResolvable folderName) {
+            this.props.folderName(folderName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param parentFolderId This parameter is required.
          */
         public Builder parentFolderId(final java.lang.String parentFolderId) {
+            this.props.parentFolderId(parentFolderId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param parentFolderId This parameter is required.
+         */
+        public Builder parentFolderId(final com.aliyun.ros.cdk.core.IResolvable parentFolderId) {
             this.props.parentFolderId(parentFolderId);
             return this;
         }

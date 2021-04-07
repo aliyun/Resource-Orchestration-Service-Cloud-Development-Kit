@@ -12,9 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// The object value is groupToic and externalName
         /// </remarks>
-        [JsiiProperty(name: "groupAttribute", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupAttribute
+        object? GroupAttribute
         {
             get
             {
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         /// <remarks>
         /// [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupName
+        object? GroupName
         {
             get
             {
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Property groupType: MachineGroup type, the value is empty or Armory.</summary>
-        [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? GroupType
+        object? GroupType
         {
             get
             {
@@ -48,9 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.</summary>
-        [JsiiProperty(name: "machineIdentifyType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "machineIdentifyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MachineIdentifyType
+        object? MachineIdentifyType
         {
             get
             {
@@ -70,9 +70,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Property projectName: MachineGroup created in project.</summary>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ProjectName
+        object? ProjectName
         {
             get
             {
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// The object value is groupToic and externalName
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "groupAttribute", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupAttribute
+            [JsiiProperty(name: "groupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupAttribute
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property groupName: Display name of the group name, the Project only.</summary>
@@ -104,26 +104,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
             /// [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupName
+            [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property groupType: MachineGroup type, the value is empty or Armory.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? GroupType
+            [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GroupType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property machineIdentifyType: Machine indentify type, the value is 'ip' or 'userdefined'.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "machineIdentifyType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MachineIdentifyType
+            [JsiiProperty(name: "machineIdentifyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MachineIdentifyType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property machineList: The machine tag, the value is ip or userdefined-id.</summary>
@@ -136,10 +136,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
 
             /// <summary>Property projectName: MachineGroup created in project.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProjectName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * A ROS template type:  `ALIYUN::SAE::SlbBinding`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.041Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosSlbBinding")
 public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAppId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAppId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAppId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrChangeOrderId() {
-        return software.amazon.jsii.Kernel.get(this, "attrChangeOrderId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrChangeOrderId() {
+        return software.amazon.jsii.Kernel.get(this, "attrChangeOrderId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -61,13 +61,19 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getAppId() {
-        return software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAppId() {
+        return software.amazon.jsii.Kernel.get(this, "appId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setAppId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "appId", java.util.Objects.requireNonNull(value, "appId is required"));
+    }
+
+    /**
+     */
+    public void setAppId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "appId", java.util.Objects.requireNonNull(value, "appId is required"));
     }
 
@@ -81,8 +87,8 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInternet() {
-        return software.amazon.jsii.Kernel.get(this, "internet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternet() {
+        return software.amazon.jsii.Kernel.get(this, "internet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInternetSlbId() {
-        return software.amazon.jsii.Kernel.get(this, "internetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternet(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internet", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetSlbId() {
+        return software.amazon.jsii.Kernel.get(this, "internetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getIntranet() {
-        return software.amazon.jsii.Kernel.get(this, "intranet", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternetSlbId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetSlbId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIntranet() {
+        return software.amazon.jsii.Kernel.get(this, "intranet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +135,25 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getIntranetSlbId() {
-        return software.amazon.jsii.Kernel.get(this, "intranetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIntranet(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "intranet", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIntranetSlbId() {
+        return software.amazon.jsii.Kernel.get(this, "intranetSlbId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setIntranetSlbId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "intranetSlbId", value);
+    }
+
+    /**
+     */
+    public void setIntranetSlbId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "intranetSlbId", value);
     }
 
@@ -161,12 +191,28 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
             this.props.appId(appId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param appId This parameter is required.
+         */
+        public Builder appId(final com.aliyun.ros.cdk.core.IResolvable appId) {
+            this.props.appId(appId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param internet This parameter is required.
          */
         public Builder internet(final java.lang.String internet) {
+            this.props.internet(internet);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param internet This parameter is required.
+         */
+        public Builder internet(final com.aliyun.ros.cdk.core.IResolvable internet) {
             this.props.internet(internet);
             return this;
         }
@@ -179,6 +225,14 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
             this.props.internetSlbId(internetSlbId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param internetSlbId This parameter is required.
+         */
+        public Builder internetSlbId(final com.aliyun.ros.cdk.core.IResolvable internetSlbId) {
+            this.props.internetSlbId(internetSlbId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -188,12 +242,28 @@ public class RosSlbBinding extends com.aliyun.ros.cdk.core.RosResource {
             this.props.intranet(intranet);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param intranet This parameter is required.
+         */
+        public Builder intranet(final com.aliyun.ros.cdk.core.IResolvable intranet) {
+            this.props.intranet(intranet);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param intranetSlbId This parameter is required.
          */
         public Builder intranetSlbId(final java.lang.String intranetSlbId) {
+            this.props.intranetSlbId(intranetSlbId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param intranetSlbId This parameter is required.
+         */
+        public Builder intranetSlbId(final com.aliyun.ros.cdk.core.IResolvable intranetSlbId) {
             this.props.intranetSlbId(intranetSlbId);
             return this;
         }

@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// <strong>Attribute</strong>: GroupUuid: After a successful return to the address book to add unique identification ID.
         /// </remarks>
-        [JsiiProperty(name: "attrGroupUuid", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGroupUuid
+        [JsiiProperty(name: "attrGroupUuid", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGroupUuid
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// <strong>Property</strong>: description: Address book description.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Description
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -79,10 +79,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <remarks>
         /// <strong>Property</strong>: groupName: Name Address book.
         /// </remarks>
-        [JsiiProperty(name: "groupName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string GroupName
+        [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GroupName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// port: Port Address Book
         /// tag: ECS label address book
         /// </remarks>
-        [JsiiProperty(name: "groupType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string GroupType
+        [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object GroupType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -108,10 +108,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// When GroupType for the domain, the domain name to fill in the address list. For example: demo1.aliyun.com, demo2.aliyun.com
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "addressList", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AddressList
+        [JsiiProperty(name: "addressList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AddressList
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -130,10 +130,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <strong>Property</strong>: regionId: Region ID. Default to cn-hangzhou.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RegionId
+        [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RegionId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -154,10 +154,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "tagRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? TagRelation
+        [JsiiProperty(name: "tagRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? TagRelation
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(ITagListProperty), fullyQualifiedName: "@alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty")]
@@ -166,9 +166,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <remarks>
             /// <strong>Property</strong>: tagKey: ECS labels to be matched Key.
             /// </remarks>
-            [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? TagKey
+            object? TagKey
             {
                 get
                 {
@@ -179,9 +179,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <remarks>
             /// <strong>Property</strong>: tagValue: ECS tag value to be matched.
             /// </remarks>
-            [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? TagValue
+            object? TagValue
             {
                 get
                 {
@@ -200,20 +200,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 /// <strong>Property</strong>: tagKey: ECS labels to be matched Key.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? TagKey
+                [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TagKey
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: tagValue: ECS tag value to be matched.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? TagValue
+                [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? TagValue
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -224,8 +224,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <strong>Property</strong>: tagKey: ECS labels to be matched Key.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? TagKey
+            [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? TagKey
             {
                 get;
                 set;
@@ -235,8 +235,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <strong>Property</strong>: tagValue: ECS tag value to be matched.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "tagValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? TagValue
+            [JsiiProperty(name: "tagValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? TagValue
             {
                 get;
                 set;

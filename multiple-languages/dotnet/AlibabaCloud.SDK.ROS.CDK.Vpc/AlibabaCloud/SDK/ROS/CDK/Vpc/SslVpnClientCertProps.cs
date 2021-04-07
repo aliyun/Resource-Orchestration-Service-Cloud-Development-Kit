@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     public class SslVpnClientCertProps : AlibabaCloud.SDK.ROS.CDK.Vpc.ISslVpnClientCertProps
     {
         /// <summary>Property sslVpnServerId: ID of the SSL-VPN server.</summary>
-        [JsiiProperty(name: "sslVpnServerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SslVpnServerId
+        [JsiiProperty(name: "sslVpnServerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SslVpnServerId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;

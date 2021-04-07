@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <summary>Attribute CertificateId: The id of the certificate.</summary>
-        [JsiiProperty(name: "attrCertificateId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCertificateId
+        [JsiiProperty(name: "attrCertificateId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCertificateId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <summary>Attribute AcrId: Access control rule ID.</summary>
-        [JsiiProperty(name: "attrAcrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAcrId
+        [JsiiProperty(name: "attrAcrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAcrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

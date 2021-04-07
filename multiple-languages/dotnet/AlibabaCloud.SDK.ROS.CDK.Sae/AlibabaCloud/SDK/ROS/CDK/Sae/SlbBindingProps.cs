@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
     public class SlbBindingProps : AlibabaCloud.SDK.ROS.CDK.Sae.ISlbBindingProps
     {
         /// <summary>Property appId: Successful application deployment target ID.</summary>
-        [JsiiProperty(name: "appId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AppId
+        [JsiiProperty(name: "appId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AppId
         {
             get;
             set;
@@ -23,8 +23,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "internet", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Internet
+        [JsiiProperty(name: "internet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Internet
         {
             get;
             set;
@@ -32,8 +32,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property internetSlbId: Use SLB purchased specified, currently only supports non-shared examples.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "internetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? InternetSlbId
+        [JsiiProperty(name: "internetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? InternetSlbId
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         /// For example: [{ "port": 80, "targetPort": 8080, "protocol": "TCP"}], shows a container port 8080 through port 80 slb exposed service, the protocol is TCP, the blank is ignored.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "intranet", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Intranet
+        [JsiiProperty(name: "intranet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Intranet
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property intranetSlbId: Use SLB purchased specified, currently only supports non-shared examples.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? IntranetSlbId
+        [JsiiProperty(name: "intranetSlbId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? IntranetSlbId
         {
             get;
             set;

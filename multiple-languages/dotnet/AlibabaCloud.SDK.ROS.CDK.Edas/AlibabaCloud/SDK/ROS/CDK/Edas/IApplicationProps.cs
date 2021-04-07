@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
     public interface IApplicationProps
     {
         /// <summary>Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters).</summary>
-        [JsiiProperty(name: "applicationName", typeJson: "{\"primitive\":\"string\"}")]
-        string ApplicationName
+        [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ApplicationName
         {
             get;
         }
 
         /// <summary>Property clusterId: Cluster ID of ECS application.</summary>
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}")]
-        string ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ClusterId
         {
             get;
         }
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// <remarks>
         /// When creating HSF application, this parameter must be specified
         /// </remarks>
-        [JsiiProperty(name: "buildPackId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "buildPackId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? BuildPackId
+        object? BuildPackId
         {
             get
             {
@@ -42,9 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         /// 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
         /// 1.7.x
         /// </remarks>
-        [JsiiProperty(name: "componentIds", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "componentIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ComponentIds
+        object? ComponentIds
         {
             get
             {
@@ -53,9 +53,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <summary>Property description: Descriptive information.</summary>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <summary>Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).</summary>
-        [JsiiProperty(name: "ecuInfo", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "ecuInfo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? EcuInfo
+        object? EcuInfo
         {
             get
             {
@@ -75,9 +75,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <summary>Property healthCheckUrl: Application Health Check URL.</summary>
-        [JsiiProperty(name: "healthCheckUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "healthCheckUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? HealthCheckUrl
+        object? HealthCheckUrl
         {
             get
             {
@@ -86,9 +86,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <summary>Property logicalRegionId: Namespace ID.</summary>
-        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "logicalRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? LogicalRegionId
+        object? LogicalRegionId
         {
             get
             {
@@ -97,9 +97,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
         }
 
         /// <summary>Property packageType: Application packet format, possible values: war or jar.</summary>
-        [JsiiProperty(name: "packageType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "packageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? PackageType
+        object? PackageType
         {
             get
             {
@@ -116,17 +116,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             }
 
             /// <summary>Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters).</summary>
-            [JsiiProperty(name: "applicationName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ApplicationName
+            [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ApplicationName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property clusterId: Cluster ID of ECS application.</summary>
-            [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ClusterId
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ClusterId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).</summary>
@@ -134,10 +134,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             /// When creating HSF application, this parameter must be specified
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "buildPackId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? BuildPackId
+            [JsiiProperty(name: "buildPackId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BuildPackId
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.</summary>
@@ -147,50 +147,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
             /// 1.7.x
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "componentIds", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ComponentIds
+            [JsiiProperty(name: "componentIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ComponentIds
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property description: Descriptive information.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "ecuInfo", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? EcuInfo
+            [JsiiProperty(name: "ecuInfo", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? EcuInfo
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property healthCheckUrl: Application Health Check URL.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "healthCheckUrl", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? HealthCheckUrl
+            [JsiiProperty(name: "healthCheckUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HealthCheckUrl
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property logicalRegionId: Namespace ID.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "logicalRegionId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? LogicalRegionId
+            [JsiiProperty(name: "logicalRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LogicalRegionId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property packageType: Application packet format, possible values: war or jar.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "packageType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? PackageType
+            [JsiiProperty(name: "packageType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PackageType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * A ROS resource type:  `ALIYUN::CS::ServerlessKubernetesCluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.386Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ServerlessKubernetesCluster")
 public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
     /**
      * Create a new `ALIYUN::CS::ServerlessKubernetesCluster`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public ServerlessKubernetesCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ServerlessKubernetesClusterProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
     /**
      * Create a new `ALIYUN::CS::ServerlessKubernetesCluster`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public ServerlessKubernetesCluster(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cs.ServerlessKubernetesClusterProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,26 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
     }
 
     /**
+     * Attribute ClusterId: Cluster instance ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute TaskId: Task ID.
+     * <p>
+     * Automatically assigned by the system, the user queries the task status.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTaskId() {
-        return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrTaskId() {
+        return software.amazon.jsii.Kernel.get(this, "attrTaskId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkerRamRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "attrWorkerRamRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrWorkerRamRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "attrWorkerRamRoleName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +77,8 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.cs.ServerlessKubernetesCluster> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +86,8 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,25 +106,45 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property name: The name of the cluster.
+         * <p>
+         * The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
+         * <p>
          * @return {@code this}
-         * @param name This parameter is required.
+         * @param name Property name: The name of the cluster. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
+        /**
+         * Property name: The name of the cluster.
+         * <p>
+         * The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
+         * <p>
+         * @return {@code this}
+         * @param name Property name: The name of the cluster. This parameter is required.
+         */
+        public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
+            this.props.name(name);
+            return this;
+        }
 
         /**
+         * Property addons: The add-ons to be installed for the cluster.
+         * <p>
          * @return {@code this}
-         * @param addons This parameter is required.
+         * @param addons Property addons: The add-ons to be installed for the cluster. This parameter is required.
          */
         public Builder addons(final com.aliyun.ros.cdk.core.IResolvable addons) {
             this.props.addons(addons);
             return this;
         }
         /**
+         * Property addons: The add-ons to be installed for the cluster.
+         * <p>
          * @return {@code this}
-         * @param addons This parameter is required.
+         * @param addons Property addons: The add-ons to be installed for the cluster. This parameter is required.
          */
         public Builder addons(final java.util.List<? extends java.lang.Object> addons) {
             this.props.addons(addons);
@@ -119,16 +152,24 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
+         * <p>
+         * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
+         * <p>
          * @return {@code this}
-         * @param endpointPublicAccess This parameter is required.
+         * @param endpointPublicAccess Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open. This parameter is required.
          */
         public Builder endpointPublicAccess(final java.lang.Boolean endpointPublicAccess) {
             this.props.endpointPublicAccess(endpointPublicAccess);
             return this;
         }
         /**
+         * Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open.
+         * <p>
+         * false: If set to false, the API server on the public network will not be created, only the API server on the private network will be created.
+         * <p>
          * @return {@code this}
-         * @param endpointPublicAccess This parameter is required.
+         * @param endpointPublicAccess Property endpointPublicAccess: Whether to enable the public network API Server: true: which means that the public network API Server is open. This parameter is required.
          */
         public Builder endpointPublicAccess(final com.aliyun.ros.cdk.core.IResolvable endpointPublicAccess) {
             this.props.endpointPublicAccess(endpointPublicAccess);
@@ -136,25 +177,45 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property kubernetesVersion: The version of the Kubernetes cluster.
+         * <p>
          * @return {@code this}
-         * @param kubernetesVersion This parameter is required.
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster. This parameter is required.
          */
         public Builder kubernetesVersion(final java.lang.String kubernetesVersion) {
             this.props.kubernetesVersion(kubernetesVersion);
             return this;
         }
+        /**
+         * Property kubernetesVersion: The version of the Kubernetes cluster.
+         * <p>
+         * @return {@code this}
+         * @param kubernetesVersion Property kubernetesVersion: The version of the Kubernetes cluster. This parameter is required.
+         */
+        public Builder kubernetesVersion(final com.aliyun.ros.cdk.core.IResolvable kubernetesVersion) {
+            this.props.kubernetesVersion(kubernetesVersion);
+            return this;
+        }
 
         /**
+         * Property natGateway: Whether to create a NAT gateway.
+         * <p>
+         * The value can be true or false. If not set, the system defaults to false.
+         * <p>
          * @return {@code this}
-         * @param natGateway This parameter is required.
+         * @param natGateway Property natGateway: Whether to create a NAT gateway. This parameter is required.
          */
         public Builder natGateway(final java.lang.Boolean natGateway) {
             this.props.natGateway(natGateway);
             return this;
         }
         /**
+         * Property natGateway: Whether to create a NAT gateway.
+         * <p>
+         * The value can be true or false. If not set, the system defaults to false.
+         * <p>
          * @return {@code this}
-         * @param natGateway This parameter is required.
+         * @param natGateway Property natGateway: Whether to create a NAT gateway. This parameter is required.
          */
         public Builder natGateway(final com.aliyun.ros.cdk.core.IResolvable natGateway) {
             this.props.natGateway(natGateway);
@@ -162,16 +223,20 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property privateZone: Whether to enable PrivateZone for service discovery.
+         * <p>
          * @return {@code this}
-         * @param privateZone This parameter is required.
+         * @param privateZone Property privateZone: Whether to enable PrivateZone for service discovery. This parameter is required.
          */
         public Builder privateZone(final java.lang.Boolean privateZone) {
             this.props.privateZone(privateZone);
             return this;
         }
         /**
+         * Property privateZone: Whether to enable PrivateZone for service discovery.
+         * <p>
          * @return {@code this}
-         * @param privateZone This parameter is required.
+         * @param privateZone Property privateZone: Whether to enable PrivateZone for service discovery. This parameter is required.
          */
         public Builder privateZone(final com.aliyun.ros.cdk.core.IResolvable privateZone) {
             this.props.privateZone(privateZone);
@@ -179,61 +244,131 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
+         * <p>
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
+         * @param securityGroupId Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs. This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
+         * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
+         * <p>
+         * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+         * <p>
          * @return {@code this}
-         * @param serviceCidr This parameter is required.
+         * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. This parameter is required.
          */
         public Builder serviceCidr(final java.lang.String serviceCidr) {
             this.props.serviceCidr(serviceCidr);
             return this;
         }
+        /**
+         * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.
+         * <p>
+         * When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
+         * <p>
+         * @return {@code this}
+         * @param serviceCidr Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. This parameter is required.
+         */
+        public Builder serviceCidr(final com.aliyun.ros.cdk.core.IResolvable serviceCidr) {
+            this.props.serviceCidr(serviceCidr);
+            return this;
+        }
 
         /**
+         * Property tags: Tag the cluster.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: Tag the cluster. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.cs.RosServerlessKubernetesCluster.TagsProperty> tags) {
             this.props.tags(tags);
             return this;
         }
 
         /**
+         * Property vpcId: VPC ID.
+         * <p>
+         * If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+         * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
+         * <p>
          * @return {@code this}
-         * @param vpcId This parameter is required.
+         * @param vpcId Property vpcId: VPC ID. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
+        /**
+         * Property vpcId: VPC ID.
+         * <p>
+         * If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16.
+         * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: VPC ID. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
 
         /**
+         * Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
+         * <p>
          * @return {@code this}
-         * @param vSwitchId This parameter is required.
+         * @param vSwitchId Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
+         * Property vSwitchIds: The IDs of VSwitches.
+         * <p>
+         * If you leave this property empty, the system automatically creates a VSwitch.
+         * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
+         * <p>
          * @return {@code this}
-         * @param vSwitchIds This parameter is required.
+         * @param vSwitchIds Property vSwitchIds: The IDs of VSwitches. This parameter is required.
          */
         public Builder vSwitchIds(final java.util.List<? extends java.lang.Object> vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
             return this;
         }
         /**
+         * Property vSwitchIds: The IDs of VSwitches.
+         * <p>
+         * If you leave this property empty, the system automatically creates a VSwitch.
+         * Note You must specify both the VpcId and VSwitchIds or leave both of them empty.
+         * <p>
          * @return {@code this}
-         * @param vSwitchIds This parameter is required.
+         * @param vSwitchIds Property vSwitchIds: The IDs of VSwitches. This parameter is required.
          */
         public Builder vSwitchIds(final com.aliyun.ros.cdk.core.IResolvable vSwitchIds) {
             this.props.vSwitchIds(vSwitchIds);
@@ -241,10 +376,22 @@ public class ServerlessKubernetesCluster extends com.aliyun.ros.cdk.core.Resourc
         }
 
         /**
+         * Property zoneId: The zone ID.
+         * <p>
          * @return {@code this}
-         * @param zoneId This parameter is required.
+         * @param zoneId Property zoneId: The zone ID. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: The zone ID.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: The zone ID. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }

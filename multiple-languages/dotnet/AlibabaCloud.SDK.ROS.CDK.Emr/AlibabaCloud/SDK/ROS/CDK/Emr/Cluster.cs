@@ -33,31 +33,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         }
 
         /// <summary>Attribute ClusterId: The ID of the cluster.</summary>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute HostGroups: The host group list of the cluster.</summary>
-        [JsiiProperty(name: "attrHostGroups", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHostGroups
+        [JsiiProperty(name: "attrHostGroups", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHostGroups
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MasterNodeInnerIps: The inner ip list of the cluster master nodes.</summary>
-        [JsiiProperty(name: "attrMasterNodeInnerIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterNodeInnerIps
+        [JsiiProperty(name: "attrMasterNodeInnerIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterNodeInnerIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute MasterNodePubIps: The public ip list of the cluster master nodes.</summary>
-        [JsiiProperty(name: "attrMasterNodePubIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterNodePubIps
+        [JsiiProperty(name: "attrMasterNodePubIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterNodePubIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

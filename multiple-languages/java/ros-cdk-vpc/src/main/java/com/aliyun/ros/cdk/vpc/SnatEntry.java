@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS resource type:  `ALIYUN::VPC::SnatEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.505Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.227Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntry")
 public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::SnatEntry`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public SnatEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.SnatEntryProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::VPC::SnatEntry`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public SnatEntry(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.vpc.SnatEntryProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SnatEntryIds: The IDS of the SNAT entry.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSnatEntryIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrSnatEntryIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSnatEntryIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrSnatEntryIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.SnatEntry> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,52 +90,112 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property snatIp: The public IP address.
+         * <p>
+         * Separate multiple EIPs with commas.
+         * <p>
          * @return {@code this}
-         * @param snatIp This parameter is required.
+         * @param snatIp Property snatIp: The public IP address. This parameter is required.
          */
         public Builder snatIp(final java.lang.String snatIp) {
             this.props.snatIp(snatIp);
             return this;
         }
+        /**
+         * Property snatIp: The public IP address.
+         * <p>
+         * Separate multiple EIPs with commas.
+         * <p>
+         * @return {@code this}
+         * @param snatIp Property snatIp: The public IP address. This parameter is required.
+         */
+        public Builder snatIp(final com.aliyun.ros.cdk.core.IResolvable snatIp) {
+            this.props.snatIp(snatIp);
+            return this;
+        }
 
         /**
+         * Property snatTableId: The ID of the SNAT table.
+         * <p>
          * @return {@code this}
-         * @param snatTableId This parameter is required.
+         * @param snatTableId Property snatTableId: The ID of the SNAT table. This parameter is required.
          */
         public Builder snatTableId(final java.lang.String snatTableId) {
             this.props.snatTableId(snatTableId);
             return this;
         }
+        /**
+         * Property snatTableId: The ID of the SNAT table.
+         * <p>
+         * @return {@code this}
+         * @param snatTableId Property snatTableId: The ID of the SNAT table. This parameter is required.
+         */
+        public Builder snatTableId(final com.aliyun.ros.cdk.core.IResolvable snatTableId) {
+            this.props.snatTableId(snatTableId);
+            return this;
+        }
 
         /**
+         * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * <p>
          * @return {@code this}
-         * @param snatEntryName This parameter is required.
+         * @param snatEntryName Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
          */
         public Builder snatEntryName(final java.lang.String snatEntryName) {
             this.props.snatEntryName(snatEntryName);
             return this;
         }
+        /**
+         * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
+         * <p>
+         * @return {@code this}
+         * @param snatEntryName Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://. This parameter is required.
+         */
+        public Builder snatEntryName(final com.aliyun.ros.cdk.core.IResolvable snatEntryName) {
+            this.props.snatEntryName(snatEntryName);
+            return this;
+        }
 
         /**
+         * Property sourceCidr: Specifies the network segment of the switch.
+         * <p>
+         * For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+         * <p>
          * @return {@code this}
-         * @param sourceCidr This parameter is required.
+         * @param sourceCidr Property sourceCidr: Specifies the network segment of the switch. This parameter is required.
          */
         public Builder sourceCidr(final java.lang.String sourceCidr) {
             this.props.sourceCidr(sourceCidr);
             return this;
         }
+        /**
+         * Property sourceCidr: Specifies the network segment of the switch.
+         * <p>
+         * For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
+         * <p>
+         * @return {@code this}
+         * @param sourceCidr Property sourceCidr: Specifies the network segment of the switch. This parameter is required.
+         */
+        public Builder sourceCidr(final com.aliyun.ros.cdk.core.IResolvable sourceCidr) {
+            this.props.sourceCidr(sourceCidr);
+            return this;
+        }
 
         /**
+         * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+         * <p>
          * @return {@code this}
-         * @param sourceVSwitchIds This parameter is required.
+         * @param sourceVSwitchIds Property sourceVSwitchIds: The ID of the VSwitch to access the Internet. This parameter is required.
          */
         public Builder sourceVSwitchIds(final java.util.List<? extends java.lang.Object> sourceVSwitchIds) {
             this.props.sourceVSwitchIds(sourceVSwitchIds);
             return this;
         }
         /**
+         * Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
+         * <p>
          * @return {@code this}
-         * @param sourceVSwitchIds This parameter is required.
+         * @param sourceVSwitchIds Property sourceVSwitchIds: The ID of the VSwitch to access the Internet. This parameter is required.
          */
         public Builder sourceVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable sourceVSwitchIds) {
             this.props.sourceVSwitchIds(sourceVSwitchIds);

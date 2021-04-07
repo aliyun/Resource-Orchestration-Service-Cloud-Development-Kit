@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     public class DBClusterEndpointAddressProps : AlibabaCloud.SDK.ROS.CDK.Polardb.IDBClusterEndpointAddressProps
     {
         /// <summary>Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a public connection point is to be created.</summary>
-        [JsiiProperty(name: "dbClusterId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbClusterId
+        [JsiiProperty(name: "dbClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbClusterId
         {
             get;
             set;
         }
 
         /// <summary>Property dbEndpointId: The ID of the cluster connection point.</summary>
-        [JsiiProperty(name: "dbEndpointId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DbEndpointId
+        [JsiiProperty(name: "dbEndpointId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbEndpointId
         {
             get;
             set;
@@ -33,8 +33,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// The length is 6~30 characters.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ConnectionStringPrefix
+        [JsiiProperty(name: "connectionStringPrefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ConnectionStringPrefix
         {
             get;
             set;
@@ -47,8 +47,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
         /// Default to Public.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NetType
         {
             get;
             set;

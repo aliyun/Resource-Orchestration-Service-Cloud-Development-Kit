@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
     public class AccessKeyProps : AlibabaCloud.SDK.ROS.CDK.Ram.IAccessKeyProps
     {
         /// <summary>Property userName: Specifies the user name, containing up to 64 characters.</summary>
-        [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string UserName
+        [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object UserName
         {
             get;
             set;

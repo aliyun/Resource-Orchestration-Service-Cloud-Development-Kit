@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.gws;
 /**
  * Properties for defining a `ALIYUN::GWS::Cluster`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.601Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gws.$Module.class, fqn = "@alicloud/ros-cdk-gws.RosClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosClusterProps.Jsii$Proxy.class)
 public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getVpcId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
@@ -30,7 +30,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
@@ -44,11 +44,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosClusterProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosClusterProps> {
-        private java.lang.String clusterType;
-        private java.lang.String vpcId;
-        private java.lang.String name;
+        private java.lang.Object clusterType;
+        private java.lang.Object vpcId;
+        private java.lang.Object name;
         private java.lang.Object policy;
-        private java.lang.String vSwitchId;
+        private java.lang.Object vSwitchId;
 
         /**
          * Sets the value of {@link RosClusterProps#getClusterType}
@@ -56,6 +56,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
+            this.clusterType = clusterType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getClusterType}
+         * @param clusterType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
             this.clusterType = clusterType;
             return this;
         }
@@ -71,6 +81,16 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getVpcId}
+         * @param vpcId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getName}
          * @param name the value to be set.
          * @return {@code this}
@@ -81,12 +101,12 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link RosClusterProps#getPolicy}
-         * @param policy the value to be set.
+         * Sets the value of {@link RosClusterProps#getName}
+         * @param name the value to be set.
          * @return {@code this}
          */
-        public Builder policy(com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
-            this.policy = policy;
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
+            this.name = name;
             return this;
         }
 
@@ -101,11 +121,31 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosClusterProps#getPolicy}
+         * @param policy the value to be set.
+         * @return {@code this}
+         */
+        public Builder policy(com.aliyun.ros.cdk.gws.RosCluster.PolicyProperty policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosClusterProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosClusterProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.vSwitchId = vSwitchId;
             return this;
         }
@@ -126,11 +166,11 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosClusterProps {
-        private final java.lang.String clusterType;
-        private final java.lang.String vpcId;
-        private final java.lang.String name;
+        private final java.lang.Object clusterType;
+        private final java.lang.Object vpcId;
+        private final java.lang.Object name;
         private final java.lang.Object policy;
-        private final java.lang.String vSwitchId;
+        private final java.lang.Object vSwitchId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -138,17 +178,17 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.clusterType = software.amazon.jsii.Kernel.get(this, "clusterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String clusterType, final java.lang.String vpcId, final java.lang.String name, final java.lang.Object policy, final java.lang.String vSwitchId) {
+        protected Jsii$Proxy(final java.lang.Object clusterType, final java.lang.Object vpcId, final java.lang.Object name, final java.lang.Object policy, final java.lang.Object vSwitchId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.clusterType = java.util.Objects.requireNonNull(clusterType, "clusterType is required");
             this.vpcId = java.util.Objects.requireNonNull(vpcId, "vpcId is required");
@@ -158,17 +198,17 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getClusterType() {
+        public final java.lang.Object getClusterType() {
             return this.clusterType;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
@@ -178,7 +218,7 @@ public interface RosClusterProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 

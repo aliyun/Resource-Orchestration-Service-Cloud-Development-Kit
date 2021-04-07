@@ -14,8 +14,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
         /// in length.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountName
         {
             get;
         }
@@ -28,15 +28,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
         /// hyphens (-), and equal signs (=).
         /// </remarks>
-        [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountPassword
+        [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountPassword
         {
             get;
         }
 
         /// <summary>Property instanceId: The ID of the instance for which you want to create the account.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -47,9 +47,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// The description can contain letters, underscores (_), hyphens (-), and digits.
         /// It can be 2 to 256 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "accountDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountDescription
+        object? AccountDescription
         {
             get
             {
@@ -68,9 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// permission can be granted to an account only in an ApsaraDB for Redis instance of
         /// the standard edition in Redis 4.0.
         /// </remarks>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountPrivilege
+        object? AccountPrivilege
         {
             get
             {
@@ -82,9 +82,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
         /// <remarks>
         /// Set this parameter to Normal.
         /// </remarks>
-        [JsiiProperty(name: "accountType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? AccountType
+        object? AccountType
         {
             get
             {
@@ -106,10 +106,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
             /// in length.
             /// </remarks>
-            [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountName
+            [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accountPassword: The password of the account.</summary>
@@ -120,17 +120,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+),
             /// hyphens (-), and equal signs (=).
             /// </remarks>
-            [JsiiProperty(name: "accountPassword", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountPassword
+            [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountPassword
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: The ID of the instance for which you want to create the account.</summary>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property accountDescription: The description of the account.</summary>
@@ -140,10 +140,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// It can be 2 to 256 characters in length.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accountDescription", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountDescription
+            [JsiiProperty(name: "accountDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountDescription
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property accountPrivilege: The permission of the account.</summary>
@@ -158,10 +158,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// the standard edition in Redis 4.0.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountPrivilege
+            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountPrivilege
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property accountType: The type of the account.</summary>
@@ -169,10 +169,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             /// Set this parameter to Normal.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "accountType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? AccountType
+            [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AccountType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

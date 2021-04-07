@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * Parameters enable you to input custom values to your template each time you create or
  * update a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:34.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.320Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosParameter")
 public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
@@ -109,7 +109,12 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
         }
 
         static {
+            ECS_INSTANCE_TYPE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_INSTANCE_TYPE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            ECS_KEY_PAIR_NAME = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ECS_KEY_PAIR_NAME", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             IMAGE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "IMAGE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            RAM_ROLE = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RAM_ROLE", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            RAM_USER = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "RAM_USER", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            SECURITY_GROUP_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "SECURITY_GROUP_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VPC_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VPC_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             VSWITCH_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "VSWITCH_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
             ZONE_ID = software.amazon.jsii.JsiiObject.jsiiStaticGet(com.aliyun.ros.cdk.core.RosParameter.AssociationProperty.class, "ZONE_ID", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
@@ -120,7 +125,17 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
             software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this);
         }
 
+        public final static java.lang.String ECS_INSTANCE_TYPE;
+
+        public final static java.lang.String ECS_KEY_PAIR_NAME;
+
         public final static java.lang.String IMAGE_ID;
+
+        public final static java.lang.String RAM_ROLE;
+
+        public final static java.lang.String RAM_USER;
+
+        public final static java.lang.String SECURITY_GROUP_ID;
 
         public final static java.lang.String VPC_ID;
 
@@ -180,6 +195,15 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
 
         /**
          * @return {@code this}
+         * @param associationPropertyMetadata This parameter is required.
+         */
+        public Builder associationPropertyMetadata(final java.util.Map<java.lang.String, ? extends java.lang.Object> associationPropertyMetadata) {
+            this.props().associationPropertyMetadata(associationPropertyMetadata);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param confirm This parameter is required.
          */
         public Builder confirm(final java.lang.Boolean confirm) {
@@ -192,6 +216,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
          * @param constraintDescription This parameter is required.
          */
         public Builder constraintDescription(final java.lang.String constraintDescription) {
+            this.props().constraintDescription(constraintDescription);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param constraintDescription This parameter is required.
+         */
+        public Builder constraintDescription(final java.util.Map<java.lang.String, java.lang.String> constraintDescription) {
             this.props().constraintDescription(constraintDescription);
             return this;
         }
@@ -210,6 +242,14 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
          * @param description This parameter is required.
          */
         public Builder description(final java.lang.String description) {
+            this.props().description(description);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final java.util.Map<java.lang.String, java.lang.String> description) {
             this.props().description(description);
             return this;
         }
@@ -265,6 +305,15 @@ public class RosParameter extends com.aliyun.ros.cdk.core.RosElement {
          */
         public Builder noEcho(final java.lang.Boolean noEcho) {
             this.props().noEcho(noEcho);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param textArea This parameter is required.
+         */
+        public Builder textArea(final java.lang.Boolean textArea) {
+            this.props().textArea(textArea);
             return this;
         }
 

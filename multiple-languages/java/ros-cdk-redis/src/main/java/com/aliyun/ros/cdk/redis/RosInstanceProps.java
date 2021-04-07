@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Properties for defining a `ALIYUN::REDIS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.310Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,25 +16,25 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCapacity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCapacity() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEngineVersion() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEngineVersion() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEvictionPolicy() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEvictionPolicy() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceClass() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceClass() {
         return null;
     }
 
@@ -52,37 +52,37 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPassword() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSslEnabled() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSslEnabled() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> getTags() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
         return null;
     }
 
@@ -94,13 +94,13 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getVSwitchId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getZoneId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
     }
 
@@ -115,28 +115,28 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosInstanceProps> {
         private java.lang.Object backupPolicy;
-        private java.lang.Number capacity;
-        private java.lang.String engineVersion;
-        private java.lang.String evictionPolicy;
-        private java.lang.String instanceClass;
+        private java.lang.Object capacity;
+        private java.lang.Object engineVersion;
+        private java.lang.Object evictionPolicy;
+        private java.lang.Object instanceClass;
         private java.lang.Object instanceConnection;
         private java.lang.Object instanceMaintainTime;
-        private java.lang.String instanceName;
-        private java.lang.String password;
-        private java.lang.String securityGroupId;
-        private java.lang.String sslEnabled;
-        private java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private java.lang.String vpcId;
+        private java.lang.Object instanceName;
+        private java.lang.Object password;
+        private java.lang.Object securityGroupId;
+        private java.lang.Object sslEnabled;
+        private java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
+        private java.lang.Object vpcId;
         private java.lang.Object vpcPasswordFree;
-        private java.lang.String vSwitchId;
-        private java.lang.String zoneId;
+        private java.lang.Object vSwitchId;
+        private java.lang.Object zoneId;
 
         /**
          * Sets the value of {@link RosInstanceProps#getBackupPolicy}
          * @param backupPolicy the value to be set.
          * @return {@code this}
          */
-        public Builder backupPolicy(com.aliyun.ros.cdk.redis.RosInstance.BackupPolicyProperty backupPolicy) {
+        public Builder backupPolicy(com.aliyun.ros.cdk.core.IResolvable backupPolicy) {
             this.backupPolicy = backupPolicy;
             return this;
         }
@@ -146,7 +146,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * @param backupPolicy the value to be set.
          * @return {@code this}
          */
-        public Builder backupPolicy(com.aliyun.ros.cdk.core.IResolvable backupPolicy) {
+        public Builder backupPolicy(com.aliyun.ros.cdk.redis.RosInstance.BackupPolicyProperty backupPolicy) {
             this.backupPolicy = backupPolicy;
             return this;
         }
@@ -162,11 +162,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getCapacity}
+         * @param capacity the value to be set.
+         * @return {@code this}
+         */
+        public Builder capacity(com.aliyun.ros.cdk.core.IResolvable capacity) {
+            this.capacity = capacity;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getEngineVersion}
          * @param engineVersion the value to be set.
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
+            this.engineVersion = engineVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEngineVersion}
+         * @param engineVersion the value to be set.
+         * @return {@code this}
+         */
+        public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.engineVersion = engineVersion;
             return this;
         }
@@ -182,11 +202,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getEvictionPolicy}
+         * @param evictionPolicy the value to be set.
+         * @return {@code this}
+         */
+        public Builder evictionPolicy(com.aliyun.ros.cdk.core.IResolvable evictionPolicy) {
+            this.evictionPolicy = evictionPolicy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getInstanceClass}
          * @param instanceClass the value to be set.
          * @return {@code this}
          */
         public Builder instanceClass(java.lang.String instanceClass) {
+            this.instanceClass = instanceClass;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInstanceClass}
+         * @param instanceClass the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceClass(com.aliyun.ros.cdk.core.IResolvable instanceClass) {
             this.instanceClass = instanceClass;
             return this;
         }
@@ -242,11 +282,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInstanceName}
+         * @param instanceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getPassword}
          * @param password the value to be set.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
+            this.password = password;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getPassword}
+         * @param password the value to be set.
+         * @return {@code this}
+         */
+        public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
             this.password = password;
             return this;
         }
@@ -262,6 +322,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSecurityGroupId}
+         * @param securityGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.securityGroupId = securityGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSslEnabled}
          * @param sslEnabled the value to be set.
          * @return {@code this}
@@ -272,13 +342,23 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getSslEnabled}
+         * @param sslEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslEnabled(com.aliyun.ros.cdk.core.IResolvable sslEnabled) {
+            this.sslEnabled = sslEnabled;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getTags}
          * @param tags the value to be set.
          * @return {@code this}
          */
         @SuppressWarnings("unchecked")
-        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags) {
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty>)tags;
             return this;
         }
 
@@ -288,6 +368,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
             return this;
         }
@@ -323,11 +413,31 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getVSwitchId}
+         * @param vSwitchId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.vSwitchId = vSwitchId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
+            this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getZoneId}
+         * @param zoneId the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
             return this;
         }
@@ -349,21 +459,21 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosInstanceProps {
         private final java.lang.Object backupPolicy;
-        private final java.lang.Number capacity;
-        private final java.lang.String engineVersion;
-        private final java.lang.String evictionPolicy;
-        private final java.lang.String instanceClass;
+        private final java.lang.Object capacity;
+        private final java.lang.Object engineVersion;
+        private final java.lang.Object evictionPolicy;
+        private final java.lang.Object instanceClass;
         private final java.lang.Object instanceConnection;
         private final java.lang.Object instanceMaintainTime;
-        private final java.lang.String instanceName;
-        private final java.lang.String password;
-        private final java.lang.String securityGroupId;
-        private final java.lang.String sslEnabled;
-        private final java.util.List<com.aliyun.ros.cdk.core.RosTag> tags;
-        private final java.lang.String vpcId;
+        private final java.lang.Object instanceName;
+        private final java.lang.Object password;
+        private final java.lang.Object securityGroupId;
+        private final java.lang.Object sslEnabled;
+        private final java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags;
+        private final java.lang.Object vpcId;
         private final java.lang.Object vpcPasswordFree;
-        private final java.lang.String vSwitchId;
-        private final java.lang.String zoneId;
+        private final java.lang.Object vSwitchId;
+        private final java.lang.Object zoneId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -372,28 +482,28 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.backupPolicy = software.amazon.jsii.Kernel.get(this, "backupPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.evictionPolicy = software.amazon.jsii.Kernel.get(this, "evictionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.capacity = software.amazon.jsii.Kernel.get(this, "capacity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.evictionPolicy = software.amazon.jsii.Kernel.get(this, "evictionPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceClass = software.amazon.jsii.Kernel.get(this, "instanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceConnection = software.amazon.jsii.Kernel.get(this, "instanceConnection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceMaintainTime = software.amazon.jsii.Kernel.get(this, "instanceMaintainTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.RosTag.class)));
-            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.password = software.amazon.jsii.Kernel.get(this, "password", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sslEnabled = software.amazon.jsii.Kernel.get(this, "sslEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosInstance.TagsProperty.class)));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcPasswordFree = software.amazon.jsii.Kernel.get(this, "vpcPasswordFree", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
         @SuppressWarnings("unchecked")
-        protected Jsii$Proxy(final java.lang.Object backupPolicy, final java.lang.Number capacity, final java.lang.String engineVersion, final java.lang.String evictionPolicy, final java.lang.String instanceClass, final java.lang.Object instanceConnection, final java.lang.Object instanceMaintainTime, final java.lang.String instanceName, final java.lang.String password, final java.lang.String securityGroupId, final java.lang.String sslEnabled, final java.util.List<? extends com.aliyun.ros.cdk.core.RosTag> tags, final java.lang.String vpcId, final java.lang.Object vpcPasswordFree, final java.lang.String vSwitchId, final java.lang.String zoneId) {
+        protected Jsii$Proxy(final java.lang.Object backupPolicy, final java.lang.Object capacity, final java.lang.Object engineVersion, final java.lang.Object evictionPolicy, final java.lang.Object instanceClass, final java.lang.Object instanceConnection, final java.lang.Object instanceMaintainTime, final java.lang.Object instanceName, final java.lang.Object password, final java.lang.Object securityGroupId, final java.lang.Object sslEnabled, final java.util.List<? extends com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> tags, final java.lang.Object vpcId, final java.lang.Object vpcPasswordFree, final java.lang.Object vSwitchId, final java.lang.Object zoneId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.backupPolicy = backupPolicy;
             this.capacity = capacity;
@@ -406,7 +516,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.password = password;
             this.securityGroupId = securityGroupId;
             this.sslEnabled = sslEnabled;
-            this.tags = (java.util.List<com.aliyun.ros.cdk.core.RosTag>)tags;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty>)tags;
             this.vpcId = vpcId;
             this.vpcPasswordFree = vpcPasswordFree;
             this.vSwitchId = vSwitchId;
@@ -419,22 +529,22 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Number getCapacity() {
+        public final java.lang.Object getCapacity() {
             return this.capacity;
         }
 
         @Override
-        public final java.lang.String getEngineVersion() {
+        public final java.lang.Object getEngineVersion() {
             return this.engineVersion;
         }
 
         @Override
-        public final java.lang.String getEvictionPolicy() {
+        public final java.lang.Object getEvictionPolicy() {
             return this.evictionPolicy;
         }
 
         @Override
-        public final java.lang.String getInstanceClass() {
+        public final java.lang.Object getInstanceClass() {
             return this.instanceClass;
         }
 
@@ -449,32 +559,32 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
         @Override
-        public final java.lang.String getPassword() {
+        public final java.lang.Object getPassword() {
             return this.password;
         }
 
         @Override
-        public final java.lang.String getSecurityGroupId() {
+        public final java.lang.Object getSecurityGroupId() {
             return this.securityGroupId;
         }
 
         @Override
-        public final java.lang.String getSslEnabled() {
+        public final java.lang.Object getSslEnabled() {
             return this.sslEnabled;
         }
 
         @Override
-        public final java.util.List<com.aliyun.ros.cdk.core.RosTag> getTags() {
+        public final java.util.List<com.aliyun.ros.cdk.redis.RosInstance.TagsProperty> getTags() {
             return this.tags;
         }
 
         @Override
-        public final java.lang.String getVpcId() {
+        public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
 
@@ -484,12 +594,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getVSwitchId() {
+        public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
-        public final java.lang.String getZoneId() {
+        public final java.lang.Object getZoneId() {
             return this.zoneId;
         }
 

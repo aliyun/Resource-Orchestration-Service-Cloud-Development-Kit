@@ -3,38 +3,50 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::Route`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.712Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.375Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RouteProps")
 @software.amazon.jsii.Jsii.Proxy(RouteProps.Jsii$Proxy.class)
 public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property destinationCidrBlock: The RouteEntry's target network segment.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDestinationCidrBlock();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDestinationCidrBlock();
 
     /**
+     * Property routeId: RouteId of created route entry.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouteId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouteId();
 
     /**
+     * Property routeTableId: RouteTableId of created route entry.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRouteTableId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRouteTableId();
 
     /**
+     * Property nextHopId: The route entry's next hop.
+     * <p>
+     * When the NextHopList is specified, the value will be ignored.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNextHopId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopId() {
         return null;
     }
 
     /**
+     * Property nextHopList: The route entry's next hop list.
+     * <p>
+     * If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopList() {
         return null;
     }
 
     /**
+     * Property nextHopType: The next hop type.
+     * <p>
+     * Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNextHopType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNextHopType() {
         return null;
     }
 
@@ -48,16 +60,16 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RouteProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteProps> {
-        private java.lang.String destinationCidrBlock;
-        private java.lang.String routeId;
-        private java.lang.String routeTableId;
-        private java.lang.String nextHopId;
+        private java.lang.Object destinationCidrBlock;
+        private java.lang.Object routeId;
+        private java.lang.Object routeTableId;
+        private java.lang.Object nextHopId;
         private java.lang.Object nextHopList;
-        private java.lang.String nextHopType;
+        private java.lang.Object nextHopType;
 
         /**
          * Sets the value of {@link RouteProps#getDestinationCidrBlock}
-         * @param destinationCidrBlock the value to be set. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
          * @return {@code this}
          */
         public Builder destinationCidrBlock(java.lang.String destinationCidrBlock) {
@@ -66,8 +78,18 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteProps#getDestinationCidrBlock}
+         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder destinationCidrBlock(com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
+            this.destinationCidrBlock = destinationCidrBlock;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteProps#getRouteId}
-         * @param routeId the value to be set. This parameter is required.
+         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
          * @return {@code this}
          */
         public Builder routeId(java.lang.String routeId) {
@@ -76,8 +98,18 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteProps#getRouteId}
+         * @param routeId Property routeId: RouteId of created route entry. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routeId(com.aliyun.ros.cdk.core.IResolvable routeId) {
+            this.routeId = routeId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteProps#getRouteTableId}
-         * @param routeTableId the value to be set. This parameter is required.
+         * @param routeTableId Property routeTableId: RouteTableId of created route entry. This parameter is required.
          * @return {@code this}
          */
         public Builder routeTableId(java.lang.String routeTableId) {
@@ -86,8 +118,19 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteProps#getRouteTableId}
+         * @param routeTableId Property routeTableId: RouteTableId of created route entry. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder routeTableId(com.aliyun.ros.cdk.core.IResolvable routeTableId) {
+            this.routeTableId = routeTableId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteProps#getNextHopId}
-         * @param nextHopId the value to be set.
+         * @param nextHopId Property nextHopId: The route entry's next hop.
+         *                  When the NextHopList is specified, the value will be ignored.
          * @return {@code this}
          */
         public Builder nextHopId(java.lang.String nextHopId) {
@@ -96,8 +139,20 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RouteProps#getNextHopId}
+         * @param nextHopId Property nextHopId: The route entry's next hop.
+         *                  When the NextHopList is specified, the value will be ignored.
+         * @return {@code this}
+         */
+        public Builder nextHopId(com.aliyun.ros.cdk.core.IResolvable nextHopId) {
+            this.nextHopId = nextHopId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RouteProps#getNextHopList}
-         * @param nextHopList the value to be set.
+         * @param nextHopList Property nextHopList: The route entry's next hop list.
+         *                    If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
          * @return {@code this}
          */
         public Builder nextHopList(com.aliyun.ros.cdk.core.IResolvable nextHopList) {
@@ -107,7 +162,8 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopList}
-         * @param nextHopList the value to be set.
+         * @param nextHopList Property nextHopList: The route entry's next hop list.
+         *                    If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
          * @return {@code this}
          */
         public Builder nextHopList(java.util.List<? extends java.lang.Object> nextHopList) {
@@ -117,10 +173,22 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RouteProps#getNextHopType}
-         * @param nextHopType the value to be set.
+         * @param nextHopType Property nextHopType: The next hop type.
+         *                    Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
          * @return {@code this}
          */
         public Builder nextHopType(java.lang.String nextHopType) {
+            this.nextHopType = nextHopType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouteProps#getNextHopType}
+         * @param nextHopType Property nextHopType: The next hop type.
+         *                    Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
+         * @return {@code this}
+         */
+        public Builder nextHopType(com.aliyun.ros.cdk.core.IResolvable nextHopType) {
             this.nextHopType = nextHopType;
             return this;
         }
@@ -141,12 +209,12 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouteProps {
-        private final java.lang.String destinationCidrBlock;
-        private final java.lang.String routeId;
-        private final java.lang.String routeTableId;
-        private final java.lang.String nextHopId;
+        private final java.lang.Object destinationCidrBlock;
+        private final java.lang.Object routeId;
+        private final java.lang.Object routeTableId;
+        private final java.lang.Object nextHopId;
         private final java.lang.Object nextHopList;
-        private final java.lang.String nextHopType;
+        private final java.lang.Object nextHopType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -154,18 +222,18 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.destinationCidrBlock = software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routeId = software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.routeTableId = software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.destinationCidrBlock = software.amazon.jsii.Kernel.get(this, "destinationCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeId = software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTableId = software.amazon.jsii.Kernel.get(this, "routeTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nextHopId = software.amazon.jsii.Kernel.get(this, "nextHopId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.nextHopList = software.amazon.jsii.Kernel.get(this, "nextHopList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.nextHopType = software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.nextHopType = software.amazon.jsii.Kernel.get(this, "nextHopType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String destinationCidrBlock, final java.lang.String routeId, final java.lang.String routeTableId, final java.lang.String nextHopId, final java.lang.Object nextHopList, final java.lang.String nextHopType) {
+        protected Jsii$Proxy(final java.lang.Object destinationCidrBlock, final java.lang.Object routeId, final java.lang.Object routeTableId, final java.lang.Object nextHopId, final java.lang.Object nextHopList, final java.lang.Object nextHopType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.destinationCidrBlock = java.util.Objects.requireNonNull(destinationCidrBlock, "destinationCidrBlock is required");
             this.routeId = java.util.Objects.requireNonNull(routeId, "routeId is required");
@@ -176,22 +244,22 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getDestinationCidrBlock() {
+        public final java.lang.Object getDestinationCidrBlock() {
             return this.destinationCidrBlock;
         }
 
         @Override
-        public final java.lang.String getRouteId() {
+        public final java.lang.Object getRouteId() {
             return this.routeId;
         }
 
         @Override
-        public final java.lang.String getRouteTableId() {
+        public final java.lang.Object getRouteTableId() {
             return this.routeTableId;
         }
 
         @Override
-        public final java.lang.String getNextHopId() {
+        public final java.lang.Object getNextHopId() {
             return this.nextHopId;
         }
 
@@ -201,7 +269,7 @@ public interface RouteProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getNextHopType() {
+        public final java.lang.Object getNextHopType() {
             return this.nextHopType;
         }
 

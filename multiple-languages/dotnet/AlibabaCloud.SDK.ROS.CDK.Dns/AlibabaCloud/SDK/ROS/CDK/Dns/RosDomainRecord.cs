@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// <strong>Attribute</strong>: RecordId: Parse the ID of the record
         /// </remarks>
-        [JsiiProperty(name: "attrRecordId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrRecordId
+        [JsiiProperty(name: "attrRecordId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrRecordId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -62,10 +62,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <remarks>
         /// <strong>Property</strong>: domainName: Domain name
         /// </remarks>
-        [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string DomainName
+        [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object DomainName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -78,33 +78,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         /// <remarks>
         /// <strong></strong>: " instead of empty
-        /// 
+        ///
         /// <strong>Property</strong>: rr: Host record, if you want to resolve
         /// </remarks>
-        [JsiiProperty(name: "rr", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Rr
+        [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Rr
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: type: Parse record type, see parsing record type format
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Type
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: value: Record value
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Value
+        [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Value
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -112,10 +112,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <strong>Property</strong>: line: Parse the line, the default is default. See parsing line enumeration
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "line", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Line
+        [JsiiProperty(name: "line", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Line
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -123,10 +123,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <strong>Property</strong>: priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "priority", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Priority
+        [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Priority
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -134,10 +134,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         /// <strong>Property</strong>: ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ttl", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Ttl
+        [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Ttl
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

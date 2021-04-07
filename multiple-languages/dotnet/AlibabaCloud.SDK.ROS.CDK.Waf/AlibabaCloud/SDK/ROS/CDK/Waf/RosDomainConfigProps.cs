@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: domain: Domain name.
         /// </remarks>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Domain
         {
             get;
             set;
@@ -24,8 +24,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <strong>Property</strong>: instanceId: WAF instance ID.
         /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceId
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// 0: none.
         /// 1: expressed.
         /// </remarks>
-        [JsiiProperty(name: "isAccessProduct", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double IsAccessProduct
+        [JsiiProperty(name: "isAccessProduct", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object IsAccessProduct
         {
             get;
             set;
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// https: support for HTTPS protocol.
         /// http, https: supports HTTP, HTTPS protocol.
         /// </remarks>
-        [JsiiProperty(name: "protocols", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Protocols
+        [JsiiProperty(name: "protocols", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Protocols
         {
             get;
             set;
@@ -61,8 +61,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// Configure the HTTP protocol, this parameter is required. The default value is 80. HttpPort HttpsPort with at least two parameters need to fill a request.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "httpPort", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? HttpPort
+        [JsiiProperty(name: "httpPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HttpPort
         {
             get;
             set;
@@ -73,8 +73,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// Configure the protocol is HTTPS, this parameter is required. The default value is 443. HttpPort HttpsPort with at least two parameters need to fill a request.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "httpsPort", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? HttpsPort
+        [JsiiProperty(name: "httpsPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HttpsPort
         {
             get;
             set;
@@ -87,8 +87,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// Description required to complete the request parameters using only HTTPS access protocol. After opening force will show a jump HTTP request is HTTPS, a default jump to 443.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "httpsRedirect", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? HttpsRedirect
+        [JsiiProperty(name: "httpsRedirect", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HttpsRedirect
         {
             get;
             set;
@@ -101,8 +101,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// Note If your site does not support HTTPS back to the source, open source HTTP return (default back to the source port is port 80) function key, can be realized by WAF HTTPS access.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "httpToUserIp", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? HttpToUserIp
+        [JsiiProperty(name: "httpToUserIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HttpToUserIp
         {
             get;
             set;
@@ -114,8 +114,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// 1: represents a polling mode.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "loadBalancing", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? LoadBalancing
+        [JsiiProperty(name: "loadBalancing", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LoadBalancing
         {
             get;
             set;
@@ -127,8 +127,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// cn-hongkong: China HongKong and other overseas
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Region
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Region
         {
             get;
             set;
@@ -140,8 +140,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// 1: Indicates the domain name back to the source.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "rsType", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? RsType
+        [JsiiProperty(name: "rsType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? RsType
         {
             get;
             set;
@@ -151,8 +151,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <strong>Property</strong>: sourceIps: Source station IP, supports a plurality of specified IP. Example values: [ "1.1.1.1"].
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sourceIps", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? SourceIps
+        [JsiiProperty(name: "sourceIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? SourceIps
         {
             get;
             set;

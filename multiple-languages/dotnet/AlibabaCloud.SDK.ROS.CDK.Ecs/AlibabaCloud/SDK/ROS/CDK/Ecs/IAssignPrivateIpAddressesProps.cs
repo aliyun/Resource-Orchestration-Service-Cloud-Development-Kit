@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IAssignPrivateIpAddressesProps
     {
         /// <summary>Property networkInterfaceId: The ID of the ENI.</summary>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-        string NetworkInterfaceId
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NetworkInterfaceId
         {
             get;
         }
@@ -34,9 +34,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.</summary>
-        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? SecondaryPrivateIpAddressCount
+        object? SecondaryPrivateIpAddressCount
         {
             get
             {
@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property networkInterfaceId: The ID of the ENI.</summary>
-            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string NetworkInterfaceId
+            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NetworkInterfaceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property privateIpAddresses: One or multiple secondary private IP addresses selected from the CIDR block of the VSwitch that hosts the ENI.</summary>
@@ -76,10 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <summary>Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? SecondaryPrivateIpAddressCount
+            [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecondaryPrivateIpAddressCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

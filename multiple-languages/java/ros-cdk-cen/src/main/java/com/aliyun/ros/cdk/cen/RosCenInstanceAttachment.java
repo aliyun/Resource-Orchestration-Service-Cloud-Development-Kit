@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * A ROS template type:  `ALIYUN::CEN::CenInstanceAttachment`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.828Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosCenInstanceAttachment")
 public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -49,8 +49,8 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getCenId() {
-        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getCenId() {
+        return software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -61,8 +61,14 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setCenId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cenId", java.util.Objects.requireNonNull(value, "cenId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -73,8 +79,14 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceRegionId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceId", java.util.Objects.requireNonNull(value, "childInstanceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceRegionId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -85,8 +97,14 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getChildInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setChildInstanceRegionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceRegionId", java.util.Objects.requireNonNull(value, "childInstanceRegionId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getChildInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -96,14 +114,20 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     */
+    public void setChildInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceType", java.util.Objects.requireNonNull(value, "childInstanceType is required"));
+    }
+
+    /**
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public @org.jetbrains.annotations.NotNull java.lang.Boolean getEnableResourcePropertyConstraint() {
         return software.amazon.jsii.Kernel.get(this, "enableResourcePropertyConstraint", software.amazon.jsii.NativeType.forClass(java.lang.Boolean.class));
     }
 
     /**
-     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
+     * A factory method that creates a new instance of this class from an object containing the properties of this ROS resource.
      */
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
@@ -111,13 +135,19 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getChildInstanceOwnerId() {
-        return software.amazon.jsii.Kernel.get(this, "childInstanceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getChildInstanceOwnerId() {
+        return software.amazon.jsii.Kernel.get(this, "childInstanceOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setChildInstanceOwnerId(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "childInstanceOwnerId", value);
+    }
+
+    /**
+     */
+    public void setChildInstanceOwnerId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "childInstanceOwnerId", value);
     }
 
@@ -155,12 +185,28 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
             this.props.cenId(cenId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param cenId This parameter is required.
+         */
+        public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
+            this.props.cenId(cenId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param childInstanceId This parameter is required.
          */
         public Builder childInstanceId(final java.lang.String childInstanceId) {
+            this.props.childInstanceId(childInstanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param childInstanceId This parameter is required.
+         */
+        public Builder childInstanceId(final com.aliyun.ros.cdk.core.IResolvable childInstanceId) {
             this.props.childInstanceId(childInstanceId);
             return this;
         }
@@ -173,6 +219,14 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
             this.props.childInstanceRegionId(childInstanceRegionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param childInstanceRegionId This parameter is required.
+         */
+        public Builder childInstanceRegionId(final com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
+            this.props.childInstanceRegionId(childInstanceRegionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -182,12 +236,28 @@ public class RosCenInstanceAttachment extends com.aliyun.ros.cdk.core.RosResourc
             this.props.childInstanceType(childInstanceType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param childInstanceType This parameter is required.
+         */
+        public Builder childInstanceType(final com.aliyun.ros.cdk.core.IResolvable childInstanceType) {
+            this.props.childInstanceType(childInstanceType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param childInstanceOwnerId This parameter is required.
          */
         public Builder childInstanceOwnerId(final java.lang.Number childInstanceOwnerId) {
+            this.props.childInstanceOwnerId(childInstanceOwnerId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param childInstanceOwnerId This parameter is required.
+         */
+        public Builder childInstanceOwnerId(final com.aliyun.ros.cdk.core.IResolvable childInstanceOwnerId) {
             this.props.childInstanceOwnerId(childInstanceOwnerId);
             return this;
         }

@@ -8,6 +8,7 @@ import { RosReference } from "./private/ros-reference";
 import { RemovalPolicy, RemovalPolicyOptions } from "./ros-removal-policy";
 import { RosCondition } from "./ros-condition";
 import { RosRefElement } from "./ros-element";
+import {IResolvable} from "./resolvable";
 export interface RosResourceProps {
   /**
    * ROS template resource type (e.g. `ALIYUN::ECS::Instance`).
@@ -211,6 +212,10 @@ export class RosResource extends RosRefElement {
     this.rosOptions.condition = con;
   }
 
+  public addCount(count: number | IResolvable) {
+    this.rosOptions.count = count;
+  }
+
   /**
    * Adds an override to a resource property.
    *
@@ -298,6 +303,7 @@ export class RosResource extends RosRefElement {
               Condition:
                 this.rosOptions.condition &&
                 this.rosOptions.condition.logicalId,
+              Count: ignoreEmpty(this.rosOptions.count),
             },
             (props) => {
               const renderedProps = this.renderProperties(
@@ -392,6 +398,8 @@ export interface IRosResourceOptions {
   metadata?: { [key: string]: any };
 
   description?: string;
+
+  count?: number | IResolvable;
 }
 
 /**

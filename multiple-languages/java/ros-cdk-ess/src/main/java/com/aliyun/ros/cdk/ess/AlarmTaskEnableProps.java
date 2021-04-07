@@ -3,16 +3,18 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::AlarmTaskEnable`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.806Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.468Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTaskEnableProps")
 @software.amazon.jsii.Jsii.Proxy(AlarmTaskEnableProps.Jsii$Proxy.class)
 public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property alarmTaskId: The id of alarm task.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAlarmTaskId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAlarmTaskId();
 
     /**
+     * Property enable: Enable alarm task or not.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEnable();
 
@@ -26,12 +28,12 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link AlarmTaskEnableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AlarmTaskEnableProps> {
-        private java.lang.String alarmTaskId;
+        private java.lang.Object alarmTaskId;
         private java.lang.Object enable;
 
         /**
          * Sets the value of {@link AlarmTaskEnableProps#getAlarmTaskId}
-         * @param alarmTaskId the value to be set. This parameter is required.
+         * @param alarmTaskId Property alarmTaskId: The id of alarm task. This parameter is required.
          * @return {@code this}
          */
         public Builder alarmTaskId(java.lang.String alarmTaskId) {
@@ -40,8 +42,18 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link AlarmTaskEnableProps#getAlarmTaskId}
+         * @param alarmTaskId Property alarmTaskId: The id of alarm task. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder alarmTaskId(com.aliyun.ros.cdk.core.IResolvable alarmTaskId) {
+            this.alarmTaskId = alarmTaskId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AlarmTaskEnableProps#getEnable}
-         * @param enable the value to be set. This parameter is required.
+         * @param enable Property enable: Enable alarm task or not. This parameter is required.
          * @return {@code this}
          */
         public Builder enable(java.lang.Boolean enable) {
@@ -51,7 +63,7 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AlarmTaskEnableProps#getEnable}
-         * @param enable the value to be set. This parameter is required.
+         * @param enable Property enable: Enable alarm task or not. This parameter is required.
          * @return {@code this}
          */
         public Builder enable(com.aliyun.ros.cdk.core.IResolvable enable) {
@@ -75,7 +87,7 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AlarmTaskEnableProps {
-        private final java.lang.String alarmTaskId;
+        private final java.lang.Object alarmTaskId;
         private final java.lang.Object enable;
 
         /**
@@ -84,21 +96,21 @@ public interface AlarmTaskEnableProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.alarmTaskId = software.amazon.jsii.Kernel.get(this, "alarmTaskId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.alarmTaskId = software.amazon.jsii.Kernel.get(this, "alarmTaskId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enable = software.amazon.jsii.Kernel.get(this, "enable", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String alarmTaskId, final java.lang.Object enable) {
+        protected Jsii$Proxy(final java.lang.Object alarmTaskId, final java.lang.Object enable) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.alarmTaskId = java.util.Objects.requireNonNull(alarmTaskId, "alarmTaskId is required");
             this.enable = java.util.Objects.requireNonNull(enable, "enable is required");
         }
 
         @Override
-        public final java.lang.String getAlarmTaskId() {
+        public final java.lang.Object getAlarmTaskId() {
             return this.alarmTaskId;
         }
 

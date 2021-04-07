@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS resource type:  `ALIYUN::ECS::SecurityGroupIngress`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.724Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SecurityGroupIngress")
 public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public SecurityGroupIngress(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.SecurityGroupIngressProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ECS::SecurityGroupIngress`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public SecurityGroupIngress(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ecs.SecurityGroupIngressProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ecs.SecurityGroupIngress> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,109 +83,283 @@ public class SecurityGroupIngress extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property ipProtocol: Ip protocol for in rule.
+         * <p>
          * @return {@code this}
-         * @param ipProtocol This parameter is required.
+         * @param ipProtocol Property ipProtocol: Ip protocol for in rule. This parameter is required.
          */
         public Builder ipProtocol(final java.lang.String ipProtocol) {
             this.props.ipProtocol(ipProtocol);
             return this;
         }
+        /**
+         * Property ipProtocol: Ip protocol for in rule.
+         * <p>
+         * @return {@code this}
+         * @param ipProtocol Property ipProtocol: Ip protocol for in rule. This parameter is required.
+         */
+        public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
+            this.props.ipProtocol(ipProtocol);
+            return this;
+        }
 
         /**
+         * Property portRange: Ip protocol relative port range.
+         * <p>
+         * For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         * <p>
          * @return {@code this}
-         * @param portRange This parameter is required.
+         * @param portRange Property portRange: Ip protocol relative port range. This parameter is required.
          */
         public Builder portRange(final java.lang.String portRange) {
             this.props.portRange(portRange);
             return this;
         }
+        /**
+         * Property portRange: Ip protocol relative port range.
+         * <p>
+         * For tcp and udp, the port rang is [1,65535], using format '1/200'For icmp|gre|all protocel, the port range should be '-1/-1'
+         * <p>
+         * @return {@code this}
+         * @param portRange Property portRange: Ip protocol relative port range. This parameter is required.
+         */
+        public Builder portRange(final com.aliyun.ros.cdk.core.IResolvable portRange) {
+            this.props.portRange(portRange);
+            return this;
+        }
 
         /**
+         * Property description: Description of the security group rule, [1, 512] characters.
+         * <p>
+         * The default is empty.
+         * <p>
          * @return {@code this}
-         * @param description This parameter is required.
+         * @param description Property description: Description of the security group rule, [1, 512] characters. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
+        /**
+         * Property description: Description of the security group rule, [1, 512] characters.
+         * <p>
+         * The default is empty.
+         * <p>
+         * @return {@code this}
+         * @param description Property description: Description of the security group rule, [1, 512] characters. This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
+         * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment.
+         * <p>
+         * Supports IP address ranges in CIDR format and IPv6 format.
+         * Note Only VPC type IP addresses are supported.
+         * <p>
          * @return {@code this}
-         * @param ipv6SourceCidrIp This parameter is required.
+         * @param ipv6SourceCidrIp Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. This parameter is required.
          */
         public Builder ipv6SourceCidrIp(final java.lang.String ipv6SourceCidrIp) {
             this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
             return this;
         }
+        /**
+         * Property ipv6SourceCidrIp: Source IPv6 CIDR address segment.
+         * <p>
+         * Supports IP address ranges in CIDR format and IPv6 format.
+         * Note Only VPC type IP addresses are supported.
+         * <p>
+         * @return {@code this}
+         * @param ipv6SourceCidrIp Property ipv6SourceCidrIp: Source IPv6 CIDR address segment. This parameter is required.
+         */
+        public Builder ipv6SourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable ipv6SourceCidrIp) {
+            this.props.ipv6SourceCidrIp(ipv6SourceCidrIp);
+            return this;
+        }
 
         /**
+         * Property nicType: Network type, could be 'internet' or 'intranet'.
+         * <p>
+         * Default value is internet.
+         * <p>
          * @return {@code this}
-         * @param nicType This parameter is required.
+         * @param nicType Property nicType: Network type, could be 'internet' or 'intranet'. This parameter is required.
          */
         public Builder nicType(final java.lang.String nicType) {
             this.props.nicType(nicType);
             return this;
         }
+        /**
+         * Property nicType: Network type, could be 'internet' or 'intranet'.
+         * <p>
+         * Default value is internet.
+         * <p>
+         * @return {@code this}
+         * @param nicType Property nicType: Network type, could be 'internet' or 'intranet'. This parameter is required.
+         */
+        public Builder nicType(final com.aliyun.ros.cdk.core.IResolvable nicType) {
+            this.props.nicType(nicType);
+            return this;
+        }
 
         /**
+         * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access).
+         * <p>
+         * Default value is accept.
+         * <p>
          * @return {@code this}
-         * @param policy This parameter is required.
+         * @param policy Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). This parameter is required.
          */
         public Builder policy(final java.lang.String policy) {
             this.props.policy(policy);
             return this;
         }
+        /**
+         * Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access).
+         * <p>
+         * Default value is accept.
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: Authorization policies, parameter values can be: accept (accepted access), drop (denied access). This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.props.policy(policy);
+            return this;
+        }
 
         /**
+         * Property priority: Authorization policies priority range[1, 100].
+         * <p>
          * @return {@code this}
-         * @param priority This parameter is required.
+         * @param priority Property priority: Authorization policies priority range[1, 100]. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
+        /**
+         * Property priority: Authorization policies priority range[1, 100].
+         * <p>
+         * @return {@code this}
+         * @param priority Property priority: Authorization policies priority range[1, 100]. This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
+            return this;
+        }
 
         /**
+         * Property securityGroupId: Id of the security group.
+         * <p>
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
+         * @param securityGroupId Property securityGroupId: Id of the security group. This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * Property securityGroupId: Id of the security group.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: Id of the security group. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
+         * Property sourceCidrIp: Source CIDR Ip Address range.
+         * <p>
+         * Only IPV4 supported.
+         * <p>
          * @return {@code this}
-         * @param sourceCidrIp This parameter is required.
+         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range. This parameter is required.
          */
         public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
             this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
+        /**
+         * Property sourceCidrIp: Source CIDR Ip Address range.
+         * <p>
+         * Only IPV4 supported.
+         * <p>
+         * @return {@code this}
+         * @param sourceCidrIp Property sourceCidrIp: Source CIDR Ip Address range. This parameter is required.
+         */
+        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
+            return this;
+        }
 
         /**
+         * Property sourceGroupId: Source Group Id.
+         * <p>
          * @return {@code this}
-         * @param sourceGroupId This parameter is required.
+         * @param sourceGroupId Property sourceGroupId: Source Group Id. This parameter is required.
          */
         public Builder sourceGroupId(final java.lang.String sourceGroupId) {
             this.props.sourceGroupId(sourceGroupId);
             return this;
         }
+        /**
+         * Property sourceGroupId: Source Group Id.
+         * <p>
+         * @return {@code this}
+         * @param sourceGroupId Property sourceGroupId: Source Group Id. This parameter is required.
+         */
+        public Builder sourceGroupId(final com.aliyun.ros.cdk.core.IResolvable sourceGroupId) {
+            this.props.sourceGroupId(sourceGroupId);
+            return this;
+        }
 
         /**
+         * Property sourceGroupOwnerId: Source Group Owner Account ID.
+         * <p>
          * @return {@code this}
-         * @param sourceGroupOwnerId This parameter is required.
+         * @param sourceGroupOwnerId Property sourceGroupOwnerId: Source Group Owner Account ID. This parameter is required.
          */
         public Builder sourceGroupOwnerId(final java.lang.String sourceGroupOwnerId) {
             this.props.sourceGroupOwnerId(sourceGroupOwnerId);
             return this;
         }
+        /**
+         * Property sourceGroupOwnerId: Source Group Owner Account ID.
+         * <p>
+         * @return {@code this}
+         * @param sourceGroupOwnerId Property sourceGroupOwnerId: Source Group Owner Account ID. This parameter is required.
+         */
+        public Builder sourceGroupOwnerId(final com.aliyun.ros.cdk.core.IResolvable sourceGroupOwnerId) {
+            this.props.sourceGroupOwnerId(sourceGroupOwnerId);
+            return this;
+        }
 
         /**
+         * Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol.
+         * <p>
+         * Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+         * <p>
          * @return {@code this}
-         * @param sourcePortRange This parameter is required.
+         * @param sourcePortRange Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. This parameter is required.
          */
         public Builder sourcePortRange(final java.lang.String sourcePortRange) {
+            this.props.sourcePortRange(sourcePortRange);
+            return this;
+        }
+        /**
+         * Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol.
+         * <p>
+         * Valid values: TCP/UDP: Value range: 1 to 65535. The start port and the end port are separated by a slash (/). Correct example: 1/200. Incorrect example: 200/1.ICMP: -1/-1.GRE: -1/-1.ALL: -1/-1.
+         * <p>
+         * @return {@code this}
+         * @param sourcePortRange Property sourcePortRange: The range of the ports enabled by the source security group for the transport layer protocol. This parameter is required.
+         */
+        public Builder sourcePortRange(final com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
             this.props.sourcePortRange(sourcePortRange);
             return this;
         }

@@ -11,7 +11,7 @@ export interface ServerlessKubernetesClusterProps {
     /**
      * Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * Property addons: The add-ons to be installed for the cluster.
@@ -26,9 +26,9 @@ export interface ServerlessKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
-     * Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    readonly kubernetesVersion?: string;
+    readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
      * Property natGateway: Whether to create a NAT gateway. The value can be true or false. If not set, the system defaults to false.
@@ -43,28 +43,28 @@ export interface ServerlessKubernetesClusterProps {
     /**
      * Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * Property tags: Tag the cluster.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: RosServerlessKubernetesCluster.TagsProperty[];
 
     /**
      * Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
@@ -75,7 +75,7 @@ export interface ServerlessKubernetesClusterProps {
     /**
      * Property zoneId: The zone ID.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -91,17 +91,17 @@ export class ServerlessKubernetesCluster extends ros.Resource {
     /**
      * Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CS::ServerlessKubernetesCluster`.
@@ -114,7 +114,7 @@ export class ServerlessKubernetesCluster extends ros.Resource {
         super(scope, id);
 
         const rosServerlessKubernetesCluster = new RosServerlessKubernetesCluster(this, id,  {
-            kubernetesVersion: props.kubernetesVersion ? props.kubernetesVersion : '1.14.8-aliyun.1',
+            kubernetesVersion: props.kubernetesVersion,
             endpointPublicAccess: props.endpointPublicAccess,
             zoneId: props.zoneId,
             vSwitchIds: props.vSwitchIds,
@@ -125,7 +125,7 @@ export class ServerlessKubernetesCluster extends ros.Resource {
             name: props.name,
             vpcId: props.vpcId,
             serviceCidr: props.serviceCidr ? props.serviceCidr : '172.19.0.0/20',
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
             privateZone: props.privateZone,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerlessKubernetesCluster;

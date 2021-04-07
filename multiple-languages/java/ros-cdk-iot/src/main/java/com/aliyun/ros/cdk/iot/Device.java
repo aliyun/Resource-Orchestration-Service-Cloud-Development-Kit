@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * A ROS resource type:  `ALIYUN::IOT::Device`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.021Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.630Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.Device")
 public class Device extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::IOT::Device`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Device(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.iot.DeviceProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::IOT::Device`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Device(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.iot.DeviceProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,57 +49,68 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DeviceName: Device name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDeviceName() {
-        return software.amazon.jsii.Kernel.get(this, "attrDeviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDeviceName() {
+        return software.amazon.jsii.Kernel.get(this, "attrDeviceName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute DeviceSecret: Device key.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDeviceSecret() {
-        return software.amazon.jsii.Kernel.get(this, "attrDeviceSecret", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDeviceSecret() {
+        return software.amazon.jsii.Kernel.get(this, "attrDeviceSecret", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute IotId: Things internet device ID issued for the device, as the unique identifier of the device.
+     * <p>
+     * Description Keep, do not leak.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIotId() {
-        return software.amazon.jsii.Kernel.get(this, "attrIotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIotId() {
+        return software.amazon.jsii.Kernel.get(this, "attrIotId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute IotInstanceId: IOT instance ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIotInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrIotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIotInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrIotInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute IpAddress: IP address.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrIpAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrIpAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute NickName: Nick name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNickName() {
-        return software.amazon.jsii.Kernel.get(this, "attrNickName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNickName() {
+        return software.amazon.jsii.Kernel.get(this, "attrNickName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute NodeType: Node type.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrNodeType() {
-        return software.amazon.jsii.Kernel.get(this, "attrNodeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrNodeType() {
+        return software.amazon.jsii.Kernel.get(this, "attrNodeType", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ProductKey: Product key.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProductKey() {
-        return software.amazon.jsii.Kernel.get(this, "attrProductKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProductKey() {
+        return software.amazon.jsii.Kernel.get(this, "attrProductKey", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ProductName: Product name.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrProductName() {
-        return software.amazon.jsii.Kernel.get(this, "attrProductName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrProductName() {
+        return software.amazon.jsii.Kernel.get(this, "attrProductName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -100,8 +119,8 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.iot.Device> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -109,8 +128,8 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -129,55 +148,159 @@ public class Device extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property productKey: The identifier of the product to which the device to be registered belongs.
+         * <p>
          * @return {@code this}
-         * @param productKey This parameter is required.
+         * @param productKey Property productKey: The identifier of the product to which the device to be registered belongs. This parameter is required.
          */
         public Builder productKey(final java.lang.String productKey) {
             this.props.productKey(productKey);
             return this;
         }
+        /**
+         * Property productKey: The identifier of the product to which the device to be registered belongs.
+         * <p>
+         * @return {@code this}
+         * @param productKey Property productKey: The identifier of the product to which the device to be registered belongs. This parameter is required.
+         */
+        public Builder productKey(final com.aliyun.ros.cdk.core.IResolvable productKey) {
+            this.props.productKey(productKey);
+            return this;
+        }
 
         /**
+         * Property devEui: DevEUI LoRaWAN equipment.
+         * <p>
+         * When you create a LoRaWAN devices, this will pass.
+         * <p>
          * @return {@code this}
-         * @param devEui This parameter is required.
+         * @param devEui Property devEui: DevEUI LoRaWAN equipment. This parameter is required.
          */
         public Builder devEui(final java.lang.String devEui) {
             this.props.devEui(devEui);
             return this;
         }
+        /**
+         * Property devEui: DevEUI LoRaWAN equipment.
+         * <p>
+         * When you create a LoRaWAN devices, this will pass.
+         * <p>
+         * @return {@code this}
+         * @param devEui Property devEui: DevEUI LoRaWAN equipment. This parameter is required.
+         */
+        public Builder devEui(final com.aliyun.ros.cdk.core.IResolvable devEui) {
+            this.props.devEui(devEui);
+            return this;
+        }
 
         /**
+         * Property deviceName: The name of the device that you want to register.
+         * <p>
+         * The device name must consist of
+         * 4 to 32 characters, including English letters, digits, and special characters, for
+         * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
+         * DeviceName is used with ProductKey to identify a specified device.
+         * Note If you do not specify this parameter, the system will generate a name for the device.
+         * <p>
          * @return {@code this}
-         * @param deviceName This parameter is required.
+         * @param deviceName Property deviceName: The name of the device that you want to register. This parameter is required.
          */
         public Builder deviceName(final java.lang.String deviceName) {
             this.props.deviceName(deviceName);
             return this;
         }
+        /**
+         * Property deviceName: The name of the device that you want to register.
+         * <p>
+         * The device name must consist of
+         * 4 to 32 characters, including English letters, digits, and special characters, for
+         * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
+         * DeviceName is used with ProductKey to identify a specified device.
+         * Note If you do not specify this parameter, the system will generate a name for the device.
+         * <p>
+         * @return {@code this}
+         * @param deviceName Property deviceName: The name of the device that you want to register. This parameter is required.
+         */
+        public Builder deviceName(final com.aliyun.ros.cdk.core.IResolvable deviceName) {
+            this.props.deviceName(deviceName);
+            return this;
+        }
 
         /**
+         * Property iotInstanceId: Public instance does not pass this parameter;
+         * <p>
+         * instance that you need to buy the incoming instance ID.
+         * <p>
          * @return {@code this}
-         * @param iotInstanceId This parameter is required.
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;. This parameter is required.
          */
         public Builder iotInstanceId(final java.lang.String iotInstanceId) {
             this.props.iotInstanceId(iotInstanceId);
             return this;
         }
+        /**
+         * Property iotInstanceId: Public instance does not pass this parameter;
+         * <p>
+         * instance that you need to buy the incoming instance ID.
+         * <p>
+         * @return {@code this}
+         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;. This parameter is required.
+         */
+        public Builder iotInstanceId(final com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.props.iotInstanceId(iotInstanceId);
+            return this;
+        }
 
         /**
+         * Property nickname: Add a nickname for the device.
+         * <p>
+         * A nickname can be 4-64 characters in length, and can
+         * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
+         * character counts as two characters.
+         * <p>
          * @return {@code this}
-         * @param nickname This parameter is required.
+         * @param nickname Property nickname: Add a nickname for the device. This parameter is required.
          */
         public Builder nickname(final java.lang.String nickname) {
             this.props.nickname(nickname);
             return this;
         }
+        /**
+         * Property nickname: Add a nickname for the device.
+         * <p>
+         * A nickname can be 4-64 characters in length, and can
+         * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
+         * character counts as two characters.
+         * <p>
+         * @return {@code this}
+         * @param nickname Property nickname: Add a nickname for the device. This parameter is required.
+         */
+        public Builder nickname(final com.aliyun.ros.cdk.core.IResolvable nickname) {
+            this.props.nickname(nickname);
+            return this;
+        }
 
         /**
+         * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         * <p>
+         * When you create a LoRaWAN devices, this will pass.
+         * <p>
          * @return {@code this}
-         * @param pinCode This parameter is required.
+         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI. This parameter is required.
          */
         public Builder pinCode(final java.lang.String pinCode) {
+            this.props.pinCode(pinCode);
+            return this;
+        }
+        /**
+         * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         * <p>
+         * When you create a LoRaWAN devices, this will pass.
+         * <p>
+         * @return {@code this}
+         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI. This parameter is required.
+         */
+        public Builder pinCode(final com.aliyun.ros.cdk.core.IResolvable pinCode) {
             this.props.pinCode(pinCode);
             return this;
         }

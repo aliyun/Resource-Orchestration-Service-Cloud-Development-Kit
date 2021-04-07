@@ -16,22 +16,27 @@ export interface RosContainerGroupProps {
      * @Property containerGroupName: The name of the container group. 
      * The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
      */
-    readonly containerGroupName: string;
+    readonly containerGroupName: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    readonly securityGroupId: string;
+    readonly securityGroupId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property activeDeadlineSeconds: The validity period in seconds.
      */
-    readonly activeDeadlineSeconds?: number;
+    readonly activeDeadlineSeconds?: number | ros.IResolvable;
 
     /**
      * @Property autoMatchImageCache: Specifies whether to automatically match the image cache.
@@ -41,7 +46,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property cpu: CPU size
      */
-    readonly cpu?: number;
+    readonly cpu?: number | ros.IResolvable;
 
     /**
      * @Property dnsConfig: The information about DNS configurations.
@@ -51,7 +56,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property eipInstanceId: Elastic IP ID
      */
-    readonly eipInstanceId?: string;
+    readonly eipInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property hostAliase: Customize the hostname mapping of a container inside the pod
@@ -66,7 +71,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property imageSnapshotId: Image cache ID or snapshot ID.
      */
-    readonly imageSnapshotId?: string;
+    readonly imageSnapshotId?: string | ros.IResolvable;
 
     /**
      * @Property initContainer: The containers that constitute the container group for initializing.
@@ -76,27 +81,27 @@ export interface RosContainerGroupProps {
     /**
      * @Property instanceType: The type of the ECS instance.
      */
-    readonly instanceType?: string;
+    readonly instanceType?: string | ros.IResolvable;
 
     /**
      * @Property ipv6AddressCount: The number of IPv6 addresses.
      */
-    readonly ipv6AddressCount?: number;
+    readonly ipv6AddressCount?: number | ros.IResolvable;
 
     /**
      * @Property memory: memory size
      */
-    readonly memory?: number;
+    readonly memory?: number | ros.IResolvable;
 
     /**
      * @Property ramRoleName: The RAM role that the container group assumes. ECI and ECS share the same RAM role.
      */
-    readonly ramRoleName?: string;
+    readonly ramRoleName?: string | ros.IResolvable;
 
     /**
      * @Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
-    readonly restartPolicy?: string;
+    readonly restartPolicy?: string | ros.IResolvable;
 
     /**
      * @Property securityContextSysctl: ECI Sysctl is valid for every container in ECI.
@@ -114,7 +119,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property spotPriceLimit: Set the hourly maximum price of the instance. It supports a maximum of 3 decimal places. It takes effect when the value of the parameter SpotStrategy is SpotWithPriceLimit.
      */
-    readonly spotPriceLimit?: number;
+    readonly spotPriceLimit?: number | ros.IResolvable;
 
     /**
      * @Property spotStrategy: Instance preemption strategy.
@@ -123,7 +128,7 @@ export interface RosContainerGroupProps {
      * SpotWithPriceLimit: Preemptive instance that sets a cap price.
      * SpotAsPriceGo: The system automatically bids, following the current market actual price.
      */
-    readonly spotStrategy?: string;
+    readonly spotStrategy?: string | ros.IResolvable;
 
     /**
      * @Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
@@ -133,7 +138,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property terminationGracePeriodSeconds: The buffer time for the program to handle operations before it is stopped.
      */
-    readonly terminationGracePeriodSeconds?: number;
+    readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
 
     /**
      * @Property volume: The data volume. You can specify a maximum of 20 data volumes.
@@ -143,7 +148,7 @@ export interface RosContainerGroupProps {
     /**
      * @Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -218,6 +223,7 @@ function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('volume', ros.listValidator(RosContainerGroup_VolumePropertyValidator))(properties.volume));
+    errors.collect(ros.propertyValidator('acrRegistryInfo', ros.listValidator(RosContainerGroup_AcrRegistryInfoPropertyValidator))(properties.acrRegistryInfo));
     if(properties.tag && (Array.isArray(properties.tag) || (typeof properties.tag) === 'string')) {
         errors.collect(ros.propertyValidator('tag', ros.validateLength)({
             data: properties.tag.length,
@@ -247,6 +253,7 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
       ContainerGroupName: ros.stringToRosTemplate(properties.containerGroupName),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+      AcrRegistryInfo: ros.listMapper(rosContainerGroupAcrRegistryInfoPropertyToRosTemplate)(properties.acrRegistryInfo),
       ActiveDeadlineSeconds: ros.numberToRosTemplate(properties.activeDeadlineSeconds),
       AutoMatchImageCache: ros.booleanToRosTemplate(properties.autoMatchImageCache),
       Cpu: ros.numberToRosTemplate(properties.cpu),
@@ -289,52 +296,52 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Attribute ContainerGroupId: The ID of the container group.
      */
-    public readonly attrContainerGroupId: any;
+    public readonly attrContainerGroupId: ros.IResolvable;
 
     /**
      * @Attribute ContainerGroupName: The name of the container group.
      */
-    public readonly attrContainerGroupName: any;
+    public readonly attrContainerGroupName: ros.IResolvable;
 
     /**
      * @Attribute EniInstanceId: ENI instance ID.
      */
-    public readonly attrEniInstanceId: any;
+    public readonly attrEniInstanceId: ros.IResolvable;
 
     /**
      * @Attribute InternetIp: Internet IP.
      */
-    public readonly attrInternetIp: any;
+    public readonly attrInternetIp: ros.IResolvable;
 
     /**
      * @Attribute IntranetIp: Intranet IP.
      */
-    public readonly attrIntranetIp: any;
+    public readonly attrIntranetIp: ros.IResolvable;
 
     /**
      * @Attribute Ipv6Address: Ipv6 address.
      */
-    public readonly attrIpv6Address: any;
+    public readonly attrIpv6Address: ros.IResolvable;
 
     /**
      * @Attribute RegionId: The ID of the region in which the instance resides.
      */
-    public readonly attrRegionId: any;
+    public readonly attrRegionId: ros.IResolvable;
 
     /**
      * @Attribute SecurityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    public readonly attrSecurityGroupId: any;
+    public readonly attrSecurityGroupId: ros.IResolvable;
 
     /**
      * @Attribute VSwitchId: The ID of the VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    public readonly attrVSwitchId: any;
+    public readonly attrVSwitchId: ros.IResolvable;
 
     /**
      * @Attribute ZoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    public readonly attrZoneId: any;
+    public readonly attrZoneId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -348,22 +355,27 @@ export class RosContainerGroup extends ros.RosResource {
      * @Property containerGroupName: The name of the container group. 
      * The length is [2,128] English lowercase letters, numbers or hyphens (-), cannot begin or end with a hyphens.
      */
-    public containerGroupName: string;
+    public containerGroupName: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The ID of the security group to which the instance belongs. Instances in the same security group can access one another.
      */
-    public securityGroupId: string;
+    public securityGroupId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the specified VSwitch. Currently, ECI instances can only be deployed in VPCs.
      */
-    public vSwitchId: string;
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     */
+    public acrRegistryInfo: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property activeDeadlineSeconds: The validity period in seconds.
      */
-    public activeDeadlineSeconds: number | undefined;
+    public activeDeadlineSeconds: number | ros.IResolvable | undefined;
 
     /**
      * @Property autoMatchImageCache: Specifies whether to automatically match the image cache.
@@ -373,7 +385,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property cpu: CPU size
      */
-    public cpu: number | undefined;
+    public cpu: number | ros.IResolvable | undefined;
 
     /**
      * @Property dnsConfig: The information about DNS configurations.
@@ -383,7 +395,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property eipInstanceId: Elastic IP ID
      */
-    public eipInstanceId: string | undefined;
+    public eipInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property hostAliase: Customize the hostname mapping of a container inside the pod
@@ -398,7 +410,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property imageSnapshotId: Image cache ID or snapshot ID.
      */
-    public imageSnapshotId: string | undefined;
+    public imageSnapshotId: string | ros.IResolvable | undefined;
 
     /**
      * @Property initContainer: The containers that constitute the container group for initializing.
@@ -408,27 +420,27 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property instanceType: The type of the ECS instance.
      */
-    public instanceType: string | undefined;
+    public instanceType: string | ros.IResolvable | undefined;
 
     /**
      * @Property ipv6AddressCount: The number of IPv6 addresses.
      */
-    public ipv6AddressCount: number | undefined;
+    public ipv6AddressCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property memory: memory size
      */
-    public memory: number | undefined;
+    public memory: number | ros.IResolvable | undefined;
 
     /**
      * @Property ramRoleName: The RAM role that the container group assumes. ECI and ECS share the same RAM role.
      */
-    public ramRoleName: string | undefined;
+    public ramRoleName: string | ros.IResolvable | undefined;
 
     /**
      * @Property restartPolicy: The policy for restarting the instance. Default value: Always.
      */
-    public restartPolicy: string | undefined;
+    public restartPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityContextSysctl: ECI Sysctl is valid for every container in ECI.
@@ -446,7 +458,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property spotPriceLimit: Set the hourly maximum price of the instance. It supports a maximum of 3 decimal places. It takes effect when the value of the parameter SpotStrategy is SpotWithPriceLimit.
      */
-    public spotPriceLimit: number | undefined;
+    public spotPriceLimit: number | ros.IResolvable | undefined;
 
     /**
      * @Property spotStrategy: Instance preemption strategy.
@@ -455,7 +467,7 @@ export class RosContainerGroup extends ros.RosResource {
      * SpotWithPriceLimit: Preemptive instance that sets a cap price.
      * SpotAsPriceGo: The system automatically bids, following the current market actual price.
      */
-    public spotStrategy: string | undefined;
+    public spotStrategy: string | ros.IResolvable | undefined;
 
     /**
      * @Property tag: The list of container group tags in the form of key/value pairs. You can define a maximum of 20 tags for each container group.
@@ -465,7 +477,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property terminationGracePeriodSeconds: The buffer time for the program to handle operations before it is stopped.
      */
-    public terminationGracePeriodSeconds: number | undefined;
+    public terminationGracePeriodSeconds: number | ros.IResolvable | undefined;
 
     /**
      * @Property volume: The data volume. You can specify a maximum of 20 data volumes.
@@ -475,7 +487,7 @@ export class RosContainerGroup extends ros.RosResource {
     /**
      * @Property zoneId: The ID of the zone in which the instance resides. If you leave the parameter blank, the system assigns a zone for you. The default value is blank.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ECI::ContainerGroup`.
@@ -486,22 +498,23 @@ export class RosContainerGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosContainerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosContainerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrContainerGroupId = ros.Token.asString(this.getAtt('ContainerGroupId'));
-        this.attrContainerGroupName = ros.Token.asString(this.getAtt('ContainerGroupName'));
-        this.attrEniInstanceId = ros.Token.asString(this.getAtt('EniInstanceId'));
-        this.attrInternetIp = ros.Token.asString(this.getAtt('InternetIp'));
-        this.attrIntranetIp = ros.Token.asString(this.getAtt('IntranetIp'));
-        this.attrIpv6Address = ros.Token.asString(this.getAtt('Ipv6Address'));
-        this.attrRegionId = ros.Token.asString(this.getAtt('RegionId'));
-        this.attrSecurityGroupId = ros.Token.asString(this.getAtt('SecurityGroupId'));
-        this.attrVSwitchId = ros.Token.asString(this.getAtt('VSwitchId'));
-        this.attrZoneId = ros.Token.asString(this.getAtt('ZoneId'));
+        this.attrContainerGroupId = this.getAtt('ContainerGroupId');
+        this.attrContainerGroupName = this.getAtt('ContainerGroupName');
+        this.attrEniInstanceId = this.getAtt('EniInstanceId');
+        this.attrInternetIp = this.getAtt('InternetIp');
+        this.attrIntranetIp = this.getAtt('IntranetIp');
+        this.attrIpv6Address = this.getAtt('Ipv6Address');
+        this.attrRegionId = this.getAtt('RegionId');
+        this.attrSecurityGroupId = this.getAtt('SecurityGroupId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrZoneId = this.getAtt('ZoneId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.container = props.container;
         this.containerGroupName = props.containerGroupName;
         this.securityGroupId = props.securityGroupId;
         this.vSwitchId = props.vSwitchId;
+        this.acrRegistryInfo = props.acrRegistryInfo;
         this.activeDeadlineSeconds = props.activeDeadlineSeconds;
         this.autoMatchImageCache = props.autoMatchImageCache;
         this.cpu = props.cpu;
@@ -533,6 +546,7 @@ export class RosContainerGroup extends ros.RosResource {
             containerGroupName: this.containerGroupName,
             securityGroupId: this.securityGroupId,
             vSwitchId: this.vSwitchId,
+            acrRegistryInfo: this.acrRegistryInfo,
             activeDeadlineSeconds: this.activeDeadlineSeconds,
             autoMatchImageCache: this.autoMatchImageCache,
             cpu: this.cpu,
@@ -566,15 +580,75 @@ export namespace RosContainerGroup {
     /**
      * @stability external
      */
+    export interface AcrRegistryInfoProperty {
+        /**
+         * @Property instanceName: instance name
+         */
+        readonly instanceName?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: Instance id
+         */
+        readonly instanceId: string | ros.IResolvable;
+        /**
+         * @Property regionId: The region to which it belongs. Optional, the default is the local region
+         */
+        readonly regionId?: string | ros.IResolvable;
+        /**
+         * @Property domain: domain
+         */
+        readonly domain?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AcrRegistryInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosContainerGroup_AcrRegistryInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
+    errors.collect(ros.propertyValidator('domain', ros.listValidator(ros.validateString))(properties.domain));
+    return errors.wrap('supplied properties not correct for "AcrRegistryInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.AcrRegistryInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `AcrRegistryInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ECI::ContainerGroup.AcrRegistryInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosContainerGroupAcrRegistryInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosContainerGroup_AcrRegistryInfoPropertyValidator(properties).assertSuccess();
+    return {
+      InstanceName: ros.stringToRosTemplate(properties.instanceName),
+      InstanceId: ros.stringToRosTemplate(properties.instanceId),
+      RegionId: ros.stringToRosTemplate(properties.regionId),
+      Domain: ros.listMapper(ros.stringToRosTemplate)(properties.domain),
+    };
+}
+
+export namespace RosContainerGroup {
+    /**
+     * @stability external
+     */
     export interface ConfigFileVolumeConfigFileToPathProperty {
         /**
          * @Property path: The relative path in the configuration file. You can specify a location of a directory relative to another directory.
          */
-        readonly path: string;
+        readonly path: string | ros.IResolvable;
         /**
          * @Property content: The content of the configuration file. Maximum size: 32 KB.
          */
-        readonly content?: string;
+        readonly content?: string | ros.IResolvable;
     }
 }
 /**
@@ -626,7 +700,7 @@ export namespace RosContainerGroup {
         /**
          * @Property memory: The memory assigned to the container. Unit: GiB.
          */
-        readonly memory?: number;
+        readonly memory?: number | ros.IResolvable;
         /**
          * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
          */
@@ -634,11 +708,11 @@ export namespace RosContainerGroup {
         /**
          * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
          */
-        readonly cpu?: number;
+        readonly cpu?: number | ros.IResolvable;
         /**
          * @Property image: The container image.
          */
-        readonly image: string;
+        readonly image: string | ros.IResolvable;
         /**
          * @Property stdinOnce: undefined
          */
@@ -646,7 +720,7 @@ export namespace RosContainerGroup {
         /**
          * @Property name: The name of the container.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
         /**
          * @Property stdin: undefined
          */
@@ -654,19 +728,19 @@ export namespace RosContainerGroup {
         /**
          * @Property workingDir: The working directory for the container.
          */
-        readonly workingDir?: string;
+        readonly workingDir?: string | ros.IResolvable;
         /**
          * @Property imagePullPolicy: The image pull policy. You can use it to pull the image from the image repository.
          */
-        readonly imagePullPolicy?: string;
+        readonly imagePullPolicy?: string | ros.IResolvable;
         /**
          * @Property command: The list of commands that you want to send to a container to run. You can specify a maximum of 1 commands. Maximum length per string: 256 characters.
          */
-        readonly command?: string[];
+        readonly command?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property arg: The arguments passed to the commands. A maximum of 10 arguments are supported.
          */
-        readonly arg?: string[];
+        readonly arg?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property tty: undefined
          */
@@ -792,11 +866,11 @@ export namespace RosContainerGroup {
         /**
          * @Property nameServer: The list of IP addresses for DNS servers.
          */
-        readonly nameServer?: string[];
+        readonly nameServer?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property search: The list of DNS search domains.
          */
-        readonly search?: string[];
+        readonly search?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property option: The list of options. Each option includes a name and a value. The value is optional.
          */
@@ -845,15 +919,15 @@ export namespace RosContainerGroup {
         /**
          * @Property value: The value of the variable.
          */
-        readonly value?: string;
+        readonly value?: string | ros.IResolvable;
         /**
          * @Property key: The name of the variable. The name must be [1,128] characters in length and can contain [, 0-9a-zA-Z, ], and underscores (_). It cannot start with a digit.
          */
-        readonly key?: string;
+        readonly key?: string | ros.IResolvable;
         /**
          * @Property fieldRefFieldPath: A reference to another variable. Currently, only status.podIP is supported.
          */
-        readonly fieldRefFieldPath?: string;
+        readonly fieldRefFieldPath?: string | ros.IResolvable;
     }
 }
 /**
@@ -918,11 +992,11 @@ export namespace RosContainerGroup {
         /**
          * @Property ip: undefined
          */
-        readonly ip?: string;
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property hostname: undefined
          */
-        readonly hostname?: string[];
+        readonly hostname?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -965,15 +1039,15 @@ export namespace RosContainerGroup {
         /**
          * @Property userName: The username that is used to log on to the image repository.
          */
-        readonly userName: string;
+        readonly userName: string | ros.IResolvable;
         /**
          * @Property server: The IP address of the image repository. This address does not include a protocol prefix, such as http:// or https://.
          */
-        readonly server: string;
+        readonly server: string | ros.IResolvable;
         /**
          * @Property password: The password that is used to log on to the image repository.
          */
-        readonly password: string;
+        readonly password: string | ros.IResolvable;
     }
 }
 /**
@@ -1021,23 +1095,23 @@ export namespace RosContainerGroup {
         /**
          * @Property workingDir: The working directory for the container.
          */
-        readonly workingDir?: string;
+        readonly workingDir?: string | ros.IResolvable;
         /**
          * @Property imagePullPolicy: The image pull policy. You can use it to pull the image from the image repository.
          */
-        readonly imagePullPolicy?: string;
+        readonly imagePullPolicy?: string | ros.IResolvable;
         /**
          * @Property command: The list of commands that you want to send to a container to run. You can specify a maximum of 1 commands. Maximum length per string: 256 characters.
          */
-        readonly command?: string[];
+        readonly command?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property memory: The memory assigned to the container. Unit: GiB.
          */
-        readonly memory?: number;
+        readonly memory?: number | ros.IResolvable;
         /**
          * @Property arg: The arguments passed to the commands. A maximum of 10 arguments are supported.
          */
-        readonly arg?: string[];
+        readonly arg?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
          */
@@ -1049,7 +1123,7 @@ export namespace RosContainerGroup {
         /**
          * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
          */
-        readonly cpu?: number;
+        readonly cpu?: number | ros.IResolvable;
         /**
          * @Property volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
          */
@@ -1057,7 +1131,7 @@ export namespace RosContainerGroup {
         /**
          * @Property image: The container image.
          */
-        readonly image?: string;
+        readonly image?: string | ros.IResolvable;
         /**
          * @Property environmentVar: Environment variables in the operating system of the container. Each environment variable is a key/value pair, and both the key and value are strings. A maximum of 100 environment variables are supported. The key indicates the name of a variable. The value indicates the value of the variable.
          */
@@ -1065,7 +1139,7 @@ export namespace RosContainerGroup {
         /**
          * @Property name: The name of the container.
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -1163,43 +1237,43 @@ export namespace RosContainerGroup {
         /**
          * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
          */
-        readonly timeoutSeconds?: number;
+        readonly timeoutSeconds?: number | ros.IResolvable;
         /**
          * @Property initialDelaySeconds: The number of seconds after the container has started before probes are initiated.
          */
-        readonly initialDelaySeconds?: number;
+        readonly initialDelaySeconds?: number | ros.IResolvable;
         /**
          * @Property periodSeconds: Specifies the period at which the probe is performed. Unit: seconds. Default value: 10. Minimum value: 1.
          */
-        readonly periodSeconds?: number;
+        readonly periodSeconds?: number | ros.IResolvable;
         /**
          * @Property failureThreshold: The minimum consecutive failures for the probe to be considered to have failed after having succeeded. Default value: 3.
          */
-        readonly failureThreshold?: number;
+        readonly failureThreshold?: number | ros.IResolvable;
         /**
          * @Property successThreshold: The minimum consecutive successes for the probe to be considered successful after having failed. Default value: 1.
          */
-        readonly successThreshold?: number;
+        readonly successThreshold?: number | ros.IResolvable;
         /**
          * @Property execCommand: The commands for running the readiness probe.
          */
-        readonly execCommand?: string[];
+        readonly execCommand?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property httpGetPort: The port to which the system sends an HTTP GET request to perform the check.
          */
-        readonly httpGetPort?: number;
+        readonly httpGetPort?: number | ros.IResolvable;
         /**
          * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
          */
-        readonly tcpSocketPort?: number;
+        readonly tcpSocketPort?: number | ros.IResolvable;
         /**
          * @Property httpGetScheme: The protocol that is used to connect the host. Valid values: HTTP and HTTPS.
          */
-        readonly httpGetScheme?: string;
+        readonly httpGetScheme?: string | ros.IResolvable;
         /**
          * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
          */
-        readonly httpGetPath?: string;
+        readonly httpGetPath?: string | ros.IResolvable;
     }
 }
 /**
@@ -1278,11 +1352,11 @@ export namespace RosContainerGroup {
         /**
          * @Property value: The value of the option.
          */
-        readonly value?: string;
+        readonly value?: string | ros.IResolvable;
         /**
          * @Property name: The name of the option.
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -1325,11 +1399,11 @@ export namespace RosContainerGroup {
         /**
          * @Property port: The port number. Valid values: 1-65535.
          */
-        readonly port?: number;
+        readonly port?: number | ros.IResolvable;
         /**
          * @Property protocol: The protocol that the port uses. Valid values: TCP and UDP
          */
-        readonly protocol?: string;
+        readonly protocol?: string | ros.IResolvable;
     }
 }
 /**
@@ -1385,43 +1459,43 @@ export namespace RosContainerGroup {
         /**
          * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
          */
-        readonly timeoutSeconds?: number;
+        readonly timeoutSeconds?: number | ros.IResolvable;
         /**
          * @Property initialDelaySeconds: The number of seconds after the container has started before probes are initiated.
          */
-        readonly initialDelaySeconds?: number;
+        readonly initialDelaySeconds?: number | ros.IResolvable;
         /**
          * @Property periodSeconds: Specifies the period at which the probe is performed. Unit: seconds. Default value: 10. Minimum value: 1.
          */
-        readonly periodSeconds?: number;
+        readonly periodSeconds?: number | ros.IResolvable;
         /**
          * @Property failureThreshold: The minimum consecutive failures for the probe to be considered to have failed after having succeeded. Default value: 3.
          */
-        readonly failureThreshold?: number;
+        readonly failureThreshold?: number | ros.IResolvable;
         /**
          * @Property successThreshold: The minimum consecutive successes for the probe to be considered successful after having failed. Default value: 1.
          */
-        readonly successThreshold?: number;
+        readonly successThreshold?: number | ros.IResolvable;
         /**
          * @Property execCommand: The commands for running the readiness probe.
          */
-        readonly execCommand?: string[];
+        readonly execCommand?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property httpGetPort: The port to which the system sends an HTTP GET request to perform the check.
          */
-        readonly httpGetPort?: number;
+        readonly httpGetPort?: number | ros.IResolvable;
         /**
          * @Property tcpSocketPort: The port to which the system sends a TCP SOCKET request to perform the check.
          */
-        readonly tcpSocketPort?: number;
+        readonly tcpSocketPort?: number | ros.IResolvable;
         /**
          * @Property httpGetScheme: The protocol that is used to connect the host. Valid values: HTTP and HTTPS.
          */
-        readonly httpGetScheme?: string;
+        readonly httpGetScheme?: string | ros.IResolvable;
         /**
          * @Property httpGetPath: The path to which the system sends an HTTP GET request to perform the check.
          */
-        readonly httpGetPath?: string;
+        readonly httpGetPath?: string | ros.IResolvable;
     }
 }
 /**
@@ -1500,7 +1574,7 @@ export namespace RosContainerGroup {
         /**
          * @Property runAsUser: User ID.
          */
-        readonly runAsUser?: number;
+        readonly runAsUser?: number | ros.IResolvable;
         /**
          * @Property readOnlyRootFilesystem: Valid value: True.
          */
@@ -1508,7 +1582,7 @@ export namespace RosContainerGroup {
         /**
          * @Property capabilityAdd: undefined
          */
-        readonly capabilityAdd?: string[];
+        readonly capabilityAdd?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -1559,11 +1633,11 @@ export namespace RosContainerGroup {
         /**
          * @Property value: undefined
          */
-        readonly value?: string;
+        readonly value?: string | ros.IResolvable;
         /**
          * @Property name: undefined
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -1612,11 +1686,11 @@ export namespace RosContainerGroup {
         /**
          * @Property value: The value of the tag.
          */
-        readonly value?: string;
+        readonly value?: string | ros.IResolvable;
         /**
          * @Property key: The keyword of the tag.
          */
-        readonly key: string;
+        readonly key: string | ros.IResolvable;
     }
 }
 /**
@@ -1660,15 +1734,15 @@ export namespace RosContainerGroup {
         /**
          * @Property type: The type of volume. Valid values: EmptyDirVolume, NFSVolume, and ConfigFileVolume.
          */
-        readonly type: string;
+        readonly type: string | ros.IResolvable;
         /**
          * @Property name: The name of the volume.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
         /**
          * @Property nfsVolumeServer: The IP address of the NFS server.
          */
-        readonly nfsVolumeServer?: string;
+        readonly nfsVolumeServer?: string | ros.IResolvable;
         /**
          * @Property nfsVolumeReadOnly: Default value: False.
          */
@@ -1680,11 +1754,11 @@ export namespace RosContainerGroup {
         /**
          * @Property nfsVolumePath: The path to the NFS volume.
          */
-        readonly nfsVolumePath?: string;
+        readonly nfsVolumePath?: string | ros.IResolvable;
         /**
          * @Property emptyDirVolumeMedium: The storage medium for EmptyDirVolume. By default, the file system on the node is used. Default value: not specified. Valid value: Memory. If this parameter is set to Memory, the EmptyDirVolume volume is stored in memory.
          */
-        readonly emptyDirVolumeMedium?: string;
+        readonly emptyDirVolumeMedium?: string | ros.IResolvable;
     }
 }
 /**
@@ -1755,11 +1829,11 @@ export namespace RosContainerGroup {
         /**
          * @Property mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
          */
-        readonly mountPath?: string;
+        readonly mountPath?: string | ros.IResolvable;
         /**
          * @Property name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
          */
-        readonly name?: string;
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -1804,37 +1878,37 @@ export interface RosImageCacheProps {
     /**
      * @Property image: The image list to be cached.
      */
-    readonly image: string[];
+    readonly image: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property imageCacheName: Image cache name.
      */
-    readonly imageCacheName: string;
+    readonly imageCacheName: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Security group ID.
      */
-    readonly securityGroupId: string;
+    readonly securityGroupId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
-    readonly eipInstanceId?: string;
+    readonly eipInstanceId?: string | ros.IResolvable;
 
     /**
      * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
      */
-    readonly imageRegistryCredential?: string[];
+    readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -1916,7 +1990,7 @@ export class RosImageCache extends ros.RosResource {
     /**
      * @Attribute ImageCacheId: The ID of the image cache.
      */
-    public readonly attrImageCacheId: any;
+    public readonly attrImageCacheId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1924,37 +1998,37 @@ export class RosImageCache extends ros.RosResource {
     /**
      * @Property image: The image list to be cached.
      */
-    public image: string[];
+    public image: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property imageCacheName: Image cache name.
      */
-    public imageCacheName: string;
+    public imageCacheName: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Security group ID.
      */
-    public securityGroupId: string;
+    public securityGroupId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: VSwitch ID.
      */
-    public vSwitchId: string;
+    public vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property eipInstanceId: If you want to pull the public network image, you need to configure the public network ip or configure the switch NAT gateway.
      */
-    public eipInstanceId: string | undefined;
+    public eipInstanceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
      */
-    public imageRegistryCredential: string[] | undefined;
+    public imageRegistryCredential: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ECI::ImageCache`.
@@ -1965,7 +2039,7 @@ export class RosImageCache extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosImageCacheProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosImageCache.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrImageCacheId = ros.Token.asString(this.getAtt('ImageCacheId'));
+        this.attrImageCacheId = this.getAtt('ImageCacheId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.image = props.image;

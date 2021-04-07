@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Attribute PeerVpnConnectionConfig: Peer vpc connection config.</summary>
-        [JsiiProperty(name: "attrPeerVpnConnectionConfig", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrPeerVpnConnectionConfig
+        [JsiiProperty(name: "attrPeerVpnConnectionConfig", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrPeerVpnConnectionConfig
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Status: Status of the IPsec connection.</summary>
-        [JsiiProperty(name: "attrStatus", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStatus
+        [JsiiProperty(name: "attrStatus", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStatus
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute VpnConnectionId: ID of the IPsec connection.</summary>
-        [JsiiProperty(name: "attrVpnConnectionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpnConnectionId
+        [JsiiProperty(name: "attrVpnConnectionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpnConnectionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

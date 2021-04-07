@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <summary>Attribute NamespaceId: Namespace ID.</summary>
-        [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNamespaceId
+        [JsiiProperty(name: "attrNamespaceId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNamespaceId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

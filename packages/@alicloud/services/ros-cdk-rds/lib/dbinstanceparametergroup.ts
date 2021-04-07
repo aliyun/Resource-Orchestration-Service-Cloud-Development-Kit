@@ -11,7 +11,7 @@ export interface DBInstanceParameterGroupProps {
     /**
      * Property dbInstanceId: Database InstanceId to update properties.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property parameters: Parameters to update for selected database instance.
@@ -21,7 +21,7 @@ export interface DBInstanceParameterGroupProps {
     /**
      * Property forcerestart: whether restart database instance.
      */
-    readonly forcerestart?: string;
+    readonly forcerestart?: string | ros.IResolvable;
 }
 
 /**

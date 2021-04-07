@@ -3,44 +3,93 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Properties for defining a `ALIYUN::POLARDB::Account`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property accountName: The name of the database account.
+     * <p>
+     * The name must comply with the following rules:
+     * <p>
+     * <ul>
+     * <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
+     * <li>It can be up to 16 characters in length.</li>
+     * </ul>
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
 
     /**
+     * Property accountPassword: The password of the database account.
+     * <p>
+     * The password must comply with the following rules:
+     * <p>
+     * <ul>
+     * <li>It must consist of uppercase letters, lowercase letters, digits, and special characters.</li>
+     * <li>Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).</li>
+     * <li>It must be 8 to 32 characters in length.</li>
+     * </ul>
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getAccountPassword();
+    @org.jetbrains.annotations.NotNull java.lang.Object getAccountPassword();
 
     /**
+     * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDbClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
+     * Property accountDescription: The description of the database account.
+     * <p>
+     * The description must comply with the following rules:
+     * <p>
+     * <ul>
+     * <li>It cannot start with http:// or https://.</li>
+     * <li>It must be 2 to 256 characters in length.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountDescription() {
         return null;
     }
 
     /**
+     * Property accountPrivilege: The permissions of the database account on the database.
+     * <p>
+     * Valid values:
+     * ReadWrite: has read and write permissions on the database.
+     * ReadOnly: has the read-only permission on the database.
+     * DMLOnly: runs only data manipulation language (DML) statements.
+     * DDLOnly: runs only data definition language (DDL) statements.
+     * Default value: ReadWrite.
+     * Separate multiple permissions with a comma (,).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountPrivilege() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
         return null;
     }
 
     /**
+     * Property accountType: The type of the database account.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Normal: standard account</li>
+     * <li>Super: privileged account
+     * Default value: Super.
+     * Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
+     * You can create only one privileged account for an ApsaraDB for POLARDB cluster.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getAccountType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccountType() {
         return null;
     }
 
     /**
+     * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+     * <p>
+     * Separate multiple databases with a comma (,).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDbName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbName() {
         return null;
     }
 
@@ -54,17 +103,23 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link AccountProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<AccountProps> {
-        private java.lang.String accountName;
-        private java.lang.String accountPassword;
-        private java.lang.String dbClusterId;
-        private java.lang.String accountDescription;
-        private java.lang.String accountPrivilege;
-        private java.lang.String accountType;
-        private java.lang.String dbName;
+        private java.lang.Object accountName;
+        private java.lang.Object accountPassword;
+        private java.lang.Object dbClusterId;
+        private java.lang.Object accountDescription;
+        private java.lang.Object accountPrivilege;
+        private java.lang.Object accountType;
+        private java.lang.Object dbName;
 
         /**
          * Sets the value of {@link AccountProps#getAccountName}
-         * @param accountName the value to be set. This parameter is required.
+         * @param accountName Property accountName: The name of the database account. This parameter is required.
+         *                    The name must comply with the following rules:
+         *                    <p>
+         *                    <ul>
+         *                    <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
+         *                    <li>It can be up to 16 characters in length.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
@@ -73,8 +128,31 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getAccountName}
+         * @param accountName Property accountName: The name of the database account. This parameter is required.
+         *                    The name must comply with the following rules:
+         *                    <p>
+         *                    <ul>
+         *                    <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
+         *                    <li>It can be up to 16 characters in length.</li>
+         *                    </ul>
+         * @return {@code this}
+         */
+        public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
+            this.accountName = accountName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getAccountPassword}
-         * @param accountPassword the value to be set. This parameter is required.
+         * @param accountPassword Property accountPassword: The password of the database account. This parameter is required.
+         *                        The password must comply with the following rules:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must consist of uppercase letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accountPassword(java.lang.String accountPassword) {
@@ -83,8 +161,25 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getAccountPassword}
+         * @param accountPassword Property accountPassword: The password of the database account. This parameter is required.
+         *                        The password must comply with the following rules:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must consist of uppercase letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include exclamation points (!), number signs (#), dollar signs ($), percent signs (%), carets (^), ampersands (&amp;), asterisks (*), parentheses (()), underscores (_), plus signs (+), hyphens (-), and equal signs (=).</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {
+            this.accountPassword = accountPassword;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getDbClusterId}
-         * @param dbClusterId the value to be set. This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created. This parameter is required.
          * @return {@code this}
          */
         public Builder dbClusterId(java.lang.String dbClusterId) {
@@ -93,8 +188,24 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getDbClusterId}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database account is to be created. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder dbClusterId(com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.dbClusterId = dbClusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getAccountDescription}
-         * @param accountDescription the value to be set.
+         * @param accountDescription Property accountDescription: The description of the database account.
+         *                           The description must comply with the following rules:
+         *                           <p>
+         *                           <ul>
+         *                           <li>It cannot start with http:// or https://.</li>
+         *                           <li>It must be 2 to 256 characters in length.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder accountDescription(java.lang.String accountDescription) {
@@ -103,8 +214,31 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getAccountDescription}
+         * @param accountDescription Property accountDescription: The description of the database account.
+         *                           The description must comply with the following rules:
+         *                           <p>
+         *                           <ul>
+         *                           <li>It cannot start with http:// or https://.</li>
+         *                           <li>It must be 2 to 256 characters in length.</li>
+         *                           </ul>
+         * @return {@code this}
+         */
+        public Builder accountDescription(com.aliyun.ros.cdk.core.IResolvable accountDescription) {
+            this.accountDescription = accountDescription;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getAccountPrivilege}
-         * @param accountPrivilege the value to be set.
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         *                         Valid values:
+         *                         ReadWrite: has read and write permissions on the database.
+         *                         ReadOnly: has the read-only permission on the database.
+         *                         DMLOnly: runs only data manipulation language (DML) statements.
+         *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         Default value: ReadWrite.
+         *                         Separate multiple permissions with a comma (,).
          * @return {@code this}
          */
         public Builder accountPrivilege(java.lang.String accountPrivilege) {
@@ -113,8 +247,34 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getAccountPrivilege}
+         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         *                         Valid values:
+         *                         ReadWrite: has read and write permissions on the database.
+         *                         ReadOnly: has the read-only permission on the database.
+         *                         DMLOnly: runs only data manipulation language (DML) statements.
+         *                         DDLOnly: runs only data definition language (DDL) statements.
+         *                         Default value: ReadWrite.
+         *                         Separate multiple permissions with a comma (,).
+         * @return {@code this}
+         */
+        public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
+            this.accountPrivilege = accountPrivilege;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getAccountType}
-         * @param accountType the value to be set.
+         * @param accountType Property accountType: The type of the database account.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Normal: standard account</li>
+         *                    <li>Super: privileged account
+         *                    Default value: Super.
+         *                    Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
+         *                    You can create only one privileged account for an ApsaraDB for POLARDB cluster.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder accountType(java.lang.String accountType) {
@@ -123,11 +283,42 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link AccountProps#getAccountType}
+         * @param accountType Property accountType: The type of the database account.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Normal: standard account</li>
+         *                    <li>Super: privileged account
+         *                    Default value: Super.
+         *                    Currently, POLARDB for PostgreSQL and POLARDB compatible with Oracle do not support standard accounts.
+         *                    You can create only one privileged account for an ApsaraDB for POLARDB cluster.</li>
+         *                    </ul>
+         * @return {@code this}
+         */
+        public Builder accountType(com.aliyun.ros.cdk.core.IResolvable accountType) {
+            this.accountType = accountType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link AccountProps#getDbName}
-         * @param dbName the value to be set.
+         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         *               Separate multiple databases with a comma (,).
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
+            this.dbName = dbName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AccountProps#getDbName}
+         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         *               Separate multiple databases with a comma (,).
+         * @return {@code this}
+         */
+        public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.dbName = dbName;
             return this;
         }
@@ -148,13 +339,13 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccountProps {
-        private final java.lang.String accountName;
-        private final java.lang.String accountPassword;
-        private final java.lang.String dbClusterId;
-        private final java.lang.String accountDescription;
-        private final java.lang.String accountPrivilege;
-        private final java.lang.String accountType;
-        private final java.lang.String dbName;
+        private final java.lang.Object accountName;
+        private final java.lang.Object accountPassword;
+        private final java.lang.Object dbClusterId;
+        private final java.lang.Object accountDescription;
+        private final java.lang.Object accountPrivilege;
+        private final java.lang.Object accountType;
+        private final java.lang.Object dbName;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -162,19 +353,19 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountDescription = software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.accountName = software.amazon.jsii.Kernel.get(this, "accountName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbClusterId = software.amazon.jsii.Kernel.get(this, "dbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountDescription = software.amazon.jsii.Kernel.get(this, "accountDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountPrivilege = software.amazon.jsii.Kernel.get(this, "accountPrivilege", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accountType = software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbName = software.amazon.jsii.Kernel.get(this, "dbName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String accountName, final java.lang.String accountPassword, final java.lang.String dbClusterId, final java.lang.String accountDescription, final java.lang.String accountPrivilege, final java.lang.String accountType, final java.lang.String dbName) {
+        protected Jsii$Proxy(final java.lang.Object accountName, final java.lang.Object accountPassword, final java.lang.Object dbClusterId, final java.lang.Object accountDescription, final java.lang.Object accountPrivilege, final java.lang.Object accountType, final java.lang.Object dbName) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.accountName = java.util.Objects.requireNonNull(accountName, "accountName is required");
             this.accountPassword = java.util.Objects.requireNonNull(accountPassword, "accountPassword is required");
@@ -186,37 +377,37 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getAccountName() {
+        public final java.lang.Object getAccountName() {
             return this.accountName;
         }
 
         @Override
-        public final java.lang.String getAccountPassword() {
+        public final java.lang.Object getAccountPassword() {
             return this.accountPassword;
         }
 
         @Override
-        public final java.lang.String getDbClusterId() {
+        public final java.lang.Object getDbClusterId() {
             return this.dbClusterId;
         }
 
         @Override
-        public final java.lang.String getAccountDescription() {
+        public final java.lang.Object getAccountDescription() {
             return this.accountDescription;
         }
 
         @Override
-        public final java.lang.String getAccountPrivilege() {
+        public final java.lang.Object getAccountPrivilege() {
             return this.accountPrivilege;
         }
 
         @Override
-        public final java.lang.String getAccountType() {
+        public final java.lang.Object getAccountType() {
             return this.accountType;
         }
 
         @Override
-        public final java.lang.String getDbName() {
+        public final java.lang.Object getDbName() {
             return this.dbName;
         }
 

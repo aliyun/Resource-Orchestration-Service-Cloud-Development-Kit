@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * A ROS resource type:  `ALIYUN::RAM::UserToGroupAddition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.879Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.UserToGroupAddition")
 public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::UserToGroupAddition`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public UserToGroupAddition(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.UserToGroupAdditionProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RAM::UserToGroupAddition`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public UserToGroupAddition(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.ram.UserToGroupAdditionProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -46,8 +54,8 @@ public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ram.UserToGroupAddition> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -55,8 +63,8 @@ public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -75,25 +83,41 @@ public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property groupName: Specifies the group name, containing up to 64 characters.
+         * <p>
          * @return {@code this}
-         * @param groupName This parameter is required.
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
          */
         public Builder groupName(final java.lang.String groupName) {
             this.props.groupName(groupName);
             return this;
         }
+        /**
+         * Property groupName: Specifies the group name, containing up to 64 characters.
+         * <p>
+         * @return {@code this}
+         * @param groupName Property groupName: Specifies the group name, containing up to 64 characters. This parameter is required.
+         */
+        public Builder groupName(final com.aliyun.ros.cdk.core.IResolvable groupName) {
+            this.props.groupName(groupName);
+            return this;
+        }
 
         /**
+         * Property users: list name of a users to which you want to add the group.
+         * <p>
          * @return {@code this}
-         * @param users This parameter is required.
+         * @param users Property users: list name of a users to which you want to add the group. This parameter is required.
          */
         public Builder users(final java.util.List<? extends java.lang.Object> users) {
             this.props.users(users);
             return this;
         }
         /**
+         * Property users: list name of a users to which you want to add the group.
+         * <p>
          * @return {@code this}
-         * @param users This parameter is required.
+         * @param users Property users: list name of a users to which you want to add the group. This parameter is required.
          */
         public Builder users(final com.aliyun.ros.cdk.core.IResolvable users) {
             this.props.users(users);

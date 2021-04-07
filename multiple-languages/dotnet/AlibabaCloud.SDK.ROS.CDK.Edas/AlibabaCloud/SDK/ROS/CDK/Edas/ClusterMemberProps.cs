@@ -11,24 +11,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edas
     public class ClusterMemberProps : AlibabaCloud.SDK.ROS.CDK.Edas.IClusterMemberProps
     {
         /// <summary>Property clusterId: Cluster ID to import ECS instance.</summary>
-        [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ClusterId
+        [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ClusterId
         {
             get;
             set;
         }
 
         /// <summary>Property instanceIds: ECS instance ID list to import.</summary>
-        [JsiiProperty(name: "instanceIds", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] InstanceIds
+        [JsiiProperty(name: "instanceIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object InstanceIds
         {
             get;
             set;
         }
 
         /// <summary>Property password: Password ECS hosts need to import (ECS settings can continue to use purchased).</summary>
-        [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Password
+        [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Password
         {
             get;
             set;

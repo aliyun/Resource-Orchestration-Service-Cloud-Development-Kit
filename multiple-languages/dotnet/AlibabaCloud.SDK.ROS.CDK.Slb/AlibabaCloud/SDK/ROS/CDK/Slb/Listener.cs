@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Attribute ListenerPortsAndProtocol: The collection of listener.</summary>
-        [JsiiProperty(name: "attrListenerPortsAndProtocol", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerPortsAndProtocol
+        [JsiiProperty(name: "attrListenerPortsAndProtocol", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerPortsAndProtocol
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LoadBalancerId: The id of load balancer.</summary>
-        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLoadBalancerId
+        [JsiiProperty(name: "attrLoadBalancerId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLoadBalancerId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

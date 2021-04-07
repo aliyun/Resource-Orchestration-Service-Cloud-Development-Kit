@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * A ROS resource type:  `ALIYUN::RDS::DBInstanceClone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.DBInstanceClone")
 public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceClone`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBInstanceClone(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceCloneProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::RDS::DBInstanceClone`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBInstanceClone(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.rds.DBInstanceCloneProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,45 +49,52 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DBInstanceId: The instance id of created database instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InnerConnectionString: DB instance connection url by Intranet.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInnerConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrInnerConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInnerConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrInnerConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InnerIPAddress: IP Address for created DB instance of Intranet.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInnerIpAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrInnerIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInnerIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrInnerIpAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute InnerPort: Intranet port of created DB instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInnerPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrInnerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInnerPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrInnerPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PublicConnectionString: DB instance connection url by Internet.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicConnectionString() {
-        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionString", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicConnectionString() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicConnectionString", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PublicIPAddress: IP Address for created DB instance of Internet.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicIpAddress() {
-        return software.amazon.jsii.Kernel.get(this, "attrPublicIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicIpAddress", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute PublicPort: Internet port of created DB instance.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrPublicPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPublicPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPublicPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -88,8 +103,8 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.rds.DBInstanceClone> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -97,8 +112,8 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -117,43 +132,62 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbInstanceId: Instance id.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceId This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Instance id. This parameter is required.
          */
         public Builder dbInstanceId(final java.lang.String dbInstanceId) {
             this.props.dbInstanceId(dbInstanceId);
             return this;
         }
-
         /**
+         * Property dbInstanceId: Instance id.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceStorage This parameter is required.
+         * @param dbInstanceId Property dbInstanceId: Instance id. This parameter is required.
          */
-        public Builder dbInstanceStorage(final java.lang.Number dbInstanceStorage) {
-            this.props.dbInstanceStorage(dbInstanceStorage);
+        public Builder dbInstanceId(final com.aliyun.ros.cdk.core.IResolvable dbInstanceId) {
+            this.props.dbInstanceId(dbInstanceId);
             return this;
         }
 
         /**
+         * Property payType: The charge type of created instance.
+         * <p>
          * @return {@code this}
-         * @param payType This parameter is required.
+         * @param payType Property payType: The charge type of created instance. This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
             this.props.payType(payType);
             return this;
         }
+        /**
+         * Property payType: The charge type of created instance.
+         * <p>
+         * @return {@code this}
+         * @param payType Property payType: The charge type of created instance. This parameter is required.
+         */
+        public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
+            this.props.payType(payType);
+            return this;
+        }
 
         /**
+         * Property allocatePublicConnection: If true, allocate public connection automate.
+         * <p>
          * @return {@code this}
-         * @param allocatePublicConnection This parameter is required.
+         * @param allocatePublicConnection Property allocatePublicConnection: If true, allocate public connection automate. This parameter is required.
          */
         public Builder allocatePublicConnection(final java.lang.Boolean allocatePublicConnection) {
             this.props.allocatePublicConnection(allocatePublicConnection);
             return this;
         }
         /**
+         * Property allocatePublicConnection: If true, allocate public connection automate.
+         * <p>
          * @return {@code this}
-         * @param allocatePublicConnection This parameter is required.
+         * @param allocatePublicConnection Property allocatePublicConnection: If true, allocate public connection automate. This parameter is required.
          */
         public Builder allocatePublicConnection(final com.aliyun.ros.cdk.core.IResolvable allocatePublicConnection) {
             this.props.allocatePublicConnection(allocatePublicConnection);
@@ -161,97 +195,290 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property backupId: The ID of the backup set that you want to use.
+         * <p>
+         * You can call the DescribeBackups operation to query the most recent backup set list.
+         * Note You must specify at least one of the BackupId and RestoreTime parameters.
+         * <p>
          * @return {@code this}
-         * @param backupId This parameter is required.
+         * @param backupId Property backupId: The ID of the backup set that you want to use. This parameter is required.
          */
         public Builder backupId(final java.lang.String backupId) {
             this.props.backupId(backupId);
             return this;
         }
+        /**
+         * Property backupId: The ID of the backup set that you want to use.
+         * <p>
+         * You can call the DescribeBackups operation to query the most recent backup set list.
+         * Note You must specify at least one of the BackupId and RestoreTime parameters.
+         * <p>
+         * @return {@code this}
+         * @param backupId Property backupId: The ID of the backup set that you want to use. This parameter is required.
+         */
+        public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
 
         /**
+         * Property backupRetentionPeriod: The retention period of the data backup.
+         * <p>
+         * Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
+         * <p>
          * @return {@code this}
-         * @param backupRetentionPeriod This parameter is required.
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The retention period of the data backup. This parameter is required.
          */
         public Builder backupRetentionPeriod(final java.lang.Number backupRetentionPeriod) {
             this.props.backupRetentionPeriod(backupRetentionPeriod);
             return this;
         }
+        /**
+         * Property backupRetentionPeriod: The retention period of the data backup.
+         * <p>
+         * Value range: 7 to 730. The default value is the original value. Note When the BackupPolicyMode parameter is set to LogBackupPolicy, this parameter is required.
+         * <p>
+         * @return {@code this}
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The retention period of the data backup. This parameter is required.
+         */
+        public Builder backupRetentionPeriod(final com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
+            this.props.backupRetentionPeriod(backupRetentionPeriod);
+            return this;
+        }
 
         /**
+         * Property backupType: The type of backup used by the new instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FullBackup: full backup</li>
+         * <li>IncrementalBackup: incremental backup</li>
+         * </ul>
+         * <p>
          * @return {@code this}
-         * @param backupType This parameter is required.
+         * @param backupType Property backupType: The type of backup used by the new instance. This parameter is required.
          */
         public Builder backupType(final java.lang.String backupType) {
             this.props.backupType(backupType);
             return this;
         }
+        /**
+         * Property backupType: The type of backup used by the new instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FullBackup: full backup</li>
+         * <li>IncrementalBackup: incremental backup</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param backupType Property backupType: The type of backup used by the new instance. This parameter is required.
+         */
+        public Builder backupType(final com.aliyun.ros.cdk.core.IResolvable backupType) {
+            this.props.backupType(backupType);
+            return this;
+        }
 
         /**
+         * Property category: The edition of the instance.
+         * <p>
+         * Valid values:
+         * Basic: specifies to use the Basic Edition.
+         * HighAvailability: specifies to use the High-availability Edition.
+         * AlwaysOn: specifies to use the Cluster Edition.
+         * Finance: specifies to use the Enterprise Edition.
+         * <p>
          * @return {@code this}
-         * @param category This parameter is required.
+         * @param category Property category: The edition of the instance. This parameter is required.
          */
         public Builder category(final java.lang.String category) {
             this.props.category(category);
             return this;
         }
+        /**
+         * Property category: The edition of the instance.
+         * <p>
+         * Valid values:
+         * Basic: specifies to use the Basic Edition.
+         * HighAvailability: specifies to use the High-availability Edition.
+         * AlwaysOn: specifies to use the Cluster Edition.
+         * Finance: specifies to use the Enterprise Edition.
+         * <p>
+         * @return {@code this}
+         * @param category Property category: The edition of the instance. This parameter is required.
+         */
+        public Builder category(final com.aliyun.ros.cdk.core.IResolvable category) {
+            this.props.category(category);
+            return this;
+        }
 
         /**
+         * Property connectionStringPrefix: The prefix of the endpoint.
+         * <p>
+         * Only the prefix of the CurrentConnectionString parameter value can be modified.
+         * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
+         * <p>
          * @return {@code this}
-         * @param connectionStringPrefix This parameter is required.
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
          */
         public Builder connectionStringPrefix(final java.lang.String connectionStringPrefix) {
             this.props.connectionStringPrefix(connectionStringPrefix);
             return this;
         }
+        /**
+         * Property connectionStringPrefix: The prefix of the endpoint.
+         * <p>
+         * Only the prefix of the CurrentConnectionString parameter value can be modified.
+         * The prefix must be 8 to 64 characters in length and can contain letters, digits, and hyphens (-).
+         * <p>
+         * @return {@code this}
+         * @param connectionStringPrefix Property connectionStringPrefix: The prefix of the endpoint. This parameter is required.
+         */
+        public Builder connectionStringPrefix(final com.aliyun.ros.cdk.core.IResolvable connectionStringPrefix) {
+            this.props.connectionStringPrefix(connectionStringPrefix);
+            return this;
+        }
 
         /**
+         * Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public.
+         * <p>
          * @return {@code this}
-         * @param connectionStringType This parameter is required.
+         * @param connectionStringType Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public. This parameter is required.
          */
         public Builder connectionStringType(final java.lang.String connectionStringType) {
             this.props.connectionStringType(connectionStringType);
             return this;
         }
+        /**
+         * Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public.
+         * <p>
+         * @return {@code this}
+         * @param connectionStringType Property connectionStringType: The endpoint type of the instance, allow values: Inner, Public. This parameter is required.
+         */
+        public Builder connectionStringType(final com.aliyun.ros.cdk.core.IResolvable connectionStringType) {
+            this.props.connectionStringType(connectionStringType);
+            return this;
+        }
 
         /**
+         * Property dbInstanceClass: Database instance type.
+         * <p>
+         * Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
+         * <p>
          * @return {@code this}
-         * @param dbInstanceClass This parameter is required.
+         * @param dbInstanceClass Property dbInstanceClass: Database instance type. This parameter is required.
          */
         public Builder dbInstanceClass(final java.lang.String dbInstanceClass) {
             this.props.dbInstanceClass(dbInstanceClass);
             return this;
         }
+        /**
+         * Property dbInstanceClass: Database instance type.
+         * <p>
+         * Refer the RDS database instance type reference, such as 'rds.mys2.large', 'rds.mss1.large', 'rds.pg.s1.small' etc
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceClass Property dbInstanceClass: Database instance type. This parameter is required.
+         */
+        public Builder dbInstanceClass(final com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
+            this.props.dbInstanceClass(dbInstanceClass);
+            return this;
+        }
 
         /**
+         * Property dbInstanceDescription: Description of created database instance.
+         * <p>
          * @return {@code this}
-         * @param dbInstanceDescription This parameter is required.
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
          */
         public Builder dbInstanceDescription(final java.lang.String dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
             return this;
         }
+        /**
+         * Property dbInstanceDescription: Description of created database instance.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
+         */
+        public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
+            this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
 
         /**
+         * Property dbInstanceStorage: Database instance storage size.
+         * <p>
+         * mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * <p>
          * @return {@code this}
-         * @param dbInstanceStorageType This parameter is required.
+         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         */
+        public Builder dbInstanceStorage(final java.lang.Number dbInstanceStorage) {
+            this.props.dbInstanceStorage(dbInstanceStorage);
+            return this;
+        }
+        /**
+         * Property dbInstanceStorage: Database instance storage size.
+         * <p>
+         * mysql is [5,1000]. sql server 2008r2 is [10,1000], sql server 2012/2012_web/2016-web is [20,1000]. PostgreSQL and PPAS is [5,2000]. Increased every 5 GB, Unit in GB
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceStorage Property dbInstanceStorage: Database instance storage size. This parameter is required.
+         */
+        public Builder dbInstanceStorage(final com.aliyun.ros.cdk.core.IResolvable dbInstanceStorage) {
+            this.props.dbInstanceStorage(dbInstanceStorage);
+            return this;
+        }
+
+        /**
+         * Property dbInstanceStorageType: The storage type of the instance.
+         * <p>
+         * Valid values:
+         * local_ssd: specifies to use local SSDs. This is the recommended storage type.
+         * cloud_ssd: specifies to use standard SSDs.
+         * cloud_essd: specifies to use enhanced SSDs.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.
          */
         public Builder dbInstanceStorageType(final java.lang.String dbInstanceStorageType) {
             this.props.dbInstanceStorageType(dbInstanceStorageType);
             return this;
         }
+        /**
+         * Property dbInstanceStorageType: The storage type of the instance.
+         * <p>
+         * Valid values:
+         * local_ssd: specifies to use local SSDs. This is the recommended storage type.
+         * cloud_ssd: specifies to use standard SSDs.
+         * cloud_essd: specifies to use enhanced SSDs.
+         * <p>
+         * @return {@code this}
+         * @param dbInstanceStorageType Property dbInstanceStorageType: The storage type of the instance. This parameter is required.
+         */
+        public Builder dbInstanceStorageType(final com.aliyun.ros.cdk.core.IResolvable dbInstanceStorageType) {
+            this.props.dbInstanceStorageType(dbInstanceStorageType);
+            return this;
+        }
 
         /**
+         * Property dbMappings: Database mappings to attach to db instance.
+         * <p>
          * @return {@code this}
-         * @param dbMappings This parameter is required.
+         * @param dbMappings Property dbMappings: Database mappings to attach to db instance. This parameter is required.
          */
         public Builder dbMappings(final com.aliyun.ros.cdk.core.IResolvable dbMappings) {
             this.props.dbMappings(dbMappings);
             return this;
         }
         /**
+         * Property dbMappings: Database mappings to attach to db instance.
+         * <p>
          * @return {@code this}
-         * @param dbMappings This parameter is required.
+         * @param dbMappings Property dbMappings: Database mappings to attach to db instance. This parameter is required.
          */
         public Builder dbMappings(final java.util.List<? extends java.lang.Object> dbMappings) {
             this.props.dbMappings(dbMappings);
@@ -259,106 +486,268 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbNames: The names of the databases that you want to create on the new instance.
+         * <p>
          * @return {@code this}
-         * @param dbNames This parameter is required.
+         * @param dbNames Property dbNames: The names of the databases that you want to create on the new instance. This parameter is required.
          */
         public Builder dbNames(final java.lang.String dbNames) {
             this.props.dbNames(dbNames);
             return this;
         }
+        /**
+         * Property dbNames: The names of the databases that you want to create on the new instance.
+         * <p>
+         * @return {@code this}
+         * @param dbNames Property dbNames: The names of the databases that you want to create on the new instance. This parameter is required.
+         */
+        public Builder dbNames(final com.aliyun.ros.cdk.core.IResolvable dbNames) {
+            this.props.dbNames(dbNames);
+            return this;
+        }
 
         /**
+         * Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
+         * <p>
          * @return {@code this}
-         * @param dedicatedHostGroupId This parameter is required.
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group. This parameter is required.
          */
         public Builder dedicatedHostGroupId(final java.lang.String dedicatedHostGroupId) {
             this.props.dedicatedHostGroupId(dedicatedHostGroupId);
             return this;
         }
+        /**
+         * Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group.
+         * <p>
+         * @return {@code this}
+         * @param dedicatedHostGroupId Property dedicatedHostGroupId: The ID of the host group to which the instance belongs if you create an instance in a host group. This parameter is required.
+         */
+        public Builder dedicatedHostGroupId(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostGroupId) {
+            this.props.dedicatedHostGroupId(dedicatedHostGroupId);
+            return this;
+        }
 
         /**
+         * Property instanceNetworkType: The network type of the new instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VPC</li>
+         * <li>Classic
+         * The default value is the network type of the original instance.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
-         * @param instanceNetworkType This parameter is required.
+         * @param instanceNetworkType Property instanceNetworkType: The network type of the new instance. This parameter is required.
          */
         public Builder instanceNetworkType(final java.lang.String instanceNetworkType) {
             this.props.instanceNetworkType(instanceNetworkType);
             return this;
         }
+        /**
+         * Property instanceNetworkType: The network type of the new instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>VPC</li>
+         * <li>Classic
+         * The default value is the network type of the original instance.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param instanceNetworkType Property instanceNetworkType: The network type of the new instance. This parameter is required.
+         */
+        public Builder instanceNetworkType(final com.aliyun.ros.cdk.core.IResolvable instanceNetworkType) {
+            this.props.instanceNetworkType(instanceNetworkType);
+            return this;
+        }
 
         /**
+         * Property maintainTime: The period during which the maintenance performs.
+         * <p>
+         * The format is HH:mmZ-HH:mmZ.
+         * <p>
          * @return {@code this}
-         * @param maintainTime This parameter is required.
+         * @param maintainTime Property maintainTime: The period during which the maintenance performs. This parameter is required.
          */
         public Builder maintainTime(final java.lang.String maintainTime) {
             this.props.maintainTime(maintainTime);
             return this;
         }
+        /**
+         * Property maintainTime: The period during which the maintenance performs.
+         * <p>
+         * The format is HH:mmZ-HH:mmZ.
+         * <p>
+         * @return {@code this}
+         * @param maintainTime Property maintainTime: The period during which the maintenance performs. This parameter is required.
+         */
+        public Builder maintainTime(final com.aliyun.ros.cdk.core.IResolvable maintainTime) {
+            this.props.maintainTime(maintainTime);
+            return this;
+        }
 
         /**
+         * Property masterUsername: The master user name for the database instance.
+         * <p>
          * @return {@code this}
-         * @param masterUsername This parameter is required.
+         * @param masterUsername Property masterUsername: The master user name for the database instance. This parameter is required.
          */
         public Builder masterUsername(final java.lang.String masterUsername) {
             this.props.masterUsername(masterUsername);
             return this;
         }
+        /**
+         * Property masterUsername: The master user name for the database instance.
+         * <p>
+         * @return {@code this}
+         * @param masterUsername Property masterUsername: The master user name for the database instance. This parameter is required.
+         */
+        public Builder masterUsername(final com.aliyun.ros.cdk.core.IResolvable masterUsername) {
+            this.props.masterUsername(masterUsername);
+            return this;
+        }
 
         /**
+         * Property masterUserPassword: The master password for the database instance.
+         * <p>
          * @return {@code this}
-         * @param masterUserPassword This parameter is required.
+         * @param masterUserPassword Property masterUserPassword: The master password for the database instance. This parameter is required.
          */
         public Builder masterUserPassword(final java.lang.String masterUserPassword) {
             this.props.masterUserPassword(masterUserPassword);
             return this;
         }
+        /**
+         * Property masterUserPassword: The master password for the database instance.
+         * <p>
+         * @return {@code this}
+         * @param masterUserPassword Property masterUserPassword: The master password for the database instance. This parameter is required.
+         */
+        public Builder masterUserPassword(final com.aliyun.ros.cdk.core.IResolvable masterUserPassword) {
+            this.props.masterUserPassword(masterUserPassword);
+            return this;
+        }
 
         /**
+         * Property masterUserType: Privilege type of account.
+         * <p>
+         * Normal: Common privilege.
+         * Super: High privilege.
+         * Sysadmin: Super privileges (SA) (only supported by SQL Server)
+         * The default value is Normal.
+         * <p>
          * @return {@code this}
-         * @param masterUserType This parameter is required.
+         * @param masterUserType Property masterUserType: Privilege type of account. This parameter is required.
          */
         public Builder masterUserType(final java.lang.String masterUserType) {
             this.props.masterUserType(masterUserType);
             return this;
         }
+        /**
+         * Property masterUserType: Privilege type of account.
+         * <p>
+         * Normal: Common privilege.
+         * Super: High privilege.
+         * Sysadmin: Super privileges (SA) (only supported by SQL Server)
+         * The default value is Normal.
+         * <p>
+         * @return {@code this}
+         * @param masterUserType Property masterUserType: Privilege type of account. This parameter is required.
+         */
+        public Builder masterUserType(final com.aliyun.ros.cdk.core.IResolvable masterUserType) {
+            this.props.masterUserType(masterUserType);
+            return this;
+        }
 
         /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * <p>
          * @return {@code this}
-         * @param period This parameter is required.
+         * @param period Property period: Prepaid time period. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
+        /**
+         * Property period: Prepaid time period.
+         * <p>
+         * While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+         * <p>
+         * @return {@code this}
+         * @param period Property period: Prepaid time period. This parameter is required.
+         */
+        public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
+            this.props.period(period);
+            return this;
+        }
 
         /**
+         * Property periodType: Charge period for created instances.
+         * <p>
          * @return {@code this}
-         * @param periodType This parameter is required.
+         * @param periodType Property periodType: Charge period for created instances. This parameter is required.
          */
         public Builder periodType(final java.lang.String periodType) {
             this.props.periodType(periodType);
             return this;
         }
+        /**
+         * Property periodType: Charge period for created instances.
+         * <p>
+         * @return {@code this}
+         * @param periodType Property periodType: Charge period for created instances. This parameter is required.
+         */
+        public Builder periodType(final com.aliyun.ros.cdk.core.IResolvable periodType) {
+            this.props.periodType(periodType);
+            return this;
+        }
 
         /**
+         * Property port: The port of the database service.
+         * <p>
          * @return {@code this}
-         * @param port This parameter is required.
+         * @param port Property port: The port of the database service. This parameter is required.
          */
         public Builder port(final java.lang.Number port) {
             this.props.port(port);
             return this;
         }
+        /**
+         * Property port: The port of the database service.
+         * <p>
+         * @return {@code this}
+         * @param port Property port: The port of the database service. This parameter is required.
+         */
+        public Builder port(final com.aliyun.ros.cdk.core.IResolvable port) {
+            this.props.port(port);
+            return this;
+        }
 
         /**
+         * Property preferredBackupPeriod: The backup period.
+         * <p>
+         * Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
+         * <p>
          * @return {@code this}
-         * @param preferredBackupPeriod This parameter is required.
+         * @param preferredBackupPeriod Property preferredBackupPeriod: The backup period. This parameter is required.
          */
         public Builder preferredBackupPeriod(final java.util.List<? extends java.lang.Object> preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
             return this;
         }
         /**
+         * Property preferredBackupPeriod: The backup period.
+         * <p>
+         * Separate multiple values with commas (,). The default value is the original value. Valid values:Monday Tuesday Wednesday Thursday Friday Saturday Sunday Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
+         * <p>
          * @return {@code this}
-         * @param preferredBackupPeriod This parameter is required.
+         * @param preferredBackupPeriod Property preferredBackupPeriod: The backup period. This parameter is required.
          */
         public Builder preferredBackupPeriod(final com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
             this.props.preferredBackupPeriod(preferredBackupPeriod);
@@ -366,88 +755,255 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property preferredBackupTime: The time when the backup task is performed.
+         * <p>
+         * Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
+         * <p>
          * @return {@code this}
-         * @param preferredBackupTime This parameter is required.
+         * @param preferredBackupTime Property preferredBackupTime: The time when the backup task is performed. This parameter is required.
          */
         public Builder preferredBackupTime(final java.lang.String preferredBackupTime) {
             this.props.preferredBackupTime(preferredBackupTime);
             return this;
         }
+        /**
+         * Property preferredBackupTime: The time when the backup task is performed.
+         * <p>
+         * Format: yyyy-MM-ddZ-HH:mm:ssZ.Note When the BackupPolicyMode parameter is set to DataBackupPolicy, this parameter is required.
+         * <p>
+         * @return {@code this}
+         * @param preferredBackupTime Property preferredBackupTime: The time when the backup task is performed. This parameter is required.
+         */
+        public Builder preferredBackupTime(final com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
+            this.props.preferredBackupTime(preferredBackupTime);
+            return this;
+        }
 
         /**
+         * Property privateIpAddress: The private ip for created instance.
+         * <p>
          * @return {@code this}
-         * @param privateIpAddress This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: The private ip for created instance. This parameter is required.
          */
         public Builder privateIpAddress(final java.lang.String privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
             return this;
         }
+        /**
+         * Property privateIpAddress: The private ip for created instance.
+         * <p>
+         * @return {@code this}
+         * @param privateIpAddress Property privateIpAddress: The private ip for created instance. This parameter is required.
+         */
+        public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
+            this.props.privateIpAddress(privateIpAddress);
+            return this;
+        }
 
         /**
+         * Property restoreTable: Specifies whether to restore specific databases and tables.
+         * <p>
+         * The value 1 specifies to restore specific databases and tables.
+         * If you do not want to restore specific databases or tables, you can choose not to specify this parameter.
+         * <p>
          * @return {@code this}
-         * @param restoreTable This parameter is required.
+         * @param restoreTable Property restoreTable: Specifies whether to restore specific databases and tables. This parameter is required.
          */
         public Builder restoreTable(final java.lang.String restoreTable) {
             this.props.restoreTable(restoreTable);
             return this;
         }
+        /**
+         * Property restoreTable: Specifies whether to restore specific databases and tables.
+         * <p>
+         * The value 1 specifies to restore specific databases and tables.
+         * If you do not want to restore specific databases or tables, you can choose not to specify this parameter.
+         * <p>
+         * @return {@code this}
+         * @param restoreTable Property restoreTable: Specifies whether to restore specific databases and tables. This parameter is required.
+         */
+        public Builder restoreTable(final com.aliyun.ros.cdk.core.IResolvable restoreTable) {
+            this.props.restoreTable(restoreTable);
+            return this;
+        }
 
         /**
+         * Property restoreTime: The point in time to which you want to restore the data of the original instance.
+         * <p>
+         * The point in time must fall within the specified log backup retention period.
+         * The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format.
+         * The time must be in UTC.
+         * <p>
          * @return {@code this}
-         * @param restoreTime This parameter is required.
+         * @param restoreTime Property restoreTime: The point in time to which you want to restore the data of the original instance. This parameter is required.
          */
         public Builder restoreTime(final java.lang.String restoreTime) {
             this.props.restoreTime(restoreTime);
             return this;
         }
+        /**
+         * Property restoreTime: The point in time to which you want to restore the data of the original instance.
+         * <p>
+         * The point in time must fall within the specified log backup retention period.
+         * The time follows the ISO 8601 standard in the yyyy-MM-ddTHH:mm:ssZ format.
+         * The time must be in UTC.
+         * <p>
+         * @return {@code this}
+         * @param restoreTime Property restoreTime: The point in time to which you want to restore the data of the original instance. This parameter is required.
+         */
+        public Builder restoreTime(final com.aliyun.ros.cdk.core.IResolvable restoreTime) {
+            this.props.restoreTime(restoreTime);
+            return this;
+        }
 
         /**
+         * Property securityGroupId: The ID of the ECS security groups.
+         * <p>
+         * Each RDS instance can be associated with up to three ECS security groups.
+         * You must separate them with commas (,).
+         * To delete an ECS Security group, leave this parameter empty.
+         * <p>
          * @return {@code this}
-         * @param securityGroupId This parameter is required.
+         * @param securityGroupId Property securityGroupId: The ID of the ECS security groups. This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * Property securityGroupId: The ID of the ECS security groups.
+         * <p>
+         * Each RDS instance can be associated with up to three ECS security groups.
+         * You must separate them with commas (,).
+         * To delete an ECS Security group, leave this parameter empty.
+         * <p>
+         * @return {@code this}
+         * @param securityGroupId Property securityGroupId: The ID of the ECS security groups. This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
+         * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+         * <p>
          * @return {@code this}
-         * @param securityIpList This parameter is required.
+         * @param securityIpList Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
+        /**
+         * Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation.
+         * <p>
+         * @return {@code this}
+         * @param securityIpList Property securityIpList: Security ip to access the database instance, combine with comma, 0.0.0.0/0 means no limitation. This parameter is required.
+         */
+        public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
+            this.props.securityIpList(securityIpList);
+            return this;
+        }
 
         /**
+         * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
+         * <p>
+         * Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+         * <p>
          * @return {@code this}
-         * @param sqlCollectorStatus This parameter is required.
+         * @param slaveZoneIds Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. This parameter is required.
+         */
+        public Builder slaveZoneIds(final com.aliyun.ros.cdk.core.IResolvable slaveZoneIds) {
+            this.props.slaveZoneIds(slaveZoneIds);
+            return this;
+        }
+        /**
+         * Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance.
+         * <p>
+         * Meanwhile, VSwitchId needs to pass in the corresponding vswitch id to the slave zone by order. For example, ZoneId = "zone-a" and SlaveZoneIds = ["zone-c", "zone-b"], then the VSwitchId must be "vsw-zone-a,vsw-zone-c,vsw-zone-b". Of course, you can also choose automatic allocation, for example, ZoneId = "zone-a" and SlaveZoneIds = ["Auto", "Auto"], then the VSwitchId must be "vsw-zone-a,Auto,Auto". The list contains up to 2 slave zone ids, separated by commas.
+         * <p>
+         * @return {@code this}
+         * @param slaveZoneIds Property slaveZoneIds: List of slave zone ids can specify slave zone ids when creating the high-availability or enterprise edition instance. This parameter is required.
+         */
+        public Builder slaveZoneIds(final java.util.List<? extends java.lang.Object> slaveZoneIds) {
+            this.props.slaveZoneIds(slaveZoneIds);
+            return this;
+        }
+
+        /**
+         * Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature.
+         * <p>
+         * Valid values:Enable | Disabled.
+         * <p>
+         * @return {@code this}
+         * @param sqlCollectorStatus Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. This parameter is required.
          */
         public Builder sqlCollectorStatus(final java.lang.String sqlCollectorStatus) {
             this.props.sqlCollectorStatus(sqlCollectorStatus);
             return this;
         }
+        /**
+         * Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature.
+         * <p>
+         * Valid values:Enable | Disabled.
+         * <p>
+         * @return {@code this}
+         * @param sqlCollectorStatus Property sqlCollectorStatus: Specifies whether to enable or disable the SQL Explorer (SQL audit) feature. This parameter is required.
+         */
+        public Builder sqlCollectorStatus(final com.aliyun.ros.cdk.core.IResolvable sqlCollectorStatus) {
+            this.props.sqlCollectorStatus(sqlCollectorStatus);
+            return this;
+        }
 
         /**
+         * Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance.
+         * <p>
+         * Valid values:
+         * Disabled: Disable SSL
+         * EnabledForPublicConnection: Public connection address will be protected by the SSL certificate. It requires AllocatePublicConnection is true.
+         * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
+         * Default value is Disabled.
+         * <p>
          * @return {@code this}
-         * @param sslSetting This parameter is required.
+         * @param sslSetting Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. This parameter is required.
          */
         public Builder sslSetting(final java.lang.String sslSetting) {
             this.props.sslSetting(sslSetting);
             return this;
         }
+        /**
+         * Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance.
+         * <p>
+         * Valid values:
+         * Disabled: Disable SSL
+         * EnabledForPublicConnection: Public connection address will be protected by the SSL certificate. It requires AllocatePublicConnection is true.
+         * EnabledForInnerConnection: Private connection address will be protected by the SSL certificate.
+         * Default value is Disabled.
+         * <p>
+         * @return {@code this}
+         * @param sslSetting Property sslSetting: Secure Sockets Layer (SSL) link setting of the instance. This parameter is required.
+         */
+        public Builder sslSetting(final com.aliyun.ros.cdk.core.IResolvable sslSetting) {
+            this.props.sslSetting(sslSetting);
+            return this;
+        }
 
         /**
+         * Property tableMeta: The information about the databases and tables that you want to restore.
+         * <p>
          * @return {@code this}
-         * @param tableMeta This parameter is required.
+         * @param tableMeta Property tableMeta: The information about the databases and tables that you want to restore. This parameter is required.
          */
         public Builder tableMeta(final com.aliyun.ros.cdk.core.IResolvable tableMeta) {
             this.props.tableMeta(tableMeta);
             return this;
         }
         /**
+         * Property tableMeta: The information about the databases and tables that you want to restore.
+         * <p>
          * @return {@code this}
-         * @param tableMeta This parameter is required.
+         * @param tableMeta Property tableMeta: The information about the databases and tables that you want to restore. This parameter is required.
          */
         public Builder tableMeta(final java.util.List<? extends java.lang.Object> tableMeta) {
             this.props.tableMeta(tableMeta);
@@ -455,46 +1011,125 @@ public class DBInstanceClone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property tags: The tags of an instance.
+         * <p>
+         * You should input the information of the tag with the format of the Key-Value, such as {"key1":"value1","key2":"value2", ... "key5":"value5"}.
+         * At most 5 tags can be specified.
+         * Key
+         * It can be up to 64 characters in length.
+         * Cannot begin with aliyun.
+         * Cannot begin with http:// or https://.
+         * Cannot be a null string.
+         * Value
+         * It can be up to 128 characters in length.
+         * Cannot begin with aliyun.
+         * Cannot begin with http:// or https://.
+         * Can be a null string.
+         * <p>
          * @return {@code this}
-         * @param tags This parameter is required.
+         * @param tags Property tags: The tags of an instance. This parameter is required.
          */
-        public Builder tags(final java.util.List<? extends java.util.Map<java.lang.String, ? extends java.lang.Object>> tags) {
+        public Builder tags(final java.util.Map<java.lang.String, ? extends java.lang.Object> tags) {
             this.props.tags(tags);
             return this;
         }
 
         /**
+         * Property timeoutInMinutes: The timeout period for creating the clone instance resource.
+         * <p>
+         * Unit: Minute. Default: 120.
+         * <p>
          * @return {@code this}
-         * @param timeoutInMinutes This parameter is required.
+         * @param timeoutInMinutes Property timeoutInMinutes: The timeout period for creating the clone instance resource. This parameter is required.
          */
         public Builder timeoutInMinutes(final java.lang.Number timeoutInMinutes) {
             this.props.timeoutInMinutes(timeoutInMinutes);
             return this;
         }
+        /**
+         * Property timeoutInMinutes: The timeout period for creating the clone instance resource.
+         * <p>
+         * Unit: Minute. Default: 120.
+         * <p>
+         * @return {@code this}
+         * @param timeoutInMinutes Property timeoutInMinutes: The timeout period for creating the clone instance resource. This parameter is required.
+         */
+        public Builder timeoutInMinutes(final com.aliyun.ros.cdk.core.IResolvable timeoutInMinutes) {
+            this.props.timeoutInMinutes(timeoutInMinutes);
+            return this;
+        }
 
         /**
+         * Property vpcId: The VPC id of created database instance.
+         * <p>
+         * For VPC network, the property is required.
+         * <p>
          * @return {@code this}
-         * @param vpcId This parameter is required.
+         * @param vpcId Property vpcId: The VPC id of created database instance. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
+        /**
+         * Property vpcId: The VPC id of created database instance.
+         * <p>
+         * For VPC network, the property is required.
+         * <p>
+         * @return {@code this}
+         * @param vpcId Property vpcId: The VPC id of created database instance. This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
 
         /**
+         * Property vSwitchId: The vSwitch id of created instance.
+         * <p>
+         * For VPC network, the property is required.
+         * <p>
          * @return {@code this}
-         * @param vSwitchId This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch id of created instance. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * Property vSwitchId: The vSwitch id of created instance.
+         * <p>
+         * For VPC network, the property is required.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchId Property vSwitchId: The vSwitch id of created instance. This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
+         * Property zoneId: selected zone to create database instance.
+         * <p>
+         * You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
+         * <p>
          * @return {@code this}
-         * @param zoneId This parameter is required.
+         * @param zoneId Property zoneId: selected zone to create database instance. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
+            this.props.zoneId(zoneId);
+            return this;
+        }
+        /**
+         * Property zoneId: selected zone to create database instance.
+         * <p>
+         * You cannot set the ZoneId parameter if the MultiAZ parameter is set to true.
+         * <p>
+         * @return {@code this}
+         * @param zoneId Property zoneId: selected zone to create database instance. This parameter is required.
+         */
+        public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }

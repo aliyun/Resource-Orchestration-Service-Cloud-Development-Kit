@@ -33,38 +33,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <summary>Attribute IsLogging: Indicates whether the trail is logging API invocations.</summary>
-        [JsiiProperty(name: "attrIsLogging", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIsLogging
+        [JsiiProperty(name: "attrIsLogging", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIsLogging
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LatestDeliveryError: The last time an error occurred when the trail attempted to deliver log files.</summary>
-        [JsiiProperty(name: "attrLatestDeliveryError", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLatestDeliveryError
+        [JsiiProperty(name: "attrLatestDeliveryError", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLatestDeliveryError
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute LatestDeliveryTime: The date and time of the last successful delivery of a log file.</summary>
-        [JsiiProperty(name: "attrLatestDeliveryTime", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrLatestDeliveryTime
+        [JsiiProperty(name: "attrLatestDeliveryTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLatestDeliveryTime
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute StartLoggingTime: The most recent date and time when the user enables the trail.</summary>
-        [JsiiProperty(name: "attrStartLoggingTime", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStartLoggingTime
+        [JsiiProperty(name: "attrStartLoggingTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStartLoggingTime
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute StopLoggingTime: The most recent date and time when the user disables the trail.</summary>
-        [JsiiProperty(name: "attrStopLoggingTime", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrStopLoggingTime
+        [JsiiProperty(name: "attrStopLoggingTime", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrStopLoggingTime
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: instanceName: Instance name
         /// </remarks>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceName
         {
             get;
             set;

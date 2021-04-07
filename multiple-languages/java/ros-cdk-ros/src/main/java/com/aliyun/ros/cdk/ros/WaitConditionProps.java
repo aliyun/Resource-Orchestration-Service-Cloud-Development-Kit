@@ -3,22 +3,25 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Properties for defining a `ALIYUN::ROS::WaitCondition`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.347Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.WaitConditionProps")
 @software.amazon.jsii.Jsii.Proxy(WaitConditionProps.Jsii$Proxy.class)
 public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property handle: A reference to the wait condition handle used to signal this wait condition.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getHandle();
+    @org.jetbrains.annotations.NotNull java.lang.Object getHandle();
 
     /**
+     * Property timeout: The number of seconds to wait for the correct number of signals to arrive.
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getTimeout();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTimeout();
 
     /**
+     * Property count: The number of success signals that must be received before the stack creation process continues.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCount() {
         return null;
     }
 
@@ -32,13 +35,13 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link WaitConditionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<WaitConditionProps> {
-        private java.lang.String handle;
-        private java.lang.Number timeout;
-        private java.lang.Number count;
+        private java.lang.Object handle;
+        private java.lang.Object timeout;
+        private java.lang.Object count;
 
         /**
          * Sets the value of {@link WaitConditionProps#getHandle}
-         * @param handle the value to be set. This parameter is required.
+         * @param handle Property handle: A reference to the wait condition handle used to signal this wait condition. This parameter is required.
          * @return {@code this}
          */
         public Builder handle(java.lang.String handle) {
@@ -47,8 +50,18 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link WaitConditionProps#getHandle}
+         * @param handle Property handle: A reference to the wait condition handle used to signal this wait condition. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder handle(com.aliyun.ros.cdk.core.IResolvable handle) {
+            this.handle = handle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link WaitConditionProps#getTimeout}
-         * @param timeout the value to be set. This parameter is required.
+         * @param timeout Property timeout: The number of seconds to wait for the correct number of signals to arrive. This parameter is required.
          * @return {@code this}
          */
         public Builder timeout(java.lang.Number timeout) {
@@ -57,11 +70,31 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link WaitConditionProps#getTimeout}
+         * @param timeout Property timeout: The number of seconds to wait for the correct number of signals to arrive. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder timeout(com.aliyun.ros.cdk.core.IResolvable timeout) {
+            this.timeout = timeout;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link WaitConditionProps#getCount}
-         * @param count the value to be set.
+         * @param count Property count: The number of success signals that must be received before the stack creation process continues.
          * @return {@code this}
          */
         public Builder count(java.lang.Number count) {
+            this.count = count;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link WaitConditionProps#getCount}
+         * @param count Property count: The number of success signals that must be received before the stack creation process continues.
+         * @return {@code this}
+         */
+        public Builder count(com.aliyun.ros.cdk.core.IResolvable count) {
             this.count = count;
             return this;
         }
@@ -82,9 +115,9 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements WaitConditionProps {
-        private final java.lang.String handle;
-        private final java.lang.Number timeout;
-        private final java.lang.Number count;
+        private final java.lang.Object handle;
+        private final java.lang.Object timeout;
+        private final java.lang.Object count;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -92,15 +125,15 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.handle = software.amazon.jsii.Kernel.get(this, "handle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.handle = software.amazon.jsii.Kernel.get(this, "handle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.timeout = software.amazon.jsii.Kernel.get(this, "timeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.count = software.amazon.jsii.Kernel.get(this, "count", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String handle, final java.lang.Number timeout, final java.lang.Number count) {
+        protected Jsii$Proxy(final java.lang.Object handle, final java.lang.Object timeout, final java.lang.Object count) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.handle = java.util.Objects.requireNonNull(handle, "handle is required");
             this.timeout = java.util.Objects.requireNonNull(timeout, "timeout is required");
@@ -108,17 +141,17 @@ public interface WaitConditionProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getHandle() {
+        public final java.lang.Object getHandle() {
             return this.handle;
         }
 
         @Override
-        public final java.lang.Number getTimeout() {
+        public final java.lang.Object getTimeout() {
             return this.timeout;
         }
 
         @Override
-        public final java.lang.Number getCount() {
+        public final java.lang.Object getCount() {
             return this.count;
         }
 

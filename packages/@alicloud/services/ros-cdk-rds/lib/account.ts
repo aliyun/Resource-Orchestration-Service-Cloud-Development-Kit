@@ -15,17 +15,17 @@ export interface AccountProps {
      * Contain no more than 16 characters.
      * For other invalid characters, see Forbidden keywords table.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * Property accountPassword: The account password for the database instance. It may consist of letters, digits, or underlines, with a length of 8 to 32 characters.
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * Property dbInstanceId: RDS instance ID.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property accountDescription: Account remarks.
@@ -34,7 +34,7 @@ export interface AccountProps {
      * It can include Chinese and English characters/letters, underscores (_), hyphens (-), and digits.
      * The length may be 2-256 characters.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * Property accountType: Privilege type of account.
@@ -43,7 +43,7 @@ export interface AccountProps {
      * This parameter is valid for MySQL 5.5/5.6 only.
      * MySQL 5.7, SQL Server 2012/2016, PostgreSQL, and PPAS each can have only one initial account. Other accounts are created by the initial account that has logged on to the database.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 }
 
 /**
@@ -59,7 +59,7 @@ export class Account extends ros.Resource {
     /**
      * Attribute AccountName: Account name
      */
-    public readonly attrAccountName: any;
+    public readonly attrAccountName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::RDS::Account`.

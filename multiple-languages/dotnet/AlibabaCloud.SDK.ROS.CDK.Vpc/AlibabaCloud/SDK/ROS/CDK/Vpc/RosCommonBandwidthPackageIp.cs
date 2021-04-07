@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Attribute</strong>: AllocationIds: All eip allocation ids of common bandwidth package.
         /// </remarks>
-        [JsiiProperty(name: "attrAllocationIds", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAllocationIds
+        [JsiiProperty(name: "attrAllocationIds", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAllocationIds
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: IpAddresses: All eip addresses of common bandwidth package.
         /// </remarks>
-        [JsiiProperty(name: "attrIpAddresses", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrIpAddresses
+        [JsiiProperty(name: "attrIpAddresses", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrIpAddresses
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -71,10 +71,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <remarks>
         /// <strong>Property</strong>: bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
         /// </remarks>
-        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string BandwidthPackageId
+        [JsiiProperty(name: "bandwidthPackageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object BandwidthPackageId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -100,8 +100,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <remarks>
             /// <strong>Property</strong>: allocationId: The ID of the EIP instance.
             /// </remarks>
-            [JsiiProperty(name: "allocationId", typeJson: "{\"primitive\":\"string\"}")]
-            string AllocationId
+            [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object AllocationId
             {
                 get;
             }
@@ -111,9 +111,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// 0 which means no limit.
             /// Default to no limit.
             /// </remarks>
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Bandwidth
+            object? Bandwidth
             {
                 get
                 {
@@ -131,10 +131,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 /// <remarks>
                 /// <strong>Property</strong>: allocationId: The ID of the EIP instance.
                 /// </remarks>
-                [JsiiProperty(name: "allocationId", typeJson: "{\"primitive\":\"string\"}")]
-                public string AllocationId
+                [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object AllocationId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -143,10 +143,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 /// Default to no limit.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Bandwidth
+                [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Bandwidth
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -158,8 +158,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <remarks>
             /// <strong>Property</strong>: allocationId: The ID of the EIP instance.
             /// </remarks>
-            [JsiiProperty(name: "allocationId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string AllocationId
+            [JsiiProperty(name: "allocationId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object AllocationId
             {
                 get;
                 set;
@@ -171,8 +171,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// Default to no limit.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "bandwidth", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Bandwidth
+            [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Bandwidth
             {
                 get;
                 set;

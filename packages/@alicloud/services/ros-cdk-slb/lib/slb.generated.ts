@@ -10,7 +10,7 @@ export interface RosAccessControlProps {
     /**
      * @Property aclName: The name of the access control list.
      */
-    readonly aclName: string;
+    readonly aclName: string | ros.IResolvable;
 
     /**
      * @Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
@@ -20,7 +20,12 @@ export interface RosAccessControlProps {
     /**
      * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
      */
-    readonly addressIpVersion?: string;
+    readonly addressIpVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosAccessControl.TagsProperty[];
 }
 
 /**
@@ -50,6 +55,14 @@ function RosAccessControlPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
     errors.collect(ros.propertyValidator('aclName', ros.requiredValidator)(properties.aclName));
     errors.collect(ros.propertyValidator('aclName', ros.validateString)(properties.aclName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosAccessControl_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosAccessControlProps"');
 }
 
@@ -70,6 +83,7 @@ function rosAccessControlPropsToRosTemplate(properties: any, enableResourcePrope
       AclName: ros.stringToRosTemplate(properties.aclName),
       AclEntrys: ros.listMapper(rosAccessControlAclEntrysPropertyToRosTemplate)(properties.aclEntrys),
       AddressIPVersion: ros.stringToRosTemplate(properties.addressIpVersion),
+      Tags: ros.listMapper(rosAccessControlTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -90,7 +104,7 @@ export class RosAccessControl extends ros.RosResource {
     /**
      * @Attribute AclId: The ID of the access control list.
      */
-    public readonly attrAclId: any;
+    public readonly attrAclId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -98,7 +112,7 @@ export class RosAccessControl extends ros.RosResource {
     /**
      * @Property aclName: The name of the access control list.
      */
-    public aclName: string;
+    public aclName: string | ros.IResolvable;
 
     /**
      * @Property aclEntrys: A list of acl entrys. Each entry can be IP addresses or CIDR blocks. Max length: 50.
@@ -108,7 +122,12 @@ export class RosAccessControl extends ros.RosResource {
     /**
      * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
      */
-    public addressIpVersion: string | undefined;
+    public addressIpVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosAccessControl.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::AccessControl`.
@@ -119,12 +138,13 @@ export class RosAccessControl extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccessControlProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccessControl.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAclId = ros.Token.asString(this.getAtt('AclId'));
+        this.attrAclId = this.getAtt('AclId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.aclName = props.aclName;
         this.aclEntrys = props.aclEntrys;
         this.addressIpVersion = props.addressIpVersion;
+        this.tags = props.tags;
     }
 
 
@@ -133,6 +153,7 @@ export class RosAccessControl extends ros.RosResource {
             aclName: this.aclName,
             aclEntrys: this.aclEntrys,
             addressIpVersion: this.addressIpVersion,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -148,11 +169,11 @@ export namespace RosAccessControl {
         /**
          * @Property entry: IP addresses or CIDR blocks. For example: "10.0.0.1" or "192.168.0.0/16"
          */
-        readonly entry: string;
+        readonly entry: string | ros.IResolvable;
         /**
          * @Property comment: Description of the entry.
          */
-        readonly comment?: string;
+        readonly comment?: string | ros.IResolvable;
     }
 }
 /**
@@ -188,6 +209,54 @@ function rosAccessControlAclEntrysPropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosAccessControl {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccessControl_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::AccessControl.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosAccessControlTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccessControl_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::SLB::BackendServerAttachment`
  */
@@ -196,12 +265,12 @@ export interface RosBackendServerAttachmentProps {
     /**
      * @Property loadBalancerId: The id of load balancer.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property backendServerList: The comma delimited instance id list.If the property "BackendServers" is setting, this property will be ignored.
      */
-    readonly backendServerList?: string[];
+    readonly backendServerList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -270,12 +339,12 @@ export class RosBackendServerAttachment extends ros.RosResource {
     /**
      * @Attribute BackendServers: The collection of attached backend server.
      */
-    public readonly attrBackendServers: any;
+    public readonly attrBackendServers: ros.IResolvable;
 
     /**
      * @Attribute LoadBalancerId: The id of load balancer.
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -283,12 +352,12 @@ export class RosBackendServerAttachment extends ros.RosResource {
     /**
      * @Property loadBalancerId: The id of load balancer.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property backendServerList: The comma delimited instance id list.If the property "BackendServers" is setting, this property will be ignored.
      */
-    public backendServerList: string[] | undefined;
+    public backendServerList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -309,8 +378,8 @@ export class RosBackendServerAttachment extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBackendServerAttachmentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBackendServerAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrBackendServers = ros.Token.asString(this.getAtt('BackendServers'));
-        this.attrLoadBalancerId = ros.Token.asString(this.getAtt('LoadBalancerId'));
+        this.attrBackendServers = this.getAtt('BackendServers');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.loadBalancerId = props.loadBalancerId;
@@ -341,23 +410,23 @@ export namespace RosBackendServerAttachment {
         /**
          * @Property type: The backend server type. Valid values:ecs: ECS instance (default)eni: Elastic Network Interface (ENI)
          */
-        readonly type?: string;
+        readonly type?: string | ros.IResolvable;
         /**
          * @Property serverId: Need one valid instance id. The instance status should running.
          */
-        readonly serverId: string;
+        readonly serverId: string | ros.IResolvable;
         /**
          * @Property description: A description of the backend server.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property serverIp: The IP of the instance.
          */
-        readonly serverIp?: string;
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
-        readonly weight: number;
+        readonly weight: number | ros.IResolvable;
     }
 }
 /**
@@ -420,7 +489,7 @@ export interface RosBackendServerToVServerGroupAdditionProps {
     /**
      * @Property vServerGroupId: The ID of virtual server group.
      */
-    readonly vServerGroupId: string;
+    readonly vServerGroupId: string | ros.IResolvable;
 }
 
 /**
@@ -476,7 +545,7 @@ export class RosBackendServerToVServerGroupAddition extends ros.RosResource {
     /**
      * @Attribute VServerGroupId: The ID of virtual server group.
      */
-    public readonly attrVServerGroupId: any;
+    public readonly attrVServerGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -489,7 +558,7 @@ export class RosBackendServerToVServerGroupAddition extends ros.RosResource {
     /**
      * @Property vServerGroupId: The ID of virtual server group.
      */
-    public vServerGroupId: string;
+    public vServerGroupId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::BackendServerToVServerGroupAddition`.
@@ -500,7 +569,7 @@ export class RosBackendServerToVServerGroupAddition extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBackendServerToVServerGroupAdditionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBackendServerToVServerGroupAddition.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrVServerGroupId = ros.Token.asString(this.getAtt('VServerGroupId'));
+        this.attrVServerGroupId = this.getAtt('VServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backendServers = props.backendServers;
@@ -525,17 +594,32 @@ export namespace RosBackendServerToVServerGroupAddition {
      */
     export interface BackendServersProperty {
         /**
-         * @Property serverId: Need one valid ECS instance id.
+         * @Property type: The instance type of the backend server. This parameter must be set to a string. Valid values:
+     * ecs: ECS instance. This is the default value.
+     * eni: ENI.
+     * eci: ECI.
          */
-        readonly serverId: string;
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_).
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property serverId: The ID of the backend server. You can specify the ID of an Elastic Compute Service (ECS) instance,an elastic network interface (ENI) or elastic container instance (ECI).
+         */
+        readonly serverId: string | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property port: The port of backend server. From 1 to 65535.
          */
-        readonly port: number;
+        readonly port: number | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
-        readonly weight?: number;
+        readonly weight?: number | ros.IResolvable;
     }
 }
 /**
@@ -548,8 +632,11 @@ export namespace RosBackendServerToVServerGroupAddition {
 function RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     if(properties.weight && (typeof properties.weight) !== 'object') {
@@ -575,7 +662,10 @@ function rosBackendServerToVServerGroupAdditionBackendServersPropertyToRosTempla
     if (!ros.canInspect(properties)) { return properties; }
     RosBackendServerToVServerGroupAddition_BackendServersPropertyValidator(properties).assertSuccess();
     return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Description: ros.stringToRosTemplate(properties.description),
       ServerId: ros.stringToRosTemplate(properties.serverId),
+      ServerIp: ros.stringToRosTemplate(properties.serverIp),
       Port: ros.numberToRosTemplate(properties.port),
       Weight: ros.numberToRosTemplate(properties.weight),
     };
@@ -589,37 +679,42 @@ export interface RosCertificateProps {
     /**
      * @Property certificate: The content of the certificate public key.
      */
-    readonly certificate: string;
+    readonly certificate: string | ros.IResolvable;
 
     /**
      * @Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
-    readonly aliCloudCertificateId?: string;
+    readonly aliCloudCertificateId?: string | ros.IResolvable;
 
     /**
      * @Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
-    readonly aliCloudCertificateName?: string;
+    readonly aliCloudCertificateName?: string | ros.IResolvable;
 
     /**
      * @Property certificateName: The name of the certificate.
      */
-    readonly certificateName?: string;
+    readonly certificateName?: string | ros.IResolvable;
 
     /**
      * @Property certificateType: The type of the certificate.
      */
-    readonly certificateType?: string;
+    readonly certificateType?: string | ros.IResolvable;
 
     /**
      * @Property privateKey: The private key.
      */
-    readonly privateKey?: string;
+    readonly privateKey?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCertificate.TagsProperty[];
 }
 
 /**
@@ -643,6 +738,14 @@ function RosCertificatePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('privateKey', ros.validateString)(properties.privateKey));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('certificateName', ros.validateString)(properties.certificateName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCertificate_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('certificate', ros.requiredValidator)(properties.certificate));
     errors.collect(ros.propertyValidator('certificate', ros.validateString)(properties.certificate));
     errors.collect(ros.propertyValidator('aliCloudCertificateId', ros.validateString)(properties.aliCloudCertificateId));
@@ -670,6 +773,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
       CertificateType: ros.stringToRosTemplate(properties.certificateType),
       PrivateKey: ros.stringToRosTemplate(properties.privateKey),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosCertificateTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -690,12 +794,12 @@ export class RosCertificate extends ros.RosResource {
     /**
      * @Attribute CertificateId: The ID of the certificate.
      */
-    public readonly attrCertificateId: any;
+    public readonly attrCertificateId: ros.IResolvable;
 
     /**
      * @Attribute Fingerprint: The fingerprint of the certificate.
      */
-    public readonly attrFingerprint: any;
+    public readonly attrFingerprint: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -703,37 +807,42 @@ export class RosCertificate extends ros.RosResource {
     /**
      * @Property certificate: The content of the certificate public key.
      */
-    public certificate: string;
+    public certificate: string | ros.IResolvable;
 
     /**
      * @Property aliCloudCertificateId: The ID of the Alibaba Cloud certificate.
      */
-    public aliCloudCertificateId: string | undefined;
+    public aliCloudCertificateId: string | ros.IResolvable | undefined;
 
     /**
      * @Property aliCloudCertificateName: The name of the Alibaba Cloud certificate.
      */
-    public aliCloudCertificateName: string | undefined;
+    public aliCloudCertificateName: string | ros.IResolvable | undefined;
 
     /**
      * @Property certificateName: The name of the certificate.
      */
-    public certificateName: string | undefined;
+    public certificateName: string | ros.IResolvable | undefined;
 
     /**
      * @Property certificateType: The type of the certificate.
      */
-    public certificateType: string | undefined;
+    public certificateType: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateKey: The private key.
      */
-    public privateKey: string | undefined;
+    public privateKey: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCertificate.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::Certificate`.
@@ -744,8 +853,8 @@ export class RosCertificate extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCertificateProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCertificateId = ros.Token.asString(this.getAtt('CertificateId'));
-        this.attrFingerprint = ros.Token.asString(this.getAtt('Fingerprint'));
+        this.attrCertificateId = this.getAtt('CertificateId');
+        this.attrFingerprint = this.getAtt('Fingerprint');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.certificate = props.certificate;
@@ -755,6 +864,7 @@ export class RosCertificate extends ros.RosResource {
         this.certificateType = props.certificateType;
         this.privateKey = props.privateKey;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
     }
 
 
@@ -767,11 +877,60 @@ export class RosCertificate extends ros.RosResource {
             certificateType: this.certificateType,
             privateKey: this.privateKey,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCertificate {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCertificate_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::Certificate.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::Certificate.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCertificateTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCertificate_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -782,23 +941,23 @@ export interface RosDomainExtensionProps {
     /**
      * @Property domain: The domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    readonly listenerPort: number;
+    readonly listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property serverCertificateId: The ID of the certificate corresponding to the domain name.
      */
-    readonly serverCertificateId: string;
+    readonly serverCertificateId: string | ros.IResolvable;
 }
 
 /**
@@ -867,13 +1026,13 @@ export class RosDomainExtension extends ros.RosResource {
     /**
      * @Attribute DomainExtensionId: The ID of the created domain name extension.
      */
-    public readonly attrDomainExtensionId: any;
+    public readonly attrDomainExtensionId: ros.IResolvable;
 
     /**
      * @Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
 1-65535
      */
-    public readonly attrListenerPort: any;
+    public readonly attrListenerPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -881,23 +1040,23 @@ export class RosDomainExtension extends ros.RosResource {
     /**
      * @Property domain: The domain name.
      */
-    public domain: string;
+    public domain: string | ros.IResolvable;
 
     /**
      * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    public listenerPort: number;
+    public listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property serverCertificateId: The ID of the certificate corresponding to the domain name.
      */
-    public serverCertificateId: string;
+    public serverCertificateId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::DomainExtension`.
@@ -908,8 +1067,8 @@ export class RosDomainExtension extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosDomainExtensionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosDomainExtension.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDomainExtensionId = ros.Token.asString(this.getAtt('DomainExtensionId'));
-        this.attrListenerPort = ros.Token.asString(this.getAtt('ListenerPort'));
+        this.attrDomainExtensionId = this.getAtt('DomainExtensionId');
+        this.attrListenerPort = this.getAtt('ListenerPort');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.domain = props.domain;
@@ -940,39 +1099,39 @@ export interface RosListenerProps {
     /**
      * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
      */
-    readonly backendServerPort: number;
+    readonly backendServerPort: number | ros.IResolvable;
 
     /**
      * @Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
-     * @Property listenerPort: Port for front listener. Range from 1 to 65535.
+     * @Property listenerPort: Port for front listener. Range from 0 to 65535.
      */
-    readonly listenerPort: number;
+    readonly listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The id of load balancer to create listener.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp.
      */
-    readonly protocol: string;
+    readonly protocol: string | ros.IResolvable;
 
     /**
      * @Property aclId: The ID of the access control list associated with the listener to be created.
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    readonly aclId?: string;
+    readonly aclId?: string | ros.IResolvable;
 
     /**
      * @Property aclStatus: Indicates whether to enable access control.
      * Valid values: on | off. Default value: off
      */
-    readonly aclStatus?: string;
+    readonly aclStatus?: string | ros.IResolvable;
 
     /**
      * @Property aclType: The access control type:
@@ -985,12 +1144,17 @@ export interface RosListenerProps {
      * 
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    readonly aclType?: string;
+    readonly aclType?: string | ros.IResolvable;
 
     /**
      * @Property caCertificateId: CA server certificate id, for https listener only.
      */
-    readonly caCertificateId?: string;
+    readonly caCertificateId?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     */
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property healthCheck: The properties of health checking setting.
@@ -1005,12 +1169,12 @@ export interface RosListenerProps {
     /**
      * @Property idleTimeout: Specify the idle connection timeout in seconds. Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
      */
-    readonly idleTimeout?: number;
+    readonly idleTimeout?: number | ros.IResolvable;
 
     /**
      * @Property masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
      */
-    readonly masterSlaveServerGroupId?: string;
+    readonly masterSlaveServerGroupId?: string | ros.IResolvable;
 
     /**
      * @Property persistence: The properties of persistence.
@@ -1018,24 +1182,35 @@ export interface RosListenerProps {
     readonly persistence?: RosListener.PersistenceProperty | ros.IResolvable;
 
     /**
-     * @Property requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
+     * @Property portRange: Port range, only supports TCP or UDP listener. ListenerPort should be 0 when PortRange is specified.
      */
-    readonly requestTimeout?: number;
+    readonly portRange?: Array<RosListener.PortRangeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property scheduler: The scheduler algorithm. Support 'wrr' or 'wlc' only, default is 'wrr'
+     * @Property requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
      */
-    readonly scheduler?: string;
+    readonly requestTimeout?: number | ros.IResolvable;
+
+    /**
+     * @Property scheduler: The scheduling algorithm. Valid values:
+     * wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+     * wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+     * rr: Requests are distributed to backend servers in sequence.
+     * sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+     * tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+     * Default: wrr
+     */
+    readonly scheduler?: string | ros.IResolvable;
 
     /**
      * @Property serverCertificateId: Server certificate id, for https listener only, this properties is required.
      */
-    readonly serverCertificateId?: string;
+    readonly serverCertificateId?: string | ros.IResolvable;
 
     /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
-    readonly vServerGroupId?: string;
+    readonly vServerGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -1060,17 +1235,25 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
         errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
             data: properties.listenerPort,
-            min: 1,
+            min: 0,
             max: 65535,
           }));
     }
     errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
     errors.collect(ros.propertyValidator('vServerGroupId', ros.validateString)(properties.vServerGroupId));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 80,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('caCertificateId', ros.validateString)(properties.caCertificateId));
     if(properties.scheduler && (typeof properties.scheduler) !== 'object') {
         errors.collect(ros.propertyValidator('scheduler', ros.validateAllowedValues)({
           data: properties.scheduler,
-          allowedValues: ["wrr","wlc"],
+          allowedValues: ["wrr","wlc","rr","sch","tch"],
         }));
     }
     errors.collect(ros.propertyValidator('scheduler', ros.validateString)(properties.scheduler));
@@ -1096,6 +1279,14 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('backendServerPort', ros.validateNumber)(properties.backendServerPort));
     errors.collect(ros.propertyValidator('persistence', RosListener_PersistencePropertyValidator)(properties.persistence));
+    if(properties.portRange && (Array.isArray(properties.portRange) || (typeof properties.portRange) === 'string')) {
+        errors.collect(ros.propertyValidator('portRange', ros.validateLength)({
+            data: properties.portRange.length,
+            min: 1,
+            max: 1,
+          }));
+    }
+    errors.collect(ros.propertyValidator('portRange', ros.listValidator(RosListener_PortRangePropertyValidator))(properties.portRange));
     if(properties.aclStatus && (typeof properties.aclStatus) !== 'object') {
         errors.collect(ros.propertyValidator('aclStatus', ros.validateAllowedValues)({
           data: properties.aclStatus,
@@ -1156,11 +1347,13 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       AclStatus: ros.stringToRosTemplate(properties.aclStatus),
       AclType: ros.stringToRosTemplate(properties.aclType),
       CACertificateId: ros.stringToRosTemplate(properties.caCertificateId),
+      Description: ros.stringToRosTemplate(properties.description),
       HealthCheck: rosListenerHealthCheckPropertyToRosTemplate(properties.healthCheck),
       HttpConfig: rosListenerHttpConfigPropertyToRosTemplate(properties.httpConfig),
       IdleTimeout: ros.numberToRosTemplate(properties.idleTimeout),
       MasterSlaveServerGroupId: ros.stringToRosTemplate(properties.masterSlaveServerGroupId),
       Persistence: rosListenerPersistencePropertyToRosTemplate(properties.persistence),
+      PortRange: ros.listMapper(rosListenerPortRangePropertyToRosTemplate)(properties.portRange),
       RequestTimeout: ros.numberToRosTemplate(properties.requestTimeout),
       Scheduler: ros.stringToRosTemplate(properties.scheduler),
       ServerCertificateId: ros.stringToRosTemplate(properties.serverCertificateId),
@@ -1185,12 +1378,12 @@ export class RosListener extends ros.RosResource {
     /**
      * @Attribute ListenerPortsAndProtocol: The collection of listener.
      */
-    public readonly attrListenerPortsAndProtocol: any;
+    public readonly attrListenerPortsAndProtocol: ros.IResolvable;
 
     /**
      * @Attribute LoadBalancerId: The id of load balancer
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1198,39 +1391,39 @@ export class RosListener extends ros.RosResource {
     /**
      * @Property backendServerPort: Backend server can listen on ports from 1 to 65535.
      */
-    public backendServerPort: number;
+    public backendServerPort: number | ros.IResolvable;
 
     /**
      * @Property bandwidth: The bandwidth of network, unit in Mbps(Million bits per second). If the specified load balancer with "LOAD_BALANCE_ID" is charged by "paybybandwidth" and is created in classic network, each Listener's bandwidth must be greater than 0 and the sum of all of its Listeners' bandwidth can't be greater than the bandwidth of the load balancer.
      */
-    public bandwidth: number;
+    public bandwidth: number | ros.IResolvable;
 
     /**
-     * @Property listenerPort: Port for front listener. Range from 1 to 65535.
+     * @Property listenerPort: Port for front listener. Range from 0 to 65535.
      */
-    public listenerPort: number;
+    public listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The id of load balancer to create listener.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property protocol: The load balancer transport protocol to use for routing: http, https, tcp, or udp.
      */
-    public protocol: string;
+    public protocol: string | ros.IResolvable;
 
     /**
      * @Property aclId: The ID of the access control list associated with the listener to be created.
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    public aclId: string | undefined;
+    public aclId: string | ros.IResolvable | undefined;
 
     /**
      * @Property aclStatus: Indicates whether to enable access control.
      * Valid values: on | off. Default value: off
      */
-    public aclStatus: string | undefined;
+    public aclStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property aclType: The access control type:
@@ -1243,12 +1436,17 @@ export class RosListener extends ros.RosResource {
      * 
      * If the value of the AclStatus parameter is on, this parameter is required.
      */
-    public aclType: string | undefined;
+    public aclType: string | ros.IResolvable | undefined;
 
     /**
      * @Property caCertificateId: CA server certificate id, for https listener only.
      */
-    public caCertificateId: string | undefined;
+    public caCertificateId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the listener.It must be 1 to 80 characters in length and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_). Chinese characters are supported.
+     */
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheck: The properties of health checking setting.
@@ -1263,12 +1461,12 @@ export class RosListener extends ros.RosResource {
     /**
      * @Property idleTimeout: Specify the idle connection timeout in seconds. Valid value: 1-60 If no request is received during the specified timeout period, Server Load Balancer will temporarily terminate the connection and restart the connection when the next request comes.
      */
-    public idleTimeout: number | undefined;
+    public idleTimeout: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterSlaveServerGroupId: The id of the MasterSlaveServerGroup which use in listener.
      */
-    public masterSlaveServerGroupId: string | undefined;
+    public masterSlaveServerGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property persistence: The properties of persistence.
@@ -1276,24 +1474,35 @@ export class RosListener extends ros.RosResource {
     public persistence: RosListener.PersistenceProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
+     * @Property portRange: Port range, only supports TCP or UDP listener. ListenerPort should be 0 when PortRange is specified.
      */
-    public requestTimeout: number | undefined;
+    public portRange: Array<RosListener.PortRangeProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property scheduler: The scheduler algorithm. Support 'wrr' or 'wlc' only, default is 'wrr'
+     * @Property requestTimeout: Specify the request timeout in seconds. Valid value: 1-180 If no response is received from the backend server during the specified timeout period, Server Load Balancer will stop waiting and send an HTTP 504 error to the client.
      */
-    public scheduler: string | undefined;
+    public requestTimeout: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduler: The scheduling algorithm. Valid values:
+     * wrr: Backend servers that have higher weights receive more requests than those that have lower weights.
+     * wlc: Requests are distributed based on the combination of the weights and connections to backend servers. If two backend servers have the same weight, the backend server that has fewer connections receives more requests.
+     * rr: Requests are distributed to backend servers in sequence.
+     * sch: specifies consistent hashing that is based on source IP addresses. Requests from the same source IP address are distributed to the same backend server.
+     * tch: specifies consistent hashing that is based on four factors: source IP address, destination IP address, source port number, and destination port number. Requests that contain the same preceding information are distributed to the same backend server.
+     * Default: wrr
+     */
+    public scheduler: string | ros.IResolvable | undefined;
 
     /**
      * @Property serverCertificateId: Server certificate id, for https listener only, this properties is required.
      */
-    public serverCertificateId: string | undefined;
+    public serverCertificateId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vServerGroupId: The id of the VServerGroup which use in listener.
      */
-    public vServerGroupId: string | undefined;
+    public vServerGroupId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::Listener`.
@@ -1304,8 +1513,8 @@ export class RosListener extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosListenerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosListener.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrListenerPortsAndProtocol = ros.Token.asString(this.getAtt('ListenerPortsAndProtocol'));
-        this.attrLoadBalancerId = ros.Token.asString(this.getAtt('LoadBalancerId'));
+        this.attrListenerPortsAndProtocol = this.getAtt('ListenerPortsAndProtocol');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backendServerPort = props.backendServerPort;
@@ -1317,11 +1526,13 @@ export class RosListener extends ros.RosResource {
         this.aclStatus = props.aclStatus;
         this.aclType = props.aclType;
         this.caCertificateId = props.caCertificateId;
+        this.description = props.description;
         this.healthCheck = props.healthCheck;
         this.httpConfig = props.httpConfig;
         this.idleTimeout = props.idleTimeout;
         this.masterSlaveServerGroupId = props.masterSlaveServerGroupId;
         this.persistence = props.persistence;
+        this.portRange = props.portRange;
         this.requestTimeout = props.requestTimeout;
         this.scheduler = props.scheduler;
         this.serverCertificateId = props.serverCertificateId;
@@ -1340,11 +1551,13 @@ export class RosListener extends ros.RosResource {
             aclStatus: this.aclStatus,
             aclType: this.aclType,
             caCertificateId: this.caCertificateId,
+            description: this.description,
             healthCheck: this.healthCheck,
             httpConfig: this.httpConfig,
             idleTimeout: this.idleTimeout,
             masterSlaveServerGroupId: this.masterSlaveServerGroupId,
             persistence: this.persistence,
+            portRange: this.portRange,
             requestTimeout: this.requestTimeout,
             scheduler: this.scheduler,
             serverCertificateId: this.serverCertificateId,
@@ -1364,35 +1577,45 @@ export namespace RosListener {
         /**
          * @Property httpCode: The expect status of health check result. Any answer other than referred status within the timeout period is considered unhealthy.
          */
-        readonly httpCode?: string;
+        readonly httpCode?: string | ros.IResolvable;
+        /**
+         * @Property switch: Whether to enable health check. Valid value: on, off.
+     * Currently only valid for http or https protocol.
+     * If value is on, turn on the health check. If value is off, turn off the health checkIf value is not set, the health check is disabled by default, unless any health check items are configured.
+         */
+        readonly switch?: string | ros.IResolvable;
         /**
          * @Property unhealthyThreshold: The number of consecutive health checks failures required,before identified the backend server in Unhealthy status.
          */
-        readonly unhealthyThreshold?: number;
+        readonly unhealthyThreshold?: number | ros.IResolvable;
         /**
          * @Property timeout: The amount of time, in seconds, during which no response means a failed health check.
          */
-        readonly timeout?: number;
+        readonly timeout?: number | ros.IResolvable;
         /**
          * @Property healthyThreshold: The number of consecutive health checks successes required,before identified the backend server in Healthy status.
          */
-        readonly healthyThreshold?: number;
+        readonly healthyThreshold?: number | ros.IResolvable;
         /**
          * @Property port: The port being checked. The range of valid ports is 0 through 65535.
          */
-        readonly port?: number;
+        readonly port?: number | ros.IResolvable;
         /**
          * @Property domain: The domain of health check target.
          */
-        readonly domain?: string;
+        readonly domain?: string | ros.IResolvable;
         /**
          * @Property uri: The url of health check target.
          */
-        readonly uri?: string;
+        readonly uri?: string | ros.IResolvable;
+        /**
+         * @Property healthCheckType: The type of health check. It takes effect when Protocol=tcp. Valid values: tcp and http. Default value: tcp.
+         */
+        readonly healthCheckType?: string | ros.IResolvable;
         /**
          * @Property interval: The approximate interval, unit in seconds, between health checks of an backend server.
          */
-        readonly interval?: number;
+        readonly interval?: number | ros.IResolvable;
     }
 }
 /**
@@ -1406,6 +1629,13 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('httpCode', ros.validateString)(properties.httpCode));
+    if(properties.switch && (typeof properties.switch) !== 'object') {
+        errors.collect(ros.propertyValidator('switch', ros.validateAllowedValues)({
+          data: properties.switch,
+          allowedValues: ["on","off"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('switch', ros.validateString)(properties.switch));
     if(properties.unhealthyThreshold && (typeof properties.unhealthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateRange)({
             data: properties.unhealthyThreshold,
@@ -1433,6 +1663,13 @@ function RosListener_HealthCheckPropertyValidator(properties: any): ros.Validati
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
     errors.collect(ros.propertyValidator('uri', ros.validateString)(properties.uri));
+    if(properties.healthCheckType && (typeof properties.healthCheckType) !== 'object') {
+        errors.collect(ros.propertyValidator('healthCheckType', ros.validateAllowedValues)({
+          data: properties.healthCheckType,
+          allowedValues: ["tcp","http"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('healthCheckType', ros.validateString)(properties.healthCheckType));
     if(properties.interval && (typeof properties.interval) !== 'object') {
         errors.collect(ros.propertyValidator('interval', ros.validateRange)({
             data: properties.interval,
@@ -1457,12 +1694,14 @@ function rosListenerHealthCheckPropertyToRosTemplate(properties: any): any {
     RosListener_HealthCheckPropertyValidator(properties).assertSuccess();
     return {
       HttpCode: ros.stringToRosTemplate(properties.httpCode),
+      Switch: ros.stringToRosTemplate(properties.switch),
       UnhealthyThreshold: ros.numberToRosTemplate(properties.unhealthyThreshold),
       Timeout: ros.numberToRosTemplate(properties.timeout),
       HealthyThreshold: ros.numberToRosTemplate(properties.healthyThreshold),
       Port: ros.numberToRosTemplate(properties.port),
       Domain: ros.stringToRosTemplate(properties.domain),
       URI: ros.stringToRosTemplate(properties.uri),
+      HealthCheckType: ros.stringToRosTemplate(properties.healthCheckType),
       Interval: ros.numberToRosTemplate(properties.interval),
     };
 }
@@ -1476,12 +1715,12 @@ export namespace RosListener {
          * @Property listenerForward: Whether to enable HTTP to HTTPS forwarding.
      * Valid values: on | off. Default value: off.
          */
-        readonly listenerForward?: string;
+        readonly listenerForward?: string | ros.IResolvable;
         /**
          * @Property forwardPort: HTTP to HTTPS listening forwarding port.
      * Default value: 443.
          */
-        readonly forwardPort?: number;
+        readonly forwardPort?: number | ros.IResolvable;
     }
 }
 /**
@@ -1537,39 +1776,39 @@ export namespace RosListener {
         /**
          * @Property xForwardedForSlbid: Optional. Indicates whether to use the SLB-ID header field to obtain the SLB instance ID. Valid values: on | off. Default value: off If you do not set this parameter, the default value is used.
          */
-        readonly xForwardedForSlbid?: string;
+        readonly xForwardedForSlbid?: string | ros.IResolvable;
         /**
          * @Property cookieTimeout: The timeout for cookie setting, in seconds. It only take effect while StickySession is setting to 'on' and StickySessionType is setting to 'insert'.
          */
-        readonly cookieTimeout?: number;
+        readonly cookieTimeout?: number | ros.IResolvable;
         /**
          * @Property cookie: The type of session persistence.
          */
-        readonly cookie?: string;
+        readonly cookie?: string | ros.IResolvable;
         /**
          * @Property stickySession: The switch of session persistence. Support 'on' and 'off'.
          */
-        readonly stickySession?: string;
+        readonly stickySession?: string | ros.IResolvable;
         /**
          * @Property persistenceTimeout: The timeout number of persistence, in seconds.
          */
-        readonly persistenceTimeout?: number;
+        readonly persistenceTimeout?: number | ros.IResolvable;
         /**
          * @Property xForwardedFor: Use 'X-Forwarded-For' to get real ip of accessor. On for open, off for close.
          */
-        readonly xForwardedFor?: string;
+        readonly xForwardedFor?: string | ros.IResolvable;
         /**
          * @Property xForwardedForProto: Optional. Indicates whether to use the X-Forwarded-Proto header field to obtainthe listening protocol used by the SLB instance. Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
          */
-        readonly xForwardedForProto?: string;
+        readonly xForwardedForProto?: string | ros.IResolvable;
         /**
          * @Property stickySessionType: The type of session persistence. Depends on parameter StickySession, if it is set to off, this parameter will be ignored.
          */
-        readonly stickySessionType?: string;
+        readonly stickySessionType?: string | ros.IResolvable;
         /**
          * @Property xForwardedForSlbip: Optional. Indicates whether to use the SLB-IP header field to obtainthe real IP address of a client request.Valid values: on | off. Default value: offIf you do not set this parameter, the default value is used.
          */
-        readonly xForwardedForSlbip?: string;
+        readonly xForwardedForSlbip?: string | ros.IResolvable;
     }
 }
 /**
@@ -1668,6 +1907,69 @@ function rosListenerPersistencePropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface PortRangeProperty {
+        /**
+         * @Property startPort: Start port, from 1 to 65535.
+         */
+        readonly startPort: number | ros.IResolvable;
+        /**
+         * @Property endPort: End port, from 1 to 65535.
+         */
+        readonly endPort: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PortRangeProperty`
+ *
+ * @param properties - the TypeScript properties of a `PortRangeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_PortRangePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('startPort', ros.requiredValidator)(properties.startPort));
+    if(properties.startPort && (typeof properties.startPort) !== 'object') {
+        errors.collect(ros.propertyValidator('startPort', ros.validateRange)({
+            data: properties.startPort,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('startPort', ros.validateNumber)(properties.startPort));
+    errors.collect(ros.propertyValidator('endPort', ros.requiredValidator)(properties.endPort));
+    if(properties.endPort && (typeof properties.endPort) !== 'object') {
+        errors.collect(ros.propertyValidator('endPort', ros.validateRange)({
+            data: properties.endPort,
+            min: 1,
+            max: 65535,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endPort', ros.validateNumber)(properties.endPort));
+    return errors.wrap('supplied properties not correct for "PortRangeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::Listener.PortRange` resource
+ *
+ * @param properties - the TypeScript properties of a `PortRangeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::Listener.PortRange` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerPortRangePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_PortRangePropertyValidator(properties).assertSuccess();
+    return {
+      StartPort: ros.numberToRosTemplate(properties.startPort),
+      EndPort: ros.numberToRosTemplate(properties.endPort),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::SLB::LoadBalancer`
  */
@@ -1676,7 +1978,7 @@ export interface RosLoadBalancerProps {
     /**
      * @Property addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
      */
-    readonly addressType?: string;
+    readonly addressType?: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
@@ -1687,7 +1989,7 @@ export interface RosLoadBalancerProps {
     /**
      * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
-    readonly bandwidth?: number;
+    readonly bandwidth?: number | ros.IResolvable;
 
     /**
      * @Property deletionProtection: Whether to enable deletion protection.
@@ -1697,80 +1999,80 @@ export interface RosLoadBalancerProps {
     /**
      * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
      * If PricingCycle is year, the value range is 1 to 3.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    readonly loadBalancerName?: string;
+    readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
      */
-    readonly loadBalancerSpec?: string;
+    readonly loadBalancerSpec?: string | ros.IResolvable;
 
     /**
      * @Property masterZoneId: The master zone id to create load balancer instance.
      */
-    readonly masterZoneId?: string;
+    readonly masterZoneId?: string | ros.IResolvable;
 
     /**
      * @Property modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
      * Only valid when ModificationProtectionStatus is ConsoleProtection.
      */
-    readonly modificationProtectionReason?: string;
+    readonly modificationProtectionReason?: string | ros.IResolvable;
 
     /**
      * @Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
      * ConsoleProtection: Modify instance protection status by console
      * Default value is empty.
      */
-    readonly modificationProtectionStatus?: string;
+    readonly modificationProtectionStatus?: string | ros.IResolvable;
 
     /**
      * @Property payType: Optional. The billing method of the instance to be created.
      * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle: Optional. The duration of the Subscription-billed Internet instance to be created.
      * Valid values: month | year.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property slaveZoneId: The slave zone id to create load balancer instance.
      */
-    readonly slaveZoneId?: string;
+    readonly slaveZoneId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to slb. Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosLoadBalancer.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create load balancer instance. For VPC network only.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -1793,11 +2095,10 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.duration && (typeof properties.duration) !== 'object') {
-        errors.collect(ros.propertyValidator('duration', ros.validateRange)({
-            data: properties.duration,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
@@ -1805,7 +2106,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
-          allowedValues: ["PayOnDemand","PrePay"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
@@ -1820,7 +2121,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
-          allowedValues: ["paybybandwidth","paybytraffic"],
+          allowedValues: ["paybytraffic","PayByTraffic","paybybandwidth","PayByBandwidth"],
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
@@ -1850,7 +2151,7 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
             max: 5,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancer_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('masterZoneId', ros.validateString)(properties.masterZoneId));
     return errors.wrap('supplied properties not correct for "RosLoadBalancerProps"');
 }
@@ -1884,7 +2185,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
       SlaveZoneId: ros.stringToRosTemplate(properties.slaveZoneId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosLoadBalancerTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
@@ -1905,29 +2206,79 @@ export class RosLoadBalancer extends ros.RosResource {
      */
 
     /**
+     * @Attribute AddressIPVersion: IP version
+     */
+    public readonly attrAddressIpVersion: ros.IResolvable;
+
+    /**
      * @Attribute AddressType: The address type of the load balancer. "intranet" or "internet".
      */
-    public readonly attrAddressType: any;
+    public readonly attrAddressType: ros.IResolvable;
+
+    /**
+     * @Attribute Bandwidth: The bandwidth for network
+     */
+    public readonly attrBandwidth: ros.IResolvable;
 
     /**
      * @Attribute IpAddress: The ip address of the load balancer.
      */
-    public readonly attrIpAddress: any;
+    public readonly attrIpAddress: ros.IResolvable;
 
     /**
      * @Attribute LoadBalancerId: The id of load balance created.
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerName: Name of created load balancer.
+     */
+    public readonly attrLoadBalancerName: ros.IResolvable;
+
+    /**
+     * @Attribute LoadBalancerSpec: The specification of the Server Load Balancer instance
+     */
+    public readonly attrLoadBalancerSpec: ros.IResolvable;
+
+    /**
+     * @Attribute MasterZoneId: The master zone id to create load balancer instance.
+     */
+    public readonly attrMasterZoneId: ros.IResolvable;
 
     /**
      * @Attribute NetworkType: The network type of the load balancer. "vpc" or "classic" network.
      */
-    public readonly attrNetworkType: any;
+    public readonly attrNetworkType: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
+
+    /**
+     * @Attribute PayType: The billing method of the instance to be created.
+     */
+    public readonly attrPayType: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: Resource group id.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SlaveZoneId: The slave zone id to create load balancer instance.
+     */
+    public readonly attrSlaveZoneId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: VSwitch id
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: Vpc id
+     */
+    public readonly attrVpcId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1935,7 +2286,7 @@ export class RosLoadBalancer extends ros.RosResource {
     /**
      * @Property addressType: Loader balancer address type. Support 'internet' and 'intranet' only, default is 'internet'.
      */
-    public addressType: string | undefined;
+    public addressType: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoPay: Optional. Indicates whether to automatically pay the bill for the Subscription-billed Internet instance to be created.
@@ -1946,7 +2297,7 @@ export class RosLoadBalancer extends ros.RosResource {
     /**
      * @Property bandwidth: The bandwidth for network, unit in Mbps(Mega bit per second). Range is 1 to 1000, default is 1. If InternetChargeType is specified as "paybytraffic", this property will be ignore and please specify the "Bandwidth" in ALIYUN::SLB::Listener.
      */
-    public bandwidth: number | undefined;
+    public bandwidth: number | ros.IResolvable | undefined;
 
     /**
      * @Property deletionProtection: Whether to enable deletion protection.
@@ -1956,80 +2307,80 @@ export class RosLoadBalancer extends ros.RosResource {
     /**
      * @Property duration: Optional. The subscription duration of a Subscription Internet instance.
      * Valid values:
-     * If PricingCycle is month, the valid range is 1 to 9.
+     * If PricingCycle is month, the valid range is 1 to 9 or 12, 24, 36.
      * If PricingCycle is year, the value range is 1 to 3.
      */
-    public duration: number | undefined;
+    public duration: number | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: Instance internet access charge type.Support 'paybybandwidth' and 'paybytraffic' only. Default is 'paybytraffic'. If load balancer is created in VPC, the charge type will be set as 'paybytraffic' by default.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    public loadBalancerName: string | undefined;
+    public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancerSpec: The specification of the Server Load Balancer instance. Allowed value: slb.s1.small|slb.s2.small|slb.s2.medium|slb.s3.small|slb.s3.medium|slb.s3.large|slb.s3.xlarge|slb.s3.xxlarge. Default value: slb.s1.small. The supported performance specification in each region is different, two specifications are supported in the US East 1 region. If the region does not support the performance-guaranteed instances, the value will not take effect.
      */
-    public loadBalancerSpec: string | undefined;
+    public loadBalancerSpec: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterZoneId: The master zone id to create load balancer instance.
      */
-    public masterZoneId: string | undefined;
+    public masterZoneId: string | ros.IResolvable | undefined;
 
     /**
      * @Property modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
      * Only valid when ModificationProtectionStatus is ConsoleProtection.
      */
-    public modificationProtectionReason: string | undefined;
+    public modificationProtectionReason: string | ros.IResolvable | undefined;
 
     /**
      * @Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
      * ConsoleProtection: Modify instance protection status by console
      * Default value is empty.
      */
-    public modificationProtectionStatus: string | undefined;
+    public modificationProtectionStatus: string | ros.IResolvable | undefined;
 
     /**
      * @Property payType: Optional. The billing method of the instance to be created.
      * Valid value: PayOnDemand (Pay-As-You-Go) | PrePay (Subscription)
      */
-    public payType: string | undefined;
+    public payType: string | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle: Optional. The duration of the Subscription-billed Internet instance to be created.
      * Valid values: month | year.
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property slaveZoneId: The slave zone id to create load balancer instance.
      */
-    public slaveZoneId: string | undefined;
+    public slaveZoneId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to slb. Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosLoadBalancer.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create load balancer instance. For VPC network only.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::LoadBalancer`.
@@ -2040,11 +2391,21 @@ export class RosLoadBalancer extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLoadBalancerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLoadBalancer.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAddressType = ros.Token.asString(this.getAtt('AddressType'));
-        this.attrIpAddress = ros.Token.asString(this.getAtt('IpAddress'));
-        this.attrLoadBalancerId = ros.Token.asString(this.getAtt('LoadBalancerId'));
-        this.attrNetworkType = ros.Token.asString(this.getAtt('NetworkType'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+        this.attrAddressIpVersion = this.getAtt('AddressIPVersion');
+        this.attrAddressType = this.getAtt('AddressType');
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
+        this.attrLoadBalancerName = this.getAtt('LoadBalancerName');
+        this.attrLoadBalancerSpec = this.getAtt('LoadBalancerSpec');
+        this.attrMasterZoneId = this.getAtt('MasterZoneId');
+        this.attrNetworkType = this.getAtt('NetworkType');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPayType = this.getAtt('PayType');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSlaveZoneId = this.getAtt('SlaveZoneId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.addressType = props.addressType;
@@ -2062,7 +2423,7 @@ export class RosLoadBalancer extends ros.RosResource {
         this.pricingCycle = props.pricingCycle;
         this.resourceGroupId = props.resourceGroupId;
         this.slaveZoneId = props.slaveZoneId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SLB::LoadBalancer", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
     }
@@ -2085,7 +2446,7 @@ export class RosLoadBalancer extends ros.RosResource {
             pricingCycle: this.pricingCycle,
             resourceGroupId: this.resourceGroupId,
             slaveZoneId: this.slaveZoneId,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
         };
@@ -2093,6 +2454,54 @@ export class RosLoadBalancer extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosLoadBalancerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosLoadBalancer {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancer_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::LoadBalancer.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::LoadBalancer.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancer_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -2103,7 +2512,7 @@ export interface RosLoadBalancerCloneProps {
     /**
      * @Property sourceLoadBalancerId: Source load balancer id to clone
      */
-    readonly sourceLoadBalancerId: string;
+    readonly sourceLoadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -2113,33 +2522,33 @@ export interface RosLoadBalancerCloneProps {
     /**
      * @Property backendServersPolicy: Solution for handle the backend server and weights. If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
      */
-    readonly backendServersPolicy?: string;
+    readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    readonly loadBalancerName?: string;
+    readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to slb. Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosLoadBalancerClone.TagsProperty[];
 
     /**
      * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
-    readonly tagsPolicy?: string;
+    readonly tagsPolicy?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -2172,7 +2581,7 @@ function RosLoadBalancerClonePropsValidator(properties: any): ros.ValidationResu
             max: 5,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosLoadBalancerClone_TagsPropertyValidator))(properties.tags));
     if(properties.backendServersPolicy && (typeof properties.backendServersPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('backendServersPolicy', ros.validateAllowedValues)({
           data: properties.backendServersPolicy,
@@ -2202,7 +2611,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
       BackendServersPolicy: ros.stringToRosTemplate(properties.backendServersPolicy),
       LoadBalancerName: ros.stringToRosTemplate(properties.loadBalancerName),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosLoadBalancerCloneTagsPropertyToRosTemplate)(properties.tags),
       TagsPolicy: ros.stringToRosTemplate(properties.tagsPolicy),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
@@ -2225,7 +2634,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
     /**
      * @Attribute LoadBalancerId: The id of load balance generated
      */
-    public readonly attrLoadBalancerId: any;
+    public readonly attrLoadBalancerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2233,7 +2642,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
     /**
      * @Property sourceLoadBalancerId: Source load balancer id to clone
      */
-    public sourceLoadBalancerId: string;
+    public sourceLoadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property backendServers: The list of ECS instance, which will attached to load balancer.
@@ -2243,33 +2652,33 @@ export class RosLoadBalancerClone extends ros.RosResource {
     /**
      * @Property backendServersPolicy: Solution for handle the backend server and weights. If select 'clone', it will clone from source load balancer. If select 'empty' it will not attach any backend servers. If select 'append' it will append the new backend server list to source backed servers. If select 'replace' it will only attach new backend server list. Default is 'clone'.
      */
-    public backendServersPolicy: string | undefined;
+    public backendServersPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
      */
-    public loadBalancerName: string | undefined;
+    public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to slb. Max support 5 tags to add during create slb. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosLoadBalancerClone.TagsProperty[] | undefined;
 
     /**
      * @Property tagsPolicy: Solution for handle the tags. If select 'clone', it will clone from source load balancer. If select 'empty' it will not coppy tags. If select 'append' it will append the new tags. If select 'replace' it will add new tags.
      * Default is 'empty'.
      */
-    public tagsPolicy: string | undefined;
+    public tagsPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::LoadBalancerClone`.
@@ -2280,7 +2689,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosLoadBalancerCloneProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosLoadBalancerClone.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrLoadBalancerId = ros.Token.asString(this.getAtt('LoadBalancerId'));
+        this.attrLoadBalancerId = this.getAtt('LoadBalancerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.sourceLoadBalancerId = props.sourceLoadBalancerId;
@@ -2288,7 +2697,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
         this.backendServersPolicy = props.backendServersPolicy;
         this.loadBalancerName = props.loadBalancerName;
         this.resourceGroupId = props.resourceGroupId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::SLB::LoadBalancerClone", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.tagsPolicy = props.tagsPolicy;
         this.vSwitchId = props.vSwitchId;
     }
@@ -2301,7 +2710,7 @@ export class RosLoadBalancerClone extends ros.RosResource {
             backendServersPolicy: this.backendServersPolicy,
             loadBalancerName: this.loadBalancerName,
             resourceGroupId: this.resourceGroupId,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             tagsPolicy: this.tagsPolicy,
             vSwitchId: this.vSwitchId,
         };
@@ -2319,23 +2728,23 @@ export namespace RosLoadBalancerClone {
         /**
          * @Property type: The backend server type. Valid values:ecs: ECS instance (default)eni: Elastic Network Interface (ENI)
          */
-        readonly type?: string;
+        readonly type?: string | ros.IResolvable;
         /**
          * @Property serverId: Need one valid instance id. The instance status should running.
          */
-        readonly serverId: string;
+        readonly serverId: string | ros.IResolvable;
         /**
          * @Property description: A description of the backend server.
          */
-        readonly description?: string;
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property serverIp: The IP of the instance.
          */
-        readonly serverIp?: string;
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
-        readonly weight: number;
+        readonly weight: number | ros.IResolvable;
     }
 }
 /**
@@ -2385,6 +2794,54 @@ function rosLoadBalancerCloneBackendServersPropertyToRosTemplate(properties: any
     };
 }
 
+export namespace RosLoadBalancerClone {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosLoadBalancerClone_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SLB::LoadBalancerClone.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SLB::LoadBalancerClone.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosLoadBalancerCloneTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosLoadBalancerClone_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::SLB::MasterSlaveServerGroup`
  */
@@ -2393,7 +2850,7 @@ export interface RosMasterSlaveServerGroupProps {
     /**
      * @Property loadBalancerId: The ID of the Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property masterSlaveBackendServers: A list of active/standby server group.
@@ -2404,7 +2861,7 @@ export interface RosMasterSlaveServerGroupProps {
     /**
      * @Property masterSlaveServerGroupName: The name of the active/standby server group.
      */
-    readonly masterSlaveServerGroupName?: string;
+    readonly masterSlaveServerGroupName?: string | ros.IResolvable;
 }
 
 /**
@@ -2469,7 +2926,7 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
     /**
      * @Attribute MasterSlaveServerGroupId: Active/standby server group ID.
      */
-    public readonly attrMasterSlaveServerGroupId: any;
+    public readonly attrMasterSlaveServerGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2477,7 +2934,7 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
     /**
      * @Property loadBalancerId: The ID of the Server Load Balancer instance.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property masterSlaveBackendServers: A list of active/standby server group.
@@ -2488,7 +2945,7 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
     /**
      * @Property masterSlaveServerGroupName: The name of the active/standby server group.
      */
-    public masterSlaveServerGroupName: string | undefined;
+    public masterSlaveServerGroupName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::SLB::MasterSlaveServerGroup`.
@@ -2499,7 +2956,7 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMasterSlaveServerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMasterSlaveServerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMasterSlaveServerGroupId = ros.Token.asString(this.getAtt('MasterSlaveServerGroupId'));
+        this.attrMasterSlaveServerGroupId = this.getAtt('MasterSlaveServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.loadBalancerId = props.loadBalancerId;
@@ -2528,19 +2985,19 @@ export namespace RosMasterSlaveServerGroup {
         /**
          * @Property serverType: The identity of backend server. Could be "Master" (default) or "Slave"
          */
-        readonly serverType?: string;
+        readonly serverType?: string | ros.IResolvable;
         /**
          * @Property serverId: ECS instance ID
          */
-        readonly serverId: string;
+        readonly serverId: string | ros.IResolvable;
         /**
          * @Property port: The port used by backend server. From 1 to 65535
          */
-        readonly port: number;
+        readonly port: number | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
-        readonly weight: number;
+        readonly weight: number | ros.IResolvable;
     }
 }
 /**
@@ -2611,12 +3068,12 @@ export interface RosRuleProps {
      * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    readonly listenerPort: number;
+    readonly listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property ruleList: The forwarding rules to add.
@@ -2694,7 +3151,7 @@ export class RosRule extends ros.RosResource {
     /**
      * @Attribute Rules: A list of forwarding rules. Each element of rules contains "RuleId".
      */
-    public readonly attrRules: any;
+    public readonly attrRules: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2703,12 +3160,12 @@ export class RosRule extends ros.RosResource {
      * @Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    public listenerPort: number;
+    public listenerPort: number | ros.IResolvable;
 
     /**
      * @Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property ruleList: The forwarding rules to add.
@@ -2724,7 +3181,7 @@ export class RosRule extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRuleProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRule.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRules = ros.Token.asString(this.getAtt('Rules'));
+        this.attrRules = this.getAtt('Rules');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.listenerPort = props.listenerPort;
@@ -2753,19 +3210,19 @@ export namespace RosRule {
         /**
          * @Property vServerGroupId: The ID of the VServer group associated with the forwarding rule.
          */
-        readonly vServerGroupId: string;
+        readonly vServerGroupId: string | ros.IResolvable;
         /**
          * @Property domain: The domain name.
          */
-        readonly domain?: string;
+        readonly domain?: string | ros.IResolvable;
         /**
          * @Property url: The URL.
          */
-        readonly url?: string;
+        readonly url?: string | ros.IResolvable;
         /**
          * @Property ruleName: The name of the forwarding rule.
          */
-        readonly ruleName: string;
+        readonly ruleName: string | ros.IResolvable;
     }
 }
 /**
@@ -2814,12 +3271,12 @@ export interface RosVServerGroupProps {
     /**
      * @Property loadBalancerId: The id of load balancer.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property vServerGroupName: Display name of the VServerGroup.
      */
-    readonly vServerGroupName: string;
+    readonly vServerGroupName: string | ros.IResolvable;
 
     /**
      * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
@@ -2882,12 +3339,12 @@ export class RosVServerGroup extends ros.RosResource {
     /**
      * @Attribute BackendServers: Backend server list in this VServerGroup.
      */
-    public readonly attrBackendServers: any;
+    public readonly attrBackendServers: ros.IResolvable;
 
     /**
      * @Attribute VServerGroupId: The id of VServerGroup created.
      */
-    public readonly attrVServerGroupId: any;
+    public readonly attrVServerGroupId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2895,12 +3352,12 @@ export class RosVServerGroup extends ros.RosResource {
     /**
      * @Property loadBalancerId: The id of load balancer.
      */
-    public loadBalancerId: string;
+    public loadBalancerId: string | ros.IResolvable;
 
     /**
      * @Property vServerGroupName: Display name of the VServerGroup.
      */
-    public vServerGroupName: string;
+    public vServerGroupName: string | ros.IResolvable;
 
     /**
      * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
@@ -2916,8 +3373,8 @@ export class RosVServerGroup extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVServerGroupProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVServerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrBackendServers = ros.Token.asString(this.getAtt('BackendServers'));
-        this.attrVServerGroupId = ros.Token.asString(this.getAtt('VServerGroupId'));
+        this.attrBackendServers = this.getAtt('BackendServers');
+        this.attrVServerGroupId = this.getAtt('VServerGroupId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.loadBalancerId = props.loadBalancerId;
@@ -2944,17 +3401,32 @@ export namespace RosVServerGroup {
      */
     export interface BackendServersProperty {
         /**
-         * @Property serverId: Need one valid ECS instance id.
+         * @Property type: The instance type of the backend server. This parameter must be set to a string. Valid values:
+     * ecs: ECS instance. This is the default value.
+     * eni: ENI.
+     * eci: ECI.
          */
-        readonly serverId: string;
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property description: The description of the backend server. The description must be 1 to 80 characters in length, and can contain letters, digits, hyphens (-), forward slashes (/), periods (.), and underscores (_).
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property serverId: The ID of the backend server. You can specify the ID of an Elastic Compute Service (ECS) instance,an elastic network interface (ENI) or elastic container instance (ECI).
+         */
+        readonly serverId: string | ros.IResolvable;
+        /**
+         * @Property serverIp: The IP address of an ECS instance, ENI or ECI
+         */
+        readonly serverIp?: string | ros.IResolvable;
         /**
          * @Property port: The port of backend server. From 1 to 65535.
          */
-        readonly port: number;
+        readonly port: number | ros.IResolvable;
         /**
          * @Property weight: The weight of backend server of load balancer. From 0 to 100, 0 means offline. Default is 100.
          */
-        readonly weight?: number;
+        readonly weight?: number | ros.IResolvable;
     }
 }
 /**
@@ -2967,8 +3439,11 @@ export namespace RosVServerGroup {
 function RosVServerGroup_BackendServersPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     if(properties.weight && (typeof properties.weight) !== 'object') {
@@ -2994,7 +3469,10 @@ function rosVServerGroupBackendServersPropertyToRosTemplate(properties: any): an
     if (!ros.canInspect(properties)) { return properties; }
     RosVServerGroup_BackendServersPropertyValidator(properties).assertSuccess();
     return {
+      Type: ros.stringToRosTemplate(properties.type),
+      Description: ros.stringToRosTemplate(properties.description),
       ServerId: ros.stringToRosTemplate(properties.serverId),
+      ServerIp: ros.stringToRosTemplate(properties.serverIp),
       Port: ros.numberToRosTemplate(properties.port),
       Weight: ros.numberToRosTemplate(properties.weight),
     };

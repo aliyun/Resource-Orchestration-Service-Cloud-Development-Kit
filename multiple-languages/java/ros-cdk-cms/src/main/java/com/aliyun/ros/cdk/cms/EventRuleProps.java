@@ -3,40 +3,54 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Properties for defining a `ALIYUN::CMS::EventRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.878Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleProps.Jsii$Proxy.class)
 public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEventPattern();
 
     /**
+     * Property ruleName: The name of the alarm rule.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRuleName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
+     * Property description: The description of the alert rule.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property eventType: The type of the event alert.
+     * <p>
+     * Valid values:
+     * SYSTEM
+     * CUSTOM
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEventType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEventType() {
         return null;
     }
 
     /**
+     * Property groupId: The ID of the application group.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getGroupId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGroupId() {
         return null;
     }
 
     /**
+     * Property state: The status of the alert rule.
+     * <p>
+     * Valid values:
+     * ENABLED
+     * DISABLED
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getState() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getState() {
         return null;
     }
 
@@ -51,15 +65,15 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<EventRuleProps> {
         private java.lang.Object eventPattern;
-        private java.lang.String ruleName;
-        private java.lang.String description;
-        private java.lang.String eventType;
-        private java.lang.String groupId;
-        private java.lang.String state;
+        private java.lang.Object ruleName;
+        private java.lang.Object description;
+        private java.lang.Object eventType;
+        private java.lang.Object groupId;
+        private java.lang.Object state;
 
         /**
          * Sets the value of {@link EventRuleProps#getEventPattern}
-         * @param eventPattern the value to be set. This parameter is required.
+         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
          * @return {@code this}
          */
         public Builder eventPattern(com.aliyun.ros.cdk.core.IResolvable eventPattern) {
@@ -69,7 +83,7 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getEventPattern}
-         * @param eventPattern the value to be set. This parameter is required.
+         * @param eventPattern Property eventPattern: Event pattern configuration.A maximum of 20 event patterns. This parameter is required.
          * @return {@code this}
          */
         public Builder eventPattern(java.util.List<? extends java.lang.Object> eventPattern) {
@@ -79,7 +93,7 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link EventRuleProps#getRuleName}
-         * @param ruleName the value to be set. This parameter is required.
+         * @param ruleName Property ruleName: The name of the alarm rule. This parameter is required.
          * @return {@code this}
          */
         public Builder ruleName(java.lang.String ruleName) {
@@ -88,8 +102,18 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EventRuleProps#getRuleName}
+         * @param ruleName Property ruleName: The name of the alarm rule. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
+            this.ruleName = ruleName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EventRuleProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: The description of the alert rule.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -98,8 +122,21 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EventRuleProps#getDescription}
+         * @param description Property description: The description of the alert rule.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EventRuleProps#getEventType}
-         * @param eventType the value to be set.
+         * @param eventType Property eventType: The type of the event alert.
+         *                  Valid values:
+         *                  SYSTEM
+         *                  CUSTOM
          * @return {@code this}
          */
         public Builder eventType(java.lang.String eventType) {
@@ -108,8 +145,21 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EventRuleProps#getEventType}
+         * @param eventType Property eventType: The type of the event alert.
+         *                  Valid values:
+         *                  SYSTEM
+         *                  CUSTOM
+         * @return {@code this}
+         */
+        public Builder eventType(com.aliyun.ros.cdk.core.IResolvable eventType) {
+            this.eventType = eventType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EventRuleProps#getGroupId}
-         * @param groupId the value to be set.
+         * @param groupId Property groupId: The ID of the application group.
          * @return {@code this}
          */
         public Builder groupId(java.lang.String groupId) {
@@ -118,11 +168,37 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link EventRuleProps#getGroupId}
+         * @param groupId Property groupId: The ID of the application group.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link EventRuleProps#getState}
-         * @param state the value to be set.
+         * @param state Property state: The status of the alert rule.
+         *              Valid values:
+         *              ENABLED
+         *              DISABLED
          * @return {@code this}
          */
         public Builder state(java.lang.String state) {
+            this.state = state;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link EventRuleProps#getState}
+         * @param state Property state: The status of the alert rule.
+         *              Valid values:
+         *              ENABLED
+         *              DISABLED
+         * @return {@code this}
+         */
+        public Builder state(com.aliyun.ros.cdk.core.IResolvable state) {
             this.state = state;
             return this;
         }
@@ -144,11 +220,11 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EventRuleProps {
         private final java.lang.Object eventPattern;
-        private final java.lang.String ruleName;
-        private final java.lang.String description;
-        private final java.lang.String eventType;
-        private final java.lang.String groupId;
-        private final java.lang.String state;
+        private final java.lang.Object ruleName;
+        private final java.lang.Object description;
+        private final java.lang.Object eventType;
+        private final java.lang.Object groupId;
+        private final java.lang.Object state;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -157,17 +233,17 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.eventPattern = software.amazon.jsii.Kernel.get(this, "eventPattern", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.eventType = software.amazon.jsii.Kernel.get(this, "eventType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.state = software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.ruleName = software.amazon.jsii.Kernel.get(this, "ruleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.eventType = software.amazon.jsii.Kernel.get(this, "eventType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.state = software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object eventPattern, final java.lang.String ruleName, final java.lang.String description, final java.lang.String eventType, final java.lang.String groupId, final java.lang.String state) {
+        protected Jsii$Proxy(final java.lang.Object eventPattern, final java.lang.Object ruleName, final java.lang.Object description, final java.lang.Object eventType, final java.lang.Object groupId, final java.lang.Object state) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.eventPattern = java.util.Objects.requireNonNull(eventPattern, "eventPattern is required");
             this.ruleName = java.util.Objects.requireNonNull(ruleName, "ruleName is required");
@@ -183,27 +259,27 @@ public interface EventRuleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getRuleName() {
+        public final java.lang.Object getRuleName() {
             return this.ruleName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getEventType() {
+        public final java.lang.Object getEventType() {
             return this.eventType;
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getState() {
+        public final java.lang.Object getState() {
             return this.state;
         }
 

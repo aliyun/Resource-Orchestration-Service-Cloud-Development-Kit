@@ -10,12 +10,12 @@ export interface RosBucketProps {
     /**
      * @Property bucketName: bucket name.
      */
-    readonly bucketName: string;
+    readonly bucketName: string | ros.IResolvable;
 
     /**
      * @Property accessControl: The access control list.
      */
-    readonly accessControl?: string;
+    readonly accessControl?: string | ros.IResolvable;
 
     /**
      * @Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
@@ -55,12 +55,12 @@ export interface RosBucketProps {
     /**
      * @Property storageClass: Specifies the storage class of the bucket. Default is "Standard".
      */
-    readonly storageClass?: string;
+    readonly storageClass?: string | ros.IResolvable;
 
     /**
      * @Property tags: Bucket tags in k-v pairs format.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * @Property websiteConfiguration: The properties of website config.
@@ -102,7 +102,7 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accessControl', ros.validateString)(properties.accessControl));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosBucketProps"');
 }
 
@@ -130,7 +130,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
       RefererConfiguration: rosBucketRefererConfigurationPropertyToRosTemplate(properties.refererConfiguration),
       ServerSideEncryptionConfiguration: rosBucketServerSideEncryptionConfigurationPropertyToRosTemplate(properties.serverSideEncryptionConfiguration),
       StorageClass: ros.stringToRosTemplate(properties.storageClass),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.hashMapper(ros.objectToRosTemplate)(properties.tags),
       WebsiteConfiguration: rosBucketWebsiteConfigurationPropertyToRosTemplate(properties.websiteConfiguration),
     };
 }
@@ -152,17 +152,17 @@ export class RosBucket extends ros.RosResource {
     /**
      * @Attribute DomainName: The public DNS name of the specified bucket.
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * @Attribute InternalDomainName: The internal DNS name of the specified bucket.
      */
-    public readonly attrInternalDomainName: any;
+    public readonly attrInternalDomainName: ros.IResolvable;
 
     /**
      * @Attribute Name: The name of Bucket
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -170,12 +170,12 @@ export class RosBucket extends ros.RosResource {
     /**
      * @Property bucketName: bucket name.
      */
-    public bucketName: string;
+    public bucketName: string | ros.IResolvable;
 
     /**
      * @Property accessControl: The access control list.
      */
-    public accessControl: string | undefined;
+    public accessControl: string | ros.IResolvable | undefined;
 
     /**
      * @Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
@@ -215,12 +215,12 @@ export class RosBucket extends ros.RosResource {
     /**
      * @Property storageClass: Specifies the storage class of the bucket. Default is "Standard".
      */
-    public storageClass: string | undefined;
+    public storageClass: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Bucket tags in k-v pairs format.
      */
-    public readonly tags: ros.TagManager;
+    public tags: { [key: string]: (any) } | undefined;
 
     /**
      * @Property websiteConfiguration: The properties of website config.
@@ -236,9 +236,9 @@ export class RosBucket extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosBucketProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosBucket.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDomainName = ros.Token.asString(this.getAtt('DomainName'));
-        this.attrInternalDomainName = ros.Token.asString(this.getAtt('InternalDomainName'));
-        this.attrName = ros.Token.asString(this.getAtt('Name'));
+        this.attrDomainName = this.getAtt('DomainName');
+        this.attrInternalDomainName = this.getAtt('InternalDomainName');
+        this.attrName = this.getAtt('Name');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bucketName = props.bucketName;
@@ -251,7 +251,7 @@ export class RosBucket extends ros.RosResource {
         this.refererConfiguration = props.refererConfiguration;
         this.serverSideEncryptionConfiguration = props.serverSideEncryptionConfiguration;
         this.storageClass = props.storageClass;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::OSS::Bucket", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.websiteConfiguration = props.websiteConfiguration;
     }
 
@@ -268,7 +268,7 @@ export class RosBucket extends ros.RosResource {
             refererConfiguration: this.refererConfiguration,
             serverSideEncryptionConfiguration: this.serverSideEncryptionConfiguration,
             storageClass: this.storageClass,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             websiteConfiguration: this.websiteConfiguration,
         };
     }
@@ -285,11 +285,11 @@ export namespace RosBucket {
         /**
          * @Property createdBeforeDate: undefined
          */
-        readonly createdBeforeDate?: string;
+        readonly createdBeforeDate?: string | ros.IResolvable;
         /**
          * @Property days: undefined
          */
-        readonly days?: number;
+        readonly days?: number | ros.IResolvable;
     }
 }
 /**
@@ -373,23 +373,23 @@ export namespace RosBucket {
         /**
          * @Property maxAgeSeconds: undefined
          */
-        readonly maxAgeSeconds?: number;
+        readonly maxAgeSeconds?: number | ros.IResolvable;
         /**
          * @Property allowedMethod: undefined
          */
-        readonly allowedMethod?: string[];
+        readonly allowedMethod?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property exposeHeader: undefined
          */
-        readonly exposeHeader?: string[];
+        readonly exposeHeader?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property allowedOrigin: undefined
          */
-        readonly allowedOrigin?: string[];
+        readonly allowedOrigin?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property allowedHeader: undefined
          */
-        readonly allowedHeader?: string[];
+        readonly allowedHeader?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
@@ -438,15 +438,15 @@ export namespace RosBucket {
         /**
          * @Property createdBeforeDate: undefined
          */
-        readonly createdBeforeDate?: string;
+        readonly createdBeforeDate?: string | ros.IResolvable;
         /**
          * @Property days: undefined
          */
-        readonly days?: number;
+        readonly days?: number | ros.IResolvable;
         /**
          * @Property date: undefined
          */
-        readonly date?: string;
+        readonly date?: string | ros.IResolvable;
     }
 }
 /**
@@ -533,11 +533,11 @@ export namespace RosBucket {
         /**
          * @Property targetPrefix: This element lets you specify a prefix for the objects that the log files will be stored.
          */
-        readonly targetPrefix?: string;
+        readonly targetPrefix?: string | ros.IResolvable;
         /**
          * @Property targetBucket: Specifies the bucket where you want Aliyun OSS to store server access logs.
          */
-        readonly targetBucket?: string;
+        readonly targetBucket?: string | ros.IResolvable;
     }
 }
 /**
@@ -627,7 +627,7 @@ export namespace RosBucket {
         /**
          * @Property status: undefined
          */
-        readonly status?: string;
+        readonly status?: string | ros.IResolvable;
         /**
          * @Property abortMultipartUpload: undefined
          */
@@ -639,11 +639,11 @@ export namespace RosBucket {
         /**
          * @Property prefix: undefined
          */
-        readonly prefix: string;
+        readonly prefix: string | ros.IResolvable;
         /**
          * @Property id: undefined
          */
-        readonly id?: string;
+        readonly id?: string | ros.IResolvable;
     }
 }
 /**
@@ -699,11 +699,11 @@ export namespace RosBucket {
         /**
          * @Property sseAlgorithm: Specifies the default server-side encryption method.
          */
-        readonly sseAlgorithm: string;
+        readonly sseAlgorithm: string | ros.IResolvable;
         /**
          * @Property kmsMasterKeyId: Specifies the CMK ID when the value of SSEAlgorithm is KMS and a specified CMK is used for encryption. If the value of SSEAlgorithm is not KMS, this element must be null.
          */
-        readonly kmsMasterKeyId?: string;
+        readonly kmsMasterKeyId?: string | ros.IResolvable;
     }
 }
 /**
@@ -753,11 +753,11 @@ export namespace RosBucket {
         /**
          * @Property indexDocument: default home page.
          */
-        readonly indexDocument?: string;
+        readonly indexDocument?: string | ros.IResolvable;
         /**
          * @Property errorDocument: default error page.
          */
-        readonly errorDocument?: string;
+        readonly errorDocument?: string | ros.IResolvable;
     }
 }
 /**

@@ -47,19 +47,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Attribute</strong>: ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/queues/$queueName
         /// </remarks>
-        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArnWithSlash
+        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArnWithSlash
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: QueueName: Queue name
+        /// </remarks>
+        [JsiiProperty(name: "attrQueueName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQueueName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: QueueUrl: URL of created queue
         /// </remarks>
-        [JsiiProperty(name: "attrQueueUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrQueueUrl
+        [JsiiProperty(name: "attrQueueUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrQueueUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,10 +87,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// <remarks>
         /// <strong>Property</strong>: queueName: Queue name
         /// </remarks>
-        [JsiiProperty(name: "queueName", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string QueueName
+        [JsiiProperty(name: "queueName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object QueueName
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -90,15 +99,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 0 and 604800 (7 days). The default value is 0
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "delaySeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? DelaySeconds
+        [JsiiProperty(name: "delaySeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DelaySeconds
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled. 
+        /// <strong>Property</strong>: loggingEnabled: Whether to enable log management. "true" indicates that log management is enabled, whereas "false" indicates that log management is disabled.
         /// The default value is false
         /// </remarks>
         [JsiiOptional]
@@ -114,10 +123,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 1024 (1K) and 65536 (64K). The default value is 65536 (64K).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? MaximumMessageSize
+        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MaximumMessageSize
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -126,10 +135,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "messageRetentionPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? MessageRetentionPeriod
+        [JsiiProperty(name: "messageRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MessageRetentionPeriod
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -138,10 +147,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 0 and 30 seconds. The default value is 0 (seconds)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "pollingWaitSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? PollingWaitSeconds
+        [JsiiProperty(name: "pollingWaitSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? PollingWaitSeconds
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -150,10 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer between 1 and 43200 (12 hours). The default value is 30 (seconds)
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "visibilityTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? VisibilityTimeout
+        [JsiiProperty(name: "visibilityTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VisibilityTimeout
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
     }

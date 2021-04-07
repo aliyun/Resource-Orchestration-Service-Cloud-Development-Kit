@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * A ROS resource type:  `ALIYUN::DMS::User`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.444Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.087Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.User")
 public class User extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DMS::User`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public User(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dms.UserProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::DMS::User`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public User(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.dms.UserProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,45 +49,52 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Mobile: UserMobile.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMobile() {
-        return software.amazon.jsii.Kernel.get(this, "attrMobile", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMobile() {
+        return software.amazon.jsii.Kernel.get(this, "attrMobile", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute ParentUid: ParentAliYunUid.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrParentUid() {
-        return software.amazon.jsii.Kernel.get(this, "attrParentUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrParentUid() {
+        return software.amazon.jsii.Kernel.get(this, "attrParentUid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RoleIds: UserRoleId.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRoleIds() {
-        return software.amazon.jsii.Kernel.get(this, "attrRoleIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRoleIds() {
+        return software.amazon.jsii.Kernel.get(this, "attrRoleIds", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute RoleNames: UserRole.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRoleNames() {
-        return software.amazon.jsii.Kernel.get(this, "attrRoleNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRoleNames() {
+        return software.amazon.jsii.Kernel.get(this, "attrRoleNames", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute Uid: UserAliYunUid.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUid() {
-        return software.amazon.jsii.Kernel.get(this, "attrUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUid() {
+        return software.amazon.jsii.Kernel.get(this, "attrUid", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute UserId: UserId.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserId() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserId() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute UserName: UserNickName.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrUserName() {
-        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrUserName() {
+        return software.amazon.jsii.Kernel.get(this, "attrUserName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -88,8 +103,8 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.dms.User> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -97,8 +112,8 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -117,55 +132,127 @@ public class User extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property uid: UserAliYunUid.
+         * <p>
          * @return {@code this}
-         * @param uid This parameter is required.
+         * @param uid Property uid: UserAliYunUid. This parameter is required.
          */
         public Builder uid(final java.lang.String uid) {
             this.props.uid(uid);
             return this;
         }
+        /**
+         * Property uid: UserAliYunUid.
+         * <p>
+         * @return {@code this}
+         * @param uid Property uid: UserAliYunUid. This parameter is required.
+         */
+        public Builder uid(final com.aliyun.ros.cdk.core.IResolvable uid) {
+            this.props.uid(uid);
+            return this;
+        }
 
         /**
+         * Property mobile: UserMobile.
+         * <p>
          * @return {@code this}
-         * @param mobile This parameter is required.
+         * @param mobile Property mobile: UserMobile. This parameter is required.
          */
         public Builder mobile(final java.lang.String mobile) {
             this.props.mobile(mobile);
             return this;
         }
+        /**
+         * Property mobile: UserMobile.
+         * <p>
+         * @return {@code this}
+         * @param mobile Property mobile: UserMobile. This parameter is required.
+         */
+        public Builder mobile(final com.aliyun.ros.cdk.core.IResolvable mobile) {
+            this.props.mobile(mobile);
+            return this;
+        }
 
         /**
+         * Property roleNames: UserRole.
+         * <p>
          * @return {@code this}
-         * @param roleNames This parameter is required.
+         * @param roleNames Property roleNames: UserRole. This parameter is required.
          */
-        public Builder roleNames(final java.util.List<java.lang.String> roleNames) {
+        public Builder roleNames(final com.aliyun.ros.cdk.core.IResolvable roleNames) {
+            this.props.roleNames(roleNames);
+            return this;
+        }
+        /**
+         * Property roleNames: UserRole.
+         * <p>
+         * @return {@code this}
+         * @param roleNames Property roleNames: UserRole. This parameter is required.
+         */
+        public Builder roleNames(final java.util.List<? extends java.lang.Object> roleNames) {
             this.props.roleNames(roleNames);
             return this;
         }
 
         /**
+         * Property status: UserStatus.
+         * <p>
          * @return {@code this}
-         * @param status This parameter is required.
+         * @param status Property status: UserStatus. This parameter is required.
          */
         public Builder status(final java.lang.String status) {
             this.props.status(status);
             return this;
         }
+        /**
+         * Property status: UserStatus.
+         * <p>
+         * @return {@code this}
+         * @param status Property status: UserStatus. This parameter is required.
+         */
+        public Builder status(final com.aliyun.ros.cdk.core.IResolvable status) {
+            this.props.status(status);
+            return this;
+        }
 
         /**
+         * Property tid:.
+         * <p>
          * @return {@code this}
-         * @param tid This parameter is required.
+         * @param tid Property tid:. This parameter is required.
          */
         public Builder tid(final java.lang.String tid) {
             this.props.tid(tid);
             return this;
         }
+        /**
+         * Property tid:.
+         * <p>
+         * @return {@code this}
+         * @param tid Property tid:. This parameter is required.
+         */
+        public Builder tid(final com.aliyun.ros.cdk.core.IResolvable tid) {
+            this.props.tid(tid);
+            return this;
+        }
 
         /**
+         * Property userName: UserNickName.
+         * <p>
          * @return {@code this}
-         * @param userName This parameter is required.
+         * @param userName Property userName: UserNickName. This parameter is required.
          */
         public Builder userName(final java.lang.String userName) {
+            this.props.userName(userName);
+            return this;
+        }
+        /**
+         * Property userName: UserNickName.
+         * <p>
+         * @return {@code this}
+         * @param userName Property userName: UserNickName. This parameter is required.
+         */
+        public Builder userName(final com.aliyun.ros.cdk.core.IResolvable userName) {
             this.props.userName(userName);
             return this;
         }

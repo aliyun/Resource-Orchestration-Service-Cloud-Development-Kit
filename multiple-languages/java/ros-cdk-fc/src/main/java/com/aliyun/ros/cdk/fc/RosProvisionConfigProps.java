@@ -3,26 +3,26 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Properties for defining a `ALIYUN::FC::ProvisionConfig`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.953Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.557Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.RosProvisionConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosProvisionConfigProps.Jsii$Proxy.class)
 public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getFunctionName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getFunctionName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getQualifier();
+    @org.jetbrains.annotations.NotNull java.lang.Object getQualifier();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServiceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getTarget();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTarget();
 
     /**
      * @return a {@link Builder} of {@link RosProvisionConfigProps}
@@ -34,10 +34,10 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
      * A builder for {@link RosProvisionConfigProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosProvisionConfigProps> {
-        private java.lang.String functionName;
-        private java.lang.String qualifier;
-        private java.lang.String serviceName;
-        private java.lang.Number target;
+        private java.lang.Object functionName;
+        private java.lang.Object qualifier;
+        private java.lang.Object serviceName;
+        private java.lang.Object target;
 
         /**
          * Sets the value of {@link RosProvisionConfigProps#getFunctionName}
@@ -45,6 +45,16 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
          * @return {@code this}
          */
         public Builder functionName(java.lang.String functionName) {
+            this.functionName = functionName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProvisionConfigProps#getFunctionName}
+         * @param functionName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder functionName(com.aliyun.ros.cdk.core.IResolvable functionName) {
             this.functionName = functionName;
             return this;
         }
@@ -60,6 +70,16 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosProvisionConfigProps#getQualifier}
+         * @param qualifier the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder qualifier(com.aliyun.ros.cdk.core.IResolvable qualifier) {
+            this.qualifier = qualifier;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProvisionConfigProps#getServiceName}
          * @param serviceName the value to be set. This parameter is required.
          * @return {@code this}
@@ -70,11 +90,31 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosProvisionConfigProps#getServiceName}
+         * @param serviceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serviceName(com.aliyun.ros.cdk.core.IResolvable serviceName) {
+            this.serviceName = serviceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosProvisionConfigProps#getTarget}
          * @param target the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder target(java.lang.Number target) {
+            this.target = target;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosProvisionConfigProps#getTarget}
+         * @param target the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder target(com.aliyun.ros.cdk.core.IResolvable target) {
             this.target = target;
             return this;
         }
@@ -95,10 +135,10 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosProvisionConfigProps {
-        private final java.lang.String functionName;
-        private final java.lang.String qualifier;
-        private final java.lang.String serviceName;
-        private final java.lang.Number target;
+        private final java.lang.Object functionName;
+        private final java.lang.Object qualifier;
+        private final java.lang.Object serviceName;
+        private final java.lang.Object target;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -106,16 +146,16 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.target = software.amazon.jsii.Kernel.get(this, "target", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.functionName = software.amazon.jsii.Kernel.get(this, "functionName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.qualifier = software.amazon.jsii.Kernel.get(this, "qualifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.target = software.amazon.jsii.Kernel.get(this, "target", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String functionName, final java.lang.String qualifier, final java.lang.String serviceName, final java.lang.Number target) {
+        protected Jsii$Proxy(final java.lang.Object functionName, final java.lang.Object qualifier, final java.lang.Object serviceName, final java.lang.Object target) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.functionName = java.util.Objects.requireNonNull(functionName, "functionName is required");
             this.qualifier = java.util.Objects.requireNonNull(qualifier, "qualifier is required");
@@ -124,22 +164,22 @@ public interface RosProvisionConfigProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
-        public final java.lang.String getFunctionName() {
+        public final java.lang.Object getFunctionName() {
             return this.functionName;
         }
 
         @Override
-        public final java.lang.String getQualifier() {
+        public final java.lang.Object getQualifier() {
             return this.qualifier;
         }
 
         @Override
-        public final java.lang.String getServiceName() {
+        public final java.lang.Object getServiceName() {
             return this.serviceName;
         }
 
         @Override
-        public final java.lang.Number getTarget() {
+        public final java.lang.Object getTarget() {
             return this.target;
         }
 

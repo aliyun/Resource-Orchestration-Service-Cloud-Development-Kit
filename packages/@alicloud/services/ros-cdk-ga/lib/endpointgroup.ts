@@ -11,7 +11,7 @@ export interface EndpointGroupProps {
     /**
      * Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.
      */
-    readonly acceleratorId: string;
+    readonly acceleratorId: string | ros.IResolvable;
 
     /**
      * Property endpointConfigurations:
@@ -21,32 +21,32 @@ export interface EndpointGroupProps {
     /**
      * Property endpointGroupRegion: The region ID of the endpoint group.
      */
-    readonly endpointGroupRegion: string;
+    readonly endpointGroupRegion: string | ros.IResolvable;
 
     /**
      * Property listenerId: The ID of the listener to be associated with the endpoint group.
      */
-    readonly listenerId: string;
+    readonly listenerId: string | ros.IResolvable;
 
     /**
      * Property description: The description of the endpoint group.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
      */
-    readonly healthCheckIntervalSeconds?: number;
+    readonly healthCheckIntervalSeconds?: number | ros.IResolvable;
 
     /**
      * Property healthCheckPath: The path set as the destination on the targets for health checks.
      */
-    readonly healthCheckPath?: string;
+    readonly healthCheckPath?: string | ros.IResolvable;
 
     /**
      * Property healthCheckPort: The port that is used to connect with the targets for health checks.
      */
-    readonly healthCheckPort?: number;
+    readonly healthCheckPort?: number | ros.IResolvable;
 
     /**
      * Property healthCheckProtocol: The protocol that is used to connect with the targets for health checks.
@@ -54,23 +54,23 @@ export interface EndpointGroupProps {
      * http: HTTP protocol
      * https: HTTPS protocol
      */
-    readonly healthCheckProtocol?: string;
+    readonly healthCheckProtocol?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the endpoint group.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.
      */
-    readonly thresholdCount?: number;
+    readonly thresholdCount?: number | ros.IResolvable;
 
     /**
      * Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with
      * multiple endpoint groups.
      */
-    readonly trafficPercentage?: number;
+    readonly trafficPercentage?: number | ros.IResolvable;
 }
 
 /**
@@ -86,7 +86,7 @@ export class EndpointGroup extends ros.Resource {
     /**
      * Attribute EndpointGroupId: The ID of the endpoint group.
      */
-    public readonly attrEndpointGroupId: any;
+    public readonly attrEndpointGroupId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::GA::EndpointGroup`.

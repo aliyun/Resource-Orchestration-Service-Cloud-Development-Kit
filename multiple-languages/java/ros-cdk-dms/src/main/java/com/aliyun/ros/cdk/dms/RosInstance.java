@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * A ROS template type:  `ALIYUN::DMS::Instance`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.409Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,20 +44,20 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrHost() {
-        return software.amazon.jsii.Kernel.get(this, "attrHost", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrHost() {
+        return software.amazon.jsii.Kernel.get(this, "attrHost", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrInstanceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrPort() {
-        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrPort() {
+        return software.amazon.jsii.Kernel.get(this, "attrPort", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -67,8 +67,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDatabasePassword() {
-        return software.amazon.jsii.Kernel.get(this, "databasePassword", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDatabasePassword() {
+        return software.amazon.jsii.Kernel.get(this, "databasePassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -79,8 +79,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getDatabaseUser() {
-        return software.amazon.jsii.Kernel.get(this, "databaseUser", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDatabasePassword(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "databasePassword", java.util.Objects.requireNonNull(value, "databasePassword is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDatabaseUser() {
+        return software.amazon.jsii.Kernel.get(this, "databaseUser", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -91,13 +97,25 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getDbaUid() {
-        return software.amazon.jsii.Kernel.get(this, "dbaUid", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDatabaseUser(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "databaseUser", java.util.Objects.requireNonNull(value, "databaseUser is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getDbaUid() {
+        return software.amazon.jsii.Kernel.get(this, "dbaUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDbaUid(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "dbaUid", java.util.Objects.requireNonNull(value, "dbaUid is required"));
+    }
+
+    /**
+     */
+    public void setDbaUid(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbaUid", java.util.Objects.requireNonNull(value, "dbaUid is required"));
     }
 
@@ -111,8 +129,8 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getEnvType() {
-        return software.amazon.jsii.Kernel.get(this, "envType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getEnvType() {
+        return software.amazon.jsii.Kernel.get(this, "envType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,8 +141,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getExportTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "exportTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setEnvType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "envType", java.util.Objects.requireNonNull(value, "envType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getExportTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "exportTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -135,8 +159,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getHost() {
-        return software.amazon.jsii.Kernel.get(this, "host", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setExportTimeout(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "exportTimeout", java.util.Objects.requireNonNull(value, "exportTimeout is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getHost() {
+        return software.amazon.jsii.Kernel.get(this, "host", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -147,8 +177,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceAlias() {
-        return software.amazon.jsii.Kernel.get(this, "instanceAlias", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHost(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "host", java.util.Objects.requireNonNull(value, "host is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceAlias() {
+        return software.amazon.jsii.Kernel.get(this, "instanceAlias", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +195,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceSource() {
-        return software.amazon.jsii.Kernel.get(this, "instanceSource", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceAlias(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceAlias", java.util.Objects.requireNonNull(value, "instanceAlias is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceSource() {
+        return software.amazon.jsii.Kernel.get(this, "instanceSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,8 +213,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceSource(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceSource", java.util.Objects.requireNonNull(value, "instanceSource is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -183,8 +231,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getNetworkType() {
-        return software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", java.util.Objects.requireNonNull(value, "instanceType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getNetworkType() {
+        return software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +249,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getPort() {
-        return software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setNetworkType(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "networkType", java.util.Objects.requireNonNull(value, "networkType is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getPort() {
+        return software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +267,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getQueryTimeout() {
-        return software.amazon.jsii.Kernel.get(this, "queryTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "port", java.util.Objects.requireNonNull(value, "port is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getQueryTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "queryTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,8 +285,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSafeRule() {
-        return software.amazon.jsii.Kernel.get(this, "safeRule", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setQueryTimeout(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "queryTimeout", java.util.Objects.requireNonNull(value, "queryTimeout is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSafeRule() {
+        return software.amazon.jsii.Kernel.get(this, "safeRule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -231,8 +303,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Number getTid() {
-        return software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setSafeRule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "safeRule", java.util.Objects.requireNonNull(value, "safeRule is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getTid() {
+        return software.amazon.jsii.Kernel.get(this, "tid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -243,8 +321,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDataLinkName() {
-        return software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setTid(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tid", java.util.Objects.requireNonNull(value, "tid is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDataLinkName() {
+        return software.amazon.jsii.Kernel.get(this, "dataLinkName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -255,8 +339,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getDdlOnline() {
-        return software.amazon.jsii.Kernel.get(this, "ddlOnline", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setDataLinkName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dataLinkName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDdlOnline() {
+        return software.amazon.jsii.Kernel.get(this, "ddlOnline", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -267,8 +357,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEcsInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "ecsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDdlOnline(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ddlOnline", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEcsInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "ecsInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -279,8 +375,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEcsRegion() {
-        return software.amazon.jsii.Kernel.get(this, "ecsRegion", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEcsInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ecsInstanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEcsRegion() {
+        return software.amazon.jsii.Kernel.get(this, "ecsRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -291,8 +393,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSid() {
-        return software.amazon.jsii.Kernel.get(this, "sid", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setEcsRegion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ecsRegion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSid() {
+        return software.amazon.jsii.Kernel.get(this, "sid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -303,8 +411,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getUseDsql() {
-        return software.amazon.jsii.Kernel.get(this, "useDsql", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setSid(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sid", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUseDsql() {
+        return software.amazon.jsii.Kernel.get(this, "useDsql", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -315,13 +429,25 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getVpcId() {
-        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setUseDsql(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "useDsql", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setVpcId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vpcId", value);
     }
 
@@ -359,12 +485,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.databasePassword(databasePassword);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param databasePassword This parameter is required.
+         */
+        public Builder databasePassword(final com.aliyun.ros.cdk.core.IResolvable databasePassword) {
+            this.props.databasePassword(databasePassword);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param databaseUser This parameter is required.
          */
         public Builder databaseUser(final java.lang.String databaseUser) {
+            this.props.databaseUser(databaseUser);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param databaseUser This parameter is required.
+         */
+        public Builder databaseUser(final com.aliyun.ros.cdk.core.IResolvable databaseUser) {
             this.props.databaseUser(databaseUser);
             return this;
         }
@@ -377,12 +519,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.dbaUid(dbaUid);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dbaUid This parameter is required.
+         */
+        public Builder dbaUid(final com.aliyun.ros.cdk.core.IResolvable dbaUid) {
+            this.props.dbaUid(dbaUid);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param envType This parameter is required.
          */
         public Builder envType(final java.lang.String envType) {
+            this.props.envType(envType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param envType This parameter is required.
+         */
+        public Builder envType(final com.aliyun.ros.cdk.core.IResolvable envType) {
             this.props.envType(envType);
             return this;
         }
@@ -395,12 +553,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.exportTimeout(exportTimeout);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param exportTimeout This parameter is required.
+         */
+        public Builder exportTimeout(final com.aliyun.ros.cdk.core.IResolvable exportTimeout) {
+            this.props.exportTimeout(exportTimeout);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param host This parameter is required.
          */
         public Builder host(final java.lang.String host) {
+            this.props.host(host);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param host This parameter is required.
+         */
+        public Builder host(final com.aliyun.ros.cdk.core.IResolvable host) {
             this.props.host(host);
             return this;
         }
@@ -413,12 +587,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceAlias(instanceAlias);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceAlias This parameter is required.
+         */
+        public Builder instanceAlias(final com.aliyun.ros.cdk.core.IResolvable instanceAlias) {
+            this.props.instanceAlias(instanceAlias);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceSource This parameter is required.
          */
         public Builder instanceSource(final java.lang.String instanceSource) {
+            this.props.instanceSource(instanceSource);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceSource This parameter is required.
+         */
+        public Builder instanceSource(final com.aliyun.ros.cdk.core.IResolvable instanceSource) {
             this.props.instanceSource(instanceSource);
             return this;
         }
@@ -431,12 +621,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.instanceType(instanceType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param networkType This parameter is required.
          */
         public Builder networkType(final java.lang.String networkType) {
+            this.props.networkType(networkType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param networkType This parameter is required.
+         */
+        public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
             return this;
         }
@@ -449,12 +655,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.port(port);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param port This parameter is required.
+         */
+        public Builder port(final com.aliyun.ros.cdk.core.IResolvable port) {
+            this.props.port(port);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param queryTimeout This parameter is required.
          */
         public Builder queryTimeout(final java.lang.Number queryTimeout) {
+            this.props.queryTimeout(queryTimeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param queryTimeout This parameter is required.
+         */
+        public Builder queryTimeout(final com.aliyun.ros.cdk.core.IResolvable queryTimeout) {
             this.props.queryTimeout(queryTimeout);
             return this;
         }
@@ -467,12 +689,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.safeRule(safeRule);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param safeRule This parameter is required.
+         */
+        public Builder safeRule(final com.aliyun.ros.cdk.core.IResolvable safeRule) {
+            this.props.safeRule(safeRule);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param tid This parameter is required.
          */
         public Builder tid(final java.lang.Number tid) {
+            this.props.tid(tid);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tid This parameter is required.
+         */
+        public Builder tid(final com.aliyun.ros.cdk.core.IResolvable tid) {
             this.props.tid(tid);
             return this;
         }
@@ -485,12 +723,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.dataLinkName(dataLinkName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param dataLinkName This parameter is required.
+         */
+        public Builder dataLinkName(final com.aliyun.ros.cdk.core.IResolvable dataLinkName) {
+            this.props.dataLinkName(dataLinkName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param ddlOnline This parameter is required.
          */
         public Builder ddlOnline(final java.lang.Number ddlOnline) {
+            this.props.ddlOnline(ddlOnline);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ddlOnline This parameter is required.
+         */
+        public Builder ddlOnline(final com.aliyun.ros.cdk.core.IResolvable ddlOnline) {
             this.props.ddlOnline(ddlOnline);
             return this;
         }
@@ -503,12 +757,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.ecsInstanceId(ecsInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ecsInstanceId This parameter is required.
+         */
+        public Builder ecsInstanceId(final com.aliyun.ros.cdk.core.IResolvable ecsInstanceId) {
+            this.props.ecsInstanceId(ecsInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param ecsRegion This parameter is required.
          */
         public Builder ecsRegion(final java.lang.String ecsRegion) {
+            this.props.ecsRegion(ecsRegion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ecsRegion This parameter is required.
+         */
+        public Builder ecsRegion(final com.aliyun.ros.cdk.core.IResolvable ecsRegion) {
             this.props.ecsRegion(ecsRegion);
             return this;
         }
@@ -521,6 +791,14 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.sid(sid);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param sid This parameter is required.
+         */
+        public Builder sid(final com.aliyun.ros.cdk.core.IResolvable sid) {
+            this.props.sid(sid);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -530,12 +808,28 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
             this.props.useDsql(useDsql);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param useDsql This parameter is required.
+         */
+        public Builder useDsql(final com.aliyun.ros.cdk.core.IResolvable useDsql) {
+            this.props.useDsql(useDsql);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param vpcId This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }

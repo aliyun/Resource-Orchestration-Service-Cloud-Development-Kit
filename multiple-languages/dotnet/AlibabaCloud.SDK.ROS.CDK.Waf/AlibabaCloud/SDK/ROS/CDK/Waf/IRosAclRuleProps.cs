@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: domain: Domain name.
         /// </remarks>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-        string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Domain
         {
             get;
         }
@@ -21,8 +21,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <strong>Property</strong>: instanceId: WAF instance ID.
         /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -30,8 +30,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: rules: Detailed information of precise access control rules, expressed in JSON format strings.
         /// </remarks>
-        [JsiiProperty(name: "rules", typeJson: "{\"primitive\":\"string\"}")]
-        string Rules
+        [JsiiProperty(name: "rules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Rules
         {
             get;
         }
@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// cn: China mainland (default)
         /// cn-hongkong: China HongKong and other overseas
         /// </remarks>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Region
+        object? Region
         {
             get
             {
@@ -54,9 +54,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// <strong>Property</strong>: ruleId: Precise access control rule ID
         /// </remarks>
-        [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? RuleId
+        object? RuleId
         {
             get
             {
@@ -75,29 +75,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             /// <remarks>
             /// <strong>Property</strong>: domain: Domain name.
             /// </remarks>
-            [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-            public string Domain
+            [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Domain
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: instanceId: WAF instance ID.
             /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: rules: Detailed information of precise access control rules, expressed in JSON format strings.
             /// </remarks>
-            [JsiiProperty(name: "rules", typeJson: "{\"primitive\":\"string\"}")]
-            public string Rules
+            [JsiiProperty(name: "rules", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Rules
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -106,20 +106,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             /// cn-hongkong: China HongKong and other overseas
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Region
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Region
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: ruleId: Precise access control rule ID
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ruleId", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? RuleId
+            [JsiiProperty(name: "ruleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RuleId
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

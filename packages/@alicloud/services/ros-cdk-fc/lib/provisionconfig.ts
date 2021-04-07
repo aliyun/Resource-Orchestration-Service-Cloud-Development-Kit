@@ -11,23 +11,23 @@ export interface ProvisionConfigProps {
     /**
      * Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * Property qualifier: Service's alias.
      * Example : "LATEST"
      */
-    readonly qualifier: string;
+    readonly qualifier: string | ros.IResolvable;
 
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property target: Number of provision
      */
-    readonly target: number;
+    readonly target: number | ros.IResolvable;
 }
 
 /**
@@ -43,27 +43,27 @@ export class ProvisionConfig extends ros.Resource {
     /**
      * Attribute FunctionName: The function name
      */
-    public readonly attrFunctionName: any;
+    public readonly attrFunctionName: ros.IResolvable;
 
     /**
      * Attribute Qualifier: The service alias
      */
-    public readonly attrQualifier: any;
+    public readonly attrQualifier: ros.IResolvable;
 
     /**
      * Attribute Resource: The resource
      */
-    public readonly attrResource: any;
+    public readonly attrResource: ros.IResolvable;
 
     /**
      * Attribute ServiceName: The service name
      */
-    public readonly attrServiceName: any;
+    public readonly attrServiceName: ros.IResolvable;
 
     /**
      * Attribute Target: Number of provision
      */
-    public readonly attrTarget: any;
+    public readonly attrTarget: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::ProvisionConfig`.

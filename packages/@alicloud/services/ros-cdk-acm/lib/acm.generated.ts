@@ -10,34 +10,34 @@ export interface RosConfigurationProps {
     /**
      * @Property content: The contents of the configuration
      */
-    readonly content: string;
+    readonly content: string | ros.IResolvable;
 
     /**
      * @Property dataId: The ID of the configuration. Allowed characters are upper and lower case letters, numbers, decimal points (.), Colons (:), asterisks (*), underscores (_), and underscores (-). When the ID prefix is the following value, ACM will automatically use KMS service to encrypt this configuration:
      * The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
      * The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
      */
-    readonly dataId: string;
+    readonly dataId: string | ros.IResolvable;
 
     /**
      * @Property namespaceId: ID of namespace
      */
-    readonly namespaceId: string;
+    readonly namespaceId: string | ros.IResolvable;
 
     /**
      * @Property appName: Configuration application name
      */
-    readonly appName?: string;
+    readonly appName?: string | ros.IResolvable;
 
     /**
      * @Property desc: Configuration description explains
      */
-    readonly desc?: string;
+    readonly desc?: string | ros.IResolvable;
 
     /**
      * @Property group: Group
      */
-    readonly group?: string;
+    readonly group?: string | ros.IResolvable;
 
     /**
      * @Property tags: Label configurations, such as the presence of a plurality of tags, separated by commas
@@ -48,7 +48,7 @@ export interface RosConfigurationProps {
      * @Property type: Provisioning content format, optional values as follows:
      * text, json, xml, yaml, text/html, properties
      */
-    readonly type?: string;
+    readonly type?: string | ros.IResolvable;
 }
 
 /**
@@ -123,17 +123,17 @@ export class RosConfiguration extends ros.RosResource {
     /**
      * @Attribute DataId: The ID of the configuration
      */
-    public readonly attrDataId: any;
+    public readonly attrDataId: ros.IResolvable;
 
     /**
      * @Attribute Group: Group
      */
-    public readonly attrGroup: any;
+    public readonly attrGroup: ros.IResolvable;
 
     /**
      * @Attribute NamespaceId: ID of namespace
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -141,34 +141,34 @@ export class RosConfiguration extends ros.RosResource {
     /**
      * @Property content: The contents of the configuration
      */
-    public content: string;
+    public content: string | ros.IResolvable;
 
     /**
      * @Property dataId: The ID of the configuration. Allowed characters are upper and lower case letters, numbers, decimal points (.), Colons (:), asterisks (*), underscores (_), and underscores (-). When the ID prefix is the following value, ACM will automatically use KMS service to encrypt this configuration:
      * The prefix is cipher-: the KMS service is called to encrypt and decrypt the configuration. The size of the encrypted data does not exceed 4 KB, and the maximum does not exceed 6 KB. Special symbols such as and (&amp;) will decrypt errors and are not recommended.
      * The prefix is cipher-kms-aes-128-: using KMS's envelope encryption and decryption method, the configuration content can exceed  6 KB, up to 100 KB. The plain text data of the configuration content will not be transmitted to the KMS system, which is more secure and recommended.
      */
-    public dataId: string;
+    public dataId: string | ros.IResolvable;
 
     /**
      * @Property namespaceId: ID of namespace
      */
-    public namespaceId: string;
+    public namespaceId: string | ros.IResolvable;
 
     /**
      * @Property appName: Configuration application name
      */
-    public appName: string | undefined;
+    public appName: string | ros.IResolvable | undefined;
 
     /**
      * @Property desc: Configuration description explains
      */
-    public desc: string | undefined;
+    public desc: string | ros.IResolvable | undefined;
 
     /**
      * @Property group: Group
      */
-    public group: string | undefined;
+    public group: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Label configurations, such as the presence of a plurality of tags, separated by commas
@@ -179,7 +179,7 @@ export class RosConfiguration extends ros.RosResource {
      * @Property type: Provisioning content format, optional values as follows:
      * text, json, xml, yaml, text/html, properties
      */
-    public type: string | undefined;
+    public type: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::ACM::Configuration`.
@@ -190,9 +190,9 @@ export class RosConfiguration extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosConfigurationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosConfiguration.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrDataId = ros.Token.asString(this.getAtt('DataId'));
-        this.attrGroup = ros.Token.asString(this.getAtt('Group'));
-        this.attrNamespaceId = ros.Token.asString(this.getAtt('NamespaceId'));
+        this.attrDataId = this.getAtt('DataId');
+        this.attrGroup = this.getAtt('Group');
+        this.attrNamespaceId = this.getAtt('NamespaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.content = props.content;
@@ -231,7 +231,7 @@ export interface RosNamespaceProps {
     /**
      * @Property name: Namespace name
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 }
 
 /**
@@ -284,12 +284,12 @@ export class RosNamespace extends ros.RosResource {
     /**
      * @Attribute Endpoint: Endpoint
      */
-    public readonly attrEndpoint: any;
+    public readonly attrEndpoint: ros.IResolvable;
 
     /**
      * @Attribute NamespaceId: ID namespace
      */
-    public readonly attrNamespaceId: any;
+    public readonly attrNamespaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -297,7 +297,7 @@ export class RosNamespace extends ros.RosResource {
     /**
      * @Property name: Namespace name
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ACM::Namespace`.
@@ -308,8 +308,8 @@ export class RosNamespace extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNamespaceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNamespace.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrEndpoint = ros.Token.asString(this.getAtt('Endpoint'));
-        this.attrNamespaceId = ros.Token.asString(this.getAtt('NamespaceId'));
+        this.attrEndpoint = this.getAtt('Endpoint');
+        this.attrNamespaceId = this.getAtt('NamespaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;

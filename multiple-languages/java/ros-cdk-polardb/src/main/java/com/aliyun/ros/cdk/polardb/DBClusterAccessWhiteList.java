@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * A ROS resource type:  `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.166Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.816Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterAccessWhiteList")
 public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public DBClusterAccessWhiteList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterAccessWhiteListProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public DBClusterAccessWhiteList(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.polardb.DBClusterAccessWhiteListProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute DBClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrDbClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrDbClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "attrDbClusterId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.polardb.DBClusterAccessWhiteList> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,88 @@ public class DBClusterAccessWhiteList extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
+         * <p>
          * @return {@code this}
-         * @param dbClusterId This parameter is required.
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified. This parameter is required.
          */
         public Builder dbClusterId(final java.lang.String dbClusterId) {
             this.props.dbClusterId(dbClusterId);
             return this;
         }
+        /**
+         * Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified.
+         * <p>
+         * @return {@code this}
+         * @param dbClusterId Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster whose IP address whitelist is to be modified. This parameter is required.
+         */
+        public Builder dbClusterId(final com.aliyun.ros.cdk.core.IResolvable dbClusterId) {
+            this.props.dbClusterId(dbClusterId);
+            return this;
+        }
 
         /**
+         * Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified.
+         * <p>
+         * Each
+         * whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
+         * addresses with a comma (,). The following two formats are supported:
+         * IP address: for example, 10.23.12.24.
+         * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
+         * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+         * ranges from 1 to 32.
+         * <p>
          * @return {@code this}
-         * @param securityIps This parameter is required.
+         * @param securityIps Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. This parameter is required.
          */
         public Builder securityIps(final java.lang.String securityIps) {
             this.props.securityIps(securityIps);
             return this;
         }
+        /**
+         * Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified.
+         * <p>
+         * Each
+         * whitelist group can contain a maximum of 1,000 IP addresses. Separate multiple IP
+         * addresses with a comma (,). The following two formats are supported:
+         * IP address: for example, 10.23.12.24.
+         * Classless inter-domain routing (CIDR) block: for example, 10.23.12.24/24, where the
+         * suffix /24 indicates the number of bits for the prefix of the IP address. The suffix
+         * ranges from 1 to 32.
+         * <p>
+         * @return {@code this}
+         * @param securityIps Property securityIps: The IP addresses to be added to the IP address whitelist group to be modified. This parameter is required.
+         */
+        public Builder securityIps(final com.aliyun.ros.cdk.core.IResolvable securityIps) {
+            this.props.securityIps(securityIps);
+            return this;
+        }
 
         /**
+         * Property dbClusterIpArrayName: The name of the IP address whitelist group.
+         * <p>
+         * If you do not specify this parameter,
+         * the Default whitelist group is modified by default.
+         * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
+         * <p>
          * @return {@code this}
-         * @param dbClusterIpArrayName This parameter is required.
+         * @param dbClusterIpArrayName Property dbClusterIpArrayName: The name of the IP address whitelist group. This parameter is required.
          */
         public Builder dbClusterIpArrayName(final java.lang.String dbClusterIpArrayName) {
+            this.props.dbClusterIpArrayName(dbClusterIpArrayName);
+            return this;
+        }
+        /**
+         * Property dbClusterIpArrayName: The name of the IP address whitelist group.
+         * <p>
+         * If you do not specify this parameter,
+         * the Default whitelist group is modified by default.
+         * Note You can create up to 50 whitelist groups for an ApsaraDB for POLARDB cluster.
+         * <p>
+         * @return {@code this}
+         * @param dbClusterIpArrayName Property dbClusterIpArrayName: The name of the IP address whitelist group. This parameter is required.
+         */
+        public Builder dbClusterIpArrayName(final com.aliyun.ros.cdk.core.IResolvable dbClusterIpArrayName) {
             this.props.dbClusterIpArrayName(dbClusterIpArrayName);
             return this;
         }

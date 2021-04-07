@@ -9,15 +9,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
     public interface IWhitelistProps
     {
         /// <summary>Property instanceId: Instance ID (globally unique).</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
 
         /// <summary>Property securityIps: IP address whitelist to be modified.</summary>
-        [JsiiProperty(name: "securityIps", typeJson: "{\"primitive\":\"string\"}")]
-        string SecurityIps
+        [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SecurityIps
         {
             get;
         }
@@ -26,9 +26,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         /// <remarks>
         /// For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
         /// </remarks>
-        [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityIpGroupAttribute
+        object? SecurityIpGroupAttribute
         {
             get
             {
@@ -37,9 +37,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
         }
 
         /// <summary>Property securityIpGroupName: Whitelist group.</summary>
-        [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityIpGroupName
+        object? SecurityIpGroupName
         {
             get
             {
@@ -56,17 +56,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             }
 
             /// <summary>Property instanceId: Instance ID (globally unique).</summary>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property securityIps: IP address whitelist to be modified.</summary>
-            [JsiiProperty(name: "securityIps", typeJson: "{\"primitive\":\"string\"}")]
-            public string SecurityIps
+            [JsiiProperty(name: "securityIps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SecurityIps
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property securityIpGroupAttribute: The default is empty.</summary>
@@ -74,18 +74,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Memcache
             /// For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityIpGroupAttribute
+            [JsiiProperty(name: "securityIpGroupAttribute", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityIpGroupAttribute
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityIpGroupName: Whitelist group.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityIpGroupName
+            [JsiiProperty(name: "securityIpGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityIpGroupName
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

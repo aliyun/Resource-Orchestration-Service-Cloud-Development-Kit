@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * A ROS template type:  `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.621Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosForwardEntry")
 public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrForwardEntryId() {
-        return software.amazon.jsii.Kernel.get(this, "attrForwardEntryId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrForwardEntryId() {
+        return software.amazon.jsii.Kernel.get(this, "attrForwardEntryId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getExternalIp() {
-        return software.amazon.jsii.Kernel.get(this, "externalIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getExternalIp() {
+        return software.amazon.jsii.Kernel.get(this, "externalIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,8 +75,14 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getExternalPort() {
-        return software.amazon.jsii.Kernel.get(this, "externalPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setExternalIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "externalIp", java.util.Objects.requireNonNull(value, "externalIp is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getExternalPort() {
+        return software.amazon.jsii.Kernel.get(this, "externalPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getForwardTableId() {
-        return software.amazon.jsii.Kernel.get(this, "forwardTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setExternalPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "externalPort", java.util.Objects.requireNonNull(value, "externalPort is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getForwardTableId() {
+        return software.amazon.jsii.Kernel.get(this, "forwardTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInternalIp() {
-        return software.amazon.jsii.Kernel.get(this, "internalIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setForwardTableId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "forwardTableId", java.util.Objects.requireNonNull(value, "forwardTableId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInternalIp() {
+        return software.amazon.jsii.Kernel.get(this, "internalIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getInternalPort() {
-        return software.amazon.jsii.Kernel.get(this, "internalPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternalIp(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internalIp", java.util.Objects.requireNonNull(value, "internalIp is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getInternalPort() {
+        return software.amazon.jsii.Kernel.get(this, "internalPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,13 +147,25 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getIpProtocol() {
-        return software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternalPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internalPort", java.util.Objects.requireNonNull(value, "internalPort is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setIpProtocol(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipProtocol", java.util.Objects.requireNonNull(value, "ipProtocol is required"));
+    }
+
+    /**
+     */
+    public void setIpProtocol(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "ipProtocol", java.util.Objects.requireNonNull(value, "ipProtocol is required"));
     }
 
@@ -167,12 +203,28 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.externalIp(externalIp);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param externalIp This parameter is required.
+         */
+        public Builder externalIp(final com.aliyun.ros.cdk.core.IResolvable externalIp) {
+            this.props.externalIp(externalIp);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param externalPort This parameter is required.
          */
         public Builder externalPort(final java.lang.String externalPort) {
+            this.props.externalPort(externalPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param externalPort This parameter is required.
+         */
+        public Builder externalPort(final com.aliyun.ros.cdk.core.IResolvable externalPort) {
             this.props.externalPort(externalPort);
             return this;
         }
@@ -185,12 +237,28 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.forwardTableId(forwardTableId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param forwardTableId This parameter is required.
+         */
+        public Builder forwardTableId(final com.aliyun.ros.cdk.core.IResolvable forwardTableId) {
+            this.props.forwardTableId(forwardTableId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param internalIp This parameter is required.
          */
         public Builder internalIp(final java.lang.String internalIp) {
+            this.props.internalIp(internalIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param internalIp This parameter is required.
+         */
+        public Builder internalIp(final com.aliyun.ros.cdk.core.IResolvable internalIp) {
             this.props.internalIp(internalIp);
             return this;
         }
@@ -203,12 +271,28 @@ public class RosForwardEntry extends com.aliyun.ros.cdk.core.RosResource {
             this.props.internalPort(internalPort);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param internalPort This parameter is required.
+         */
+        public Builder internalPort(final com.aliyun.ros.cdk.core.IResolvable internalPort) {
+            this.props.internalPort(internalPort);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param ipProtocol This parameter is required.
          */
         public Builder ipProtocol(final java.lang.String ipProtocol) {
+            this.props.ipProtocol(ipProtocol);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipProtocol This parameter is required.
+         */
+        public Builder ipProtocol(final com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.props.ipProtocol(ipProtocol);
             return this;
         }

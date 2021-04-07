@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: contactGroupList: Alarm contacts.
         /// </remarks>
-        [JsiiProperty(name: "contactGroupList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-        string[] ContactGroupList
+        [JsiiProperty(name: "contactGroupList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        object ContactGroupList
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <remarks>
         /// <strong>Property</strong>: tagKey: Tag key.
         /// </remarks>
-        [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}")]
-        string TagKey
+        [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TagKey
         {
             get;
         }
@@ -76,9 +76,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// or: the relationship or the
         /// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
         /// </remarks>
-        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MatchExpressFilterRelation
+        object? MatchExpressFilterRelation
         {
             get
             {
@@ -90,9 +90,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         /// <strong>Property</strong>: templateIdList: Alarm template ID list.
         /// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
         /// </remarks>
-        [JsiiProperty(name: "templateIdList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "templateIdList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string[]? TemplateIdList
+        object? TemplateIdList
         {
             get
             {
@@ -111,19 +111,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// <remarks>
             /// <strong>Property</strong>: contactGroupList: Alarm contacts.
             /// </remarks>
-            [JsiiProperty(name: "contactGroupList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}")]
-            public string[] ContactGroupList
+            [JsiiProperty(name: "contactGroupList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+            public object ContactGroupList
             {
-                get => GetInstanceProperty<string[]>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: tagKey: Tag key.
             /// </remarks>
-            [JsiiProperty(name: "tagKey", typeJson: "{\"primitive\":\"string\"}")]
-            public string TagKey
+            [JsiiProperty(name: "tagKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TagKey
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -168,10 +168,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MatchExpressFilterRelation
+            [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MatchExpressFilterRelation
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -179,10 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             /// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "templateIdList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-            public string[]? TemplateIdList
+            [JsiiProperty(name: "templateIdList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? TemplateIdList
             {
-                get => GetInstanceProperty<string[]?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

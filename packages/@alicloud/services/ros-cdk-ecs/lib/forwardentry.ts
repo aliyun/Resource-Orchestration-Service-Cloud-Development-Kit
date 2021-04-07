@@ -11,32 +11,32 @@ export interface ForwardEntryProps {
     /**
      * Property externalIp: Source IP, must belongs to bandwidth package internet IP
      */
-    readonly externalIp: string;
+    readonly externalIp: string | ros.IResolvable;
 
     /**
      * Property externalPort: Source port, now support [1-65535]|Any
      */
-    readonly externalPort: string;
+    readonly externalPort: string | ros.IResolvable;
 
     /**
      * Property forwardTableId: Create forward entry in specified forward table.
      */
-    readonly forwardTableId: string;
+    readonly forwardTableId: string | ros.IResolvable;
 
     /**
      * Property internalIp: Destination IP, must belong to VPC private IP
      */
-    readonly internalIp: string;
+    readonly internalIp: string | ros.IResolvable;
 
     /**
      * Property internalPort: Destination port, now support [1-65535]|Any
      */
-    readonly internalPort: string;
+    readonly internalPort: string | ros.IResolvable;
 
     /**
      * Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
      */
-    readonly ipProtocol: string;
+    readonly ipProtocol: string | ros.IResolvable;
 }
 
 /**
@@ -52,7 +52,7 @@ export class ForwardEntry extends ros.Resource {
     /**
      * Attribute ForwardEntryId: The id of created forward entry.
      */
-    public readonly attrForwardEntryId: any;
+    public readonly attrForwardEntryId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ECS::ForwardEntry`.

@@ -11,32 +11,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     public class AlarmTaskProps : AlibabaCloud.SDK.ROS.CDK.Ess.IAlarmTaskProps
     {
         /// <summary>Property alarmAction: Alarm Actions.</summary>
-        [JsiiProperty(name: "alarmAction", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOverride: true)]
-        public string[] AlarmAction
+        [JsiiProperty(name: "alarmAction", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOverride: true)]
+        public object AlarmAction
         {
             get;
             set;
         }
 
         /// <summary>Property metricName: Metric Name.</summary>
-        [JsiiProperty(name: "metricName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string MetricName
+        [JsiiProperty(name: "metricName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object MetricName
         {
             get;
             set;
         }
 
         /// <summary>Property scalingGroupId: The ID of the scaling group.</summary>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ScalingGroupId
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ScalingGroupId
         {
             get;
             set;
         }
 
         /// <summary>Property threshold: Threshold.</summary>
-        [JsiiProperty(name: "threshold", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Threshold
+        [JsiiProperty(name: "threshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Threshold
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property comparisonOperator: Comparison Operator.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "comparisonOperator", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? ComparisonOperator
+        [JsiiProperty(name: "comparisonOperator", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ComparisonOperator
         {
             get;
             set;
@@ -53,8 +53,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property description: Description.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -71,8 +71,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property evaluationCount: Evaluation Count.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "evaluationCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? EvaluationCount
+        [JsiiProperty(name: "evaluationCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EvaluationCount
         {
             get;
             set;
@@ -80,8 +80,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property groupId: Group Id.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "groupId", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? GroupId
+        [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? GroupId
         {
             get;
             set;
@@ -89,8 +89,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property metricType: Metric Type.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "metricType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MetricType
+        [JsiiProperty(name: "metricType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MetricType
         {
             get;
             set;
@@ -98,8 +98,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property name: Name.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;
@@ -107,8 +107,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property period: Period.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Period
         {
             get;
             set;
@@ -116,8 +116,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
 
         /// <summary>Property statistics: Statistics.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "statistics", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Statistics
+        [JsiiProperty(name: "statistics", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Statistics
         {
             get;
             set;

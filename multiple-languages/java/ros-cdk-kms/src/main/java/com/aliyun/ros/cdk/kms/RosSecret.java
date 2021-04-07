@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * A ROS template type:  `ALIYUN::KMS::Secret`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.049Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.672Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.RosSecret")
 public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrArn() {
-        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrArn() {
+        return software.amazon.jsii.Kernel.get(this, "attrArn", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecretName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecretName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecretName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecretName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSecretData() {
-        return software.amazon.jsii.Kernel.get(this, "secretData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSecretData() {
+        return software.amazon.jsii.Kernel.get(this, "secretData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,8 +81,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSecretName() {
-        return software.amazon.jsii.Kernel.get(this, "secretName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSecretData(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secretData", java.util.Objects.requireNonNull(value, "secretData is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSecretName() {
+        return software.amazon.jsii.Kernel.get(this, "secretName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -93,8 +99,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getVersionId() {
-        return software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSecretName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secretName", java.util.Objects.requireNonNull(value, "secretName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getVersionId() {
+        return software.amazon.jsii.Kernel.get(this, "versionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -105,8 +117,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
-        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVersionId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "versionId", java.util.Objects.requireNonNull(value, "versionId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,13 +135,25 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEncryptionKeyId() {
-        return software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "description", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKeyId() {
+        return software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setEncryptionKeyId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionKeyId", value);
+    }
+
+    /**
+     */
+    public void setEncryptionKeyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "encryptionKeyId", value);
     }
 
@@ -147,8 +177,8 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getRecoveryWindowInDays() {
-        return software.amazon.jsii.Kernel.get(this, "recoveryWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRecoveryWindowInDays() {
+        return software.amazon.jsii.Kernel.get(this, "recoveryWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -159,8 +189,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecretDataType() {
-        return software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRecoveryWindowInDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "recoveryWindowInDays", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecretDataType() {
+        return software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -171,13 +207,25 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getVersionStages() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "versionStages", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setSecretDataType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "secretDataType", value);
     }
 
     /**
      */
-    public void setVersionStages(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVersionStages() {
+        return software.amazon.jsii.Kernel.get(this, "versionStages", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVersionStages(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "versionStages", value);
+    }
+
+    /**
+     */
+    public void setVersionStages(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
         software.amazon.jsii.Kernel.set(this, "versionStages", value);
     }
 
@@ -215,12 +263,28 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
             this.props.secretData(secretData);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param secretData This parameter is required.
+         */
+        public Builder secretData(final com.aliyun.ros.cdk.core.IResolvable secretData) {
+            this.props.secretData(secretData);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param secretName This parameter is required.
          */
         public Builder secretName(final java.lang.String secretName) {
+            this.props.secretName(secretName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param secretName This parameter is required.
+         */
+        public Builder secretName(final com.aliyun.ros.cdk.core.IResolvable secretName) {
             this.props.secretName(secretName);
             return this;
         }
@@ -233,6 +297,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
             this.props.versionId(versionId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param versionId This parameter is required.
+         */
+        public Builder versionId(final com.aliyun.ros.cdk.core.IResolvable versionId) {
+            this.props.versionId(versionId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -242,12 +314,28 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
             this.props.description(description);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param description This parameter is required.
+         */
+        public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
+            this.props.description(description);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param encryptionKeyId This parameter is required.
          */
         public Builder encryptionKeyId(final java.lang.String encryptionKeyId) {
+            this.props.encryptionKeyId(encryptionKeyId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptionKeyId This parameter is required.
+         */
+        public Builder encryptionKeyId(final com.aliyun.ros.cdk.core.IResolvable encryptionKeyId) {
             this.props.encryptionKeyId(encryptionKeyId);
             return this;
         }
@@ -277,6 +365,14 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
             this.props.recoveryWindowInDays(recoveryWindowInDays);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param recoveryWindowInDays This parameter is required.
+         */
+        public Builder recoveryWindowInDays(final com.aliyun.ros.cdk.core.IResolvable recoveryWindowInDays) {
+            this.props.recoveryWindowInDays(recoveryWindowInDays);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -286,12 +382,28 @@ public class RosSecret extends com.aliyun.ros.cdk.core.RosResource {
             this.props.secretDataType(secretDataType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param secretDataType This parameter is required.
+         */
+        public Builder secretDataType(final com.aliyun.ros.cdk.core.IResolvable secretDataType) {
+            this.props.secretDataType(secretDataType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param versionStages This parameter is required.
          */
-        public Builder versionStages(final java.util.List<java.lang.String> versionStages) {
+        public Builder versionStages(final com.aliyun.ros.cdk.core.IResolvable versionStages) {
+            this.props.versionStages(versionStages);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param versionStages This parameter is required.
+         */
+        public Builder versionStages(final java.util.List<? extends java.lang.Object> versionStages) {
             this.props.versionStages(versionStages);
             return this;
         }

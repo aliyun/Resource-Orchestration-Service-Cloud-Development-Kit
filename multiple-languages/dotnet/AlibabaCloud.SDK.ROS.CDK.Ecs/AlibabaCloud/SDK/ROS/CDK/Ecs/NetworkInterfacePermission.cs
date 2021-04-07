@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute NetworkInterfacePermissionId: the network interface permission id.</summary>
-        [JsiiProperty(name: "attrNetworkInterfacePermissionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrNetworkInterfacePermissionId
+        [JsiiProperty(name: "attrNetworkInterfacePermissionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrNetworkInterfacePermissionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

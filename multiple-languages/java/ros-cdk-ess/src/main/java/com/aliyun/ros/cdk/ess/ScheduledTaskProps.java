@@ -3,56 +3,104 @@ package com.aliyun.ros.cdk.ess;
 /**
  * Properties for defining a `ALIYUN::ESS::ScheduledTask`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.525Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScheduledTaskProps")
 @software.amazon.jsii.Jsii.Proxy(ScheduledTaskProps.Jsii$Proxy.class)
 public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property launchTime: Time point at which the scheduled task is triggered.
+     * <p>
+     * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+     * If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
+     * A time point 90 days after creation or modification cannot be entered.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLaunchTime();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLaunchTime();
 
     /**
+     * Property scheduledAction: Operations performed when the scheduled task is triggered.
+     * <p>
+     * Fill in the unique identifier of the scaling rule.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getScheduledAction();
+    @org.jetbrains.annotations.NotNull java.lang.Object getScheduledAction();
 
     /**
+     * Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property launchExpirationTime: Time period within which the failed scheduled task is retried.
+     * <p>
+     * The default value is 600s.
+     * Value range: [0, 21600]
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getLaunchExpirationTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLaunchExpirationTime() {
         return null;
     }
 
     /**
+     * Property recurrenceEndTime: End time of the scheduled task to be repeated.
+     * <p>
+     * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+     * A time point 90 days after creation or modification cannot be entered.
+     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceEndTime() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceEndTime() {
         return null;
     }
 
     /**
+     * Property recurrenceType: Type of the scheduled task to be repeated.
+     * <p>
+     * Optional values:
+     * <p>
+     * <ul>
+     * <li>Daily: Recurrence interval by day for a scheduled task.</li>
+     * <li>Weekly: Recurrence interval by week for a scheduled task.</li>
+     * <li>Monthly: Recurrence interval by month for a scheduled task.
+     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceType() {
         return null;
     }
 
     /**
+     * Property recurrenceValue: Value of the scheduled task to be repeated.
+     * <p>
+     * <ul>
+     * <li>Daily: Only one value in the range [1,31] can be filled.</li>
+     * <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
+     * <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+     * </ul>
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getRecurrenceValue() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRecurrenceValue() {
         return null;
     }
 
     /**
+     * Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.
+     * <p>
+     * It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
+     * The account name is unique in the same region.
+     * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getScheduledTaskName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getScheduledTaskName() {
         return null;
     }
 
     /**
+     * Property taskEnabled: Whether to enable the scheduled task.
+     * <p>
+     * <ul>
+     * <li>When the parameter is set to true, the task is enabled.</li>
+     * <li>When the parameter is set to false, the task is disabled.
+     * The default value is true.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTaskEnabled() {
         return null;
@@ -68,19 +116,22 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link ScheduledTaskProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ScheduledTaskProps> {
-        private java.lang.String launchTime;
-        private java.lang.String scheduledAction;
-        private java.lang.String description;
-        private java.lang.Number launchExpirationTime;
-        private java.lang.String recurrenceEndTime;
-        private java.lang.String recurrenceType;
-        private java.lang.String recurrenceValue;
-        private java.lang.String scheduledTaskName;
+        private java.lang.Object launchTime;
+        private java.lang.Object scheduledAction;
+        private java.lang.Object description;
+        private java.lang.Object launchExpirationTime;
+        private java.lang.Object recurrenceEndTime;
+        private java.lang.Object recurrenceType;
+        private java.lang.Object recurrenceValue;
+        private java.lang.Object scheduledTaskName;
         private java.lang.Object taskEnabled;
 
         /**
          * Sets the value of {@link ScheduledTaskProps#getLaunchTime}
-         * @param launchTime the value to be set. This parameter is required.
+         * @param launchTime Property launchTime: Time point at which the scheduled task is triggered. This parameter is required.
+         *                   The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+         *                   If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
+         *                   A time point 90 days after creation or modification cannot be entered.
          * @return {@code this}
          */
         public Builder launchTime(java.lang.String launchTime) {
@@ -89,8 +140,22 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getLaunchTime}
+         * @param launchTime Property launchTime: Time point at which the scheduled task is triggered. This parameter is required.
+         *                   The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+         *                   If RecurrenceType is specified, the time point specified by this attribute is the default time point at which the circle is executed. If RecurrenceType is not specified, the task is executed once on the designated date and time.
+         *                   A time point 90 days after creation or modification cannot be entered.
+         * @return {@code this}
+         */
+        public Builder launchTime(com.aliyun.ros.cdk.core.IResolvable launchTime) {
+            this.launchTime = launchTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getScheduledAction}
-         * @param scheduledAction the value to be set. This parameter is required.
+         * @param scheduledAction Property scheduledAction: Operations performed when the scheduled task is triggered. This parameter is required.
+         *                        Fill in the unique identifier of the scaling rule.
          * @return {@code this}
          */
         public Builder scheduledAction(java.lang.String scheduledAction) {
@@ -99,8 +164,19 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getScheduledAction}
+         * @param scheduledAction Property scheduledAction: Operations performed when the scheduled task is triggered. This parameter is required.
+         *                        Fill in the unique identifier of the scaling rule.
+         * @return {@code this}
+         */
+        public Builder scheduledAction(com.aliyun.ros.cdk.core.IResolvable scheduledAction) {
+            this.scheduledAction = scheduledAction;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -109,8 +185,20 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getDescription}
+         * @param description Property description: Description of the scheduled task, which is 2-200 characters (English or Chinese) long.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getLaunchExpirationTime}
-         * @param launchExpirationTime the value to be set.
+         * @param launchExpirationTime Property launchExpirationTime: Time period within which the failed scheduled task is retried.
+         *                             The default value is 600s.
+         *                             Value range: [0, 21600]
          * @return {@code this}
          */
         public Builder launchExpirationTime(java.lang.Number launchExpirationTime) {
@@ -119,8 +207,23 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getLaunchExpirationTime}
+         * @param launchExpirationTime Property launchExpirationTime: Time period within which the failed scheduled task is retried.
+         *                             The default value is 600s.
+         *                             Value range: [0, 21600]
+         * @return {@code this}
+         */
+        public Builder launchExpirationTime(com.aliyun.ros.cdk.core.IResolvable launchExpirationTime) {
+            this.launchExpirationTime = launchExpirationTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getRecurrenceEndTime}
-         * @param recurrenceEndTime the value to be set.
+         * @param recurrenceEndTime Property recurrenceEndTime: End time of the scheduled task to be repeated.
+         *                          The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+         *                          A time point 90 days after creation or modification cannot be entered.
+         *                          RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
          * @return {@code this}
          */
         public Builder recurrenceEndTime(java.lang.String recurrenceEndTime) {
@@ -129,8 +232,29 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getRecurrenceEndTime}
+         * @param recurrenceEndTime Property recurrenceEndTime: End time of the scheduled task to be repeated.
+         *                          The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
+         *                          A time point 90 days after creation or modification cannot be entered.
+         *                          RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+         * @return {@code this}
+         */
+        public Builder recurrenceEndTime(com.aliyun.ros.cdk.core.IResolvable recurrenceEndTime) {
+            this.recurrenceEndTime = recurrenceEndTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getRecurrenceType}
-         * @param recurrenceType the value to be set.
+         * @param recurrenceType Property recurrenceType: Type of the scheduled task to be repeated.
+         *                       Optional values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Daily: Recurrence interval by day for a scheduled task.</li>
+         *                       <li>Weekly: Recurrence interval by week for a scheduled task.</li>
+         *                       <li>Monthly: Recurrence interval by month for a scheduled task.
+         *                       RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder recurrenceType(java.lang.String recurrenceType) {
@@ -139,8 +263,32 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getRecurrenceType}
+         * @param recurrenceType Property recurrenceType: Type of the scheduled task to be repeated.
+         *                       Optional values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>Daily: Recurrence interval by day for a scheduled task.</li>
+         *                       <li>Weekly: Recurrence interval by week for a scheduled task.</li>
+         *                       <li>Monthly: Recurrence interval by month for a scheduled task.
+         *                       RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         *                       </ul>
+         * @return {@code this}
+         */
+        public Builder recurrenceType(com.aliyun.ros.cdk.core.IResolvable recurrenceType) {
+            this.recurrenceType = recurrenceType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getRecurrenceValue}
-         * @param recurrenceValue the value to be set.
+         * @param recurrenceValue Property recurrenceValue: Value of the scheduled task to be repeated.
+         *                        <ul>
+         *                        <li>Daily: Only one value in the range [1,31] can be filled.</li>
+         *                        <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
+         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         *                        RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder recurrenceValue(java.lang.String recurrenceValue) {
@@ -149,8 +297,27 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getRecurrenceValue}
+         * @param recurrenceValue Property recurrenceValue: Value of the scheduled task to be repeated.
+         *                        <ul>
+         *                        <li>Daily: Only one value in the range [1,31] can be filled.</li>
+         *                        <li>Weekly: Multiple values can be filled. The values of Sunday to Saturday are 0 to 6 in sequence. Multiple values shall be separated by a comma ",".</li>
+         *                        <li>Monthly: In the format of A-B. The value range of A and B is 1 to 31, and the B value must be greater than the A value.
+         *                        RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.</li>
+         *                        </ul>
+         * @return {@code this}
+         */
+        public Builder recurrenceValue(com.aliyun.ros.cdk.core.IResolvable recurrenceValue) {
+            this.recurrenceValue = recurrenceValue;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getScheduledTaskName}
-         * @param scheduledTaskName the value to be set.
+         * @param scheduledTaskName Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.
+         *                          It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
+         *                          The account name is unique in the same region.
+         *                          If this parameter is not specified, the default value ScheduledScalingTaskId is used.
          * @return {@code this}
          */
         public Builder scheduledTaskName(java.lang.String scheduledTaskName) {
@@ -159,8 +326,26 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link ScheduledTaskProps#getScheduledTaskName}
+         * @param scheduledTaskName Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long.
+         *                          It must begin with a number, an upper/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
+         *                          The account name is unique in the same region.
+         *                          If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+         * @return {@code this}
+         */
+        public Builder scheduledTaskName(com.aliyun.ros.cdk.core.IResolvable scheduledTaskName) {
+            this.scheduledTaskName = scheduledTaskName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ScheduledTaskProps#getTaskEnabled}
-         * @param taskEnabled the value to be set.
+         * @param taskEnabled Property taskEnabled: Whether to enable the scheduled task.
+         *                    <ul>
+         *                    <li>When the parameter is set to true, the task is enabled.</li>
+         *                    <li>When the parameter is set to false, the task is disabled.
+         *                    The default value is true.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder taskEnabled(java.lang.Boolean taskEnabled) {
@@ -170,7 +355,12 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ScheduledTaskProps#getTaskEnabled}
-         * @param taskEnabled the value to be set.
+         * @param taskEnabled Property taskEnabled: Whether to enable the scheduled task.
+         *                    <ul>
+         *                    <li>When the parameter is set to true, the task is enabled.</li>
+         *                    <li>When the parameter is set to false, the task is disabled.
+         *                    The default value is true.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder taskEnabled(com.aliyun.ros.cdk.core.IResolvable taskEnabled) {
@@ -194,14 +384,14 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ScheduledTaskProps {
-        private final java.lang.String launchTime;
-        private final java.lang.String scheduledAction;
-        private final java.lang.String description;
-        private final java.lang.Number launchExpirationTime;
-        private final java.lang.String recurrenceEndTime;
-        private final java.lang.String recurrenceType;
-        private final java.lang.String recurrenceValue;
-        private final java.lang.String scheduledTaskName;
+        private final java.lang.Object launchTime;
+        private final java.lang.Object scheduledAction;
+        private final java.lang.Object description;
+        private final java.lang.Object launchExpirationTime;
+        private final java.lang.Object recurrenceEndTime;
+        private final java.lang.Object recurrenceType;
+        private final java.lang.Object recurrenceValue;
+        private final java.lang.Object scheduledTaskName;
         private final java.lang.Object taskEnabled;
 
         /**
@@ -210,21 +400,21 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.launchTime = software.amazon.jsii.Kernel.get(this, "launchTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.launchExpirationTime = software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.recurrenceEndTime = software.amazon.jsii.Kernel.get(this, "recurrenceEndTime", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.scheduledTaskName = software.amazon.jsii.Kernel.get(this, "scheduledTaskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.launchTime = software.amazon.jsii.Kernel.get(this, "launchTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduledAction = software.amazon.jsii.Kernel.get(this, "scheduledAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.launchExpirationTime = software.amazon.jsii.Kernel.get(this, "launchExpirationTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceEndTime = software.amazon.jsii.Kernel.get(this, "recurrenceEndTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceType = software.amazon.jsii.Kernel.get(this, "recurrenceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.recurrenceValue = software.amazon.jsii.Kernel.get(this, "recurrenceValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.scheduledTaskName = software.amazon.jsii.Kernel.get(this, "scheduledTaskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.taskEnabled = software.amazon.jsii.Kernel.get(this, "taskEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String launchTime, final java.lang.String scheduledAction, final java.lang.String description, final java.lang.Number launchExpirationTime, final java.lang.String recurrenceEndTime, final java.lang.String recurrenceType, final java.lang.String recurrenceValue, final java.lang.String scheduledTaskName, final java.lang.Object taskEnabled) {
+        protected Jsii$Proxy(final java.lang.Object launchTime, final java.lang.Object scheduledAction, final java.lang.Object description, final java.lang.Object launchExpirationTime, final java.lang.Object recurrenceEndTime, final java.lang.Object recurrenceType, final java.lang.Object recurrenceValue, final java.lang.Object scheduledTaskName, final java.lang.Object taskEnabled) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.launchTime = java.util.Objects.requireNonNull(launchTime, "launchTime is required");
             this.scheduledAction = java.util.Objects.requireNonNull(scheduledAction, "scheduledAction is required");
@@ -238,42 +428,42 @@ public interface ScheduledTaskProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getLaunchTime() {
+        public final java.lang.Object getLaunchTime() {
             return this.launchTime;
         }
 
         @Override
-        public final java.lang.String getScheduledAction() {
+        public final java.lang.Object getScheduledAction() {
             return this.scheduledAction;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.Number getLaunchExpirationTime() {
+        public final java.lang.Object getLaunchExpirationTime() {
             return this.launchExpirationTime;
         }
 
         @Override
-        public final java.lang.String getRecurrenceEndTime() {
+        public final java.lang.Object getRecurrenceEndTime() {
             return this.recurrenceEndTime;
         }
 
         @Override
-        public final java.lang.String getRecurrenceType() {
+        public final java.lang.Object getRecurrenceType() {
             return this.recurrenceType;
         }
 
         @Override
-        public final java.lang.String getRecurrenceValue() {
+        public final java.lang.Object getRecurrenceValue() {
             return this.recurrenceValue;
         }
 
         @Override
-        public final java.lang.String getScheduledTaskName() {
+        public final java.lang.Object getScheduledTaskName() {
             return this.scheduledTaskName;
         }
 

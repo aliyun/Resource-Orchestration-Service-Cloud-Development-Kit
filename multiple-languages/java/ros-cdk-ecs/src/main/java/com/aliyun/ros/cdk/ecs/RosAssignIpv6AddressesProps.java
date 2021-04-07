@@ -3,18 +3,18 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::AssignIpv6Addresses`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.591Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosAssignIpv6AddressesProps")
 @software.amazon.jsii.Jsii.Proxy(RosAssignIpv6AddressesProps.Jsii$Proxy.class)
 public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getNetworkInterfaceId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getIpv6AddressCount() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
     }
 
@@ -34,8 +34,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
      * A builder for {@link RosAssignIpv6AddressesProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosAssignIpv6AddressesProps> {
-        private java.lang.String networkInterfaceId;
-        private java.lang.Number ipv6AddressCount;
+        private java.lang.Object networkInterfaceId;
+        private java.lang.Object ipv6AddressCount;
         private java.lang.Object ipv6Addresses;
 
         /**
@@ -49,11 +49,31 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getNetworkInterfaceId}
+         * @param networkInterfaceId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder networkInterfaceId(com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.networkInterfaceId = networkInterfaceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6AddressCount}
          * @param ipv6AddressCount the value to be set.
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
+            this.ipv6AddressCount = ipv6AddressCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAssignIpv6AddressesProps#getIpv6AddressCount}
+         * @param ipv6AddressCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
             this.ipv6AddressCount = ipv6AddressCount;
             return this;
         }
@@ -94,8 +114,8 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAssignIpv6AddressesProps {
-        private final java.lang.String networkInterfaceId;
-        private final java.lang.Number ipv6AddressCount;
+        private final java.lang.Object networkInterfaceId;
+        private final java.lang.Object ipv6AddressCount;
         private final java.lang.Object ipv6Addresses;
 
         /**
@@ -104,15 +124,15 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6AddressCount = software.amazon.jsii.Kernel.get(this, "ipv6AddressCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipv6Addresses = software.amazon.jsii.Kernel.get(this, "ipv6Addresses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String networkInterfaceId, final java.lang.Number ipv6AddressCount, final java.lang.Object ipv6Addresses) {
+        protected Jsii$Proxy(final java.lang.Object networkInterfaceId, final java.lang.Object ipv6AddressCount, final java.lang.Object ipv6Addresses) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.networkInterfaceId = java.util.Objects.requireNonNull(networkInterfaceId, "networkInterfaceId is required");
             this.ipv6AddressCount = ipv6AddressCount;
@@ -120,12 +140,12 @@ public interface RosAssignIpv6AddressesProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
-        public final java.lang.String getNetworkInterfaceId() {
+        public final java.lang.Object getNetworkInterfaceId() {
             return this.networkInterfaceId;
         }
 
         @Override
-        public final java.lang.Number getIpv6AddressCount() {
+        public final java.lang.Object getIpv6AddressCount() {
             return this.ipv6AddressCount;
         }
 

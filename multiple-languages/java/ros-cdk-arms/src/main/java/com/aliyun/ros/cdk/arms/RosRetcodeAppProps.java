@@ -3,22 +3,22 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Properties for defining a `ALIYUN::ARMS::RetcodeApp`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.175Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.RosRetcodeAppProps")
 @software.amazon.jsii.Jsii.Proxy(RosRetcodeAppProps.Jsii$Proxy.class)
 public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRegionId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRegionId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppName();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getRetcodeAppType();
+    @org.jetbrains.annotations.NotNull java.lang.Object getRetcodeAppType();
 
     /**
      * @return a {@link Builder} of {@link RosRetcodeAppProps}
@@ -30,9 +30,9 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
      * A builder for {@link RosRetcodeAppProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosRetcodeAppProps> {
-        private java.lang.String regionId;
-        private java.lang.String retcodeAppName;
-        private java.lang.String retcodeAppType;
+        private java.lang.Object regionId;
+        private java.lang.Object retcodeAppName;
+        private java.lang.Object retcodeAppType;
 
         /**
          * Sets the value of {@link RosRetcodeAppProps#getRegionId}
@@ -40,6 +40,16 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
          * @return {@code this}
          */
         public Builder regionId(java.lang.String regionId) {
+            this.regionId = regionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRetcodeAppProps#getRegionId}
+         * @param regionId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder regionId(com.aliyun.ros.cdk.core.IResolvable regionId) {
             this.regionId = regionId;
             return this;
         }
@@ -55,11 +65,31 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosRetcodeAppProps#getRetcodeAppName}
+         * @param retcodeAppName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder retcodeAppName(com.aliyun.ros.cdk.core.IResolvable retcodeAppName) {
+            this.retcodeAppName = retcodeAppName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRetcodeAppProps#getRetcodeAppType}
          * @param retcodeAppType the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder retcodeAppType(java.lang.String retcodeAppType) {
+            this.retcodeAppType = retcodeAppType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRetcodeAppProps#getRetcodeAppType}
+         * @param retcodeAppType the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder retcodeAppType(com.aliyun.ros.cdk.core.IResolvable retcodeAppType) {
             this.retcodeAppType = retcodeAppType;
             return this;
         }
@@ -80,9 +110,9 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosRetcodeAppProps {
-        private final java.lang.String regionId;
-        private final java.lang.String retcodeAppName;
-        private final java.lang.String retcodeAppType;
+        private final java.lang.Object regionId;
+        private final java.lang.Object retcodeAppName;
+        private final java.lang.Object retcodeAppType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -90,15 +120,15 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.retcodeAppName = software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.retcodeAppType = software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.regionId = software.amazon.jsii.Kernel.get(this, "regionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.retcodeAppName = software.amazon.jsii.Kernel.get(this, "retcodeAppName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.retcodeAppType = software.amazon.jsii.Kernel.get(this, "retcodeAppType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String regionId, final java.lang.String retcodeAppName, final java.lang.String retcodeAppType) {
+        protected Jsii$Proxy(final java.lang.Object regionId, final java.lang.Object retcodeAppName, final java.lang.Object retcodeAppType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.regionId = java.util.Objects.requireNonNull(regionId, "regionId is required");
             this.retcodeAppName = java.util.Objects.requireNonNull(retcodeAppName, "retcodeAppName is required");
@@ -106,17 +136,17 @@ public interface RosRetcodeAppProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
-        public final java.lang.String getRegionId() {
+        public final java.lang.Object getRegionId() {
             return this.regionId;
         }
 
         @Override
-        public final java.lang.String getRetcodeAppName() {
+        public final java.lang.Object getRetcodeAppName() {
             return this.retcodeAppName;
         }
 
         @Override
-        public final java.lang.String getRetcodeAppType() {
+        public final java.lang.Object getRetcodeAppType() {
             return this.retcodeAppType;
         }
 

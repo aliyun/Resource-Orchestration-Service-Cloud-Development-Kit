@@ -9,43 +9,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IForwardEntryProps
     {
         /// <summary>Property externalIp: Source IP, must belongs to bandwidth package internet IP.</summary>
-        [JsiiProperty(name: "externalIp", typeJson: "{\"primitive\":\"string\"}")]
-        string ExternalIp
+        [JsiiProperty(name: "externalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ExternalIp
         {
             get;
         }
 
         /// <summary>Property externalPort: Source port, now support [1-65535]|Any.</summary>
-        [JsiiProperty(name: "externalPort", typeJson: "{\"primitive\":\"string\"}")]
-        string ExternalPort
+        [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ExternalPort
         {
             get;
         }
 
         /// <summary>Property forwardTableId: Create forward entry in specified forward table.</summary>
-        [JsiiProperty(name: "forwardTableId", typeJson: "{\"primitive\":\"string\"}")]
-        string ForwardTableId
+        [JsiiProperty(name: "forwardTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ForwardTableId
         {
             get;
         }
 
         /// <summary>Property internalIp: Destination IP, must belong to VPC private IP.</summary>
-        [JsiiProperty(name: "internalIp", typeJson: "{\"primitive\":\"string\"}")]
-        string InternalIp
+        [JsiiProperty(name: "internalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InternalIp
         {
             get;
         }
 
         /// <summary>Property internalPort: Destination port, now support [1-65535]|Any.</summary>
-        [JsiiProperty(name: "internalPort", typeJson: "{\"primitive\":\"string\"}")]
-        string InternalPort
+        [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InternalPort
         {
             get;
         }
 
         /// <summary>Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'.</summary>
-        [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        string IpProtocol
+        [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object IpProtocol
         {
             get;
         }
@@ -59,45 +59,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property externalIp: Source IP, must belongs to bandwidth package internet IP.</summary>
-            [JsiiProperty(name: "externalIp", typeJson: "{\"primitive\":\"string\"}")]
-            public string ExternalIp
+            [JsiiProperty(name: "externalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExternalIp
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property externalPort: Source port, now support [1-65535]|Any.</summary>
-            [JsiiProperty(name: "externalPort", typeJson: "{\"primitive\":\"string\"}")]
-            public string ExternalPort
+            [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ExternalPort
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property forwardTableId: Create forward entry in specified forward table.</summary>
-            [JsiiProperty(name: "forwardTableId", typeJson: "{\"primitive\":\"string\"}")]
-            public string ForwardTableId
+            [JsiiProperty(name: "forwardTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ForwardTableId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property internalIp: Destination IP, must belong to VPC private IP.</summary>
-            [JsiiProperty(name: "internalIp", typeJson: "{\"primitive\":\"string\"}")]
-            public string InternalIp
+            [JsiiProperty(name: "internalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InternalIp
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property internalPort: Destination port, now support [1-65535]|Any.</summary>
-            [JsiiProperty(name: "internalPort", typeJson: "{\"primitive\":\"string\"}")]
-            public string InternalPort
+            [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InternalPort
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'.</summary>
-            [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}")]
-            public string IpProtocol
+            [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object IpProtocol
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

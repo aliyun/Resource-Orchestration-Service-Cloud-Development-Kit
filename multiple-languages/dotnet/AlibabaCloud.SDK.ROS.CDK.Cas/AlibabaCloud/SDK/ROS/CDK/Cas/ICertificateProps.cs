@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "cert", typeJson: "{\"primitive\":\"string\"}")]
-        string Cert
+        [JsiiProperty(name: "cert", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Cert
         {
             get;
         }
@@ -22,8 +22,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// To use the PEM encoding format.
         /// </remarks>
-        [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
-        string Key
+        [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Key
         {
             get;
         }
@@ -32,16 +32,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         /// <remarks>
         /// The certificate name under a user cannot be duplicated.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
 
         /// <summary>Property lang: Specifies the language type for requesting and receiving messages.</summary>
-        [JsiiProperty(name: "lang", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Lang
+        object? Lang
         {
             get
             {
@@ -50,9 +50,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
         }
 
         /// <summary>Property sourceIp: Specifies the source IP address of the request.</summary>
-        [JsiiProperty(name: "sourceIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "sourceIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SourceIp
+        object? SourceIp
         {
             get
             {
@@ -72,46 +72,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cas
             /// <remarks>
             /// To use the PEM encoding format.
             /// </remarks>
-            [JsiiProperty(name: "cert", typeJson: "{\"primitive\":\"string\"}")]
-            public string Cert
+            [JsiiProperty(name: "cert", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Cert
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property key: Specify the certificate private key content.</summary>
             /// <remarks>
             /// To use the PEM encoding format.
             /// </remarks>
-            [JsiiProperty(name: "key", typeJson: "{\"primitive\":\"string\"}")]
-            public string Key
+            [JsiiProperty(name: "key", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Key
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property name: Custom certificate name.</summary>
             /// <remarks>
             /// The certificate name under a user cannot be duplicated.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property lang: Specifies the language type for requesting and receiving messages.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "lang", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Lang
+            [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Lang
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property sourceIp: Specifies the source IP address of the request.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "sourceIp", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SourceIp
+            [JsiiProperty(name: "sourceIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SourceIp
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

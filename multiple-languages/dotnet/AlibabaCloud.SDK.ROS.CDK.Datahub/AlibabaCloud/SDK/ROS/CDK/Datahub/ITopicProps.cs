@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
     public interface ITopicProps
     {
         /// <summary>Property comment: The comment of topic.</summary>
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}")]
-        string Comment
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Comment
         {
             get;
         }
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ProjectName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// TUPLE: structured data, BLOB: unstructured data.
         /// </remarks>
-        [JsiiProperty(name: "recordType", typeJson: "{\"primitive\":\"string\"}")]
-        string RecordType
+        [JsiiProperty(name: "recordType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object RecordType
         {
             get;
         }
@@ -39,16 +39,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-        string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TopicName
         {
             get;
         }
 
         /// <summary>Property lifecycle: Data storage life cycle.</summary>
-        [JsiiProperty(name: "lifecycle", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "lifecycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Lifecycle
+        object? Lifecycle
         {
             get
             {
@@ -57,9 +57,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         }
 
         /// <summary>Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.</summary>
-        [JsiiProperty(name: "recordSchema", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "recordSchema", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? RecordSchema
+        object? RecordSchema
         {
             get
             {
@@ -68,9 +68,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         }
 
         /// <summary>Property shardCount: Initial shard number.</summary>
-        [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? ShardCount
+        object? ShardCount
         {
             get
             {
@@ -87,64 +87,64 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
             }
 
             /// <summary>Property comment: The comment of topic.</summary>
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}")]
-            public string Comment
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Comment
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property projectName: The name of the project.</summary>
             /// <remarks>
             /// Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
             /// </remarks>
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ProjectName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property recordType: Record type.</summary>
             /// <remarks>
             /// TUPLE: structured data, BLOB: unstructured data.
             /// </remarks>
-            [JsiiProperty(name: "recordType", typeJson: "{\"primitive\":\"string\"}")]
-            public string RecordType
+            [JsiiProperty(name: "recordType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object RecordType
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property topicName: The name of the topic.</summary>
             /// <remarks>
             /// Length [3, 64]. Beginning with characters, only characters, numbers and _ are allowed.
             /// </remarks>
-            [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TopicName
+            [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TopicName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property lifecycle: Data storage life cycle.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "lifecycle", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Lifecycle
+            [JsiiProperty(name: "lifecycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Lifecycle
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property recordSchema: When creating a TUPLE type topic, you need to specify the schema, but the BLOB type does not pass this parameter.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "recordSchema", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? RecordSchema
+            [JsiiProperty(name: "recordSchema", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RecordSchema
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property shardCount: Initial shard number.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "shardCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? ShardCount
+            [JsiiProperty(name: "shardCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ShardCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

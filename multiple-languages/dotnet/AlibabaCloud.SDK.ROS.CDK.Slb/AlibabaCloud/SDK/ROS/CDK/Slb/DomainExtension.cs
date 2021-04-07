@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Attribute DomainExtensionId: The ID of the created domain name extension.</summary>
-        [JsiiProperty(name: "attrDomainExtensionId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDomainExtensionId
+        [JsiiProperty(name: "attrDomainExtensionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDomainExtensionId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.</summary>
@@ -44,10 +44,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// Valid value:
         /// 1-65535
         /// </remarks>
-        [JsiiProperty(name: "attrListenerPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrListenerPort
+        [JsiiProperty(name: "attrListenerPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrListenerPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

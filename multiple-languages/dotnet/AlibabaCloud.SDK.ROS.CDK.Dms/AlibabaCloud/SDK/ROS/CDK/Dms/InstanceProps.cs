@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
     public class InstanceProps : AlibabaCloud.SDK.ROS.CDK.Dms.IInstanceProps
     {
         /// <summary>Property databasePassword: The logon password of the database instance.</summary>
-        [JsiiProperty(name: "databasePassword", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DatabasePassword
+        [JsiiProperty(name: "databasePassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DatabasePassword
         {
             get;
             set;
         }
 
         /// <summary>Property databaseUser: The logon username of the database instance.</summary>
-        [JsiiProperty(name: "databaseUser", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string DatabaseUser
+        [JsiiProperty(name: "databaseUser", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DatabaseUser
         {
             get;
             set;
@@ -29,11 +29,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <summary>Property dbaUid: The Alibaba Cloud unique ID (UID) of the database administrator (DBA) of the database instance.</summary>
         /// <remarks>
         /// Note To query the UID, log on to the DMS Enterprise console and choose System Management
-        /// 
+        ///
         ///     User Management.
         /// </remarks>
-        [JsiiProperty(name: "dbaUid", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double DbaUid
+        [JsiiProperty(name: "dbaUid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object DbaUid
         {
             get;
             set;
@@ -45,8 +45,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// product: the production environment.
         /// dev: the test environment.
         /// </remarks>
-        [JsiiProperty(name: "envType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string EnvType
+        [JsiiProperty(name: "envType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object EnvType
         {
             get;
             set;
@@ -56,16 +56,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// Unit: seconds.
         /// </remarks>
-        [JsiiProperty(name: "exportTimeout", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double ExportTimeout
+        [JsiiProperty(name: "exportTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ExportTimeout
         {
             get;
             set;
         }
 
         /// <summary>Property host: The endpoint of the database instance.</summary>
-        [JsiiProperty(name: "host", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Host
+        [JsiiProperty(name: "host", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Host
         {
             get;
             set;
@@ -76,8 +76,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// The alias helps you quickly find the required
         /// instance.
         /// </remarks>
-        [JsiiProperty(name: "instanceAlias", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceAlias
+        [JsiiProperty(name: "instanceAlias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceAlias
         {
             get;
             set;
@@ -92,8 +92,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// VPC_IDC: an on-premises database built in an Internet data center (IDC) in Virtual Private
         /// Cloud (VPC).
         /// </remarks>
-        [JsiiProperty(name: "instanceSource", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceSource
+        [JsiiProperty(name: "instanceSource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceSource
         {
             get;
             set;
@@ -103,8 +103,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// Valid values: MySQL, SQLServer, PostgreSQL, Oracle, DRDS, OceanBase, Mongo, Redis
         /// </remarks>
-        [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string InstanceType
+        [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object InstanceType
         {
             get;
             set;
@@ -116,16 +116,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// CLASSIC
         /// VPC
         /// </remarks>
-        [JsiiProperty(name: "networkType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string NetworkType
+        [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object NetworkType
         {
             get;
             set;
         }
 
         /// <summary>Property port: The connection port of the database instance.</summary>
-        [JsiiProperty(name: "port", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Port
+        [JsiiProperty(name: "port", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Port
         {
             get;
             set;
@@ -135,8 +135,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <remarks>
         /// Unit: seconds.
         /// </remarks>
-        [JsiiProperty(name: "queryTimeout", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double QueryTimeout
+        [JsiiProperty(name: "queryTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object QueryTimeout
         {
             get;
             set;
@@ -150,8 +150,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// System Management &gt; Security Rules. The security rule appears in the security rule
         /// list.
         /// </remarks>
-        [JsiiProperty(name: "safeRule", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string SafeRule
+        [JsiiProperty(name: "safeRule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object SafeRule
         {
             get;
             set;
@@ -160,12 +160,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// <summary>Property tid: The ID of the tenant.</summary>
         /// <remarks>
         /// Note To query the ID, log on to the DMS Enterprise console and choose System Management
-        /// 
+        ///
         ///     Instance Management or System Management &gt; User Management. The ID of the tenant
         ///     appears in the Service Specification section.
         /// </remarks>
-        [JsiiProperty(name: "tid", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double Tid
+        [JsiiProperty(name: "tid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Tid
         {
             get;
             set;
@@ -173,8 +173,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
 
         /// <summary>Property dataLinkName: The name of the data link for cross-database query.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "dataLinkName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DataLinkName
+        [JsiiProperty(name: "dataLinkName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DataLinkName
         {
             get;
             set;
@@ -188,8 +188,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// 2: Data change without table locking provided by DMS prevails.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ddlOnline", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? DdlOnline
+        [JsiiProperty(name: "ddlOnline", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DdlOnline
         {
             get;
             set;
@@ -200,8 +200,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ecsInstanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EcsInstanceId
+        [JsiiProperty(name: "ecsInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EcsInstanceId
         {
             get;
             set;
@@ -212,8 +212,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to ECS_OWN or VPC_IDC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "ecsRegion", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? EcsRegion
+        [JsiiProperty(name: "ecsRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? EcsRegion
         {
             get;
             set;
@@ -224,8 +224,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceType parameter is set to PostgreSQL or Oracle.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "sid", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Sid
+        [JsiiProperty(name: "sid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Sid
         {
             get;
             set;
@@ -239,8 +239,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// 1: enabled
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "useDsql", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? UseDsql
+        [JsiiProperty(name: "useDsql", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? UseDsql
         {
             get;
             set;
@@ -251,8 +251,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dms
         /// Note You must specify this parameter if the InstanceSource parameter is set to VPC_IDC.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? VpcId
         {
             get;
             set;

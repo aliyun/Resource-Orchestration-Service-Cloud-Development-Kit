@@ -10,57 +10,82 @@ export interface RosClusterProps {
     /**
      * @Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
      */
-    readonly clusterSpecification: string;
+    readonly clusterSpecification: string | ros.IResolvable;
 
     /**
      * @Property clusterType: cluster type
      */
-    readonly clusterType: string;
+    readonly clusterType: string | ros.IResolvable;
 
     /**
      * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
      */
-    readonly clusterVersion: string;
+    readonly clusterVersion: string | ros.IResolvable;
 
     /**
      * @Property instanceCount: instance count
      */
-    readonly instanceCount: number;
+    readonly instanceCount: number | ros.IResolvable;
 
     /**
      * @Property netType: network type, Enum: privatenet,pubnet
      */
-    readonly netType: string;
+    readonly netType: string | ros.IResolvable;
+
+    /**
+     * @Property aclEntryList: acl entry list
+     */
+    readonly aclEntryList?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property clusterAliasName: cluster alias name
+     */
+    readonly clusterAliasName?: string | ros.IResolvable;
+
+    /**
+     * @Property connectionType: network connect type
+     */
+    readonly connectionType?: string | ros.IResolvable;
+
+    /**
+     * @Property diskCapacity:
+     */
+    readonly diskCapacity?: string | ros.IResolvable;
 
     /**
      * @Property diskType: disk type
      */
-    readonly diskType?: string;
+    readonly diskType?: string | ros.IResolvable;
 
     /**
      * @Property privateSlbSpecification:
      */
-    readonly privateSlbSpecification?: string;
+    readonly privateSlbSpecification?: string | ros.IResolvable;
 
     /**
      * @Property pubNetworkFlow: pub network flow
      */
-    readonly pubNetworkFlow?: string;
+    readonly pubNetworkFlow?: string | ros.IResolvable;
 
     /**
      * @Property pubSlbSpecification:
      */
-    readonly pubSlbSpecification?: string;
+    readonly pubSlbSpecification?: string | ros.IResolvable;
+
+    /**
+     * @Property requestPars:
+     */
+    readonly requestPars?: string | ros.IResolvable;
 
     /**
      * @Property vpcId: vpc id
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: switcher Id
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -73,20 +98,25 @@ export interface RosClusterProps {
 function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
-    errors.collect(ros.propertyValidator('instanceCount', ros.requiredValidator)(properties.instanceCount));
-    errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
     errors.collect(ros.propertyValidator('privateSlbSpecification', ros.validateString)(properties.privateSlbSpecification));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('clusterVersion', ros.requiredValidator)(properties.clusterVersion));
     errors.collect(ros.propertyValidator('clusterVersion', ros.validateString)(properties.clusterVersion));
-    errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateString)(properties.pubNetworkFlow));
+    errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
+    errors.collect(ros.propertyValidator('aclEntryList', ros.listValidator(ros.validateString))(properties.aclEntryList));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.requiredValidator)(properties.clusterSpecification));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.validateString)(properties.clusterSpecification));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('pubSlbSpecification', ros.validateString)(properties.pubSlbSpecification));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    errors.collect(ros.propertyValidator('diskType', ros.validateString)(properties.diskType));
+    errors.collect(ros.propertyValidator('clusterAliasName', ros.validateString)(properties.clusterAliasName));
+    errors.collect(ros.propertyValidator('instanceCount', ros.requiredValidator)(properties.instanceCount));
+    errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
+    errors.collect(ros.propertyValidator('diskCapacity', ros.validateString)(properties.diskCapacity));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('requestPars', ros.validateString)(properties.requestPars));
+    errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateString)(properties.pubNetworkFlow));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
     errors.collect(ros.propertyValidator('netType', ros.validateString)(properties.netType));
     return errors.wrap('supplied properties not correct for "RosClusterProps"');
@@ -111,10 +141,15 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
       ClusterVersion: ros.stringToRosTemplate(properties.clusterVersion),
       InstanceCount: ros.numberToRosTemplate(properties.instanceCount),
       NetType: ros.stringToRosTemplate(properties.netType),
+      AclEntryList: ros.listMapper(ros.stringToRosTemplate)(properties.aclEntryList),
+      ClusterAliasName: ros.stringToRosTemplate(properties.clusterAliasName),
+      ConnectionType: ros.stringToRosTemplate(properties.connectionType),
+      DiskCapacity: ros.stringToRosTemplate(properties.diskCapacity),
       DiskType: ros.stringToRosTemplate(properties.diskType),
       PrivateSlbSpecification: ros.stringToRosTemplate(properties.privateSlbSpecification),
       PubNetworkFlow: ros.stringToRosTemplate(properties.pubNetworkFlow),
       PubSlbSpecification: ros.stringToRosTemplate(properties.pubSlbSpecification),
+      RequestPars: ros.stringToRosTemplate(properties.requestPars),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
@@ -137,152 +172,147 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Attribute AclEntryList: acl entry list
      */
-    public readonly attrAclEntryList: any;
+    public readonly attrAclEntryList: ros.IResolvable;
 
     /**
      * @Attribute AclId: acl id
      */
-    public readonly attrAclId: any;
+    public readonly attrAclId: ros.IResolvable;
 
     /**
      * @Attribute AppVersion: app version
      */
-    public readonly attrAppVersion: any;
+    public readonly attrAppVersion: ros.IResolvable;
 
     /**
      * @Attribute ClusterAliasName: cluster alias name
      */
-    public readonly attrClusterAliasName: any;
+    public readonly attrClusterAliasName: ros.IResolvable;
 
     /**
      * @Attribute ClusterId: cluster id
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute ClusterName: cluster name
      */
-    public readonly attrClusterName: any;
+    public readonly attrClusterName: ros.IResolvable;
 
     /**
      * @Attribute ClusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
      */
-    public readonly attrClusterSpecification: any;
+    public readonly attrClusterSpecification: ros.IResolvable;
 
     /**
      * @Attribute ClusterType: cluster type
      */
-    public readonly attrClusterType: any;
+    public readonly attrClusterType: ros.IResolvable;
 
     /**
      * @Attribute ClusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
      */
-    public readonly attrClusterVersion: any;
+    public readonly attrClusterVersion: ros.IResolvable;
+
+    /**
+     * @Attribute ConnectionType: network connect type
+     */
+    public readonly attrConnectionType: ros.IResolvable;
 
     /**
      * @Attribute Cpu: cpu core size
      */
-    public readonly attrCpu: any;
+    public readonly attrCpu: ros.IResolvable;
 
     /**
      * @Attribute DiskCapacity: disk capacity, unit: G
      */
-    public readonly attrDiskCapacity: any;
+    public readonly attrDiskCapacity: ros.IResolvable;
 
     /**
      * @Attribute DiskType: disk type
      */
-    public readonly attrDiskType: any;
+    public readonly attrDiskType: ros.IResolvable;
 
     /**
      * @Attribute HealthStatus: health status
      */
-    public readonly attrHealthStatus: any;
-
-    /**
-     * @Attribute InitStatus: init status, Enum: INIT_ING, INIT_FAILED, INIT_SUCCESS, INIT_TIME_OUT,DESTROY_ING, DESTROY_FAILED, DESTROY_SUCCESS, RESTART_ING, RESTART_SUCCESS, RESTART_FAILED, SCALE_ING, SCALE_SUCCESS, SCALE_FAILED
-     */
-    public readonly attrInitStatus: any;
+    public readonly attrHealthStatus: ros.IResolvable;
 
     /**
      * @Attribute InstanceCount: instance count
      */
-    public readonly attrInstanceCount: any;
+    public readonly attrInstanceCount: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: instance id
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceModels: instance nodes
+     */
+    public readonly attrInstanceModels: ros.IResolvable;
 
     /**
      * @Attribute InternetAddress: internet address
      */
-    public readonly attrInternetAddress: any;
+    public readonly attrInternetAddress: ros.IResolvable;
 
     /**
      * @Attribute InternetDomain: internet domain
      */
-    public readonly attrInternetDomain: any;
+    public readonly attrInternetDomain: ros.IResolvable;
 
     /**
      * @Attribute InternetPort: internet port
      */
-    public readonly attrInternetPort: any;
+    public readonly attrInternetPort: ros.IResolvable;
 
     /**
      * @Attribute IntranetAddress: intranet address
      */
-    public readonly attrIntranetAddress: any;
+    public readonly attrIntranetAddress: ros.IResolvable;
 
     /**
      * @Attribute IntranetDomain: intranet domain
      */
-    public readonly attrIntranetDomain: any;
+    public readonly attrIntranetDomain: ros.IResolvable;
 
     /**
      * @Attribute IntranetPort: intranet port
      */
-    public readonly attrIntranetPort: any;
+    public readonly attrIntranetPort: ros.IResolvable;
 
     /**
      * @Attribute MemoryCapacity: memory capacity
      */
-    public readonly attrMemoryCapacity: any;
+    public readonly attrMemoryCapacity: ros.IResolvable;
 
     /**
      * @Attribute NetType: network type, Enum: privatenet,pubnet
      */
-    public readonly attrNetType: any;
-
-    /**
-     * @Attribute OrderId: order id
-     */
-    public readonly attrOrderId: any;
+    public readonly attrNetType: ros.IResolvable;
 
     /**
      * @Attribute PayInfo: pay info
      */
-    public readonly attrPayInfo: any;
+    public readonly attrPayInfo: ros.IResolvable;
 
     /**
      * @Attribute PubNetworkFlow: pub network flow
      */
-    public readonly attrPubNetworkFlow: any;
-
-    /**
-     * @Attribute RegionId: region id
-     */
-    public readonly attrRegionId: any;
+    public readonly attrPubNetworkFlow: ros.IResolvable;
 
     /**
      * @Attribute VSwitchId: switcher Id
      */
-    public readonly attrVSwitchId: any;
+    public readonly attrVSwitchId: ros.IResolvable;
 
     /**
      * @Attribute VpcId: vpc id
      */
-    public readonly attrVpcId: any;
+    public readonly attrVpcId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -290,57 +320,82 @@ export class RosCluster extends ros.RosResource {
     /**
      * @Property clusterSpecification: cluster specification, Enum: MSE_SC_1_2_200_c,MSE_SC_2_4_200_c,MSE_SC_4_8_200_c,MSE_SC_8_16_200_c
      */
-    public clusterSpecification: string;
+    public clusterSpecification: string | ros.IResolvable;
 
     /**
      * @Property clusterType: cluster type
      */
-    public clusterType: string;
+    public clusterType: string | ros.IResolvable;
 
     /**
      * @Property clusterVersion: cluster version, Enum: ZooKeeper_3_4_14,ZooKeeper_3_5_5,NACOS_ANS_1_1_3,EUREKA_1_9_3
      */
-    public clusterVersion: string;
+    public clusterVersion: string | ros.IResolvable;
 
     /**
      * @Property instanceCount: instance count
      */
-    public instanceCount: number;
+    public instanceCount: number | ros.IResolvable;
 
     /**
      * @Property netType: network type, Enum: privatenet,pubnet
      */
-    public netType: string;
+    public netType: string | ros.IResolvable;
+
+    /**
+     * @Property aclEntryList: acl entry list
+     */
+    public aclEntryList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterAliasName: cluster alias name
+     */
+    public clusterAliasName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property connectionType: network connect type
+     */
+    public connectionType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property diskCapacity:
+     */
+    public diskCapacity: string | ros.IResolvable | undefined;
 
     /**
      * @Property diskType: disk type
      */
-    public diskType: string | undefined;
+    public diskType: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateSlbSpecification:
      */
-    public privateSlbSpecification: string | undefined;
+    public privateSlbSpecification: string | ros.IResolvable | undefined;
 
     /**
      * @Property pubNetworkFlow: pub network flow
      */
-    public pubNetworkFlow: string | undefined;
+    public pubNetworkFlow: string | ros.IResolvable | undefined;
 
     /**
      * @Property pubSlbSpecification:
      */
-    public pubSlbSpecification: string | undefined;
+    public pubSlbSpecification: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property requestPars:
+     */
+    public requestPars: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: vpc id
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: switcher Id
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::MSE::Cluster`.
@@ -351,36 +406,35 @@ export class RosCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAclEntryList = ros.Token.asString(this.getAtt('AclEntryList'));
-        this.attrAclId = ros.Token.asString(this.getAtt('AclId'));
-        this.attrAppVersion = ros.Token.asString(this.getAtt('AppVersion'));
-        this.attrClusterAliasName = ros.Token.asString(this.getAtt('ClusterAliasName'));
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrClusterName = ros.Token.asString(this.getAtt('ClusterName'));
-        this.attrClusterSpecification = ros.Token.asString(this.getAtt('ClusterSpecification'));
-        this.attrClusterType = ros.Token.asString(this.getAtt('ClusterType'));
-        this.attrClusterVersion = ros.Token.asString(this.getAtt('ClusterVersion'));
-        this.attrCpu = ros.Token.asString(this.getAtt('Cpu'));
-        this.attrDiskCapacity = ros.Token.asString(this.getAtt('DiskCapacity'));
-        this.attrDiskType = ros.Token.asString(this.getAtt('DiskType'));
-        this.attrHealthStatus = ros.Token.asString(this.getAtt('HealthStatus'));
-        this.attrInitStatus = ros.Token.asString(this.getAtt('InitStatus'));
-        this.attrInstanceCount = ros.Token.asString(this.getAtt('InstanceCount'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrInternetAddress = ros.Token.asString(this.getAtt('InternetAddress'));
-        this.attrInternetDomain = ros.Token.asString(this.getAtt('InternetDomain'));
-        this.attrInternetPort = ros.Token.asString(this.getAtt('InternetPort'));
-        this.attrIntranetAddress = ros.Token.asString(this.getAtt('IntranetAddress'));
-        this.attrIntranetDomain = ros.Token.asString(this.getAtt('IntranetDomain'));
-        this.attrIntranetPort = ros.Token.asString(this.getAtt('IntranetPort'));
-        this.attrMemoryCapacity = ros.Token.asString(this.getAtt('MemoryCapacity'));
-        this.attrNetType = ros.Token.asString(this.getAtt('NetType'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPayInfo = ros.Token.asString(this.getAtt('PayInfo'));
-        this.attrPubNetworkFlow = ros.Token.asString(this.getAtt('PubNetworkFlow'));
-        this.attrRegionId = ros.Token.asString(this.getAtt('RegionId'));
-        this.attrVSwitchId = ros.Token.asString(this.getAtt('VSwitchId'));
-        this.attrVpcId = ros.Token.asString(this.getAtt('VpcId'));
+        this.attrAclEntryList = this.getAtt('AclEntryList');
+        this.attrAclId = this.getAtt('AclId');
+        this.attrAppVersion = this.getAtt('AppVersion');
+        this.attrClusterAliasName = this.getAtt('ClusterAliasName');
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrClusterName = this.getAtt('ClusterName');
+        this.attrClusterSpecification = this.getAtt('ClusterSpecification');
+        this.attrClusterType = this.getAtt('ClusterType');
+        this.attrClusterVersion = this.getAtt('ClusterVersion');
+        this.attrConnectionType = this.getAtt('ConnectionType');
+        this.attrCpu = this.getAtt('Cpu');
+        this.attrDiskCapacity = this.getAtt('DiskCapacity');
+        this.attrDiskType = this.getAtt('DiskType');
+        this.attrHealthStatus = this.getAtt('HealthStatus');
+        this.attrInstanceCount = this.getAtt('InstanceCount');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceModels = this.getAtt('InstanceModels');
+        this.attrInternetAddress = this.getAtt('InternetAddress');
+        this.attrInternetDomain = this.getAtt('InternetDomain');
+        this.attrInternetPort = this.getAtt('InternetPort');
+        this.attrIntranetAddress = this.getAtt('IntranetAddress');
+        this.attrIntranetDomain = this.getAtt('IntranetDomain');
+        this.attrIntranetPort = this.getAtt('IntranetPort');
+        this.attrMemoryCapacity = this.getAtt('MemoryCapacity');
+        this.attrNetType = this.getAtt('NetType');
+        this.attrPayInfo = this.getAtt('PayInfo');
+        this.attrPubNetworkFlow = this.getAtt('PubNetworkFlow');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+        this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterSpecification = props.clusterSpecification;
@@ -388,10 +442,15 @@ export class RosCluster extends ros.RosResource {
         this.clusterVersion = props.clusterVersion;
         this.instanceCount = props.instanceCount;
         this.netType = props.netType;
+        this.aclEntryList = props.aclEntryList;
+        this.clusterAliasName = props.clusterAliasName;
+        this.connectionType = props.connectionType;
+        this.diskCapacity = props.diskCapacity;
         this.diskType = props.diskType;
         this.privateSlbSpecification = props.privateSlbSpecification;
         this.pubNetworkFlow = props.pubNetworkFlow;
         this.pubSlbSpecification = props.pubSlbSpecification;
+        this.requestPars = props.requestPars;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
     }
@@ -404,10 +463,15 @@ export class RosCluster extends ros.RosResource {
             clusterVersion: this.clusterVersion,
             instanceCount: this.instanceCount,
             netType: this.netType,
+            aclEntryList: this.aclEntryList,
+            clusterAliasName: this.clusterAliasName,
+            connectionType: this.connectionType,
+            diskCapacity: this.diskCapacity,
             diskType: this.diskType,
             privateSlbSpecification: this.privateSlbSpecification,
             pubNetworkFlow: this.pubNetworkFlow,
             pubSlbSpecification: this.pubSlbSpecification,
+            requestPars: this.requestPars,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
         };

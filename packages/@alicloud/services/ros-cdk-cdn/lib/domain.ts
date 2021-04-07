@@ -11,37 +11,42 @@ export interface DomainProps {
     /**
      * Property cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
      */
-    readonly cdnType: string;
+    readonly cdnType: string | ros.IResolvable;
 
     /**
      * Property domainName: The CDN domain name. Wildcard domain names that start with periods (.) are supported. For example, .a.com.
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * Property checkUrl: The validation of the origin.
      */
-    readonly checkUrl?: string;
+    readonly checkUrl?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group. If this is left blank, the system automatically fills in the ID of the default resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
      */
-    readonly scope?: string;
+    readonly scope?: string | ros.IResolvable;
 
     /**
      * Property sources: The list of origin URLs.
      */
-    readonly sources?: string;
+    readonly sources?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosDomain.TagsProperty[];
 
     /**
      * Property topLevelDomain: The top-level domain, which can only be configured by users on the whitelist.
      */
-    readonly topLevelDomain?: string;
+    readonly topLevelDomain?: string | ros.IResolvable;
 }
 
 /**
@@ -57,12 +62,12 @@ export class Domain extends ros.Resource {
     /**
      * Attribute Cname: The CNAME generated for the CDN domain.You must add a CNAME record with your DNS provider to map the CDN domain name to the CNAME.
      */
-    public readonly attrCname: any;
+    public readonly attrCname: ros.IResolvable;
 
     /**
      * Attribute DomainName: The CDN domain name. Wildcard domain names that start with periods (.) are supported. For example, .a.com.
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::CDN::Domain`.
@@ -82,6 +87,7 @@ export class Domain extends ros.Resource {
             cdnType: props.cdnType,
             topLevelDomain: props.topLevelDomain,
             sources: props.sources,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;
         this.attrCname = rosDomain.attrCname;

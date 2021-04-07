@@ -33,15 +33,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
 
         /// <summary>Property vpcId: VPC ID.</summary>
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-        string VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object VpcId
         {
             get;
         }
@@ -50,7 +50,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// For more details, see Instance Specification Family.
         /// </remarks>
-        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         object WorkerInstanceTypes
         {
             get;
@@ -94,9 +94,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
         /// </remarks>
-        [JsiiProperty(name: "containerCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ContainerCidr
+        object? ContainerCidr
         {
             get
             {
@@ -108,9 +108,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The cluster version is 1.12.6 and above supports both static and none strategies.
         /// </remarks>
-        [JsiiProperty(name: "cpuPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "cpuPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? CpuPolicy
+        object? CpuPolicy
         {
             get
             {
@@ -150,9 +150,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// Specify one of KeyPair or LoginPassword.
         /// </remarks>
-        [JsiiProperty(name: "keyPair", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "keyPair", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? KeyPair
+        object? KeyPair
         {
             get
             {
@@ -161,9 +161,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
-        [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? KubernetesVersion
+        object? KubernetesVersion
         {
             get
             {
@@ -175,9 +175,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
         /// </remarks>
-        [JsiiProperty(name: "loginPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? LoginPassword
+        object? LoginPassword
         {
             get
             {
@@ -203,9 +203,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property masterAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
-        [JsiiProperty(name: "masterAutoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "masterAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MasterAutoRenewPeriod
+        object? MasterAutoRenewPeriod
         {
             get
             {
@@ -217,9 +217,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The value can be 3 or 5. The default value is 3.
         /// </remarks>
-        [JsiiProperty(name: "masterCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "masterCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MasterCount
+        object? MasterCount
         {
             get
             {
@@ -259,9 +259,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// PostPaid: Pay as you go
         /// Default to PostPaid.
         /// </remarks>
-        [JsiiProperty(name: "masterInstanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "masterInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MasterInstanceChargeType
+        object? MasterInstanceChargeType
         {
             get
             {
@@ -276,9 +276,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
         /// Default to 1.
         /// </remarks>
-        [JsiiProperty(name: "masterPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "masterPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MasterPeriod
+        object? MasterPeriod
         {
             get
             {
@@ -293,9 +293,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// Month: time in months
         /// Default to Month
         /// </remarks>
-        [JsiiProperty(name: "masterPeriodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "masterPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MasterPeriodUnit
+        object? MasterPeriodUnit
         {
             get
             {
@@ -305,14 +305,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
         /// <summary>Property masterSystemDiskCategory: Master disk system disk type.</summary>
         /// <remarks>
-        /// The value range is:
+        /// The value includes:
         /// cloud_efficiency: efficient cloud disk
         /// cloud_ssd: SSD cloud disk
-        /// Default to cloud_ssd.
+        /// cloud_essd: ESSD cloud diskDefault to cloud_ssd.
         /// </remarks>
-        [JsiiProperty(name: "masterSystemDiskCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "masterSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? MasterSystemDiskCategory
+        object? MasterSystemDiskCategory
         {
             get
             {
@@ -324,9 +324,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// Default to 120.
         /// </remarks>
-        [JsiiProperty(name: "masterSystemDiskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "masterSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MasterSystemDiskSize
+        object? MasterSystemDiskSize
         {
             get
             {
@@ -339,9 +339,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// The value range is [30000, 65535].
         /// Default to 30000-65535.
         /// </remarks>
-        [JsiiProperty(name: "nodePortRange", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "nodePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? NodePortRange
+        object? NodePortRange
         {
             get
             {
@@ -354,9 +354,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// The range is [0,300].
         /// Default to 3.
         /// </remarks>
-        [JsiiProperty(name: "numOfNodes", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? NumOfNodes
+        object? NumOfNodes
         {
             get
             {
@@ -368,9 +368,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The default is iptables.
         /// </remarks>
-        [JsiiProperty(name: "proxyMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "proxyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ProxyMode
+        object? ProxyMode
         {
             get
             {
@@ -379,9 +379,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? SecurityGroupId
+        object? SecurityGroupId
         {
             get
             {
@@ -393,9 +393,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
         /// </remarks>
-        [JsiiProperty(name: "serviceCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ServiceCidr
+        object? ServiceCidr
         {
             get
             {
@@ -433,9 +433,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property tags: Tag the cluster.</summary>
-        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        System.Collections.Generic.IDictionary<string, object>[]? Tags
+        AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.ITagsProperty[]? Tags
         {
             get
             {
@@ -447,7 +447,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
         /// </remarks>
-        [JsiiProperty(name: "taint", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [JsiiProperty(name: "taint", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Taint
         {
@@ -461,9 +461,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// The default value is 60.
         /// </remarks>
-        [JsiiProperty(name: "timeoutMins", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TimeoutMins
+        object? TimeoutMins
         {
             get
             {
@@ -489,9 +489,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <summary>Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
-        [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? WorkerAutoRenewPeriod
+        object? WorkerAutoRenewPeriod
         {
             get
             {
@@ -537,9 +537,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// PostPaid: Pay as you go
         /// Default to PostPaid.
         /// </remarks>
-        [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? WorkerInstanceChargeType
+        object? WorkerInstanceChargeType
         {
             get
             {
@@ -554,9 +554,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
         /// Default to 1.
         /// </remarks>
-        [JsiiProperty(name: "workerPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "workerPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? WorkerPeriod
+        object? WorkerPeriod
         {
             get
             {
@@ -571,9 +571,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// Month: time in months
         /// Default to Month.
         /// </remarks>
-        [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? WorkerPeriodUnit
+        object? WorkerPeriodUnit
         {
             get
             {
@@ -588,9 +588,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// cloud_ssd: SSD cloud disk
         /// Default to cloud_efficiency.
         /// </remarks>
-        [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? WorkerSystemDiskCategory
+        object? WorkerSystemDiskCategory
         {
             get
             {
@@ -602,9 +602,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         /// <remarks>
         /// Default to 120.
         /// </remarks>
-        [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? WorkerSystemDiskSize
+        object? WorkerSystemDiskSize
         {
             get
             {
@@ -645,24 +645,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// <remarks>
             /// The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property vpcId: VPC ID.</summary>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-            public string VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object VpcId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property workerInstanceTypes: Worker node ECS specification type code.</summary>
             /// <remarks>
             /// For more details, see Instance Specification Family.
             /// </remarks>
-            [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "workerInstanceTypes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
             public object WorkerInstanceTypes
             {
                 get => GetInstanceProperty<object>()!;
@@ -701,10 +701,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "containerCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ContainerCidr
+            [JsiiProperty(name: "containerCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ContainerCidr
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property cpuPolicy: CPU policy.</summary>
@@ -712,10 +712,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The cluster version is 1.12.6 and above supports both static and none strategies.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "cpuPolicy", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? CpuPolicy
+            [JsiiProperty(name: "cpuPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CpuPolicy
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property disableRollback: Whether the failure was rolled back: true: indicates that it fails to roll back false: rollback failed The default is true.</summary>
@@ -745,18 +745,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Specify one of KeyPair or LoginPassword.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "keyPair", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? KeyPair
+            [JsiiProperty(name: "keyPair", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KeyPair
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property kubernetesVersion: The version of the Kubernetes cluster.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? KubernetesVersion
+            [JsiiProperty(name: "kubernetesVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? KubernetesVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property loginPassword: SSH login password.</summary>
@@ -764,10 +764,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "loginPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? LoginPassword
+            [JsiiProperty(name: "loginPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LoginPassword
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterAutoRenew: Whether the master node automatically renews.</summary>
@@ -786,10 +786,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property masterAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "masterAutoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MasterAutoRenewPeriod
+            [JsiiProperty(name: "masterAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterAutoRenewPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterCount: Number of master instances.</summary>
@@ -797,10 +797,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The value can be 3 or 5. The default value is 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MasterCount
+            [JsiiProperty(name: "masterCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterDataDisk: Whether the master node mounts data disks can be selected as: true: mount the data disk false: no data disk is mounted, default is false.</summary>
@@ -830,10 +830,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to PostPaid.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterInstanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MasterInstanceChargeType
+            [JsiiProperty(name: "masterInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterInstanceChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterPeriod: The duration of the annual subscription and monthly subscription.</summary>
@@ -844,10 +844,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MasterPeriod
+            [JsiiProperty(name: "masterPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterPeriodUnit: When you specify PrePaid, you need to specify the period.</summary>
@@ -858,24 +858,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to Month
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterPeriodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MasterPeriodUnit
+            [JsiiProperty(name: "masterPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterPeriodUnit
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterSystemDiskCategory: Master disk system disk type.</summary>
             /// <remarks>
-            /// The value range is:
+            /// The value includes:
             /// cloud_efficiency: efficient cloud disk
             /// cloud_ssd: SSD cloud disk
-            /// Default to cloud_ssd.
+            /// cloud_essd: ESSD cloud diskDefault to cloud_ssd.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterSystemDiskCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? MasterSystemDiskCategory
+            [JsiiProperty(name: "masterSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterSystemDiskCategory
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property masterSystemDiskSize: Master disk system disk size in GiB.</summary>
@@ -883,10 +883,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 120.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "masterSystemDiskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MasterSystemDiskSize
+            [JsiiProperty(name: "masterSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MasterSystemDiskSize
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property nodePortRange: Node service port.</summary>
@@ -895,10 +895,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 30000-65535.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "nodePortRange", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? NodePortRange
+            [JsiiProperty(name: "nodePortRange", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NodePortRange
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property numOfNodes: Number of worker nodes.</summary>
@@ -907,10 +907,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 3.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "numOfNodes", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? NumOfNodes
+            [JsiiProperty(name: "numOfNodes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NumOfNodes
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes.</summary>
@@ -918,18 +918,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The default is iptables.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "proxyMode", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ProxyMode
+            [JsiiProperty(name: "proxyMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProxyMode
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SecurityGroupId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment.</summary>
@@ -937,10 +937,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceCidr", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ServiceCidr
+            [JsiiProperty(name: "serviceCidr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServiceCidr
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property snatEntry: Whether to configure SNAT for the network.</summary>
@@ -968,10 +968,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property tags: Tag the cluster.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}", isOptional: true)]
-            public System.Collections.Generic.IDictionary<string, object>[]? Tags
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-cs.RosKubernetesCluster.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.ITagsProperty[]? Tags
             {
-                get => GetInstanceProperty<System.Collections.Generic.IDictionary<string, object>[]?>();
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cs.RosKubernetesCluster.ITagsProperty[]?>();
             }
 
             /// <summary>Property taint: It is used to mark nodes with taints.</summary>
@@ -979,7 +979,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "taint", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [JsiiProperty(name: "taint", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Taint
             {
                 get => GetInstanceProperty<object?>();
@@ -990,10 +990,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// The default value is 60.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "timeoutMins", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TimeoutMins
+            [JsiiProperty(name: "timeoutMins", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TimeoutMins
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes.</summary>
@@ -1012,10 +1012,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
 
             /// <summary>Property workerAutoRenewPeriod: Automatic renewal cycle, which takes effect when prepaid and automatic renewal are selected, and is required: When PeriodUnit = Week, the values are: {"1", "2", "3"} When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"} Default to 1.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? WorkerAutoRenewPeriod
+            [JsiiProperty(name: "workerAutoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerAutoRenewPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerDataDisk: Whether to mount the data disk.</summary>
@@ -1051,10 +1051,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to PostPaid.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? WorkerInstanceChargeType
+            [JsiiProperty(name: "workerInstanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerInstanceChargeType
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerPeriod: The duration of the annual and monthly subscription.</summary>
@@ -1065,10 +1065,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerPeriod", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? WorkerPeriod
+            [JsiiProperty(name: "workerPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerPeriod
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerPeriodUnit: When you specify PrePaid, you need to specify the period.</summary>
@@ -1079,10 +1079,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to Month.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? WorkerPeriodUnit
+            [JsiiProperty(name: "workerPeriodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerPeriodUnit
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerSystemDiskCategory: Worker node system disk type.</summary>
@@ -1093,10 +1093,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to cloud_efficiency.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? WorkerSystemDiskCategory
+            [JsiiProperty(name: "workerSystemDiskCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerSystemDiskCategory
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.</summary>
@@ -1104,10 +1104,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             /// Default to 120.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? WorkerSystemDiskSize
+            [JsiiProperty(name: "workerSystemDiskSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? WorkerSystemDiskSize
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

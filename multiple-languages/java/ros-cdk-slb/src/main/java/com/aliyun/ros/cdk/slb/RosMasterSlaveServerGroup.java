@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS template type:  `ALIYUN::SLB::MasterSlaveServerGroup`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.393Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.083Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup")
 public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrMasterSlaveServerGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "attrMasterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrMasterSlaveServerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrMasterSlaveServerGroupId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,13 +63,19 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId() {
-        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId() {
+        return software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
+    }
+
+    /**
+     */
+    public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
     }
 
@@ -93,13 +99,19 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getMasterSlaveServerGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterSlaveServerGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "masterSlaveServerGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setMasterSlaveServerGroupName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "masterSlaveServerGroupName", value);
+    }
+
+    /**
+     */
+    public void setMasterSlaveServerGroupName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "masterSlaveServerGroupName", value);
     }
     /**
@@ -112,22 +124,22 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getPort();
+        @org.jetbrains.annotations.NotNull java.lang.Object getPort();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getServerId();
+        @org.jetbrains.annotations.NotNull java.lang.Object getServerId();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Number getWeight();
+        @org.jetbrains.annotations.NotNull java.lang.Object getWeight();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getServerType() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerType() {
             return null;
         }
 
@@ -143,10 +155,10 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<MasterSlaveBackendServersProperty> {
-            private java.lang.Number port;
-            private java.lang.String serverId;
-            private java.lang.Number weight;
-            private java.lang.String serverType;
+            private java.lang.Object port;
+            private java.lang.Object serverId;
+            private java.lang.Object weight;
+            private java.lang.Object serverType;
 
             /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getPort}
@@ -155,6 +167,17 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder port(java.lang.Number port) {
+                this.port = port;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getPort}
+             * @param port the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder port(com.aliyun.ros.cdk.core.IResolvable port) {
                 this.port = port;
                 return this;
             }
@@ -171,6 +194,17 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             }
 
             /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getServerId}
+             * @param serverId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverId(com.aliyun.ros.cdk.core.IResolvable serverId) {
+                this.serverId = serverId;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getWeight}
              * @param weight the value to be set. This parameter is required.
              * @return {@code this}
@@ -182,12 +216,34 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             }
 
             /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getWeight}
+             * @param weight the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link MasterSlaveBackendServersProperty#getServerType}
              * @param serverType the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder serverType(java.lang.String serverType) {
+                this.serverType = serverType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link MasterSlaveBackendServersProperty#getServerType}
+             * @param serverType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverType(com.aliyun.ros.cdk.core.IResolvable serverType) {
                 this.serverType = serverType;
                 return this;
             }
@@ -210,10 +266,10 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements MasterSlaveBackendServersProperty {
-            private final java.lang.Number port;
-            private final java.lang.String serverId;
-            private final java.lang.Number weight;
-            private final java.lang.String serverType;
+            private final java.lang.Object port;
+            private final java.lang.Object serverId;
+            private final java.lang.Object weight;
+            private final java.lang.Object serverType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -221,16 +277,16 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-                this.serverType = software.amazon.jsii.Kernel.get(this, "serverType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.port = software.amazon.jsii.Kernel.get(this, "port", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverId = software.amazon.jsii.Kernel.get(this, "serverId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serverType = software.amazon.jsii.Kernel.get(this, "serverType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.Number port, final java.lang.String serverId, final java.lang.Number weight, final java.lang.String serverType) {
+            protected Jsii$Proxy(final java.lang.Object port, final java.lang.Object serverId, final java.lang.Object weight, final java.lang.Object serverType) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.port = java.util.Objects.requireNonNull(port, "port is required");
                 this.serverId = java.util.Objects.requireNonNull(serverId, "serverId is required");
@@ -239,22 +295,22 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             }
 
             @Override
-            public final java.lang.Number getPort() {
+            public final java.lang.Object getPort() {
                 return this.port;
             }
 
             @Override
-            public final java.lang.String getServerId() {
+            public final java.lang.Object getServerId() {
                 return this.serverId;
             }
 
             @Override
-            public final java.lang.Number getWeight() {
+            public final java.lang.Object getWeight() {
                 return this.weight;
             }
 
             @Override
-            public final java.lang.String getServerType() {
+            public final java.lang.Object getServerType() {
                 return this.serverType;
             }
 
@@ -339,6 +395,14 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param loadBalancerId This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -362,6 +426,14 @@ public class RosMasterSlaveServerGroup extends com.aliyun.ros.cdk.core.RosResour
          * @param masterSlaveServerGroupName This parameter is required.
          */
         public Builder masterSlaveServerGroupName(final java.lang.String masterSlaveServerGroupName) {
+            this.props.masterSlaveServerGroupName(masterSlaveServerGroupName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterSlaveServerGroupName This parameter is required.
+         */
+        public Builder masterSlaveServerGroupName(final com.aliyun.ros.cdk.core.IResolvable masterSlaveServerGroupName) {
             this.props.masterSlaveServerGroupName(masterSlaveServerGroupName);
             return this;
         }

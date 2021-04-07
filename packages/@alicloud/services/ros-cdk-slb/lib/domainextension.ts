@@ -11,23 +11,23 @@ export interface DomainExtensionProps {
     /**
      * Property domain: The domain name.
      */
-    readonly domain: string;
+    readonly domain: string | ros.IResolvable;
 
     /**
      * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
      * 1-65535
      */
-    readonly listenerPort: number;
+    readonly listenerPort: number | ros.IResolvable;
 
     /**
      * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    readonly loadBalancerId: string;
+    readonly loadBalancerId: string | ros.IResolvable;
 
     /**
      * Property serverCertificateId: The ID of the certificate corresponding to the domain name.
      */
-    readonly serverCertificateId: string;
+    readonly serverCertificateId: string | ros.IResolvable;
 }
 
 /**
@@ -43,13 +43,13 @@ export class DomainExtension extends ros.Resource {
     /**
      * Attribute DomainExtensionId: The ID of the created domain name extension.
      */
-    public readonly attrDomainExtensionId: any;
+    public readonly attrDomainExtensionId: ros.IResolvable;
 
     /**
      * Attribute ListenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. Valid value:
 1-65535
      */
-    public readonly attrListenerPort: any;
+    public readonly attrListenerPort: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::SLB::DomainExtension`.

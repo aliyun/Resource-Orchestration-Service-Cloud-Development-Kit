@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: instanceName: The name of the OTS instance in which table will locate.
         /// </remarks>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceName
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: tableName: The table name of the OTS instance.
         /// </remarks>
-        [JsiiProperty(name: "tableName", typeJson: "{\"primitive\":\"string\"}")]
-        string TableName
+        [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TableName
         {
             get;
         }
@@ -51,9 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: deviationCellVersionInSec: Maximum version deviation. The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
         /// </remarks>
-        [JsiiProperty(name: "deviationCellVersionInSec", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "deviationCellVersionInSec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? DeviationCellVersionInSec
+        object? DeviationCellVersionInSec
         {
             get
             {
@@ -64,9 +64,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: maxVersions: The maximum number of versions stored in this table. The valid value is 1-2147483647. Default to 1.
         /// </remarks>
-        [JsiiProperty(name: "maxVersions", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "maxVersions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? MaxVersions
+        object? MaxVersions
         {
             get
             {
@@ -103,9 +103,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
         /// <remarks>
         /// <strong>Property</strong>: timeToLive: The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired. Default to -1.
         /// </remarks>
-        [JsiiProperty(name: "timeToLive", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "timeToLive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? TimeToLive
+        object? TimeToLive
         {
             get
             {
@@ -124,10 +124,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: instanceName: The name of the OTS instance in which table will locate.
             /// </remarks>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -142,10 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <remarks>
             /// <strong>Property</strong>: tableName: The table name of the OTS instance.
             /// </remarks>
-            [JsiiProperty(name: "tableName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TableName
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TableName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
@@ -162,20 +162,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: deviationCellVersionInSec: Maximum version deviation. The purpose is mainly to prohibit writing and expected large data, such as setting the deviation_cell_version_in_sec to 1000, and if the current timestamp is 10000, the timestamp range allowed to be written is [10000 - 1000, 10000 + 1000]. The valid value is 1-9223372036854775807. Defaults to 86400.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "deviationCellVersionInSec", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? DeviationCellVersionInSec
+            [JsiiProperty(name: "deviationCellVersionInSec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeviationCellVersionInSec
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: maxVersions: The maximum number of versions stored in this table. The valid value is 1-2147483647. Default to 1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "maxVersions", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? MaxVersions
+            [JsiiProperty(name: "maxVersions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MaxVersions
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
@@ -202,10 +202,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             /// <strong>Property</strong>: timeToLive: The retention time of data stored in this table (unit: second). The value maximum is 2147483647 and -1 means never expired. Default to -1.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "timeToLive", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? TimeToLive
+            [JsiiProperty(name: "timeToLive", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TimeToLive
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

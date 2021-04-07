@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         }
 
         /// <summary>Attribute ARN.WithSlash: The ARN: acs:mns:$region:$accountid:/topics/$topicName.</summary>
-        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrArnWithSlash
+        [JsiiProperty(name: "attrArnWithSlash", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrArnWithSlash
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TopicName: Topic name.</summary>
-        [JsiiProperty(name: "attrTopicName", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopicName
+        [JsiiProperty(name: "attrTopicName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicName
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TopicUrl: URL of created topic.</summary>
-        [JsiiProperty(name: "attrTopicUrl", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTopicUrl
+        [JsiiProperty(name: "attrTopicUrl", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTopicUrl
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

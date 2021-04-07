@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * All constructs besides the root construct must be created within the scope of
  * another construct.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:32.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.Construct")
 public class Construct extends software.constructs.Construct implements com.aliyun.ros.cdk.core.IConstruct {
 
@@ -33,9 +33,10 @@ public class Construct extends software.constructs.Construct implements com.aliy
     }
 
     /**
-     * Perform final modifications before synthesis  This method can be implemented by derived constructs in order to perform final changes before synthesis.
+     * Perform final modifications before synthesis.
      * <p>
-     * prepare() will be called after child
+     * This method can be implemented by derived constructs in order to perform
+     * final changes before synthesis. prepare() will be called after child
      * constructs have been prepared.
      * <p>
      * This is an advanced framework feature. Only use this if you
@@ -73,9 +74,10 @@ public class Construct extends software.constructs.Construct implements com.aliy
     }
 
     /**
-     * Perform final modifications before synthesis  This method can be implemented by derived constructs in order to perform final changes before synthesis.
+     * Perform final modifications before synthesis.
      * <p>
-     * prepare() will be called after child
+     * This method can be implemented by derived constructs in order to perform
+     * final changes before synthesis. prepare() will be called after child
      * constructs have been prepared.
      * <p>
      * This is an advanced framework feature. Only use this if you

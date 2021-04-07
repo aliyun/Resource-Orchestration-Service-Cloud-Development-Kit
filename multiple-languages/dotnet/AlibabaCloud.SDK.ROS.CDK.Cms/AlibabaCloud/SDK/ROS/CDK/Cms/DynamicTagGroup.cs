@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <summary>Attribute DynamicTagRuleId: Dynamic tag rule ID.</summary>
-        [JsiiProperty(name: "attrDynamicTagRuleId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrDynamicTagRuleId
+        [JsiiProperty(name: "attrDynamicTagRuleId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrDynamicTagRuleId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute TagKey: Tag key.</summary>
-        [JsiiProperty(name: "attrTagKey", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrTagKey
+        [JsiiProperty(name: "attrTagKey", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrTagKey
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

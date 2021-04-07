@@ -3,18 +3,20 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Properties for defining a `ALIYUN::CEN::CenBandwidthPackageAssociation`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageAssociationProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageAssociationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property cenBandwidthPackageId: The ID of the bandwidth package.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenBandwidthPackageId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenBandwidthPackageId();
 
     /**
+     * Property cenId: The ID of the CEN instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCenId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
 
     /**
      * @return a {@link Builder} of {@link CenBandwidthPackageAssociationProps}
@@ -26,12 +28,12 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
      * A builder for {@link CenBandwidthPackageAssociationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<CenBandwidthPackageAssociationProps> {
-        private java.lang.String cenBandwidthPackageId;
-        private java.lang.String cenId;
+        private java.lang.Object cenBandwidthPackageId;
+        private java.lang.Object cenId;
 
         /**
          * Sets the value of {@link CenBandwidthPackageAssociationProps#getCenBandwidthPackageId}
-         * @param cenBandwidthPackageId the value to be set. This parameter is required.
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The ID of the bandwidth package. This parameter is required.
          * @return {@code this}
          */
         public Builder cenBandwidthPackageId(java.lang.String cenBandwidthPackageId) {
@@ -40,11 +42,31 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
         }
 
         /**
+         * Sets the value of {@link CenBandwidthPackageAssociationProps#getCenBandwidthPackageId}
+         * @param cenBandwidthPackageId Property cenBandwidthPackageId: The ID of the bandwidth package. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenBandwidthPackageId(com.aliyun.ros.cdk.core.IResolvable cenBandwidthPackageId) {
+            this.cenBandwidthPackageId = cenBandwidthPackageId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link CenBandwidthPackageAssociationProps#getCenId}
-         * @param cenId the value to be set. This parameter is required.
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
          * @return {@code this}
          */
         public Builder cenId(java.lang.String cenId) {
+            this.cenId = cenId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link CenBandwidthPackageAssociationProps#getCenId}
+         * @param cenId Property cenId: The ID of the CEN instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cenId(com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.cenId = cenId;
             return this;
         }
@@ -65,8 +87,8 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CenBandwidthPackageAssociationProps {
-        private final java.lang.String cenBandwidthPackageId;
-        private final java.lang.String cenId;
+        private final java.lang.Object cenBandwidthPackageId;
+        private final java.lang.Object cenId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -74,26 +96,26 @@ public interface CenBandwidthPackageAssociationProps extends software.amazon.jsi
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cenBandwidthPackageId = software.amazon.jsii.Kernel.get(this, "cenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cenBandwidthPackageId = software.amazon.jsii.Kernel.get(this, "cenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String cenBandwidthPackageId, final java.lang.String cenId) {
+        protected Jsii$Proxy(final java.lang.Object cenBandwidthPackageId, final java.lang.Object cenId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cenBandwidthPackageId = java.util.Objects.requireNonNull(cenBandwidthPackageId, "cenBandwidthPackageId is required");
             this.cenId = java.util.Objects.requireNonNull(cenId, "cenId is required");
         }
 
         @Override
-        public final java.lang.String getCenBandwidthPackageId() {
+        public final java.lang.Object getCenBandwidthPackageId() {
             return this.cenBandwidthPackageId;
         }
 
         @Override
-        public final java.lang.String getCenId() {
+        public final java.lang.Object getCenId() {
             return this.cenId;
         }
 

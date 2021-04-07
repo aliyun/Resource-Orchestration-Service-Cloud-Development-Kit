@@ -5,6 +5,7 @@
 @alicloud/ros-cdk-rocketmq.RosGroup=com.aliyun.ros.cdk.rocketmq.RosGroup
 @alicloud/ros-cdk-rocketmq.RosGroupProps=com.aliyun.ros.cdk.rocketmq.RosGroupProps
 @alicloud/ros-cdk-rocketmq.RosInstance=com.aliyun.ros.cdk.rocketmq.RosInstance
+@alicloud/ros-cdk-rocketmq.RosInstance.TagsProperty=com.aliyun.ros.cdk.rocketmq.RosInstance$TagsProperty
 @alicloud/ros-cdk-rocketmq.RosInstanceProps=com.aliyun.ros.cdk.rocketmq.RosInstanceProps
 @alicloud/ros-cdk-rocketmq.RosTopic=com.aliyun.ros.cdk.rocketmq.RosTopic
 @alicloud/ros-cdk-rocketmq.RosTopicProps=com.aliyun.ros.cdk.rocketmq.RosTopicProps

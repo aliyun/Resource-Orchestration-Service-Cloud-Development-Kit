@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <summary>Attribute CenBandwidthPackageId: The ID of the bandwidth package.</summary>
-        [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCenBandwidthPackageId
+        [JsiiProperty(name: "attrCenBandwidthPackageId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCenBandwidthPackageId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

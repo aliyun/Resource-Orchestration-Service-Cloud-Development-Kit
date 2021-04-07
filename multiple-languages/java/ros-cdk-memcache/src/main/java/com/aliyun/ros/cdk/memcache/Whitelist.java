@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * A ROS resource type:  `ALIYUN::Memcache::Whitelist`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.067Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.Whitelist")
 public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::Memcache::Whitelist`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Whitelist(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.memcache.WhitelistProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::Memcache::Whitelist`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Whitelist(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.memcache.WhitelistProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,21 +49,26 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SecurityIpGroupAttribute: The default is empty.
+     * <p>
+     * For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityIpGroupAttribute() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecurityIpGroupAttribute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityIpGroupAttribute() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityIpGroupAttribute", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute SecurityIpGroupName: Whitelist group.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityIpGroupName() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecurityIpGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityIpGroupName() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityIpGroupName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
+     * Attribute SecurityIps: IP address whitelist to be modified.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSecurityIps() {
-        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSecurityIps() {
+        return software.amazon.jsii.Kernel.get(this, "attrSecurityIps", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -64,8 +77,8 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.memcache.Whitelist> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -73,8 +86,8 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -93,37 +106,89 @@ public class Whitelist extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property instanceId: Instance ID (globally unique).
+         * <p>
          * @return {@code this}
-         * @param instanceId This parameter is required.
+         * @param instanceId Property instanceId: Instance ID (globally unique). This parameter is required.
          */
         public Builder instanceId(final java.lang.String instanceId) {
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * Property instanceId: Instance ID (globally unique).
+         * <p>
+         * @return {@code this}
+         * @param instanceId Property instanceId: Instance ID (globally unique). This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
+         * Property securityIps: IP address whitelist to be modified.
+         * <p>
          * @return {@code this}
-         * @param securityIps This parameter is required.
+         * @param securityIps Property securityIps: IP address whitelist to be modified. This parameter is required.
          */
         public Builder securityIps(final java.lang.String securityIps) {
             this.props.securityIps(securityIps);
             return this;
         }
+        /**
+         * Property securityIps: IP address whitelist to be modified.
+         * <p>
+         * @return {@code this}
+         * @param securityIps Property securityIps: IP address whitelist to be modified. This parameter is required.
+         */
+        public Builder securityIps(final com.aliyun.ros.cdk.core.IResolvable securityIps) {
+            this.props.securityIps(securityIps);
+            return this;
+        }
 
         /**
+         * Property securityIpGroupAttribute: The default is empty.
+         * <p>
+         * For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
+         * <p>
          * @return {@code this}
-         * @param securityIpGroupAttribute This parameter is required.
+         * @param securityIpGroupAttribute Property securityIpGroupAttribute: The default is empty. This parameter is required.
          */
         public Builder securityIpGroupAttribute(final java.lang.String securityIpGroupAttribute) {
             this.props.securityIpGroupAttribute(securityIpGroupAttribute);
             return this;
         }
+        /**
+         * Property securityIpGroupAttribute: The default is empty.
+         * <p>
+         * For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
+         * <p>
+         * @return {@code this}
+         * @param securityIpGroupAttribute Property securityIpGroupAttribute: The default is empty. This parameter is required.
+         */
+        public Builder securityIpGroupAttribute(final com.aliyun.ros.cdk.core.IResolvable securityIpGroupAttribute) {
+            this.props.securityIpGroupAttribute(securityIpGroupAttribute);
+            return this;
+        }
 
         /**
+         * Property securityIpGroupName: Whitelist group.
+         * <p>
          * @return {@code this}
-         * @param securityIpGroupName This parameter is required.
+         * @param securityIpGroupName Property securityIpGroupName: Whitelist group. This parameter is required.
          */
         public Builder securityIpGroupName(final java.lang.String securityIpGroupName) {
+            this.props.securityIpGroupName(securityIpGroupName);
+            return this;
+        }
+        /**
+         * Property securityIpGroupName: Whitelist group.
+         * <p>
+         * @return {@code this}
+         * @param securityIpGroupName Property securityIpGroupName: Whitelist group. This parameter is required.
+         */
+        public Builder securityIpGroupName(final com.aliyun.ros.cdk.core.IResolvable securityIpGroupName) {
             this.props.securityIpGroupName(securityIpGroupName);
             return this;
         }

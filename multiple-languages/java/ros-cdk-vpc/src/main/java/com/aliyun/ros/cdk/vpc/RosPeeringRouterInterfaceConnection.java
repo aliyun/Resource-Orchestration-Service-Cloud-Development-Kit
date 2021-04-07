@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * A ROS template type:  `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.485Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.192Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosPeeringRouterInterfaceConnection")
 public class RosPeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,14 +44,14 @@ public class RosPeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrOppositeInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrOppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrOppositeInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrOppositeInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRouterInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRouterInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "attrRouterInterfaceId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -69,8 +69,8 @@ public class RosPeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getOppositeInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getOppositeInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "oppositeInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -81,13 +81,25 @@ public class RosPeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getRouterInterfaceId() {
-        return software.amazon.jsii.Kernel.get(this, "routerInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setOppositeInterfaceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "oppositeInterfaceId", java.util.Objects.requireNonNull(value, "oppositeInterfaceId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getRouterInterfaceId() {
+        return software.amazon.jsii.Kernel.get(this, "routerInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setRouterInterfaceId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "routerInterfaceId", java.util.Objects.requireNonNull(value, "routerInterfaceId is required"));
+    }
+
+    /**
+     */
+    public void setRouterInterfaceId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "routerInterfaceId", java.util.Objects.requireNonNull(value, "routerInterfaceId is required"));
     }
 
@@ -125,12 +137,28 @@ public class RosPeeringRouterInterfaceConnection extends com.aliyun.ros.cdk.core
             this.props.oppositeInterfaceId(oppositeInterfaceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param oppositeInterfaceId This parameter is required.
+         */
+        public Builder oppositeInterfaceId(final com.aliyun.ros.cdk.core.IResolvable oppositeInterfaceId) {
+            this.props.oppositeInterfaceId(oppositeInterfaceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param routerInterfaceId This parameter is required.
          */
         public Builder routerInterfaceId(final java.lang.String routerInterfaceId) {
+            this.props.routerInterfaceId(routerInterfaceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param routerInterfaceId This parameter is required.
+         */
+        public Builder routerInterfaceId(final com.aliyun.ros.cdk.core.IResolvable routerInterfaceId) {
             this.props.routerInterfaceId(routerInterfaceId);
             return this;
         }

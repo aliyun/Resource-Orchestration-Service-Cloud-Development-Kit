@@ -11,27 +11,27 @@ export interface CustomDomainProps {
     /**
      * Property domainName: Custom domain name.
      */
-    readonly domainName: string;
+    readonly domainName: string | ros.IResolvable;
 
     /**
      * Property groupId: The id of the Group.
      */
-    readonly groupId: string;
+    readonly groupId: string | ros.IResolvable;
 
     /**
      * Property certificateBody: SSL certificate body.
      */
-    readonly certificateBody?: string;
+    readonly certificateBody?: string | ros.IResolvable;
 
     /**
      * Property certificateName: SSL certificate name.Need [4, 50] Chinese\English\Number characters or "_",and should start with Chinese/English character.
      */
-    readonly certificateName?: string;
+    readonly certificateName?: string | ros.IResolvable;
 
     /**
      * Property certificatePrivateKey: SSL certificate key.
      */
-    readonly certificatePrivateKey?: string;
+    readonly certificatePrivateKey?: string | ros.IResolvable;
 }
 
 /**
@@ -47,7 +47,7 @@ export class CustomDomain extends ros.Resource {
     /**
      * Attribute CertificateId: The id of the certificate.
      */
-    public readonly attrCertificateId: any;
+    public readonly attrCertificateId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ApiGateway::CustomDomain`.

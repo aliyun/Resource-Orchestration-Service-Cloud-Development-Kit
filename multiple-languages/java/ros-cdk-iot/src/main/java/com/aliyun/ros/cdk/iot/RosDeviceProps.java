@@ -3,42 +3,42 @@ package com.aliyun.ros.cdk.iot;
 /**
  * Properties for defining a `ALIYUN::IOT::Device`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.039Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.RosDeviceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDeviceProps.Jsii$Proxy.class)
 public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductKey();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDevEui() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDevEui() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDeviceName() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeviceName() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getIotInstanceId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getNickname() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getNickname() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPinCode() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPinCode() {
         return null;
     }
 
@@ -52,12 +52,12 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosDeviceProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosDeviceProps> {
-        private java.lang.String productKey;
-        private java.lang.String devEui;
-        private java.lang.String deviceName;
-        private java.lang.String iotInstanceId;
-        private java.lang.String nickname;
-        private java.lang.String pinCode;
+        private java.lang.Object productKey;
+        private java.lang.Object devEui;
+        private java.lang.Object deviceName;
+        private java.lang.Object iotInstanceId;
+        private java.lang.Object nickname;
+        private java.lang.Object pinCode;
 
         /**
          * Sets the value of {@link RosDeviceProps#getProductKey}
@@ -65,6 +65,16 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder productKey(java.lang.String productKey) {
+            this.productKey = productKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeviceProps#getProductKey}
+         * @param productKey the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder productKey(com.aliyun.ros.cdk.core.IResolvable productKey) {
             this.productKey = productKey;
             return this;
         }
@@ -80,11 +90,31 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDeviceProps#getDevEui}
+         * @param devEui the value to be set.
+         * @return {@code this}
+         */
+        public Builder devEui(com.aliyun.ros.cdk.core.IResolvable devEui) {
+            this.devEui = devEui;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeviceProps#getDeviceName}
          * @param deviceName the value to be set.
          * @return {@code this}
          */
         public Builder deviceName(java.lang.String deviceName) {
+            this.deviceName = deviceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeviceProps#getDeviceName}
+         * @param deviceName the value to be set.
+         * @return {@code this}
+         */
+        public Builder deviceName(com.aliyun.ros.cdk.core.IResolvable deviceName) {
             this.deviceName = deviceName;
             return this;
         }
@@ -100,6 +130,16 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDeviceProps#getIotInstanceId}
+         * @param iotInstanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
+            this.iotInstanceId = iotInstanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeviceProps#getNickname}
          * @param nickname the value to be set.
          * @return {@code this}
@@ -110,11 +150,31 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosDeviceProps#getNickname}
+         * @param nickname the value to be set.
+         * @return {@code this}
+         */
+        public Builder nickname(com.aliyun.ros.cdk.core.IResolvable nickname) {
+            this.nickname = nickname;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDeviceProps#getPinCode}
          * @param pinCode the value to be set.
          * @return {@code this}
          */
         public Builder pinCode(java.lang.String pinCode) {
+            this.pinCode = pinCode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDeviceProps#getPinCode}
+         * @param pinCode the value to be set.
+         * @return {@code this}
+         */
+        public Builder pinCode(com.aliyun.ros.cdk.core.IResolvable pinCode) {
             this.pinCode = pinCode;
             return this;
         }
@@ -135,12 +195,12 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosDeviceProps {
-        private final java.lang.String productKey;
-        private final java.lang.String devEui;
-        private final java.lang.String deviceName;
-        private final java.lang.String iotInstanceId;
-        private final java.lang.String nickname;
-        private final java.lang.String pinCode;
+        private final java.lang.Object productKey;
+        private final java.lang.Object devEui;
+        private final java.lang.Object deviceName;
+        private final java.lang.Object iotInstanceId;
+        private final java.lang.Object nickname;
+        private final java.lang.Object pinCode;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -148,18 +208,18 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.devEui = software.amazon.jsii.Kernel.get(this, "devEui", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.deviceName = software.amazon.jsii.Kernel.get(this, "deviceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.nickname = software.amazon.jsii.Kernel.get(this, "nickname", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.pinCode = software.amazon.jsii.Kernel.get(this, "pinCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.productKey = software.amazon.jsii.Kernel.get(this, "productKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.devEui = software.amazon.jsii.Kernel.get(this, "devEui", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deviceName = software.amazon.jsii.Kernel.get(this, "deviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.iotInstanceId = software.amazon.jsii.Kernel.get(this, "iotInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.nickname = software.amazon.jsii.Kernel.get(this, "nickname", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.pinCode = software.amazon.jsii.Kernel.get(this, "pinCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String productKey, final java.lang.String devEui, final java.lang.String deviceName, final java.lang.String iotInstanceId, final java.lang.String nickname, final java.lang.String pinCode) {
+        protected Jsii$Proxy(final java.lang.Object productKey, final java.lang.Object devEui, final java.lang.Object deviceName, final java.lang.Object iotInstanceId, final java.lang.Object nickname, final java.lang.Object pinCode) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.productKey = java.util.Objects.requireNonNull(productKey, "productKey is required");
             this.devEui = devEui;
@@ -170,32 +230,32 @@ public interface RosDeviceProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getProductKey() {
+        public final java.lang.Object getProductKey() {
             return this.productKey;
         }
 
         @Override
-        public final java.lang.String getDevEui() {
+        public final java.lang.Object getDevEui() {
             return this.devEui;
         }
 
         @Override
-        public final java.lang.String getDeviceName() {
+        public final java.lang.Object getDeviceName() {
             return this.deviceName;
         }
 
         @Override
-        public final java.lang.String getIotInstanceId() {
+        public final java.lang.Object getIotInstanceId() {
             return this.iotInstanceId;
         }
 
         @Override
-        public final java.lang.String getNickname() {
+        public final java.lang.Object getNickname() {
             return this.nickname;
         }
 
         @Override
-        public final java.lang.String getPinCode() {
+        public final java.lang.Object getPinCode() {
             return this.pinCode;
         }
 

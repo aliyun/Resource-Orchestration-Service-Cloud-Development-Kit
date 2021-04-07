@@ -3,32 +3,32 @@ package com.aliyun.ros.cdk.cas;
 /**
  * Properties for defining a `ALIYUN::CAS::Certificate`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.781Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.RosCertificateProps")
 @software.amazon.jsii.Jsii.Proxy(RosCertificateProps.Jsii$Proxy.class)
 public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getCert();
+    @org.jetbrains.annotations.NotNull java.lang.Object getCert();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getKey();
+    @org.jetbrains.annotations.NotNull java.lang.Object getKey();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLang() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLang() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getSourceIp() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSourceIp() {
         return null;
     }
 
@@ -42,11 +42,11 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
      * A builder for {@link RosCertificateProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosCertificateProps> {
-        private java.lang.String cert;
-        private java.lang.String key;
-        private java.lang.String name;
-        private java.lang.String lang;
-        private java.lang.String sourceIp;
+        private java.lang.Object cert;
+        private java.lang.Object key;
+        private java.lang.Object name;
+        private java.lang.Object lang;
+        private java.lang.Object sourceIp;
 
         /**
          * Sets the value of {@link RosCertificateProps#getCert}
@@ -54,6 +54,16 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
          * @return {@code this}
          */
         public Builder cert(java.lang.String cert) {
+            this.cert = cert;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCertificateProps#getCert}
+         * @param cert the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder cert(com.aliyun.ros.cdk.core.IResolvable cert) {
             this.cert = cert;
             return this;
         }
@@ -69,11 +79,31 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCertificateProps#getKey}
+         * @param key the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+            this.key = key;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCertificateProps#getName}
          * @param name the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
+            this.name = name;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCertificateProps#getName}
+         * @param name the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
             this.name = name;
             return this;
         }
@@ -89,11 +119,31 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link RosCertificateProps#getLang}
+         * @param lang the value to be set.
+         * @return {@code this}
+         */
+        public Builder lang(com.aliyun.ros.cdk.core.IResolvable lang) {
+            this.lang = lang;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosCertificateProps#getSourceIp}
          * @param sourceIp the value to be set.
          * @return {@code this}
          */
         public Builder sourceIp(java.lang.String sourceIp) {
+            this.sourceIp = sourceIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosCertificateProps#getSourceIp}
+         * @param sourceIp the value to be set.
+         * @return {@code this}
+         */
+        public Builder sourceIp(com.aliyun.ros.cdk.core.IResolvable sourceIp) {
             this.sourceIp = sourceIp;
             return this;
         }
@@ -114,11 +164,11 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosCertificateProps {
-        private final java.lang.String cert;
-        private final java.lang.String key;
-        private final java.lang.String name;
-        private final java.lang.String lang;
-        private final java.lang.String sourceIp;
+        private final java.lang.Object cert;
+        private final java.lang.Object key;
+        private final java.lang.Object name;
+        private final java.lang.Object lang;
+        private final java.lang.Object sourceIp;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -126,17 +176,17 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.cert = software.amazon.jsii.Kernel.get(this, "cert", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.sourceIp = software.amazon.jsii.Kernel.get(this, "sourceIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.cert = software.amazon.jsii.Kernel.get(this, "cert", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sourceIp = software.amazon.jsii.Kernel.get(this, "sourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String cert, final java.lang.String key, final java.lang.String name, final java.lang.String lang, final java.lang.String sourceIp) {
+        protected Jsii$Proxy(final java.lang.Object cert, final java.lang.Object key, final java.lang.Object name, final java.lang.Object lang, final java.lang.Object sourceIp) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.cert = java.util.Objects.requireNonNull(cert, "cert is required");
             this.key = java.util.Objects.requireNonNull(key, "key is required");
@@ -146,27 +196,27 @@ public interface RosCertificateProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
-        public final java.lang.String getCert() {
+        public final java.lang.Object getCert() {
             return this.cert;
         }
 
         @Override
-        public final java.lang.String getKey() {
+        public final java.lang.Object getKey() {
             return this.key;
         }
 
         @Override
-        public final java.lang.String getName() {
+        public final java.lang.Object getName() {
             return this.name;
         }
 
         @Override
-        public final java.lang.String getLang() {
+        public final java.lang.Object getLang() {
             return this.lang;
         }
 
         @Override
-        public final java.lang.String getSourceIp() {
+        public final java.lang.Object getSourceIp() {
             return this.sourceIp;
         }
 

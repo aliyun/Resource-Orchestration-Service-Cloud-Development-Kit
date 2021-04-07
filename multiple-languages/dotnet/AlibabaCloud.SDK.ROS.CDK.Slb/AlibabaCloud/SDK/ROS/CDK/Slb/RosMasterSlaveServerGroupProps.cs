@@ -13,8 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerId: The ID of the Server Load Balancer instance.
         /// </remarks>
-        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LoadBalancerId
+        [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LoadBalancerId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         /// <strong>Property</strong>: masterSlaveServerGroupName: The name of the active/standby server group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? MasterSlaveServerGroupName
+        [JsiiProperty(name: "masterSlaveServerGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MasterSlaveServerGroupName
         {
             get;
             set;

@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
     public interface IWafSwitchProps
     {
         /// <summary>Property domain: Domain name.</summary>
-        [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-        string Domain
+        [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Domain
         {
             get;
         }
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
         /// </remarks>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceId
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceId
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// <remarks>
         /// 1: indicate on.
         /// </remarks>
-        [JsiiProperty(name: "serviceOn", typeJson: "{\"primitive\":\"number\"}")]
-        double ServiceOn
+        [JsiiProperty(name: "serviceOn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ServiceOn
         {
             get;
         }
@@ -41,9 +41,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
         /// cn: China mainland (default)
         /// cn-hongkong: China HongKong and other overseas
         /// </remarks>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Region
+        object? Region
         {
             get
             {
@@ -60,30 +60,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             }
 
             /// <summary>Property domain: Domain name.</summary>
-            [JsiiProperty(name: "domain", typeJson: "{\"primitive\":\"string\"}")]
-            public string Domain
+            [JsiiProperty(name: "domain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Domain
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: WAF instance ID.</summary>
             /// <remarks>
             /// Description Interface You can view your current WAF instance ID by calling DescribePayInfo.
             /// </remarks>
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property serviceOn: Web attack protection switch, the value of: 0: closed.</summary>
             /// <remarks>
             /// 1: indicate on.
             /// </remarks>
-            [JsiiProperty(name: "serviceOn", typeJson: "{\"primitive\":\"number\"}")]
-            public double ServiceOn
+            [JsiiProperty(name: "serviceOn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ServiceOn
             {
-                get => GetInstanceProperty<double>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property region: Examples of areas where the WAF.</summary>
@@ -93,10 +93,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Waf
             /// cn-hongkong: China HongKong and other overseas
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Region
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Region
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
         }
     }

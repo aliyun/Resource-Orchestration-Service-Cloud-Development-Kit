@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * A ROS resource type:  `ALIYUN::SLB::Rule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.396Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.097Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLB::Rule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Rule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.RuleProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::SLB::Rule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Rule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.slb.RuleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,12 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute Rules: A list of forwarding rules.
+     * <p>
+     * Each element of rules contains "RuleId".
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRules() {
-        return software.amazon.jsii.Kernel.get(this, "attrRules", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrRules() {
+        return software.amazon.jsii.Kernel.get(this, "attrRules", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +63,8 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.slb.Rule> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +72,8 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,34 +92,68 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+         * <p>
+         * Valid value:
+         * 1-65535
+         * <p>
          * @return {@code this}
-         * @param listenerPort This parameter is required.
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
          */
         public Builder listenerPort(final java.lang.Number listenerPort) {
             this.props.listenerPort(listenerPort);
             return this;
         }
+        /**
+         * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+         * <p>
+         * Valid value:
+         * 1-65535
+         * <p>
+         * @return {@code this}
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
 
         /**
+         * Property loadBalancerId: The ID of Server Load Balancer instance.
+         * <p>
          * @return {@code this}
-         * @param loadBalancerId This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
          */
         public Builder loadBalancerId(final java.lang.String loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
             return this;
         }
+        /**
+         * Property loadBalancerId: The ID of Server Load Balancer instance.
+         * <p>
+         * @return {@code this}
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
+         */
+        public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.props.loadBalancerId(loadBalancerId);
+            return this;
+        }
 
         /**
+         * Property ruleList: The forwarding rules to add.
+         * <p>
          * @return {@code this}
-         * @param ruleList This parameter is required.
+         * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          */
         public Builder ruleList(final com.aliyun.ros.cdk.core.IResolvable ruleList) {
             this.props.ruleList(ruleList);
             return this;
         }
         /**
+         * Property ruleList: The forwarding rules to add.
+         * <p>
          * @return {@code this}
-         * @param ruleList This parameter is required.
+         * @param ruleList Property ruleList: The forwarding rules to add. This parameter is required.
          */
         public Builder ruleList(final java.util.List<? extends java.lang.Object> ruleList) {
             this.props.ruleList(ruleList);

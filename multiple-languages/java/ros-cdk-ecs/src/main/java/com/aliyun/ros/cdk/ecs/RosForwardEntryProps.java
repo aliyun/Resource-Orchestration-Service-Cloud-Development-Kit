@@ -3,34 +3,34 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Properties for defining a `ALIYUN::ECS::ForwardEntry`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.622Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosForwardEntryProps")
 @software.amazon.jsii.Jsii.Proxy(RosForwardEntryProps.Jsii$Proxy.class)
 public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getExternalIp();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExternalIp();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getExternalPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getExternalPort();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getForwardTableId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getForwardTableId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInternalIp();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInternalIp();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInternalPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInternalPort();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getIpProtocol();
+    @org.jetbrains.annotations.NotNull java.lang.Object getIpProtocol();
 
     /**
      * @return a {@link Builder} of {@link RosForwardEntryProps}
@@ -42,12 +42,12 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosForwardEntryProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosForwardEntryProps> {
-        private java.lang.String externalIp;
-        private java.lang.String externalPort;
-        private java.lang.String forwardTableId;
-        private java.lang.String internalIp;
-        private java.lang.String internalPort;
-        private java.lang.String ipProtocol;
+        private java.lang.Object externalIp;
+        private java.lang.Object externalPort;
+        private java.lang.Object forwardTableId;
+        private java.lang.Object internalIp;
+        private java.lang.Object internalPort;
+        private java.lang.Object ipProtocol;
 
         /**
          * Sets the value of {@link RosForwardEntryProps#getExternalIp}
@@ -55,6 +55,16 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
          * @return {@code this}
          */
         public Builder externalIp(java.lang.String externalIp) {
+            this.externalIp = externalIp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosForwardEntryProps#getExternalIp}
+         * @param externalIp the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder externalIp(com.aliyun.ros.cdk.core.IResolvable externalIp) {
             this.externalIp = externalIp;
             return this;
         }
@@ -70,11 +80,31 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosForwardEntryProps#getExternalPort}
+         * @param externalPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder externalPort(com.aliyun.ros.cdk.core.IResolvable externalPort) {
+            this.externalPort = externalPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosForwardEntryProps#getForwardTableId}
          * @param forwardTableId the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder forwardTableId(java.lang.String forwardTableId) {
+            this.forwardTableId = forwardTableId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosForwardEntryProps#getForwardTableId}
+         * @param forwardTableId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder forwardTableId(com.aliyun.ros.cdk.core.IResolvable forwardTableId) {
             this.forwardTableId = forwardTableId;
             return this;
         }
@@ -90,6 +120,16 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosForwardEntryProps#getInternalIp}
+         * @param internalIp the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder internalIp(com.aliyun.ros.cdk.core.IResolvable internalIp) {
+            this.internalIp = internalIp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosForwardEntryProps#getInternalPort}
          * @param internalPort the value to be set. This parameter is required.
          * @return {@code this}
@@ -100,11 +140,31 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosForwardEntryProps#getInternalPort}
+         * @param internalPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder internalPort(com.aliyun.ros.cdk.core.IResolvable internalPort) {
+            this.internalPort = internalPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosForwardEntryProps#getIpProtocol}
          * @param ipProtocol the value to be set. This parameter is required.
          * @return {@code this}
          */
         public Builder ipProtocol(java.lang.String ipProtocol) {
+            this.ipProtocol = ipProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosForwardEntryProps#getIpProtocol}
+         * @param ipProtocol the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder ipProtocol(com.aliyun.ros.cdk.core.IResolvable ipProtocol) {
             this.ipProtocol = ipProtocol;
             return this;
         }
@@ -125,12 +185,12 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosForwardEntryProps {
-        private final java.lang.String externalIp;
-        private final java.lang.String externalPort;
-        private final java.lang.String forwardTableId;
-        private final java.lang.String internalIp;
-        private final java.lang.String internalPort;
-        private final java.lang.String ipProtocol;
+        private final java.lang.Object externalIp;
+        private final java.lang.Object externalPort;
+        private final java.lang.Object forwardTableId;
+        private final java.lang.Object internalIp;
+        private final java.lang.Object internalPort;
+        private final java.lang.Object ipProtocol;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -138,18 +198,18 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.externalIp = software.amazon.jsii.Kernel.get(this, "externalIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.externalPort = software.amazon.jsii.Kernel.get(this, "externalPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.forwardTableId = software.amazon.jsii.Kernel.get(this, "forwardTableId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internalIp = software.amazon.jsii.Kernel.get(this, "internalIp", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.internalPort = software.amazon.jsii.Kernel.get(this, "internalPort", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.externalIp = software.amazon.jsii.Kernel.get(this, "externalIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.externalPort = software.amazon.jsii.Kernel.get(this, "externalPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.forwardTableId = software.amazon.jsii.Kernel.get(this, "forwardTableId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internalIp = software.amazon.jsii.Kernel.get(this, "internalIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.internalPort = software.amazon.jsii.Kernel.get(this, "internalPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipProtocol = software.amazon.jsii.Kernel.get(this, "ipProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String externalIp, final java.lang.String externalPort, final java.lang.String forwardTableId, final java.lang.String internalIp, final java.lang.String internalPort, final java.lang.String ipProtocol) {
+        protected Jsii$Proxy(final java.lang.Object externalIp, final java.lang.Object externalPort, final java.lang.Object forwardTableId, final java.lang.Object internalIp, final java.lang.Object internalPort, final java.lang.Object ipProtocol) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.externalIp = java.util.Objects.requireNonNull(externalIp, "externalIp is required");
             this.externalPort = java.util.Objects.requireNonNull(externalPort, "externalPort is required");
@@ -160,32 +220,32 @@ public interface RosForwardEntryProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getExternalIp() {
+        public final java.lang.Object getExternalIp() {
             return this.externalIp;
         }
 
         @Override
-        public final java.lang.String getExternalPort() {
+        public final java.lang.Object getExternalPort() {
             return this.externalPort;
         }
 
         @Override
-        public final java.lang.String getForwardTableId() {
+        public final java.lang.Object getForwardTableId() {
             return this.forwardTableId;
         }
 
         @Override
-        public final java.lang.String getInternalIp() {
+        public final java.lang.Object getInternalIp() {
             return this.internalIp;
         }
 
         @Override
-        public final java.lang.String getInternalPort() {
+        public final java.lang.Object getInternalPort() {
             return this.internalPort;
         }
 
         @Override
-        public final java.lang.String getIpProtocol() {
+        public final java.lang.Object getIpProtocol() {
             return this.ipProtocol;
         }
 

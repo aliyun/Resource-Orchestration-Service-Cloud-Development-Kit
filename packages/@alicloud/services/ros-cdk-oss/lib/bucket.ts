@@ -11,12 +11,12 @@ export interface BucketProps {
     /**
      * Property bucketName: bucket name.
      */
-    readonly bucketName: string;
+    readonly bucketName: string | ros.IResolvable;
 
     /**
      * Property accessControl: The access control list.
      */
-    readonly accessControl?: string;
+    readonly accessControl?: string | ros.IResolvable;
 
     /**
      * Property corsConfiguration: Rules that define cross-origin resource sharing of objects in this bucket.
@@ -56,12 +56,12 @@ export interface BucketProps {
     /**
      * Property storageClass: Specifies the storage class of the bucket. Default is "Standard".
      */
-    readonly storageClass?: string;
+    readonly storageClass?: string | ros.IResolvable;
 
     /**
      * Property tags: Bucket tags in k-v pairs format.
      */
-    readonly tags?: { [key: string]: any }[];
+    readonly tags?: { [key: string]: (any) };
 
     /**
      * Property websiteConfiguration: The properties of website config.
@@ -82,17 +82,17 @@ export class Bucket extends ros.Resource {
     /**
      * Attribute DomainName: The public DNS name of the specified bucket.
      */
-    public readonly attrDomainName: any;
+    public readonly attrDomainName: ros.IResolvable;
 
     /**
      * Attribute InternalDomainName: The internal DNS name of the specified bucket.
      */
-    public readonly attrInternalDomainName: any;
+    public readonly attrInternalDomainName: ros.IResolvable;
 
     /**
      * Attribute Name: The name of Bucket
      */
-    public readonly attrName: any;
+    public readonly attrName: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::OSS::Bucket`.
@@ -116,7 +116,7 @@ export class Bucket extends ros.Resource {
             lifecycleConfiguration: props.lifecycleConfiguration,
             serverSideEncryptionConfiguration: props.serverSideEncryptionConfiguration,
             accessControl: props.accessControl ? props.accessControl : 'private',
-            tags: ros.tagFactory(props.tags),
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosBucket;
         this.attrDomainName = rosBucket.attrDomainName;

@@ -11,22 +11,22 @@ export interface RouteProps {
     /**
      * Property destinationCidrBlock: The RouteEntry's target network segment.
      */
-    readonly destinationCidrBlock: string;
+    readonly destinationCidrBlock: string | ros.IResolvable;
 
     /**
      * Property routeId: RouteId of created route entry.
      */
-    readonly routeId: string;
+    readonly routeId: string | ros.IResolvable;
 
     /**
      * Property routeTableId: RouteTableId of created route entry.
      */
-    readonly routeTableId: string;
+    readonly routeTableId: string | ros.IResolvable;
 
     /**
      * Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
      */
-    readonly nextHopId?: string;
+    readonly nextHopId?: string | ros.IResolvable;
 
     /**
      * Property nextHopList: The route entry's next hop list. If router is virtual border router, the value will be ignore. The list should contain 2-4 next hop. NextHopId of each next hop must be RouterInterface that VRouter forwards to VBR.
@@ -36,7 +36,7 @@ export interface RouteProps {
     /**
      * Property nextHopType: The next hop type. Available value options: Instance | Tunnel | HaVip | RouterInterface. The default value is Instance.When the NextHopList is specified, the value will be ignored.
      */
-    readonly nextHopType?: string;
+    readonly nextHopType?: string | ros.IResolvable;
 }
 
 /**

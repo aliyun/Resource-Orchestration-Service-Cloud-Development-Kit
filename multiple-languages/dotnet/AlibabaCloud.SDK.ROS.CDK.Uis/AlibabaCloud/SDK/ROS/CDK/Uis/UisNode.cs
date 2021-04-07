@@ -33,24 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Uis
         }
 
         /// <summary>Attribute UisNodeActiveIps: The node active IP list.</summary>
-        [JsiiProperty(name: "attrUisNodeActiveIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeActiveIps
+        [JsiiProperty(name: "attrUisNodeActiveIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeActiveIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute UisNodeId: The node ID of the instance.</summary>
-        [JsiiProperty(name: "attrUisNodeId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeId
+        [JsiiProperty(name: "attrUisNodeId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute UisNodeIps: The node IP list.</summary>
-        [JsiiProperty(name: "attrUisNodeIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrUisNodeIps
+        [JsiiProperty(name: "attrUisNodeIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrUisNodeIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

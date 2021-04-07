@@ -63,17 +63,17 @@ export class RosAnyCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * @Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -92,9 +92,9 @@ export class RosAnyCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAnyClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAnyCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrTaskId = ros.Token.asString(this.getAtt('TaskId'));
-        this.attrWorkerRamRoleName = ros.Token.asString(this.getAtt('WorkerRamRoleName'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clusterConfig = props.clusterConfig;
@@ -130,17 +130,17 @@ export interface RosKubernetesClusterProps {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
      */
-    readonly workerInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property workerVSwitchIds: The virtual switch ID of the worker node.
@@ -166,12 +166,12 @@ export interface RosKubernetesClusterProps {
     /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    readonly containerCidr?: string;
+    readonly containerCidr?: string | ros.IResolvable;
 
     /**
-     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
+     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
-    readonly cpuPolicy?: string;
+    readonly cpuPolicy?: string | ros.IResolvable;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -191,17 +191,17 @@ export interface RosKubernetesClusterProps {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    readonly keyPair?: string;
+    readonly keyPair?: string | ros.IResolvable;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    readonly kubernetesVersion?: string;
+    readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    readonly loginPassword?: string;
+    readonly loginPassword?: string | ros.IResolvable;
 
     /**
      * @Property masterAutoRenew: Whether the master node automatically renews. It takes effect when the value of MasterInstanceChargeType is PrePaid. The optional values are:
@@ -217,12 +217,12 @@ export interface RosKubernetesClusterProps {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    readonly masterAutoRenewPeriod?: number;
+    readonly masterAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * @Property masterCount: Number of master instances. The value can be 3 or 5. The default value is 3.
      */
-    readonly masterCount?: number;
+    readonly masterCount?: number | ros.IResolvable;
 
     /**
      * @Property masterDataDisk: Whether the master node mounts data disks can be selected as:
@@ -242,7 +242,7 @@ export interface RosKubernetesClusterProps {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    readonly masterInstanceChargeType?: string;
+    readonly masterInstanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property masterPeriod: The duration of the annual subscription and monthly subscription. It takes effect when the master_instance_charge_type value is PrePaid and is a required value. The value range is:
@@ -250,7 +250,7 @@ export interface RosKubernetesClusterProps {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    readonly masterPeriod?: number;
+    readonly masterPeriod?: number | ros.IResolvable;
 
     /**
      * @Property masterPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -258,48 +258,48 @@ export interface RosKubernetesClusterProps {
      * Month: time in months
      * Default to Month
      */
-    readonly masterPeriodUnit?: string;
+    readonly masterPeriodUnit?: string | ros.IResolvable;
 
     /**
-     * @Property masterSystemDiskCategory: Master disk system disk type. The value range is:
+     * @Property masterSystemDiskCategory: Master disk system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
-     * Default to cloud_ssd.
+     * cloud_essd: ESSD cloud diskDefault to cloud_ssd.
      */
-    readonly masterSystemDiskCategory?: string;
+    readonly masterSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property masterSystemDiskSize: Master disk system disk size in GiB.
      * Default to 120.
      */
-    readonly masterSystemDiskSize?: number;
+    readonly masterSystemDiskSize?: number | ros.IResolvable;
 
     /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
-    readonly nodePortRange?: string;
+    readonly nodePortRange?: string | ros.IResolvable;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
-    readonly numOfNodes?: number;
+    readonly numOfNodes?: number | ros.IResolvable;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    readonly proxyMode?: string;
+    readonly proxyMode?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -321,17 +321,17 @@ export interface RosKubernetesClusterProps {
     /**
      * @Property tags: Tag the cluster.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosKubernetesCluster.TagsProperty[];
 
     /**
      * @Property taint: It is used to mark nodes with taints. It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
      */
-    readonly taint?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly taint?: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 
     /**
      * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
@@ -347,7 +347,7 @@ export interface RosKubernetesClusterProps {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    readonly workerAutoRenewPeriod?: number;
+    readonly workerAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -368,7 +368,7 @@ export interface RosKubernetesClusterProps {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    readonly workerInstanceChargeType?: string;
+    readonly workerInstanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
@@ -376,7 +376,7 @@ export interface RosKubernetesClusterProps {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    readonly workerPeriod?: number;
+    readonly workerPeriod?: number | ros.IResolvable;
 
     /**
      * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -384,7 +384,7 @@ export interface RosKubernetesClusterProps {
      * Month: time in months
      * Default to Month.
      */
-    readonly workerPeriodUnit?: string;
+    readonly workerPeriodUnit?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -392,13 +392,13 @@ export interface RosKubernetesClusterProps {
      * cloud_ssd: SSD cloud disk
      * Default to cloud_efficiency.
      */
-    readonly workerSystemDiskCategory?: string;
+    readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    readonly workerSystemDiskSize?: number;
+    readonly workerSystemDiskSize?: number | ros.IResolvable;
 }
 
 /**
@@ -426,12 +426,6 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('workerPeriodUnit', ros.validateString)(properties.workerPeriodUnit));
-    if(properties.masterSystemDiskCategory && (typeof properties.masterSystemDiskCategory) !== 'object') {
-        errors.collect(ros.propertyValidator('masterSystemDiskCategory', ros.validateAllowedValues)({
-          data: properties.masterSystemDiskCategory,
-          allowedValues: ["cloud_efficiency","cloud_ssd"],
-        }));
-    }
     errors.collect(ros.propertyValidator('masterSystemDiskCategory', ros.validateString)(properties.masterSystemDiskCategory));
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosKubernetesCluster_AddonsPropertyValidator))(properties.addons));
     if(properties.masterSystemDiskSize && (typeof properties.masterSystemDiskSize) !== 'object') {
@@ -471,13 +465,13 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('masterVSwitchIds', ros.listValidator(ros.validateAny))(properties.masterVSwitchIds));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAny))(properties.taint));
+    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
     errors.collect(ros.propertyValidator('masterDataDisks', ros.listValidator(RosKubernetesCluster_MasterDataDisksPropertyValidator))(properties.masterDataDisks));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.requiredValidator)(properties.workerInstanceTypes));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
@@ -487,7 +481,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
             max: 10,
           }));
     }
-    errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateAny))(properties.workerInstanceTypes));
+    errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     if(properties.masterPeriod && (typeof properties.masterPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('masterPeriod', ros.validateAllowedValues)({
@@ -500,7 +494,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.masterInstanceChargeType && (typeof properties.masterInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateAllowedValues)({
           data: properties.masterInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('masterInstanceChargeType', ros.validateString)(properties.masterInstanceChargeType));
@@ -509,7 +503,7 @@ function RosKubernetesClusterPropsValidator(properties: any): ros.ValidationResu
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
@@ -591,7 +585,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       MasterVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.masterVSwitchIds),
       Name: ros.stringToRosTemplate(properties.name),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
-      WorkerInstanceTypes: ros.listMapper(ros.objectToRosTemplate)(properties.workerInstanceTypes),
+      WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerVSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.workerVSwitchIds),
       Addons: ros.listMapper(rosKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
@@ -619,8 +613,8 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
       SshFlags: ros.booleanToRosTemplate(properties.sshFlags),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
-      Taint: ros.listMapper(ros.objectToRosTemplate)(properties.taint),
+      Tags: ros.listMapper(rosKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
+      Taint: ros.listMapper(ros.anyDictToRosTemplate)(properties.taint),
       TimeoutMins: ros.numberToRosTemplate(properties.timeoutMins),
       WorkerAutoRenew: ros.booleanToRosTemplate(properties.workerAutoRenew),
       WorkerAutoRenewPeriod: ros.numberToRosTemplate(properties.workerAutoRenewPeriod),
@@ -651,17 +645,17 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * @Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -680,17 +674,17 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
      */
-    public workerInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    public workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property workerVSwitchIds: The virtual switch ID of the worker node.
@@ -716,12 +710,12 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    public containerCidr: string | undefined;
+    public containerCidr: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies. The default is none.
+     * @Property cpuPolicy: CPU policy. The cluster version is 1.12.6 and above supports both static and none strategies.
      */
-    public cpuPolicy: string | undefined;
+    public cpuPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -741,17 +735,17 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    public keyPair: string | undefined;
+    public keyPair: string | ros.IResolvable | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    public kubernetesVersion: string | undefined;
+    public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    public loginPassword: string | undefined;
+    public loginPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterAutoRenew: Whether the master node automatically renews. It takes effect when the value of MasterInstanceChargeType is PrePaid. The optional values are:
@@ -767,12 +761,12 @@ export class RosKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    public masterAutoRenewPeriod: number | undefined;
+    public masterAutoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterCount: Number of master instances. The value can be 3 or 5. The default value is 3.
      */
-    public masterCount: number | undefined;
+    public masterCount: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterDataDisk: Whether the master node mounts data disks can be selected as:
@@ -792,7 +786,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    public masterInstanceChargeType: string | undefined;
+    public masterInstanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterPeriod: The duration of the annual subscription and monthly subscription. It takes effect when the master_instance_charge_type value is PrePaid and is a required value. The value range is:
@@ -800,7 +794,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    public masterPeriod: number | undefined;
+    public masterPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property masterPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -808,48 +802,48 @@ export class RosKubernetesCluster extends ros.RosResource {
      * Month: time in months
      * Default to Month
      */
-    public masterPeriodUnit: string | undefined;
+    public masterPeriodUnit: string | ros.IResolvable | undefined;
 
     /**
-     * @Property masterSystemDiskCategory: Master disk system disk type. The value range is:
+     * @Property masterSystemDiskCategory: Master disk system disk type. The value includes:
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
-     * Default to cloud_ssd.
+     * cloud_essd: ESSD cloud diskDefault to cloud_ssd.
      */
-    public masterSystemDiskCategory: string | undefined;
+    public masterSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property masterSystemDiskSize: Master disk system disk size in GiB.
      * Default to 120.
      */
-    public masterSystemDiskSize: number | undefined;
+    public masterSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
      * @Property nodePortRange: Node service port. The value range is [30000, 65535].
      * Default to 30000-65535.
      */
-    public nodePortRange: string | undefined;
+    public nodePortRange: string | ros.IResolvable | undefined;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
-    public numOfNodes: number | undefined;
+    public numOfNodes: number | ros.IResolvable | undefined;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    public proxyMode: string | undefined;
+    public proxyMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    public serviceCidr: string | undefined;
+    public serviceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -871,17 +865,17 @@ export class RosKubernetesCluster extends ros.RosResource {
     /**
      * @Property tags: Tag the cluster.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosKubernetesCluster.TagsProperty[] | undefined;
 
     /**
      * @Property taint: It is used to mark nodes with taints. It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
      */
-    public taint: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public taint: Array<{ [key: string]: any }> | ros.IResolvable | undefined;
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    public timeoutMins: number | undefined;
+    public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
@@ -897,7 +891,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    public workerAutoRenewPeriod: number | undefined;
+    public workerAutoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -918,7 +912,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    public workerInstanceChargeType: string | undefined;
+    public workerInstanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
@@ -926,7 +920,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    public workerPeriod: number | undefined;
+    public workerPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -934,7 +928,7 @@ export class RosKubernetesCluster extends ros.RosResource {
      * Month: time in months
      * Default to Month.
      */
-    public workerPeriodUnit: string | undefined;
+    public workerPeriodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -942,13 +936,13 @@ export class RosKubernetesCluster extends ros.RosResource {
      * cloud_ssd: SSD cloud disk
      * Default to cloud_efficiency.
      */
-    public workerSystemDiskCategory: string | undefined;
+    public workerSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    public workerSystemDiskSize: number | undefined;
+    public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::KubernetesCluster`.
@@ -959,9 +953,9 @@ export class RosKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrTaskId = ros.Token.asString(this.getAtt('TaskId'));
-        this.attrWorkerRamRoleName = ros.Token.asString(this.getAtt('WorkerRamRoleName'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.masterInstanceTypes = props.masterInstanceTypes;
@@ -996,7 +990,7 @@ export class RosKubernetesCluster extends ros.RosResource {
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
         this.sshFlags = props.sshFlags;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CS::KubernetesCluster", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.taint = props.taint;
         this.timeoutMins = props.timeoutMins;
         this.workerAutoRenew = props.workerAutoRenew;
@@ -1045,7 +1039,7 @@ export class RosKubernetesCluster extends ros.RosResource {
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
             sshFlags: this.sshFlags,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             taint: this.taint,
             timeoutMins: this.timeoutMins,
             workerAutoRenew: this.workerAutoRenew,
@@ -1070,17 +1064,17 @@ export namespace RosKubernetesCluster {
      */
     export interface AddonsProperty {
         /**
-         * @Property version: When the value is empty, the latest version is selected by default.
-         */
-        readonly version?: string;
-        /**
          * @Property config: When the value is empty, no configuration is required.
          */
-        readonly config?: string;
+        readonly config?: string | ros.IResolvable;
+        /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
         /**
          * @Property name: Addon plugin name
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -1093,8 +1087,8 @@ export namespace RosKubernetesCluster {
 function RosKubernetesCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "AddonsProperty"');
@@ -1112,8 +1106,8 @@ function rosKubernetesClusterAddonsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
     return {
-      Version: ros.stringToRosTemplate(properties.version),
       Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
       Name: ros.stringToRosTemplate(properties.name),
     };
 }
@@ -1129,11 +1123,11 @@ export namespace RosKubernetesCluster {
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
          */
-        readonly category: string;
+        readonly category: string | ros.IResolvable;
         /**
          * @Property size: Data disk size in GiB.
          */
-        readonly size: number;
+        readonly size: number | ros.IResolvable;
     }
 }
 /**
@@ -1181,6 +1175,54 @@ export namespace RosKubernetesCluster {
     /**
      * @stability external
      */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKubernetesCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::KubernetesCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosKubernetesClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKubernetesCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface WorkerDataDisksProperty {
         /**
          * @Property category: Data disk type. Value includes:
@@ -1188,11 +1230,11 @@ export namespace RosKubernetesCluster {
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
          */
-        readonly category: string;
+        readonly category: string | ros.IResolvable;
         /**
          * @Property size: Data disk size in GiB.
          */
-        readonly size: number;
+        readonly size: number | ros.IResolvable;
     }
 }
 /**
@@ -1244,12 +1286,17 @@ export interface RosManagedEdgeKubernetesClusterProps {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300]
      */
-    readonly numOfNodes: number;
+    readonly numOfNodes: number | ros.IResolvable;
+
+    /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    readonly addons?: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -1260,9 +1307,17 @@ export interface RosManagedEdgeKubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
+     * @Property clusterSpec: The edge managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.standard. The value can be empty. When it is empty, a standard managed cluster will be created.
+     */
+    readonly clusterSpec?: string | ros.IResolvable;
+
+    /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    readonly containerCidr?: string;
+    readonly containerCidr?: string | ros.IResolvable;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -1282,27 +1337,27 @@ export interface RosManagedEdgeKubernetesClusterProps {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    readonly keyPair?: string;
+    readonly keyPair?: string | ros.IResolvable;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    readonly loginPassword?: string;
+    readonly loginPassword?: string | ros.IResolvable;
 
     /**
      * @Property profile: Edge cluster ID. The default value is Edge.
      */
-    readonly profile?: string;
+    readonly profile?: string | ros.IResolvable;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    readonly proxyMode?: string;
+    readonly proxyMode?: string | ros.IResolvable;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -1317,18 +1372,18 @@ export interface RosManagedEdgeKubernetesClusterProps {
     /**
      * @Property tags: Tag the cluster.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosManagedEdgeKubernetesCluster.TagsProperty[];
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
@@ -1346,24 +1401,29 @@ export interface RosManagedEdgeKubernetesClusterProps {
     /**
      * @Property workerDataDiskCategory: Data disk type.
      */
-    readonly workerDataDiskCategory?: string;
+    readonly workerDataDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property workerDataDiskSize: Data disk size in GiB.
      */
-    readonly workerDataDiskSize?: number;
+    readonly workerDataDiskSize?: number | ros.IResolvable;
+
+    /**
+     * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
+     */
+    readonly workerInstanceTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. 
      * Default to cloud_efficiency.
      */
-    readonly workerSystemDiskCategory?: string;
+    readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    readonly workerSystemDiskSize?: number;
+    readonly workerSystemDiskSize?: number | ros.IResolvable;
 }
 
 /**
@@ -1388,6 +1448,9 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
     }
     errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateAny))(properties.vSwitchIds));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('addons', ros.listValidator(RosManagedEdgeKubernetesCluster_AddonsPropertyValidator))(properties.addons));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     if(properties.workerSystemDiskSize && (typeof properties.workerSystemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateRange)({
             data: properties.workerSystemDiskSize,
@@ -1396,7 +1459,6 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
-    errors.collect(ros.propertyValidator('workerSystemDiskCategory', ros.validateString)(properties.workerSystemDiskCategory));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
@@ -1410,6 +1472,7 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('workerDataDiskSize', ros.validateNumber)(properties.workerDataDiskSize));
+    errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('numOfNodes', ros.requiredValidator)(properties.numOfNodes));
     if(properties.numOfNodes && (typeof properties.numOfNodes) !== 'object') {
         errors.collect(ros.propertyValidator('numOfNodes', ros.validateRange)({
@@ -1419,13 +1482,20 @@ function RosManagedEdgeKubernetesClusterPropsValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('numOfNodes', ros.validateNumber)(properties.numOfNodes));
-    errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('workerDataDiskCategory', ros.validateString)(properties.workerDataDiskCategory));
     errors.collect(ros.propertyValidator('snatEntry', ros.validateBoolean)(properties.snatEntry));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedEdgeKubernetesCluster_TagsPropertyValidator))(properties.tags));
+    if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
+        errors.collect(ros.propertyValidator('workerInstanceTypes', ros.validateLength)({
+            data: properties.workerInstanceTypes.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     return errors.wrap('supplied properties not correct for "RosManagedEdgeKubernetesClusterProps"');
 }
@@ -1446,7 +1516,9 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
     return {
       Name: ros.stringToRosTemplate(properties.name),
       NumOfNodes: ros.numberToRosTemplate(properties.numOfNodes),
+      Addons: ros.listMapper(rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
+      ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
@@ -1456,13 +1528,14 @@ function rosManagedEdgeKubernetesClusterPropsToRosTemplate(properties: any, enab
       ProxyMode: ros.stringToRosTemplate(properties.proxyMode),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
       TimeoutMins: ros.numberToRosTemplate(properties.timeoutMins),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
       WorkerDataDisk: ros.booleanToRosTemplate(properties.workerDataDisk),
       WorkerDataDiskCategory: ros.stringToRosTemplate(properties.workerDataDiskCategory),
       WorkerDataDiskSize: ros.numberToRosTemplate(properties.workerDataDiskSize),
+      WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       WorkerSystemDiskCategory: ros.stringToRosTemplate(properties.workerSystemDiskCategory),
       WorkerSystemDiskSize: ros.numberToRosTemplate(properties.workerSystemDiskSize),
     };
@@ -1485,17 +1558,17 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * @Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1503,12 +1576,17 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300]
      */
-    public numOfNodes: number;
+    public numOfNodes: number | ros.IResolvable;
+
+    /**
+     * @Property addons: The add-ons to be installed for the cluster.
+     */
+    public addons: Array<RosManagedEdgeKubernetesCluster.AddonsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property cloudMonitorFlags: Whether to install the cloud monitoring plugin:
@@ -1519,9 +1597,17 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     public cloudMonitorFlags: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property clusterSpec: The edge managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.standard. The value can be empty. When it is empty, a standard managed cluster will be created.
+     */
+    public clusterSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    public containerCidr: string | undefined;
+    public containerCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -1541,27 +1627,27 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    public keyPair: string | undefined;
+    public keyPair: string | ros.IResolvable | undefined;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    public loginPassword: string | undefined;
+    public loginPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property profile: Edge cluster ID. The default value is Edge.
      */
-    public profile: string | undefined;
+    public profile: string | ros.IResolvable | undefined;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    public proxyMode: string | undefined;
+    public proxyMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    public serviceCidr: string | undefined;
+    public serviceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -1576,18 +1662,18 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * @Property tags: Tag the cluster.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosManagedEdgeKubernetesCluster.TagsProperty[] | undefined;
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    public timeoutMins: number | undefined;
+    public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
      * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
@@ -1605,24 +1691,29 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     /**
      * @Property workerDataDiskCategory: Data disk type.
      */
-    public workerDataDiskCategory: string | undefined;
+    public workerDataDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDiskSize: Data disk size in GiB.
      */
-    public workerDataDiskSize: number | undefined;
+    public workerDataDiskSize: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
+     */
+    public workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. 
      * Default to cloud_efficiency.
      */
-    public workerSystemDiskCategory: string | undefined;
+    public workerSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    public workerSystemDiskSize: number | undefined;
+    public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::ManagedEdgeKubernetesCluster`.
@@ -1633,14 +1724,16 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosManagedEdgeKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedEdgeKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrTaskId = ros.Token.asString(this.getAtt('TaskId'));
-        this.attrWorkerRamRoleName = ros.Token.asString(this.getAtt('WorkerRamRoleName'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
         this.numOfNodes = props.numOfNodes;
+        this.addons = props.addons;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
+        this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
         this.disableRollback = props.disableRollback;
         this.endpointPublicAccess = props.endpointPublicAccess;
@@ -1650,13 +1743,14 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         this.proxyMode = props.proxyMode;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CS::ManagedEdgeKubernetesCluster", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.timeoutMins = props.timeoutMins;
         this.vpcId = props.vpcId;
         this.vSwitchIds = props.vSwitchIds;
         this.workerDataDisk = props.workerDataDisk;
         this.workerDataDiskCategory = props.workerDataDiskCategory;
         this.workerDataDiskSize = props.workerDataDiskSize;
+        this.workerInstanceTypes = props.workerInstanceTypes;
         this.workerSystemDiskCategory = props.workerSystemDiskCategory;
         this.workerSystemDiskSize = props.workerSystemDiskSize;
     }
@@ -1666,7 +1760,9 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
         return {
             name: this.name,
             numOfNodes: this.numOfNodes,
+            addons: this.addons,
             cloudMonitorFlags: this.cloudMonitorFlags,
+            clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
             disableRollback: this.disableRollback,
             endpointPublicAccess: this.endpointPublicAccess,
@@ -1676,13 +1772,14 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
             proxyMode: this.proxyMode,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             timeoutMins: this.timeoutMins,
             vpcId: this.vpcId,
             vSwitchIds: this.vSwitchIds,
             workerDataDisk: this.workerDataDisk,
             workerDataDiskCategory: this.workerDataDiskCategory,
             workerDataDiskSize: this.workerDataDiskSize,
+            workerInstanceTypes: this.workerInstanceTypes,
             workerSystemDiskCategory: this.workerSystemDiskCategory,
             workerSystemDiskSize: this.workerSystemDiskSize,
         };
@@ -1690,6 +1787,108 @@ export class RosManagedEdgeKubernetesCluster extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosManagedEdgeKubernetesClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface AddonsProperty {
+        /**
+         * @Property config: When the value is empty, no configuration is required.
+         */
+        readonly config?: string | ros.IResolvable;
+        /**
+         * @Property disabled: Specifies whether to disable default installation.
+         */
+        readonly disabled?: boolean | ros.IResolvable;
+        /**
+         * @Property name: The name of the add-on.
+         */
+        readonly name: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AddonsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_AddonsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
+    errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "AddonsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Addons` resource
+ *
+ * @param properties - the TypeScript properties of a `AddonsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Addons` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterAddonsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
+    return {
+      Config: ros.stringToRosTemplate(properties.config),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosManagedEdgeKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedEdgeKubernetesCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedEdgeKubernetesCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedEdgeKubernetesClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedEdgeKubernetesCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1700,12 +1899,12 @@ export interface RosManagedKubernetesClusterProps {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
@@ -1715,7 +1914,7 @@ export interface RosManagedKubernetesClusterProps {
     /**
      * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
      */
-    readonly workerInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -1734,9 +1933,17 @@ export interface RosManagedKubernetesClusterProps {
     readonly cloudMonitorFlags?: boolean | ros.IResolvable;
 
     /**
+     * @Property clusterSpec: The managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.standard. The value can be empty. When it is empty, a standard managed cluster will be created.
+     */
+    readonly clusterSpec?: string | ros.IResolvable;
+
+    /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    readonly containerCidr?: string;
+    readonly containerCidr?: string | ros.IResolvable;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -1756,38 +1963,38 @@ export interface RosManagedKubernetesClusterProps {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    readonly keyPair?: string;
+    readonly keyPair?: string | ros.IResolvable;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.16.9-aliyun.1, 1.14.8-aliyun.1 and so on.
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    readonly kubernetesVersion?: string;
+    readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    readonly loginPassword?: string;
+    readonly loginPassword?: string | ros.IResolvable;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
-    readonly numOfNodes?: number;
+    readonly numOfNodes?: number | ros.IResolvable;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    readonly proxyMode?: string;
+    readonly proxyMode?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -1802,17 +2009,17 @@ export interface RosManagedKubernetesClusterProps {
     /**
      * @Property tags: Tag the cluster.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosManagedKubernetesCluster.TagsProperty[];
 
     /**
      * @Property taint: It is used to mark nodes with taints. It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
      */
-    readonly taint?: Array<any | ros.IResolvable> | ros.IResolvable;
+    readonly taint?: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    readonly timeoutMins?: number;
+    readonly timeoutMins?: number | ros.IResolvable;
 
     /**
      * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
@@ -1828,7 +2035,7 @@ export interface RosManagedKubernetesClusterProps {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    readonly workerAutoRenewPeriod?: number;
+    readonly workerAutoRenewPeriod?: number | ros.IResolvable;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -1849,7 +2056,7 @@ export interface RosManagedKubernetesClusterProps {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    readonly workerInstanceChargeType?: string;
+    readonly workerInstanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
@@ -1857,7 +2064,7 @@ export interface RosManagedKubernetesClusterProps {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    readonly workerPeriod?: number;
+    readonly workerPeriod?: number | ros.IResolvable;
 
     /**
      * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -1865,7 +2072,7 @@ export interface RosManagedKubernetesClusterProps {
      * Month: time in months
      * Default to Month.
      */
-    readonly workerPeriodUnit?: string;
+    readonly workerPeriodUnit?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -1873,13 +2080,13 @@ export interface RosManagedKubernetesClusterProps {
      * cloud_ssd: SSD cloud disk
      * Default to cloud_efficiency.
      */
-    readonly workerSystemDiskCategory?: string;
+    readonly workerSystemDiskCategory?: string | ros.IResolvable;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    readonly workerSystemDiskSize?: number;
+    readonly workerSystemDiskSize?: number | ros.IResolvable;
 }
 
 /**
@@ -1919,12 +2126,12 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('workerSystemDiskSize', ros.validateNumber)(properties.workerSystemDiskSize));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
-    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAny))(properties.taint));
+    errors.collect(ros.propertyValidator('taint', ros.listValidator(ros.validateAnyDict))(properties.taint));
     errors.collect(ros.propertyValidator('cloudMonitorFlags', ros.validateBoolean)(properties.cloudMonitorFlags));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
     errors.collect(ros.propertyValidator('workerAutoRenew', ros.validateBoolean)(properties.workerAutoRenew));
     errors.collect(ros.propertyValidator('proxyMode', ros.validateString)(properties.proxyMode));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosManagedKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('disableRollback', ros.validateBoolean)(properties.disableRollback));
     errors.collect(ros.propertyValidator('workerInstanceTypes', ros.requiredValidator)(properties.workerInstanceTypes));
     if(properties.workerInstanceTypes && (Array.isArray(properties.workerInstanceTypes) || (typeof properties.workerInstanceTypes) === 'string')) {
@@ -1934,7 +2141,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
             max: 5,
           }));
     }
-    errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateAny))(properties.workerInstanceTypes));
+    errors.collect(ros.propertyValidator('workerInstanceTypes', ros.listValidator(ros.validateString))(properties.workerInstanceTypes));
     errors.collect(ros.propertyValidator('loginPassword', ros.validateString)(properties.loginPassword));
     errors.collect(ros.propertyValidator('kubernetesVersion', ros.validateString)(properties.kubernetesVersion));
     errors.collect(ros.propertyValidator('containerCidr', ros.validateString)(properties.containerCidr));
@@ -1942,7 +2149,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     if(properties.workerInstanceChargeType && (typeof properties.workerInstanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateAllowedValues)({
           data: properties.workerInstanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('workerInstanceChargeType', ros.validateString)(properties.workerInstanceChargeType));
@@ -1958,6 +2165,7 @@ function RosManagedKubernetesClusterPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('workerDataDisks', ros.listValidator(RosManagedKubernetesCluster_WorkerDataDisksPropertyValidator))(properties.workerDataDisks));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('timeoutMins', ros.validateNumber)(properties.timeoutMins));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('workerDataDisk', ros.validateBoolean)(properties.workerDataDisk));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
@@ -1997,9 +2205,10 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       Name: ros.stringToRosTemplate(properties.name),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
-      WorkerInstanceTypes: ros.listMapper(ros.objectToRosTemplate)(properties.workerInstanceTypes),
+      WorkerInstanceTypes: ros.listMapper(ros.stringToRosTemplate)(properties.workerInstanceTypes),
       Addons: ros.listMapper(rosManagedKubernetesClusterAddonsPropertyToRosTemplate)(properties.addons),
       CloudMonitorFlags: ros.booleanToRosTemplate(properties.cloudMonitorFlags),
+      ClusterSpec: ros.stringToRosTemplate(properties.clusterSpec),
       ContainerCidr: ros.stringToRosTemplate(properties.containerCidr),
       DisableRollback: ros.booleanToRosTemplate(properties.disableRollback),
       EndpointPublicAccess: ros.booleanToRosTemplate(properties.endpointPublicAccess),
@@ -2011,8 +2220,8 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
       SnatEntry: ros.booleanToRosTemplate(properties.snatEntry),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
-      Taint: ros.listMapper(ros.objectToRosTemplate)(properties.taint),
+      Tags: ros.listMapper(rosManagedKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
+      Taint: ros.listMapper(ros.anyDictToRosTemplate)(properties.taint),
       TimeoutMins: ros.numberToRosTemplate(properties.timeoutMins),
       WorkerAutoRenew: ros.booleanToRosTemplate(properties.workerAutoRenew),
       WorkerAutoRenewPeriod: ros.numberToRosTemplate(properties.workerAutoRenewPeriod),
@@ -2043,17 +2252,17 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * @Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2061,12 +2270,12 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchIds: The virtual switch ID of the worker node.
@@ -2076,7 +2285,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Property workerInstanceTypes: Worker node ECS specification type code. For more details, see Instance Specification Family.
      */
-    public workerInstanceTypes: Array<any | ros.IResolvable> | ros.IResolvable;
+    public workerInstanceTypes: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addons: A combination of addon plugins for Kubernetes clusters.
@@ -2095,9 +2304,17 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     public cloudMonitorFlags: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property clusterSpec: The managed cluster spec. Value:
+     * ack.pro.small: Professional hosting cluster, namely: "ACK Pro version cluster".
+     * ack.standard: Standard hosting cluster.
+     * Default value: ack.standard. The value can be empty. When it is empty, a standard managed cluster will be created.
+     */
+    public clusterSpec: string | ros.IResolvable | undefined;
+
+    /**
      * @Property containerCidr: The container network segment cannot conflict with the VPC network segment. When the system is selected to automatically create a VPC, the network segment 172.16.0.0/16 is used by default.
      */
-    public containerCidr: string | undefined;
+    public containerCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property disableRollback: Whether the failure was rolled back:
@@ -2117,38 +2334,38 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Property keyPair: Key pair name. Specify one of KeyPair or LoginPassword.
      */
-    public keyPair: string | undefined;
+    public keyPair: string | ros.IResolvable | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.16.9-aliyun.1, 1.14.8-aliyun.1 and so on.
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    public kubernetesVersion: string | undefined;
+    public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property loginPassword: SSH login password. Password rules are 8-30 characters and contain three items (upper and lower case letters, numbers, and special symbols). Specify one of KeyPair or LoginPassword.
      */
-    public loginPassword: string | undefined;
+    public loginPassword: string | ros.IResolvable | undefined;
 
     /**
      * @Property numOfNodes: Number of worker nodes. The range is [0,300].
      * Default to 3.
      */
-    public numOfNodes: number | undefined;
+    public numOfNodes: number | ros.IResolvable | undefined;
 
     /**
      * @Property proxyMode: kube-proxy proxy mode, supports both iptables and ipvs modes. The default is iptables.
      */
-    public proxyMode: string | undefined;
+    public proxyMode: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    public serviceCidr: string | undefined;
+    public serviceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property snatEntry: Whether to configure SNAT for the network.
@@ -2163,17 +2380,17 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
     /**
      * @Property tags: Tag the cluster.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosManagedKubernetesCluster.TagsProperty[] | undefined;
 
     /**
      * @Property taint: It is used to mark nodes with taints. It is usually used for the scheduling strategy of Pods. The corresponding concept is: tolerance. If there is a corresponding tolerance mark on the Pods, the stain on the node can be tolerated and scheduled to the node.
      */
-    public taint: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+    public taint: Array<{ [key: string]: any }> | ros.IResolvable | undefined;
 
     /**
      * @Property timeoutMins: Cluster resource stack creation timeout, in minutes. The default value is 60.
      */
-    public timeoutMins: number | undefined;
+    public timeoutMins: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerAutoRenew: Whether to enable automatic renewal of Worker nodes. The optional values are:
@@ -2189,7 +2406,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, the value is {"1", "2", "3", "6", "12"}
      * Default to 1.
      */
-    public workerAutoRenewPeriod: number | undefined;
+    public workerAutoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerDataDisk: Whether to mount the data disk. The options are as follows:
@@ -2210,7 +2427,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * PostPaid: Pay as you go
      * Default to PostPaid.
      */
-    public workerInstanceChargeType: string | undefined;
+    public workerInstanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerPeriod: The duration of the annual and monthly subscription. It takes effect when the worker_instance_charge_type value is PrePaid and is required. The value range is:
@@ -2218,7 +2435,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * When PeriodUnit = Month, Period values are: {"1", "2", "3", "4", "5", "6", "7", "8", "9", "12", "24", "36", "48", "60"}
      * Default to 1.
      */
-    public workerPeriod: number | undefined;
+    public workerPeriod: number | ros.IResolvable | undefined;
 
     /**
      * @Property workerPeriodUnit: When you specify PrePaid, you need to specify the period. The options are:
@@ -2226,7 +2443,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * Month: time in months
      * Default to Month.
      */
-    public workerPeriodUnit: string | undefined;
+    public workerPeriodUnit: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskCategory: Worker node system disk type. The value includes:
@@ -2234,13 +2451,13 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      * cloud_ssd: SSD cloud disk
      * Default to cloud_efficiency.
      */
-    public workerSystemDiskCategory: string | undefined;
+    public workerSystemDiskCategory: string | ros.IResolvable | undefined;
 
     /**
      * @Property workerSystemDiskSize: Worker disk system disk size, the unit is GiB.
      * Default to 120.
      */
-    public workerSystemDiskSize: number | undefined;
+    public workerSystemDiskSize: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::ManagedKubernetesCluster`.
@@ -2251,9 +2468,9 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosManagedKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosManagedKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrTaskId = ros.Token.asString(this.getAtt('TaskId'));
-        this.attrWorkerRamRoleName = ros.Token.asString(this.getAtt('WorkerRamRoleName'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -2262,6 +2479,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.workerInstanceTypes = props.workerInstanceTypes;
         this.addons = props.addons;
         this.cloudMonitorFlags = props.cloudMonitorFlags;
+        this.clusterSpec = props.clusterSpec;
         this.containerCidr = props.containerCidr;
         this.disableRollback = props.disableRollback;
         this.endpointPublicAccess = props.endpointPublicAccess;
@@ -2273,7 +2491,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
         this.snatEntry = props.snatEntry;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CS::ManagedKubernetesCluster", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.taint = props.taint;
         this.timeoutMins = props.timeoutMins;
         this.workerAutoRenew = props.workerAutoRenew;
@@ -2296,6 +2514,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             workerInstanceTypes: this.workerInstanceTypes,
             addons: this.addons,
             cloudMonitorFlags: this.cloudMonitorFlags,
+            clusterSpec: this.clusterSpec,
             containerCidr: this.containerCidr,
             disableRollback: this.disableRollback,
             endpointPublicAccess: this.endpointPublicAccess,
@@ -2307,7 +2526,7 @@ export class RosManagedKubernetesCluster extends ros.RosResource {
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
             snatEntry: this.snatEntry,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             taint: this.taint,
             timeoutMins: this.timeoutMins,
             workerAutoRenew: this.workerAutoRenew,
@@ -2334,15 +2553,15 @@ export namespace RosManagedKubernetesCluster {
         /**
          * @Property version: When the value is empty, the latest version is selected by default.
          */
-        readonly version?: string;
+        readonly version?: string | ros.IResolvable;
         /**
          * @Property config: When the value is empty, no configuration is required.
          */
-        readonly config?: string;
+        readonly config?: string | ros.IResolvable;
         /**
          * @Property name: Addon plugin name
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -2384,6 +2603,54 @@ export namespace RosManagedKubernetesCluster {
     /**
      * @stability external
      */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosManagedKubernetesCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ManagedKubernetesCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosManagedKubernetesClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosManagedKubernetesCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosManagedKubernetesCluster {
+    /**
+     * @stability external
+     */
     export interface WorkerDataDisksProperty {
         /**
          * @Property category: Data disk type. Value includes:
@@ -2391,11 +2658,11 @@ export namespace RosManagedKubernetesCluster {
      * cloud_efficiency: efficient cloud disk
      * cloud_ssd: SSD cloud disk
          */
-        readonly category: string;
+        readonly category: string | ros.IResolvable;
         /**
          * @Property size: Data disk size in GiB.
          */
-        readonly size: number;
+        readonly size: number | ros.IResolvable;
     }
 }
 /**
@@ -2447,7 +2714,7 @@ export interface RosServerlessKubernetesClusterProps {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    readonly name: string;
+    readonly name: string | ros.IResolvable;
 
     /**
      * @Property addons: The add-ons to be installed for the cluster.
@@ -2462,9 +2729,9 @@ export interface RosServerlessKubernetesClusterProps {
     readonly endpointPublicAccess?: boolean | ros.IResolvable;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    readonly kubernetesVersion?: string;
+    readonly kubernetesVersion?: string | ros.IResolvable;
 
     /**
      * @Property natGateway: Whether to create a NAT gateway. The value can be true or false. If not set, the system defaults to false.
@@ -2479,28 +2746,28 @@ export interface RosServerlessKubernetesClusterProps {
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    readonly serviceCidr?: string;
+    readonly serviceCidr?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tag the cluster.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosServerlessKubernetesCluster.TagsProperty[];
 
     /**
      * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
@@ -2511,7 +2778,7 @@ export interface RosServerlessKubernetesClusterProps {
     /**
      * @Property zoneId: The zone ID.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -2543,7 +2810,7 @@ function RosServerlessKubernetesClusterPropsValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('serviceCidr', ros.validateString)(properties.serviceCidr));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosServerlessKubernetesCluster_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('privateZone', ros.validateBoolean)(properties.privateZone));
     return errors.wrap('supplied properties not correct for "RosServerlessKubernetesClusterProps"');
 }
@@ -2570,7 +2837,7 @@ function rosServerlessKubernetesClusterPropsToRosTemplate(properties: any, enabl
       PrivateZone: ros.booleanToRosTemplate(properties.privateZone),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       ServiceCidr: ros.stringToRosTemplate(properties.serviceCidr),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosServerlessKubernetesClusterTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
       VSwitchIds: ros.listMapper(ros.objectToRosTemplate)(properties.vSwitchIds),
@@ -2595,17 +2862,17 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     /**
      * @Attribute ClusterId: Cluster instance ID.
      */
-    public readonly attrClusterId: any;
+    public readonly attrClusterId: ros.IResolvable;
 
     /**
      * @Attribute TaskId: Task ID. Automatically assigned by the system, the user queries the task status.
      */
-    public readonly attrTaskId: any;
+    public readonly attrTaskId: ros.IResolvable;
 
     /**
      * @Attribute WorkerRamRoleName: Worker ram role name.
      */
-    public readonly attrWorkerRamRoleName: any;
+    public readonly attrWorkerRamRoleName: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2613,7 +2880,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     /**
      * @Property name: The name of the cluster. The cluster name can use uppercase and lowercase letters, Chinese characters, numbers, and dashes.
      */
-    public name: string;
+    public name: string | ros.IResolvable;
 
     /**
      * @Property addons: The add-ons to be installed for the cluster.
@@ -2628,9 +2895,9 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     public endpointPublicAccess: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property kubernetesVersion: Kubernetes version. Default to 1.14.8-aliyun.1, 1.16.9-aliyun.1 and so on .
+     * @Property kubernetesVersion: The version of the Kubernetes cluster.
      */
-    public kubernetesVersion: string | undefined;
+    public kubernetesVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property natGateway: Whether to create a NAT gateway. The value can be true or false. If not set, the system defaults to false.
@@ -2645,28 +2912,28 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     /**
      * @Property securityGroupId: Specifies the ID of the security group to which the cluster ECS instance belongs.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property serviceCidr: The service network segment cannot conflict with the VPC network segment and the container network segment. When the system is selected to automatically create a VPC, the network segment 172.19.0.0/20 is used by default.
      */
-    public serviceCidr: string | undefined;
+    public serviceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tag the cluster.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosServerlessKubernetesCluster.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: VPC ID. If not set, the system will automatically create a VPC, and the VPC network segment created by the system is 192.168.0.0/16. 
      * VpcId and VSwitchId can only be empty at the same time or set the corresponding values at the same time.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchId: If not set, the system will automatically create a switch, and the network segment of the switch created by the system is 192.168.0.0/18.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vSwitchIds: The IDs of VSwitches. If you leave this property empty, the system automatically creates a VSwitch.
@@ -2677,7 +2944,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
     /**
      * @Property zoneId: The zone ID.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::CS::ServerlessKubernetesCluster`.
@@ -2688,9 +2955,9 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosServerlessKubernetesClusterProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosServerlessKubernetesCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrClusterId = ros.Token.asString(this.getAtt('ClusterId'));
-        this.attrTaskId = ros.Token.asString(this.getAtt('TaskId'));
-        this.attrWorkerRamRoleName = ros.Token.asString(this.getAtt('WorkerRamRoleName'));
+        this.attrClusterId = this.getAtt('ClusterId');
+        this.attrTaskId = this.getAtt('TaskId');
+        this.attrWorkerRamRoleName = this.getAtt('WorkerRamRoleName');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.name = props.name;
@@ -2701,7 +2968,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
         this.privateZone = props.privateZone;
         this.securityGroupId = props.securityGroupId;
         this.serviceCidr = props.serviceCidr;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::CS::ServerlessKubernetesCluster", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.vSwitchIds = props.vSwitchIds;
@@ -2719,7 +2986,7 @@ export class RosServerlessKubernetesCluster extends ros.RosResource {
             privateZone: this.privateZone,
             securityGroupId: this.securityGroupId,
             serviceCidr: this.serviceCidr,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             vSwitchIds: this.vSwitchIds,
@@ -2739,15 +3006,15 @@ export namespace RosServerlessKubernetesCluster {
         /**
          * @Property config: When the value is empty, no configuration is required.
          */
-        readonly config?: string;
+        readonly config?: string | ros.IResolvable;
         /**
          * @Property disabled: Specifies whether to disable default installation.
          */
-        readonly disabled?: string;
+        readonly disabled?: boolean | ros.IResolvable;
         /**
          * @Property name: The name of the add-on.
          */
-        readonly name: string;
+        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -2761,7 +3028,7 @@ function RosServerlessKubernetesCluster_AddonsPropertyValidator(properties: any)
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
-    errors.collect(ros.propertyValidator('disabled', ros.validateString)(properties.disabled));
+    errors.collect(ros.propertyValidator('disabled', ros.validateBoolean)(properties.disabled));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "AddonsProperty"');
@@ -2780,7 +3047,55 @@ function rosServerlessKubernetesClusterAddonsPropertyToRosTemplate(properties: a
     RosServerlessKubernetesCluster_AddonsPropertyValidator(properties).assertSuccess();
     return {
       Config: ros.stringToRosTemplate(properties.config),
-      Disabled: ros.stringToRosTemplate(properties.disabled),
+      Disabled: ros.booleanToRosTemplate(properties.disabled),
       Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+export namespace RosServerlessKubernetesCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: Tag value.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Tag key.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosServerlessKubernetesCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CS::ServerlessKubernetesCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosServerlessKubernetesClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosServerlessKubernetesCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
     };
 }

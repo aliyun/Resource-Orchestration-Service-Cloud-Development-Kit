@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * A ROS template type:  `ALIYUN::ECI::ImageCache`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.514Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.RosImageCache")
 public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrImageCacheId() {
-        return software.amazon.jsii.Kernel.get(this, "attrImageCacheId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrImageCacheId() {
+        return software.amazon.jsii.Kernel.get(this, "attrImageCacheId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,20 +63,26 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> getImage() {
-        return java.util.Collections.unmodifiableList(software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getImage() {
+        return software.amazon.jsii.Kernel.get(this, "image", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
-    public void setImage(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.String> value) {
+    public void setImage(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "image", java.util.Objects.requireNonNull(value, "image is required"));
     }
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getImageCacheName() {
-        return software.amazon.jsii.Kernel.get(this, "imageCacheName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImage(final @org.jetbrains.annotations.NotNull java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "image", java.util.Objects.requireNonNull(value, "image is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getImageCacheName() {
+        return software.amazon.jsii.Kernel.get(this, "imageCacheName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -87,8 +93,14 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageCacheName(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageCacheName", java.util.Objects.requireNonNull(value, "imageCacheName is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -99,8 +111,14 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getVSwitchId() {
-        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSecurityGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", java.util.Objects.requireNonNull(value, "securityGroupId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -111,8 +129,14 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getEipInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setVSwitchId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchId", java.util.Objects.requireNonNull(value, "vSwitchId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEipInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "eipInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -123,25 +147,43 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> getImageRegistryCredential() {
-        return java.util.Optional.ofNullable((java.util.List<java.lang.String>)(software.amazon.jsii.Kernel.get(this, "imageRegistryCredential", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(java.lang.String.class))))).map(java.util.Collections::unmodifiableList).orElse(null);
+    public void setEipInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "eipInstanceId", value);
     }
 
     /**
      */
-    public void setImageRegistryCredential(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.String> value) {
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageRegistryCredential() {
+        return software.amazon.jsii.Kernel.get(this, "imageRegistryCredential", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setImageRegistryCredential(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "imageRegistryCredential", value);
     }
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageRegistryCredential(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        software.amazon.jsii.Kernel.set(this, "imageRegistryCredential", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
@@ -175,7 +217,15 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
          * @return {@code this}
          * @param image This parameter is required.
          */
-        public Builder image(final java.util.List<java.lang.String> image) {
+        public Builder image(final com.aliyun.ros.cdk.core.IResolvable image) {
+            this.props.image(image);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param image This parameter is required.
+         */
+        public Builder image(final java.util.List<? extends java.lang.Object> image) {
             this.props.image(image);
             return this;
         }
@@ -188,12 +238,28 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
             this.props.imageCacheName(imageCacheName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param imageCacheName This parameter is required.
+         */
+        public Builder imageCacheName(final com.aliyun.ros.cdk.core.IResolvable imageCacheName) {
+            this.props.imageCacheName(imageCacheName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param securityGroupId This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
@@ -206,6 +272,14 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param vSwitchId This parameter is required.
+         */
+        public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
+            this.props.vSwitchId(vSwitchId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -215,12 +289,28 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
             this.props.eipInstanceId(eipInstanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param eipInstanceId This parameter is required.
+         */
+        public Builder eipInstanceId(final com.aliyun.ros.cdk.core.IResolvable eipInstanceId) {
+            this.props.eipInstanceId(eipInstanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param imageRegistryCredential This parameter is required.
          */
-        public Builder imageRegistryCredential(final java.util.List<java.lang.String> imageRegistryCredential) {
+        public Builder imageRegistryCredential(final com.aliyun.ros.cdk.core.IResolvable imageRegistryCredential) {
+            this.props.imageRegistryCredential(imageRegistryCredential);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageRegistryCredential This parameter is required.
+         */
+        public Builder imageRegistryCredential(final java.util.List<? extends java.lang.Object> imageRegistryCredential) {
             this.props.imageRegistryCredential(imageRegistryCredential);
             return this;
         }
@@ -230,6 +320,14 @@ public class RosImageCache extends com.aliyun.ros.cdk.core.RosResource {
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }

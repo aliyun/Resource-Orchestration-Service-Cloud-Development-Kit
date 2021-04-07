@@ -11,16 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
     public class LifecycleHookProps : AlibabaCloud.SDK.ROS.CDK.Ess.ILifecycleHookProps
     {
         /// <summary>Property lifecycleTransition: The scaling activities to which lifecycle hooks apply Value range:   SCALE_OUT: scale-out event   SCALE_IN: scale-in event.</summary>
-        [JsiiProperty(name: "lifecycleTransition", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LifecycleTransition
+        [JsiiProperty(name: "lifecycleTransition", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LifecycleTransition
         {
             get;
             set;
         }
 
         /// <summary>Property scalingGroupId: The ID of the scaling group.</summary>
-        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ScalingGroupId
+        [JsiiProperty(name: "scalingGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ScalingGroupId
         {
             get;
             set;
@@ -35,8 +35,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "defaultResult", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? DefaultResult
+        [JsiiProperty(name: "defaultResult", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? DefaultResult
         {
             get;
             set;
@@ -48,8 +48,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "heartbeatTimeout", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? HeartbeatTimeout
+        [JsiiProperty(name: "heartbeatTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HeartbeatTimeout
         {
             get;
             set;
@@ -61,8 +61,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// Default value: Lifecycle Hook ID
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "lifecycleHookName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? LifecycleHookName
+        [JsiiProperty(name: "lifecycleHookName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? LifecycleHookName
         {
             get;
             set;
@@ -79,8 +79,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// OOS template: acs:ess:{region}:{account-id}:oos/{templatename}
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notificationArn", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NotificationArn
+        [JsiiProperty(name: "notificationArn", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NotificationArn
         {
             get;
             set;
@@ -91,8 +91,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         /// The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "notificationMetadata", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? NotificationMetadata
+        [JsiiProperty(name: "notificationMetadata", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? NotificationMetadata
         {
             get;
             set;

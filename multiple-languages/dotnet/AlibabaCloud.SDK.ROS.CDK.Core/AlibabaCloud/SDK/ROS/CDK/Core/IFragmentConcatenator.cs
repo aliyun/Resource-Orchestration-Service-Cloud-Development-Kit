@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Core
 {
-    /// <summary>(experimental) Function used to concatenate symbols in the target document language&#xD; &#xD; Interface so it could potentially be exposed over jsii.</summary>
+    /// <summary>(experimental) Function used to concatenate symbols in the target document language.</summary>
     /// <remarks>
+    /// Interface so it could potentially be exposed over jsii.
+    ///
     /// <strong>Stability</strong>: Experimental
     /// </remarks>
     [JsiiInterface(nativeType: typeof(IFragmentConcatenator), fullyQualifiedName: "@alicloud/ros-cdk-core.IFragmentConcatenator")]
@@ -18,8 +20,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         [JsiiMethod(name: "join", returnsJson: "{\"type\":{\"primitive\":\"any\"}}", parametersJson: "[{\"name\":\"left\",\"type\":{\"primitive\":\"any\"}},{\"name\":\"right\",\"type\":{\"primitive\":\"any\"}}]")]
         object Join(object left, object right);
 
-        /// <summary>(experimental) Function used to concatenate symbols in the target document language&#xD; &#xD; Interface so it could potentially be exposed over jsii.</summary>
+        /// <summary>(experimental) Function used to concatenate symbols in the target document language.</summary>
         /// <remarks>
+        /// Interface so it could potentially be exposed over jsii.
+        ///
         /// <strong>Stability</strong>: Experimental
         /// </remarks>
         [JsiiTypeProxy(nativeType: typeof(IFragmentConcatenator), fullyQualifiedName: "@alicloud/ros-cdk-core.IFragmentConcatenator")]

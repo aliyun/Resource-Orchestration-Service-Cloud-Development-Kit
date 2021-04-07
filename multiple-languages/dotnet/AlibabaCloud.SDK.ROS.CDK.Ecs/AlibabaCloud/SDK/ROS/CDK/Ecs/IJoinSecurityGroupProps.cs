@@ -9,16 +9,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IJoinSecurityGroupProps
     {
         /// <summary>Property securityGroupId: Security group id to join.</summary>
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}")]
-        string SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object SecurityGroupId
         {
             get;
         }
 
         /// <summary>Property instanceId: Instance Id to the join the security group.</summary>
-        [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? InstanceId
+        object? InstanceId
         {
             get
             {
@@ -57,18 +57,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property securityGroupId: Security group id to join.</summary>
-            [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}")]
-            public string SecurityGroupId
+            [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object SecurityGroupId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceId: Instance Id to the join the security group.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "instanceId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? InstanceId
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceId
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property instanceIdList: The comma delimited instance id list.If the property "InstanceId" is setting, this property will be ignored.</summary>

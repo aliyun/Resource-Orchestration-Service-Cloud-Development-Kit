@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     public interface IAssignIpv6AddressesProps
     {
         /// <summary>Property networkInterfaceId: Elastic network interface ID.</summary>
-        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-        string NetworkInterfaceId
+        [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object NetworkInterfaceId
         {
             get;
         }
@@ -19,9 +19,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
         /// </remarks>
-        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+        [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        double? Ipv6AddressCount
+        object? Ipv6AddressCount
         {
             get
             {
@@ -53,10 +53,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <summary>Property networkInterfaceId: Elastic network interface ID.</summary>
-            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string NetworkInterfaceId
+            [JsiiProperty(name: "networkInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object NetworkInterfaceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.</summary>
@@ -64,10 +64,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             /// Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-            public double? Ipv6AddressCount
+            [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6AddressCount
             {
-                get => GetInstanceProperty<double?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property ipv6Addresses: Specify one or more IPv6 addresses for the elastic NIC.</summary>

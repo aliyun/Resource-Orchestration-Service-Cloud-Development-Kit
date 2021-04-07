@@ -47,37 +47,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Attribute</strong>: GbId: GB ID space provided. (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbId
+        [JsiiProperty(name: "attrGbId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: GbIp: GB signaling server address space provided. (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbIp", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbIp
+        [JsiiProperty(name: "attrGbIp", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbIp
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: GbPort: GB Port space provided. (Applies only to access the space marked States)
         /// </remarks>
-        [JsiiProperty(name: "attrGbPort", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrGbPort
+        [JsiiProperty(name: "attrGbPort", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrGbPort
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: Id: Space ID.
         /// </remarks>
-        [JsiiProperty(name: "attrId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrId
+        [JsiiProperty(name: "attrId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -97,20 +97,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: inProtocol: Access protocol used by the space.
         /// Value: gb28181, rtmp
         /// </remarks>
-        [JsiiProperty(name: "inProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InProtocol
+        [JsiiProperty(name: "inProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InProtocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: name: Space name.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Name
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -118,40 +118,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: outProtocol: Play protocol used by the space, multivalued separated by commas.
         /// Value: flv, hls, rtmp
         /// </remarks>
-        [JsiiProperty(name: "outProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string OutProtocol
+        [JsiiProperty(name: "outProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object OutProtocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: playDomain: Use of the domain name space broadcast stream.
         /// </remarks>
-        [JsiiProperty(name: "playDomain", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string PlayDomain
+        [JsiiProperty(name: "playDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object PlayDomain
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
         /// </remarks>
-        [JsiiProperty(name: "pushDomain", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string PushDomain
+        [JsiiProperty(name: "pushDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object PushDomain
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: region: Space belongs to the region, as a service center.
         /// </remarks>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Region
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Region
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -159,10 +159,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: app: Application name space used, the default live.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "app", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? App
+        [JsiiProperty(name: "app", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? App
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -170,10 +170,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: callback: Updating the space callback device / flow state
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "callback", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Callback
+        [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Callback
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -181,10 +181,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: description: Space description.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Description
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 

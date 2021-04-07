@@ -9,23 +9,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
     public interface ICustomDomainProps
     {
         /// <summary>Property domainName: domain name.</summary>
-        [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}")]
-        string DomainName
+        [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DomainName
         {
             get;
         }
 
         /// <summary>Property protocol: HTTP or HTTP,HTTPS.</summary>
-        [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-        string Protocol
+        [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Protocol
         {
             get;
         }
 
         /// <summary>Property apiVersion: api version.</summary>
-        [JsiiProperty(name: "apiVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? ApiVersion
+        object? ApiVersion
         {
             get
             {
@@ -64,25 +64,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fc
             }
 
             /// <summary>Property domainName: domain name.</summary>
-            [JsiiProperty(name: "domainName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DomainName
+            [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DomainName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property protocol: HTTP or HTTP,HTTPS.</summary>
-            [JsiiProperty(name: "protocol", typeJson: "{\"primitive\":\"string\"}")]
-            public string Protocol
+            [JsiiProperty(name: "protocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Protocol
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property apiVersion: api version.</summary>
             [JsiiOptional]
-            [JsiiProperty(name: "apiVersion", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? ApiVersion
+            [JsiiProperty(name: "apiVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ApiVersion
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property certConfig: certificate info.</summary>

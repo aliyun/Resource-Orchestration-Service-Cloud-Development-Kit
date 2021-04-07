@@ -3,58 +3,73 @@ package com.aliyun.ros.cdk.edas;
 /**
  * Properties for defining a `ALIYUN::EDAS::Application`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.734Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.423Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters).
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getApplicationName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
 
     /**
+     * Property clusterId: Cluster ID of ECS application.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getClusterId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getClusterId();
 
     /**
+     * Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).
+     * <p>
+     * When creating HSF application, this parameter must be specified
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getBuildPackId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBuildPackId() {
         return null;
     }
 
     /**
+     * Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.
+     * <p>
+     * Commonly used application component ID and meaning:
+     * 4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
+     * 1.7.x
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getComponentIds() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getComponentIds() {
         return null;
     }
 
     /**
+     * Property description: Descriptive information.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
+     * Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getEcuInfo() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEcuInfo() {
         return null;
     }
 
     /**
+     * Property healthCheckUrl: Application Health Check URL.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getHealthCheckUrl() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckUrl() {
         return null;
     }
 
     /**
+     * Property logicalRegionId: Namespace ID.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getLogicalRegionId() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLogicalRegionId() {
         return null;
     }
 
     /**
+     * Property packageType: Application packet format, possible values: war or jar.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPackageType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPackageType() {
         return null;
     }
 
@@ -68,19 +83,19 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link ApplicationProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<ApplicationProps> {
-        private java.lang.String applicationName;
-        private java.lang.String clusterId;
-        private java.lang.Number buildPackId;
-        private java.lang.String componentIds;
-        private java.lang.String description;
-        private java.lang.String ecuInfo;
-        private java.lang.String healthCheckUrl;
-        private java.lang.String logicalRegionId;
-        private java.lang.String packageType;
+        private java.lang.Object applicationName;
+        private java.lang.Object clusterId;
+        private java.lang.Object buildPackId;
+        private java.lang.Object componentIds;
+        private java.lang.Object description;
+        private java.lang.Object ecuInfo;
+        private java.lang.Object healthCheckUrl;
+        private java.lang.Object logicalRegionId;
+        private java.lang.Object packageType;
 
         /**
          * Sets the value of {@link ApplicationProps#getApplicationName}
-         * @param applicationName the value to be set. This parameter is required.
+         * @param applicationName Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters). This parameter is required.
          * @return {@code this}
          */
         public Builder applicationName(java.lang.String applicationName) {
@@ -89,8 +104,18 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getApplicationName}
+         * @param applicationName Property applicationName: The application name (only allow the use of numbers, letters, -, _, up to 36 characters). This parameter is required.
+         * @return {@code this}
+         */
+        public Builder applicationName(com.aliyun.ros.cdk.core.IResolvable applicationName) {
+            this.applicationName = applicationName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getClusterId}
-         * @param clusterId the value to be set. This parameter is required.
+         * @param clusterId Property clusterId: Cluster ID of ECS application. This parameter is required.
          * @return {@code this}
          */
         public Builder clusterId(java.lang.String clusterId) {
@@ -99,8 +124,19 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getClusterId}
+         * @param clusterId Property clusterId: Cluster ID of ECS application. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getBuildPackId}
-         * @param buildPackId the value to be set.
+         * @param buildPackId Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).
+         *                    When creating HSF application, this parameter must be specified
          * @return {@code this}
          */
         public Builder buildPackId(java.lang.Number buildPackId) {
@@ -109,8 +145,22 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getBuildPackId}
+         * @param buildPackId Property buildPackId: EDAS-Container construct a packet number (available version list acquired through the ListBuildPack API (ConfigId of response) or "container version" table "Building packet number" column acquisition).
+         *                    When creating HSF application, this parameter must be specified
+         * @return {@code this}
+         */
+        public Builder buildPackId(com.aliyun.ros.cdk.core.IResolvable buildPackId) {
+            this.buildPackId = buildPackId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getComponentIds}
-         * @param componentIds the value to be set.
+         * @param componentIds Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.
+         *                     Commonly used application component ID and meaning:
+         *                     4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
+         *                     1.7.x
          * @return {@code this}
          */
         public Builder componentIds(java.lang.String componentIds) {
@@ -119,8 +169,21 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getComponentIds}
+         * @param componentIds Property componentIds: Application component ID (available through the query interface to obtain a list of components to the interface ListComponents), when creating the application runtime environment using Apache Tomcat (war packet format Dubbo Application required) or standard Java application (jar package format Spring Boot / Spring Cloud applications require) you need to specify when the operating environment.
+         *                     Commonly used application component ID and meaning:
+         *                     4 represents Apache Tomcat 7.0.91,7 represented Apache Tomcat 8.5.42,5 represented OpenJDK 1.8.x, 6 represents OpenJDK
+         *                     1.7.x
+         * @return {@code this}
+         */
+        public Builder componentIds(com.aliyun.ros.cdk.core.IResolvable componentIds) {
+            this.componentIds = componentIds;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getDescription}
-         * @param description the value to be set.
+         * @param description Property description: Descriptive information.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -129,8 +192,18 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getDescription}
+         * @param description Property description: Descriptive information.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getEcuInfo}
-         * @param ecuInfo the value to be set.
+         * @param ecuInfo Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).
          * @return {@code this}
          */
         public Builder ecuInfo(java.lang.String ecuInfo) {
@@ -139,8 +212,18 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getEcuInfo}
+         * @param ecuInfo Property ecuInfo: Machine capacity is needed ecu_id (ECS Examples introducing another unique identity EDAS EDAS), the plurality of "," separated (by querying ListScaleOutEcu wherein ecu_id Interface to obtain).
+         * @return {@code this}
+         */
+        public Builder ecuInfo(com.aliyun.ros.cdk.core.IResolvable ecuInfo) {
+            this.ecuInfo = ecuInfo;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getHealthCheckUrl}
-         * @param healthCheckUrl the value to be set.
+         * @param healthCheckUrl Property healthCheckUrl: Application Health Check URL.
          * @return {@code this}
          */
         public Builder healthCheckUrl(java.lang.String healthCheckUrl) {
@@ -149,8 +232,18 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getHealthCheckUrl}
+         * @param healthCheckUrl Property healthCheckUrl: Application Health Check URL.
+         * @return {@code this}
+         */
+        public Builder healthCheckUrl(com.aliyun.ros.cdk.core.IResolvable healthCheckUrl) {
+            this.healthCheckUrl = healthCheckUrl;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getLogicalRegionId}
-         * @param logicalRegionId the value to be set.
+         * @param logicalRegionId Property logicalRegionId: Namespace ID.
          * @return {@code this}
          */
         public Builder logicalRegionId(java.lang.String logicalRegionId) {
@@ -159,11 +252,31 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link ApplicationProps#getLogicalRegionId}
+         * @param logicalRegionId Property logicalRegionId: Namespace ID.
+         * @return {@code this}
+         */
+        public Builder logicalRegionId(com.aliyun.ros.cdk.core.IResolvable logicalRegionId) {
+            this.logicalRegionId = logicalRegionId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ApplicationProps#getPackageType}
-         * @param packageType the value to be set.
+         * @param packageType Property packageType: Application packet format, possible values: war or jar.
          * @return {@code this}
          */
         public Builder packageType(java.lang.String packageType) {
+            this.packageType = packageType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApplicationProps#getPackageType}
+         * @param packageType Property packageType: Application packet format, possible values: war or jar.
+         * @return {@code this}
+         */
+        public Builder packageType(com.aliyun.ros.cdk.core.IResolvable packageType) {
             this.packageType = packageType;
             return this;
         }
@@ -184,15 +297,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ApplicationProps {
-        private final java.lang.String applicationName;
-        private final java.lang.String clusterId;
-        private final java.lang.Number buildPackId;
-        private final java.lang.String componentIds;
-        private final java.lang.String description;
-        private final java.lang.String ecuInfo;
-        private final java.lang.String healthCheckUrl;
-        private final java.lang.String logicalRegionId;
-        private final java.lang.String packageType;
+        private final java.lang.Object applicationName;
+        private final java.lang.Object clusterId;
+        private final java.lang.Object buildPackId;
+        private final java.lang.Object componentIds;
+        private final java.lang.Object description;
+        private final java.lang.Object ecuInfo;
+        private final java.lang.Object healthCheckUrl;
+        private final java.lang.Object logicalRegionId;
+        private final java.lang.Object packageType;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -200,21 +313,21 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.buildPackId = software.amazon.jsii.Kernel.get(this, "buildPackId", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.componentIds = software.amazon.jsii.Kernel.get(this, "componentIds", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.ecuInfo = software.amazon.jsii.Kernel.get(this, "ecuInfo", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.buildPackId = software.amazon.jsii.Kernel.get(this, "buildPackId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.componentIds = software.amazon.jsii.Kernel.get(this, "componentIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ecuInfo = software.amazon.jsii.Kernel.get(this, "ecuInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.healthCheckUrl = software.amazon.jsii.Kernel.get(this, "healthCheckUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.logicalRegionId = software.amazon.jsii.Kernel.get(this, "logicalRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.packageType = software.amazon.jsii.Kernel.get(this, "packageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String applicationName, final java.lang.String clusterId, final java.lang.Number buildPackId, final java.lang.String componentIds, final java.lang.String description, final java.lang.String ecuInfo, final java.lang.String healthCheckUrl, final java.lang.String logicalRegionId, final java.lang.String packageType) {
+        protected Jsii$Proxy(final java.lang.Object applicationName, final java.lang.Object clusterId, final java.lang.Object buildPackId, final java.lang.Object componentIds, final java.lang.Object description, final java.lang.Object ecuInfo, final java.lang.Object healthCheckUrl, final java.lang.Object logicalRegionId, final java.lang.Object packageType) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.applicationName = java.util.Objects.requireNonNull(applicationName, "applicationName is required");
             this.clusterId = java.util.Objects.requireNonNull(clusterId, "clusterId is required");
@@ -228,47 +341,47 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.String getApplicationName() {
+        public final java.lang.Object getApplicationName() {
             return this.applicationName;
         }
 
         @Override
-        public final java.lang.String getClusterId() {
+        public final java.lang.Object getClusterId() {
             return this.clusterId;
         }
 
         @Override
-        public final java.lang.Number getBuildPackId() {
+        public final java.lang.Object getBuildPackId() {
             return this.buildPackId;
         }
 
         @Override
-        public final java.lang.String getComponentIds() {
+        public final java.lang.Object getComponentIds() {
             return this.componentIds;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 
         @Override
-        public final java.lang.String getEcuInfo() {
+        public final java.lang.Object getEcuInfo() {
             return this.ecuInfo;
         }
 
         @Override
-        public final java.lang.String getHealthCheckUrl() {
+        public final java.lang.Object getHealthCheckUrl() {
             return this.healthCheckUrl;
         }
 
         @Override
-        public final java.lang.String getLogicalRegionId() {
+        public final java.lang.Object getLogicalRegionId() {
             return this.logicalRegionId;
         }
 
         @Override
-        public final java.lang.String getPackageType() {
+        public final java.lang.Object getPackageType() {
             return this.packageType;
         }
 

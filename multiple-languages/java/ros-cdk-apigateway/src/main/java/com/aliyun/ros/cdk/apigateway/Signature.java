@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * A ROS resource type:  `ALIYUN::ApiGateway::Signature`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.129Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Signature")
 public class Signature extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Signature`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Signature(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.SignatureProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::ApiGateway::Signature`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Signature(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apigateway.SignatureProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute SignatureId: The id of the created signature.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrSignatureId() {
-        return software.amazon.jsii.Kernel.get(this, "attrSignatureId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrSignatureId() {
+        return software.amazon.jsii.Kernel.get(this, "attrSignatureId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.apigateway.Signature> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +90,64 @@ public class Signature extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property signatureKey: The key of the signature.
+         * <p>
          * @return {@code this}
-         * @param signatureKey This parameter is required.
+         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
          */
         public Builder signatureKey(final java.lang.String signatureKey) {
             this.props.signatureKey(signatureKey);
             return this;
         }
+        /**
+         * Property signatureKey: The key of the signature.
+         * <p>
+         * @return {@code this}
+         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
+         */
+        public Builder signatureKey(final com.aliyun.ros.cdk.core.IResolvable signatureKey) {
+            this.props.signatureKey(signatureKey);
+            return this;
+        }
 
         /**
+         * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
          * @return {@code this}
-         * @param signatureName This parameter is required.
+         * @param signatureName Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
          */
         public Builder signatureName(final java.lang.String signatureName) {
             this.props.signatureName(signatureName);
             return this;
         }
+        /**
+         * Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character.
+         * <p>
+         * @return {@code this}
+         * @param signatureName Property signatureName: The name of the Signature.Need [4, 15] Chinese\English\Number characters or "_",and should start with Chinese/English character. This parameter is required.
+         */
+        public Builder signatureName(final com.aliyun.ros.cdk.core.IResolvable signatureName) {
+            this.props.signatureName(signatureName);
+            return this;
+        }
 
         /**
+         * Property signatureSecret: The secret of the signature.
+         * <p>
          * @return {@code this}
-         * @param signatureSecret This parameter is required.
+         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
          */
         public Builder signatureSecret(final java.lang.String signatureSecret) {
+            this.props.signatureSecret(signatureSecret);
+            return this;
+        }
+        /**
+         * Property signatureSecret: The secret of the signature.
+         * <p>
+         * @return {@code this}
+         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
+         */
+        public Builder signatureSecret(final com.aliyun.ros.cdk.core.IResolvable signatureSecret) {
             this.props.signatureSecret(signatureSecret);
             return this;
         }

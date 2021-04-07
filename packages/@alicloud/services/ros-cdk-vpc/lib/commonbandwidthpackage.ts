@@ -11,26 +11,26 @@ export interface CommonBandwidthPackageProps {
     /**
      * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
      * and cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
      * PayByBandwidth (default): Billed by bandwidth.
      * PayBy95: Charged at Enhanced 95.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * Property isp: Line type of EIP, value: BGP (multi-line).
      */
-    readonly isp?: string;
+    readonly isp?: string | ros.IResolvable;
 
     /**
      * Property name: The name of the Internet Shared Bandwidth instance.
@@ -38,23 +38,28 @@ export interface CommonBandwidthPackageProps {
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
      * start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
      * Note This parameter is only supported on the China site.
      */
-    readonly ratio?: number;
+    readonly ratio?: number | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCommonBandwidthPackage.TagsProperty[];
 
     /**
      * Property zone: Zone Id.
      */
-    readonly zone?: string;
+    readonly zone?: string | ros.IResolvable;
 }
 
 /**
@@ -70,7 +75,7 @@ export class CommonBandwidthPackage extends ros.Resource {
     /**
      * Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
@@ -89,6 +94,7 @@ export class CommonBandwidthPackage extends ros.Resource {
             isp: props.isp ? props.isp : 'BGP',
             bandwidth: props.bandwidth,
             ratio: props.ratio ? props.ratio : 100,
+            tags: props.tags,
             internetChargeType: props.internetChargeType,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

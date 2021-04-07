@@ -14,32 +14,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         /// <remarks>
         /// Minimal value: 1
         /// </remarks>
-        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-        public double BandwidthLimit
+        [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object BandwidthLimit
         {
             get;
             set;
         }
 
         /// <summary>Property cenId: The ID of the CEN instance.</summary>
-        [JsiiProperty(name: "cenId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string CenId
+        [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object CenId
         {
             get;
             set;
         }
 
         /// <summary>Property localRegionId: The ID of the local region.</summary>
-        [JsiiProperty(name: "localRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string LocalRegionId
+        [JsiiProperty(name: "localRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object LocalRegionId
         {
             get;
             set;
         }
 
         /// <summary>Property oppositeRegionId: The ID of the other interconnected region.</summary>
-        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string OppositeRegionId
+        [JsiiProperty(name: "oppositeRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object OppositeRegionId
         {
             get;
             set;

@@ -9,8 +9,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
     public interface IProjectProps
     {
         /// <summary>Property comment: The comment of project.</summary>
-        [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}")]
-        string Comment
+        [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Comment
         {
             get;
         }
@@ -19,8 +19,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
         /// <remarks>
         /// Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
         /// </remarks>
-        [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-        string ProjectName
+        [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ProjectName
         {
             get;
         }
@@ -34,20 +34,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Datahub
             }
 
             /// <summary>Property comment: The comment of project.</summary>
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}")]
-            public string Comment
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Comment
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property projectName: The name of the project.</summary>
             /// <remarks>
             /// Length [3, 32]. Beginning with characters, only characters, numbers and _ are allowed.
             /// </remarks>
-            [JsiiProperty(name: "projectName", typeJson: "{\"primitive\":\"string\"}")]
-            public string ProjectName
+            [JsiiProperty(name: "projectName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ProjectName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

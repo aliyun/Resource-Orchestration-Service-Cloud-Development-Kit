@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Property</strong>: accountName: RDS account name.
         /// </remarks>
-        [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountName
+        [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountName
         {
             get;
         }
@@ -20,8 +20,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Property</strong>: accountPrivilege: RDS account privilege
         /// </remarks>
-        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}")]
-        string AccountPrivilege
+        [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AccountPrivilege
         {
             get;
         }
@@ -29,8 +29,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Property</strong>: dbInstanceId: RDS instance ID.
         /// </remarks>
-        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-        string DbInstanceId
+        [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbInstanceId
         {
             get;
         }
@@ -38,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
         /// <remarks>
         /// <strong>Property</strong>: dbName: RDS database name
         /// </remarks>
-        [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-        string DbName
+        [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object DbName
         {
             get;
         }
@@ -55,37 +55,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rds
             /// <remarks>
             /// <strong>Property</strong>: accountName: RDS account name.
             /// </remarks>
-            [JsiiProperty(name: "accountName", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountName
+            [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: accountPrivilege: RDS account privilege
             /// </remarks>
-            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"primitive\":\"string\"}")]
-            public string AccountPrivilege
+            [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AccountPrivilege
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: dbInstanceId: RDS instance ID.
             /// </remarks>
-            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbInstanceId
+            [JsiiProperty(name: "dbInstanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbInstanceId
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: dbName: RDS database name
             /// </remarks>
-            [JsiiProperty(name: "dbName", typeJson: "{\"primitive\":\"string\"}")]
-            public string DbName
+            [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object DbName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
         }
     }

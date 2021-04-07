@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
     public class TopicProps : AlibabaCloud.SDK.ROS.CDK.Mns.ITopicProps
     {
         /// <summary>Property topicName: Topic name.</summary>
-        [JsiiProperty(name: "topicName", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string TopicName
+        [JsiiProperty(name: "topicName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object TopicName
         {
             get;
             set;
@@ -36,8 +36,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         /// An integer in the range of 1,024 (1 KB) to 65, 536 (64 KB); default value: 65,536 (64 KB).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? MaximumMessageSize
+        [JsiiProperty(name: "maximumMessageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? MaximumMessageSize
         {
             get;
             set;

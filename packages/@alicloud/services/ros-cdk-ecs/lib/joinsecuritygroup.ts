@@ -11,12 +11,12 @@ export interface JoinSecurityGroupProps {
     /**
      * Property securityGroupId: Security group id to join.
      */
-    readonly securityGroupId: string;
+    readonly securityGroupId: string | ros.IResolvable;
 
     /**
      * Property instanceId: Instance Id to the join the security group.
      */
-    readonly instanceId?: string;
+    readonly instanceId?: string | ros.IResolvable;
 
     /**
      * Property instanceIdList: The comma delimited instance id list.If the property "InstanceId" is setting, this property will be ignored.

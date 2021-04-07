@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess;
 /**
  * A ROS template type:  `ALIYUN::ESS::ScalingConfiguration`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.813Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,8 +44,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrScalingConfigurationId() {
-        return software.amazon.jsii.Kernel.get(this, "attrScalingConfigurationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrScalingConfigurationId() {
+        return software.amazon.jsii.Kernel.get(this, "attrScalingConfigurationId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     @Override
@@ -63,8 +63,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.NotNull java.lang.String getScalingGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.NotNull java.lang.Object getScalingGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "scalingGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -75,13 +75,25 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getDeploymentSetId() {
-        return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setScalingGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingGroupId", java.util.Objects.requireNonNull(value, "scalingGroupId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeploymentSetId() {
+        return software.amazon.jsii.Kernel.get(this, "deploymentSetId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setDeploymentSetId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "deploymentSetId", value);
+    }
+
+    /**
+     */
+    public void setDeploymentSetId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "deploymentSetId", value);
     }
 
@@ -105,8 +117,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getHpcClusterId() {
-        return software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHpcClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "hpcClusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -117,8 +129,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getImageId() {
-        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setHpcClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "hpcClusterId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
+        return software.amazon.jsii.Kernel.get(this, "imageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -129,8 +147,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceId() {
-        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setImageId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "imageId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -141,8 +165,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceName() {
-        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -153,13 +183,25 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInstanceType() {
-        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInstanceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+        return software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setInstanceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceType", value);
+    }
+
+    /**
+     */
+    public void setInstanceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceType", value);
     }
 
@@ -183,8 +225,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getInternetChargeType() {
-        return software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
+        return software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -195,8 +237,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthIn() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInternetChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetChargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthIn() {
+        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthIn", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -207,8 +255,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getInternetMaxBandwidthOut() {
-        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setInternetMaxBandwidthIn(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthIn", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
+        return software.amazon.jsii.Kernel.get(this, "internetMaxBandwidthOut", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -219,8 +273,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getIoOptimized() {
-        return software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setInternetMaxBandwidthOut(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "internetMaxBandwidthOut", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
+        return software.amazon.jsii.Kernel.get(this, "ioOptimized", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -231,13 +291,25 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getKeyPairName() {
-        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setIoOptimized(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ioOptimized", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getKeyPairName() {
+        return software.amazon.jsii.Kernel.get(this, "keyPairName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setKeyPairName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "keyPairName", value);
+    }
+
+    /**
+     */
+    public void setKeyPairName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "keyPairName", value);
     }
 
@@ -261,8 +333,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getRamRoleName() {
-        return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRamRoleName() {
+        return software.amazon.jsii.Kernel.get(this, "ramRoleName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -273,8 +345,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getResourceGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setRamRoleName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ramRoleName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -285,8 +363,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getScalingConfigurationName() {
-        return software.amazon.jsii.Kernel.get(this, "scalingConfigurationName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getScalingConfigurationName() {
+        return software.amazon.jsii.Kernel.get(this, "scalingConfigurationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -297,8 +381,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSecurityGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setScalingConfigurationName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "scalingConfigurationName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -309,13 +399,25 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getSpotPriceLimit() {
-        return software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setSecurityGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "securityGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotPriceLimit() {
+        return software.amazon.jsii.Kernel.get(this, "spotPriceLimit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSpotPriceLimit(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "spotPriceLimit", value);
+    }
+
+    /**
+     */
+    public void setSpotPriceLimit(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "spotPriceLimit", value);
     }
 
@@ -339,8 +441,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSpotStrategy() {
-        return software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSpotStrategy() {
+        return software.amazon.jsii.Kernel.get(this, "spotStrategy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -351,8 +453,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskAutoSnapshotPolicyId() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSpotStrategy(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "spotStrategy", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskAutoSnapshotPolicyId() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskAutoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -363,8 +471,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskCategory() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskAutoSnapshotPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskAutoSnapshotPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskCategory() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -375,8 +489,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getSystemDiskPerformanceLevel() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public void setSystemDiskCategory(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskCategory", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskPerformanceLevel() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -387,13 +507,25 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Number getSystemDiskSize() {
-        return software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+    public void setSystemDiskPerformanceLevel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskPerformanceLevel", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSystemDiskSize() {
+        return software.amazon.jsii.Kernel.get(this, "systemDiskSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setSystemDiskSize(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "systemDiskSize", value);
+    }
+
+    /**
+     */
+    public void setSystemDiskSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "systemDiskSize", value);
     }
 
@@ -417,13 +549,19 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.String getUserData() {
-        return software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+    public @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
+        return software.amazon.jsii.Kernel.get(this, "userData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
      */
     public void setUserData(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "userData", value);
+    }
+
+    /**
+     */
+    public void setUserData(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "userData", value);
     }
     /**
@@ -436,70 +574,70 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getAutoSnapshotPolicyId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAutoSnapshotPolicyId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getCategory() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCategory() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDevice() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDevice() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getDiskName() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDiskName() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getEncrypted() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getKmsKeyId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getPerformanceLevel() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSize() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSize() {
             return null;
         }
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getSnapshotId() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotId() {
             return null;
         }
 
@@ -515,16 +653,16 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<DiskMappingsProperty> {
-            private java.lang.String autoSnapshotPolicyId;
-            private java.lang.String category;
-            private java.lang.String description;
-            private java.lang.String device;
-            private java.lang.String diskName;
-            private java.lang.String encrypted;
-            private java.lang.String kmsKeyId;
-            private java.lang.String performanceLevel;
-            private java.lang.String size;
-            private java.lang.String snapshotId;
+            private java.lang.Object autoSnapshotPolicyId;
+            private java.lang.Object category;
+            private java.lang.Object description;
+            private java.lang.Object device;
+            private java.lang.Object diskName;
+            private java.lang.Object encrypted;
+            private java.lang.Object kmsKeyId;
+            private java.lang.Object performanceLevel;
+            private java.lang.Object size;
+            private java.lang.Object snapshotId;
 
             /**
              * Sets the value of {@link DiskMappingsProperty#getAutoSnapshotPolicyId}
@@ -533,6 +671,17 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder autoSnapshotPolicyId(java.lang.String autoSnapshotPolicyId) {
+                this.autoSnapshotPolicyId = autoSnapshotPolicyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getAutoSnapshotPolicyId}
+             * @param autoSnapshotPolicyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder autoSnapshotPolicyId(com.aliyun.ros.cdk.core.IResolvable autoSnapshotPolicyId) {
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
                 return this;
             }
@@ -549,12 +698,34 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getCategory}
+             * @param category the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder category(com.aliyun.ros.cdk.core.IResolvable category) {
+                this.category = category;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getDescription}
              * @param description the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder description(java.lang.String description) {
+                this.description = description;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getDescription}
+             * @param description the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
                 this.description = description;
                 return this;
             }
@@ -571,12 +742,34 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getDevice}
+             * @param device the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder device(com.aliyun.ros.cdk.core.IResolvable device) {
+                this.device = device;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getDiskName}
              * @param diskName the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder diskName(java.lang.String diskName) {
+                this.diskName = diskName;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getDiskName}
+             * @param diskName the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder diskName(com.aliyun.ros.cdk.core.IResolvable diskName) {
                 this.diskName = diskName;
                 return this;
             }
@@ -593,12 +786,34 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getEncrypted}
+             * @param encrypted the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
+                this.encrypted = encrypted;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getKmsKeyId}
              * @param kmsKeyId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder kmsKeyId(java.lang.String kmsKeyId) {
+                this.kmsKeyId = kmsKeyId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getKmsKeyId}
+             * @param kmsKeyId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
                 this.kmsKeyId = kmsKeyId;
                 return this;
             }
@@ -615,6 +830,17 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getPerformanceLevel}
+             * @param performanceLevel the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
+                this.performanceLevel = performanceLevel;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getSize}
              * @param size the value to be set.
              * @return {@code this}
@@ -626,12 +852,34 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link DiskMappingsProperty#getSize}
+             * @param size the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
+                this.size = size;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link DiskMappingsProperty#getSnapshotId}
              * @param snapshotId the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder snapshotId(java.lang.String snapshotId) {
+                this.snapshotId = snapshotId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link DiskMappingsProperty#getSnapshotId}
+             * @param snapshotId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder snapshotId(com.aliyun.ros.cdk.core.IResolvable snapshotId) {
                 this.snapshotId = snapshotId;
                 return this;
             }
@@ -654,16 +902,16 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DiskMappingsProperty {
-            private final java.lang.String autoSnapshotPolicyId;
-            private final java.lang.String category;
-            private final java.lang.String description;
-            private final java.lang.String device;
-            private final java.lang.String diskName;
-            private final java.lang.String encrypted;
-            private final java.lang.String kmsKeyId;
-            private final java.lang.String performanceLevel;
-            private final java.lang.String size;
-            private final java.lang.String snapshotId;
+            private final java.lang.Object autoSnapshotPolicyId;
+            private final java.lang.Object category;
+            private final java.lang.Object description;
+            private final java.lang.Object device;
+            private final java.lang.Object diskName;
+            private final java.lang.Object encrypted;
+            private final java.lang.Object kmsKeyId;
+            private final java.lang.Object performanceLevel;
+            private final java.lang.Object size;
+            private final java.lang.Object snapshotId;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -671,22 +919,22 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.autoSnapshotPolicyId = software.amazon.jsii.Kernel.get(this, "autoSnapshotPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.category = software.amazon.jsii.Kernel.get(this, "category", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.device = software.amazon.jsii.Kernel.get(this, "device", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.diskName = software.amazon.jsii.Kernel.get(this, "diskName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.kmsKeyId = software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.performanceLevel = software.amazon.jsii.Kernel.get(this, "performanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.size = software.amazon.jsii.Kernel.get(this, "size", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.snapshotId = software.amazon.jsii.Kernel.get(this, "snapshotId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String autoSnapshotPolicyId, final java.lang.String category, final java.lang.String description, final java.lang.String device, final java.lang.String diskName, final java.lang.String encrypted, final java.lang.String kmsKeyId, final java.lang.String performanceLevel, final java.lang.String size, final java.lang.String snapshotId) {
+            protected Jsii$Proxy(final java.lang.Object autoSnapshotPolicyId, final java.lang.Object category, final java.lang.Object description, final java.lang.Object device, final java.lang.Object diskName, final java.lang.Object encrypted, final java.lang.Object kmsKeyId, final java.lang.Object performanceLevel, final java.lang.Object size, final java.lang.Object snapshotId) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.autoSnapshotPolicyId = autoSnapshotPolicyId;
                 this.category = category;
@@ -701,52 +949,52 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             @Override
-            public final java.lang.String getAutoSnapshotPolicyId() {
+            public final java.lang.Object getAutoSnapshotPolicyId() {
                 return this.autoSnapshotPolicyId;
             }
 
             @Override
-            public final java.lang.String getCategory() {
+            public final java.lang.Object getCategory() {
                 return this.category;
             }
 
             @Override
-            public final java.lang.String getDescription() {
+            public final java.lang.Object getDescription() {
                 return this.description;
             }
 
             @Override
-            public final java.lang.String getDevice() {
+            public final java.lang.Object getDevice() {
                 return this.device;
             }
 
             @Override
-            public final java.lang.String getDiskName() {
+            public final java.lang.Object getDiskName() {
                 return this.diskName;
             }
 
             @Override
-            public final java.lang.String getEncrypted() {
+            public final java.lang.Object getEncrypted() {
                 return this.encrypted;
             }
 
             @Override
-            public final java.lang.String getKmsKeyId() {
+            public final java.lang.Object getKmsKeyId() {
                 return this.kmsKeyId;
             }
 
             @Override
-            public final java.lang.String getPerformanceLevel() {
+            public final java.lang.Object getPerformanceLevel() {
                 return this.performanceLevel;
             }
 
             @Override
-            public final java.lang.String getSize() {
+            public final java.lang.Object getSize() {
                 return this.size;
             }
 
             @Override
-            public final java.lang.String getSnapshotId() {
+            public final java.lang.Object getSnapshotId() {
                 return this.snapshotId;
             }
 
@@ -842,12 +1090,12 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.String getKey();
+        @org.jetbrains.annotations.NotNull java.lang.Object getKey();
 
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        default @org.jetbrains.annotations.Nullable java.lang.String getValue() {
+        default @org.jetbrains.annotations.Nullable java.lang.Object getValue() {
             return null;
         }
 
@@ -863,8 +1111,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         public static final class Builder implements software.amazon.jsii.Builder<TagListProperty> {
-            private java.lang.String key;
-            private java.lang.String value;
+            private java.lang.Object key;
+            private java.lang.Object value;
 
             /**
              * Sets the value of {@link TagListProperty#getKey}
@@ -878,12 +1126,34 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             }
 
             /**
+             * Sets the value of {@link TagListProperty#getKey}
+             * @param key the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder key(com.aliyun.ros.cdk.core.IResolvable key) {
+                this.key = key;
+                return this;
+            }
+
+            /**
              * Sets the value of {@link TagListProperty#getValue}
              * @param value the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
             public Builder value(java.lang.String value) {
+                this.value = value;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link TagListProperty#getValue}
+             * @param value the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder value(com.aliyun.ros.cdk.core.IResolvable value) {
                 this.value = value;
                 return this;
             }
@@ -906,8 +1176,8 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
         @software.amazon.jsii.Internal
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements TagListProperty {
-            private final java.lang.String key;
-            private final java.lang.String value;
+            private final java.lang.Object key;
+            private final java.lang.Object value;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -915,26 +1185,26 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
              */
             protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
                 super(objRef);
-                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+                this.key = software.amazon.jsii.Kernel.get(this, "key", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.value = software.amazon.jsii.Kernel.get(this, "value", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
              * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
              */
-            protected Jsii$Proxy(final java.lang.String key, final java.lang.String value) {
+            protected Jsii$Proxy(final java.lang.Object key, final java.lang.Object value) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.key = java.util.Objects.requireNonNull(key, "key is required");
                 this.value = value;
             }
 
             @Override
-            public final java.lang.String getKey() {
+            public final java.lang.Object getKey() {
                 return this.key;
             }
 
             @Override
-            public final java.lang.String getValue() {
+            public final java.lang.Object getValue() {
                 return this.value;
             }
 
@@ -1013,12 +1283,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.scalingGroupId(scalingGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param scalingGroupId This parameter is required.
+         */
+        public Builder scalingGroupId(final com.aliyun.ros.cdk.core.IResolvable scalingGroupId) {
+            this.props.scalingGroupId(scalingGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param deploymentSetId This parameter is required.
          */
         public Builder deploymentSetId(final java.lang.String deploymentSetId) {
+            this.props.deploymentSetId(deploymentSetId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deploymentSetId This parameter is required.
+         */
+        public Builder deploymentSetId(final com.aliyun.ros.cdk.core.IResolvable deploymentSetId) {
             this.props.deploymentSetId(deploymentSetId);
             return this;
         }
@@ -1048,12 +1334,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.hpcClusterId(hpcClusterId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param hpcClusterId This parameter is required.
+         */
+        public Builder hpcClusterId(final com.aliyun.ros.cdk.core.IResolvable hpcClusterId) {
+            this.props.hpcClusterId(hpcClusterId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param imageId This parameter is required.
          */
         public Builder imageId(final java.lang.String imageId) {
+            this.props.imageId(imageId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param imageId This parameter is required.
+         */
+        public Builder imageId(final com.aliyun.ros.cdk.core.IResolvable imageId) {
             this.props.imageId(imageId);
             return this;
         }
@@ -1066,6 +1368,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.instanceId(instanceId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1075,12 +1385,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.instanceName(instanceName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param instanceName This parameter is required.
+         */
+        public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
+            this.props.instanceName(instanceName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param instanceType This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
+            this.props.instanceType(instanceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceType This parameter is required.
+         */
+        public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props.instanceType(instanceType);
             return this;
         }
@@ -1110,12 +1436,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.internetChargeType(internetChargeType);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param internetChargeType This parameter is required.
+         */
+        public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
+            this.props.internetChargeType(internetChargeType);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param internetMaxBandwidthIn This parameter is required.
          */
         public Builder internetMaxBandwidthIn(final java.lang.Number internetMaxBandwidthIn) {
+            this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param internetMaxBandwidthIn This parameter is required.
+         */
+        public Builder internetMaxBandwidthIn(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthIn) {
             this.props.internetMaxBandwidthIn(internetMaxBandwidthIn);
             return this;
         }
@@ -1128,6 +1470,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param internetMaxBandwidthOut This parameter is required.
+         */
+        public Builder internetMaxBandwidthOut(final com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
+            this.props.internetMaxBandwidthOut(internetMaxBandwidthOut);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1137,12 +1487,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.ioOptimized(ioOptimized);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ioOptimized This parameter is required.
+         */
+        public Builder ioOptimized(final com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
+            this.props.ioOptimized(ioOptimized);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param keyPairName This parameter is required.
          */
         public Builder keyPairName(final java.lang.String keyPairName) {
+            this.props.keyPairName(keyPairName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param keyPairName This parameter is required.
+         */
+        public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);
             return this;
         }
@@ -1172,12 +1538,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.ramRoleName(ramRoleName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param ramRoleName This parameter is required.
+         */
+        public Builder ramRoleName(final com.aliyun.ros.cdk.core.IResolvable ramRoleName) {
+            this.props.ramRoleName(ramRoleName);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param resourceGroupId This parameter is required.
          */
         public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
             return this;
         }
@@ -1190,6 +1572,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.scalingConfigurationName(scalingConfigurationName);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param scalingConfigurationName This parameter is required.
+         */
+        public Builder scalingConfigurationName(final com.aliyun.ros.cdk.core.IResolvable scalingConfigurationName) {
+            this.props.scalingConfigurationName(scalingConfigurationName);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1199,12 +1589,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.securityGroupId(securityGroupId);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param securityGroupId This parameter is required.
+         */
+        public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
+            this.props.securityGroupId(securityGroupId);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param spotPriceLimit This parameter is required.
          */
         public Builder spotPriceLimit(final java.lang.Number spotPriceLimit) {
+            this.props.spotPriceLimit(spotPriceLimit);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param spotPriceLimit This parameter is required.
+         */
+        public Builder spotPriceLimit(final com.aliyun.ros.cdk.core.IResolvable spotPriceLimit) {
             this.props.spotPriceLimit(spotPriceLimit);
             return this;
         }
@@ -1234,12 +1640,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.spotStrategy(spotStrategy);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param spotStrategy This parameter is required.
+         */
+        public Builder spotStrategy(final com.aliyun.ros.cdk.core.IResolvable spotStrategy) {
+            this.props.spotStrategy(spotStrategy);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param systemDiskAutoSnapshotPolicyId This parameter is required.
          */
         public Builder systemDiskAutoSnapshotPolicyId(final java.lang.String systemDiskAutoSnapshotPolicyId) {
+            this.props.systemDiskAutoSnapshotPolicyId(systemDiskAutoSnapshotPolicyId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskAutoSnapshotPolicyId This parameter is required.
+         */
+        public Builder systemDiskAutoSnapshotPolicyId(final com.aliyun.ros.cdk.core.IResolvable systemDiskAutoSnapshotPolicyId) {
             this.props.systemDiskAutoSnapshotPolicyId(systemDiskAutoSnapshotPolicyId);
             return this;
         }
@@ -1252,6 +1674,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.systemDiskCategory(systemDiskCategory);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param systemDiskCategory This parameter is required.
+         */
+        public Builder systemDiskCategory(final com.aliyun.ros.cdk.core.IResolvable systemDiskCategory) {
+            this.props.systemDiskCategory(systemDiskCategory);
+            return this;
+        }
 
         /**
          * @return {@code this}
@@ -1261,12 +1691,28 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
             this.props.systemDiskPerformanceLevel(systemDiskPerformanceLevel);
             return this;
         }
+        /**
+         * @return {@code this}
+         * @param systemDiskPerformanceLevel This parameter is required.
+         */
+        public Builder systemDiskPerformanceLevel(final com.aliyun.ros.cdk.core.IResolvable systemDiskPerformanceLevel) {
+            this.props.systemDiskPerformanceLevel(systemDiskPerformanceLevel);
+            return this;
+        }
 
         /**
          * @return {@code this}
          * @param systemDiskSize This parameter is required.
          */
         public Builder systemDiskSize(final java.lang.Number systemDiskSize) {
+            this.props.systemDiskSize(systemDiskSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param systemDiskSize This parameter is required.
+         */
+        public Builder systemDiskSize(final com.aliyun.ros.cdk.core.IResolvable systemDiskSize) {
             this.props.systemDiskSize(systemDiskSize);
             return this;
         }
@@ -1293,6 +1739,14 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          * @param userData This parameter is required.
          */
         public Builder userData(final java.lang.String userData) {
+            this.props.userData(userData);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param userData This parameter is required.
+         */
+        public Builder userData(final com.aliyun.ros.cdk.core.IResolvable userData) {
             this.props.userData(userData);
             return this;
         }

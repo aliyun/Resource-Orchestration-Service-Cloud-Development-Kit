@@ -47,19 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Attribute</strong>: Vpcs: Vpc list
         /// </remarks>
-        [JsiiProperty(name: "attrVpcs", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrVpcs
+        [JsiiProperty(name: "attrVpcs", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrVpcs
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: ZoneId: Zone Id
         /// </remarks>
-        [JsiiProperty(name: "attrZoneId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrZoneId
+        [JsiiProperty(name: "attrZoneId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrZoneId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -78,7 +78,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: vpcs:
         /// </remarks>
-        [JsiiProperty(name: "vpcs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-pvtz.RosZoneVpcBinder.VpcsProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "vpcs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-pvtz.RosZoneVpcBinder.VpcsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object Vpcs
         {
             get => GetInstanceProperty<object>()!;
@@ -88,10 +88,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         /// <remarks>
         /// <strong>Property</strong>: zoneId: Zone Id
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ZoneId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IVpcsProperty), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.RosZoneVpcBinder.VpcsProperty")]
@@ -100,8 +100,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             /// <remarks>
             /// <strong>Property</strong>: regionId: Vpcs attribute, region Id
             /// </remarks>
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-            string RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object RegionId
             {
                 get;
             }
@@ -109,8 +109,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             /// <remarks>
             /// <strong>Property</strong>: vpcId: Vpcs attribute, vpc Id
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-            string VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object VpcId
             {
                 get;
             }
@@ -125,19 +125,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
                 /// <remarks>
                 /// <strong>Property</strong>: regionId: Vpcs attribute, region Id
                 /// </remarks>
-                [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}")]
-                public string RegionId
+                [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object RegionId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: vpcId: Vpcs attribute, vpc Id
                 /// </remarks>
-                [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}")]
-                public string VpcId
+                [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object VpcId
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
             }
         }
@@ -149,8 +149,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             /// <remarks>
             /// <strong>Property</strong>: regionId: Vpcs attribute, region Id
             /// </remarks>
-            [JsiiProperty(name: "regionId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string RegionId
+            [JsiiProperty(name: "regionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object RegionId
             {
                 get;
                 set;
@@ -159,8 +159,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             /// <remarks>
             /// <strong>Property</strong>: vpcId: Vpcs attribute, vpc Id
             /// </remarks>
-            [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string VpcId
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object VpcId
             {
                 get;
                 set;

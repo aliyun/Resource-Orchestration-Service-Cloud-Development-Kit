@@ -3,6 +3,160 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::DTS::ConsumerGroup`
+ */
+export interface RosConsumerGroupProps {
+
+    /**
+     * @Property consumerGroupName: Consumer group name.
+     */
+    readonly consumerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupPassword: Password of consumer group.
+     */
+    readonly consumerGroupPassword: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupUserName: User name of consumer group.
+     */
+    readonly consumerGroupUserName: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionInstanceId: Subscription instance ID.
+     */
+    readonly subscriptionInstanceId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConsumerGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('consumerGroupPassword', ros.requiredValidator)(properties.consumerGroupPassword));
+    errors.collect(ros.propertyValidator('consumerGroupPassword', ros.validateString)(properties.consumerGroupPassword));
+    errors.collect(ros.propertyValidator('consumerGroupUserName', ros.requiredValidator)(properties.consumerGroupUserName));
+    errors.collect(ros.propertyValidator('consumerGroupUserName', ros.validateString)(properties.consumerGroupUserName));
+    errors.collect(ros.propertyValidator('consumerGroupName', ros.requiredValidator)(properties.consumerGroupName));
+    errors.collect(ros.propertyValidator('consumerGroupName', ros.validateString)(properties.consumerGroupName));
+    errors.collect(ros.propertyValidator('subscriptionInstanceId', ros.requiredValidator)(properties.subscriptionInstanceId));
+    errors.collect(ros.propertyValidator('subscriptionInstanceId', ros.validateString)(properties.subscriptionInstanceId));
+    return errors.wrap('supplied properties not correct for "RosConsumerGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::ConsumerGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::ConsumerGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConsumerGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ConsumerGroupName: ros.stringToRosTemplate(properties.consumerGroupName),
+      ConsumerGroupPassword: ros.stringToRosTemplate(properties.consumerGroupPassword),
+      ConsumerGroupUserName: ros.stringToRosTemplate(properties.consumerGroupUserName),
+      SubscriptionInstanceId: ros.stringToRosTemplate(properties.subscriptionInstanceId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::DTS::ConsumerGroup`
+ */
+export class RosConsumerGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::ConsumerGroup";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute ConsumerGroupID: Consumer group ID
+     */
+    public readonly attrConsumerGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ConsumerGroupName: Consumer group name
+     */
+    public readonly attrConsumerGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute SubscriptionInstanceId: Subscription instance ID
+     */
+    public readonly attrSubscriptionInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property consumerGroupName: Consumer group name.
+     */
+    public consumerGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupPassword: Password of consumer group.
+     */
+    public consumerGroupPassword: string | ros.IResolvable;
+
+    /**
+     * @Property consumerGroupUserName: User name of consumer group.
+     */
+    public consumerGroupUserName: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionInstanceId: Subscription instance ID.
+     */
+    public subscriptionInstanceId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::DTS::ConsumerGroup`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumerGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerGroupId = this.getAtt('ConsumerGroupID');
+        this.attrConsumerGroupName = this.getAtt('ConsumerGroupName');
+        this.attrSubscriptionInstanceId = this.getAtt('SubscriptionInstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.consumerGroupName = props.consumerGroupName;
+        this.consumerGroupPassword = props.consumerGroupPassword;
+        this.consumerGroupUserName = props.consumerGroupUserName;
+        this.subscriptionInstanceId = props.subscriptionInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            consumerGroupName: this.consumerGroupName,
+            consumerGroupPassword: this.consumerGroupPassword,
+            consumerGroupUserName: this.consumerGroupUserName,
+            subscriptionInstanceId: this.subscriptionInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::DTS::MigrationJob`
  */
 export interface RosMigrationJobProps {
@@ -12,7 +166,7 @@ export interface RosMigrationJobProps {
      * small, medium, large and so on.
      * Various specifications of the reference data migration test performance specifications
      */
-    readonly migrationJobClass: string;
+    readonly migrationJobClass: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpoint: Migration target configuration
@@ -22,7 +176,7 @@ export interface RosMigrationJobProps {
     /**
      * @Property migrationJobName: Migrating job name
      */
-    readonly migrationJobName?: string;
+    readonly migrationJobName?: string | ros.IResolvable;
 
     /**
      * @Property migrationMode: Migration mode
@@ -100,7 +254,7 @@ export class RosMigrationJob extends ros.RosResource {
     /**
      * @Attribute MigrationJobId: Migration tasks task ID
      */
-    public readonly attrMigrationJobId: any;
+    public readonly attrMigrationJobId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -110,7 +264,7 @@ export class RosMigrationJob extends ros.RosResource {
      * small, medium, large and so on.
      * Various specifications of the reference data migration test performance specifications
      */
-    public migrationJobClass: string;
+    public migrationJobClass: string | ros.IResolvable;
 
     /**
      * @Property destinationEndpoint: Migration target configuration
@@ -120,7 +274,7 @@ export class RosMigrationJob extends ros.RosResource {
     /**
      * @Property migrationJobName: Migrating job name
      */
-    public migrationJobName: string | undefined;
+    public migrationJobName: string | ros.IResolvable | undefined;
 
     /**
      * @Property migrationMode: Migration mode
@@ -146,7 +300,7 @@ export class RosMigrationJob extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosMigrationJobProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosMigrationJob.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrMigrationJobId = ros.Token.asString(this.getAtt('MigrationJobId'));
+        this.attrMigrationJobId = this.getAtt('MigrationJobId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.migrationJobClass = props.migrationJobClass;
@@ -181,7 +335,7 @@ export namespace RosMigrationJob {
         /**
          * @Property columnName: Column names are not migrated in the table to be migrated
          */
-        readonly columnName?: string;
+        readonly columnName?: string | ros.IResolvable;
     }
 }
 /**
@@ -222,11 +376,11 @@ export namespace RosMigrationJob {
         /**
          * @Property newColumnName: The name of the column to be migrated to be mapped in the target instance
          */
-        readonly newColumnName?: string;
+        readonly newColumnName?: string | ros.IResolvable;
         /**
          * @Property columnName: The column name to be migrated in the table to be migrated
          */
-        readonly columnName?: string;
+        readonly columnName?: string | ros.IResolvable;
     }
 }
 /**
@@ -269,11 +423,11 @@ export namespace RosMigrationJob {
         /**
          * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account. For details on the permissions and authorization methods required for this role, see Cross-Account Migration Synchronization.
          */
-        readonly role?: string;
+        readonly role?: string | ros.IResolvable;
         /**
          * @Property userName: Target instance access account
          */
-        readonly userName: string;
+        readonly userName: string | ros.IResolvable;
         /**
          * @Property instanceId: Target instance ID
      * When the DestinationEndpoint.InstanceType value is RDS, this parameter needs to be passed to the RDS instance ID.
@@ -285,23 +439,23 @@ export namespace RosMigrationJob {
      * When the DestinationEndpoint.InstanceType value is OceanBase, this parameter needs to be passed to the OceanBase instance ID.
      * When the DestinationEndpoint.InstanceType value is POLARDB, this parameter needs to be passed to the POLARDB for MySQL cluster ID.
          */
-        readonly instanceId?: string;
+        readonly instanceId?: string | ros.IResolvable;
         /**
          * @Property ip: The connection address of the target instance. Required when the source instance is a self-built database.
          */
-        readonly ip?: string;
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property port: The listening port of the target instance, which is required when the source instance is a self-built database.
          */
-        readonly port?: string;
+        readonly port?: string | ros.IResolvable;
         /**
          * @Property databaseName: The connection database library name of the target instance, which is required if the target instance's database type is: PostgreSQL, PPAS, or MongoDB
          */
-        readonly databaseName?: string;
+        readonly databaseName?: string | ros.IResolvable;
         /**
          * @Property region: The area where the target instance is located. If it is a self-built database, you can select the area closest to the physical distance of the self-built IDC.
          */
-        readonly region: string;
+        readonly region: string | ros.IResolvable;
         /**
          * @Property instanceType: The instance type of the target instance, including:
      * RDS: Alibaba Cloud RDS instance
@@ -314,16 +468,16 @@ export namespace RosMigrationJob {
      * OceanBase: Alibaba Cloud OceanBase instance
      * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
          */
-        readonly instanceType: string;
+        readonly instanceType: string | ros.IResolvable;
         /**
          * @Property engineName: The data type of the target instance. It is required when the target instance is a self-built database. The values include:
      * MySQL, SQLServer, PostgreSQL, PPAS, MongoDB, Redis
          */
-        readonly engineName?: string;
+        readonly engineName?: string | ros.IResolvable;
         /**
          * @Property password: Target instance password
          */
-        readonly password: string;
+        readonly password: string | ros.IResolvable;
     }
 }
 /**
@@ -461,7 +615,7 @@ export namespace RosMigrationJob {
         /**
          * @Property dbName: db name to be migrated
          */
-        readonly dbName?: string;
+        readonly dbName?: string | ros.IResolvable;
         /**
          * @Property tableExcludes: Table excludes configuration
          */
@@ -469,15 +623,15 @@ export namespace RosMigrationJob {
         /**
          * @Property schemaName: Schema name to be migrated
          */
-        readonly schemaName?: string;
+        readonly schemaName?: string | ros.IResolvable;
         /**
          * @Property newSchemaName: Schema name to be migrated by Schema in the target instance
          */
-        readonly newSchemaName?: string;
+        readonly newSchemaName?: string | ros.IResolvable;
         /**
          * @Property newDbName: The name of the db to be migrated in the target instance.
          */
-        readonly newDbName?: string;
+        readonly newDbName?: string | ros.IResolvable;
     }
 }
 /**
@@ -528,19 +682,19 @@ export namespace RosMigrationJob {
         /**
          * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account. For details on the permissions and authorization methods required for this role, see Cross-Account Migration Synchronization.
          */
-        readonly role?: string;
+        readonly role?: string | ros.IResolvable;
         /**
          * @Property oracleSid: When the source instance database type is Oracle, this parameter is Oracle SID
          */
-        readonly oracleSid?: string;
+        readonly oracleSid?: string | ros.IResolvable;
         /**
          * @Property userName: Source instance access account
          */
-        readonly userName: string;
+        readonly userName: string | ros.IResolvable;
         /**
          * @Property ownerId: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the UID of the Alibaba Cloud account to which the source RDS instance belongs.
          */
-        readonly ownerId?: string;
+        readonly ownerId?: string | ros.IResolvable;
         /**
          * @Property instanceId: Source instance ID.
      * When the value of SourceEndpoint.InstanceType is RDS, this parameter needs to be passed in the RDS instance ID.
@@ -549,23 +703,23 @@ export namespace RosMigrationJob {
      * When the SourceEndpoint.InstanceType value is MongoDB, this parameter needs to be passed to the MongoDB instance ID.
      * When the SourceEndpoint.InstanceType value is POLARDB, this parameter needs to be passed to POLARDB for MySQL cluster ID.
          */
-        readonly instanceId?: string;
+        readonly instanceId?: string | ros.IResolvable;
         /**
          * @Property ip: The connection address of the source instance. Required when the source instance is a self-built database.
          */
-        readonly ip?: string;
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property port: The listening port of the source instance, which is required when the source instance is a self-built database.
          */
-        readonly port?: string;
+        readonly port?: string | ros.IResolvable;
         /**
          * @Property databaseName: When the source instance database type is PostgreSQL or MongoDB, this parameter is the database library name used when creating the connection.
          */
-        readonly databaseName?: string;
+        readonly databaseName?: string | ros.IResolvable;
         /**
          * @Property region: The area where the source instance is located. If it is a self-built database, you can select the area closest to the physical distance of the self-built IDC.
          */
-        readonly region: string;
+        readonly region: string | ros.IResolvable;
         /**
          * @Property instanceType: The instance type of the migration source instance, including:
      * RDS: Alibaba Cloud RDS instance
@@ -576,16 +730,16 @@ export namespace RosMigrationJob {
      * POLARDB: Alibaba Cloud POLARDB for MySQL Cluster
      *
          */
-        readonly instanceType: string;
+        readonly instanceType: string | ros.IResolvable;
         /**
          * @Property engineName: The database type of the source instance, which is required when SourceEndpoint.InstanceType is not RDS. Values include:
      * MySQL, SQLServer, PostgreSQL, Oracle, MongoDB, Redis
          */
-        readonly engineName?: string;
+        readonly engineName?: string | ros.IResolvable;
         /**
          * @Property password: Source instance password
          */
-        readonly password: string;
+        readonly password: string | ros.IResolvable;
     }
 }
 /**
@@ -664,7 +818,7 @@ export namespace RosMigrationJob {
         /**
          * @Property tableName: The name of the table to be migrated does not require the table name of the migration table.
          */
-        readonly tableName?: string;
+        readonly tableName?: string | ros.IResolvable;
     }
 }
 /**
@@ -705,11 +859,11 @@ export namespace RosMigrationJob {
         /**
          * @Property tableName: Table name to be migrated
          */
-        readonly tableName?: string;
+        readonly tableName?: string | ros.IResolvable;
         /**
          * @Property filterCondition: Where condition
          */
-        readonly filterCondition?: string;
+        readonly filterCondition?: string | ros.IResolvable;
         /**
          * @Property columnExcludes: Column excludes configuration
          */
@@ -721,7 +875,7 @@ export namespace RosMigrationJob {
         /**
          * @Property newTableName: The name of the table to be migrated in the target instance mapping
          */
-        readonly newTableName?: string;
+        readonly newTableName?: string | ros.IResolvable;
     }
 }
 /**
@@ -763,6 +917,543 @@ function rosMigrationJobTableIncludesPropertyToRosTemplate(properties: any): any
 }
 
 /**
+ * Properties for defining a `ALIYUN::DTS::SubscriptionInstance`
+ */
+export interface RosSubscriptionInstanceProps {
+
+    /**
+     * @Property configuration: Subscription configuration.
+     */
+    readonly configuration?: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable;
+
+    /**
+     * @Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+     */
+    readonly sourceEndpointInstanceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosSubscriptionInstanceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosSubscriptionInstanceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstancePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('configuration', RosSubscriptionInstance_ConfigurationPropertyValidator)(properties.configuration));
+    errors.collect(ros.propertyValidator('sourceEndpointInstanceType', ros.validateString)(properties.sourceEndpointInstanceType));
+    return errors.wrap('supplied properties not correct for "RosSubscriptionInstanceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance` resource
+ *
+ * @param properties - the TypeScript properties of a `RosSubscriptionInstanceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstancePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosSubscriptionInstancePropsValidator(properties).assertSuccess();
+    }
+    return {
+      Configuration: rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties.configuration),
+      SourceEndpointInstanceType: ros.stringToRosTemplate(properties.sourceEndpointInstanceType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::DTS::SubscriptionInstance`
+ */
+export class RosSubscriptionInstance extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::SubscriptionInstance";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute PrivateHost: Private host.
+     */
+    public readonly attrPrivateHost: ros.IResolvable;
+
+    /**
+     * @Attribute PublicHost: Public host.
+     */
+    public readonly attrPublicHost: ros.IResolvable;
+
+    /**
+     * @Attribute SubscriptionInstanceId: The ID of Data subscription instance.
+     */
+    public readonly attrSubscriptionInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute VPCHost: VPC host.
+     */
+    public readonly attrVpcHost: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property configuration: Subscription configuration.
+     */
+    public configuration: RosSubscriptionInstance.ConfigurationProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceEndpointInstanceType: Data subscription instance type, value is: MySQL, PolarDB, DRDS, Oracle. Default: MySQL.
+     */
+    public sourceEndpointInstanceType: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::DTS::SubscriptionInstance`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosSubscriptionInstanceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosSubscriptionInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrPrivateHost = this.getAtt('PrivateHost');
+        this.attrPublicHost = this.getAtt('PublicHost');
+        this.attrSubscriptionInstanceId = this.getAtt('SubscriptionInstanceId');
+        this.attrVpcHost = this.getAtt('VPCHost');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.configuration = props.configuration;
+        this.sourceEndpointInstanceType = props.sourceEndpointInstanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            configuration: this.configuration,
+            sourceEndpointInstanceType: this.sourceEndpointInstanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosSubscriptionInstancePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface ConfigurationProperty {
+        /**
+         * @Property subscriptionObject: Objects that need to be migrated.
+         */
+        readonly subscriptionObject: Array<RosSubscriptionInstance.SubscriptionObjectProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property subscriptionDataType: undefined
+         */
+        readonly subscriptionDataType: RosSubscriptionInstance.SubscriptionDataTypeProperty | ros.IResolvable;
+        /**
+         * @Property subscriptionInstanceName: Subscription instance name.
+         */
+        readonly subscriptionInstanceName?: string | ros.IResolvable;
+        /**
+         * @Property subscriptionInstance: undefined
+         */
+        readonly subscriptionInstance?: RosSubscriptionInstance.SubscriptionInstanceProperty | ros.IResolvable;
+        /**
+         * @Property sourceEndpoint: Migration source configuration.
+         */
+        readonly sourceEndpoint: RosSubscriptionInstance.SourceEndpointProperty | ros.IResolvable;
+        /**
+         * @Property subscriptionInstanceNetworkType: Network type: classic or vpc.
+         */
+        readonly subscriptionInstanceNetworkType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ConfigurationProperty`
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_ConfigurationPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('subscriptionObject', ros.requiredValidator)(properties.subscriptionObject));
+    errors.collect(ros.propertyValidator('subscriptionObject', ros.listValidator(RosSubscriptionInstance_SubscriptionObjectPropertyValidator))(properties.subscriptionObject));
+    errors.collect(ros.propertyValidator('subscriptionDataType', ros.requiredValidator)(properties.subscriptionDataType));
+    errors.collect(ros.propertyValidator('subscriptionDataType', RosSubscriptionInstance_SubscriptionDataTypePropertyValidator)(properties.subscriptionDataType));
+    errors.collect(ros.propertyValidator('subscriptionInstanceName', ros.validateString)(properties.subscriptionInstanceName));
+    errors.collect(ros.propertyValidator('subscriptionInstance', RosSubscriptionInstance_SubscriptionInstancePropertyValidator)(properties.subscriptionInstance));
+    errors.collect(ros.propertyValidator('sourceEndpoint', ros.requiredValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('sourceEndpoint', RosSubscriptionInstance_SourceEndpointPropertyValidator)(properties.sourceEndpoint));
+    errors.collect(ros.propertyValidator('subscriptionInstanceNetworkType', ros.validateString)(properties.subscriptionInstanceNetworkType));
+    return errors.wrap('supplied properties not correct for "ConfigurationProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Configuration` resource
+ *
+ * @param properties - the TypeScript properties of a `ConfigurationProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.Configuration` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceConfigurationPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_ConfigurationPropertyValidator(properties).assertSuccess();
+    return {
+      SubscriptionObject: ros.listMapper(rosSubscriptionInstanceSubscriptionObjectPropertyToRosTemplate)(properties.subscriptionObject),
+      SubscriptionDataType: rosSubscriptionInstanceSubscriptionDataTypePropertyToRosTemplate(properties.subscriptionDataType),
+      SubscriptionInstanceName: ros.stringToRosTemplate(properties.subscriptionInstanceName),
+      SubscriptionInstance: rosSubscriptionInstanceSubscriptionInstancePropertyToRosTemplate(properties.subscriptionInstance),
+      SourceEndpoint: rosSubscriptionInstanceSourceEndpointPropertyToRosTemplate(properties.sourceEndpoint),
+      SubscriptionInstanceNetworkType: ros.stringToRosTemplate(properties.subscriptionInstanceNetworkType),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface SourceEndpointProperty {
+        /**
+         * @Property role: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the authorization role of the Alibaba Cloud account to which the source instance belongs to the target instance Alibaba Cloud account.
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property oracleSid: When the source instance database type is Oracle, this parameter is Oracle SID
+         */
+        readonly oracleSid?: string | ros.IResolvable;
+        /**
+         * @Property userName: Source instance access account
+         */
+        readonly userName: string | ros.IResolvable;
+        /**
+         * @Property ownerId: When the source instance is an RDS instance and the source instance is different from the Alibaba Cloud account to which the target instance belongs, this parameter is the UID of the Alibaba Cloud account to which the source RDS instance belongs.
+         */
+        readonly ownerId?: string | ros.IResolvable;
+        /**
+         * @Property instanceId: Source instance ID.
+     * When the value of SourceEndpoint.InstanceType is RDS, this parameter needs to be passed in the RDS instance ID.
+     * When the SourceEndpoint.InstanceType value is ECS, this parameter needs to be passed to the ECS instance ID.
+         */
+        readonly instanceId?: string | ros.IResolvable;
+        /**
+         * @Property ip: The connection address of the source instance. Required when the source instance is a self-built database.
+         */
+        readonly ip?: string | ros.IResolvable;
+        /**
+         * @Property port: The listening port of the source instance, which is required when the source instance is a self-built database.
+         */
+        readonly port?: string | ros.IResolvable;
+        /**
+         * @Property databaseName: The database library name used when creating the connection.
+         */
+        readonly databaseName?: string | ros.IResolvable;
+        /**
+         * @Property instanceType: The instance type of the subscription source instance, including:
+     * RDS: Alibaba Cloud RDS instance
+     * ECS: Self-built database on ECS
+         */
+        readonly instanceType: string | ros.IResolvable;
+        /**
+         * @Property password: Source instance password
+         */
+        readonly password: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SourceEndpointProperty`
+ *
+ * @param properties - the TypeScript properties of a `SourceEndpointProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_SourceEndpointPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('oracleSid', ros.validateString)(properties.oracleSid));
+    errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
+    errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
+    errors.collect(ros.propertyValidator('ownerId', ros.validateString)(properties.ownerId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('ip', ros.validateString)(properties.ip));
+    errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('databaseName', ros.validateString)(properties.databaseName));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "SourceEndpointProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SourceEndpoint` resource
+ *
+ * @param properties - the TypeScript properties of a `SourceEndpointProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SourceEndpoint` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceSourceEndpointPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_SourceEndpointPropertyValidator(properties).assertSuccess();
+    return {
+      Role: ros.stringToRosTemplate(properties.role),
+      OracleSID: ros.stringToRosTemplate(properties.oracleSid),
+      UserName: ros.stringToRosTemplate(properties.userName),
+      OwnerID: ros.stringToRosTemplate(properties.ownerId),
+      InstanceID: ros.stringToRosTemplate(properties.instanceId),
+      IP: ros.stringToRosTemplate(properties.ip),
+      Port: ros.stringToRosTemplate(properties.port),
+      DatabaseName: ros.stringToRosTemplate(properties.databaseName),
+      InstanceType: ros.stringToRosTemplate(properties.instanceType),
+      Password: ros.stringToRosTemplate(properties.password),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface SubscriptionDataTypeProperty {
+        /**
+         * @Property dml: Whether to subscribe to DML type data.
+         */
+        readonly dml: boolean | ros.IResolvable;
+        /**
+         * @Property ddl: Whether to subscribe to DDL type data.
+         */
+        readonly ddl: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SubscriptionDataTypeProperty`
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionDataTypeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_SubscriptionDataTypePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dml', ros.requiredValidator)(properties.dml));
+    errors.collect(ros.propertyValidator('dml', ros.validateBoolean)(properties.dml));
+    errors.collect(ros.propertyValidator('ddl', ros.requiredValidator)(properties.ddl));
+    errors.collect(ros.propertyValidator('ddl', ros.validateBoolean)(properties.ddl));
+    return errors.wrap('supplied properties not correct for "SubscriptionDataTypeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionDataType` resource
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionDataTypeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionDataType` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceSubscriptionDataTypePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_SubscriptionDataTypePropertyValidator(properties).assertSuccess();
+    return {
+      DML: ros.booleanToRosTemplate(properties.dml),
+      DDL: ros.booleanToRosTemplate(properties.ddl),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface SubscriptionInstanceProperty {
+        /**
+         * @Property vpcId: undefined
+         */
+        readonly vpcId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchId: undefined
+         */
+        readonly vSwitchId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SubscriptionInstanceProperty`
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionInstanceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_SubscriptionInstancePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "SubscriptionInstanceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionInstance` resource
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionInstanceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionInstance` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceSubscriptionInstancePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_SubscriptionInstancePropertyValidator(properties).assertSuccess();
+    return {
+      VPCId: ros.stringToRosTemplate(properties.vpcId),
+      VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface SubscriptionObjectProperty {
+        /**
+         * @Property tableIncludes: Table configuration.
+         */
+        readonly tableIncludes?: Array<RosSubscriptionInstance.TableIncludesProperty | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property dbName: db name to be subscribed.
+         */
+        readonly dbName?: string | ros.IResolvable;
+        /**
+         * @Property tableExcludes: Table excludes configuration.
+         */
+        readonly tableExcludes?: Array<RosSubscriptionInstance.TableExcludesProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SubscriptionObjectProperty`
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionObjectProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_SubscriptionObjectPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tableIncludes', ros.listValidator(RosSubscriptionInstance_TableIncludesPropertyValidator))(properties.tableIncludes));
+    errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
+    errors.collect(ros.propertyValidator('tableExcludes', ros.listValidator(RosSubscriptionInstance_TableExcludesPropertyValidator))(properties.tableExcludes));
+    return errors.wrap('supplied properties not correct for "SubscriptionObjectProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionObject` resource
+ *
+ * @param properties - the TypeScript properties of a `SubscriptionObjectProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.SubscriptionObject` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceSubscriptionObjectPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_SubscriptionObjectPropertyValidator(properties).assertSuccess();
+    return {
+      TableIncludes: ros.listMapper(rosSubscriptionInstanceTableIncludesPropertyToRosTemplate)(properties.tableIncludes),
+      DBName: ros.stringToRosTemplate(properties.dbName),
+      TableExcludes: ros.listMapper(rosSubscriptionInstanceTableExcludesPropertyToRosTemplate)(properties.tableExcludes),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface TableExcludesProperty {
+        /**
+         * @Property tableName: Table name not to be subscribed.
+         */
+        readonly tableName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TableExcludesProperty`
+ *
+ * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_TableExcludesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
+    return errors.wrap('supplied properties not correct for "TableExcludesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableExcludes` resource
+ *
+ * @param properties - the TypeScript properties of a `TableExcludesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableExcludes` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceTableExcludesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_TableExcludesPropertyValidator(properties).assertSuccess();
+    return {
+      TableName: ros.stringToRosTemplate(properties.tableName),
+    };
+}
+
+export namespace RosSubscriptionInstance {
+    /**
+     * @stability external
+     */
+    export interface TableIncludesProperty {
+        /**
+         * @Property tableName: Table name to be subscribed.
+         */
+        readonly tableName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TableIncludesProperty`
+ *
+ * @param properties - the TypeScript properties of a `TableIncludesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSubscriptionInstance_TableIncludesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
+    return errors.wrap('supplied properties not correct for "TableIncludesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableIncludes` resource
+ *
+ * @param properties - the TypeScript properties of a `TableIncludesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::SubscriptionInstance.TableIncludes` resource.
+ */
+// @ts-ignore TS6133
+function rosSubscriptionInstanceTableIncludesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSubscriptionInstance_TableIncludesPropertyValidator(properties).assertSuccess();
+    return {
+      TableName: ros.stringToRosTemplate(properties.tableName),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::DTS::SynchronizationJob`
  */
 export interface RosSynchronizationJobProps {
@@ -775,7 +1466,7 @@ export interface RosSynchronizationJobProps {
     /**
      * @Property destRegion: Region where the synchronization target instance is located.
      */
-    readonly destRegion: string;
+    readonly destRegion: string | ros.IResolvable;
 
     /**
      * @Property sourceEndpoint: Migration source configuration
@@ -785,13 +1476,13 @@ export interface RosSynchronizationJobProps {
     /**
      * @Property sourceRegion: Region where the synchronization source instance is located.
      */
-    readonly sourceRegion: string;
+    readonly sourceRegion: string | ros.IResolvable;
 
     /**
      * @Property synchronizationJobClass: Synchronous instance specifications, which can be:
      * micro, small, medium, large and so on. The default value is: small
      */
-    readonly synchronizationJobClass: string;
+    readonly synchronizationJobClass: string | ros.IResolvable;
 
     /**
      * @Property dataInitialization: Whether to perform full data initialization before synchronization. The values include:true: means full data initialization
@@ -803,19 +1494,19 @@ export interface RosSynchronizationJobProps {
     /**
      * @Property networkType: When synchronization geographies, the type of data transmission network used. Value include: Internet, Intranet. The default value is: Internet
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * @Property payType: Payment type, which include:
      * Postpaid: postpaid type, Prepaid: Prepaid type. Default is Postpaid
      */
-    readonly payType?: string;
+    readonly payType?: string | ros.IResolvable;
 
     /**
      * @Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be:
      * Year: Annual, Month: monthly
      */
-    readonly period?: string;
+    readonly period?: string | ros.IResolvable;
 
     /**
      * @Property structureInitialization: Whether to initialize the structure object before synchronization. The values include:true: indicates that the structure object is initialized
@@ -832,12 +1523,12 @@ export interface RosSynchronizationJobProps {
     /**
      * @Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional
      */
-    readonly topology?: string;
+    readonly topology?: string | ros.IResolvable;
 
     /**
      * @Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed
      */
-    readonly usedTime?: number;
+    readonly usedTime?: number | ros.IResolvable;
 }
 
 /**
@@ -936,7 +1627,7 @@ export class RosSynchronizationJob extends ros.RosResource {
     /**
      * @Attribute SynchronizationJobId: Synchronization instance ID
      */
-    public readonly attrSynchronizationJobId: any;
+    public readonly attrSynchronizationJobId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -949,7 +1640,7 @@ export class RosSynchronizationJob extends ros.RosResource {
     /**
      * @Property destRegion: Region where the synchronization target instance is located.
      */
-    public destRegion: string;
+    public destRegion: string | ros.IResolvable;
 
     /**
      * @Property sourceEndpoint: Migration source configuration
@@ -959,13 +1650,13 @@ export class RosSynchronizationJob extends ros.RosResource {
     /**
      * @Property sourceRegion: Region where the synchronization source instance is located.
      */
-    public sourceRegion: string;
+    public sourceRegion: string | ros.IResolvable;
 
     /**
      * @Property synchronizationJobClass: Synchronous instance specifications, which can be:
      * micro, small, medium, large and so on. The default value is: small
      */
-    public synchronizationJobClass: string;
+    public synchronizationJobClass: string | ros.IResolvable;
 
     /**
      * @Property dataInitialization: Whether to perform full data initialization before synchronization. The values include:true: means full data initialization
@@ -977,19 +1668,19 @@ export class RosSynchronizationJob extends ros.RosResource {
     /**
      * @Property networkType: When synchronization geographies, the type of data transmission network used. Value include: Internet, Intranet. The default value is: Internet
      */
-    public networkType: string | undefined;
+    public networkType: string | ros.IResolvable | undefined;
 
     /**
      * @Property payType: Payment type, which include:
      * Postpaid: postpaid type, Prepaid: Prepaid type. Default is Postpaid
      */
-    public payType: string | undefined;
+    public payType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: If prepaid payment type, then the parameters specified in the purchase package instance or instances as examples of a monthly subscription, which can be:
      * Year: Annual, Month: monthly
      */
-    public period: string | undefined;
+    public period: string | ros.IResolvable | undefined;
 
     /**
      * @Property structureInitialization: Whether to initialize the structure object before synchronization. The values include:true: indicates that the structure object is initialized
@@ -1006,12 +1697,12 @@ export class RosSynchronizationJob extends ros.RosResource {
     /**
      * @Property topology: Synchronous topology, the value includes: oneway, bidirectional.the default value is: oneway, only MySQL-> MySQL synchronization, this parameter can receive the value bidirectional
      */
-    public topology: string | undefined;
+    public topology: string | ros.IResolvable | undefined;
 
     /**
      * @Property usedTime: f the payment type is prepaid, then this parameter is the length of the purchase, and parameters such as 1, 2, 3 can be passed in as needed
      */
-    public usedTime: number | undefined;
+    public usedTime: number | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::DTS::SynchronizationJob`.
@@ -1022,7 +1713,7 @@ export class RosSynchronizationJob extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSynchronizationJobProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSynchronizationJob.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSynchronizationJobId = ros.Token.asString(this.getAtt('SynchronizationJobId'));
+        this.attrSynchronizationJobId = this.getAtt('SynchronizationJobId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.destinationEndpoint = props.destinationEndpoint;
@@ -1071,7 +1762,7 @@ export namespace RosSynchronizationJob {
         /**
          * @Property columnName: Column names are not synchronized in the table to be synchronized
          */
-        readonly columnName?: string;
+        readonly columnName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1112,11 +1803,11 @@ export namespace RosSynchronizationJob {
         /**
          * @Property newColumnName: The name of the column to be synchronized to be mapped in the target instance
          */
-        readonly newColumnName?: string;
+        readonly newColumnName?: string | ros.IResolvable;
         /**
          * @Property columnName: The column name to be synchronized in the table to be synchronized
          */
-        readonly columnName?: string;
+        readonly columnName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1159,19 +1850,19 @@ export namespace RosSynchronizationJob {
         /**
          * @Property userName: Target instance access account
          */
-        readonly userName?: string;
+        readonly userName?: string | ros.IResolvable;
         /**
          * @Property instanceId: Target instance ID.
          */
-        readonly instanceId?: string;
+        readonly instanceId?: string | ros.IResolvable;
         /**
          * @Property ip: The connection address of the target instance. Required if the target instance is a local DB accessed through a dedicated line.
          */
-        readonly ip?: string;
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property port: Listening port of the target instance. Required when the target instance is ECS or a local DB accessed through a dedicated line.
          */
-        readonly port?: string;
+        readonly port?: string | ros.IResolvable;
         /**
          * @Property instanceType: The instance type of the synchronization target instance for configuration, including:
      * Redis: Alibaba Cloud Redis instance
@@ -1186,7 +1877,7 @@ export namespace RosSynchronizationJob {
      * Greenplum: Cloud-native data warehouse ADB PostgreSQL version (formerly analytical database PostgreSQL version).
      * The default value is RDS
          */
-        readonly instanceType: string;
+        readonly instanceType: string | ros.IResolvable;
         /**
          * @Property instanceTypeForCreation: The instance type of the synchronization target instance for creation, including:
      * MySQL: Alibaba Cloud MySQL instance
@@ -1194,11 +1885,11 @@ export namespace RosSynchronizationJob {
      * MaxCompute: Alibaba Cloud MaxCompute instance.
      * If this property is not specified, it will be same with InstanceType
          */
-        readonly instanceTypeForCreation?: string;
+        readonly instanceTypeForCreation?: string | ros.IResolvable;
         /**
          * @Property password: Target instance password
          */
-        readonly password?: string;
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -1252,27 +1943,27 @@ export namespace RosSynchronizationJob {
         /**
          * @Property role: When the synchronization source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the authorized role of the account to which the source instance belongs to the Alibaba Cloud account to which the target instance belongs, and the relevant permissions and authorization steps of the reference.
          */
-        readonly role?: string;
+        readonly role?: string | ros.IResolvable;
         /**
          * @Property userName: Source instance access account
          */
-        readonly userName?: string;
+        readonly userName?: string | ros.IResolvable;
         /**
          * @Property ownerId: When the source instance and the target instance do not belong to the same Alibaba Cloud account, this parameter is the UID of the Alibaba Cloud account to which the source instance belongs.
          */
-        readonly ownerId?: string;
+        readonly ownerId?: string | ros.IResolvable;
         /**
          * @Property instanceId: Source instance ID.
          */
-        readonly instanceId?: string;
+        readonly instanceId?: string | ros.IResolvable;
         /**
          * @Property ip: The connection address of the source instance. Required if the source instance is a local DB accessed through a dedicated line.
          */
-        readonly ip?: string;
+        readonly ip?: string | ros.IResolvable;
         /**
          * @Property port: Listening port of the source instance. Required when the source instance is ECS or a local DB accessed through a dedicated line.
          */
-        readonly port?: string;
+        readonly port?: string | ros.IResolvable;
         /**
          * @Property instanceType: The instance type of the synchronization source instance for configuration, including:
      * Redis: Alibaba Cloud Redis instance
@@ -1284,7 +1975,7 @@ export namespace RosSynchronizationJob {
      * cen: Self-built database accessed via the cloud enterprise network CEN.
      * The default value is RDS.
          */
-        readonly instanceType: string;
+        readonly instanceType: string | ros.IResolvable;
         /**
          * @Property instanceTypeForCreation: The instance type of the synchronization source instance for creation, including:
      * MySQL: Alibaba Cloud MySQL instance
@@ -1292,11 +1983,11 @@ export namespace RosSynchronizationJob {
      * Redis: Alibaba Cloud Redis instance.
      * If this property is not specified, it will be same with InstanceType.
          */
-        readonly instanceTypeForCreation?: string;
+        readonly instanceTypeForCreation?: string | ros.IResolvable;
         /**
          * @Property password: Source instance password
          */
-        readonly password?: string;
+        readonly password?: string | ros.IResolvable;
     }
 }
 /**
@@ -1358,7 +2049,7 @@ export namespace RosSynchronizationJob {
         /**
          * @Property dbName: db name to be synchronized
          */
-        readonly dbName?: string;
+        readonly dbName?: string | ros.IResolvable;
         /**
          * @Property tableExcludes: Table excludes configuration
          */
@@ -1366,15 +2057,15 @@ export namespace RosSynchronizationJob {
         /**
          * @Property schemaName: Schema name to be synchronized
          */
-        readonly schemaName?: string;
+        readonly schemaName?: string | ros.IResolvable;
         /**
          * @Property newSchemaName: Schema name to be synchronized by Schema in the target instance
          */
-        readonly newSchemaName?: string;
+        readonly newSchemaName?: string | ros.IResolvable;
         /**
          * @Property newDbName: The name of the db to be synchronized in the target instance.
          */
-        readonly newDbName?: string;
+        readonly newDbName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1425,7 +2116,7 @@ export namespace RosSynchronizationJob {
         /**
          * @Property tableName: The name of the table to be synchronized does not require the table name of the migration table.
          */
-        readonly tableName?: string;
+        readonly tableName?: string | ros.IResolvable;
     }
 }
 /**
@@ -1466,11 +2157,11 @@ export namespace RosSynchronizationJob {
         /**
          * @Property tableName: Table name to be synchronized
          */
-        readonly tableName?: string;
+        readonly tableName?: string | ros.IResolvable;
         /**
          * @Property filterCondition: Where condition
          */
-        readonly filterCondition?: string;
+        readonly filterCondition?: string | ros.IResolvable;
         /**
          * @Property columnExcludes: Column excludes configuration
          */
@@ -1482,7 +2173,7 @@ export namespace RosSynchronizationJob {
         /**
          * @Property newTableName: The name of the table to be synchronized in the target instance mapping
          */
-        readonly newTableName?: string;
+        readonly newTableName?: string | ros.IResolvable;
     }
 }
 /**

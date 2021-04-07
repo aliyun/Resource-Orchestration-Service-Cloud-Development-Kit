@@ -11,8 +11,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     public class EndpointGroupProps : AlibabaCloud.SDK.ROS.CDK.Ga.IEndpointGroupProps
     {
         /// <summary>Property acceleratorId: The ID of the Global Accelerator instance with which the endpoint group will be associated.</summary>
-        [JsiiProperty(name: "acceleratorId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string AcceleratorId
+        [JsiiProperty(name: "acceleratorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object AcceleratorId
         {
             get;
             set;
@@ -27,16 +27,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         }
 
         /// <summary>Property endpointGroupRegion: The region ID of the endpoint group.</summary>
-        [JsiiProperty(name: "endpointGroupRegion", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string EndpointGroupRegion
+        [JsiiProperty(name: "endpointGroupRegion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object EndpointGroupRegion
         {
             get;
             set;
         }
 
         /// <summary>Property listenerId: The ID of the listener to be associated with the endpoint group.</summary>
-        [JsiiProperty(name: "listenerId", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string ListenerId
+        [JsiiProperty(name: "listenerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object ListenerId
         {
             get;
             set;
@@ -44,8 +44,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property description: The description of the endpoint group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;
@@ -56,8 +56,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// Unit: seconds.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "healthCheckIntervalSeconds", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? HealthCheckIntervalSeconds
+        [JsiiProperty(name: "healthCheckIntervalSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HealthCheckIntervalSeconds
         {
             get;
             set;
@@ -65,8 +65,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property healthCheckPath: The path set as the destination on the targets for health checks.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "healthCheckPath", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? HealthCheckPath
+        [JsiiProperty(name: "healthCheckPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HealthCheckPath
         {
             get;
             set;
@@ -74,8 +74,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property healthCheckPort: The port that is used to connect with the targets for health checks.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "healthCheckPort", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? HealthCheckPort
+        [JsiiProperty(name: "healthCheckPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HealthCheckPort
         {
             get;
             set;
@@ -88,8 +88,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         /// https: HTTPS protocol
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? HealthCheckProtocol
+        [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? HealthCheckProtocol
         {
             get;
             set;
@@ -97,8 +97,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property name: The name of the endpoint group.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Name
         {
             get;
             set;
@@ -106,8 +106,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property thresholdCount: The number of consecutive failed heath checks that must occur before declaring an endpoint unhealthy.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "thresholdCount", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? ThresholdCount
+        [JsiiProperty(name: "thresholdCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? ThresholdCount
         {
             get;
             set;
@@ -115,8 +115,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
 
         /// <summary>Property trafficPercentage: The weight of the endpoint group when the corresponding listener is associated with multiple endpoint groups.</summary>
         [JsiiOptional]
-        [JsiiProperty(name: "trafficPercentage", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-        public double? TrafficPercentage
+        [JsiiProperty(name: "trafficPercentage", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? TrafficPercentage
         {
             get;
             set;

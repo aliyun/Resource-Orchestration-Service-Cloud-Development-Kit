@@ -11,41 +11,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
     public class RosParameterProps : AlibabaCloud.SDK.ROS.CDK.Oos.IRosParameterProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the parameter. 
-        /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_). 
+        /// <strong>Property</strong>: name: The name of the parameter.
+        /// The name must be 1 to 200 characters in length,and can contain letters, digits, hyphens (-), and underscores (_).
         /// It cannot start with ALIYUN, ACS, ALIBABA, ALICLOUD, or OOS.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Name
         {
             get;
             set;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: type: The data type of the common parameter. 
+        /// <strong>Property</strong>: type: The data type of the common parameter.
         /// Valid values: String and StringList.
         /// </remarks>
-        [JsiiProperty(name: "type", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Type
+        [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Type
         {
             get;
             set;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: value: The value of the parameter. 
+        /// <strong>Property</strong>: value: The value of the parameter.
         /// The value must be 1 to 4096 characters in length.
         /// </remarks>
-        [JsiiProperty(name: "value", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-        public string Value
+        [JsiiProperty(name: "value", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+        public object Value
         {
             get;
             set;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: constraints: The constraints of the parameter. 
+        /// <strong>Property</strong>: constraints: The constraints of the parameter.
         /// By default, this parameter is null. Valid values:
         /// AllowedValues: The value that is allowed for the parameter. It must be an array string.
         /// AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
@@ -53,20 +53,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         /// MaxLength: The maximum length of the parameter.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "constraints", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Constraints
+        [JsiiProperty(name: "constraints", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Constraints
         {
             get;
             set;
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the parameter. 
+        /// <strong>Property</strong>: description: The description of the parameter.
         /// The description must be 1 to 200 characters in length.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-        public string? Description
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+        public object? Description
         {
             get;
             set;

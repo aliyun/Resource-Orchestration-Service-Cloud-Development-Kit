@@ -11,12 +11,12 @@ export interface ServerlessInstanceProps {
     /**
      * Property dbInstanceStorage: Database instance storage size. MongoDB is [1,10], increased every 1 GB, Unit in GB
      */
-    readonly dbInstanceStorage: number;
+    readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
      * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
      */
-    readonly accountPassword?: string;
+    readonly accountPassword?: string | ros.IResolvable;
 
     /**
      * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
@@ -26,62 +26,67 @@ export interface ServerlessInstanceProps {
     /**
      * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
-    readonly chargeType?: string;
+    readonly chargeType?: string | ros.IResolvable;
 
     /**
      * Property dbInstanceDescription: Description of created database instance.
      */
-    readonly dbInstanceDescription?: string;
+    readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
      * Property engineVersion: Database instance version.Support 4.2
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * Property networkType: The instance network type. Support 'CLASSIC' and 'VPC' only, default is 'CLASSIC'.
      */
-    readonly networkType?: string;
+    readonly networkType?: string | ros.IResolvable;
 
     /**
      * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * Property periodPriceType: Charge period for created instance.
      */
-    readonly periodPriceType?: string;
+    readonly periodPriceType?: string | ros.IResolvable;
 
     /**
      * Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * Property securityIpArray: Security ips to add or remove.
      */
-    readonly securityIpArray?: string;
+    readonly securityIpArray?: string | ros.IResolvable;
 
     /**
      * Property storageEngine: Database storage engine.Support WiredTiger
      */
-    readonly storageEngine?: string;
+    readonly storageEngine?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosServerlessInstance.TagsProperty[];
 
     /**
      * Property vpcId: The VPC id to create mongodb instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * Property vSwitchId: The vSwitch Id to create mongodb instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -97,22 +102,22 @@ export class ServerlessInstance extends ros.Resource {
     /**
      * Attribute ConnectionURI: Connection uri.
      */
-    public readonly attrConnectionUri: any;
+    public readonly attrConnectionUri: ros.IResolvable;
 
     /**
      * Attribute DBInstanceId: The instance id of created mongodb instance.
      */
-    public readonly attrDbInstanceId: any;
+    public readonly attrDbInstanceId: ros.IResolvable;
 
     /**
      * Attribute DBInstanceStatus: Status of mongodb instance.
      */
-    public readonly attrDbInstanceStatus: any;
+    public readonly attrDbInstanceStatus: ros.IResolvable;
 
     /**
      * Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::MONGODB::ServerlessInstance`.
@@ -126,10 +131,10 @@ export class ServerlessInstance extends ros.Resource {
 
         const rosServerlessInstance = new RosServerlessInstance(this, id,  {
             engineVersion: props.engineVersion ? props.engineVersion : '4.2',
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
-            autoRenew: props.autoRenew,
+            resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
+            autoRenew: props.autoRenew,
             period: props.period ? props.period : 1,
             securityIpArray: props.securityIpArray,
             storageEngine: props.storageEngine ? props.storageEngine : 'WiredTiger',
@@ -140,6 +145,7 @@ export class ServerlessInstance extends ros.Resource {
             dbInstanceStorage: props.dbInstanceStorage,
             periodPriceType: props.periodPriceType,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServerlessInstance;
         this.attrConnectionUri = rosServerlessInstance.attrConnectionUri;

@@ -11,12 +11,12 @@ export interface FunctionInvokerProps {
     /**
      * Property functionName: Function name
      */
-    readonly functionName: string;
+    readonly functionName: string | ros.IResolvable;
 
     /**
      * Property serviceName: Service name
      */
-    readonly serviceName: string;
+    readonly serviceName: string | ros.IResolvable;
 
     /**
      * Property async: Invocation type, Sync or Async. Defaults to Sync.
@@ -34,22 +34,22 @@ export interface FunctionInvokerProps {
      * Property event: This value is passed to function as utf-8 encoded string.It’s function’s responsibility to interpret the value.
      * If the value needs to be binary, encode it via base64 before passing to this property.
      */
-    readonly event?: string;
+    readonly event?: string | ros.IResolvable;
 
     /**
      * Property executeVersion: If the property is not specified for creation and update, the function will not be invoked. The change of the property leads to the invoke of the function.
      */
-    readonly executeVersion?: number;
+    readonly executeVersion?: number | ros.IResolvable;
 
     /**
      * Property qualifier: service version, can be versionId or aliasName
      */
-    readonly qualifier?: string;
+    readonly qualifier?: string | ros.IResolvable;
 
     /**
      * Property serviceRegionId: Which region service belongs to.
      */
-    readonly serviceRegionId?: string;
+    readonly serviceRegionId?: string | ros.IResolvable;
 }
 
 /**
@@ -68,7 +68,7 @@ NoResult: Async invoke has no result.
 Success: The response of the function. The response should be utf-8 encoded string, otherwise ROS will report an error. If the response is binary, encode it via base64 before it is returned.
 Failure: Error Message.
      */
-    public readonly attrResult: any;
+    public readonly attrResult: ros.IResolvable;
 
     /**
      * Attribute ResultType: Result type:
@@ -76,7 +76,7 @@ NoResult: Async invoke has no result.
 Success: Sync invoke succeeds.
 Failure: Sync invoke fails.
      */
-    public readonly attrResultType: any;
+    public readonly attrResultType: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::FC::FunctionInvoker`.

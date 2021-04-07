@@ -9,29 +9,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
     public interface ISearchIndexProps
     {
         /// <summary>Property fieldSchemas: list of field_schema.</summary>
-        [JsiiProperty(name: "fieldSchemas", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        [JsiiProperty(name: "fieldSchemas", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object FieldSchemas
         {
             get;
         }
 
         /// <summary>Property indexName: The index name.</summary>
-        [JsiiProperty(name: "indexName", typeJson: "{\"primitive\":\"string\"}")]
-        string IndexName
+        [JsiiProperty(name: "indexName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object IndexName
         {
             get;
         }
 
         /// <summary>Property instanceName: The name of the OTS instance in which table will locate.</summary>
-        [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-        string InstanceName
+        [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InstanceName
         {
             get;
         }
 
         /// <summary>Property tableName: The table name of the OTS instance.</summary>
-        [JsiiProperty(name: "tableName", typeJson: "{\"primitive\":\"string\"}")]
-        string TableName
+        [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object TableName
         {
             get;
         }
@@ -71,31 +71,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ots
             }
 
             /// <summary>Property fieldSchemas: list of field_schema.</summary>
-            [JsiiProperty(name: "fieldSchemas", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            [JsiiProperty(name: "fieldSchemas", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ots.RosSearchIndex.FieldSchemasProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object FieldSchemas
             {
                 get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property indexName: The index name.</summary>
-            [JsiiProperty(name: "indexName", typeJson: "{\"primitive\":\"string\"}")]
-            public string IndexName
+            [JsiiProperty(name: "indexName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object IndexName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property instanceName: The name of the OTS instance in which table will locate.</summary>
-            [JsiiProperty(name: "instanceName", typeJson: "{\"primitive\":\"string\"}")]
-            public string InstanceName
+            [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InstanceName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property tableName: The table name of the OTS instance.</summary>
-            [JsiiProperty(name: "tableName", typeJson: "{\"primitive\":\"string\"}")]
-            public string TableName
+            [JsiiProperty(name: "tableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object TableName
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Property indexSetting: Index settings.</summary>

@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <summary>Attribute CommandId: The id of command created.</summary>
-        [JsiiProperty(name: "attrCommandId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCommandId
+        [JsiiProperty(name: "attrCommandId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCommandId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute InvokeId: The invoke id of command.</summary>
-        [JsiiProperty(name: "attrInvokeId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrInvokeId
+        [JsiiProperty(name: "attrInvokeId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrInvokeId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

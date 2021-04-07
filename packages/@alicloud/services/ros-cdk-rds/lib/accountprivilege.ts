@@ -11,22 +11,22 @@ export interface AccountPrivilegeProps {
     /**
      * Property accountName: RDS account name.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * Property accountPrivilege: RDS account privilege
      */
-    readonly accountPrivilege: string;
+    readonly accountPrivilege: string | ros.IResolvable;
 
     /**
      * Property dbInstanceId: RDS instance ID.
      */
-    readonly dbInstanceId: string;
+    readonly dbInstanceId: string | ros.IResolvable;
 
     /**
      * Property dbName: RDS database name
      */
-    readonly dbName: string;
+    readonly dbName: string | ros.IResolvable;
 }
 
 /**

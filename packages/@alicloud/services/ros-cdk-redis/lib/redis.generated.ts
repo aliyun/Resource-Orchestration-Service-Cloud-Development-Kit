@@ -12,7 +12,7 @@ export interface RosAccountProps {
      * lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
      * in length.
      */
-    readonly accountName: string;
+    readonly accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The password of the account. The password can be 8 to 32 characters in length and
@@ -21,12 +21,12 @@ export interface RosAccountProps {
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
      * hyphens (-), and equal signs (=).
      */
-    readonly accountPassword: string;
+    readonly accountPassword: string | ros.IResolvable;
 
     /**
      * @Property instanceId: The ID of the instance for which you want to create the account.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: The description of the account.
@@ -34,7 +34,7 @@ export interface RosAccountProps {
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
-    readonly accountDescription?: string;
+    readonly accountDescription?: string | ros.IResolvable;
 
     /**
      * @Property accountPrivilege: The permission of the account. Valid values:
@@ -46,12 +46,12 @@ export interface RosAccountProps {
      * permission can be granted to an account only in an ApsaraDB for Redis instance of
      * the standard edition in Redis 4.0.
      */
-    readonly accountPrivilege?: string;
+    readonly accountPrivilege?: string | ros.IResolvable;
 
     /**
      * @Property accountType: The type of the account. Set this parameter to Normal.
      */
-    readonly accountType?: string;
+    readonly accountType?: string | ros.IResolvable;
 }
 
 /**
@@ -116,12 +116,12 @@ export class RosAccount extends ros.RosResource {
     /**
      * @Attribute AccountName: The name of the account.
      */
-    public readonly attrAccountName: any;
+    public readonly attrAccountName: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: The name of the instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -131,7 +131,7 @@ export class RosAccount extends ros.RosResource {
      * lowercase letters, digits, and underscores (_). The name can be 1 to 16 characters
      * in length.
      */
-    public accountName: string;
+    public accountName: string | ros.IResolvable;
 
     /**
      * @Property accountPassword: The password of the account. The password can be 8 to 32 characters in length and
@@ -140,12 +140,12 @@ export class RosAccount extends ros.RosResource {
      * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
      * hyphens (-), and equal signs (=).
      */
-    public accountPassword: string;
+    public accountPassword: string | ros.IResolvable;
 
     /**
      * @Property instanceId: The ID of the instance for which you want to create the account.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property accountDescription: The description of the account.
@@ -153,7 +153,7 @@ export class RosAccount extends ros.RosResource {
      * The description can contain letters, underscores (_), hyphens (-), and digits.
      * It can be 2 to 256 characters in length.
      */
-    public accountDescription: string | undefined;
+    public accountDescription: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountPrivilege: The permission of the account. Valid values:
@@ -165,12 +165,12 @@ export class RosAccount extends ros.RosResource {
      * permission can be granted to an account only in an ApsaraDB for Redis instance of
      * the standard edition in Redis 4.0.
      */
-    public accountPrivilege: string | undefined;
+    public accountPrivilege: string | ros.IResolvable | undefined;
 
     /**
      * @Property accountType: The type of the account. Set this parameter to Normal.
      */
-    public accountType: string | undefined;
+    public accountType: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::REDIS::Account`.
@@ -181,8 +181,8 @@ export class RosAccount extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAccountName = ros.Token.asString(this.getAtt('AccountName'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
+        this.attrAccountName = this.getAtt('AccountName');
+        this.attrInstanceId = this.getAtt('InstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.accountName = props.accountName;
@@ -222,22 +222,22 @@ export interface RosInstanceProps {
     /**
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
-    readonly capacity?: number;
+    readonly capacity?: number | ros.IResolvable;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * @Property evictionPolicy: The eviction policy of cache data storage.
      */
-    readonly evictionPolicy?: string;
+    readonly evictionPolicy?: string | ros.IResolvable;
 
     /**
      * @Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
      */
-    readonly instanceClass?: string;
+    readonly instanceClass?: string | ros.IResolvable;
 
     /**
      * @Property instanceConnection: Instance connection message.
@@ -252,17 +252,17 @@ export interface RosInstanceProps {
     /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly instanceName?: string;
+    readonly instanceName?: string | ros.IResolvable;
 
     /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
-    readonly password?: string;
+    readonly password?: string | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
@@ -270,17 +270,17 @@ export interface RosInstanceProps {
      * Enable: enables SSL encryption.
      * Update: updates the SSL certificate.
      */
-    readonly sslEnabled?: string;
+    readonly sslEnabled?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosInstance.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -292,12 +292,12 @@ export interface RosInstanceProps {
     /**
      * @Property vSwitchId: The vSwitch Id to create ecs instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The zone id of input region.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -354,7 +354,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
@@ -385,7 +385,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       Password: ros.stringToRosTemplate(properties.password),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -410,22 +410,32 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
-    public readonly attrConnectionDomain: any;
+    public readonly attrConnectionDomain: ros.IResolvable;
 
     /**
-     * @Attribute InstanceId: Instance id for created redis instance.
+     * @Attribute InstanceClass: Redis instance type.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceClass: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: Instance id of created redis instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: Name of created redis instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute Port: Port of created instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -438,22 +448,22 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
-    public capacity: number | undefined;
+    public capacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
      */
-    public engineVersion: string | undefined;
+    public engineVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property evictionPolicy: The eviction policy of cache data storage.
      */
-    public evictionPolicy: string | undefined;
+    public evictionPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
      */
-    public instanceClass: string | undefined;
+    public instanceClass: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceConnection: Instance connection message.
@@ -468,17 +478,17 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    public instanceName: string | undefined;
+    public instanceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
-    public password: string | undefined;
+    public password: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
@@ -486,17 +496,17 @@ export class RosInstance extends ros.RosResource {
      * Enable: enables SSL encryption.
      * Update: updates the SSL certificate.
      */
-    public sslEnabled: string | undefined;
+    public sslEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosInstance.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -508,12 +518,12 @@ export class RosInstance extends ros.RosResource {
     /**
      * @Property vSwitchId: The vSwitch Id to create ecs instance.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: The zone id of input region.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::REDIS::Instance`.
@@ -524,10 +534,12 @@ export class RosInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionDomain = ros.Token.asString(this.getAtt('ConnectionDomain'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
+        this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrInstanceClass = this.getAtt('InstanceClass');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPolicy = props.backupPolicy;
@@ -541,7 +553,7 @@ export class RosInstance extends ros.RosResource {
         this.password = props.password;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::REDIS::Instance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -562,7 +574,7 @@ export class RosInstance extends ros.RosResource {
             password: this.password,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -582,17 +594,17 @@ export namespace RosInstance {
         /**
          * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
          */
-        readonly preferredBackupPeriod: string;
+        readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
          * @Property preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
          */
-        readonly preferredBackupTime: string;
+        readonly preferredBackupTime: string | ros.IResolvable;
         /**
          * @Property enableBackupLog: Enable or disable incremental backup. Options:
      * 1, means open.
      * 0, which means off, the default value.
          */
-        readonly enableBackupLog?: number;
+        readonly enableBackupLog?: number | ros.IResolvable;
     }
 }
 /**
@@ -641,19 +653,19 @@ export namespace RosInstance {
      * - Private: internal network.
      * - Public: public network.
          */
-        readonly ipType?: string;
+        readonly ipType?: string | ros.IResolvable;
         /**
          * @Property port: The service port of the instance. 
      * Valid values: 1024 to 65535.
          */
-        readonly port?: number;
+        readonly port?: number | ros.IResolvable;
         /**
          * @Property newConnectionString: The prefix of the new endpoint. 
      * The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
      * The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
      * The prefix can be 8 to 64 characters in length.
          */
-        readonly newConnectionString?: string;
+        readonly newConnectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -669,7 +681,7 @@ function RosInstance_InstanceConnectionPropertyValidator(properties: any): ros.V
     if(properties.ipType && (typeof properties.ipType) !== 'object') {
         errors.collect(ros.propertyValidator('ipType', ros.validateAllowedValues)({
           data: properties.ipType,
-          allowedValues: ["Private","Public"],
+          allowedValues: ["Private","Public","Inner"],
         }));
     }
     errors.collect(ros.propertyValidator('ipType', ros.validateString)(properties.ipType));
@@ -720,14 +732,14 @@ export namespace RosInstance {
      * The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00, 
      * you must set this parameter to 18:00Z.
          */
-        readonly maintainEndTime?: string;
+        readonly maintainEndTime?: string | ros.IResolvable;
         /**
          * @Property maintainStartTime: The start time of the maintenance window. 
      * Specify the time in the ISO 8601 standard in the HH:mmZ format. 
      * The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00, 
      * you must set this parameter to 17:00Z.
          */
-        readonly maintainStartTime?: string;
+        readonly maintainStartTime?: string | ros.IResolvable;
     }
 }
 /**
@@ -774,6 +786,54 @@ function rosInstanceInstanceMaintainTimePropertyToRosTemplate(properties: any): 
     };
 }
 
+export namespace RosInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::Instance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::REDIS::PrepayInstance`
  */
@@ -787,22 +847,22 @@ export interface RosPrepayInstanceProps {
     /**
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
-    readonly capacity?: number;
+    readonly capacity?: number | ros.IResolvable;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
      */
-    readonly engineVersion?: string;
+    readonly engineVersion?: string | ros.IResolvable;
 
     /**
      * @Property evictionPolicy: The eviction policy of cache data storage.
      */
-    readonly evictionPolicy?: string;
+    readonly evictionPolicy?: string | ros.IResolvable;
 
     /**
      * @Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
      */
-    readonly instanceClass?: string;
+    readonly instanceClass?: string | ros.IResolvable;
 
     /**
      * @Property instanceConnection: Instance connection message.
@@ -817,22 +877,22 @@ export interface RosPrepayInstanceProps {
     /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly instanceName?: string;
+    readonly instanceName?: string | ros.IResolvable;
 
     /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
-    readonly password?: string;
+    readonly password?: string | ros.IResolvable;
 
     /**
      * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
-    readonly securityGroupId?: string;
+    readonly securityGroupId?: string | ros.IResolvable;
 
     /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
@@ -840,17 +900,17 @@ export interface RosPrepayInstanceProps {
      * Enable: enables SSL encryption.
      * Update: updates the SSL certificate.
      */
-    readonly sslEnabled?: string;
+    readonly sslEnabled?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosPrepayInstance.TagsProperty[];
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
-    readonly vpcId?: string;
+    readonly vpcId?: string | ros.IResolvable;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -862,12 +922,12 @@ export interface RosPrepayInstanceProps {
     /**
      * @Property vSwitchId: The vSwitch Id to create ecs instance.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 
     /**
      * @Property zoneId: The zone id of input region.
      */
-    readonly zoneId?: string;
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -931,7 +991,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "RosPrepayInstanceProps"');
@@ -963,7 +1023,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       Period: ros.numberToRosTemplate(properties.period),
       SecurityGroupId: ros.stringToRosTemplate(properties.securityGroupId),
       SSLEnabled: ros.stringToRosTemplate(properties.sslEnabled),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       VpcPasswordFree: ros.booleanToRosTemplate(properties.vpcPasswordFree),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
@@ -988,22 +1048,32 @@ export class RosPrepayInstance extends ros.RosResource {
     /**
      * @Attribute ConnectionDomain: Connection domain of created instance.
      */
-    public readonly attrConnectionDomain: any;
+    public readonly attrConnectionDomain: ros.IResolvable;
 
     /**
-     * @Attribute InstanceId: Instance id for created redis instance.
+     * @Attribute InstanceClass: Redis instance type.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceClass: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: Instance id of created redis instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceName: Name of created redis instance.
+     */
+    public readonly attrInstanceName: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order Id of created instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute Port: Port of created instance.
      */
-    public readonly attrPort: any;
+    public readonly attrPort: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1016,22 +1086,22 @@ export class RosPrepayInstance extends ros.RosResource {
     /**
      * @Property capacity: The storage capacity of redis instance.range from 1 to 512, in GB.
      */
-    public capacity: number | undefined;
+    public capacity: number | ros.IResolvable | undefined;
 
     /**
      * @Property engineVersion: Engine version. Supported values: 2.8, 4.0 and 5.0.
      */
-    public engineVersion: string | undefined;
+    public engineVersion: string | ros.IResolvable | undefined;
 
     /**
      * @Property evictionPolicy: The eviction policy of cache data storage.
      */
-    public evictionPolicy: string | undefined;
+    public evictionPolicy: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceClass: Redis instance type. Refer the Redis instance type reference, such as 'redis.master.small.default', 'redis.master.4xlarge.default', 'redis.sharding.mid.default' etc
      */
-    public instanceClass: string | undefined;
+    public instanceClass: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceConnection: Instance connection message.
@@ -1046,22 +1116,22 @@ export class RosPrepayInstance extends ros.RosResource {
     /**
      * @Property instanceName: Display name of the instance, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    public instanceName: string | undefined;
+    public instanceName: string | ros.IResolvable | undefined;
 
     /**
      * @Property password: The password of redis instance.length 8 to 30 characters, need to contain both uppercase and lowercase letters and numbers
      */
-    public password: string | undefined;
+    public password: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The period of order, when choose Prepaid required.optional value 1-9, 12, 24, 36, Unit in month.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property securityGroupId: The IDs of security groups. Separate multiple security group IDs with commas (,) and up to 10 can be set.
      */
-    public securityGroupId: string | undefined;
+    public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property sslEnabled: Modifies the SSL status. Valid values:
@@ -1069,17 +1139,17 @@ export class RosPrepayInstance extends ros.RosResource {
      * Enable: enables SSL encryption.
      * Update: updates the SSL certificate.
      */
-    public sslEnabled: string | undefined;
+    public sslEnabled: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to redis. Max support 20 tags to add during create redis. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosPrepayInstance.TagsProperty[] | undefined;
 
     /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
-    public vpcId: string | undefined;
+    public vpcId: string | ros.IResolvable | undefined;
 
     /**
      * @Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
@@ -1091,12 +1161,12 @@ export class RosPrepayInstance extends ros.RosResource {
     /**
      * @Property vSwitchId: The vSwitch Id to create ecs instance.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * @Property zoneId: The zone id of input region.
      */
-    public zoneId: string | undefined;
+    public zoneId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::REDIS::PrepayInstance`.
@@ -1107,10 +1177,12 @@ export class RosPrepayInstance extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPrepayInstanceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPrepayInstance.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrConnectionDomain = ros.Token.asString(this.getAtt('ConnectionDomain'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrPort = ros.Token.asString(this.getAtt('Port'));
+        this.attrConnectionDomain = this.getAtt('ConnectionDomain');
+        this.attrInstanceClass = this.getAtt('InstanceClass');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrInstanceName = this.getAtt('InstanceName');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrPort = this.getAtt('Port');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.backupPolicy = props.backupPolicy;
@@ -1125,7 +1197,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.period = props.period;
         this.securityGroupId = props.securityGroupId;
         this.sslEnabled = props.sslEnabled;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::REDIS::PrepayInstance", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -1147,7 +1219,7 @@ export class RosPrepayInstance extends ros.RosResource {
             period: this.period,
             securityGroupId: this.securityGroupId,
             sslEnabled: this.sslEnabled,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -1167,17 +1239,17 @@ export namespace RosPrepayInstance {
         /**
          * @Property preferredBackupPeriod: The backup cycle. Valid values: Monday/Tuesday/Wednesday/Thursday/Friday/Saturday/Sunday
          */
-        readonly preferredBackupPeriod: string;
+        readonly preferredBackupPeriod: string | ros.IResolvable;
         /**
          * @Property preferredBackupTime: The time period in which data is backed up. The time period must be in the HH:mmZ-HH:mmZ format.
          */
-        readonly preferredBackupTime: string;
+        readonly preferredBackupTime: string | ros.IResolvable;
         /**
          * @Property enableBackupLog: Enable or disable incremental backup. Options:
      * 1, means open.
      * 0, which means off, the default value.
          */
-        readonly enableBackupLog?: number;
+        readonly enableBackupLog?: number | ros.IResolvable;
     }
 }
 /**
@@ -1226,19 +1298,19 @@ export namespace RosPrepayInstance {
      * - Private: internal network.
      * - Public: public network.
          */
-        readonly ipType?: string;
+        readonly ipType?: string | ros.IResolvable;
         /**
          * @Property port: The service port of the instance. 
      * Valid values: 1024 to 65535.
          */
-        readonly port?: number;
+        readonly port?: number | ros.IResolvable;
         /**
          * @Property newConnectionString: The prefix of the new endpoint. 
      * The new endpoint of the ApsaraDB for Redis instance is in the <Prefix>.redis.rds.aliyuncs.com format. 
      * The prefix of the endpoint must start with a lowercase letter and can contain lowercase letters and digits. 
      * The prefix can be 8 to 64 characters in length.
          */
-        readonly newConnectionString?: string;
+        readonly newConnectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -1254,7 +1326,7 @@ function RosPrepayInstance_InstanceConnectionPropertyValidator(properties: any):
     if(properties.ipType && (typeof properties.ipType) !== 'object') {
         errors.collect(ros.propertyValidator('ipType', ros.validateAllowedValues)({
           data: properties.ipType,
-          allowedValues: ["Private","Public"],
+          allowedValues: ["Private","Public","Inner"],
         }));
     }
     errors.collect(ros.propertyValidator('ipType', ros.validateString)(properties.ipType));
@@ -1305,14 +1377,14 @@ export namespace RosPrepayInstance {
      * The time must be in UTC. For example, if the maintenance ends at 2:00 a.m. UTC+08:00, 
      * you must set this parameter to 18:00Z.
          */
-        readonly maintainEndTime?: string;
+        readonly maintainEndTime?: string | ros.IResolvable;
         /**
          * @Property maintainStartTime: The start time of the maintenance window. 
      * Specify the time in the ISO 8601 standard in the HH:mmZ format. 
      * The time must be in UTC. For example, if the maintenance starts at 1:00 a.m. UTC+08:00, 
      * you must set this parameter to 17:00Z.
          */
-        readonly maintainStartTime?: string;
+        readonly maintainStartTime?: string | ros.IResolvable;
     }
 }
 /**
@@ -1359,6 +1431,54 @@ function rosPrepayInstanceInstanceMaintainTimePropertyToRosTemplate(properties: 
     };
 }
 
+export namespace RosPrepayInstance {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosPrepayInstance_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::REDIS::PrepayInstance.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosPrepayInstanceTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosPrepayInstance_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `ALIYUN::REDIS::Whitelist`
  */
@@ -1367,22 +1487,22 @@ export interface RosWhitelistProps {
     /**
      * @Property instanceId: Instance ID (globally unique)
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: IP address whitelist to be modified
      */
-    readonly securityIps: string;
+    readonly securityIps: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    readonly securityIpGroupAttribute?: string;
+    readonly securityIpGroupAttribute?: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupName: Whitelist group
      */
-    readonly securityIpGroupName?: string;
+    readonly securityIpGroupName?: string | ros.IResolvable;
 }
 
 /**
@@ -1455,17 +1575,17 @@ export class RosWhitelist extends ros.RosResource {
     /**
      * @Attribute SecurityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public readonly attrSecurityIpGroupAttribute: any;
+    public readonly attrSecurityIpGroupAttribute: ros.IResolvable;
 
     /**
      * @Attribute SecurityIpGroupName: Whitelist group
      */
-    public readonly attrSecurityIpGroupName: any;
+    public readonly attrSecurityIpGroupName: ros.IResolvable;
 
     /**
      * @Attribute SecurityIps: IP address whitelist to be modified
      */
-    public readonly attrSecurityIps: any;
+    public readonly attrSecurityIps: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1473,22 +1593,22 @@ export class RosWhitelist extends ros.RosResource {
     /**
      * @Property instanceId: Instance ID (globally unique)
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property securityIps: IP address whitelist to be modified
      */
-    public securityIps: string;
+    public securityIps: string | ros.IResolvable;
 
     /**
      * @Property securityIpGroupAttribute: The default is empty. For distinguishing between different attribute values, the console will not display the value of hidden whitelist packet.
      */
-    public securityIpGroupAttribute: string | undefined;
+    public securityIpGroupAttribute: string | ros.IResolvable | undefined;
 
     /**
      * @Property securityIpGroupName: Whitelist group
      */
-    public securityIpGroupName: string | undefined;
+    public securityIpGroupName: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::REDIS::Whitelist`.
@@ -1499,9 +1619,9 @@ export class RosWhitelist extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosWhitelistProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosWhitelist.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSecurityIpGroupAttribute = ros.Token.asString(this.getAtt('SecurityIpGroupAttribute'));
-        this.attrSecurityIpGroupName = ros.Token.asString(this.getAtt('SecurityIpGroupName'));
-        this.attrSecurityIps = ros.Token.asString(this.getAtt('SecurityIps'));
+        this.attrSecurityIpGroupAttribute = this.getAtt('SecurityIpGroupAttribute');
+        this.attrSecurityIpGroupName = this.getAtt('SecurityIpGroupName');
+        this.attrSecurityIps = this.getAtt('SecurityIps');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.instanceId = props.instanceId;

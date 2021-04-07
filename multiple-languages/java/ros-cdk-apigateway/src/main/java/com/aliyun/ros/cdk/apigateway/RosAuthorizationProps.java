@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Properties for defining a `ALIYUN::ApiGateway::Authorization`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.683Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(RosAuthorizationProps.Jsii$Proxy.class)
 public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,15 +18,15 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getGroupId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getStageName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getStageName();
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getDescription() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
@@ -42,9 +42,9 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
     public static final class Builder implements software.amazon.jsii.Builder<RosAuthorizationProps> {
         private java.lang.Object apiIds;
         private java.lang.Object appIds;
-        private java.lang.String groupId;
-        private java.lang.String stageName;
-        private java.lang.String description;
+        private java.lang.Object groupId;
+        private java.lang.Object stageName;
+        private java.lang.Object description;
 
         /**
          * Sets the value of {@link RosAuthorizationProps#getApiIds}
@@ -97,6 +97,16 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosAuthorizationProps#getGroupId}
+         * @param groupId the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder groupId(com.aliyun.ros.cdk.core.IResolvable groupId) {
+            this.groupId = groupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAuthorizationProps#getStageName}
          * @param stageName the value to be set. This parameter is required.
          * @return {@code this}
@@ -107,11 +117,31 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosAuthorizationProps#getStageName}
+         * @param stageName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder stageName(com.aliyun.ros.cdk.core.IResolvable stageName) {
+            this.stageName = stageName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosAuthorizationProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
+            this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosAuthorizationProps#getDescription}
+         * @param description the value to be set.
+         * @return {@code this}
+         */
+        public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
             return this;
         }
@@ -134,9 +164,9 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosAuthorizationProps {
         private final java.lang.Object apiIds;
         private final java.lang.Object appIds;
-        private final java.lang.String groupId;
-        private final java.lang.String stageName;
-        private final java.lang.String description;
+        private final java.lang.Object groupId;
+        private final java.lang.Object stageName;
+        private final java.lang.Object description;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -146,15 +176,15 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
             super(objRef);
             this.apiIds = software.amazon.jsii.Kernel.get(this, "apiIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.appIds = software.amazon.jsii.Kernel.get(this, "appIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.stageName = software.amazon.jsii.Kernel.get(this, "stageName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object appIds, final java.lang.String groupId, final java.lang.String stageName, final java.lang.String description) {
+        protected Jsii$Proxy(final java.lang.Object apiIds, final java.lang.Object appIds, final java.lang.Object groupId, final java.lang.Object stageName, final java.lang.Object description) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.apiIds = java.util.Objects.requireNonNull(apiIds, "apiIds is required");
             this.appIds = java.util.Objects.requireNonNull(appIds, "appIds is required");
@@ -174,17 +204,17 @@ public interface RosAuthorizationProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
-        public final java.lang.String getGroupId() {
+        public final java.lang.Object getGroupId() {
             return this.groupId;
         }
 
         @Override
-        public final java.lang.String getStageName() {
+        public final java.lang.Object getStageName() {
             return this.stageName;
         }
 
         @Override
-        public final java.lang.String getDescription() {
+        public final java.lang.Object getDescription() {
             return this.description;
         }
 

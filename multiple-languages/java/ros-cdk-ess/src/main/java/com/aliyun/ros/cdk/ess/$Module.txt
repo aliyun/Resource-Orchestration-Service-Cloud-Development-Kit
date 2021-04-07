@@ -17,6 +17,7 @@
 @alicloud/ros-cdk-ess.RosScalingConfigurationProps=com.aliyun.ros.cdk.ess.RosScalingConfigurationProps
 @alicloud/ros-cdk-ess.RosScalingGroup=com.aliyun.ros.cdk.ess.RosScalingGroup
 @alicloud/ros-cdk-ess.RosScalingGroup.NotificationConfigurationsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$NotificationConfigurationsProperty
+@alicloud/ros-cdk-ess.RosScalingGroup.TagsProperty=com.aliyun.ros.cdk.ess.RosScalingGroup$TagsProperty
 @alicloud/ros-cdk-ess.RosScalingGroupEnable=com.aliyun.ros.cdk.ess.RosScalingGroupEnable
 @alicloud/ros-cdk-ess.RosScalingGroupEnableProps=com.aliyun.ros.cdk.ess.RosScalingGroupEnableProps
 @alicloud/ros-cdk-ess.RosScalingGroupProps=com.aliyun.ros.cdk.ess.RosScalingGroupProps

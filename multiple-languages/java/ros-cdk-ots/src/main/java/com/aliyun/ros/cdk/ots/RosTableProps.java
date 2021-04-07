@@ -3,14 +3,14 @@ package com.aliyun.ros.cdk.ots;
 /**
  * Properties for defining a `ALIYUN::OTS::Table`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.157Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.780Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosTableProps")
 @software.amazon.jsii.Jsii.Proxy(RosTableProps.Jsii$Proxy.class)
 public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getInstanceName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
      */
@@ -18,7 +18,7 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getTableName();
+    @org.jetbrains.annotations.NotNull java.lang.Object getTableName();
 
     /**
      */
@@ -28,13 +28,13 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDeviationCellVersionInSec() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeviationCellVersionInSec() {
         return null;
     }
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getMaxVersions() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMaxVersions() {
         return null;
     }
 
@@ -52,7 +52,7 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getTimeToLive() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTimeToLive() {
         return null;
     }
 
@@ -66,15 +66,15 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link RosTableProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosTableProps> {
-        private java.lang.String instanceName;
+        private java.lang.Object instanceName;
         private java.lang.Object primaryKey;
-        private java.lang.String tableName;
+        private java.lang.Object tableName;
         private java.lang.Object columns;
-        private java.lang.Number deviationCellVersionInSec;
-        private java.lang.Number maxVersions;
+        private java.lang.Object deviationCellVersionInSec;
+        private java.lang.Object maxVersions;
         private java.lang.Object reservedThroughput;
         private java.lang.Object secondaryIndices;
-        private java.lang.Number timeToLive;
+        private java.lang.Object timeToLive;
 
         /**
          * Sets the value of {@link RosTableProps#getInstanceName}
@@ -82,6 +82,16 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
+            this.instanceName = instanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTableProps#getInstanceName}
+         * @param instanceName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.instanceName = instanceName;
             return this;
         }
@@ -117,6 +127,16 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTableProps#getTableName}
+         * @param tableName the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder tableName(com.aliyun.ros.cdk.core.IResolvable tableName) {
+            this.tableName = tableName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTableProps#getColumns}
          * @param columns the value to be set.
          * @return {@code this}
@@ -147,11 +167,31 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTableProps#getDeviationCellVersionInSec}
+         * @param deviationCellVersionInSec the value to be set.
+         * @return {@code this}
+         */
+        public Builder deviationCellVersionInSec(com.aliyun.ros.cdk.core.IResolvable deviationCellVersionInSec) {
+            this.deviationCellVersionInSec = deviationCellVersionInSec;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTableProps#getMaxVersions}
          * @param maxVersions the value to be set.
          * @return {@code this}
          */
         public Builder maxVersions(java.lang.Number maxVersions) {
+            this.maxVersions = maxVersions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTableProps#getMaxVersions}
+         * @param maxVersions the value to be set.
+         * @return {@code this}
+         */
+        public Builder maxVersions(com.aliyun.ros.cdk.core.IResolvable maxVersions) {
             this.maxVersions = maxVersions;
             return this;
         }
@@ -207,6 +247,16 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosTableProps#getTimeToLive}
+         * @param timeToLive the value to be set.
+         * @return {@code this}
+         */
+        public Builder timeToLive(com.aliyun.ros.cdk.core.IResolvable timeToLive) {
+            this.timeToLive = timeToLive;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosTableProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -222,15 +272,15 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosTableProps {
-        private final java.lang.String instanceName;
+        private final java.lang.Object instanceName;
         private final java.lang.Object primaryKey;
-        private final java.lang.String tableName;
+        private final java.lang.Object tableName;
         private final java.lang.Object columns;
-        private final java.lang.Number deviationCellVersionInSec;
-        private final java.lang.Number maxVersions;
+        private final java.lang.Object deviationCellVersionInSec;
+        private final java.lang.Object maxVersions;
         private final java.lang.Object reservedThroughput;
         private final java.lang.Object secondaryIndices;
-        private final java.lang.Number timeToLive;
+        private final java.lang.Object timeToLive;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -238,21 +288,21 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.instanceName = software.amazon.jsii.Kernel.get(this, "instanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.primaryKey = software.amazon.jsii.Kernel.get(this, "primaryKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.tableName = software.amazon.jsii.Kernel.get(this, "tableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.columns = software.amazon.jsii.Kernel.get(this, "columns", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.deviationCellVersionInSec = software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.maxVersions = software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.deviationCellVersionInSec = software.amazon.jsii.Kernel.get(this, "deviationCellVersionInSec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.maxVersions = software.amazon.jsii.Kernel.get(this, "maxVersions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.reservedThroughput = software.amazon.jsii.Kernel.get(this, "reservedThroughput", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryIndices = software.amazon.jsii.Kernel.get(this, "secondaryIndices", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.timeToLive = software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.timeToLive = software.amazon.jsii.Kernel.get(this, "timeToLive", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String instanceName, final java.lang.Object primaryKey, final java.lang.String tableName, final java.lang.Object columns, final java.lang.Number deviationCellVersionInSec, final java.lang.Number maxVersions, final java.lang.Object reservedThroughput, final java.lang.Object secondaryIndices, final java.lang.Number timeToLive) {
+        protected Jsii$Proxy(final java.lang.Object instanceName, final java.lang.Object primaryKey, final java.lang.Object tableName, final java.lang.Object columns, final java.lang.Object deviationCellVersionInSec, final java.lang.Object maxVersions, final java.lang.Object reservedThroughput, final java.lang.Object secondaryIndices, final java.lang.Object timeToLive) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.instanceName = java.util.Objects.requireNonNull(instanceName, "instanceName is required");
             this.primaryKey = java.util.Objects.requireNonNull(primaryKey, "primaryKey is required");
@@ -266,7 +316,7 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getInstanceName() {
+        public final java.lang.Object getInstanceName() {
             return this.instanceName;
         }
 
@@ -276,7 +326,7 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getTableName() {
+        public final java.lang.Object getTableName() {
             return this.tableName;
         }
 
@@ -286,12 +336,12 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getDeviationCellVersionInSec() {
+        public final java.lang.Object getDeviationCellVersionInSec() {
             return this.deviationCellVersionInSec;
         }
 
         @Override
-        public final java.lang.Number getMaxVersions() {
+        public final java.lang.Object getMaxVersions() {
             return this.maxVersions;
         }
 
@@ -306,7 +356,7 @@ public interface RosTableProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.Number getTimeToLive() {
+        public final java.lang.Object getTimeToLive() {
             return this.timeToLive;
         }
 

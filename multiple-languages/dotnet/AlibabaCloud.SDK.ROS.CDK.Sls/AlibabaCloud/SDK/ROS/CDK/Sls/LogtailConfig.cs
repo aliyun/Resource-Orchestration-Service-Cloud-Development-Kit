@@ -33,17 +33,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sls
         }
 
         /// <summary>Attribute AppliedMachineGroups: Applied machine groups.</summary>
-        [JsiiProperty(name: "attrAppliedMachineGroups", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrAppliedMachineGroups
+        [JsiiProperty(name: "attrAppliedMachineGroups", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrAppliedMachineGroups
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Endpoint: Endpoint address.</summary>
-        [JsiiProperty(name: "attrEndpoint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrEndpoint
+        [JsiiProperty(name: "attrEndpoint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrEndpoint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <summary>Attribute LogtailConfigName: Logtail config name.</summary>
+        [JsiiProperty(name: "attrLogtailConfigName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrLogtailConfigName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

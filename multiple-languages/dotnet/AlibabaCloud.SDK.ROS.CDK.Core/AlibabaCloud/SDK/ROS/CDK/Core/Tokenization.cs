@@ -22,7 +22,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
         {
         }
 
-        /// <summary>Return whether the given object is an IResolvable object&#xD; &#xD; This is different from Token.isUnresolved() which will also check for&#xD; encoded Tokens, whereas this method will only do a type check on the given&#xD; object.</summary>
+        /// <summary>Return whether the given object is an IResolvable object.</summary>
+        /// <remarks>
+        /// This is different from Token.isUnresolved() which will also check for
+        /// encoded Tokens, whereas this method will only do a type check on the given
+        /// object.
+        /// </remarks>
         [JsiiMethod(name: "isResolvable", returnsJson: "{\"type\":{\"primitive\":\"boolean\"}}", parametersJson: "[{\"name\":\"obj\",\"type\":{\"primitive\":\"any\"}}]")]
         public static bool IsResolvable(object obj)
         {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * A ROS resource type:  `ALIYUN::PVTZ::Zone`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.194Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.848Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.Zone")
 public class Zone extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public Zone(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.pvtz.ZoneProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::PVTZ::Zone`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public Zone(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.pvtz.ZoneProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,17 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute ZoneId: Zone ID.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrZoneId() {
-        return software.amazon.jsii.Kernel.get(this, "attrZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneId() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     * Attribute ZoneName: Zone name.
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrZoneName() {
+        return software.amazon.jsii.Kernel.get(this, "attrZoneName", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +68,8 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.pvtz.Zone> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +77,8 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,28 +97,74 @@ public class Zone extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property zoneName: Zone name.
+         * <p>
          * @return {@code this}
-         * @param zoneName This parameter is required.
+         * @param zoneName Property zoneName: Zone name. This parameter is required.
          */
         public Builder zoneName(final java.lang.String zoneName) {
             this.props.zoneName(zoneName);
             return this;
         }
+        /**
+         * Property zoneName: Zone name.
+         * <p>
+         * @return {@code this}
+         * @param zoneName Property zoneName: Zone name. This parameter is required.
+         */
+        public Builder zoneName(final com.aliyun.ros.cdk.core.IResolvable zoneName) {
+            this.props.zoneName(zoneName);
+            return this;
+        }
 
         /**
+         * Property proxyPattern: ZONE: completely hijack the entire zone.
+         * <p>
+         * RECORD: Incomplete hijacking, recursive resolution agent.
+         * Default to ZONE.
+         * <p>
          * @return {@code this}
-         * @param proxyPattern This parameter is required.
+         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone. This parameter is required.
          */
         public Builder proxyPattern(final java.lang.String proxyPattern) {
             this.props.proxyPattern(proxyPattern);
             return this;
         }
+        /**
+         * Property proxyPattern: ZONE: completely hijack the entire zone.
+         * <p>
+         * RECORD: Incomplete hijacking, recursive resolution agent.
+         * Default to ZONE.
+         * <p>
+         * @return {@code this}
+         * @param proxyPattern Property proxyPattern: ZONE: completely hijack the entire zone. This parameter is required.
+         */
+        public Builder proxyPattern(final com.aliyun.ros.cdk.core.IResolvable proxyPattern) {
+            this.props.proxyPattern(proxyPattern);
+            return this;
+        }
 
         /**
+         * Property remark: 50 characters at most.
+         * <p>
+         * It can only contain numbers, Chinese, English and special characters: "_-,.，。".
+         * <p>
          * @return {@code this}
-         * @param remark This parameter is required.
+         * @param remark Property remark: 50 characters at most. This parameter is required.
          */
         public Builder remark(final java.lang.String remark) {
+            this.props.remark(remark);
+            return this;
+        }
+        /**
+         * Property remark: 50 characters at most.
+         * <p>
+         * It can only contain numbers, Chinese, English and special characters: "_-,.，。".
+         * <p>
+         * @return {@code this}
+         * @param remark Property remark: 50 characters at most. This parameter is required.
+         */
+        public Builder remark(final com.aliyun.ros.cdk.core.IResolvable remark) {
             this.props.remark(remark);
             return this;
         }

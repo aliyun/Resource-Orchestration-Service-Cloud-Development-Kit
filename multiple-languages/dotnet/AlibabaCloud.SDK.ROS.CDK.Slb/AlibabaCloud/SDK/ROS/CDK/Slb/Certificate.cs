@@ -33,17 +33,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <summary>Attribute CertificateId: The ID of the certificate.</summary>
-        [JsiiProperty(name: "attrCertificateId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrCertificateId
+        [JsiiProperty(name: "attrCertificateId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrCertificateId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <summary>Attribute Fingerprint: The fingerprint of the certificate.</summary>
-        [JsiiProperty(name: "attrFingerprint", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrFingerprint
+        [JsiiProperty(name: "attrFingerprint", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrFingerprint
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

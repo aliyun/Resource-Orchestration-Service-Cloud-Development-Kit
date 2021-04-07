@@ -27,6 +27,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             }
         }
 
+        [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Count
+        {
+            get
+            {
+                return null;
+            }
+            set
+            {
+                throw new System.NotSupportedException("'set' for 'Count' is not implemented");
+            }
+        }
+
         /// <summary>With the DeletionPolicy attribute you can preserve or (in some cases) backup a resource when its stack is deleted.</summary>
         /// <remarks>
         /// You specify a DeletionPolicy attribute for each resource that you want to control. If a resource has no DeletionPolicy
@@ -98,6 +112,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Core
             public AlibabaCloud.SDK.ROS.CDK.Core.RosCondition? Condition
             {
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.RosCondition?>();
+                set => SetInstanceProperty(value);
+            }
+
+            [JsiiOptional]
+            [JsiiProperty(name: "count", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Count
+            {
+                get => GetInstanceProperty<object?>();
                 set => SetInstanceProperty(value);
             }
 

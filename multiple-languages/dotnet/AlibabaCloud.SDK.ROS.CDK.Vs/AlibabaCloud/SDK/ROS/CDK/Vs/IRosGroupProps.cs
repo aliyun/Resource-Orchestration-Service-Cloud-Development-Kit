@@ -12,8 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: inProtocol: Access protocol used by the space.
         /// Value: gb28181, rtmp
         /// </remarks>
-        [JsiiProperty(name: "inProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        string InProtocol
+        [JsiiProperty(name: "inProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object InProtocol
         {
             get;
         }
@@ -21,8 +21,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: name: Space name.
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Name
         {
             get;
         }
@@ -31,8 +31,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <strong>Property</strong>: outProtocol: Play protocol used by the space, multivalued separated by commas.
         /// Value: flv, hls, rtmp
         /// </remarks>
-        [JsiiProperty(name: "outProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        string OutProtocol
+        [JsiiProperty(name: "outProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object OutProtocol
         {
             get;
         }
@@ -40,8 +40,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: playDomain: Use of the domain name space broadcast stream.
         /// </remarks>
-        [JsiiProperty(name: "playDomain", typeJson: "{\"primitive\":\"string\"}")]
-        string PlayDomain
+        [JsiiProperty(name: "playDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PlayDomain
         {
             get;
         }
@@ -49,8 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
         /// </remarks>
-        [JsiiProperty(name: "pushDomain", typeJson: "{\"primitive\":\"string\"}")]
-        string PushDomain
+        [JsiiProperty(name: "pushDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object PushDomain
         {
             get;
         }
@@ -58,8 +58,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: region: Space belongs to the region, as a service center.
         /// </remarks>
-        [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
-        string Region
+        [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object Region
         {
             get;
         }
@@ -67,9 +67,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: app: Application name space used, the default live.
         /// </remarks>
-        [JsiiProperty(name: "app", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "app", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? App
+        object? App
         {
             get
             {
@@ -80,9 +80,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: callback: Updating the space callback device / flow state
         /// </remarks>
-        [JsiiProperty(name: "callback", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Callback
+        object? Callback
         {
             get
             {
@@ -93,9 +93,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
         /// <remarks>
         /// <strong>Property</strong>: description: Space description.
         /// </remarks>
-        [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+        [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        string? Description
+        object? Description
         {
             get
             {
@@ -141,86 +141,86 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vs
             /// <strong>Property</strong>: inProtocol: Access protocol used by the space.
             /// Value: gb28181, rtmp
             /// </remarks>
-            [JsiiProperty(name: "inProtocol", typeJson: "{\"primitive\":\"string\"}")]
-            public string InProtocol
+            [JsiiProperty(name: "inProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object InProtocol
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: name: Space name.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-            public string Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Name
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: outProtocol: Play protocol used by the space, multivalued separated by commas.
             /// Value: flv, hls, rtmp
             /// </remarks>
-            [JsiiProperty(name: "outProtocol", typeJson: "{\"primitive\":\"string\"}")]
-            public string OutProtocol
+            [JsiiProperty(name: "outProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object OutProtocol
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: playDomain: Use of the domain name space broadcast stream.
             /// </remarks>
-            [JsiiProperty(name: "playDomain", typeJson: "{\"primitive\":\"string\"}")]
-            public string PlayDomain
+            [JsiiProperty(name: "playDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PlayDomain
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: pushDomain: Plug flow domain name space to use. (Only access to the space rtmp)
             /// </remarks>
-            [JsiiProperty(name: "pushDomain", typeJson: "{\"primitive\":\"string\"}")]
-            public string PushDomain
+            [JsiiProperty(name: "pushDomain", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object PushDomain
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: region: Space belongs to the region, as a service center.
             /// </remarks>
-            [JsiiProperty(name: "region", typeJson: "{\"primitive\":\"string\"}")]
-            public string Region
+            [JsiiProperty(name: "region", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object Region
             {
-                get => GetInstanceProperty<string>()!;
+                get => GetInstanceProperty<object>()!;
             }
 
             /// <remarks>
             /// <strong>Property</strong>: app: Application name space used, the default live.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "app", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? App
+            [JsiiProperty(name: "app", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? App
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: callback: Updating the space callback device / flow state
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "callback", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Callback
+            [JsiiProperty(name: "callback", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Callback
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>
             /// <strong>Property</strong>: description: Space description.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "description", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-            public string? Description
+            [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Description
             {
-                get => GetInstanceProperty<string?>();
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

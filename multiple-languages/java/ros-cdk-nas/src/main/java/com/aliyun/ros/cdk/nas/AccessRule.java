@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * A ROS resource type:  `ALIYUN::NAS::AccessRule`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.734Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessRule")
 public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
 
@@ -18,9 +18,13 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::NAS::AccessRule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      * @param enableResourcePropertyConstraint
      */
     public AccessRule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.nas.AccessRuleProps props, final @org.jetbrains.annotations.Nullable java.lang.Boolean enableResourcePropertyConstraint) {
@@ -31,9 +35,13 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
     /**
      * Create a new `ALIYUN::NAS::AccessRule`.
      * <p>
-     * @param scope - scope in which this resource is defined. This parameter is required.
-     * @param id - scoped id of the resource. This parameter is required.
-     * @param props - resource properties. This parameter is required.
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     * <p>
+     * @param scope This parameter is required.
+     * @param id This parameter is required.
+     * @param props This parameter is required.
      */
     public AccessRule(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.nas.AccessRuleProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
@@ -41,9 +49,10 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
     }
 
     /**
+     * Attribute AccessRuleId: Rule serial number.
      */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrAccessRuleId() {
-        return software.amazon.jsii.Kernel.get(this, "attrAccessRuleId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrAccessRuleId() {
+        return software.amazon.jsii.Kernel.get(this, "attrAccessRuleId", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -52,8 +61,8 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.nas.AccessRule> {
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          * @param enableResourcePropertyConstraint
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id, final java.lang.Boolean enableResourcePropertyConstraint) {
@@ -61,8 +70,8 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
         }
         /**
          * @return a new instance of {@link Builder}.
-         * @param scope - scope in which this resource is defined. This parameter is required.
-         * @param id - scoped id of the resource. This parameter is required.
+         * @param scope This parameter is required.
+         * @param id This parameter is required.
          */
         public static Builder create(final com.aliyun.ros.cdk.core.Construct scope, final java.lang.String id) {
             return new Builder(scope, id, null);
@@ -81,46 +90,110 @@ public class AccessRule extends com.aliyun.ros.cdk.core.Resource {
         }
 
         /**
+         * Property accessGroupName: Permission group name.
+         * <p>
          * @return {@code this}
-         * @param accessGroupName This parameter is required.
+         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
          */
         public Builder accessGroupName(final java.lang.String accessGroupName) {
             this.props.accessGroupName(accessGroupName);
             return this;
         }
+        /**
+         * Property accessGroupName: Permission group name.
+         * <p>
+         * @return {@code this}
+         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         */
+        public Builder accessGroupName(final com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
+            this.props.accessGroupName(accessGroupName);
+            return this;
+        }
 
         /**
+         * Property sourceCidrIp: Address or address segment.
+         * <p>
          * @return {@code this}
-         * @param sourceCidrIp This parameter is required.
+         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
          */
         public Builder sourceCidrIp(final java.lang.String sourceCidrIp) {
             this.props.sourceCidrIp(sourceCidrIp);
             return this;
         }
+        /**
+         * Property sourceCidrIp: Address or address segment.
+         * <p>
+         * @return {@code this}
+         * @param sourceCidrIp Property sourceCidrIp: Address or address segment. This parameter is required.
+         */
+        public Builder sourceCidrIp(final com.aliyun.ros.cdk.core.IResolvable sourceCidrIp) {
+            this.props.sourceCidrIp(sourceCidrIp);
+            return this;
+        }
 
         /**
+         * Property priority: Priority level.
+         * <p>
+         * Range: 1-100. Default value: 1
+         * <p>
          * @return {@code this}
-         * @param priority This parameter is required.
+         * @param priority Property priority: Priority level. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
+        /**
+         * Property priority: Priority level.
+         * <p>
+         * Range: 1-100. Default value: 1
+         * <p>
+         * @return {@code this}
+         * @param priority Property priority: Priority level. This parameter is required.
+         */
+        public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
+            this.props.priority(priority);
+            return this;
+        }
 
         /**
+         * Property rwAccessType: Read-write permission type: RDWR (default), RDONLY.
+         * <p>
          * @return {@code this}
-         * @param rwAccessType This parameter is required.
+         * @param rwAccessType Property rwAccessType: Read-write permission type: RDWR (default), RDONLY. This parameter is required.
          */
         public Builder rwAccessType(final java.lang.String rwAccessType) {
             this.props.rwAccessType(rwAccessType);
             return this;
         }
+        /**
+         * Property rwAccessType: Read-write permission type: RDWR (default), RDONLY.
+         * <p>
+         * @return {@code this}
+         * @param rwAccessType Property rwAccessType: Read-write permission type: RDWR (default), RDONLY. This parameter is required.
+         */
+        public Builder rwAccessType(final com.aliyun.ros.cdk.core.IResolvable rwAccessType) {
+            this.props.rwAccessType(rwAccessType);
+            return this;
+        }
 
         /**
+         * Property userAccessType: User permission type: no_squash (default), root_squash, all_squash.
+         * <p>
          * @return {@code this}
-         * @param userAccessType This parameter is required.
+         * @param userAccessType Property userAccessType: User permission type: no_squash (default), root_squash, all_squash. This parameter is required.
          */
         public Builder userAccessType(final java.lang.String userAccessType) {
+            this.props.userAccessType(userAccessType);
+            return this;
+        }
+        /**
+         * Property userAccessType: User permission type: no_squash (default), root_squash, all_squash.
+         * <p>
+         * @return {@code this}
+         * @param userAccessType Property userAccessType: User permission type: no_squash (default), root_squash, all_squash. This parameter is required.
+         */
+        public Builder userAccessType(final com.aliyun.ros.cdk.core.IResolvable userAccessType) {
             this.props.userAccessType(userAccessType);
             return this;
         }

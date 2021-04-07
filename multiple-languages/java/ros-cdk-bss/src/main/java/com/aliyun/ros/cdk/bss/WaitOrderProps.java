@@ -3,22 +3,29 @@ package com.aliyun.ros.cdk.bss;
 /**
  * Properties for defining a `ALIYUN::BSS::WaitOrder`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:35.180Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:41.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.WaitOrderProps")
 @software.amazon.jsii.Jsii.Proxy(WaitOrderProps.Jsii$Proxy.class)
 public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property orderIds: A list of order ids.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getOrderIds();
 
     /**
+     * Property cancelOnDelete: Cancel order where delete the resource.
+     * <p>
+     * Ignore the paid order. Default true
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCancelOnDelete() {
         return null;
     }
 
     /**
+     * Property waitForOrderProduced: Wait util all orders related ROS resources are produced.
+     * <p>
+     * Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWaitForOrderProduced() {
         return null;
@@ -40,7 +47,7 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getOrderIds}
-         * @param orderIds the value to be set. This parameter is required.
+         * @param orderIds Property orderIds: A list of order ids. This parameter is required.
          * @return {@code this}
          */
         public Builder orderIds(java.util.List<? extends java.lang.Object> orderIds) {
@@ -50,7 +57,7 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getOrderIds}
-         * @param orderIds the value to be set. This parameter is required.
+         * @param orderIds Property orderIds: A list of order ids. This parameter is required.
          * @return {@code this}
          */
         public Builder orderIds(com.aliyun.ros.cdk.core.IResolvable orderIds) {
@@ -60,7 +67,8 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getCancelOnDelete}
-         * @param cancelOnDelete the value to be set.
+         * @param cancelOnDelete Property cancelOnDelete: Cancel order where delete the resource.
+         *                       Ignore the paid order. Default true
          * @return {@code this}
          */
         public Builder cancelOnDelete(java.lang.Boolean cancelOnDelete) {
@@ -70,7 +78,8 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getCancelOnDelete}
-         * @param cancelOnDelete the value to be set.
+         * @param cancelOnDelete Property cancelOnDelete: Cancel order where delete the resource.
+         *                       Ignore the paid order. Default true
          * @return {@code this}
          */
         public Builder cancelOnDelete(com.aliyun.ros.cdk.core.IResolvable cancelOnDelete) {
@@ -80,7 +89,8 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getWaitForOrderProduced}
-         * @param waitForOrderProduced the value to be set.
+         * @param waitForOrderProduced Property waitForOrderProduced: Wait util all orders related ROS resources are produced.
+         *                             Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
          * @return {@code this}
          */
         public Builder waitForOrderProduced(java.lang.Boolean waitForOrderProduced) {
@@ -90,7 +100,8 @@ public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link WaitOrderProps#getWaitForOrderProduced}
-         * @param waitForOrderProduced the value to be set.
+         * @param waitForOrderProduced Property waitForOrderProduced: Wait util all orders related ROS resources are produced.
+         *                             Support ALIYUN::ECS::PrepayInstance, ALIYUN::RDS::PrepayDBInstance, ALIYUN::REDIS::PrepayInstance, ALIYUN::SLB::LoadBalancer, ALIYUN::VPC::EIP, ALIYUN::VPC::VpnGateway.
          * @return {@code this}
          */
         public Builder waitForOrderProduced(com.aliyun.ros.cdk.core.IResolvable waitForOrderProduced) {

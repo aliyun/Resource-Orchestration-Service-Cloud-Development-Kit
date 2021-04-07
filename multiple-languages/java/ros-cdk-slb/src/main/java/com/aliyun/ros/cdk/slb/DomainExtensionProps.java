@@ -3,26 +3,33 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Properties for defining a `ALIYUN::SLB::DomainExtension`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.378Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:43.056Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.DomainExtensionProps")
 @software.amazon.jsii.Jsii.Proxy(DomainExtensionProps.Jsii$Proxy.class)
 public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property domain: The domain name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getDomain();
+    @org.jetbrains.annotations.NotNull java.lang.Object getDomain();
 
     /**
+     * Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance.
+     * <p>
+     * Valid value:
+     * 1-65535
      */
-    @org.jetbrains.annotations.NotNull java.lang.Number getListenerPort();
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort();
 
     /**
+     * Property loadBalancerId: The ID of Server Load Balancer instance.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getLoadBalancerId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
+     * Property serverCertificateId: The ID of the certificate corresponding to the domain name.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getServerCertificateId();
+    @org.jetbrains.annotations.NotNull java.lang.Object getServerCertificateId();
 
     /**
      * @return a {@link Builder} of {@link DomainExtensionProps}
@@ -34,14 +41,14 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link DomainExtensionProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<DomainExtensionProps> {
-        private java.lang.String domain;
-        private java.lang.Number listenerPort;
-        private java.lang.String loadBalancerId;
-        private java.lang.String serverCertificateId;
+        private java.lang.Object domain;
+        private java.lang.Object listenerPort;
+        private java.lang.Object loadBalancerId;
+        private java.lang.Object serverCertificateId;
 
         /**
          * Sets the value of {@link DomainExtensionProps#getDomain}
-         * @param domain the value to be set. This parameter is required.
+         * @param domain Property domain: The domain name. This parameter is required.
          * @return {@code this}
          */
         public Builder domain(java.lang.String domain) {
@@ -50,8 +57,20 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link DomainExtensionProps#getDomain}
+         * @param domain Property domain: The domain name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder domain(com.aliyun.ros.cdk.core.IResolvable domain) {
+            this.domain = domain;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DomainExtensionProps#getListenerPort}
-         * @param listenerPort the value to be set. This parameter is required.
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         *                     Valid value:
+         *                     1-65535
          * @return {@code this}
          */
         public Builder listenerPort(java.lang.Number listenerPort) {
@@ -60,8 +79,20 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link DomainExtensionProps#getListenerPort}
+         * @param listenerPort Property listenerPort: The front-end HTTPS listener port of the Server Load Balancer instance. This parameter is required.
+         *                     Valid value:
+         *                     1-65535
+         * @return {@code this}
+         */
+        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DomainExtensionProps#getLoadBalancerId}
-         * @param loadBalancerId the value to be set. This parameter is required.
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
          * @return {@code this}
          */
         public Builder loadBalancerId(java.lang.String loadBalancerId) {
@@ -70,11 +101,31 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link DomainExtensionProps#getLoadBalancerId}
+         * @param loadBalancerId Property loadBalancerId: The ID of Server Load Balancer instance. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
+            this.loadBalancerId = loadBalancerId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link DomainExtensionProps#getServerCertificateId}
-         * @param serverCertificateId the value to be set. This parameter is required.
+         * @param serverCertificateId Property serverCertificateId: The ID of the certificate corresponding to the domain name. This parameter is required.
          * @return {@code this}
          */
         public Builder serverCertificateId(java.lang.String serverCertificateId) {
+            this.serverCertificateId = serverCertificateId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainExtensionProps#getServerCertificateId}
+         * @param serverCertificateId Property serverCertificateId: The ID of the certificate corresponding to the domain name. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder serverCertificateId(com.aliyun.ros.cdk.core.IResolvable serverCertificateId) {
             this.serverCertificateId = serverCertificateId;
             return this;
         }
@@ -95,10 +146,10 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements DomainExtensionProps {
-        private final java.lang.String domain;
-        private final java.lang.Number listenerPort;
-        private final java.lang.String loadBalancerId;
-        private final java.lang.String serverCertificateId;
+        private final java.lang.Object domain;
+        private final java.lang.Object listenerPort;
+        private final java.lang.Object loadBalancerId;
+        private final java.lang.Object serverCertificateId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -106,16 +157,16 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
-            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
+            this.domain = software.amazon.jsii.Kernel.get(this, "domain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverCertificateId = software.amazon.jsii.Kernel.get(this, "serverCertificateId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String domain, final java.lang.Number listenerPort, final java.lang.String loadBalancerId, final java.lang.String serverCertificateId) {
+        protected Jsii$Proxy(final java.lang.Object domain, final java.lang.Object listenerPort, final java.lang.Object loadBalancerId, final java.lang.Object serverCertificateId) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.domain = java.util.Objects.requireNonNull(domain, "domain is required");
             this.listenerPort = java.util.Objects.requireNonNull(listenerPort, "listenerPort is required");
@@ -124,22 +175,22 @@ public interface DomainExtensionProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
-        public final java.lang.String getDomain() {
+        public final java.lang.Object getDomain() {
             return this.domain;
         }
 
         @Override
-        public final java.lang.Number getListenerPort() {
+        public final java.lang.Object getListenerPort() {
             return this.listenerPort;
         }
 
         @Override
-        public final java.lang.String getLoadBalancerId() {
+        public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
         }
 
         @Override
-        public final java.lang.String getServerCertificateId() {
+        public final java.lang.Object getServerCertificateId() {
             return this.serverCertificateId;
         }
 

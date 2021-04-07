@@ -3,6 +3,804 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `ALIYUN::VPC::AnycastEIP`
+ */
+export interface RosAnycastEIPProps {
+
+    /**
+     * @Property description: Anycast EIP instance description
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceChargeType: Anycast EIP instance charge type
+     */
+    readonly instanceChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property name: Anycast EIP instance name
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property serviceLocation: Anycast EIP instance access area
+     */
+    readonly serviceLocation?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnycastEIPProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnycastEIPPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.serviceLocation && (typeof properties.serviceLocation) !== 'object') {
+        errors.collect(ros.propertyValidator('serviceLocation', ros.validateAllowedValues)({
+          data: properties.serviceLocation,
+          allowedValues: ["international"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('serviceLocation', ros.validateString)(properties.serviceLocation));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosAnycastEIPProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIP` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIP` resource.
+ */
+// @ts-ignore TS6133
+function rosAnycastEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnycastEIPPropsValidator(properties).assertSuccess();
+    }
+    return {
+      Description: ros.stringToRosTemplate(properties.description),
+      InstanceChargeType: ros.stringToRosTemplate(properties.instanceChargeType),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      Name: ros.stringToRosTemplate(properties.name),
+      ServiceLocation: ros.stringToRosTemplate(properties.serviceLocation),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::AnycastEIP`
+ */
+export class RosAnycastEIP extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIP";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AnycastId: Anycast EIP instance ID
+     */
+    public readonly attrAnycastId: ros.IResolvable;
+
+    /**
+     * @Attribute IpAddress: Anycase IP address
+     */
+    public readonly attrIpAddress: ros.IResolvable;
+
+    /**
+     * @Attribute Name: Anycast EIP instance name
+     */
+    public readonly attrName: ros.IResolvable;
+
+    /**
+     * @Attribute OrderId: Order ID
+     */
+    public readonly attrOrderId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property description: Anycast EIP instance description
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceChargeType: Anycast EIP instance charge type
+     */
+    public instanceChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: Anycast EIP instance access public network billing method
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: Anycast EIP instance name
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serviceLocation: Anycast EIP instance access area
+     */
+    public serviceLocation: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::AnycastEIP`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnycastEIPProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnycastEIP.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAnycastId = this.getAtt('AnycastId');
+        this.attrIpAddress = this.getAtt('IpAddress');
+        this.attrName = this.getAtt('Name');
+        this.attrOrderId = this.getAtt('OrderId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.description = props.description;
+        this.instanceChargeType = props.instanceChargeType;
+        this.internetChargeType = props.internetChargeType;
+        this.name = props.name;
+        this.serviceLocation = props.serviceLocation;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            description: this.description,
+            instanceChargeType: this.instanceChargeType,
+            internetChargeType: this.internetChargeType,
+            name: this.name,
+            serviceLocation: this.serviceLocation,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnycastEIPPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::AnycastEIPAssociation`
+ */
+export interface RosAnycastEIPAssociationProps {
+
+    /**
+     * @Property anycastId: Anycast EIP instance ID.
+     */
+    readonly anycastId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    readonly bindInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    readonly bindInstanceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     */
+    readonly bindInstanceType: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAnycastEIPAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAnycastEIPAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bindInstanceId', ros.requiredValidator)(properties.bindInstanceId));
+    errors.collect(ros.propertyValidator('bindInstanceId', ros.validateString)(properties.bindInstanceId));
+    errors.collect(ros.propertyValidator('bindInstanceRegionId', ros.requiredValidator)(properties.bindInstanceRegionId));
+    errors.collect(ros.propertyValidator('bindInstanceRegionId', ros.validateString)(properties.bindInstanceRegionId));
+    errors.collect(ros.propertyValidator('bindInstanceType', ros.requiredValidator)(properties.bindInstanceType));
+    errors.collect(ros.propertyValidator('bindInstanceType', ros.validateString)(properties.bindInstanceType));
+    errors.collect(ros.propertyValidator('anycastId', ros.requiredValidator)(properties.anycastId));
+    errors.collect(ros.propertyValidator('anycastId', ros.validateString)(properties.anycastId));
+    return errors.wrap('supplied properties not correct for "RosAnycastEIPAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIPAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAnycastEIPAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::AnycastEIPAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosAnycastEIPAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAnycastEIPAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      AnycastId: ros.stringToRosTemplate(properties.anycastId),
+      BindInstanceId: ros.stringToRosTemplate(properties.bindInstanceId),
+      BindInstanceRegionId: ros.stringToRosTemplate(properties.bindInstanceRegionId),
+      BindInstanceType: ros.stringToRosTemplate(properties.bindInstanceType),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::AnycastEIPAssociation`
+ */
+export class RosAnycastEIPAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::AnycastEIPAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute AnycastId: Anycast EIP instance ID.
+     */
+    public readonly attrAnycastId: ros.IResolvable;
+
+    /**
+     * @Attribute BindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    public readonly attrBindInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute BindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    public readonly attrBindInstanceRegionId: ros.IResolvable;
+
+    /**
+     * @Attribute BindInstanceType: The cloud resource instance type to be bound.
+     */
+    public readonly attrBindInstanceType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property anycastId: Anycast EIP instance ID.
+     */
+    public anycastId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceId: The ID of the cloud resource instance to be bound.
+     */
+    public bindInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceRegionId: The region ID of the cloud resource instance to be bound.
+     */
+    public bindInstanceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     */
+    public bindInstanceType: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::VPC::AnycastEIPAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAnycastEIPAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAnycastEIPAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAnycastId = this.getAtt('AnycastId');
+        this.attrBindInstanceId = this.getAtt('BindInstanceId');
+        this.attrBindInstanceRegionId = this.getAtt('BindInstanceRegionId');
+        this.attrBindInstanceType = this.getAtt('BindInstanceType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.anycastId = props.anycastId;
+        this.bindInstanceId = props.bindInstanceId;
+        this.bindInstanceRegionId = props.bindInstanceRegionId;
+        this.bindInstanceType = props.bindInstanceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            anycastId: this.anycastId,
+            bindInstanceId: this.bindInstanceId,
+            bindInstanceRegionId: this.bindInstanceRegionId,
+            bindInstanceType: this.bindInstanceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAnycastEIPAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::BgpGroup`
+ */
+export interface RosBgpGroupProps {
+
+    /**
+     * @Property peerAsn: The AS number of the BGP peer.
+     */
+    readonly peerAsn: number | ros.IResolvable;
+
+    /**
+     * @Property routerId: The ID of the VBR.
+     */
+    readonly routerId: string | ros.IResolvable;
+
+    /**
+     * @Property authKey: The authentication key of the BGP group.
+     */
+    readonly authKey?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the BGP group. The description must be 2 to 256 characters in length.
+     * It must start with a letter but cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
+     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
+     * the original one.
+     */
+    readonly isFakeAsn?: boolean | ros.IResolvable;
+
+    /**
+     * @Property localAsn: The AS number on the Alibaba Cloud side.
+     */
+    readonly localAsn?: number | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can
+     * contain digits, periods (.), underscores (_), and hyphens (-). The name must start
+     * with a letter but cannot start with http:// or https://.
+     */
+    readonly name?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBgpGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBgpGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBgpGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('localAsn', ros.validateNumber)(properties.localAsn));
+    errors.collect(ros.propertyValidator('authKey', ros.validateString)(properties.authKey));
+    errors.collect(ros.propertyValidator('routerId', ros.requiredValidator)(properties.routerId));
+    errors.collect(ros.propertyValidator('routerId', ros.validateString)(properties.routerId));
+    errors.collect(ros.propertyValidator('peerAsn', ros.requiredValidator)(properties.peerAsn));
+    errors.collect(ros.propertyValidator('peerAsn', ros.validateNumber)(properties.peerAsn));
+    errors.collect(ros.propertyValidator('isFakeAsn', ros.validateBoolean)(properties.isFakeAsn));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosBgpGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBgpGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosBgpGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBgpGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      PeerAsn: ros.numberToRosTemplate(properties.peerAsn),
+      RouterId: ros.stringToRosTemplate(properties.routerId),
+      AuthKey: ros.stringToRosTemplate(properties.authKey),
+      Description: ros.stringToRosTemplate(properties.description),
+      IsFakeAsn: ros.booleanToRosTemplate(properties.isFakeAsn),
+      LocalAsn: ros.numberToRosTemplate(properties.localAsn),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::BgpGroup`
+ */
+export class RosBgpGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpGroup";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BgpGroupId: The ID of the BGP group.
+     */
+    public readonly attrBgpGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Name: The name of the BGP group.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property peerAsn: The AS number of the BGP peer.
+     */
+    public peerAsn: number | ros.IResolvable;
+
+    /**
+     * @Property routerId: The ID of the VBR.
+     */
+    public routerId: string | ros.IResolvable;
+
+    /**
+     * @Property authKey: The authentication key of the BGP group.
+     */
+    public authKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the BGP group. The description must be 2 to 256 characters in length.
+     * It must start with a letter but cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
+     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
+     * the original one.
+     */
+    public isFakeAsn: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property localAsn: The AS number on the Alibaba Cloud side.
+     */
+    public localAsn: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the BGP group. The name must be 2 to 128 characters in length and can
+     * contain digits, periods (.), underscores (_), and hyphens (-). The name must start
+     * with a letter but cannot start with http:// or https://.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::BgpGroup`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBgpGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBgpGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBgpGroupId = this.getAtt('BgpGroupId');
+        this.attrName = this.getAtt('Name');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.peerAsn = props.peerAsn;
+        this.routerId = props.routerId;
+        this.authKey = props.authKey;
+        this.description = props.description;
+        this.isFakeAsn = props.isFakeAsn;
+        this.localAsn = props.localAsn;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            peerAsn: this.peerAsn,
+            routerId: this.routerId,
+            authKey: this.authKey,
+            description: this.description,
+            isFakeAsn: this.isFakeAsn,
+            localAsn: this.localAsn,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBgpGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::BgpNetwork`
+ */
+export interface RosBgpNetworkProps {
+
+    /**
+     * @Property dstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
+     * to a data center.
+     */
+    readonly dstCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property routerId: The ID of the vRouter associated with the router interface.
+     */
+    readonly routerId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBgpNetworkProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBgpNetworkProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBgpNetworkPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dstCidrBlock', ros.requiredValidator)(properties.dstCidrBlock));
+    errors.collect(ros.propertyValidator('dstCidrBlock', ros.validateString)(properties.dstCidrBlock));
+    errors.collect(ros.propertyValidator('routerId', ros.requiredValidator)(properties.routerId));
+    errors.collect(ros.propertyValidator('routerId', ros.validateString)(properties.routerId));
+    return errors.wrap('supplied properties not correct for "RosBgpNetworkProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpNetwork` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBgpNetworkProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpNetwork` resource.
+ */
+// @ts-ignore TS6133
+function rosBgpNetworkPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBgpNetworkPropsValidator(properties).assertSuccess();
+    }
+    return {
+      DstCidrBlock: ros.stringToRosTemplate(properties.dstCidrBlock),
+      RouterId: ros.stringToRosTemplate(properties.routerId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::BgpNetwork`
+ */
+export class RosBgpNetwork extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpNetwork";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute DstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
+to a data center.
+     */
+    public readonly attrDstCidrBlock: ros.IResolvable;
+
+    /**
+     * @Attribute RouterId: The ID of the vRouter associated with the router interface.
+     */
+    public readonly attrRouterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dstCidrBlock: The CIDR block of the virtual private cloud (VPC) or vSwitch that you want to connect
+     * to a data center.
+     */
+    public dstCidrBlock: string | ros.IResolvable;
+
+    /**
+     * @Property routerId: The ID of the vRouter associated with the router interface.
+     */
+    public routerId: string | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::VPC::BgpNetwork`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBgpNetworkProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBgpNetwork.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDstCidrBlock = this.getAtt('DstCidrBlock');
+        this.attrRouterId = this.getAtt('RouterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dstCidrBlock = props.dstCidrBlock;
+        this.routerId = props.routerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dstCidrBlock: this.dstCidrBlock,
+            routerId: this.routerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBgpNetworkPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::BgpPeer`
+ */
+export interface RosBgpPeerProps {
+
+    /**
+     * @Property bgpGroupId: The ID of the BGP group.
+     */
+    readonly bgpGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature.
+     * Valid values:
+     * true: enables BFD.
+     * false: disables BFD.
+     */
+    readonly enableBfd?: boolean | ros.IResolvable;
+
+    /**
+     * @Property peerIpAddress: The IP address of the BGP peer.
+     */
+    readonly peerIpAddress?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBgpPeerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBgpPeerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('peerIpAddress', ros.validateString)(properties.peerIpAddress));
+    errors.collect(ros.propertyValidator('enableBfd', ros.validateBoolean)(properties.enableBfd));
+    errors.collect(ros.propertyValidator('bgpGroupId', ros.requiredValidator)(properties.bgpGroupId));
+    errors.collect(ros.propertyValidator('bgpGroupId', ros.validateString)(properties.bgpGroupId));
+    return errors.wrap('supplied properties not correct for "RosBgpPeerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpPeer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBgpPeerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::BgpPeer` resource.
+ */
+// @ts-ignore TS6133
+function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBgpPeerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      BgpGroupId: ros.stringToRosTemplate(properties.bgpGroupId),
+      EnableBfd: ros.booleanToRosTemplate(properties.enableBfd),
+      PeerIpAddress: ros.stringToRosTemplate(properties.peerIpAddress),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::BgpPeer`
+ */
+export class RosBgpPeer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::BgpPeer";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute BgpPeerId: The ID of the BGP peer.
+     */
+    public readonly attrBgpPeerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bgpGroupId: The ID of the BGP group.
+     */
+    public bgpGroupId: string | ros.IResolvable;
+
+    /**
+     * @Property enableBfd: Specifies whether to enable the Bidirectional Forwarding Detection (BFD) feature.
+     * Valid values:
+     * true: enables BFD.
+     * false: disables BFD.
+     */
+    public enableBfd: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property peerIpAddress: The IP address of the BGP peer.
+     */
+    public peerIpAddress: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::BgpPeer`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBgpPeerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBgpPeer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBgpPeerId = this.getAtt('BgpPeerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bgpGroupId = props.bgpGroupId;
+        this.enableBfd = props.enableBfd;
+        this.peerIpAddress = props.peerIpAddress;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bgpGroupId: this.bgpGroupId,
+            enableBfd: this.enableBfd,
+            peerIpAddress: this.peerIpAddress,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBgpPeerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::CommonBandwidthPackage`
  */
 export interface RosCommonBandwidthPackageProps {
@@ -10,26 +808,26 @@ export interface RosCommonBandwidthPackageProps {
     /**
      * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
      * and cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
      * PayByBandwidth (default): Billed by bandwidth.
      * PayBy95: Charged at Enhanced 95.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property isp: Line type of EIP, value: BGP (multi-line).
      */
-    readonly isp?: string;
+    readonly isp?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the Internet Shared Bandwidth instance.
@@ -37,23 +835,28 @@ export interface RosCommonBandwidthPackageProps {
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
      * start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
      * Note This parameter is only supported on the China site.
      */
-    readonly ratio?: number;
+    readonly ratio?: number | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosCommonBandwidthPackage.TagsProperty[];
 
     /**
      * @Property zone: Zone Id.
      */
-    readonly zone?: string;
+    readonly zone?: string | ros.IResolvable;
 }
 
 /**
@@ -94,6 +897,14 @@ function RosCommonBandwidthPackagePropsValidator(properties: any): ros.Validatio
           }));
     }
     errors.collect(ros.propertyValidator('ratio', ros.validateNumber)(properties.ratio));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosCommonBandwidthPackage_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
@@ -127,6 +938,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
       Name: ros.stringToRosTemplate(properties.name),
       Ratio: ros.numberToRosTemplate(properties.ratio),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+      Tags: ros.listMapper(rosCommonBandwidthPackageTagsPropertyToRosTemplate)(properties.tags),
       Zone: ros.stringToRosTemplate(properties.zone),
     };
 }
@@ -148,7 +960,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     /**
      * @Attribute BandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    public readonly attrBandwidthPackageId: any;
+    public readonly attrBandwidthPackageId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -156,26 +968,26 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
     /**
      * @Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. Unit: Mbit/s.
      */
-    public bandwidth: number;
+    public bandwidth: number | ros.IResolvable;
 
     /**
      * @Property description: The description of the Internet Shared Bandwidth instance.
      * The description must be 2 to 256 characters in length. It must start with a letter,
      * and cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. Allowed values:
      * PayByBandwidth (default): Billed by bandwidth.
      * PayBy95: Charged at Enhanced 95.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property isp: Line type of EIP, value: BGP (multi-line).
      */
-    public isp: string | undefined;
+    public isp: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the Internet Shared Bandwidth instance.
@@ -183,23 +995,28 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
      * start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. Default to 100.
      * Note This parameter is only supported on the China site.
      */
-    public ratio: number | undefined;
+    public ratio: number | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: The ID of the resource group.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosCommonBandwidthPackage.TagsProperty[] | undefined;
 
     /**
      * @Property zone: Zone Id.
      */
-    public zone: string | undefined;
+    public zone: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::CommonBandwidthPackage`.
@@ -210,7 +1027,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCommonBandwidthPackageProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCommonBandwidthPackage.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrBandwidthPackageId = ros.Token.asString(this.getAtt('BandwidthPackageId'));
+        this.attrBandwidthPackageId = this.getAtt('BandwidthPackageId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
@@ -220,6 +1037,7 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
         this.name = props.name;
         this.ratio = props.ratio;
         this.resourceGroupId = props.resourceGroupId;
+        this.tags = props.tags;
         this.zone = props.zone;
     }
 
@@ -233,12 +1051,61 @@ export class RosCommonBandwidthPackage extends ros.RosResource {
             name: this.name,
             ratio: this.ratio,
             resourceGroupId: this.resourceGroupId,
+            tags: this.tags,
             zone: this.zone,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosCommonBandwidthPackagePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosCommonBandwidthPackage {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCommonBandwidthPackage_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::CommonBandwidthPackage.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::CommonBandwidthPackage.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosCommonBandwidthPackageTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCommonBandwidthPackage_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -249,7 +1116,7 @@ export interface RosCommonBandwidthPackageIpProps {
     /**
      * @Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    readonly bandwidthPackageId: string;
+    readonly bandwidthPackageId: string | ros.IResolvable;
 
     /**
      * @Property eips: List of eip associated with the Internet Shared Bandwidth instance.
@@ -310,12 +1177,12 @@ export class RosCommonBandwidthPackageIp extends ros.RosResource {
     /**
      * @Attribute AllocationIds: All eip allocation ids of common bandwidth package.
      */
-    public readonly attrAllocationIds: any;
+    public readonly attrAllocationIds: ros.IResolvable;
 
     /**
      * @Attribute IpAddresses: All eip addresses of common bandwidth package.
      */
-    public readonly attrIpAddresses: any;
+    public readonly attrIpAddresses: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -323,7 +1190,7 @@ export class RosCommonBandwidthPackageIp extends ros.RosResource {
     /**
      * @Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance.
      */
-    public bandwidthPackageId: string;
+    public bandwidthPackageId: string | ros.IResolvable;
 
     /**
      * @Property eips: List of eip associated with the Internet Shared Bandwidth instance.
@@ -339,8 +1206,8 @@ export class RosCommonBandwidthPackageIp extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCommonBandwidthPackageIpProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCommonBandwidthPackageIp.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAllocationIds = ros.Token.asString(this.getAtt('AllocationIds'));
-        this.attrIpAddresses = ros.Token.asString(this.getAtt('IpAddresses'));
+        this.attrAllocationIds = this.getAtt('AllocationIds');
+        this.attrIpAddresses = this.getAtt('IpAddresses');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidthPackageId = props.bandwidthPackageId;
@@ -369,11 +1236,11 @@ export namespace RosCommonBandwidthPackageIp {
      * 0 which means no limit.
      * Default to no limit.
          */
-        readonly bandwidth?: number;
+        readonly bandwidth?: number | ros.IResolvable;
         /**
          * @Property allocationId: The ID of the EIP instance.
          */
-        readonly allocationId: string;
+        readonly allocationId: string | ros.IResolvable;
     }
 }
 /**
@@ -424,19 +1291,19 @@ export interface RosCustomerGatewayProps {
     /**
      * @Property ipAddress: The IP address of the user gateway.
      */
-    readonly ipAddress: string;
+    readonly ipAddress: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the user gateway.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -507,7 +1374,7 @@ export class RosCustomerGateway extends ros.RosResource {
     /**
      * @Attribute CustomerGatewayId: The ID of the user gateway.
      */
-    public readonly attrCustomerGatewayId: any;
+    public readonly attrCustomerGatewayId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -515,19 +1382,19 @@ export class RosCustomerGateway extends ros.RosResource {
     /**
      * @Property ipAddress: The IP address of the user gateway.
      */
-    public ipAddress: string;
+    public ipAddress: string | ros.IResolvable;
 
     /**
      * @Property description: Description of the user gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the user gateway.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::CustomerGateway`.
@@ -538,7 +1405,7 @@ export class RosCustomerGateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosCustomerGatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosCustomerGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCustomerGatewayId = ros.Token.asString(this.getAtt('CustomerGatewayId'));
+        this.attrCustomerGatewayId = this.getAtt('CustomerGatewayId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipAddress = props.ipAddress;
@@ -572,7 +1439,7 @@ export interface RosEIPProps {
     /**
      * @Property bandwidth: Bandwidth for the output network. Default is 5MB.
      */
-    readonly bandwidth?: number;
+    readonly bandwidth?: number | ros.IResolvable;
 
     /**
      * @Property deletionProtection: Whether to enable deletion protection.
@@ -583,52 +1450,53 @@ export interface RosEIPProps {
     /**
      * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: The resource charge type. Default value is Postpaid
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
      */
-    readonly isp?: string;
+    readonly isp?: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property netmode: The network type. Valid value: public (public network).
      */
-    readonly netmode?: string;
+    readonly netmode?: string | ros.IResolvable;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. 
+     *   While choose pay by year, it could be from 1 to 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    readonly resourceGroupId?: string;
+    readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosEIP.TagsProperty[];
 }
 
 /**
@@ -659,11 +1527,10 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     errors.collect(ros.propertyValidator('isp', ros.validateString)(properties.isp));
     if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateRange)({
-            data: properties.period,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
@@ -685,7 +1552,7 @@ function RosEIPPropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEIP_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosEIPProps"');
 }
 
@@ -715,7 +1582,7 @@ function rosEIPPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       Period: ros.numberToRosTemplate(properties.period),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
       ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosEIPTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -736,17 +1603,17 @@ export class RosEIP extends ros.RosResource {
     /**
      * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
-    public readonly attrAllocationId: any;
+    public readonly attrAllocationId: ros.IResolvable;
 
     /**
      * @Attribute EipAddress: IP address of created EIP.
      */
-    public readonly attrEipAddress: any;
+    public readonly attrEipAddress: ros.IResolvable;
 
     /**
      * @Attribute OrderId: Order ID of prepaid EIP instance.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -759,7 +1626,7 @@ export class RosEIP extends ros.RosResource {
     /**
      * @Property bandwidth: Bandwidth for the output network. Default is 5MB.
      */
-    public bandwidth: number | undefined;
+    public bandwidth: number | ros.IResolvable | undefined;
 
     /**
      * @Property deletionProtection: Whether to enable deletion protection.
@@ -770,52 +1637,53 @@ export class RosEIP extends ros.RosResource {
     /**
      * @Property description: Optional. The description of the EIP. The description must be 2 to 256 characters in length. It must start with a letter. It cannot start with http://  or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: The resource charge type. Default value is Postpaid
      */
-    public instanceChargeType: string | undefined;
+    public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: The network charge type. Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property isp: ISP tag for finance cloud region. only for cn-hangzhou and cn-qingdao region), if you are not finance cloud user, this value will be ignore.
      */
-    public isp: string | undefined;
+    public isp: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: The name of the EIP. The name must be 2 to 128 characters in length. It must start with a letter. It can contain numbers, periods (.), underscores (_), and hyphens (-). It cannot start with http://  or https://
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property netmode: The network type. Valid value: public (public network).
      */
-    public netmode: string | undefined;
+    public netmode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property period: Prepaid time period. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. 
+     *   While choose pay by year, it could be from 1 to 3.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property resourceGroupId: Resource group id.
      */
-    public resourceGroupId: string | undefined;
+    public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to eip. Max support 20 tags to add during create eip. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosEIP.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::EIP`.
@@ -826,9 +1694,9 @@ export class RosEIP extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosEIPProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosEIP.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAllocationId = ros.Token.asString(this.getAtt('AllocationId'));
-        this.attrEipAddress = ros.Token.asString(this.getAtt('EipAddress'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
+        this.attrAllocationId = this.getAtt('AllocationId');
+        this.attrEipAddress = this.getAtt('EipAddress');
+        this.attrOrderId = this.getAtt('OrderId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.autoPay = props.autoPay;
@@ -843,7 +1711,7 @@ export class RosEIP extends ros.RosResource {
         this.period = props.period;
         this.pricingCycle = props.pricingCycle;
         this.resourceGroupId = props.resourceGroupId;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::EIP", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -861,12 +1729,60 @@ export class RosEIP extends ros.RosResource {
             period: this.period,
             pricingCycle: this.pricingCycle,
             resourceGroupId: this.resourceGroupId,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosEIPPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosEIP {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEIP_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIP.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIP.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEIPTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEIP_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -877,12 +1793,12 @@ export interface RosEIPAssociationProps {
     /**
      * @Property allocationId: EIP instance id to bind.
      */
-    readonly allocationId: string;
+    readonly allocationId: string | ros.IResolvable;
 
     /**
      * @Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property mode: The mode of association. Valid values:
@@ -891,13 +1807,13 @@ export interface RosEIPAssociationProps {
      * MULTI_BINDED: Multi-EIP to ENI mode.
      * This is required only when the value of InstanceType is NetworkInterface.
      */
-    readonly mode?: string;
+    readonly mode?: string | ros.IResolvable;
 
     /**
      * @Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
      * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
      */
-    readonly privateIpAddress?: string;
+    readonly privateIpAddress?: string | ros.IResolvable;
 }
 
 /**
@@ -963,12 +1879,12 @@ export class RosEIPAssociation extends ros.RosResource {
     /**
      * @Attribute AllocationId: ID that Aliyun assigns to represent the allocation of the address for use with VPC. Returned only for VPC elastic IP addresses.
      */
-    public readonly attrAllocationId: any;
+    public readonly attrAllocationId: ros.IResolvable;
 
     /**
      * @Attribute EipAddress: IP address of created EIP.
      */
-    public readonly attrEipAddress: any;
+    public readonly attrEipAddress: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -976,12 +1892,12 @@ export class RosEIPAssociation extends ros.RosResource {
     /**
      * @Property allocationId: EIP instance id to bind.
      */
-    public allocationId: string;
+    public allocationId: string | ros.IResolvable;
 
     /**
      * @Property instanceId: ECS/SLB/NAT/HaVip/ENI instance id to bid the EIP.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property mode: The mode of association. Valid values:
@@ -990,13 +1906,13 @@ export class RosEIPAssociation extends ros.RosResource {
      * MULTI_BINDED: Multi-EIP to ENI mode.
      * This is required only when the value of InstanceType is NetworkInterface.
      */
-    public mode: string | undefined;
+    public mode: string | ros.IResolvable | undefined;
 
     /**
      * @Property privateIpAddress: An IP address in the CIDR block of the VSwitch.
      * If you leave the option empty, the system allocates a private IP address according to the VPC ID and VSwitch ID.
      */
-    public privateIpAddress: string | undefined;
+    public privateIpAddress: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::EIPAssociation`.
@@ -1007,8 +1923,8 @@ export class RosEIPAssociation extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosEIPAssociationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosEIPAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrAllocationId = ros.Token.asString(this.getAtt('AllocationId'));
-        this.attrEipAddress = ros.Token.asString(this.getAtt('EipAddress'));
+        this.attrAllocationId = this.getAtt('AllocationId');
+        this.attrEipAddress = this.getAtt('EipAddress');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.allocationId = props.allocationId;
@@ -1032,6 +1948,215 @@ export class RosEIPAssociation extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::EIPSegment`
+ */
+export interface RosEIPSegmentProps {
+
+    /**
+     * @Property eipMask: The mask of the contiguous EIP group. Valid values:
+     * 28: 16 contiguous EIPs are allocated for one call.
+     * 27: 32 contiguous EIPs are allocated for one call.
+     * 26: 64 contiguous EIPs are allocated for one call.
+     * 25: 128 contiguous EIPs are allocated for one call.
+     * 24: 256 contiguous EIPs are allocated for one call.
+     * Note The actual number of assigned EIPs may be less than the expected number because one,
+     * three, or four EIPs may be reserved.
+     */
+    readonly eipMask: number | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property internetChargeType: The metering method of the contiguous EIPs. Valid values:
+     * PayByBandwidth: Fees are charged based on bandwidth usage. This is the default value.
+     * PayByTraffic: Fees are charged based on data transfer.
+     * Note If the Netmode parameter is set to hybrid, InternetChargeType is set to PayByBandwidth.
+     */
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property netmode: The network type. Valid values:
+     * public: the Internet. This is the default value. After contiguous EIPs are associated with
+     * cloud resources, the cloud resources can access the Internet by using the EIPs.
+     * hybrid: the hybrid cloud. After contiguous EIPs are associated with cloud resources, the
+     * cloud resources can access the hybrid cloud by using the EIPs.
+     * Note This network type is available only to users who are added to the whitelist. To use
+     * this network type, contact your customer manager.
+     */
+    readonly netmode?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the EIPs belong.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEIPSegmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEIPSegmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEIPSegmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('eipMask', ros.requiredValidator)(properties.eipMask));
+    if(properties.eipMask && (typeof properties.eipMask) !== 'object') {
+        errors.collect(ros.propertyValidator('eipMask', ros.validateAllowedValues)({
+          data: properties.eipMask,
+          allowedValues: [28,27,26,25,24],
+        }));
+    }
+    errors.collect(ros.propertyValidator('eipMask', ros.validateNumber)(properties.eipMask));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.netmode && (typeof properties.netmode) !== 'object') {
+        errors.collect(ros.propertyValidator('netmode', ros.validateAllowedValues)({
+          data: properties.netmode,
+          allowedValues: ["public","hybrid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('netmode', ros.validateString)(properties.netmode));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
+          data: properties.internetChargeType,
+          allowedValues: ["PayByBandwidth","PayByTraffic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    return errors.wrap('supplied properties not correct for "RosEIPSegmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPSegment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEIPSegmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::EIPSegment` resource.
+ */
+// @ts-ignore TS6133
+function rosEIPSegmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEIPSegmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      EipMask: ros.numberToRosTemplate(properties.eipMask),
+      Bandwidth: ros.numberToRosTemplate(properties.bandwidth),
+      InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      Netmode: ros.stringToRosTemplate(properties.netmode),
+      ResourceGroupId: ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::EIPSegment`
+ */
+export class RosEIPSegment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::EIPSegment";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute EipAddresses: List of EIP addresses. like [{"AllocationId": "eip-xxx", "IpAddress": "xx.xx.xx.xx"}]
+     */
+    public readonly attrEipAddresses: ros.IResolvable;
+
+    /**
+     * @Attribute EipSegmentInstanceId: The ID of the contiguous EIP group.
+     */
+    public readonly attrEipSegmentInstanceId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property eipMask: The mask of the contiguous EIP group. Valid values:
+     * 28: 16 contiguous EIPs are allocated for one call.
+     * 27: 32 contiguous EIPs are allocated for one call.
+     * 26: 64 contiguous EIPs are allocated for one call.
+     * 25: 128 contiguous EIPs are allocated for one call.
+     * 24: 256 contiguous EIPs are allocated for one call.
+     * Note The actual number of assigned EIPs may be less than the expected number because one,
+     * three, or four EIPs may be reserved.
+     */
+    public eipMask: number | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: The maximum bandwidth of the contiguous EIPs. Unit: Mbit/s. Default value: 5.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property internetChargeType: The metering method of the contiguous EIPs. Valid values:
+     * PayByBandwidth: Fees are charged based on bandwidth usage. This is the default value.
+     * PayByTraffic: Fees are charged based on data transfer.
+     * Note If the Netmode parameter is set to hybrid, InternetChargeType is set to PayByBandwidth.
+     */
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property netmode: The network type. Valid values:
+     * public: the Internet. This is the default value. After contiguous EIPs are associated with
+     * cloud resources, the cloud resources can access the Internet by using the EIPs.
+     * hybrid: the hybrid cloud. After contiguous EIPs are associated with cloud resources, the
+     * cloud resources can access the hybrid cloud by using the EIPs.
+     * Note This network type is available only to users who are added to the whitelist. To use
+     * this network type, contact your customer manager.
+     */
+    public netmode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group to which the EIPs belong.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::EIPSegment`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEIPSegmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEIPSegment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEipAddresses = this.getAtt('EipAddresses');
+        this.attrEipSegmentInstanceId = this.getAtt('EipSegmentInstanceId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.eipMask = props.eipMask;
+        this.bandwidth = props.bandwidth;
+        this.internetChargeType = props.internetChargeType;
+        this.netmode = props.netmode;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            eipMask: this.eipMask,
+            bandwidth: this.bandwidth,
+            internetChargeType: this.internetChargeType,
+            netmode: this.netmode,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEIPSegmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::GrantInstanceToCen`
  */
 export interface RosGrantInstanceToCenProps {
@@ -1039,17 +2164,17 @@ export interface RosGrantInstanceToCenProps {
     /**
      * @Property cenId: The ID of the CEN instance to be authorized.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 
     /**
      * @Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
      */
-    readonly cenOwnerId: number;
+    readonly cenOwnerId: number | ros.IResolvable;
 
     /**
      * @Property instanceId: The ID of the network instance.
      */
-    readonly instanceId: string;
+    readonly instanceId: string | ros.IResolvable;
 
     /**
      * @Property instanceType: The type of the network instance. Valid values:
@@ -1057,7 +2182,7 @@ export interface RosGrantInstanceToCenProps {
      * VBR: Virtual Border Router (VBR).
      * CCN: Cloud Connect Network (CCN).
      */
-    readonly instanceType: string;
+    readonly instanceType: string | ros.IResolvable;
 }
 
 /**
@@ -1125,12 +2250,12 @@ export class RosGrantInstanceToCen extends ros.RosResource {
     /**
      * @Attribute CenId: The ID of the CEN instance to be authorized.
      */
-    public readonly attrCenId: any;
+    public readonly attrCenId: ros.IResolvable;
 
     /**
      * @Attribute InstanceId: The ID of the network instance.
      */
-    public readonly attrInstanceId: any;
+    public readonly attrInstanceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1138,17 +2263,17 @@ export class RosGrantInstanceToCen extends ros.RosResource {
     /**
      * @Property cenId: The ID of the CEN instance to be authorized.
      */
-    public cenId: string;
+    public cenId: string | ros.IResolvable;
 
     /**
      * @Property cenOwnerId: The UID of the account to which the target CEN instance belongs.
      */
-    public cenOwnerId: number;
+    public cenOwnerId: number | ros.IResolvable;
 
     /**
      * @Property instanceId: The ID of the network instance.
      */
-    public instanceId: string;
+    public instanceId: string | ros.IResolvable;
 
     /**
      * @Property instanceType: The type of the network instance. Valid values:
@@ -1156,7 +2281,7 @@ export class RosGrantInstanceToCen extends ros.RosResource {
      * VBR: Virtual Border Router (VBR).
      * CCN: Cloud Connect Network (CCN).
      */
-    public instanceType: string;
+    public instanceType: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::GrantInstanceToCen`.
@@ -1167,8 +2292,8 @@ export class RosGrantInstanceToCen extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosGrantInstanceToCenProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosGrantInstanceToCen.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrCenId = ros.Token.asString(this.getAtt('CenId'));
-        this.attrInstanceId = ros.Token.asString(this.getAtt('InstanceId'));
+        this.attrCenId = this.getAtt('CenId');
+        this.attrInstanceId = this.getAtt('InstanceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.cenId = props.cenId;
@@ -1192,6 +2317,367 @@ export class RosGrantInstanceToCen extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::IpsecServer`
+ */
+export interface RosIpsecServerProps {
+
+    /**
+     * @Property clientIpPool: Client network segment refers to the address segment that assigns access addresses to the virtual network card of the client. Note: The client network segment cannot conflict with the VPC side network segment.
+     */
+    readonly clientIpPool: string | ros.IResolvable;
+
+    /**
+     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0/24,192.168.2.0/24.
+     */
+    readonly localSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: VPN gateway instance ID.
+     */
+    readonly vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property effectImmediately: true: Apply the new configuration and trigger a reconnection immediately. 
+     * false: Trigger a reconnection only when network traffic occurs. (The reconnection may cause the network to be unavailable for a brief moment)
+     */
+    readonly effectImmediately?: boolean | ros.IResolvable;
+
+    /**
+     * @Property ikeConfig: Negotiation parameter configuration in the first phase.
+     */
+    readonly ikeConfig?: RosIpsecServer.IkeConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property ipsecConfig: Negotiation parameter configuration in the second phase.
+     */
+    readonly ipsecConfig?: RosIpsecServer.IpsecConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character. It can contain digits, underscores (_), and hyphens (-).
+     */
+    readonly ipsecServerName?: string | ros.IResolvable;
+
+    /**
+     * @Property psk: Pre-Shared key. Used for identity authentication between the VPN gateway and the client. A 16-bit random string is randomly generated by default, or you can manually specify the key. The length is limited to 100 characters.
+     */
+    readonly psk?: string | ros.IResolvable;
+
+    /**
+     * @Property pskEnabled: Whether to enable the pre-shared key authentication method. Only the value is true, which means that the pre-shared key authentication mode is enabled.
+     */
+    readonly pskEnabled?: boolean | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosIpsecServerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosIpsecServerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpsecServerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('localSubnet', ros.requiredValidator)(properties.localSubnet));
+    errors.collect(ros.propertyValidator('localSubnet', ros.validateString)(properties.localSubnet));
+    errors.collect(ros.propertyValidator('effectImmediately', ros.validateBoolean)(properties.effectImmediately));
+    errors.collect(ros.propertyValidator('clientIpPool', ros.requiredValidator)(properties.clientIpPool));
+    errors.collect(ros.propertyValidator('clientIpPool', ros.validateString)(properties.clientIpPool));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.requiredValidator)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('vpnGatewayId', ros.validateString)(properties.vpnGatewayId));
+    errors.collect(ros.propertyValidator('ipsecConfig', RosIpsecServer_IpsecConfigPropertyValidator)(properties.ipsecConfig));
+    errors.collect(ros.propertyValidator('psk', ros.validateString)(properties.psk));
+    errors.collect(ros.propertyValidator('ikeConfig', RosIpsecServer_IkeConfigPropertyValidator)(properties.ikeConfig));
+    errors.collect(ros.propertyValidator('ipsecServerName', ros.validateString)(properties.ipsecServerName));
+    errors.collect(ros.propertyValidator('pskEnabled', ros.validateBoolean)(properties.pskEnabled));
+    return errors.wrap('supplied properties not correct for "RosIpsecServerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosIpsecServerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer` resource.
+ */
+// @ts-ignore TS6133
+function rosIpsecServerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosIpsecServerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      ClientIpPool: ros.stringToRosTemplate(properties.clientIpPool),
+      LocalSubnet: ros.stringToRosTemplate(properties.localSubnet),
+      VpnGatewayId: ros.stringToRosTemplate(properties.vpnGatewayId),
+      EffectImmediately: ros.booleanToRosTemplate(properties.effectImmediately),
+      IkeConfig: rosIpsecServerIkeConfigPropertyToRosTemplate(properties.ikeConfig),
+      IpsecConfig: rosIpsecServerIpsecConfigPropertyToRosTemplate(properties.ipsecConfig),
+      IpsecServerName: ros.stringToRosTemplate(properties.ipsecServerName),
+      Psk: ros.stringToRosTemplate(properties.psk),
+      PskEnabled: ros.booleanToRosTemplate(properties.pskEnabled),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::IpsecServer`
+ */
+export class RosIpsecServer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::IpsecServer";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute IpsecServerId: IPsec server ID.
+     */
+    public readonly attrIpsecServerId: ros.IResolvable;
+
+    /**
+     * @Attribute IpsecServerName: IPsec server name.
+     */
+    public readonly attrIpsecServerName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clientIpPool: Client network segment refers to the address segment that assigns access addresses to the virtual network card of the client. Note: The client network segment cannot conflict with the VPC side network segment.
+     */
+    public clientIpPool: string | ros.IResolvable;
+
+    /**
+     * @Property localSubnet: The local network segment refers to the network segment on the VPC side that needs to be interconnected with the client network segment. Use half-width commas (,) to separate multiple network segments, for example: 192.168.1.0/24,192.168.2.0/24.
+     */
+    public localSubnet: string | ros.IResolvable;
+
+    /**
+     * @Property vpnGatewayId: VPN gateway instance ID.
+     */
+    public vpnGatewayId: string | ros.IResolvable;
+
+    /**
+     * @Property effectImmediately: true: Apply the new configuration and trigger a reconnection immediately. 
+     * false: Trigger a reconnection only when network traffic occurs. (The reconnection may cause the network to be unavailable for a brief moment)
+     */
+    public effectImmediately: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property ikeConfig: Negotiation parameter configuration in the first phase.
+     */
+    public ikeConfig: RosIpsecServer.IkeConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipsecConfig: Negotiation parameter configuration in the second phase.
+     */
+    public ipsecConfig: RosIpsecServer.IpsecConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character. It can contain digits, underscores (_), and hyphens (-).
+     */
+    public ipsecServerName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property psk: Pre-Shared key. Used for identity authentication between the VPN gateway and the client. A 16-bit random string is randomly generated by default, or you can manually specify the key. The length is limited to 100 characters.
+     */
+    public psk: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property pskEnabled: Whether to enable the pre-shared key authentication method. Only the value is true, which means that the pre-shared key authentication mode is enabled.
+     */
+    public pskEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::IpsecServer`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosIpsecServerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosIpsecServer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrIpsecServerId = this.getAtt('IpsecServerId');
+        this.attrIpsecServerName = this.getAtt('IpsecServerName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clientIpPool = props.clientIpPool;
+        this.localSubnet = props.localSubnet;
+        this.vpnGatewayId = props.vpnGatewayId;
+        this.effectImmediately = props.effectImmediately;
+        this.ikeConfig = props.ikeConfig;
+        this.ipsecConfig = props.ipsecConfig;
+        this.ipsecServerName = props.ipsecServerName;
+        this.psk = props.psk;
+        this.pskEnabled = props.pskEnabled;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clientIpPool: this.clientIpPool,
+            localSubnet: this.localSubnet,
+            vpnGatewayId: this.vpnGatewayId,
+            effectImmediately: this.effectImmediately,
+            ikeConfig: this.ikeConfig,
+            ipsecConfig: this.ipsecConfig,
+            ipsecServerName: this.ipsecServerName,
+            psk: this.psk,
+            pskEnabled: this.pskEnabled,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosIpsecServerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosIpsecServer {
+    /**
+     * @stability external
+     */
+    export interface IkeConfigProperty {
+        /**
+         * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase. Default value: sha1.
+         */
+        readonly ikeAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property localId: IPsec server ID. Support FQDN and IP address format, the default value is the VPN gateway public network IP address.
+         */
+        readonly localId?: string | ros.IResolvable;
+        /**
+         * @Property ikeEncAlg: Encryption algorithm negotiated in the first stage. Default value: aes.
+         */
+        readonly ikeEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ikeVersion: The version of the IKE protocol. Value: ikev1 or ikev2, default value: ikev2.
+         */
+        readonly ikeVersion?: string | ros.IResolvable;
+        /**
+         * @Property ikeMode: Negotiation mode of the IKE version. Default value: main.
+         */
+        readonly ikeMode?: string | ros.IResolvable;
+        /**
+         * @Property ikeLifetime: The life cycle of the SA negotiated in the first phase. Default value: 86400, in seconds.
+         */
+        readonly ikeLifetime?: number | ros.IResolvable;
+        /**
+         * @Property remoteId: Peer ID. Support FQDN and IP address format, the default value is empty.
+         */
+        readonly remoteId?: string | ros.IResolvable;
+        /**
+         * @Property ikePfs: The Diffie-Hellman key exchange algorithm used in the first stage of negotiation. Default value: group2.
+         */
+        readonly ikePfs?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IkeConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `IkeConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpsecServer_IkeConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ikeAuthAlg', ros.validateString)(properties.ikeAuthAlg));
+    errors.collect(ros.propertyValidator('localId', ros.validateString)(properties.localId));
+    errors.collect(ros.propertyValidator('ikeEncAlg', ros.validateString)(properties.ikeEncAlg));
+    errors.collect(ros.propertyValidator('ikeVersion', ros.validateString)(properties.ikeVersion));
+    errors.collect(ros.propertyValidator('ikeMode', ros.validateString)(properties.ikeMode));
+    errors.collect(ros.propertyValidator('ikeLifetime', ros.validateNumber)(properties.ikeLifetime));
+    errors.collect(ros.propertyValidator('remoteId', ros.validateString)(properties.remoteId));
+    errors.collect(ros.propertyValidator('ikePfs', ros.validateString)(properties.ikePfs));
+    return errors.wrap('supplied properties not correct for "IkeConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer.IkeConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `IkeConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer.IkeConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosIpsecServerIkeConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpsecServer_IkeConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IkeAuthAlg: ros.stringToRosTemplate(properties.ikeAuthAlg),
+      LocalId: ros.stringToRosTemplate(properties.localId),
+      IkeEncAlg: ros.stringToRosTemplate(properties.ikeEncAlg),
+      IkeVersion: ros.stringToRosTemplate(properties.ikeVersion),
+      IkeMode: ros.stringToRosTemplate(properties.ikeMode),
+      IkeLifetime: ros.numberToRosTemplate(properties.ikeLifetime),
+      RemoteId: ros.stringToRosTemplate(properties.remoteId),
+      IkePfs: ros.stringToRosTemplate(properties.ikePfs),
+    };
+}
+
+export namespace RosIpsecServer {
+    /**
+     * @stability external
+     */
+    export interface IpsecConfigProperty {
+        /**
+         * @Property ipsecPfs: The Diffie-Hellman key exchange algorithm used in the second phase of negotiation. Default value: group2.
+         */
+        readonly ipsecPfs?: string | ros.IResolvable;
+        /**
+         * @Property ipsecEncAlg: Encryption algorithm negotiated in the second stage. Default value: aes.
+         */
+        readonly ipsecEncAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecAuthAlg: The authentication algorithm negotiated in the second phase. Default value: sha1.
+         */
+        readonly ipsecAuthAlg?: string | ros.IResolvable;
+        /**
+         * @Property ipsecLifetime: The lifetime of the SA negotiated in the second stage. Default value: 86400, in seconds.
+         */
+        readonly ipsecLifetime?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IpsecConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `IpsecConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpsecServer_IpsecConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ipsecPfs', ros.validateString)(properties.ipsecPfs));
+    errors.collect(ros.propertyValidator('ipsecEncAlg', ros.validateString)(properties.ipsecEncAlg));
+    errors.collect(ros.propertyValidator('ipsecAuthAlg', ros.validateString)(properties.ipsecAuthAlg));
+    errors.collect(ros.propertyValidator('ipsecLifetime', ros.validateNumber)(properties.ipsecLifetime));
+    return errors.wrap('supplied properties not correct for "IpsecConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer.IpsecConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `IpsecConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::IpsecServer.IpsecConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosIpsecServerIpsecConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpsecServer_IpsecConfigPropertyValidator(properties).assertSuccess();
+    return {
+      IpsecPfs: ros.stringToRosTemplate(properties.ipsecPfs),
+      IpsecEncAlg: ros.stringToRosTemplate(properties.ipsecEncAlg),
+      IpsecAuthAlg: ros.stringToRosTemplate(properties.ipsecAuthAlg),
+      IpsecLifetime: ros.numberToRosTemplate(properties.ipsecLifetime),
+    };
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::Ipv6Gateway`
  */
 export interface RosIpv6GatewayProps {
@@ -1199,19 +2685,19 @@ export interface RosIpv6GatewayProps {
     /**
      * @Property vpcId: To open VPC ID IPv6 gateway.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: Description of IPv6 gateway.
      * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property name: Name of the IPv6 gateway.
      * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property spec: Specifications IPv6 gateway, the value:
@@ -1220,7 +2706,12 @@ export interface RosIpv6GatewayProps {
      * Large: Enterprise Enhanced Edition.
      * Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
      */
-    readonly spec?: string;
+    readonly spec?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosIpv6Gateway.TagsProperty[];
 }
 
 /**
@@ -1237,6 +2728,14 @@ function RosIpv6GatewayPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosIpv6Gateway_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosIpv6GatewayProps"');
 }
@@ -1259,6 +2758,7 @@ function rosIpv6GatewayPropsToRosTemplate(properties: any, enableResourcePropert
       Description: ros.stringToRosTemplate(properties.description),
       Name: ros.stringToRosTemplate(properties.name),
       Spec: ros.stringToRosTemplate(properties.spec),
+      Tags: ros.listMapper(rosIpv6GatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1279,7 +2779,7 @@ export class RosIpv6Gateway extends ros.RosResource {
     /**
      * @Attribute Ipv6GatewayId: ID IPv6 gateway.
      */
-    public readonly attrIpv6GatewayId: any;
+    public readonly attrIpv6GatewayId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1287,19 +2787,19 @@ export class RosIpv6Gateway extends ros.RosResource {
     /**
      * @Property vpcId: To open VPC ID IPv6 gateway.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: Description of IPv6 gateway.
      * Length of 2 to 256 characters, must begin with a letter or Chinese, may contain numbers, numbers, underscore (_) and dot dash (-), but not at the http (.): // or https: // at the beginning .
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: Name of the IPv6 gateway.
      * Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): // or with https: // .
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property spec: Specifications IPv6 gateway, the value:
@@ -1308,7 +2808,12 @@ export class RosIpv6Gateway extends ros.RosResource {
      * Large: Enterprise Enhanced Edition.
      * Different specifications of the IPv6 forwarding capability of the gateway is different. For more information, see IPv6 gateway specification.
      */
-    public spec: string | undefined;
+    public spec: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosIpv6Gateway.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::Ipv6Gateway`.
@@ -1319,13 +2824,14 @@ export class RosIpv6Gateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosIpv6GatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosIpv6Gateway.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrIpv6GatewayId = ros.Token.asString(this.getAtt('Ipv6GatewayId'));
+        this.attrIpv6GatewayId = this.getAtt('Ipv6GatewayId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
         this.description = props.description;
         this.name = props.name;
         this.spec = props.spec;
+        this.tags = props.tags;
     }
 
 
@@ -1335,11 +2841,60 @@ export class RosIpv6Gateway extends ros.RosResource {
             description: this.description,
             name: this.name,
             spec: this.spec,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosIpv6GatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosIpv6Gateway {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpv6Gateway_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6Gateway.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6Gateway.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosIpv6GatewayTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpv6Gateway_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1355,24 +2910,29 @@ export interface RosIpv6InternetBandwidthProps {
      * Medium (Enterprise Edition), the public network bandwidth range from 1 to 1000.
      * Large (Enterprise Edition), the public network bandwidth range 1-2000.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * @Property ipv6AddressId: ID of IPv6 address.
      */
-    readonly ipv6AddressId: string;
+    readonly ipv6AddressId: string | ros.IResolvable;
 
     /**
      * @Property ipv6GatewayId: ID of IPv6 gateway.
      */
-    readonly ipv6GatewayId: string;
+    readonly ipv6GatewayId: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: IPv6 public network bandwidth billing, value:
      * PayByTraffic: by using the traffic accounting.
      * PayByBandwidth (default): Bandwidth billing.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosIpv6InternetBandwidth.TagsProperty[];
 }
 
 /**
@@ -1398,6 +2958,14 @@ function RosIpv6InternetBandwidthPropsValidator(properties: any): ros.Validation
     errors.collect(ros.propertyValidator('ipv6AddressId', ros.validateString)(properties.ipv6AddressId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.requiredValidator)(properties.ipv6GatewayId));
     errors.collect(ros.propertyValidator('ipv6GatewayId', ros.validateString)(properties.ipv6GatewayId));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosIpv6InternetBandwidth_TagsPropertyValidator))(properties.tags));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -1426,6 +2994,7 @@ function rosIpv6InternetBandwidthPropsToRosTemplate(properties: any, enableResou
       Ipv6AddressId: ros.stringToRosTemplate(properties.ipv6AddressId),
       Ipv6GatewayId: ros.stringToRosTemplate(properties.ipv6GatewayId),
       InternetChargeType: ros.stringToRosTemplate(properties.internetChargeType),
+      Tags: ros.listMapper(rosIpv6InternetBandwidthTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1446,7 +3015,7 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
     /**
      * @Attribute InternetBandwidthId: Purchase of public network bandwidth.
      */
-    public readonly attrInternetBandwidthId: any;
+    public readonly attrInternetBandwidthId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1459,24 +3028,29 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
      * Medium (Enterprise Edition), the public network bandwidth range from 1 to 1000.
      * Large (Enterprise Edition), the public network bandwidth range 1-2000.
      */
-    public bandwidth: number;
+    public bandwidth: number | ros.IResolvable;
 
     /**
      * @Property ipv6AddressId: ID of IPv6 address.
      */
-    public ipv6AddressId: string;
+    public ipv6AddressId: string | ros.IResolvable;
 
     /**
      * @Property ipv6GatewayId: ID of IPv6 gateway.
      */
-    public ipv6GatewayId: string;
+    public ipv6GatewayId: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: IPv6 public network bandwidth billing, value:
      * PayByTraffic: by using the traffic accounting.
      * PayByBandwidth (default): Bandwidth billing.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosIpv6InternetBandwidth.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::Ipv6InternetBandwidth`.
@@ -1487,13 +3061,14 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosIpv6InternetBandwidthProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosIpv6InternetBandwidth.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrInternetBandwidthId = ros.Token.asString(this.getAtt('InternetBandwidthId'));
+        this.attrInternetBandwidthId = this.getAtt('InternetBandwidthId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
         this.ipv6AddressId = props.ipv6AddressId;
         this.ipv6GatewayId = props.ipv6GatewayId;
         this.internetChargeType = props.internetChargeType;
+        this.tags = props.tags;
     }
 
 
@@ -1503,11 +3078,60 @@ export class RosIpv6InternetBandwidth extends ros.RosResource {
             ipv6AddressId: this.ipv6AddressId,
             ipv6GatewayId: this.ipv6GatewayId,
             internetChargeType: this.internetChargeType,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosIpv6InternetBandwidthPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosIpv6InternetBandwidth {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosIpv6InternetBandwidth_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6InternetBandwidth.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::Ipv6InternetBandwidth.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosIpv6InternetBandwidthTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosIpv6InternetBandwidth_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1518,12 +3142,12 @@ export interface RosNatGatewayProps {
     /**
      * @Property vpcId: The VPC id to create NAT gateway.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The VSwitch id to create NAT gateway.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Specifies whether to enable automatic payment. Default is false.
@@ -1544,50 +3168,50 @@ export interface RosNatGatewayProps {
     /**
      * @Property description: Description of the NAT gateway, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
      */
-    readonly duration?: number;
+    readonly duration?: number | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
      * PayByLcu: billed on a pay-by-LCU basis.
      */
-    readonly internetChargeType?: string;
+    readonly internetChargeType?: string | ros.IResolvable;
 
     /**
      * @Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly natGatewayName?: string;
+    readonly natGatewayName?: string | ros.IResolvable;
 
     /**
      * @Property natType: The type of the NAT gateway. Valid values:
      * - Enhanced: enhanced NAT gateway.
      */
-    readonly natType?: string;
+    readonly natType?: string | ros.IResolvable;
 
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
      */
-    readonly spec?: string;
+    readonly spec?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosNatGateway.TagsProperty[];
 }
 
 /**
@@ -1605,7 +3229,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -1619,11 +3243,10 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.duration && (typeof properties.duration) !== 'object') {
-        errors.collect(ros.propertyValidator('duration', ros.validateRange)({
-            data: properties.duration,
-            min: 1,
-            max: 9,
-          }));
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
     }
     errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
@@ -1653,7 +3276,7 @@ function RosNatGatewayPropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosNatGateway_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosNatGatewayProps"');
 }
 
@@ -1684,7 +3307,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       NatType: ros.stringToRosTemplate(properties.natType),
       PricingCycle: ros.stringToRosTemplate(properties.pricingCycle),
       Spec: ros.stringToRosTemplate(properties.spec),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosNatGatewayTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -1705,17 +3328,17 @@ export class RosNatGateway extends ros.RosResource {
     /**
      * @Attribute ForwardTableId: The forward table id.
      */
-    public readonly attrForwardTableId: any;
+    public readonly attrForwardTableId: ros.IResolvable;
 
     /**
      * @Attribute NatGatewayId: The Id of created NAT gateway.
      */
-    public readonly attrNatGatewayId: any;
+    public readonly attrNatGatewayId: ros.IResolvable;
 
     /**
      * @Attribute SNatTableId: The SNAT table id.
      */
-    public readonly attrSNatTableId: any;
+    public readonly attrSNatTableId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1723,12 +3346,12 @@ export class RosNatGateway extends ros.RosResource {
     /**
      * @Property vpcId: The VPC id to create NAT gateway.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The VSwitch id to create NAT gateway.
      */
-    public vSwitchId: string;
+    public vSwitchId: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Specifies whether to enable automatic payment. Default is false.
@@ -1749,50 +3372,50 @@ export class RosNatGateway extends ros.RosResource {
     /**
      * @Property description: Description of the NAT gateway, [2, 256] characters. Do not fill or empty, the default is empty.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9. While choose pay by year, it could be from 1 to 3.
+     * @Property duration: The subscription duration. While choose by pay by month, it could be from 1 to 9 or 12, 24, 36. While choose pay by year, it could be from 1 to 3.
      */
-    public duration: number | undefined;
+    public duration: number | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: The billing method. The default value is PostPaid (which means pay-as-you-go).
      */
-    public instanceChargeType: string | undefined;
+    public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property internetChargeType: The billing method for the NAT gateway. Valid values:
      * PayBySpec: billed on a pay-by-specification basis.
      * PayByLcu: billed on a pay-by-LCU basis.
      */
-    public internetChargeType: string | undefined;
+    public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    public natGatewayName: string | undefined;
+    public natGatewayName: string | ros.IResolvable | undefined;
 
     /**
      * @Property natType: The type of the NAT gateway. Valid values:
      * - Enhanced: enhanced NAT gateway.
      */
-    public natType: string | undefined;
+    public natType: string | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle: Price cycle of the resource. This property has no default value.
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property spec: NAT gateway specification. Now support 'Small|Middle|Large|XLarge.1'
      */
-    public spec: string | undefined;
+    public spec: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to natgateway. Max support 20 tags to add during create natgateway. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosNatGateway.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::NatGateway`.
@@ -1803,9 +3426,9 @@ export class RosNatGateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosNatGatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosNatGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrForwardTableId = ros.Token.asString(this.getAtt('ForwardTableId'));
-        this.attrNatGatewayId = ros.Token.asString(this.getAtt('NatGatewayId'));
-        this.attrSNatTableId = ros.Token.asString(this.getAtt('SNatTableId'));
+        this.attrForwardTableId = this.getAtt('ForwardTableId');
+        this.attrNatGatewayId = this.getAtt('NatGatewayId');
+        this.attrSNatTableId = this.getAtt('SNatTableId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
@@ -1821,7 +3444,7 @@ export class RosNatGateway extends ros.RosResource {
         this.natType = props.natType;
         this.pricingCycle = props.pricingCycle;
         this.spec = props.spec;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::NatGateway", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -1840,12 +3463,630 @@ export class RosNatGateway extends ros.RosResource {
             natType: this.natType,
             pricingCycle: this.pricingCycle,
             spec: this.spec,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosNatGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosNatGateway {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNatGateway_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatGateway.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NatGateway.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosNatGatewayTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNatGateway_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::NetworkAcl`
+ */
+export interface RosNetworkAclProps {
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the network ACL.
+     * The description must be 2 to 256 characters in length. The description must start
+     * with a letter but cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property egressAclEntries: The list of egress network ACL entries.
+     */
+    readonly egressAclEntries?: Array<RosNetworkAcl.EgressAclEntriesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ingressAclEntries: The list of ingress network ACL entries.
+     */
+    readonly ingressAclEntries?: Array<RosNetworkAcl.IngressAclEntriesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property networkAclName: The name of the network ACL.
+     * The name must be 2 to 128 characters in length and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
+     * start with http:// or https://.
+     */
+    readonly networkAclName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkAclProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkAclProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkAclPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.ingressAclEntries && (Array.isArray(properties.ingressAclEntries) || (typeof properties.ingressAclEntries) === 'string')) {
+        errors.collect(ros.propertyValidator('ingressAclEntries', ros.validateLength)({
+            data: properties.ingressAclEntries.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ingressAclEntries', ros.listValidator(RosNetworkAcl_IngressAclEntriesPropertyValidator))(properties.ingressAclEntries));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.egressAclEntries && (Array.isArray(properties.egressAclEntries) || (typeof properties.egressAclEntries) === 'string')) {
+        errors.collect(ros.propertyValidator('egressAclEntries', ros.validateLength)({
+            data: properties.egressAclEntries.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('egressAclEntries', ros.listValidator(RosNetworkAcl_EgressAclEntriesPropertyValidator))(properties.egressAclEntries));
+    errors.collect(ros.propertyValidator('networkAclName', ros.validateString)(properties.networkAclName));
+    return errors.wrap('supplied properties not correct for "RosNetworkAclProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkAclProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkAclPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkAclPropsValidator(properties).assertSuccess();
+    }
+    return {
+      VpcId: ros.stringToRosTemplate(properties.vpcId),
+      Description: ros.stringToRosTemplate(properties.description),
+      EgressAclEntries: ros.listMapper(rosNetworkAclEgressAclEntriesPropertyToRosTemplate)(properties.egressAclEntries),
+      IngressAclEntries: ros.listMapper(rosNetworkAclIngressAclEntriesPropertyToRosTemplate)(properties.ingressAclEntries),
+      NetworkAclName: ros.stringToRosTemplate(properties.networkAclName),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::NetworkAcl`
+ */
+export class RosNetworkAcl extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NetworkAcl";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NetworkAclEntryName: The name of the inbound rule.
+     */
+    public readonly attrNetworkAclEntryName: ros.IResolvable;
+
+    /**
+     * @Attribute NetworkAclId: The ID of the network ACL.
+     */
+    public readonly attrNetworkAclId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the network ACL.
+     * The description must be 2 to 256 characters in length. The description must start
+     * with a letter but cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property egressAclEntries: The list of egress network ACL entries.
+     */
+    public egressAclEntries: Array<RosNetworkAcl.EgressAclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ingressAclEntries: The list of ingress network ACL entries.
+     */
+    public ingressAclEntries: Array<RosNetworkAcl.IngressAclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property networkAclName: The name of the network ACL.
+     * The name must be 2 to 128 characters in length and can contain letters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
+     * start with http:// or https://.
+     */
+    public networkAclName: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::NetworkAcl`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkAclProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkAcl.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNetworkAclEntryName = this.getAtt('NetworkAclEntryName');
+        this.attrNetworkAclId = this.getAtt('NetworkAclId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.vpcId = props.vpcId;
+        this.description = props.description;
+        this.egressAclEntries = props.egressAclEntries;
+        this.ingressAclEntries = props.ingressAclEntries;
+        this.networkAclName = props.networkAclName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            vpcId: this.vpcId,
+            description: this.description,
+            egressAclEntries: this.egressAclEntries,
+            ingressAclEntries: this.ingressAclEntries,
+            networkAclName: this.networkAclName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkAclPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosNetworkAcl {
+    /**
+     * @stability external
+     */
+    export interface EgressAclEntriesProperty {
+        /**
+         * @Property policy: The authorization policy. Valid values:
+     * accept: access permissions granted.
+     * drop: access permissions denied.
+         */
+        readonly policy: string | ros.IResolvable;
+        /**
+         * @Property description: The description of the egress entry.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property entryType: The type of the rule. Valid values:
+     * custom : custom rules.
+     * system : system rules.
+         */
+        readonly entryType?: string | ros.IResolvable;
+        /**
+         * @Property destinationCidrIp: Destination address network segment.
+         */
+        readonly destinationCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+         */
+        readonly port: string | ros.IResolvable;
+        /**
+         * @Property protocol: The transport layer protocols. Valid values:
+     * icmp
+     * gre
+     * tcp
+     * udp
+     * all: All protocols are supported.
+         */
+        readonly protocol: string | ros.IResolvable;
+        /**
+         * @Property networkAclEntryName: The name of the egress entry.
+         */
+        readonly networkAclEntryName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `EgressAclEntriesProperty`
+ *
+ * @param properties - the TypeScript properties of a `EgressAclEntriesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkAcl_EgressAclEntriesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.requiredValidator)(properties.policy));
+    if(properties.policy && (typeof properties.policy) !== 'object') {
+        errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
+          data: properties.policy,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.entryType && (typeof properties.entryType) !== 'object') {
+        errors.collect(ros.propertyValidator('entryType', ros.validateAllowedValues)({
+          data: properties.entryType,
+          allowedValues: ["custom","system"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('entryType', ros.validateString)(properties.entryType));
+    errors.collect(ros.propertyValidator('destinationCidrIp', ros.validateString)(properties.destinationCidrIp));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["icmp","gre","tcp","udp","all"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    errors.collect(ros.propertyValidator('networkAclEntryName', ros.validateString)(properties.networkAclEntryName));
+    return errors.wrap('supplied properties not correct for "EgressAclEntriesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl.EgressAclEntries` resource
+ *
+ * @param properties - the TypeScript properties of a `EgressAclEntriesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl.EgressAclEntries` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkAclEgressAclEntriesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNetworkAcl_EgressAclEntriesPropertyValidator(properties).assertSuccess();
+    return {
+      Policy: ros.stringToRosTemplate(properties.policy),
+      Description: ros.stringToRosTemplate(properties.description),
+      EntryType: ros.stringToRosTemplate(properties.entryType),
+      DestinationCidrIp: ros.stringToRosTemplate(properties.destinationCidrIp),
+      Port: ros.stringToRosTemplate(properties.port),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+      NetworkAclEntryName: ros.stringToRosTemplate(properties.networkAclEntryName),
+    };
+}
+
+export namespace RosNetworkAcl {
+    /**
+     * @stability external
+     */
+    export interface IngressAclEntriesProperty {
+        /**
+         * @Property policy: The authorization policy. Valid values:
+     * accept: access permissions granted.
+     * drop: access permissions denied.
+         */
+        readonly policy: string | ros.IResolvable;
+        /**
+         * @Property description: The description of the ingress entry.
+         */
+        readonly description?: string | ros.IResolvable;
+        /**
+         * @Property entryType: The type of the rule. Valid values:
+     * custom : custom rules.
+     * system : system rules.
+         */
+        readonly entryType?: string | ros.IResolvable;
+        /**
+         * @Property sourceCidrIp: Source address network segment.
+         */
+        readonly sourceCidrIp?: string | ros.IResolvable;
+        /**
+         * @Property port: The source ports. The value range is from 1 to 65535; setting formats such as "1/200" and "80/80", where "-1/-1" cannot be set individually, which means that the port is not restricted.
+         */
+        readonly port: string | ros.IResolvable;
+        /**
+         * @Property protocol: The transport layer protocols. Valid values:
+     * icmp
+     * gre
+     * tcp
+     * udp
+     * all: All protocols are supported.
+         */
+        readonly protocol: string | ros.IResolvable;
+        /**
+         * @Property networkAclEntryName: The name of the ingress entry.
+         */
+        readonly networkAclEntryName?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `IngressAclEntriesProperty`
+ *
+ * @param properties - the TypeScript properties of a `IngressAclEntriesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkAcl_IngressAclEntriesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('policy', ros.requiredValidator)(properties.policy));
+    if(properties.policy && (typeof properties.policy) !== 'object') {
+        errors.collect(ros.propertyValidator('policy', ros.validateAllowedValues)({
+          data: properties.policy,
+          allowedValues: ["accept","drop"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('policy', ros.validateString)(properties.policy));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.entryType && (typeof properties.entryType) !== 'object') {
+        errors.collect(ros.propertyValidator('entryType', ros.validateAllowedValues)({
+          data: properties.entryType,
+          allowedValues: ["custom","system"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('entryType', ros.validateString)(properties.entryType));
+    errors.collect(ros.propertyValidator('sourceCidrIp', ros.validateString)(properties.sourceCidrIp));
+    errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
+    errors.collect(ros.propertyValidator('port', ros.validateString)(properties.port));
+    errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
+    if(properties.protocol && (typeof properties.protocol) !== 'object') {
+        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
+          data: properties.protocol,
+          allowedValues: ["icmp","gre","tcp","udp","all"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
+    errors.collect(ros.propertyValidator('networkAclEntryName', ros.validateString)(properties.networkAclEntryName));
+    return errors.wrap('supplied properties not correct for "IngressAclEntriesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl.IngressAclEntries` resource
+ *
+ * @param properties - the TypeScript properties of a `IngressAclEntriesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAcl.IngressAclEntries` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkAclIngressAclEntriesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNetworkAcl_IngressAclEntriesPropertyValidator(properties).assertSuccess();
+    return {
+      Policy: ros.stringToRosTemplate(properties.policy),
+      Description: ros.stringToRosTemplate(properties.description),
+      EntryType: ros.stringToRosTemplate(properties.entryType),
+      SourceCidrIp: ros.stringToRosTemplate(properties.sourceCidrIp),
+      Port: ros.stringToRosTemplate(properties.port),
+      Protocol: ros.stringToRosTemplate(properties.protocol),
+      NetworkAclEntryName: ros.stringToRosTemplate(properties.networkAclEntryName),
+    };
+}
+
+/**
+ * Properties for defining a `ALIYUN::VPC::NetworkAclAssociation`
+ */
+export interface RosNetworkAclAssociationProps {
+
+    /**
+     * @Property networkAclId: The ID of the network ACL.
+     */
+    readonly networkAclId: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The list of resources that need to be associated with network ACL.
+     */
+    readonly resources: Array<RosNetworkAclAssociation.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosNetworkAclAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkAclAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkAclAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('networkAclId', ros.requiredValidator)(properties.networkAclId));
+    errors.collect(ros.propertyValidator('networkAclId', ros.validateString)(properties.networkAclId));
+    errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
+    if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
+        errors.collect(ros.propertyValidator('resources', ros.validateLength)({
+            data: properties.resources.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(RosNetworkAclAssociation_ResourcesPropertyValidator))(properties.resources));
+    return errors.wrap('supplied properties not correct for "RosNetworkAclAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAclAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosNetworkAclAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAclAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosNetworkAclAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      NetworkAclId: ros.stringToRosTemplate(properties.networkAclId),
+      Resources: ros.listMapper(rosNetworkAclAssociationResourcesPropertyToRosTemplate)(properties.resources),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::NetworkAclAssociation`
+ */
+export class RosNetworkAclAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::NetworkAclAssociation";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute NetworkAclId: The ID of the network ACL.
+     */
+    public readonly attrNetworkAclId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property networkAclId: The ID of the network ACL.
+     */
+    public networkAclId: string | ros.IResolvable;
+
+    /**
+     * @Property resources: The list of resources that need to be associated with network ACL.
+     */
+    public resources: Array<RosNetworkAclAssociation.ResourcesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Create a new `ALIYUN::VPC::NetworkAclAssociation`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosNetworkAclAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosNetworkAclAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrNetworkAclId = this.getAtt('NetworkAclId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.networkAclId = props.networkAclId;
+        this.resources = props.resources;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            networkAclId: this.networkAclId,
+            resources: this.resources,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosNetworkAclAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosNetworkAclAssociation {
+    /**
+     * @stability external
+     */
+    export interface ResourcesProperty {
+        /**
+         * @Property resourceId: The ID of the associated resource.
+         */
+        readonly resourceId: string | ros.IResolvable;
+        /**
+         * @Property resourceType: The type of the associated resource. Valid value: VSwitch.
+         */
+        readonly resourceType?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ResourcesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosNetworkAclAssociation_ResourcesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["VSwitch"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    return errors.wrap('supplied properties not correct for "ResourcesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAclAssociation.Resources` resource
+ *
+ * @param properties - the TypeScript properties of a `ResourcesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::NetworkAclAssociation.Resources` resource.
+ */
+// @ts-ignore TS6133
+function rosNetworkAclAssociationResourcesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosNetworkAclAssociation_ResourcesPropertyValidator(properties).assertSuccess();
+    return {
+      ResourceId: ros.stringToRosTemplate(properties.resourceId),
+      ResourceType: ros.stringToRosTemplate(properties.resourceType),
+    };
 }
 
 /**
@@ -1856,22 +4097,22 @@ export interface RosPeeringRouterInterfaceBindingProps {
     /**
      * @Property oppositeInterfaceId: The connection peer RouterInterface ID.
      */
-    readonly oppositeInterfaceId: string;
+    readonly oppositeInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
      */
-    readonly routerInterfaceId: string;
+    readonly routerInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
      */
-    readonly oppositeInterfaceOwnerId?: string;
+    readonly oppositeInterfaceOwnerId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeRouterId: Router ID of the connection peer RouterInterface.
      */
-    readonly oppositeRouterId?: string;
+    readonly oppositeRouterId?: string | ros.IResolvable;
 }
 
 /**
@@ -1931,7 +4172,7 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
     /**
      * @Attribute RouterInterfaceId: The RouterInterface ID.
      */
-    public readonly attrRouterInterfaceId: any;
+    public readonly attrRouterInterfaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -1939,22 +4180,22 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
     /**
      * @Property oppositeInterfaceId: The connection peer RouterInterface ID.
      */
-    public oppositeInterfaceId: string;
+    public oppositeInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
      */
-    public routerInterfaceId: string;
+    public routerInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
      */
-    public oppositeInterfaceOwnerId: string | undefined;
+    public oppositeInterfaceOwnerId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeRouterId: Router ID of the connection peer RouterInterface.
      */
-    public oppositeRouterId: string | undefined;
+    public oppositeRouterId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceBinding`.
@@ -1965,7 +4206,7 @@ export class RosPeeringRouterInterfaceBinding extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPeeringRouterInterfaceBindingProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPeeringRouterInterfaceBinding.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRouterInterfaceId = ros.Token.asString(this.getAtt('RouterInterfaceId'));
+        this.attrRouterInterfaceId = this.getAtt('RouterInterfaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.oppositeInterfaceId = props.oppositeInterfaceId;
@@ -1996,12 +4237,12 @@ export interface RosPeeringRouterInterfaceConnectionProps {
     /**
      * @Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
      */
-    readonly oppositeInterfaceId: string;
+    readonly oppositeInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
      */
-    readonly routerInterfaceId: string;
+    readonly routerInterfaceId: string | ros.IResolvable;
 }
 
 /**
@@ -2057,12 +4298,12 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
     /**
      * @Attribute OppositeInterfaceId: The receiver RouterInterface ID.
      */
-    public readonly attrOppositeInterfaceId: any;
+    public readonly attrOppositeInterfaceId: ros.IResolvable;
 
     /**
      * @Attribute RouterInterfaceId: The initiator RouterInterface ID.
      */
-    public readonly attrRouterInterfaceId: any;
+    public readonly attrRouterInterfaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2070,12 +4311,12 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
     /**
      * @Property oppositeInterfaceId: The Receiver RouterInterface ID to accept peer RouterInterface.
      */
-    public oppositeInterfaceId: string;
+    public oppositeInterfaceId: string | ros.IResolvable;
 
     /**
      * @Property routerInterfaceId: The Initiator RouterInterface ID to connect peer RouterInterface.
      */
-    public routerInterfaceId: string;
+    public routerInterfaceId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::PeeringRouterInterfaceConnection`.
@@ -2086,8 +4327,8 @@ export class RosPeeringRouterInterfaceConnection extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosPeeringRouterInterfaceConnectionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosPeeringRouterInterfaceConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrOppositeInterfaceId = ros.Token.asString(this.getAtt('OppositeInterfaceId'));
-        this.attrRouterInterfaceId = ros.Token.asString(this.getAtt('RouterInterfaceId'));
+        this.attrOppositeInterfaceId = this.getAtt('OppositeInterfaceId');
+        this.attrRouterInterfaceId = this.getAtt('RouterInterfaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.oppositeInterfaceId = props.oppositeInterfaceId;
@@ -2114,24 +4355,24 @@ export interface RosRouteTableProps {
     /**
      * @Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the route table.
      * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property routeTableName: The name of the route table.
      * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
      */
-    readonly routeTableName?: string;
+    readonly routeTableName?: string | ros.IResolvable;
 
     /**
      * @Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
      */
-    readonly tags?: ros.RosTag[];
+    readonly tags?: RosRouteTable.TagsProperty[];
 }
 
 /**
@@ -2155,7 +4396,7 @@ function RosRouteTablePropsValidator(properties: any): ros.ValidationResult {
             max: 20,
           }));
     }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(ros.validateRosTag))(properties.tags));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosRouteTable_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosRouteTableProps"');
 }
 
@@ -2176,7 +4417,7 @@ function rosRouteTablePropsToRosTemplate(properties: any, enableResourceProperty
       VpcId: ros.stringToRosTemplate(properties.vpcId),
       Description: ros.stringToRosTemplate(properties.description),
       RouteTableName: ros.stringToRosTemplate(properties.routeTableName),
-      Tags: ros.listMapper(ros.rosTagToRosTemplate)(properties.tags),
+      Tags: ros.listMapper(rosRouteTableTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
@@ -2197,27 +4438,27 @@ export class RosRouteTable extends ros.RosResource {
     /**
      * @Attribute RouteTableId: The ID of the route table.
      */
-    public readonly attrRouteTableId: any;
+    public readonly attrRouteTableId: ros.IResolvable;
 
     /**
      * @Attribute RouteTableName: The name of the route table.
      */
-    public readonly attrRouteTableName: any;
+    public readonly attrRouteTableName: ros.IResolvable;
 
     /**
      * @Attribute RouteTableType: The type of the route table.
      */
-    public readonly attrRouteTableType: any;
+    public readonly attrRouteTableType: ros.IResolvable;
 
     /**
      * @Attribute VSwitchIds: A list of VSwitches under the VPC.
      */
-    public readonly attrVSwitchIds: any;
+    public readonly attrVSwitchIds: ros.IResolvable;
 
     /**
      * @Attribute VpcId: The ID of the VRouter to which the route table belongs.
      */
-    public readonly attrVpcId: any;
+    public readonly attrVpcId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2225,24 +4466,24 @@ export class RosRouteTable extends ros.RosResource {
     /**
      * @Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property description: The description of the route table.
      * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property routeTableName: The name of the route table.
      * The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
      */
-    public routeTableName: string | undefined;
+    public routeTableName: string | ros.IResolvable | undefined;
 
     /**
      * @Property tags: Tags to attach to routetable. Max support 20 tags to add during create routetable. Each tag with two properties Key and Value, and Key is required.
      */
-    public readonly tags: ros.TagManager;
+    public tags: RosRouteTable.TagsProperty[] | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTable`.
@@ -2253,17 +4494,17 @@ export class RosRouteTable extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRouteTableProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRouteTable.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRouteTableId = ros.Token.asString(this.getAtt('RouteTableId'));
-        this.attrRouteTableName = ros.Token.asString(this.getAtt('RouteTableName'));
-        this.attrRouteTableType = ros.Token.asString(this.getAtt('RouteTableType'));
-        this.attrVSwitchIds = ros.Token.asString(this.getAtt('VSwitchIds'));
-        this.attrVpcId = ros.Token.asString(this.getAtt('VpcId'));
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+        this.attrRouteTableName = this.getAtt('RouteTableName');
+        this.attrRouteTableType = this.getAtt('RouteTableType');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
+        this.attrVpcId = this.getAtt('VpcId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpcId = props.vpcId;
         this.description = props.description;
         this.routeTableName = props.routeTableName;
-        this.tags = new ros.TagManager(ros.TagType.STANDARD, "ALIYUN::VPC::RouteTable", props.tags, { tagPropertyName: 'tags' });
+        this.tags = props.tags;
     }
 
 
@@ -2272,12 +4513,60 @@ export class RosRouteTable extends ros.RosResource {
             vpcId: this.vpcId,
             description: this.description,
             routeTableName: this.routeTableName,
-            tags: this.tags.renderTags(),
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosRouteTablePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosRouteTable {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRouteTable_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::RouteTable.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::RouteTable.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosRouteTableTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRouteTable_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -2288,12 +4577,12 @@ export interface RosRouteTableAssociationProps {
     /**
      * @Property routeTableId: The ID of the route table.
      */
-    readonly routeTableId: string;
+    readonly routeTableId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    readonly vSwitchId: string;
+    readonly vSwitchId: string | ros.IResolvable;
 }
 
 /**
@@ -2349,12 +4638,12 @@ export class RosRouteTableAssociation extends ros.RosResource {
     /**
      * @Attribute RouteTableId: The ID of the route table.
      */
-    public readonly attrRouteTableId: any;
+    public readonly attrRouteTableId: ros.IResolvable;
 
     /**
      * @Attribute VSwitchId: The VSwitch ID which the route table associated with.
      */
-    public readonly attrVSwitchId: any;
+    public readonly attrVSwitchId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2362,12 +4651,12 @@ export class RosRouteTableAssociation extends ros.RosResource {
     /**
      * @Property routeTableId: The ID of the route table.
      */
-    public routeTableId: string;
+    public routeTableId: string | ros.IResolvable;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch.
      */
-    public vSwitchId: string;
+    public vSwitchId: string | ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::VPC::RouteTableAssociation`.
@@ -2378,8 +4667,8 @@ export class RosRouteTableAssociation extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRouteTableAssociationProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRouteTableAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRouteTableId = ros.Token.asString(this.getAtt('RouteTableId'));
-        this.attrVSwitchId = ros.Token.asString(this.getAtt('VSwitchId'));
+        this.attrRouteTableId = this.getAtt('RouteTableId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.routeTableId = props.routeTableId;
@@ -2406,17 +4695,17 @@ export interface RosRouterInterfaceProps {
     /**
      * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
      */
-    readonly role: string;
+    readonly role: string | ros.IResolvable;
 
     /**
      * @Property routerId: The router ID to create RouterInterface.
      */
-    readonly routerId: string;
+    readonly routerId: string | ros.IResolvable;
 
     /**
      * @Property accessPointId: Access point ID. If 'RouterType' is specified as 'VBR', the value is required.
      */
-    readonly accessPointId?: string;
+    readonly accessPointId?: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
@@ -2426,77 +4715,77 @@ export interface RosRouterInterfaceProps {
     /**
      * @Property description: Custom description of the RouterInterface, [2, 256] characters. Don't fill or empty, the default is empty.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    readonly healthCheckSourceIp?: string;
+    readonly healthCheckSourceIp?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    readonly healthCheckTargetIp?: string;
+    readonly healthCheckTargetIp?: string | ros.IResolvable;
 
     /**
      * @Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface. If 'OppositeRouterType' is specified as 'VBR', the value is required.
      */
-    readonly oppositeAccessPointId?: string;
+    readonly oppositeAccessPointId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeInterfaceId: The ID of the peer router interface.
      */
-    readonly oppositeInterfaceId?: string;
+    readonly oppositeInterfaceId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface. The default value is current user Id.
      */
-    readonly oppositeInterfaceOwnerId?: string;
+    readonly oppositeInterfaceOwnerId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeRegionId: The region where the connection peer RouterInterface locates. The default value is region where stack is created.
      */
-    readonly oppositeRegionId?: string;
+    readonly oppositeRegionId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeRouterId: The router ID of the connection peer RouterInterface.
      */
-    readonly oppositeRouterId?: string;
+    readonly oppositeRouterId?: string | ros.IResolvable;
 
     /**
      * @Property oppositeRouterType: Router type of the connection peer router. Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
      */
-    readonly oppositeRouterType?: string;
+    readonly oppositeRouterType?: string | ros.IResolvable;
 
     /**
      * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
      */
-    readonly pricingCycle?: string;
+    readonly pricingCycle?: string | ros.IResolvable;
 
     /**
      * @Property routerType: Router type. Now support 'VRouter|VBR'
      */
-    readonly routerType?: string;
+    readonly routerType?: string | ros.IResolvable;
 
     /**
      * @Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
      */
-    readonly spec?: string;
+    readonly spec?: string | ros.IResolvable;
 }
 
 /**
@@ -2517,7 +4806,7 @@ function RosRouterInterfacePropsValidator(properties: any): ros.ValidationResult
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
-          allowedValues: ["PrePaid","PostPaid"],
+          allowedValues: ["Subscription","PrePaid","PrePay","Prepaid","PayAsYouGo","PostPaid","PayOnDemand","Postpaid"],
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
@@ -2622,7 +4911,7 @@ export class RosRouterInterface extends ros.RosResource {
     /**
      * @Attribute RouterInterfaceId: The ID of created RouterInterface.
      */
-    public readonly attrRouterInterfaceId: any;
+    public readonly attrRouterInterfaceId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2630,17 +4919,17 @@ export class RosRouterInterface extends ros.RosResource {
     /**
      * @Property role: RouterInterface role. Now support 'InitiatingSide|AcceptingSide'. If 'RouterType' is specified as 'VBR', the value must be 'InitiatingSide'.If 'OppositeRouterType' is specified as 'VBR', the value must be 'AcceptingSide'.
      */
-    public role: string;
+    public role: string | ros.IResolvable;
 
     /**
      * @Property routerId: The router ID to create RouterInterface.
      */
-    public routerId: string;
+    public routerId: string | ros.IResolvable;
 
     /**
      * @Property accessPointId: Access point ID. If 'RouterType' is specified as 'VBR', the value is required.
      */
-    public accessPointId: string | undefined;
+    public accessPointId: string | ros.IResolvable | undefined;
 
     /**
      * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. true: Automatic payment is enabled. The payment is automatically made.
@@ -2650,77 +4939,77 @@ export class RosRouterInterface extends ros.RosResource {
     /**
      * @Property description: Custom description of the RouterInterface, [2, 256] characters. Don't fill or empty, the default is empty.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    public healthCheckSourceIp: string | undefined;
+    public healthCheckSourceIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckTargetIp: Target IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios. It is valid only for a VRouter RouterInterface with a peer on a VBR. Usually you can use the CPE IP address of the leased line user's client (that is, the PeerGatewayIP on the VBR of the peer RouterInterface), you can also specify another IP address of the leased line user's client as the HealthCheck target IP address. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
      */
-    public healthCheckTargetIp: string | undefined;
+    public healthCheckTargetIp: string | ros.IResolvable | undefined;
 
     /**
      * @Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
      */
-    public instanceChargeType: string | undefined;
+    public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: Custom name of the RouterInterface, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeAccessPointId: Access point ID of the connection peer RouterInterface. If 'OppositeRouterType' is specified as 'VBR', the value is required.
      */
-    public oppositeAccessPointId: string | undefined;
+    public oppositeAccessPointId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeInterfaceId: The ID of the peer router interface.
      */
-    public oppositeInterfaceId: string | undefined;
+    public oppositeInterfaceId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface. The default value is current user Id.
      */
-    public oppositeInterfaceOwnerId: string | undefined;
+    public oppositeInterfaceOwnerId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeRegionId: The region where the connection peer RouterInterface locates. The default value is region where stack is created.
      */
-    public oppositeRegionId: string | undefined;
+    public oppositeRegionId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeRouterId: The router ID of the connection peer RouterInterface.
      */
-    public oppositeRouterId: string | undefined;
+    public oppositeRouterId: string | ros.IResolvable | undefined;
 
     /**
      * @Property oppositeRouterType: Router type of the connection peer router. Now support 'VRouter|VBR'. If 'RouterType' is specified as 'VBR', the value must be 'VRouter'.
      */
-    public oppositeRouterType: string | undefined;
+    public oppositeRouterType: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
      */
-    public pricingCycle: string | undefined;
+    public pricingCycle: string | ros.IResolvable | undefined;
 
     /**
      * @Property routerType: Router type. Now support 'VRouter|VBR'
      */
-    public routerType: string | undefined;
+    public routerType: string | ros.IResolvable | undefined;
 
     /**
      * @Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
      */
-    public spec: string | undefined;
+    public spec: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::RouterInterface`.
@@ -2731,7 +5020,7 @@ export class RosRouterInterface extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosRouterInterfaceProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosRouterInterface.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrRouterInterfaceId = ros.Token.asString(this.getAtt('RouterInterfaceId'));
+        this.attrRouterInterfaceId = this.getAtt('RouterInterfaceId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.role = props.role;
@@ -2792,22 +5081,22 @@ export interface RosSnatEntryProps {
     /**
      * @Property snatIp: The public IP address. Separate multiple EIPs with commas.
      */
-    readonly snatIp: string;
+    readonly snatIp: string | ros.IResolvable;
 
     /**
      * @Property snatTableId: The ID of the SNAT table.
      */
-    readonly snatTableId: string;
+    readonly snatTableId: string | ros.IResolvable;
 
     /**
      * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
-    readonly snatEntryName?: string;
+    readonly snatEntryName?: string | ros.IResolvable;
 
     /**
      * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
-    readonly sourceCidr?: string;
+    readonly sourceCidr?: string | ros.IResolvable;
 
     /**
      * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
@@ -2874,7 +5163,7 @@ export class RosSnatEntry extends ros.RosResource {
     /**
      * @Attribute SnatEntryIds: The IDS of the SNAT entry.
      */
-    public readonly attrSnatEntryIds: any;
+    public readonly attrSnatEntryIds: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -2882,22 +5171,22 @@ export class RosSnatEntry extends ros.RosResource {
     /**
      * @Property snatIp: The public IP address. Separate multiple EIPs with commas.
      */
-    public snatIp: string;
+    public snatIp: string | ros.IResolvable;
 
     /**
      * @Property snatTableId: The ID of the SNAT table.
      */
-    public snatTableId: string;
+    public snatTableId: string | ros.IResolvable;
 
     /**
      * @Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:// or https://.
      */
-    public snatEntryName: string | undefined;
+    public snatEntryName: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceCidr: Specifies the network segment of the switch. For example, 10.0.0.1/24. This parameter and the SourceVSwtichId parameter are mutually exclusive and cannot appear at the same time.
      */
-    public sourceCidr: string | undefined;
+    public sourceCidr: string | ros.IResolvable | undefined;
 
     /**
      * @Property sourceVSwitchIds: The ID of the VSwitch to access the Internet.
@@ -2913,7 +5202,7 @@ export class RosSnatEntry extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSnatEntryProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSnatEntry.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSnatEntryIds = ros.Token.asString(this.getAtt('SnatEntryIds'));
+        this.attrSnatEntryIds = this.getAtt('SnatEntryIds');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.snatIp = props.snatIp;
@@ -2946,13 +5235,13 @@ export interface RosSslVpnClientCertProps {
     /**
      * @Property sslVpnServerId: ID of the SSL-VPN server.
      */
-    readonly sslVpnServerId: string;
+    readonly sslVpnServerId: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the client certificate.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -3014,7 +5303,7 @@ export class RosSslVpnClientCert extends ros.RosResource {
     /**
      * @Attribute SslVpnClientCertId: The ID of the client certificate.
      */
-    public readonly attrSslVpnClientCertId: any;
+    public readonly attrSslVpnClientCertId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3022,13 +5311,13 @@ export class RosSslVpnClientCert extends ros.RosResource {
     /**
      * @Property sslVpnServerId: ID of the SSL-VPN server.
      */
-    public sslVpnServerId: string;
+    public sslVpnServerId: string | ros.IResolvable;
 
     /**
      * @Property name: The name of the client certificate.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::SslVpnClientCert`.
@@ -3039,7 +5328,7 @@ export class RosSslVpnClientCert extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSslVpnClientCertProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSslVpnClientCert.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSslVpnClientCertId = ros.Token.asString(this.getAtt('SslVpnClientCertId'));
+        this.attrSslVpnClientCertId = this.getAtt('SslVpnClientCertId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.sslVpnServerId = props.sslVpnServerId;
@@ -3068,24 +5357,24 @@ export interface RosSslVpnServerProps {
      * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
      * The network segment cannot conflict with the LocalSubnet address segment.
      */
-    readonly clientIpPool: string;
+    readonly clientIpPool: string | ros.IResolvable;
 
     /**
      * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
      * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
      */
-    readonly localSubnet: string;
+    readonly localSubnet: string | ros.IResolvable;
 
     /**
      * @Property vpnGatewayId: ID of the VPN gateway.
      */
-    readonly vpnGatewayId: string;
+    readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
      * @Property cipher: The encryption algorithm used by SSL-VPN. Value:
      * AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none
      */
-    readonly cipher?: string;
+    readonly cipher?: string | ros.IResolvable;
 
     /**
      * @Property compress: Whether it is compressed.
@@ -3096,18 +5385,18 @@ export interface RosSslVpnServerProps {
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property port: The port used by the SSL-VPN server. The default value is 1194. Cannot use the following ports:
      * 22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500
      */
-    readonly port?: number;
+    readonly port?: number | ros.IResolvable;
 
     /**
      * @Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
      */
-    readonly proto?: string;
+    readonly proto?: string | ros.IResolvable;
 }
 
 /**
@@ -3195,7 +5484,7 @@ export class RosSslVpnServer extends ros.RosResource {
     /**
      * @Attribute SslVpnServerId: ID of the SSL-VPN server.
      */
-    public readonly attrSslVpnServerId: any;
+    public readonly attrSslVpnServerId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3205,24 +5494,24 @@ export class RosSslVpnServer extends ros.RosResource {
      * When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
      * The network segment cannot conflict with the LocalSubnet address segment.
      */
-    public clientIpPool: string;
+    public clientIpPool: string | ros.IResolvable;
 
     /**
      * @Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.
      * The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
      */
-    public localSubnet: string;
+    public localSubnet: string | ros.IResolvable;
 
     /**
      * @Property vpnGatewayId: ID of the VPN gateway.
      */
-    public vpnGatewayId: string;
+    public vpnGatewayId: string | ros.IResolvable;
 
     /**
      * @Property cipher: The encryption algorithm used by SSL-VPN. Value:
      * AES-128-CBC (default) | AES-192-CBC | AES-256-CBC | none
      */
-    public cipher: string | undefined;
+    public cipher: string | ros.IResolvable | undefined;
 
     /**
      * @Property compress: Whether it is compressed.
@@ -3233,18 +5522,18 @@ export class RosSslVpnServer extends ros.RosResource {
      * @Property name: The name of the SSL-VPN server. The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
      * But it can't start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property port: The port used by the SSL-VPN server. The default value is 1194. Cannot use the following ports:
      * 22, 2222, 22222, 9000, 9001, 9002, 7505, 80, 443, 53, 68, 123, 4510, 4560, 500, 4500
      */
-    public port: number | undefined;
+    public port: number | ros.IResolvable | undefined;
 
     /**
      * @Property proto: The protocol used by the SSL-VPN server. Allowed values: UDP (default) | TCP.
      */
-    public proto: string | undefined;
+    public proto: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::SslVpnServer`.
@@ -3255,7 +5544,7 @@ export class RosSslVpnServer extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosSslVpnServerProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSslVpnServer.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrSslVpnServerId = ros.Token.asString(this.getAtt('SslVpnServerId'));
+        this.attrSslVpnServerId = this.getAtt('SslVpnServerId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.clientIpPool = props.clientIpPool;
@@ -3287,6 +5576,244 @@ export class RosSslVpnServer extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `ALIYUN::VPC::VirtualBorderRouter`
+ */
+export interface RosVirtualBorderRouterProps {
+
+    /**
+     * @Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     */
+    readonly localGatewayIp: string | ros.IResolvable;
+
+    /**
+     * @Property peerGatewayIp: The IP address of the peer router interface of the VBR.
+     * Only the owner of the VBR can set or modify the value.
+     * This parameter is required when you create a VBR for the owner of the physical connection.
+     * You can ignore this parameter when you create a VBR for another Alibaba Cloud account.
+     */
+    readonly peerGatewayIp: string | ros.IResolvable;
+
+    /**
+     * @Property peeringSubnetMask: The subnet mask for the IP addresses of the VBR on the Alibaba Cloud side and on the
+     * user side.
+     * The two IP addresses must fall within the same subnet.
+     */
+    readonly peeringSubnetMask: string | ros.IResolvable;
+
+    /**
+     * @Property physicalConnectionId: The ID of the physical connection.
+     */
+    readonly physicalConnectionId: string | ros.IResolvable;
+
+    /**
+     * @Property vlanId: The VLAN ID of the VBR. Valid values: 1 to 2999.
+     * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
+     * two VBRs of the same physical connection must be different.
+     */
+    readonly vlanId: number | ros.IResolvable;
+
+    /**
+     * @Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical
+     * connection.
+     * Note Only the owner of the physical connection can set this parameter.
+     */
+    readonly circuitCode?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the VBR.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the VBR.
+     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
+     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     */
+    readonly name?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosVirtualBorderRouterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosVirtualBorderRouterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosVirtualBorderRouterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('peerGatewayIp', ros.requiredValidator)(properties.peerGatewayIp));
+    errors.collect(ros.propertyValidator('peerGatewayIp', ros.validateString)(properties.peerGatewayIp));
+    errors.collect(ros.propertyValidator('localGatewayIp', ros.requiredValidator)(properties.localGatewayIp));
+    errors.collect(ros.propertyValidator('localGatewayIp', ros.validateString)(properties.localGatewayIp));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('circuitCode', ros.validateString)(properties.circuitCode));
+    errors.collect(ros.propertyValidator('physicalConnectionId', ros.requiredValidator)(properties.physicalConnectionId));
+    errors.collect(ros.propertyValidator('physicalConnectionId', ros.validateString)(properties.physicalConnectionId));
+    errors.collect(ros.propertyValidator('peeringSubnetMask', ros.requiredValidator)(properties.peeringSubnetMask));
+    errors.collect(ros.propertyValidator('peeringSubnetMask', ros.validateString)(properties.peeringSubnetMask));
+    errors.collect(ros.propertyValidator('vlanId', ros.requiredValidator)(properties.vlanId));
+    if(properties.vlanId && (typeof properties.vlanId) !== 'object') {
+        errors.collect(ros.propertyValidator('vlanId', ros.validateRange)({
+            data: properties.vlanId,
+            min: 1,
+            max: 2999,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vlanId', ros.validateNumber)(properties.vlanId));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosVirtualBorderRouterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VirtualBorderRouter` resource
+ *
+ * @param properties - the TypeScript properties of a `RosVirtualBorderRouterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VirtualBorderRouter` resource.
+ */
+// @ts-ignore TS6133
+function rosVirtualBorderRouterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosVirtualBorderRouterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      LocalGatewayIp: ros.stringToRosTemplate(properties.localGatewayIp),
+      PeerGatewayIp: ros.stringToRosTemplate(properties.peerGatewayIp),
+      PeeringSubnetMask: ros.stringToRosTemplate(properties.peeringSubnetMask),
+      PhysicalConnectionId: ros.stringToRosTemplate(properties.physicalConnectionId),
+      VlanId: ros.numberToRosTemplate(properties.vlanId),
+      CircuitCode: ros.stringToRosTemplate(properties.circuitCode),
+      Description: ros.stringToRosTemplate(properties.description),
+      Name: ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * A ROS template type:  `ALIYUN::VPC::VirtualBorderRouter`
+ */
+export class RosVirtualBorderRouter extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::VPC::VirtualBorderRouter";
+
+    /**
+     * A factory method that creates a new instance of this class from an object
+     * containing the properties of this ROS resource.
+     */
+
+    /**
+     * @Attribute Name: The name of the VBR.
+     */
+    public readonly attrName: ros.IResolvable;
+
+    /**
+     * @Attribute VbrId: The ID of the VBR.
+     */
+    public readonly attrVbrId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     */
+    public localGatewayIp: string | ros.IResolvable;
+
+    /**
+     * @Property peerGatewayIp: The IP address of the peer router interface of the VBR.
+     * Only the owner of the VBR can set or modify the value.
+     * This parameter is required when you create a VBR for the owner of the physical connection.
+     * You can ignore this parameter when you create a VBR for another Alibaba Cloud account.
+     */
+    public peerGatewayIp: string | ros.IResolvable;
+
+    /**
+     * @Property peeringSubnetMask: The subnet mask for the IP addresses of the VBR on the Alibaba Cloud side and on the
+     * user side.
+     * The two IP addresses must fall within the same subnet.
+     */
+    public peeringSubnetMask: string | ros.IResolvable;
+
+    /**
+     * @Property physicalConnectionId: The ID of the physical connection.
+     */
+    public physicalConnectionId: string | ros.IResolvable;
+
+    /**
+     * @Property vlanId: The VLAN ID of the VBR. Valid values: 1 to 2999.
+     * Note Only the owner of the physical connection can set this parameter. The VLAN IDs of
+     * two VBRs of the same physical connection must be different.
+     */
+    public vlanId: number | ros.IResolvable;
+
+    /**
+     * @Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical
+     * connection.
+     * Note Only the owner of the physical connection can set this parameter.
+     */
+    public circuitCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the VBR.
+     * The description must be 2 to 256 characters in length. It must start with a letter
+     * but cannot start with http:// or https://.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the VBR.
+     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
+     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * Create a new `ALIYUN::VPC::VirtualBorderRouter`.
+     *
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosVirtualBorderRouterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosVirtualBorderRouter.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrName = this.getAtt('Name');
+        this.attrVbrId = this.getAtt('VbrId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.localGatewayIp = props.localGatewayIp;
+        this.peerGatewayIp = props.peerGatewayIp;
+        this.peeringSubnetMask = props.peeringSubnetMask;
+        this.physicalConnectionId = props.physicalConnectionId;
+        this.vlanId = props.vlanId;
+        this.circuitCode = props.circuitCode;
+        this.description = props.description;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            localGatewayIp: this.localGatewayIp,
+            peerGatewayIp: this.peerGatewayIp,
+            peeringSubnetMask: this.peeringSubnetMask,
+            physicalConnectionId: this.physicalConnectionId,
+            vlanId: this.vlanId,
+            circuitCode: this.circuitCode,
+            description: this.description,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosVirtualBorderRouterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `ALIYUN::VPC::VpnConnection`
  */
 export interface RosVpnConnectionProps {
@@ -3294,24 +5821,24 @@ export interface RosVpnConnectionProps {
     /**
      * @Property customerGatewayId: The ID of the user gateway.
      */
-    readonly customerGatewayId: string;
+    readonly customerGatewayId: string | ros.IResolvable;
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
      */
-    readonly localSubnet: string;
+    readonly localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
      */
-    readonly remoteSubnet: string;
+    readonly remoteSubnet: string | ros.IResolvable;
 
     /**
      * @Property vpnGatewayId: ID of the VPN gateway.
      */
-    readonly vpnGatewayId: string;
+    readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
      * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
@@ -3339,7 +5866,7 @@ export interface RosVpnConnectionProps {
      * @Property name: The name of the IPsec connection.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 }
 
 /**
@@ -3418,17 +5945,17 @@ export class RosVpnConnection extends ros.RosResource {
     /**
      * @Attribute PeerVpnConnectionConfig: Peer vpc connection config.
      */
-    public readonly attrPeerVpnConnectionConfig: any;
+    public readonly attrPeerVpnConnectionConfig: ros.IResolvable;
 
     /**
      * @Attribute Status: Status of the IPsec connection.
      */
-    public readonly attrStatus: any;
+    public readonly attrStatus: ros.IResolvable;
 
     /**
      * @Attribute VpnConnectionId: ID of the IPsec connection.
      */
-    public readonly attrVpnConnectionId: any;
+    public readonly attrVpnConnectionId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -3436,24 +5963,24 @@ export class RosVpnConnection extends ros.RosResource {
     /**
      * @Property customerGatewayId: The ID of the user gateway.
      */
-    public customerGatewayId: string;
+    public customerGatewayId: string | ros.IResolvable;
 
     /**
      * @Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
      */
-    public localSubnet: string;
+    public localSubnet: string | ros.IResolvable;
 
     /**
      * @Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
      */
-    public remoteSubnet: string;
+    public remoteSubnet: string | ros.IResolvable;
 
     /**
      * @Property vpnGatewayId: ID of the VPN gateway.
      */
-    public vpnGatewayId: string;
+    public vpnGatewayId: string | ros.IResolvable;
 
     /**
      * @Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
@@ -3481,7 +6008,7 @@ export class RosVpnConnection extends ros.RosResource {
      * @Property name: The name of the IPsec connection.
      * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::VpnConnection`.
@@ -3492,9 +6019,9 @@ export class RosVpnConnection extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpnConnectionProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpnConnection.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrPeerVpnConnectionConfig = ros.Token.asString(this.getAtt('PeerVpnConnectionConfig'));
-        this.attrStatus = ros.Token.asString(this.getAtt('Status'));
-        this.attrVpnConnectionId = ros.Token.asString(this.getAtt('VpnConnectionId'));
+        this.attrPeerVpnConnectionConfig = this.getAtt('PeerVpnConnectionConfig');
+        this.attrStatus = this.getAtt('Status');
+        this.attrVpnConnectionId = this.getAtt('VpnConnectionId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.customerGatewayId = props.customerGatewayId;
@@ -3543,15 +6070,15 @@ export namespace RosVpnConnection {
         /**
          * @Property retry:
          */
-        readonly retry?: number;
+        readonly retry?: number | ros.IResolvable;
         /**
          * @Property sip:
          */
-        readonly sip?: string;
+        readonly sip?: string | ros.IResolvable;
         /**
          * @Property interval:
          */
-        readonly interval?: number;
+        readonly interval?: number | ros.IResolvable;
     }
 }
 /**
@@ -3600,39 +6127,39 @@ export namespace RosVpnConnection {
         /**
          * @Property ikeAuthAlg: The authentication algorithm negotiated in the first phase, the value is md5|sha1, and the default value is md5.
          */
-        readonly ikeAuthAlg?: string;
+        readonly ikeAuthAlg?: string | ros.IResolvable;
         /**
          * @Property ikeEncAlg: The encryption algorithm negotiated in the first phase, value: aes|aes192|aes256|des|3des, default value: aes.
          */
-        readonly ikeEncAlg?: string;
+        readonly ikeEncAlg?: string | ros.IResolvable;
         /**
          * @Property localIdIPsec: ID of the VPN gateway. The length is limited to 100 characters. The default value is the public IP address of the VPN gateway.
          */
-        readonly localIdIPsec?: string;
+        readonly localIdIPsec?: string | ros.IResolvable;
         /**
          * @Property ikeVersion: The version of the IKE protocol. Value: ikev1|ikev2, default: ikev1.
          */
-        readonly ikeVersion?: string;
+        readonly ikeVersion?: string | ros.IResolvable;
         /**
          * @Property ikeMode: Negotiation mode for IKE V1. Value: main|aggressive, default: main.
          */
-        readonly ikeMode?: string;
+        readonly ikeMode?: string | ros.IResolvable;
         /**
          * @Property ikeLifetime: The life cycle of the SA negotiated in the first phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
          */
-        readonly ikeLifetime?: number;
+        readonly ikeLifetime?: number | ros.IResolvable;
         /**
          * @Property remoteId: ID of the user gateway. The length is limited to 100 characters. The default value is the public IP address of the user gateway.
          */
-        readonly remoteId?: string;
+        readonly remoteId?: string | ros.IResolvable;
         /**
          * @Property psk: Used for identity authentication between the IPsec VPN gateway and the user gateway. It is generated randomly by default, or you can specify the key manually. The length is limited to 100 characters.
          */
-        readonly psk?: string;
+        readonly psk?: string | ros.IResolvable;
         /**
          * @Property ikePfs: Diffie-Hellman key exchange algorithm used in the first phase negotiation. Value: group1|group2|group5|group14|group24, default value: group2.
          */
-        readonly ikePfs?: string;
+        readonly ikePfs?: string | ros.IResolvable;
     }
 }
 /**
@@ -3747,19 +6274,19 @@ export namespace RosVpnConnection {
         /**
          * @Property ipsecPfs: Forwards all protocol packets. The Diffie-Hellman key exchange algorithm used in the first phase negotiation, the value: group1|group2|group5|group14|group24, default value: group2.
          */
-        readonly ipsecPfs?: string;
+        readonly ipsecPfs?: string | ros.IResolvable;
         /**
          * @Property ipsecEncAlg: Encryption algorithm negotiated in the second phase. Value: aes|aes192|aes256|des|3des, default value: aes.
          */
-        readonly ipsecEncAlg?: string;
+        readonly ipsecEncAlg?: string | ros.IResolvable;
         /**
          * @Property ipsecAuthAlg: Authentication algorithm negotiated in the second phase. Value: md5|sha1, default value: md5.
          */
-        readonly ipsecAuthAlg?: string;
+        readonly ipsecAuthAlg?: string | ros.IResolvable;
         /**
          * @Property ipsecLifetime: IpsecLifetime: The life cycle of the SA negotiated in the second phase. The value ranges from 0 to 86400, in seconds. The default value is 86400.
          */
-        readonly ipsecLifetime?: number;
+        readonly ipsecLifetime?: number | ros.IResolvable;
     }
 }
 /**
@@ -3832,12 +6359,12 @@ export interface RosVpnGatewayProps {
      * @Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
      * Value: 5|10|20|50|100|200.
      */
-    readonly bandwidth: number;
+    readonly bandwidth: number | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID to which the VPN gateway belongs.
      */
-    readonly vpcId: string;
+    readonly vpcId: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
@@ -3850,7 +6377,7 @@ export interface RosVpnGatewayProps {
      * @Property description: Description of the VPN gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    readonly description?: string;
+    readonly description?: string | ros.IResolvable;
 
     /**
      * @Property enableIpsec: Whether to enable IPsec-VPN. The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -3870,29 +6397,34 @@ export interface RosVpnGatewayProps {
      * @Property instanceChargeType: Accounting type of the VPN gateway, the value is:
      * PREPAY, POSTPAY
      */
-    readonly instanceChargeType?: string;
+    readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
      * @Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
      * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
      */
-    readonly name?: string;
+    readonly name?: string | ros.IResolvable;
 
     /**
      * @Property period: Purchase time, value: 1~9|12|24|36.
      * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
      */
-    readonly period?: number;
+    readonly period?: number | ros.IResolvable;
 
     /**
      * @Property sslConnections: The maximum number of clients allowed to connect at the same time.
      */
-    readonly sslConnections?: number;
+    readonly sslConnections?: number | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosVpnGateway.TagsProperty[];
 
     /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
-    readonly vSwitchId?: string;
+    readonly vSwitchId?: string | ros.IResolvable;
 }
 
 /**
@@ -3942,6 +6474,14 @@ function RosVpnGatewayPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVpnGateway_TagsPropertyValidator))(properties.tags));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -3977,6 +6517,7 @@ function rosVpnGatewayPropsToRosTemplate(properties: any, enableResourceProperty
       Name: ros.stringToRosTemplate(properties.name),
       Period: ros.numberToRosTemplate(properties.period),
       SslConnections: ros.numberToRosTemplate(properties.sslConnections),
+      Tags: ros.listMapper(rosVpnGatewayTagsPropertyToRosTemplate)(properties.tags),
       VSwitchId: ros.stringToRosTemplate(properties.vSwitchId),
     };
 }
@@ -3998,27 +6539,27 @@ export class RosVpnGateway extends ros.RosResource {
     /**
      * @Attribute InternetIp: The public IP address of the VPN gateway.
      */
-    public readonly attrInternetIp: any;
+    public readonly attrInternetIp: ros.IResolvable;
 
     /**
      * @Attribute OrderId: The order ID.
      */
-    public readonly attrOrderId: any;
+    public readonly attrOrderId: ros.IResolvable;
 
     /**
      * @Attribute Spec: The specification of the VPN gateway.
      */
-    public readonly attrSpec: any;
+    public readonly attrSpec: ros.IResolvable;
 
     /**
      * @Attribute SslMaxConnections: The maximum number of concurrent SSL-VPN connections.
      */
-    public readonly attrSslMaxConnections: any;
+    public readonly attrSslMaxConnections: ros.IResolvable;
 
     /**
      * @Attribute VpnGatewayId: ID of the VPN gateway.
      */
-    public readonly attrVpnGatewayId: any;
+    public readonly attrVpnGatewayId: ros.IResolvable;
 
     public enableResourcePropertyConstraint: boolean;
 
@@ -4027,12 +6568,12 @@ export class RosVpnGateway extends ros.RosResource {
      * @Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
      * Value: 5|10|20|50|100|200.
      */
-    public bandwidth: number;
+    public bandwidth: number | ros.IResolvable;
 
     /**
      * @Property vpcId: VPC ID to which the VPN gateway belongs.
      */
-    public vpcId: string;
+    public vpcId: string | ros.IResolvable;
 
     /**
      * @Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
@@ -4045,7 +6586,7 @@ export class RosVpnGateway extends ros.RosResource {
      * @Property description: Description of the VPN gateway.
      * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
      */
-    public description: string | undefined;
+    public description: string | ros.IResolvable | undefined;
 
     /**
      * @Property enableIpsec: Whether to enable IPsec-VPN. The IPsec-VPN feature provides a site-to-site connection. You can securely connect your local data center network to a private network or two proprietary networks by creating an IPsec tunnel. Value:
@@ -4065,29 +6606,34 @@ export class RosVpnGateway extends ros.RosResource {
      * @Property instanceChargeType: Accounting type of the VPN gateway, the value is:
      * PREPAY, POSTPAY
      */
-    public instanceChargeType: string | undefined;
+    public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
      * @Property name: Name of the VPN gateway. The default value is the ID of the VPN gateway.
      * The length is 2~100 English or Chinese characters. It must start with a large or small letter or Chinese. It can contain numbers, underscores (_) and dashes (-). It cannot start with http:// or https://.
      */
-    public name: string | undefined;
+    public name: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Purchase time, value: 1~9|12|24|36.
      * When the value of the InstanceChargeType parameter is PREPAY, this parameter is mandatory.
      */
-    public period: number | undefined;
+    public period: number | ros.IResolvable | undefined;
 
     /**
      * @Property sslConnections: The maximum number of clients allowed to connect at the same time.
      */
-    public sslConnections: number | undefined;
+    public sslConnections: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosVpnGateway.TagsProperty[] | undefined;
 
     /**
      * @Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
      */
-    public vSwitchId: string | undefined;
+    public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
      * Create a new `ALIYUN::VPC::VpnGateway`.
@@ -4098,11 +6644,11 @@ export class RosVpnGateway extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosVpnGatewayProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosVpnGateway.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrInternetIp = ros.Token.asString(this.getAtt('InternetIp'));
-        this.attrOrderId = ros.Token.asString(this.getAtt('OrderId'));
-        this.attrSpec = ros.Token.asString(this.getAtt('Spec'));
-        this.attrSslMaxConnections = ros.Token.asString(this.getAtt('SslMaxConnections'));
-        this.attrVpnGatewayId = ros.Token.asString(this.getAtt('VpnGatewayId'));
+        this.attrInternetIp = this.getAtt('InternetIp');
+        this.attrOrderId = this.getAtt('OrderId');
+        this.attrSpec = this.getAtt('Spec');
+        this.attrSslMaxConnections = this.getAtt('SslMaxConnections');
+        this.attrVpnGatewayId = this.getAtt('VpnGatewayId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.bandwidth = props.bandwidth;
@@ -4115,6 +6661,7 @@ export class RosVpnGateway extends ros.RosResource {
         this.name = props.name;
         this.period = props.period;
         this.sslConnections = props.sslConnections;
+        this.tags = props.tags;
         this.vSwitchId = props.vSwitchId;
     }
 
@@ -4131,10 +6678,59 @@ export class RosVpnGateway extends ros.RosResource {
             name: this.name,
             period: this.period,
             sslConnections: this.sslConnections,
+            tags: this.tags,
             vSwitchId: this.vSwitchId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosVpnGatewayPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosVpnGateway {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosVpnGateway_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnGateway.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::VPC::VpnGateway.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosVpnGatewayTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosVpnGateway_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      Value: ros.stringToRosTemplate(properties.value),
+      Key: ros.stringToRosTemplate(properties.key),
+    };
 }

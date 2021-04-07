@@ -33,10 +33,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <summary>Attribute KeyId: The globally unique identifier for the CMK.</summary>
-        [JsiiProperty(name: "attrKeyId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrKeyId
+        [JsiiProperty(name: "attrKeyId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrKeyId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
     }
 }

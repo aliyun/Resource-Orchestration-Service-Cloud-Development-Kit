@@ -11,12 +11,12 @@ export interface FolderProps {
     /**
      * Property folderName: The name of the folder
      */
-    readonly folderName: string;
+    readonly folderName: string | ros.IResolvable;
 
     /**
      * Property parentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    readonly parentFolderId?: string;
+    readonly parentFolderId?: string | ros.IResolvable;
 }
 
 /**
@@ -32,17 +32,17 @@ export class Folder extends ros.Resource {
     /**
      * Attribute FolderId: The ID of the folder
      */
-    public readonly attrFolderId: any;
+    public readonly attrFolderId: ros.IResolvable;
 
     /**
      * Attribute FolderName: The name of the folder
      */
-    public readonly attrFolderName: any;
+    public readonly attrFolderName: ros.IResolvable;
 
     /**
      * Attribute ParentFolderId: The ID of the parent folder. If not set, the system default value will be used
      */
-    public readonly attrParentFolderId: any;
+    public readonly attrParentFolderId: ros.IResolvable;
 
     /**
      * Create a new `ALIYUN::ResourceManager::Folder`.

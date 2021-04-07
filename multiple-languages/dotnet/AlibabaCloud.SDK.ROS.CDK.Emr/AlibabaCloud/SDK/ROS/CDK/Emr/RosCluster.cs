@@ -47,37 +47,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <remarks>
         /// <strong>Attribute</strong>: ClusterId: The ID of the cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrClusterId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrClusterId
+        [JsiiProperty(name: "attrClusterId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrClusterId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: HostGroups: The host group list of the cluster.
         /// </remarks>
-        [JsiiProperty(name: "attrHostGroups", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrHostGroups
+        [JsiiProperty(name: "attrHostGroups", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrHostGroups
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: MasterNodeInnerIps: The inner ip list of the cluster master nodes.
         /// </remarks>
-        [JsiiProperty(name: "attrMasterNodeInnerIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterNodeInnerIps
+        [JsiiProperty(name: "attrMasterNodeInnerIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterNodeInnerIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         /// <remarks>
         /// <strong>Attribute</strong>: MasterNodePubIps: The public ip list of the cluster master nodes.
         /// </remarks>
-        [JsiiProperty(name: "attrMasterNodePubIps", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrMasterNodePubIps
+        [JsiiProperty(name: "attrMasterNodePubIps", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrMasterNodePubIps
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -90,30 +90,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: chargeType: The billing method. Valid values: PostPaid and PrePaid. PostPaid: pay-as-you-go. PrePaid:
         /// subscription.
         /// </remarks>
-        [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ChargeType
+        [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ChargeType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY.
+        /// <strong>Property</strong>: clusterType: The type of the cluster. Allowd values: HADOOP, KAFKA, DRUID, ZOOKEEPER, DATA_SCIENCE, GATEWAY etc.
         /// </remarks>
-        [JsiiProperty(name: "clusterType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ClusterType
+        [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ClusterType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: emrVer: The version of EMR.
         /// </remarks>
-        [JsiiProperty(name: "emrVer", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string EmrVer
+        [JsiiProperty(name: "emrVer", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object EmrVer
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -127,7 +127,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <remarks>
         /// <strong>Property</strong>: hostGroup:
         /// </remarks>
-        [JsiiProperty(name: "hostGroup", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.HostGroupProperty\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
+        [JsiiProperty(name: "hostGroup", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-emr.RosCluster.HostGroupProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object HostGroup
         {
             get => GetInstanceProperty<object>()!;
@@ -138,20 +138,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: name: The name of the cluster. The name can be 1 to 64 characters in length and only contain
         /// Chinese characters, letters, numbers, hyphens (-), and underscores (_).
         /// </remarks>
-        [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string Name
+        [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object Name
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: netType: The type of the network.
         /// </remarks>
-        [JsiiProperty(name: "netType", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string NetType
+        [JsiiProperty(name: "netType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object NetType
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -168,10 +168,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <remarks>
         /// <strong>Property</strong>: zoneId: The zone ID.
         /// </remarks>
-        [JsiiProperty(name: "zoneId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ZoneId
+        [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ZoneId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
@@ -179,10 +179,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: authorizeContent: Not required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "authorizeContent", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? AuthorizeContent
+        [JsiiProperty(name: "authorizeContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? AuthorizeContent
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -223,10 +223,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: configurations: Not required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "configurations", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? Configurations
+        [JsiiProperty(name: "configurations", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Configurations
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -234,10 +234,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: depositType: The hosting type.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "depositType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? DepositType
+        [JsiiProperty(name: "depositType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? DepositType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -279,10 +279,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: instanceGeneration: The generation of the ECS instances.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "instanceGeneration", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? InstanceGeneration
+        [JsiiProperty(name: "instanceGeneration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? InstanceGeneration
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -313,10 +313,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: keyPairName: The name of the key pair.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "keyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? KeyPairName
+        [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? KeyPairName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -324,10 +324,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: logPath: The log path in OSS.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "logPath", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? LogPath
+        [JsiiProperty(name: "logPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? LogPath
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -335,10 +335,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: machineType: The type of the machine.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "machineType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MachineType
+        [JsiiProperty(name: "machineType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MachineType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -349,10 +349,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// and special symbols).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "masterPwd", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MasterPwd
+        [JsiiProperty(name: "masterPwd", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MasterPwd
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -360,10 +360,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: metaStoreConf: Meta store conf of specific meta store type. If MetaStoreType=user_rds, MetaStoreConf should be like {"dbUrl":"jdbc:mysql://xxxxxx", "dbUserName":"username", "dbPassword":"password"}
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "metaStoreConf", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MetaStoreConf
+        [JsiiProperty(name: "metaStoreConf", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MetaStoreConf
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -374,10 +374,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// user_rds: User's RDS
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "metaStoreType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? MetaStoreType
+        [JsiiProperty(name: "metaStoreType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? MetaStoreType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -385,10 +385,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: optionSoftWareList: The list of optional services.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "optionSoftWareList", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"string\"},\"kind\":\"array\"}}", isOptional: true)]
-        public virtual string[]? OptionSoftWareList
+        [JsiiProperty(name: "optionSoftWareList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public virtual object? OptionSoftWareList
         {
-            get => GetInstanceProperty<string[]?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -397,10 +397,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// 9, 12, 24, and 36. A value is required when ChargeType=PrePaid.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-        public virtual double? Period
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? Period
         {
-            get => GetInstanceProperty<double?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -408,10 +408,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: relatedClusterId: The ID of the primary cluster (when the cluster that you create is a Gateway cluster).
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "relatedClusterId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? RelatedClusterId
+        [JsiiProperty(name: "relatedClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? RelatedClusterId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -422,10 +422,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// are open at the outbound. You need to specify either SecurityGroupId or SecurityGroupName.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SecurityGroupId
+        [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecurityGroupId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -438,10 +438,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// or SecurityGroupName.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "securityGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? SecurityGroupName
+        [JsiiProperty(name: "securityGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? SecurityGroupName
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -471,10 +471,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: userDefinedEmrEcsRole: The role that is assigned to EMR for calling ECS resources.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "userDefinedEmrEcsRole", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? UserDefinedEmrEcsRole
+        [JsiiProperty(name: "userDefinedEmrEcsRole", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? UserDefinedEmrEcsRole
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -493,10 +493,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: vpcId: The ID of the VPC. A value is required when NetType=vpc.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vpcId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VpcId
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VpcId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -504,10 +504,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: vSwitchId: The ID of the Vswitch. A value is required when NetType=vpc.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? VSwitchId
+        [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? VSwitchId
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
 
@@ -515,10 +515,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
         /// <strong>Property</strong>: whiteListType: Not required.
         /// </remarks>
         [JsiiOptional]
-        [JsiiProperty(name: "whiteListType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-        public virtual string? WhiteListType
+        [JsiiProperty(name: "whiteListType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public virtual object? WhiteListType
         {
-            get => GetInstanceProperty<string?>();
+            get => GetInstanceProperty<object?>();
             set => SetInstanceProperty(value);
         }
         [JsiiInterface(nativeType: typeof(IBootstrapActionProperty), fullyQualifiedName: "@alicloud/ros-cdk-emr.RosCluster.BootstrapActionProperty")]
@@ -527,9 +527,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: arg: The argument that you pass into the bootstrap action.
             /// </remarks>
-            [JsiiProperty(name: "arg", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "arg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Arg
+            object? Arg
             {
                 get
                 {
@@ -540,9 +540,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: name: The name of the bootstrap action.
             /// </remarks>
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Name
+            object? Name
             {
                 get
                 {
@@ -553,9 +553,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: path: The path where the bootstrap action script is stored.
             /// </remarks>
-            [JsiiProperty(name: "path", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Path
+            object? Path
             {
                 get
                 {
@@ -574,30 +574,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <strong>Property</strong>: arg: The argument that you pass into the bootstrap action.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "arg", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Arg
+                [JsiiProperty(name: "arg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Arg
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: name: The name of the bootstrap action.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Name
+                [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Name
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: path: The path where the bootstrap action script is stored.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "path", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Path
+                [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Path
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -608,8 +608,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: arg: The argument that you pass into the bootstrap action.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "arg", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Arg
+            [JsiiProperty(name: "arg", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Arg
             {
                 get;
                 set;
@@ -619,8 +619,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: name: The name of the bootstrap action.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "name", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Name
+            [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Name
             {
                 get;
                 set;
@@ -630,8 +630,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: path: The path where the bootstrap action script is stored.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "path", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Path
+            [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Path
             {
                 get;
                 set;
@@ -643,9 +643,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: configKey: The key of the custom configuration item.
             /// </remarks>
-            [JsiiProperty(name: "configKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "configKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ConfigKey
+            object? ConfigKey
             {
                 get
                 {
@@ -656,9 +656,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: configValue: The value of the custom configuration item.
             /// </remarks>
-            [JsiiProperty(name: "configValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "configValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ConfigValue
+            object? ConfigValue
             {
                 get
                 {
@@ -669,9 +669,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: encrypt: A reserved parameter.
             /// </remarks>
-            [JsiiProperty(name: "encrypt", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "encrypt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Encrypt
+            object? Encrypt
             {
                 get
                 {
@@ -682,9 +682,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: fileName: The name of the file that contains the configuration item.
             /// </remarks>
-            [JsiiProperty(name: "fileName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "fileName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? FileName
+            object? FileName
             {
                 get
                 {
@@ -695,9 +695,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: replace: A reserved parameter.
             /// </remarks>
-            [JsiiProperty(name: "replace", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "replace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Replace
+            object? Replace
             {
                 get
                 {
@@ -709,9 +709,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: serviceName: The name (capitalized) of the service that is configured by using the custom configuration
             /// item.
             /// </remarks>
-            [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ServiceName
+            object? ServiceName
             {
                 get
                 {
@@ -730,50 +730,50 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <strong>Property</strong>: configKey: The key of the custom configuration item.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "configKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ConfigKey
+                [JsiiProperty(name: "configKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConfigKey
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: configValue: The value of the custom configuration item.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "configValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ConfigValue
+                [JsiiProperty(name: "configValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ConfigValue
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: encrypt: A reserved parameter.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "encrypt", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Encrypt
+                [JsiiProperty(name: "encrypt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Encrypt
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: fileName: The name of the file that contains the configuration item.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "fileName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? FileName
+                [JsiiProperty(name: "fileName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? FileName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: replace: A reserved parameter.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "replace", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Replace
+                [JsiiProperty(name: "replace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Replace
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -781,10 +781,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// item.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ServiceName
+                [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ServiceName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -795,8 +795,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: configKey: The key of the custom configuration item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configKey", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ConfigKey
+            [JsiiProperty(name: "configKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ConfigKey
             {
                 get;
                 set;
@@ -806,8 +806,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: configValue: The value of the custom configuration item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "configValue", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ConfigValue
+            [JsiiProperty(name: "configValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ConfigValue
             {
                 get;
                 set;
@@ -817,8 +817,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: encrypt: A reserved parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "encrypt", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Encrypt
+            [JsiiProperty(name: "encrypt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Encrypt
             {
                 get;
                 set;
@@ -828,8 +828,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: fileName: The name of the file that contains the configuration item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "fileName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? FileName
+            [JsiiProperty(name: "fileName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? FileName
             {
                 get;
                 set;
@@ -839,8 +839,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: replace: A reserved parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "replace", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Replace
+            [JsiiProperty(name: "replace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Replace
             {
                 get;
                 set;
@@ -851,8 +851,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// item.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "serviceName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ServiceName
+            [JsiiProperty(name: "serviceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ServiceName
             {
                 get;
                 set;
@@ -864,8 +864,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: chargeType: The billing method for the instance group.
             /// </remarks>
-            [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}")]
-            string ChargeType
+            [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object ChargeType
             {
                 get;
             }
@@ -873,8 +873,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: diskCapacity: The data disk capacity of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "diskCapacity", typeJson: "{\"primitive\":\"number\"}")]
-            double DiskCapacity
+            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DiskCapacity
             {
                 get;
             }
@@ -882,17 +882,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: diskCount: The data disk number of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "diskCount", typeJson: "{\"primitive\":\"number\"}")]
-            double DiskCount
+            [JsiiProperty(name: "diskCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DiskCount
             {
                 get;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskType: The data disk type of the instance group.
+            /// <strong>Property</strong>: diskType: The data disk type of the instance group. Valid values: CLOUD, CLOUD_EFFICIENCY, CLOUD_SSD, CLOUD_ESSD etc.
             /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}")]
-            string DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object DiskType
             {
                 get;
             }
@@ -901,8 +901,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostGroupType: The type of the instance group. Valid values: MASTER, CORE, and TASK. Currently, you
             /// can only create a maximum of one master instance group and core instance group.
             /// </remarks>
-            [JsiiProperty(name: "hostGroupType", typeJson: "{\"primitive\":\"string\"}")]
-            string HostGroupType
+            [JsiiProperty(name: "hostGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object HostGroupType
             {
                 get;
             }
@@ -910,8 +910,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: instanceType: The instance type of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-            string InstanceType
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object InstanceType
             {
                 get;
             }
@@ -919,8 +919,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: nodeCount: The number of nodes in the node group.
             /// </remarks>
-            [JsiiProperty(name: "nodeCount", typeJson: "{\"primitive\":\"number\"}")]
-            double NodeCount
+            [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object NodeCount
             {
                 get;
             }
@@ -928,8 +928,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: sysDiskCapacity: The system disk capacity of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"primitive\":\"number\"}")]
-            double SysDiskCapacity
+            [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SysDiskCapacity
             {
                 get;
             }
@@ -937,8 +937,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: sysDiskType: The system disk type of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "sysDiskType", typeJson: "{\"primitive\":\"string\"}")]
-            string SysDiskType
+            [JsiiProperty(name: "sysDiskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            object SysDiskType
             {
                 get;
             }
@@ -959,9 +959,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: clusterId: A reserved parameter. Not required.
             /// </remarks>
-            [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? ClusterId
+            object? ClusterId
             {
                 get
                 {
@@ -972,9 +972,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: comment: A reserved parameter. Not required.
             /// </remarks>
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Comment
+            object? Comment
             {
                 get
                 {
@@ -985,9 +985,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: createType: A reserved parameter. Not required.
             /// </remarks>
-            [JsiiProperty(name: "createType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "createType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? CreateType
+            object? CreateType
             {
                 get
                 {
@@ -998,9 +998,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: gpuDriver: The GPU driver.
             /// </remarks>
-            [JsiiProperty(name: "gpuDriver", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "gpuDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? GpuDriver
+            object? GpuDriver
             {
                 get
                 {
@@ -1011,9 +1011,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: hostGroupId: A reserved parameter.
             /// </remarks>
-            [JsiiProperty(name: "hostGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "hostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? HostGroupId
+            object? HostGroupId
             {
                 get
                 {
@@ -1024,9 +1024,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: hostGroupName: The name of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "hostGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "hostGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? HostGroupName
+            object? HostGroupName
             {
                 get
                 {
@@ -1037,9 +1037,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: hostKeyPairName: The key pair name of the host group. Currently, only gateways are supported.
             /// </remarks>
-            [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? HostKeyPairName
+            object? HostKeyPairName
             {
                 get
                 {
@@ -1050,9 +1050,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: hostPassword: The password of the host. Currently, only gateways are supported.
             /// </remarks>
-            [JsiiProperty(name: "hostPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "hostPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? HostPassword
+            object? HostPassword
             {
                 get
                 {
@@ -1064,9 +1064,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: period: The length of the subscription. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8,
             /// 9, 12, 24, and 36. A value is required when HostGroup.n.ChargeType=PrePaid.
             /// </remarks>
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            double? Period
+            object? Period
             {
                 get
                 {
@@ -1077,9 +1077,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch. A value is required when NetType=vpc.
             /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? VSwitchId
+            object? VSwitchId
             {
                 get
                 {
@@ -1097,83 +1097,83 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <remarks>
                 /// <strong>Property</strong>: chargeType: The billing method for the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}")]
-                public string ChargeType
+                [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object ChargeType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: diskCapacity: The data disk capacity of the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "diskCapacity", typeJson: "{\"primitive\":\"number\"}")]
-                public double DiskCapacity
+                [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DiskCapacity
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: diskCount: The data disk number of the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "diskCount", typeJson: "{\"primitive\":\"number\"}")]
-                public double DiskCount
+                [JsiiProperty(name: "diskCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DiskCount
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: diskType: The data disk type of the instance group.
+                /// <strong>Property</strong>: diskType: The data disk type of the instance group. Valid values: CLOUD, CLOUD_EFFICIENCY, CLOUD_SSD, CLOUD_ESSD etc.
                 /// </remarks>
-                [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}")]
-                public string DiskType
+                [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object DiskType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hostGroupType: The type of the instance group. Valid values: MASTER, CORE, and TASK. Currently, you
                 /// can only create a maximum of one master instance group and core instance group.
                 /// </remarks>
-                [JsiiProperty(name: "hostGroupType", typeJson: "{\"primitive\":\"string\"}")]
-                public string HostGroupType
+                [JsiiProperty(name: "hostGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object HostGroupType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: instanceType: The instance type of the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}")]
-                public string InstanceType
+                [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object InstanceType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: nodeCount: The number of nodes in the node group.
                 /// </remarks>
-                [JsiiProperty(name: "nodeCount", typeJson: "{\"primitive\":\"number\"}")]
-                public double NodeCount
+                [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object NodeCount
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: sysDiskCapacity: The system disk capacity of the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"primitive\":\"number\"}")]
-                public double SysDiskCapacity
+                [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SysDiskCapacity
                 {
-                    get => GetInstanceProperty<double>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: sysDiskType: The system disk type of the instance group.
                 /// </remarks>
-                [JsiiProperty(name: "sysDiskType", typeJson: "{\"primitive\":\"string\"}")]
-                public string SysDiskType
+                [JsiiProperty(name: "sysDiskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+                public object SysDiskType
                 {
-                    get => GetInstanceProperty<string>()!;
+                    get => GetInstanceProperty<object>()!;
                 }
 
                 /// <remarks>
@@ -1190,80 +1190,80 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <strong>Property</strong>: clusterId: A reserved parameter. Not required.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? ClusterId
+                [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ClusterId
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: comment: A reserved parameter. Not required.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Comment
+                [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Comment
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: createType: A reserved parameter. Not required.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "createType", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? CreateType
+                [JsiiProperty(name: "createType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CreateType
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: gpuDriver: The GPU driver.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "gpuDriver", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? GpuDriver
+                [JsiiProperty(name: "gpuDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? GpuDriver
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hostGroupId: A reserved parameter.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "hostGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? HostGroupId
+                [JsiiProperty(name: "hostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HostGroupId
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hostGroupName: The name of the instance group.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "hostGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? HostGroupName
+                [JsiiProperty(name: "hostGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HostGroupName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hostKeyPairName: The key pair name of the host group. Currently, only gateways are supported.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? HostKeyPairName
+                [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HostKeyPairName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: hostPassword: The password of the host. Currently, only gateways are supported.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "hostPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? HostPassword
+                [JsiiProperty(name: "hostPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? HostPassword
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
@@ -1271,20 +1271,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// 9, 12, 24, and 36. A value is required when HostGroup.n.ChargeType=PrePaid.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true)]
-                public double? Period
+                [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Period
                 {
-                    get => GetInstanceProperty<double?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch. A value is required when NetType=vpc.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? VSwitchId
+                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VSwitchId
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1296,8 +1296,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: chargeType: The billing method for the instance group.
             /// </remarks>
-            [JsiiProperty(name: "chargeType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string ChargeType
+            [JsiiProperty(name: "chargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object ChargeType
             {
                 get;
                 set;
@@ -1306,8 +1306,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: diskCapacity: The data disk capacity of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "diskCapacity", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double DiskCapacity
+            [JsiiProperty(name: "diskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DiskCapacity
             {
                 get;
                 set;
@@ -1316,18 +1316,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: diskCount: The data disk number of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "diskCount", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double DiskCount
+            [JsiiProperty(name: "diskCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DiskCount
             {
                 get;
                 set;
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: diskType: The data disk type of the instance group.
+            /// <strong>Property</strong>: diskType: The data disk type of the instance group. Valid values: CLOUD, CLOUD_EFFICIENCY, CLOUD_SSD, CLOUD_ESSD etc.
             /// </remarks>
-            [JsiiProperty(name: "diskType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string DiskType
+            [JsiiProperty(name: "diskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object DiskType
             {
                 get;
                 set;
@@ -1337,8 +1337,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostGroupType: The type of the instance group. Valid values: MASTER, CORE, and TASK. Currently, you
             /// can only create a maximum of one master instance group and core instance group.
             /// </remarks>
-            [JsiiProperty(name: "hostGroupType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string HostGroupType
+            [JsiiProperty(name: "hostGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object HostGroupType
             {
                 get;
                 set;
@@ -1347,8 +1347,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: instanceType: The instance type of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "instanceType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string InstanceType
+            [JsiiProperty(name: "instanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object InstanceType
             {
                 get;
                 set;
@@ -1357,8 +1357,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: nodeCount: The number of nodes in the node group.
             /// </remarks>
-            [JsiiProperty(name: "nodeCount", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double NodeCount
+            [JsiiProperty(name: "nodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object NodeCount
             {
                 get;
                 set;
@@ -1367,8 +1367,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: sysDiskCapacity: The system disk capacity of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"primitive\":\"number\"}", isOverride: true)]
-            public double SysDiskCapacity
+            [JsiiProperty(name: "sysDiskCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object SysDiskCapacity
             {
                 get;
                 set;
@@ -1377,8 +1377,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: sysDiskType: The system disk type of the instance group.
             /// </remarks>
-            [JsiiProperty(name: "sysDiskType", typeJson: "{\"primitive\":\"string\"}", isOverride: true)]
-            public string SysDiskType
+            [JsiiProperty(name: "sysDiskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOverride: true)]
+            public object SysDiskType
             {
                 get;
                 set;
@@ -1399,8 +1399,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: clusterId: A reserved parameter. Not required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "clusterId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? ClusterId
+            [JsiiProperty(name: "clusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? ClusterId
             {
                 get;
                 set;
@@ -1410,8 +1410,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: comment: A reserved parameter. Not required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "comment", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Comment
+            [JsiiProperty(name: "comment", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Comment
             {
                 get;
                 set;
@@ -1421,8 +1421,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: createType: A reserved parameter. Not required.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "createType", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? CreateType
+            [JsiiProperty(name: "createType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? CreateType
             {
                 get;
                 set;
@@ -1432,8 +1432,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: gpuDriver: The GPU driver.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "gpuDriver", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? GpuDriver
+            [JsiiProperty(name: "gpuDriver", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? GpuDriver
             {
                 get;
                 set;
@@ -1443,8 +1443,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostGroupId: A reserved parameter.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "hostGroupId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? HostGroupId
+            [JsiiProperty(name: "hostGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HostGroupId
             {
                 get;
                 set;
@@ -1454,8 +1454,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostGroupName: The name of the instance group.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "hostGroupName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? HostGroupName
+            [JsiiProperty(name: "hostGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HostGroupName
             {
                 get;
                 set;
@@ -1465,8 +1465,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostKeyPairName: The key pair name of the host group. Currently, only gateways are supported.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? HostKeyPairName
+            [JsiiProperty(name: "hostKeyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HostKeyPairName
             {
                 get;
                 set;
@@ -1476,8 +1476,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: hostPassword: The password of the host. Currently, only gateways are supported.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "hostPassword", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? HostPassword
+            [JsiiProperty(name: "hostPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? HostPassword
             {
                 get;
                 set;
@@ -1488,8 +1488,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// 9, 12, 24, and 36. A value is required when HostGroup.n.ChargeType=PrePaid.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "period", typeJson: "{\"primitive\":\"number\"}", isOptional: true, isOverride: true)]
-            public double? Period
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Period
             {
                 get;
                 set;
@@ -1499,8 +1499,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch. A value is required when NetType=vpc.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? VSwitchId
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? VSwitchId
             {
                 get;
                 set;
@@ -1512,9 +1512,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: password: The password of the cluster.
             /// </remarks>
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? Password
+            object? Password
             {
                 get
                 {
@@ -1525,9 +1525,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: userId: The ID of the Alibaba Cloud account for Knox.
             /// </remarks>
-            [JsiiProperty(name: "userId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "userId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? UserId
+            object? UserId
             {
                 get
                 {
@@ -1538,9 +1538,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <remarks>
             /// <strong>Property</strong>: userName: The username for Knox.
             /// </remarks>
-            [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-            string? UserName
+            object? UserName
             {
                 get
                 {
@@ -1559,30 +1559,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 /// <strong>Property</strong>: password: The password of the cluster.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? Password
+                [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? Password
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: userId: The ID of the Alibaba Cloud account for Knox.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "userId", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? UserId
+                [JsiiProperty(name: "userId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? UserId
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
 
                 /// <remarks>
                 /// <strong>Property</strong>: userName: The username for Knox.
                 /// </remarks>
                 [JsiiOptional]
-                [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true)]
-                public string? UserName
+                [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? UserName
                 {
-                    get => GetInstanceProperty<string?>();
+                    get => GetInstanceProperty<object?>();
                 }
             }
         }
@@ -1593,8 +1593,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: password: The password of the cluster.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "password", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? Password
+            [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? Password
             {
                 get;
                 set;
@@ -1604,8 +1604,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: userId: The ID of the Alibaba Cloud account for Knox.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "userId", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? UserId
+            [JsiiProperty(name: "userId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? UserId
             {
                 get;
                 set;
@@ -1615,8 +1615,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             /// <strong>Property</strong>: userName: The username for Knox.
             /// </remarks>
             [JsiiOptional]
-            [JsiiProperty(name: "userName", typeJson: "{\"primitive\":\"string\"}", isOptional: true, isOverride: true)]
-            public string? UserName
+            [JsiiProperty(name: "userName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true, isOverride: true)]
+            public object? UserName
             {
                 get;
                 set;

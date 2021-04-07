@@ -47,10 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Attribute</strong>: ForwardEntryId: The id of created forward entry.
         /// </remarks>
-        [JsiiProperty(name: "attrForwardEntryId", typeJson: "{\"primitive\":\"any\"}")]
-        public virtual object AttrForwardEntryId
+        [JsiiProperty(name: "attrForwardEntryId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrForwardEntryId
         {
-            get => GetInstanceProperty<object>()!;
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
         }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
@@ -69,60 +69,60 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         /// <remarks>
         /// <strong>Property</strong>: externalIp: Source IP, must belongs to bandwidth package internet IP
         /// </remarks>
-        [JsiiProperty(name: "externalIp", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ExternalIp
+        [JsiiProperty(name: "externalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ExternalIp
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: externalPort: Source port, now support [1-65535]|Any
         /// </remarks>
-        [JsiiProperty(name: "externalPort", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ExternalPort
+        [JsiiProperty(name: "externalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ExternalPort
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: forwardTableId: Create forward entry in specified forward table.
         /// </remarks>
-        [JsiiProperty(name: "forwardTableId", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string ForwardTableId
+        [JsiiProperty(name: "forwardTableId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object ForwardTableId
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: internalIp: Destination IP, must belong to VPC private IP
         /// </remarks>
-        [JsiiProperty(name: "internalIp", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InternalIp
+        [JsiiProperty(name: "internalIp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InternalIp
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: internalPort: Destination port, now support [1-65535]|Any
         /// </remarks>
-        [JsiiProperty(name: "internalPort", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string InternalPort
+        [JsiiProperty(name: "internalPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object InternalPort
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
 
         /// <remarks>
         /// <strong>Property</strong>: ipProtocol: Supported protocol, Now support 'TCP|UDP|Any'
         /// </remarks>
-        [JsiiProperty(name: "ipProtocol", typeJson: "{\"primitive\":\"string\"}")]
-        public virtual string IpProtocol
+        [JsiiProperty(name: "ipProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object IpProtocol
         {
-            get => GetInstanceProperty<string>()!;
+            get => GetInstanceProperty<object>()!;
             set => SetInstanceProperty(value);
         }
     }

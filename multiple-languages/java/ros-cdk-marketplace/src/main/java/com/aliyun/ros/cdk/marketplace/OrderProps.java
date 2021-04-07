@@ -3,46 +3,61 @@ package com.aliyun.ros.cdk.marketplace;
 /**
  * Properties for defining a `ALIYUN::MarketPlace::Order`.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.17.1 (build 2bac5fd)", date = "2021-02-04T07:29:36.057Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.27.0 (build 07d848a)", date = "2021-04-07T04:01:42.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.OrderProps")
 @software.amazon.jsii.Jsii.Proxy(OrderProps.Jsii$Proxy.class)
 public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
+     * Property productCode: Product code for the resource.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getProductCode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getProductCode();
 
     /**
+     * Property skuCode: Sku code for the resource.
      */
-    @org.jetbrains.annotations.NotNull java.lang.String getSkuCode();
+    @org.jetbrains.annotations.NotNull java.lang.Object getSkuCode();
 
     /**
+     * Property chargeType: The resource charge type.
+     * <p>
+     * Default value is Prepaid
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getChargeType() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
         return null;
     }
 
     /**
+     * Property duration: Duration of the resource.
+     * <p>
+     * If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getDuration() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
+     * Property preference: Customized parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPreference() {
         return null;
     }
 
     /**
+     * Property pricingCycle: Price cycle of the resource.
+     * <p>
+     * This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
      */
-    default @org.jetbrains.annotations.Nullable java.lang.String getPricingCycle() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
     }
 
     /**
+     * Property quantity: Resource number.
+     * <p>
+     * Default value is 1
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Number getQuantity() {
+    default @org.jetbrains.annotations.Nullable java.lang.Object getQuantity() {
         return null;
     }
 
@@ -56,17 +71,17 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
      * A builder for {@link OrderProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<OrderProps> {
-        private java.lang.String productCode;
-        private java.lang.String skuCode;
-        private java.lang.String chargeType;
-        private java.lang.Number duration;
+        private java.lang.Object productCode;
+        private java.lang.Object skuCode;
+        private java.lang.Object chargeType;
+        private java.lang.Object duration;
         private java.lang.Object preference;
-        private java.lang.String pricingCycle;
-        private java.lang.Number quantity;
+        private java.lang.Object pricingCycle;
+        private java.lang.Object quantity;
 
         /**
          * Sets the value of {@link OrderProps#getProductCode}
-         * @param productCode the value to be set. This parameter is required.
+         * @param productCode Property productCode: Product code for the resource. This parameter is required.
          * @return {@code this}
          */
         public Builder productCode(java.lang.String productCode) {
@@ -75,8 +90,18 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link OrderProps#getProductCode}
+         * @param productCode Property productCode: Product code for the resource. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder productCode(com.aliyun.ros.cdk.core.IResolvable productCode) {
+            this.productCode = productCode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link OrderProps#getSkuCode}
-         * @param skuCode the value to be set. This parameter is required.
+         * @param skuCode Property skuCode: Sku code for the resource. This parameter is required.
          * @return {@code this}
          */
         public Builder skuCode(java.lang.String skuCode) {
@@ -85,8 +110,19 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link OrderProps#getSkuCode}
+         * @param skuCode Property skuCode: Sku code for the resource. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder skuCode(com.aliyun.ros.cdk.core.IResolvable skuCode) {
+            this.skuCode = skuCode;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link OrderProps#getChargeType}
-         * @param chargeType the value to be set.
+         * @param chargeType Property chargeType: The resource charge type.
+         *                   Default value is Prepaid
          * @return {@code this}
          */
         public Builder chargeType(java.lang.String chargeType) {
@@ -95,8 +131,20 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link OrderProps#getChargeType}
+         * @param chargeType Property chargeType: The resource charge type.
+         *                   Default value is Prepaid
+         * @return {@code this}
+         */
+        public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
+            this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link OrderProps#getDuration}
-         * @param duration the value to be set.
+         * @param duration Property duration: Duration of the resource.
+         *                 If ChargeType is specified as Postpaid, this value will be ignore.
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
@@ -105,18 +153,19 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
-         * Sets the value of {@link OrderProps#getPreference}
-         * @param preference the value to be set.
+         * Sets the value of {@link OrderProps#getDuration}
+         * @param duration Property duration: Duration of the resource.
+         *                 If ChargeType is specified as Postpaid, this value will be ignore.
          * @return {@code this}
          */
-        public Builder preference(java.util.Map<java.lang.String, ? extends java.lang.Object> preference) {
-            this.preference = preference;
+        public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
+            this.duration = duration;
             return this;
         }
 
         /**
          * Sets the value of {@link OrderProps#getPreference}
-         * @param preference the value to be set.
+         * @param preference Property preference: Customized parameters.
          * @return {@code this}
          */
         public Builder preference(com.aliyun.ros.cdk.core.IResolvable preference) {
@@ -125,8 +174,19 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link OrderProps#getPreference}
+         * @param preference Property preference: Customized parameters.
+         * @return {@code this}
+         */
+        public Builder preference(java.util.Map<java.lang.String, ? extends java.lang.Object> preference) {
+            this.preference = preference;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link OrderProps#getPricingCycle}
-         * @param pricingCycle the value to be set.
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -135,11 +195,34 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link OrderProps#getPricingCycle}
+         * @param pricingCycle Property pricingCycle: Price cycle of the resource.
+         *                     This property has no default value. If ChargeType is specified as Postpaid, this value will be ignore.
+         * @return {@code this}
+         */
+        public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
+            this.pricingCycle = pricingCycle;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link OrderProps#getQuantity}
-         * @param quantity the value to be set.
+         * @param quantity Property quantity: Resource number.
+         *                 Default value is 1
          * @return {@code this}
          */
         public Builder quantity(java.lang.Number quantity) {
+            this.quantity = quantity;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link OrderProps#getQuantity}
+         * @param quantity Property quantity: Resource number.
+         *                 Default value is 1
+         * @return {@code this}
+         */
+        public Builder quantity(com.aliyun.ros.cdk.core.IResolvable quantity) {
             this.quantity = quantity;
             return this;
         }
@@ -160,13 +243,13 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements OrderProps {
-        private final java.lang.String productCode;
-        private final java.lang.String skuCode;
-        private final java.lang.String chargeType;
-        private final java.lang.Number duration;
+        private final java.lang.Object productCode;
+        private final java.lang.Object skuCode;
+        private final java.lang.Object chargeType;
+        private final java.lang.Object duration;
         private final java.lang.Object preference;
-        private final java.lang.String pricingCycle;
-        private final java.lang.Number quantity;
+        private final java.lang.Object pricingCycle;
+        private final java.lang.Object quantity;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -174,19 +257,19 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.productCode = software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.skuCode = software.amazon.jsii.Kernel.get(this, "skuCode", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.productCode = software.amazon.jsii.Kernel.get(this, "productCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.skuCode = software.amazon.jsii.Kernel.get(this, "skuCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.duration = software.amazon.jsii.Kernel.get(this, "duration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.preference = software.amazon.jsii.Kernel.get(this, "preference", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.String.class));
-            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Number.class));
+            this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.quantity = software.amazon.jsii.Kernel.get(this, "quantity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
-        protected Jsii$Proxy(final java.lang.String productCode, final java.lang.String skuCode, final java.lang.String chargeType, final java.lang.Number duration, final java.lang.Object preference, final java.lang.String pricingCycle, final java.lang.Number quantity) {
+        protected Jsii$Proxy(final java.lang.Object productCode, final java.lang.Object skuCode, final java.lang.Object chargeType, final java.lang.Object duration, final java.lang.Object preference, final java.lang.Object pricingCycle, final java.lang.Object quantity) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.productCode = java.util.Objects.requireNonNull(productCode, "productCode is required");
             this.skuCode = java.util.Objects.requireNonNull(skuCode, "skuCode is required");
@@ -198,22 +281,22 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getProductCode() {
+        public final java.lang.Object getProductCode() {
             return this.productCode;
         }
 
         @Override
-        public final java.lang.String getSkuCode() {
+        public final java.lang.Object getSkuCode() {
             return this.skuCode;
         }
 
         @Override
-        public final java.lang.String getChargeType() {
+        public final java.lang.Object getChargeType() {
             return this.chargeType;
         }
 
         @Override
-        public final java.lang.Number getDuration() {
+        public final java.lang.Object getDuration() {
             return this.duration;
         }
 
@@ -223,12 +306,12 @@ public interface OrderProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
-        public final java.lang.String getPricingCycle() {
+        public final java.lang.Object getPricingCycle() {
             return this.pricingCycle;
         }
 
         @Override
-        public final java.lang.Number getQuantity() {
+        public final java.lang.Object getQuantity() {
             return this.quantity;
         }
 

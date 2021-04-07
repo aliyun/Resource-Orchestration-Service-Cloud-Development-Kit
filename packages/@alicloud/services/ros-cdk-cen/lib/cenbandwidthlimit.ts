@@ -11,22 +11,22 @@ export interface CenBandwidthLimitProps {
     /**
      * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
      */
-    readonly bandwidthLimit: number;
+    readonly bandwidthLimit: number | ros.IResolvable;
 
     /**
      * Property cenId: The ID of the CEN instance.
      */
-    readonly cenId: string;
+    readonly cenId: string | ros.IResolvable;
 
     /**
      * Property localRegionId: The ID of the local region.
      */
-    readonly localRegionId: string;
+    readonly localRegionId: string | ros.IResolvable;
 
     /**
      * Property oppositeRegionId: The ID of the other interconnected region.
      */
-    readonly oppositeRegionId: string;
+    readonly oppositeRegionId: string | ros.IResolvable;
 }
 
 /**
